@@ -1,0 +1,462 @@
+using System;
+using System.Collections.Generic;
+using ARM_User.BusinessLayer.Guides;
+using ARM_User.BusinessLayer.Common;
+using ARM_User.BusinessLayer.Guides.Simple;
+using ARM_User.MapperLayer.Guides;
+using ARM_User.MapperLayer.Guides.Simple;
+using ARM_User.MapperLayer.Service;
+
+namespace ARM_User.MapperLayer.Common
+{
+  public class MapperRegistry
+  {
+    #region Fields
+
+    protected Dictionary<Type, AbstractMapper> reg = new Dictionary<Type, AbstractMapper>();
+
+    #endregion
+
+    #region Constructors
+
+    public MapperRegistry()
+    {
+      #region Guides
+
+      RegistryMapper(typeof(Shared), new SharedMapper());
+      RegistryMapper(typeof(LocalText), new LocalTextMapper());
+      RegistryMapper(typeof (Fundknd), new FundkndMapper());
+      RegistryMapper(typeof(IssueECB), new IssueECBMapper());
+      RegistryMapper(typeof(CurrencyECB), new CurrencyECBMapper());
+      RegistryMapper(typeof(IssuersGuides), new IssuersGuidesMapper());
+      RegistryMapper(typeof(Region), new RegionMapper());
+      RegistryMapper(typeof(BankCust), new BankCustMapper());
+      RegistryMapper(typeof(ClassifierOKED), new ClassifierOKEDMapper());
+      RegistryMapper(typeof(SpecBus), new SpecBusMapper());
+      RegistryMapper(typeof(SignPartNores), new SignPartNoresMapper());
+      RegistryMapper(typeof(CategoryControls), new CategoryControlsMapper());
+      RegistryMapper(typeof(AddCategoryShare), new AddCategoryShareMapper());
+      RegistryMapper(typeof(CategoryECB), new CategoryECBMapper());
+      RegistryMapper(typeof(IndexRewards), new IndexRewardsMapper());
+      RegistryMapper(typeof(SpecIssuer), new SpecIssuerMapper());
+      RegistryMapper(typeof(AbilityConvert), new AbilityConvertMapper());
+      RegistryMapper(typeof(KindECB), new KindECBMapper());
+      RegistryMapper(typeof(IssOrganControl), new IssOrganControlMapper());
+      RegistryMapper(typeof(DateTypeLocal), new DateTypeLocalMapper());
+      RegistryMapper(typeof(DocKnd), new DocKndMapper());
+      RegistryMapper(typeof(Processknd), new ProcesskndMapper());
+      RegistryMapper(typeof(Process), new ProcessMapper());
+      RegistryMapper(typeof(OLF), new OLFMapper());
+      RegistryMapper(typeof(Listing), new ListingMapper());
+      RegistryMapper(typeof(Rating), new RatingMapper());
+      RegistryMapper(typeof(Reg), new RegMapper());
+      RegistryMapper(typeof(Audit), new AuditMapper());
+      RegistryMapper(typeof(RegOrganMU), new RegOrganMUMapper());
+      RegistryMapper(typeof(JurPersCreateMethod), new JurPersCreateMethodMapper());
+      RegistryMapper(typeof(Bond), new BondMapper());
+      RegistryMapper(typeof(Founders), new BondFoundersMapper());
+      RegistryMapper(typeof(Appointment), new AppointmentMapper());
+      RegistryMapper(typeof(BondAppointment), new BondAppointmentMapper());
+      RegistryMapper(typeof(StateShareUK), new StateShareUKMapper());
+      RegistryMapper(typeof(RepKnd), new RepKndMapper());
+      RegistryMapper(typeof(Signatory), new SignatoryMapper());
+      RegistryMapper(typeof(Executor), new ExecutorMapper());
+      RegistryMapper(typeof(CatHolderEcb), new CatHolderEcbMapper());
+     // RegistryMapper(typeof(ClassifierOKED), new ClassifierOKEDMapper());
+      RegistryMapper(typeof(IssueStsECB), new IssueStsECBMapper());
+      RegistryMapper(typeof(IssuersGCB), new IssuersGCBMapper());
+      RegistryMapper(typeof(KindGCB), new KindGCBMapper());
+      RegistryMapper(typeof(DebtRepayment), new DebtRepaymentMapper());
+      RegistryMapper(typeof(StsReport), new StsReportMapper());
+      RegistryMapper(typeof(KindRegBonds), new KindRegBondsMapper());
+      RegistryMapper(typeof(ArticlesKOAP), new ArticlesKOAPMapper());
+      RegistryMapper(typeof(CauseChangesRep), new CauseChangesRepMapper());
+      RegistryMapper(typeof(Suspension), new SuspensionMapper());
+      RegistryMapper(typeof(Country), new CountryMapper());
+      RegistryMapper(typeof(DecisionAdmOffences), new DecisionAdmOffencesMapper());
+      RegistryMapper(typeof(CollectionForm), new CollectionFormMapper());
+      //RegistryMapper(typeof(RepKnd), new RepKndMapper());
+      RegistryMapper(typeof(JurPersSts), new JurPersStsMapper());
+      RegistryMapper(typeof(ReasonAnnulECB), new ReasonAnnulECBMapper());
+      RegistryMapper(typeof(UnitDimPerECB), new UnitDimPerECBMapper());
+      RegistryMapper(typeof(MethodLocalECB), new MethodLocalECBMapper());
+      RegistryMapper(typeof(PlaceAccommECB), new PlaceAccommECBMapper());
+      RegistryMapper(typeof(ReasonChangeShareIssue), new ReasonChangeShareIssueMapper());
+      RegistryMapper(typeof(StsStAccommECB), new StsStAccommECBMapper());
+      RegistryMapper(typeof(DecVerifInf), new DecVerifInfMapper());
+      RegistryMapper(typeof(BasePrescription), new BasePrescriptionMapper());
+      RegistryMapper(typeof(ViolationKnd), new ViolationKndMapper());
+      RegistryMapper(typeof(OrganRegIssueECB), new OrganRegIssueECBMapper());
+      RegistryMapper(typeof(MRP), new MRPMapper());
+      RegistryMapper(typeof(ResolutionDR), new ResolutionDRMapper());
+      RegistryMapper(typeof(StatusECB), new StatusECBMapper());
+      RegistryMapper(typeof(StatusLicense), new StatusLicenseMapper());
+      RegistryMapper(typeof(CondMonitorValid), new CondMonitorValidMapper());
+      RegistryMapper(typeof(Sharer), new SharerMapper());
+      RegistryMapper(typeof(ReasonSuspensionECB), new ReasonSuspensionECBMapper());
+    //  RegistryMapper(typeof(Processknd), new ProcesskndMapper());
+      RegistryMapper(typeof(DecTreadCard), new DecTreadCardMapper());
+      RegistryMapper(typeof(ConfirmObject), new ConfirmObjectMapper()); 
+      RegistryMapper(typeof(BondRegistry), new BondRegistryMapper());
+      RegistryMapper(typeof(BondFilter), new BondFilterMapper());
+     // RegistryMapper(typeof(Securities), new SecuritiesMapper()); 
+
+      #endregion
+
+      #region Services
+
+      RegistryMapper(typeof (RightsItem), new RightsItemMapper());
+      RegistryMapper(typeof (User), new UserMapper());      
+
+      #endregion
+    }
+
+    #endregion
+
+    #region Protected methods
+
+    protected void RegistryMapper(Type objType, AbstractMapper mapper)
+    {
+      reg.Add(objType, mapper);
+    }
+
+    #endregion
+
+    #region Public methods
+
+    public AbstractMapper GetMapper(Type objType)
+    {
+      AbstractMapper mapper = null;
+      reg.TryGetValue(objType, out mapper);
+      return mapper;
+    }
+
+    #endregion
+
+    #region Guides
+
+    public LocalTextMapper GetLocalTextMapper()
+    {
+      return (LocalTextMapper)reg[typeof(LocalText)];
+    }
+    public SharedMapper GetSharedMapper()
+    {
+      return (SharedMapper)reg[typeof(Shared)];
+    }
+    public FundkndMapper GetFundkndMapper()
+    {
+      return (FundkndMapper) reg[typeof (Fundknd)];
+    }
+    public IssueECBMapper GetIssueECBMapper()
+    {
+        return (IssueECBMapper)reg[typeof(IssueECB)];
+    }
+    public CurrencyECBMapper GetCurrencyECBMapper()
+    {
+        return (CurrencyECBMapper)reg[typeof(CurrencyECB)];
+    }
+    public IssuersGuidesMapper GetIssuersGuidesMapper()
+    {
+        return (IssuersGuidesMapper)reg[typeof(IssuersGuides)];
+    }
+    public RegionMapper GetRegionMapper()
+    {
+        return (RegionMapper)reg[typeof(Region)];
+    }
+    public BankCustMapper GetBankCustMapper()
+    {
+        return (BankCustMapper)reg[typeof(BankCust)];
+    }
+    public ClassifierOKEDMapper GetClassifierOKEDMapper()
+    {
+        return (ClassifierOKEDMapper)reg[typeof(ClassifierOKED)];
+    }
+    public SpecBusMapper GetSpecBusMapper()
+    {
+        return (SpecBusMapper)reg[typeof(SpecBus)];
+    }
+    public SignPartNoresMapper GetSignPartNoresMapper()
+    {
+        return (SignPartNoresMapper)reg[typeof(SignPartNores)];
+    }
+    public CategoryControlsMapper GetCategoryControlsMapper()
+    {
+        return (CategoryControlsMapper)reg[typeof(CategoryControls)];
+    }
+    public AddCategoryShareMapper GetAddCategoryShareMapper()
+    {
+        return (AddCategoryShareMapper)reg[typeof(AddCategoryShare)];
+    }
+    public CategoryECBMapper GetCategoryECBMapper()
+    {
+        return (CategoryECBMapper)reg[typeof(CategoryECB)];
+    }
+    public IndexRewardsMapper GetIndexRewardsMapper()
+    {
+        return (IndexRewardsMapper)reg[typeof(IndexRewards)];
+    }
+    public SpecIssuerMapper GetSpecIssuerMapper()
+    {
+        return (SpecIssuerMapper)reg[typeof(SpecIssuer)];
+    }
+    public AbilityConvertMapper GetAbilityConvertMapper()
+    {
+        return (AbilityConvertMapper)reg[typeof(AbilityConvert)];
+    }
+    public KindECBMapper GetKindECBMapper()
+    {
+        return (KindECBMapper)reg[typeof(KindECB)];
+    }
+    public IssOrganControlMapper GetIssOrganControlMapper()
+    {
+        return (IssOrganControlMapper)reg[typeof(IssOrganControl)];
+    }
+    public DateTypeLocalMapper GetDateTypeLocalMapper()
+    {
+        return (DateTypeLocalMapper)reg[typeof(DateTypeLocal)];
+    }
+    public DocKndMapper GetDocKndMapper()
+    {
+        return (DocKndMapper)reg[typeof(DocKnd)];
+    }
+    public ProcesskndMapper GetProcesskndMapper()
+    {
+        return (ProcesskndMapper)reg[typeof(Processknd)];
+    }
+    public ProcessMapper GetProcessMapper()
+    {
+        return (ProcessMapper)reg[typeof(Process)];
+    }
+    public OLFMapper GetOLFMapper()
+    {
+        return (OLFMapper)reg[typeof(OLF)];
+    }
+    public ListingMapper GetListingMapper()
+    {
+        return (ListingMapper)reg[typeof(Listing)];
+    }
+    public RatingMapper GetRatingMapper()
+    {
+        return (RatingMapper)reg[typeof(Rating)];
+    }
+    public RegMapper GetRegMapper()
+    {
+        return (RegMapper)reg[typeof(Reg)];
+    }
+    public AuditMapper GetAuditMapper()
+    {
+        return (AuditMapper)reg[typeof(Audit)];
+    }
+    public RegOrganMUMapper GetRegOrganMUMapper()
+    {
+        return (RegOrganMUMapper)reg[typeof(RegOrganMU)];
+    }
+    public JurPersCreateMethodMapper GetJurPersCreateMethodMapper()
+    {
+        return (JurPersCreateMethodMapper)reg[typeof(JurPersCreateMethod)];
+    }
+    public BondMapper GetBondMapper()
+    {
+        return (BondMapper)reg[typeof(Bond)];
+    }
+    public BondFoundersMapper GetBondFoundersMapper()
+    {
+        return (BondFoundersMapper)reg[typeof(Founders)];
+    }
+    public AppointmentMapper GetAppointmentMapper()
+    {
+        return (AppointmentMapper)reg[typeof(Appointment)];
+    }
+    public BondAppointmentMapper GetBondAppointmentMapper()
+    {
+        return (BondAppointmentMapper)reg[typeof(BondAppointment)];
+    }
+    public StateShareUKMapper GetStateShareUKMapper()
+    {
+        return (StateShareUKMapper)reg[typeof(StateShareUK)];
+    }
+    public RepKndMapper GetRepKndMapper()
+    {
+        return (RepKndMapper)reg[typeof(RepKnd)];
+    }
+    public SignatoryMapper GetSignatoryMapper()
+    {
+        return (SignatoryMapper)reg[typeof(Signatory)];
+    }
+    public ExecutorMapper GetExecutorMapper()
+    {
+        return (ExecutorMapper)reg[typeof(Executor)];
+    }
+    public CatHolderEcbMapper GetCatHolderEcbMapper()
+    {
+        return (CatHolderEcbMapper)reg[typeof(CatHolderEcb)];
+    }    
+    public IssueStsECBMapper GetIssueStsECBMapper()
+    {
+        return (IssueStsECBMapper)reg[typeof(IssueStsECB)];
+    }
+    public IssuersGCBMapper GetIssuersGCBMapper()
+    {
+        return (IssuersGCBMapper)reg[typeof(IssuersGCB)];
+    }
+    public KindGCBMapper GetKindGCBMapper()
+    {
+        return (KindGCBMapper)reg[typeof(KindGCB)];
+    }
+    public DebtRepaymentMapper GetDebtRepaymentMapper()
+    {
+        return (DebtRepaymentMapper)reg[typeof(DebtRepayment)];
+    }
+    public StsReportMapper GetStsReportMapper()
+    {
+        return (StsReportMapper)reg[typeof(StsReport)];
+    }
+    public KindRegBondsMapper GetKindRegBondsMapper()
+    {
+        return (KindRegBondsMapper)reg[typeof(KindRegBonds)];
+    }
+    public ArticlesKOAPMapper GetArticlesKOAPMapper()
+    {
+        return (ArticlesKOAPMapper)reg[typeof(ArticlesKOAP)];
+    }
+    public CauseChangesRepMapper GetCauseChangesRepMapper()
+    {
+        return (CauseChangesRepMapper)reg[typeof(CauseChangesRep)];
+    }
+    public SuspensionMapper GetSuspensionMapper()
+    {
+        return (SuspensionMapper)reg[typeof(Suspension)];
+    }
+    public CountryMapper GetCountryMapper()
+    {
+        return (CountryMapper)reg[typeof(Country)];
+    }
+    public DecisionAdmOffencesMapper GetDecisionAdmOffencesMapper()
+    {
+        return (DecisionAdmOffencesMapper)reg[typeof(DecisionAdmOffences)];
+    }
+    public CollectionFormMapper GetCollectionFormMapper()
+    {
+        return (CollectionFormMapper)reg[typeof(CollectionForm)];
+    }    
+    public JurPersStsMapper GetJurPersStsMapper()
+    {
+        return (JurPersStsMapper)reg[typeof(JurPersSts)];
+    }
+    public ReasonAnnulECBMapper GetReasonAnnulECBMapper()
+    {
+        return (ReasonAnnulECBMapper)reg[typeof(ReasonAnnulECB)];
+    }
+    public UnitDimPerECBMapper GetUnitDimPerECBMapper()
+    {
+        return (UnitDimPerECBMapper)reg[typeof(UnitDimPerECB)];
+    }
+    public MethodLocalECBMapper GetMethodLocalECBMapper()
+    {
+        return (MethodLocalECBMapper)reg[typeof(MethodLocalECB)];
+    }
+    public PlaceAccommECBMapper GetPlaceAccommECBMapper()
+    {
+        return (PlaceAccommECBMapper)reg[typeof(PlaceAccommECB)];
+    }
+    public ReasonChangeShareIssueMapper GetReasonChangeShareIssueMapper()
+    {
+        return (ReasonChangeShareIssueMapper)reg[typeof(ReasonChangeShareIssue)];
+    }
+    public StsStAccommECBMapper GetStsStAccommECBMapper()
+    {
+        return (StsStAccommECBMapper)reg[typeof(StsStAccommECB)];
+    }
+    public DecVerifInfMapper GetDecVerifInfMapper()
+    {
+        return (DecVerifInfMapper)reg[typeof(DecVerifInf)];
+    }
+    public BasePrescriptionMapper GetBasePrescriptionMapper()
+    {
+        return (BasePrescriptionMapper)reg[typeof(BasePrescription)];
+    }
+    public ViolationKndMapper GetViolationKndMapper()
+    {
+        return (ViolationKndMapper)reg[typeof(ViolationKnd)];
+    }
+    public OrganRegIssueECBMapper GetOrganRegIssueECBMapper()
+    {
+        return (OrganRegIssueECBMapper)reg[typeof(OrganRegIssueECB)];
+    }
+    public MRPMapper GetMRPMapper()
+    {
+        return (MRPMapper)reg[typeof(MRP)];
+    }
+    public ResolutionDRMapper GetResolutionDRMapper()
+    {
+        return (ResolutionDRMapper)reg[typeof(ResolutionDR)];
+    }
+    public StatusECBMapper GetStatusECBMapper()
+    {
+        return (StatusECBMapper)reg[typeof(StatusECB)];
+    }
+    public StatusLicenseMapper GetStatusLicenseMapper()
+    {
+        return (StatusLicenseMapper)reg[typeof(StatusLicense)];
+    }
+    public CondMonitorValidMapper GetCondMonitorValidMapper()
+    {
+        return (CondMonitorValidMapper)reg[typeof(CondMonitorValid)];
+    }
+    public SharerMapper GetSharerMapper()
+    {
+        return (SharerMapper)reg[typeof(Sharer)];
+    }   
+    public DecTreadCardMapper GetDecTreadCardMapper()
+    {
+        return (DecTreadCardMapper)reg[typeof(DecTreadCard)];
+    }
+    public ReasonSuspensionECBMapper GetReasonSuspensionECBMapper()
+    {
+        return (ReasonSuspensionECBMapper)reg[typeof(ReasonSuspensionECB)];
+    }
+    public ConfirmObjectMapper GetConfirmObjectMapper()
+    {
+        return (ConfirmObjectMapper)reg[typeof(ConfirmObject)];
+    }
+    public BondRegistryMapper GetBondRegistryMapper()
+    {
+        return (BondRegistryMapper)reg[typeof(BondRegistry)];
+    }
+    public BondFilterMapper GetBondFilterMapper()
+    {
+        return (BondFilterMapper)reg[typeof(BondFilter)];
+    }
+   /* public SecuritiesMapper GetSecuritiesMapper()
+    {
+        return (SecuritiesMapper)reg[typeof(Securities)];
+    }*/
+    #endregion
+
+    #region Service
+
+    public RightsItemMapper GetRightsItemMapper()
+    {
+      return (RightsItemMapper) reg[typeof (RightsItem)];
+    }
+
+    public UserMapper GetUserMapper()
+    {
+      return (UserMapper) reg[typeof (User)];
+    }
+
+    
+    #endregion
+
+    #region Singelton implementation
+
+    static MapperRegistry()
+    {
+      Instance = new MapperRegistry();
+    }
+
+    public static MapperRegistry Instance { get; private set; }
+
+    #endregion
+  }
+}

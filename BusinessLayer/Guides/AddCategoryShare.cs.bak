@@ -1,0 +1,141 @@
+﻿using System;
+using ARM_User.BusinessLayer.Common;
+using ARM_User.MapperLayer.Common;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
+
+//Справочник "Дополнительный признак категорий акций"
+
+namespace ARM_User.BusinessLayer.Guides
+{
+    public class AddCategoryShare : LocalizedSimpleDO
+  {
+    public static AddCategoryShare CreateNew()
+    {
+      return CreateNew<AddCategoryShare>();
+    }
+   
+    #region Fileds
+
+    private String nameRu, nameKz, designationNIN;//, nameCategoryECB, nameAbilityConvert;
+    private bool isDelete;
+    private AbilityConvert abilityConvert;
+    private CategoryECB categoryECB;
+
+    #endregion Fileds
+
+    #region Constructors
+
+    public AddCategoryShare()
+    {
+    }
+
+
+    public AddCategoryShare(decimal id, string designationNIN, string nameRu, string nameKz,CategoryECB categoryECB, AbilityConvert abilityConvert, bool isDelete, User editUser, DateTime? editTime)
+        : base(id, nameRu, nameKz)
+    {
+      this.designationNIN = designationNIN;
+      this.nameRu = nameRu;
+      this.nameKz = nameKz;
+      this.categoryECB = categoryECB;
+      this.abilityConvert = abilityConvert;
+      this.isDelete = isDelete;
+    }
+
+    #endregion
+
+    #region propertis
+
+    public string DesignationNIN
+    {
+      get { return designationNIN; }
+      set
+      {
+        NotifyBeforeObjectChange();
+        designationNIN = value;
+        NotifyPropertyChanged("DesignationNIN");
+      }
+    }
+
+    public string NameRu
+    {
+      get { return nameRu; }
+      set
+      {
+        NotifyBeforeObjectChange();
+        nameRu = value;
+        NotifyPropertyChanged("NameRu");
+      }
+    }
+
+    public string NameKz
+    {
+      get { return nameKz; }
+      set
+      {
+        NotifyBeforeObjectChange();
+        nameKz = value;
+        NotifyPropertyChanged("NameKz");
+      }
+    }
+    public CategoryECB CategoryECB
+    {
+        get { return categoryECB; }
+        set
+        {
+            NotifyBeforeObjectChange();
+            categoryECB = value;
+            NotifyPropertyChanged("CategoryECB");
+        }
+    }
+
+    public AbilityConvert AbilityConvert
+    {
+      get { return abilityConvert; }
+      set
+      {
+        NotifyBeforeObjectChange();
+        abilityConvert = value;
+        NotifyPropertyChanged("AbilityConvert");
+      }
+    }
+
+    public bool IsDelete
+    {
+      get { return isDelete; }
+      set
+      {
+        NotifyBeforeObjectChange();
+        isDelete = value;
+        NotifyPropertyChanged("IsDelete");
+      }
+    }
+
+    public override void Delete()
+    {
+      try
+      {
+        UnitOfWork.Instance.BeginTransaction();
+        IsDelete = true;
+        UnitOfWork.Instance.Commit();
+      }
+      catch (Exception ex)
+      {
+        if (UnitOfWork.Instance.IsTransactionStarted)
+        {
+          UnitOfWork.Instance.Rollback();
+        }
+        var rethrow = ExceptionPolicy.HandleException(ex, "Display Policy");
+        if (rethrow)
+        {
+          throw;
+        }
+      }
+    }
+
+    #endregion
+  }
+
+  public class AddCategoryShareList : DOList<AddCategoryShare>
+  {
+  }
+}

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ExecutorDS" targetNamespace="http://tempuri.org/ExecutorDS.xsd" xmlns:mstns="http://tempuri.org/ExecutorDS.xsd" xmlns="http://tempuri.org/ExecutorDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString7" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString7 (Settings)" PropertyReference="ApplicationSettings.ARM_User.Properties.Settings.GlobalReference.Default.ConnectionString7" Provider="System.Data.OracleClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ExecutorDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ExecutorDS" msprop:Generator_UserDSName="ExecutorDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="S_G_EXECUTOR" msprop:Generator_TableClassName="S_G_EXECUTORDataTable" msprop:Generator_TableVarName="tableS_G_EXECUTOR" msprop:Generator_RowChangedName="S_G_EXECUTORRowChanged" msprop:Generator_TablePropName="S_G_EXECUTOR" msprop:Generator_RowDeletingName="S_G_EXECUTORRowDeleting" msprop:Generator_RowChangingName="S_G_EXECUTORRowChanging" msprop:Generator_RowEvHandlerName="S_G_EXECUTORRowChangeEventHandler" msprop:Generator_RowDeletedName="S_G_EXECUTORRowDeleted" msprop:Generator_RowClassName="S_G_EXECUTORRow" msprop:Generator_UserTableName="S_G_EXECUTOR" msprop:Generator_RowEvArgName="S_G_EXECUTORRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="ID_OFFICIAL" msprop:Generator_ColumnVarNameInTable="columnID_OFFICIAL" msprop:Generator_ColumnPropNameInRow="ID_OFFICIAL" msprop:Generator_ColumnPropNameInTable="ID_OFFICIALColumn" msprop:Generator_UserColumnName="ID_OFFICIAL" type="xs:decimal" />
+              <xs:element name="S_G_APPOINTMENT" msprop:Generator_ColumnVarNameInTable="columnS_G_APPOINTMENT" msprop:Generator_ColumnPropNameInRow="S_G_APPOINTMENT" msprop:Generator_ColumnPropNameInTable="S_G_APPOINTMENTColumn" msprop:Generator_UserColumnName="S_G_APPOINTMENT" type="xs:decimal" />
+              <xs:element name="SIGNATURE_FNF" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="SIGNATURE_FNF" msprop:Generator_ColumnVarNameInTable="columnSIGNATURE_FNF" msprop:Generator_ColumnPropNameInTable="SIGNATURE_FNFColumn" msprop:Generator_UserColumnName="SIGNATURE_FNF">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IS_DELETE" msprop:Generator_ColumnVarNameInTable="columnIS_DELETE" msprop:Generator_ColumnPropNameInRow="IS_DELETE" msprop:Generator_ColumnPropNameInTable="IS_DELETEColumn" msprop:Generator_UserColumnName="IS_DELETE" type="xs:decimal" />
+              <xs:element name="DATLAST" msprop:Generator_ColumnVarNameInTable="columnDATLAST" msprop:Generator_ColumnPropNameInRow="DATLAST" msprop:Generator_ColumnPropNameInTable="DATLASTColumn" msprop:Generator_UserColumnName="DATLAST" type="xs:dateTime" />
+              <xs:element name="LOGIN" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="LOGIN" msprop:Generator_ColumnVarNameInTable="columnLOGIN" msprop:Generator_ColumnPropNameInTable="LOGINColumn" msprop:Generator_UserColumnName="LOGIN" type="xs:string" minOccurs="0" />
+              <xs:element name="APP_NAME" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="APP_NAME" msprop:Generator_ColumnVarNameInTable="columnAPP_NAME" msprop:Generator_ColumnPropNameInTable="APP_NAMEColumn" msprop:Generator_UserColumnName="APP_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="ID_USR" msprop:Generator_ColumnVarNameInTable="columnID_USR" msprop:Generator_ColumnPropNameInRow="ID_USR" msprop:Generator_ColumnPropNameInTable="ID_USRColumn" msprop:Generator_UserColumnName="ID_USR" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:S_G_EXECUTOR" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

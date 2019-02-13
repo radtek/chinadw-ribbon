@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C908E08A-E3AC-4D4F-84C8-E07314283617}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>Resources\cubes.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>ARM_Reports</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ARM_Reports</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>ARM_Reports.frmMain</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <Win32Resource>
+    </Win32Resource>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v12.2.Core, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Data.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Interop.Excel, Version=1.3.0.0, Culture=neutral" />
+    <Reference Include="Interop.Office, Version=2.1.0.0, Culture=neutral" />
+    <Reference Include="Interop.VBIDE, Version=5.3.0.0, Culture=neutral" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="MyActionList, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Библиотеки 6.3.3.0\MyActionList.dll</HintPath>
+    </Reference>
+    <Reference Include="ODPUtils, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Библиотеки 6.3.3.0\ODPUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=2.102.2.20, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Ref\Form\Data.cs" />
+    <Compile Include="Model\Protocol.cs" />
+    <Compile Include="Common\CReportsInfo.cs" />
+    <Compile Include="Common\DBSetup.cs" />
+    <Compile Include="Common\frmReportsInfoAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\TfrmGuideInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\TfrmGuideInfo.Designer.cs">
+      <DependentUpon>TfrmGuideInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Ref\Currency.cs" />
+    <Compile Include="Model\Ref\Form\Lines\TotalLine.cs" />
+    <Compile Include="Model\Ref\Form\Lines\FormLine.cs" />
+    <Compile Include="Model\Ref\DataType.cs" />
+    <Compile Include="Model\Ref\Form\FormColumn.cs" />
+    <Compile Include="Model\Ref\PlanAccount.cs" />
+    <Compile Include="Model\Ref\RefType.cs" />
+    <Compile Include="Model\Ref\Template\HistoricRef.cs" />
+    <Compile Include="Model\Ref\Form\InputForm.cs" />
+    <Compile Include="Util\FileParser\frmLoadFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Util\FileParser\frmLoadFile.Designer.cs">
+      <DependentUpon>frmLoadFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\FileParser\FileParser.cs" />
+    <Compile Include="Util\FileParser\FileParserManager.cs" />
+    <Compile Include="Model\InputFile.cs" />
+    <Compile Include="Manuals\CacheManuals.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\DBAdm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DBExtended.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DBSupport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DevExpLocalizationResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\dmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\frmAppErrorDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\frmBaseDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\frmDBBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\frmLogonDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\frmMDIChildForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\frmRegComputer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\frmRegComputerInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\frmUnlockApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\InitApplication.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\MenuData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Utilities.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\win32.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Resources\AppResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TLang\frmSelLanguage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TLang\frmSelLanguage.designer.cs">
+      <DependentUpon>frmSelLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TLang\LangTranslate.cs" />
+    <Compile Include="Util\FileParser\Options\ParserOptions.cs" />
+    <EmbeddedResource Include="Common\frmReportsInfoAdd.resx">
+      <DependentUpon>frmReportsInfoAdd.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\TfrmGuideInfo.resx">
+      <DependentUpon>TfrmGuideInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manuals\CacheManuals.resx">
+      <DependentUpon>CacheManuals.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\dmMain.resx">
+      <DependentUpon>dmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\frmAppErrorDlg.resx">
+      <DependentUpon>frmAppErrorDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\frmBaseDialog.resx">
+      <DependentUpon>frmBaseDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\frmDBBase.resx">
+      <DependentUpon>frmDBBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\frmLogonDialog.resx">
+      <DependentUpon>frmLogonDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\frmMDIChildForm.resx">
+      <DependentUpon>frmMDIChildForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\frmRegComputer.resx">
+      <DependentUpon>frmRegComputer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\frmRegComputerInfo.resx">
+      <DependentUpon>frmRegComputerInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\frmUnlockApplication.resx">
+      <DependentUpon>frmUnlockApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AppResource.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TLang\frmSelLanguage.resx">
+      <DependentUpon>frmSelLanguage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Util\FileParser\frmLoadFile.resx">
+      <DependentUpon>frmLoadFile.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="bin\Debug\ARM Reports.vshost.exe.config" />
+    <None Include="bin\Debug\Excel\Disaggregate.XLT" />
+    <None Include="bin\Debug\Excel\PreCalk.xlt" />
+    <None Include="bin\Debug\Excel\RS_A2.xlt" />
+    <None Include="bin\Debug\Excel\RS_A2_KZ.xlt" />
+    <None Include="bin\Debug\Excel\RS_B0.xlt" />
+    <None Include="bin\Debug\Excel\RS_B0_KZ.XLT" />
+    <None Include="bin\Debug\Excel\RS_B2.xlt" />
+    <None Include="bin\Debug\Excel\RS_B2S.xlt" />
+    <None Include="bin\Debug\Excel\RS_B2S_KZ.xlt" />
+    <None Include="bin\Debug\Excel\RS_B2_KZ.xlt" />
+    <None Include="bin\Debug\Excel\RS_B3.xlt" />
+    <None Include="bin\Debug\Excel\RS_B3_KZ.xlt" />
+    <None Include="bin\Debug\Excel\RS_B4.xlt" />
+    <None Include="bin\Debug\Excel\RS_K1.xlt" />
+    <None Include="bin\Debug\Excel\RS_K1_KZ.xlt" />
+    <None Include="bin\Debug\Excel\RS_K1_KZ_new.xlt" />
+    <None Include="bin\Debug\Excel\RS_K1_new.XLT" />
+    <None Include="bin\Debug\Excel\RS_K2.xlt" />
+    <None Include="bin\Debug\Excel\RS_K2_KZ.xlt" />
+    <None Include="bin\Debug\Excel\RS_K3.xlt" />
+    <None Include="bin\Debug\Excel\RS_K3_KZ.xlt" />
+    <None Include="bin\Debug\Excel\RS_K3_old.xlt" />
+    <None Include="bin\Debug\Excel\RS_P2.XLT" />
+    <None Include="bin\Debug\Excel\RS_P2_KZ.xlt" />
+    <None Include="bin\Debug\Excel\RS_P3.xlt" />
+    <None Include="bin\Debug\Excel\RS_P3_KZ.xlt" />
+    <None Include="bin\Debug\Excel\RS_P4.xlt" />
+    <None Include="bin\Debug\Excel\RS_PR.xlt" />
+    <None Include="bin\Debug\Excel\RS_PR_KZ.xlt" />
+    <None Include="bin\Debug\Excel\RS_V10.xlt" />
+    <None Include="bin\Debug\Excel\RS_V10_KZ.xlt" />
+    <None Include="bin\Debug\Excel\RS_V11.xlt" />
+    <None Include="bin\Debug\Excel\RS_V11_KZ.xlt" />
+    <None Include="bin\Debug\Excel\RS_V12.xlt" />
+    <None Include="bin\Debug\Excel\RS_V12_KZ.xlt" />
+    <None Include="bin\Debug\Excel\RS_V13_P.xlt" />
+    <None Include="bin\Debug\Excel\RS_V13_P_KZ.xlt" />
+    <None Include="bin\Debug\Excel\RS_V13_S.xlt" />
+    <None Include="bin\Debug\Excel\RS_V13_S_KZ.xlt" />
+    <None Include="bin\Debug\Excel\RS_V14.xlt" />
+    <None Include="bin\Debug\Excel\RS_V14_KZ.xlt" />
+    <None Include="bin\Debug\Excel\RS_V3.xlt" />
+    <None Include="bin\Debug\Excel\RS_V3_KZ.xlt" />
+    <None Include="bin\Debug\Excel\RS_V4.xlt" />
+    <None Include="bin\Debug\Excel\RS_V4_KZ.xlt" />
+    <None Include="bin\Debug\Excel\RS_V5.xlt" />
+    <None Include="bin\Debug\Excel\RS_V5_KZ.xlt" />
+    <None Include="bin\Debug\Excel\RS_V6.xlt" />
+    <None Include="bin\Debug\Excel\RS_V6_KZ.xlt" />
+    <None Include="bin\Debug\Excel\RS_V7.xlt" />
+    <None Include="bin\Debug\Excel\RS_V7_KZ.xlt" />
+    <None Include="bin\Debug\Excel\RS_V8.xlt" />
+    <None Include="bin\Debug\Excel\RS_V8_KZ.xlt" />
+    <None Include="bin\Debug\Excel\RS_V9.xlt" />
+    <None Include="bin\Debug\Excel\RS_V9_KZ.xlt" />
+    <None Include="bin\Debug\ORAMTSCP3156.TRC" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\ARM Reports.sln" />
+    <Content Include="bin\Debug\ARM Reports.vshost.sln" />
+    <Content Include="bin\Debug\DevExpress.BonusSkins.v6.3.dll" />
+    <Content Include="bin\Debug\DevExpress.Data.v6.3.dll" />
+    <Content Include="bin\Debug\DevExpress.Tutorials.v6.3.dll" />
+    <Content Include="bin\Debug\DevExpress.Utils.v6.3.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraBars.v6.3.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraEditors.v6.3.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraGrid.v6.3.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraPrinting.v6.3.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraTreeList.v6.3.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraVerticalGrid.v6.3.dll" />
+    <Content Include="bin\Debug\Interop.Excel.dll" />
+    <Content Include="bin\Debug\Interop.Office.dll" />
+    <Content Include="bin\Debug\Interop.VBIDE.dll" />
+    <Content Include="bin\Debug\MagicLocalLibrary.DLL" />
+    <Content Include="bin\Debug\MyActionList.dll" />
+    <Content Include="bin\Debug\ODPUtils.dll" />
+    <Content Include="bin\Debug\Oracle.DataAccess.dll" />
+    <Content Include="bin\Debug\RS_P3_DEFAULT.xml" />
+    <Content Include="bin\Debug\Xml\MsgPanel_DEFAULT.xml" />
+    <Content Include="bin\Debug\Xml\RS_A2.xml" />
+    <Content Include="bin\Debug\Xml\RS_A2_DEFAULT.xml" />
+    <Content Include="bin\Debug\Xml\RS_B0.xml" />
+    <Content Include="bin\Debug\Xml\RS_B0_DEFAULT.xml" />
+    <Content Include="bin\Debug\Xml\RS_B2.xml" />
+    <Content Include="bin\Debug\Xml\RS_B2S.xml" />
+    <Content Include="bin\Debug\Xml\RS_B2S_DEFAULT.xml" />
+    <Content Include="bin\Debug\Xml\RS_B2_DEFAULT.xml" />
+    <Content Include="bin\Debug\Xml\RS_B3.xml" />
+    <Content Include="bin\Debug\Xml\RS_B3_DEFAULT.xml" />
+    <Content Include="bin\Debug\Xml\RS_K1.xml" />
+    <Content Include="bin\Debug\Xml\RS_K1_DEFAULT.xml" />
+    <Content Include="bin\Debug\Xml\RS_K2.xml" />
+    <Content Include="bin\Debug\Xml\RS_K2_DEFAULT.xml" />
+    <Content Include="bin\Debug\Xml\RS_K3.xml" />
+    <Content Include="bin\Debug\Xml\RS_K3_KZ.xml" />
+    <Content Include="bin\Debug\Xml\RS_P2.xml" />
+    <Content Include="bin\Debug\Xml\RS_P2_DEFAULT.xml" />
+    <Content Include="bin\Debug\Xml\RS_P3.xml" />
+    <Content Include="bin\Debug\Xml\RS_P3_DEFAULT.xml" />
+    <Content Include="bin\Debug\Xml\RS_PR.xml" />
+    <Content Include="bin\Debug\Xml\RS_PR_DEFAULT.xml" />
+    <Content Include="bin\Debug\Xml\RS_V3.xml" />
+    <Content Include="bin\Debug\Xml\RS_V4.xml" />
+    <Content Include="bin\Debug\Xml\RS_V5.xml" />
+    <Content Include="bin\Debug\Xml\RS_V6.xml" />
+    <Content Include="bin\Debug\Xml\RS_V7.xml" />
+    <Content Include="bin\Debug\Xml\RS_V8.xml" />
+    <Content Include="MasterDetail.ico" />
+    <Content Include="Resources\cubes.ico" />
+    <Content Include="Resources\Doc-Excel.bmp" />
+    <Content Include="Resources\MasterDetail.ico" />
+    <Content Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\ReturnInfo\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

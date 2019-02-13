@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RepFormDS" targetNamespace="http://tempuri.org/RepFormDS.xsd" xmlns:mstns="http://tempuri.org/RepFormDS.xsd" xmlns="http://tempuri.org/RepFormDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString7" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString7 (Settings)" PropertyReference="ApplicationSettings.ARM_User.Properties.Settings.GlobalReference.Default.ConnectionString7" Provider="System.Data.OracleClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RepFormDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="RepFormDS" msprop:Generator_UserDSName="RepFormDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="G_FORM" msprop:Generator_TableClassName="G_FORMDataTable" msprop:Generator_TableVarName="tableG_FORM" msprop:Generator_TablePropName="G_FORM" msprop:Generator_RowDeletingName="G_FORMRowDeleting" msprop:Generator_RowChangingName="G_FORMRowChanging" msprop:Generator_RowEvHandlerName="G_FORMRowChangeEventHandler" msprop:Generator_RowDeletedName="G_FORMRowDeleted" msprop:Generator_UserTableName="G_FORM" msprop:Generator_RowChangedName="G_FORMRowChanged" msprop:Generator_RowEvArgName="G_FORMRowChangeEvent" msprop:Generator_RowClassName="G_FORMRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="NAME_RU" msprop:Generator_ColumnVarNameInTable="columnNAME_RU" msprop:Generator_ColumnPropNameInRow="NAME_RU" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="NAME_RUColumn" msprop:Generator_UserColumnName="NAME_RU">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1024" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NAME_KZ" msprop:Generator_ColumnVarNameInTable="columnNAME_KZ" msprop:Generator_ColumnPropNameInRow="NAME_KZ" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="NAME_KZColumn" msprop:Generator_UserColumnName="NAME_KZ" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1024" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEMPLATE_RU" msprop:Generator_ColumnVarNameInTable="columnTEMPLATE_RU" msprop:Generator_ColumnPropNameInRow="TEMPLATE_RU" msprop:Generator_ColumnPropNameInTable="TEMPLATE_RUColumn" msprop:Generator_UserColumnName="TEMPLATE_RU" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="TEMPLATE_KZ" msprop:Generator_ColumnVarNameInTable="columnTEMPLATE_KZ" msprop:Generator_ColumnPropNameInRow="TEMPLATE_KZ" msprop:Generator_ColumnPropNameInTable="TEMPLATE_KZColumn" msprop:Generator_UserColumnName="TEMPLATE_KZ" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="TYPE_ID" msprop:Generator_ColumnVarNameInTable="columnTYPE_ID" msprop:Generator_ColumnPropNameInRow="TYPE_ID" msprop:Generator_ColumnPropNameInTable="TYPE_IDColumn" msprop:Generator_UserColumnName="TYPE_ID" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CODE" msprop:Generator_ColumnVarNameInTable="columnCODE" msprop:Generator_ColumnPropNameInRow="CODE" msprop:Generator_ColumnPropNameInTable="CODEColumn" msprop:Generator_UserColumnName="CODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1024" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="REPORT_KND" msprop:Generator_ColumnVarNameInTable="columnREPORT_KND" msprop:Generator_ColumnPropNameInRow="REPORT_KND" msprop:Generator_ColumnPropNameInTable="REPORT_KNDColumn" msprop:Generator_UserColumnName="REPORT_KND" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:G_FORM" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="UserDS" targetNamespace="http://tempuri.org/UserDS.xsd" xmlns:mstns="http://tempuri.org/UserDS.xsd" xmlns="http://tempuri.org/UserDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString9" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString9 (Settings)" PropertyReference="ApplicationSettings.ARM_User.Properties.Settings.GlobalReference.Default.ConnectionString9" Provider="System.Data.OracleClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="UserDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="UserDS" msprop:Generator_UserDSName="UserDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="UserDS" msprop:Generator_TableClassName="UserDSDataTable" msprop:Generator_TableVarName="tableUserDS" msprop:Generator_RowChangedName="UserDSRowChanged" msprop:Generator_TablePropName="_UserDS" msprop:Generator_RowDeletingName="UserDSRowDeleting" msprop:Generator_RowChangingName="UserDSRowChanging" msprop:Generator_RowEvHandlerName="UserDSRowChangeEventHandler" msprop:Generator_RowDeletedName="UserDSRowDeleted" msprop:Generator_RowClassName="UserDSRow" msprop:Generator_UserTableName="UserDS" msprop:Generator_RowEvArgName="UserDSRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OFFICIAL" msprop:Generator_ColumnVarNameInTable="columnOFFICIAL" msprop:Generator_ColumnPropNameInRow="OFFICIAL" msprop:Generator_ColumnPropNameInTable="OFFICIALColumn" msprop:Generator_UserColumnName="OFFICIAL" type="xs:decimal" />
+              <xs:element name="USER_NAME" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="USER_NAME" msprop:Generator_ColumnVarNameInTable="columnUSER_NAME" msprop:Generator_ColumnPropNameInTable="USER_NAMEColumn" msprop:Generator_UserColumnName="USER_NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NAME" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="NAME" msprop:Generator_ColumnVarNameInTable="columnNAME" msprop:Generator_ColumnPropNameInTable="NAMEColumn" msprop:Generator_UserColumnName="NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DEPT" msprop:Generator_ColumnVarNameInTable="columnDEPT" msprop:Generator_ColumnPropNameInRow="DEPT" msprop:Generator_ColumnPropNameInTable="DEPTColumn" msprop:Generator_UserColumnName="DEPT" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:UserDS" />
+      <xs:field xpath="mstns:OFFICIAL" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,1034 @@
+﻿namespace ARM_User.DisplayLayer.Common
+{
+    partial class ProcessListForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProcessListForm));
+            this.btnShre = new DevExpress.XtraBars.BarSubItem();
+            this.btnShareReg = new DevExpress.XtraBars.BarButtonItem();
+            this.btnShareChange = new DevExpress.XtraBars.BarButtonItem();
+            this.btnShareChageDoc = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnShareRepPla = new DevExpress.XtraBars.BarButtonItem();
+            this.btnShareCancel = new DevExpress.XtraBars.BarButtonItem();
+            this.btnShareDenialReg = new DevExpress.XtraBars.BarButtonItem();
+            this.btnShareDenialChange = new DevExpress.XtraBars.BarButtonItem();
+            this.btnShareDenialRepPla = new DevExpress.XtraBars.BarButtonItem();
+            this.btnShareDenialCancel = new DevExpress.XtraBars.BarButtonItem();
+            this.btnShareSuspendRepPla = new DevExpress.XtraBars.BarButtonItem();
+            this.btnShareCancelSuspendRepPla = new DevExpress.XtraBars.BarButtonItem();
+            this.btnShareChangeRepPla = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockingMenuItem1 = new DevExpress.XtraBars.BarDockingMenuItem();
+            this.barListItem1 = new DevExpress.XtraBars.BarListItem();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.MainActionList = new BSB.Actions.MyActionList(this.components);
+            this.aProcessknd = new BSB.Actions.MyAction(this.components);
+            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.tvMenu = new System.Windows.Forms.TreeView();
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.btnBond = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();            
+            this.btnBondOpReg = new DevExpress.XtraBars.BarButtonItem();
+            this.btnOpReg = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBondChange = new DevExpress.XtraBars.BarButtonItem();
+            this.btnOpChange = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBondOpChange = new DevExpress.XtraBars.BarButtonItem();
+            this.btnIssueReport = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRpmReport = new DevExpress.XtraBars.BarButtonItem();           
+            this.btnRegAnnul = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBondRefuse = new DevExpress.XtraBars.BarSubItem();
+            this.btnBondRegRefuse = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRegOpRefuse = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBondOpRefuse = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBondChangeRegRefuse = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRegOpChangeRefuse = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBondOpChangeRefuse = new DevExpress.XtraBars.BarButtonItem();
+            this.btnReportRefuse = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRefuseConfirmRpmRep = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAnnulRefuse = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBondRepCert = new DevExpress.XtraBars.BarButtonItem();
+          
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.gridID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridPROCESS_NAME = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridDBEGIN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridNextCs = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bondBS = new System.Windows.Forms.BindingSource(this.components);
+            this.gridName_ru = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridUser = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnOpen = new DevExpress.XtraBars.BarButtonItem();
+            this.btnConfirm = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDestroyProcess = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPai = new DevExpress.XtraBars.BarSubItem();
+            this.btnRegPai = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPaiChange = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPaiReport = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPaiExtension = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPaiIssuerReport = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPaiRepCert = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPaiClose = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPaiRepCert = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPaiRefuse = new DevExpress.XtraBars.BarSubItem();
+            this.btnPaiRegRefuse = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPaiChangeRefuse = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPaiExtensionRefuse = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPaiRepCertRefuse = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPaiReportRefuse = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPaiCloseRefuse = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSuspension = new DevExpress.XtraBars.BarButtonItem();
+            this.ConfirmBS = new System.Windows.Forms.BindingSource(this.components);
+            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();           
+            this.btnBondRefuse = new DevExpress.XtraBars.BarSubItem();
+            this.btnKdrReg = new DevExpress.XtraBars.BarButtonItem();
+            this.btnKdrChange = new DevExpress.XtraBars.BarButtonItem();
+            this.btnKdrRepPla = new DevExpress.XtraBars.BarButtonItem();
+            this.btnKdrRepPay = new DevExpress.XtraBars.BarButtonItem();
+            this.btnKdrChangeDoc = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDenial = new DevExpress.XtraBars.BarSubItem();
+            this.btnKdrDenialReg = new DevExpress.XtraBars.BarButtonItem();
+            this.btnKdrDenialChange = new DevExpress.XtraBars.BarButtonItem();
+            this.btnKdrDenialRepPla = new DevExpress.XtraBars.BarButtonItem();
+            this.btnKdrDenialRepPay = new DevExpress.XtraBars.BarButtonItem();
+            this.btnKdrDenialCancel = new DevExpress.XtraBars.BarButtonItem();
+            this.btnKdrCancel = new DevExpress.XtraBars.BarButtonItem();
+            this.btnKdrSuspendRep = new DevExpress.XtraBars.BarButtonItem();
+            this.btnKdrDenialSupend = new DevExpress.XtraBars.BarButtonItem();
+            ((System.ComponentModel.ISupportInitialize)(this.gridMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridMainView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainBS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bondBS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConfirmBS)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // gridMain
+            // 
+            this.gridMain.Size = new System.Drawing.Size(852, 584);
+            this.gridMain.DoubleClick += new System.EventHandler(this.gridMain_DoubleClick);
+            // 
+            // gridMainView
+            // 
+            this.gridMainView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridID,
+            this.gridPROCESS_NAME,
+            this.gridName_ru,
+            this.gridDBEGIN,
+            this.gridUser,
+            this.gridNextCs});
+            this.gridMainView.OptionsBehavior.AllowIncrementalSearch = true;
+            this.gridMainView.OptionsBehavior.Editable = false;
+            this.gridMainView.OptionsDetail.EnableMasterViewMode = false;
+            this.gridMainView.OptionsView.ColumnAutoWidth = false;
+            this.gridMainView.OptionsView.ShowFooter = true;
+            this.gridMainView.OptionsView.ShowGroupPanel = false;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRefresh_ItemClick);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 615);
+            this.barDockControlBottom.Size = new System.Drawing.Size(852, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 31);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 584);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.Location = new System.Drawing.Point(852, 31);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 584);
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.Size = new System.Drawing.Size(852, 31);
+            // 
+            // barManager
+            // 
+            this.barManager.DockManager = this.dockManager1;
+            this.barManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.btnShre,
+            this.barDockingMenuItem1,
+            this.barListItem1,
+            this.barSubItem1,
+            this.btnBond,
+            this.barButtonItem2,
+            this.btnBondChange,
+            this.btnShareReg,
+            this.btnShareChange,
+            this.btnBondOpReg,
+            this.btnOpReg,
+            this.btnShareChageDoc,
+            this.btnOpen,
+            this.btnConfirm,
+            this.btnDestroyProcess,
+            this.btnOpChange,
+            this.barButtonItem5,
+            this.btnIssueReport,
+            this.btnRpmReport,
+            this.btnRegAnnul,
+            this.barButtonItem4,
+            this.btnBondRefuse,
+            this.btnBondRegRefuse,
+            this.btnRegOpRefuse,
+            this.btnBondOpRefuse,
+            this.btnBondChangeRegRefuse,
+            this.btnRegOpChangeRefuse,
+            this.btnBondOpChangeRefuse,
+            this.btnReportRefuse,
+            this.btnAnnulRefuse,
+            this.btnRefuseConfirmRpmRep,
+            this.btnBondRepCert,
+            this.btnPai,
+            this.btnSuspension,
+            this.barButtonItem8,
+            this.barButtonItem7,
+            this.barSubItem3,
+            this.btnRegPai,
+            this.btnPaiChange,
+            this.btnPaiExtension,
+            this.btnPaiReport,
+            
+            this.btnPaiIssuerReport,
+            this.btnPaiRepCert,
+            this.btnPaiClose,
+            this.barSubItem4,
+            this.btnBondOpChange,
+            this.btnSuspension,
+            this.btnPaiRegRefuse,
+            this.btnPaiChangeRefuse,
+            this.btnPaiExtensionRefuse,
+            this.btnPaiRepCertRefuse,
+            this.btnPaiCloseRefuse,
+            this.btnShareCancel,
+            this.btnShareDenialReg,
+            this.btnShareDenialChange,
+            this.btnShareDenialRepPla,
+            this.btnShareDenialCancel,
+            this.btnShareSuspendRepPla,
+            this.btnShareCancelSuspendRepPla,
+            this.btnShareChangeRepPla,
+            this.barButtonItem13,
+            this.barButtonItem14,
+            this.barSubItem2,
+            this.btnBondRefuse,
+            this.btnKdrReg,
+            this.btnKdrChange,
+            this.btnKdrRepPla,
+            this.btnKdrRepPay,
+            this.btnKdrChangeDoc,
+            this.btnDenial,
+            this.btnKdrDenialReg,
+            this.btnKdrDenialChange,
+            this.btnKdrDenialRepPla,
+            this.btnKdrDenialRepPay,
+            this.btnKdrCancel,
+            this.btnKdrDenialCancel,
+            this.btnKdrSuspendRep,
+            this.btnKdrDenialSupend});
+            this.barManager.MaxItemId = 59;
+            // 
+            // barMenu
+            // 
+            this.barMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnShre),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnBond),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnBondRefuse),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnOpen, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnConfirm, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnDestroyProcess, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            // 
+            // btnShre
+            // 
+            this.btnShre.Caption = "Акций";
+            this.btnShre.Id = 4;
+            this.btnShre.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnShareReg),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnShareChange),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnShareChageDoc),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnShareRepPla),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnShareCancel),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnShareDenialReg),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnShareDenialChange),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnShareDenialRepPla),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnShareDenialCancel),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnShareSuspendRepPla),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnShareCancelSuspendRepPla),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnShareChangeRepPla)});
+            this.btnShre.Name = "btnShre";
+            // 
+            // btnShareReg
+            // 
+            this.btnShareReg.Caption = "Регистрация выпуска акций";
+            this.btnShareReg.Id = 15;
+            this.btnShareReg.Name = "btnShareReg";
+            this.btnShareReg.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnShareReg_ItemClick);
+            // 
+            // btnShareChange
+            // 
+            this.btnShareChange.Caption = "Регистрация изменений в проспект выпуска акций";
+            this.btnShareChange.Id = 16;
+            this.btnShareChange.Name = "btnShareChange";
+            this.btnShareChange.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnShareChange_ItemClick);
+            // 
+            // btnShareChageDoc
+            // 
+            this.btnShareChageDoc.Caption = "Замена свидетельства о регистрации выпуска";
+            this.btnShareChageDoc.Id = 19;
+            this.btnShareChageDoc.Name = "btnShareChageDoc";
+            this.btnShareChageDoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnShareChageDoc_ItemClick);
+            // 
+            // BtnShareRepPla
+            // 
+            this.BtnShareRepPla.Caption = "Утверждение отчета об итогах размещения акций";
+            this.BtnShareRepPla.Id = 23;
+            this.BtnShareRepPla.Name = "BtnShareRepPla";
+            this.BtnShareRepPla.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnShareRepPla_ItemClick);
+            // 
+            // btnShareCancel
+            // 
+            this.btnShareCancel.Caption = "Аннулирование выпуска акций";
+            this.btnShareCancel.Id = 24;
+            this.btnShareCancel.Name = "btnShareCancel";
+            this.btnShareCancel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnShareCancel_ItemClick_1);
+            // 
+            // btnShareDenialReg
+            // 
+            this.btnShareDenialReg.Caption = "Отказ в регистрации выпуска акций ";
+            this.btnShareDenialReg.Id = 25;
+            this.btnShareDenialReg.Name = "btnShareDenialReg";
+            this.btnShareDenialReg.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnShareDenialReg_ItemClick);
+            // 
+            // btnShareDenialChange
+            // 
+            this.btnShareDenialChange.Caption = "Отказ в регистрации изменений в проспект";
+            this.btnShareDenialChange.Id = 26;
+            this.btnShareDenialChange.Name = "btnShareDenialChange";
+            this.btnShareDenialChange.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnShareDenialChange_ItemClick);
+            // 
+            // btnShareDenialRepPla
+            // 
+            this.btnShareDenialRepPla.Caption = "Отказ в утверждении отчета об итогах размещения акций";
+            this.btnShareDenialRepPla.Id = 27;
+            this.btnShareDenialRepPla.Name = "btnShareDenialRepPla";
+            this.btnShareDenialRepPla.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnShareDenialRepPla_ItemClick);
+            // 
+            // btnShareDenialCancel
+            // 
+            this.btnShareDenialCancel.Caption = "Отказ в аннулировании выпуска";
+            this.btnShareDenialCancel.Id = 28;
+            this.btnShareDenialCancel.Name = "btnShareDenialCancel";
+            this.btnShareDenialCancel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnShareDenialCancel_ItemClick);
+            // 
+            // btnShareSuspendRepPla
+            // 
+            this.btnShareSuspendRepPla.Caption = "Приостановление размещения либо обращения акций";
+            this.btnShareSuspendRepPla.Id = 29;
+            this.btnShareSuspendRepPla.Name = "btnShareSuspendRepPla";
+            this.btnShareSuspendRepPla.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnShareSuspendRepPla_ItemClick);
+            // 
+            // btnShareCancelSuspendRepPla
+            // 
+            this.btnShareCancelSuspendRepPla.Caption = "Отмена решения о приостановлении размещения";
+            this.btnShareCancelSuspendRepPla.Id = 30;
+            this.btnShareCancelSuspendRepPla.Name = "btnShareCancelSuspendRepPla";
+            this.btnShareCancelSuspendRepPla.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnShareCancelSuspendRepPla_ItemClick);
+            // 
+            // btnShareChangeRepPla
+            // 
+            this.btnShareChangeRepPla.Caption = "Внесение изменений в отчет в связи с увеличением количества размещенных акций";
+            this.btnShareChangeRepPla.Id = 31;
+            this.btnShareChangeRepPla.Name = "btnShareChangeRepPla";
+            this.btnShareChangeRepPla.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnShareChangeRepPla_ItemClick);
+            // 
+            // barDockingMenuItem1
+            // 
+            this.barDockingMenuItem1.Caption = "barDockingMenuItem1";
+            this.barDockingMenuItem1.Id = 5;
+            this.barDockingMenuItem1.Name = "barDockingMenuItem1";
+            // 
+            // barListItem1
+            // 
+            this.barListItem1.Caption = "barListItem1";
+            this.barListItem1.Id = 7;
+            this.barListItem1.Name = "barListItem1";
+            // 
+            // dockManager1
+            // 
+            this.dockManager1.DockingOptions.HideImmediatelyOnAutoHide = true;
+            this.dockManager1.Form = this;
+            this.dockManager1.MenuManager = this.barManager;
+            this.dockManager1.TopZIndexControls.AddRange(new string[] {
+            "DevExpress.XtraBars.BarDockControl",
+            "DevExpress.XtraBars.StandaloneBarDockControl",
+            "System.Windows.Forms.StatusBar",
+            "System.Windows.Forms.MenuStrip",
+            "System.Windows.Forms.StatusStrip",
+            "DevExpress.XtraBars.Ribbon.RibbonStatusBar",
+            "DevExpress.XtraBars.Ribbon.RibbonControl"});
+            // 
+            // MainActionList
+            // 
+            this.MainActionList.MyActions.AddRange(new BSB.Actions.MyAction[] {
+            this.aProcessknd});
+            // 
+            // aProcessknd
+            // 
+            this.aProcessknd.Caption = null;
+            this.aProcessknd.Category = null;
+            this.aProcessknd.Code = "aProcessknd";
+            this.aProcessknd.Enabled = true;
+            this.aProcessknd.MakeDisabledOnExec = true;
+            // 
+            // tvMenu
+            // 
+            this.tvMenu.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tvMenu.LineColor = System.Drawing.Color.Empty;
+            this.tvMenu.Location = new System.Drawing.Point(611, 413);
+            this.tvMenu.Name = "tvMenu";
+            this.tvMenu.Size = new System.Drawing.Size(212, 205);
+            this.tvMenu.TabIndex = 8;
+            // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Caption = "barSubItem1";
+            this.barSubItem1.Id = 8;
+            this.barSubItem1.Name = "barSubItem1";
+            // 
+            // btnBond
+            // 
+            this.btnBond.Caption = "Облигаций";
+            this.btnBond.Id = 12;
+            this.btnBond.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnBondOpReg),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnOpReg),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnBondChange),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnOpChange),            
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnBondOpChange),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnIssueReport),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnRpmReport),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnRegAnnul),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnBondRefuse),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnBondRepCert),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnSuspension))});
+
+            
+            this.btnBond.Name = "btnBond";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Регистрация выпуска облигаций";
+            this.barButtonItem2.Id = 13;
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
+            // btnBondOpReg
+            // 
+            this.btnBondOpReg.Caption = "Регистрация выпуска облигаций в рамках ОП";
+            this.btnBondOpReg.Id = 17;
+            this.btnBondOpReg.Name = "btnBondOpReg";
+            this.btnBondOpReg.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBondOpReg_ItemClick);
+            // 
+            // btnOpReg
+            // 
+            this.btnOpReg.Caption = "Регистрация выпуска облигационной программы";
+            this.btnOpReg.Id = 18;
+            this.btnOpReg.Name = "btnOpReg";
+            this.btnOpReg.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnOpReg_ItemClick);
+            // 
+            // btnBondChange
+            // 
+            this.btnBondChange.Caption = "Региситрация изменений проспекта выпуска облигаций";
+            this.btnBondChange.Id = 14;
+            this.btnBondChange.Name = "btnBondChange";
+            this.btnBondChange.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // btnOpChange
+            // 
+            this.btnOpChange.Caption = "Регистрация изменений в проспект выпуска облигационной программы";
+            this.btnOpChange.Id = 23;
+            this.btnOpChange.Name = "btnOpChange";
+            this.btnOpChange.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnOpChange_ItemClick_1);
+            // 
+            // btnBondOpChange
+            // 
+            this.btnBondOpChange.Caption = "Регистрация изменений в проспект выпуска облигаций в пределах ОП";
+            this.btnBondOpChange.Id = 55;
+            this.btnBondOpChange.Name = "btnBondOpChange";
+            this.btnBondOpChange.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBondOpChange_ItemClick);
+            // 
+            // btnIssueReport
+            // 
+            this.btnIssueReport.Caption = "Регистрация отчета об итогах размещения облигаций ";
+            this.btnIssueReport.Id = 24;
+            this.btnIssueReport.Name = "btnIssueReport";
+            this.btnIssueReport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnIssueReport_ItemClick);
+            // 
+            // btnRpmReport
+            // 
+            this.btnRpmReport.Caption = "Регистрация отчета об итогах погашения облигаций";
+            this.btnRpmReport.Id = 25;
+            this.btnRpmReport.Name = "btnRpmReport";
+            this.btnRpmReport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRpmReport_ItemClick);
+            // 
+            // btnRegAnnul
+            // 
+            this.btnRegAnnul.Caption = "Регистрация аннулирования выпуска облигаций";
+            this.btnRegAnnul.Id = 26;
+            this.btnRegAnnul.Name = "btnRegAnnul";
+            this.btnRegAnnul.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRegAnnul_ItemClick);
+            // 
+            // btnBondRefuse
+            // 
+            this.btnBondRefuse.Caption = "Регистрация отказов";
+            this.btnBondRefuse.Id = 28;
+            this.btnBondRefuse.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnBondRegRefuse),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnRegOpRefuse),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnBondOpRefuse),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnBondChangeRegRefuse),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnRegOpChangeRefuse),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnBondOpChangeRefuse),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnReportRefuse),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnRefuseConfirmRpmRep),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAnnulRefuse)});
+            this.btnBondRefuse.Name = "btnBondRefuse";
+            // 
+            // btnBondRegRefuse
+            // 
+            this.btnBondRegRefuse.Caption = "Отказ в регистрации проспекта выпуска облигаций";
+            this.btnBondRegRefuse.Id = 29;
+            this.btnBondRegRefuse.Name = "btnBondRegRefuse";
+            this.btnBondRegRefuse.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBondRegRefuse_ItemClick);
+            // 
+            // btnRegOpRefuse
+            // 
+            this.btnRegOpRefuse.Caption = "Отказ в регистрации проспекта облигационной программы";
+            this.btnRegOpRefuse.Id = 30;
+            this.btnRegOpRefuse.Name = "btnRegOpRefuse";
+            this.btnRegOpRefuse.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRegOpRefuse_ItemClick);
+            // 
+            // btnBondOpRefuse
+            // 
+            this.btnBondOpRefuse.Caption = "Отказ в регистрации проспекта выпуска облигаций, в пределах облигационной програм" +
+    "мы";
+            this.btnBondOpRefuse.Id = 32;
+            this.btnBondOpRefuse.Name = "btnBondOpRefuse";
+            this.btnBondOpRefuse.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBondOpRefuse_ItemClick);
+            // 
+            // btnBondChangeRegRefuse
+            // 
+            this.btnBondChangeRegRefuse.Caption = "Отказ в регистрации изменений в проспект выпуска облигаций";
+            this.btnBondChangeRegRefuse.Id = 33;
+            this.btnBondChangeRegRefuse.Name = "btnBondChangeRegRefuse";
+            this.btnBondChangeRegRefuse.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBondChangeRegRefuse_ItemClick);
+            // 
+            // btnRegOpChangeRefuse
+            // 
+            this.btnRegOpChangeRefuse.Caption = "Отказ в регистрации изменений в проспект облигационной программы";
+            this.btnRegOpChangeRefuse.Id = 34;
+            this.btnRegOpChangeRefuse.Name = "btnRegOpChangeRefuse";
+            this.btnRegOpChangeRefuse.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRegOpChangeRefuse_ItemClick);
+            // 
+            // btnBondOpChangeRefuse
+            // 
+            this.btnBondOpChangeRefuse.Caption = "Отказ в регистрации изменений в проспект выпуска облигаций, в пределах облигацион" +
+    "ной программы";
+            this.btnBondOpChangeRefuse.Id = 35;
+            this.btnBondOpChangeRefuse.Name = "btnBondOpChangeRefuse";
+            this.btnBondOpChangeRefuse.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBondOpChangeRefuse_ItemClick);
+            // 
+            // btnReportRefuse
+            // 
+            this.btnReportRefuse.Caption = "Отказ в утверждении отчета об итогах размещения облигаций";
+            this.btnReportRefuse.Id = 36;
+            this.btnReportRefuse.Name = "btnReportRefuse";
+            this.btnReportRefuse.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReportRefuse_ItemClick);
+            // 
+            // btnRefuseConfirmRpmRep
+            // 
+            this.btnRefuseConfirmRpmRep.Caption = "Отказ в утверждении отчета об итогах погашения облигаций";
+            this.btnRefuseConfirmRpmRep.Id = 38;
+            this.btnRefuseConfirmRpmRep.Name = "btnRefuseConfirmRpmRep";
+            this.btnRefuseConfirmRpmRep.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRefuseConfirmRpmRep_ItemClick);
+            // 
+            // btnAnnulRefuse
+            // 
+            this.btnAnnulRefuse.Caption = "Отказ в аннулировании выпуска облигаций";
+            this.btnAnnulRefuse.Id = 37;
+            this.btnAnnulRefuse.Name = "btnAnnulRefuse";
+            this.btnAnnulRefuse.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAnnulRefuse_ItemClick);
+            // 
+            // btnBondRepCert
+            // 
+            this.btnBondRepCert.Caption = "Регистрация замены свидетельства о регистрации выпуска облигаций";
+            this.btnBondRepCert.Id = 39;
+            this.btnBondRepCert.Name = "btnBondRepCert";
+            this.btnBondRepCert.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBondRepCert_ItemClick);
+            // 
+            // btnSuspension
+            // 
+            this.btnSuspension.Caption = "Приостановление размещения облигаций";
+            this.btnSuspension.Id = 40;
+            this.btnSuspension.Name = "btnSuspension";
+            this.btnSuspension.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSuspension_ItemClick);
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "Отмена решения о приостановлении размещения облигаций ";
+            this.barButtonItem8.Id = 41;
+            this.barButtonItem8.Name = "barButtonItem8";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Регистрация отказов";
+            this.barButtonItem4.Id = 27;
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+
+            // gridID
+            // 
+            this.gridID.Caption = "ID";
+            this.gridID.FieldName = "Id";
+            this.gridID.Name = "gridID";
+            // 
+            // gridPROCESS_NAME
+            // 
+            this.gridPROCESS_NAME.Caption = "Процесс";
+            this.gridPROCESS_NAME.FieldName = "Processknd.Name";
+            this.gridPROCESS_NAME.Name = "gridPROCESS_NAME";
+            this.gridPROCESS_NAME.Visible = true;
+            this.gridPROCESS_NAME.VisibleIndex = 0;
+            this.gridPROCESS_NAME.Width = 167;
+            // 
+            // gridDBEGIN
+            // 
+            this.gridDBEGIN.Caption = "Дата, время";
+            this.gridDBEGIN.DisplayFormat.FormatString = "DateTime \"dd.MM.yyyy HH:mm:ss\"";
+            this.gridDBEGIN.FieldName = "Dbegin";
+            this.gridDBEGIN.Name = "gridDBEGIN";
+            this.gridDBEGIN.Visible = true;
+            this.gridDBEGIN.VisibleIndex = 3;
+            this.gridDBEGIN.Width = 100;
+            // 
+            // gridNextCs
+            // 
+            this.gridNextCs.Caption = "Ожидаемое утверждение";
+            this.gridNextCs.FieldName = "Confirmobject.Next_cs_name";
+            this.gridNextCs.Name = "gridNextCs";
+            this.gridNextCs.Visible = true;
+            this.gridNextCs.VisibleIndex = 4;
+            // 
+            // gridName_ru
+            // 
+            this.gridName_ru.Caption = "Обьект обработки";
+            this.gridName_ru.FieldName = "Name_ru";
+            this.gridName_ru.Name = "gridName_ru";
+            this.gridName_ru.Visible = true;
+            this.gridName_ru.VisibleIndex = 1;
+            this.gridName_ru.Width = 123;
+            // 
+            // gridUser
+            // 
+            this.gridUser.Caption = "Инициатор процесса";
+            this.gridUser.FieldName = "EditUser";
+            this.gridUser.Name = "gridUser";
+            this.gridUser.Visible = true;
+            this.gridUser.VisibleIndex = 2;
+            // 
+            // btnOpen
+            // 
+            this.btnOpen.Caption = "Открыть";
+            this.btnOpen.Glyph = ((System.Drawing.Image)(resources.GetObject("btnOpen.Glyph")));
+            this.btnOpen.Id = 20;
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.gridMain_DoubleClick);
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Caption = "Утвердить";
+            this.btnConfirm.Glyph = ((System.Drawing.Image)(resources.GetObject("btnConfirm.Glyph")));
+            this.btnConfirm.Id = 21;
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnConfirm_ItemClick);
+            // 
+            // btnDestroyProcess
+            // 
+            this.btnDestroyProcess.Caption = "Уничтожить";
+            this.btnDestroyProcess.Glyph = ((System.Drawing.Image)(resources.GetObject("btnDestroyProcess.Glyph")));
+            this.btnDestroyProcess.Id = 22;
+            this.btnDestroyProcess.Name = "btnDestroyProcess";
+            this.btnDestroyProcess.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
+            // 
+            // btnPai
+            // 
+            this.btnPai.Caption = "Паи   ";
+            this.btnPai.Id = 41;
+            this.btnPai.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnRegPai),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnPaiChange),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnPaiReport),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnPaiExtension),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnPaiIssuerReport),            
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnPaiClose),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnPaiRepCert),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnPaiRefuse)});
+            this.barSubItem3.Name = "btnPai";
+            // 
+            // btnRegPai
+            // 
+            this.btnRegPai.Caption = "Регистрация выпуска паев";
+            this.btnRegPai.Id = 44;
+            this.btnRegPai.Name = "btnRegPai";
+            this.btnRegPai.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRegPai_ItemClick);
+            // 
+            // btnPaiChange
+            // 
+            this.btnPaiChange.Caption = "Согласование изменений в Правила выпуска паев";
+            this.btnPaiChange.Id = 45;
+            this.btnPaiChange.Name = "btnPaiChange";
+            this.btnPaiChange.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPaiChange_ItemClick);
+            // 
+            // btnPaiReport
+            // 
+            this.btnPaiReport.Caption = "Утверждение отчета об итогах размещения паев";
+            this.btnPaiReport.Id = 46;
+            this.btnPaiReport.Name = "btnPaiReport";
+            // 
+            // btnPaiExpension
+            // 
+            this.btnPaiExpension.Caption = "Продление срока первоначального размещения паев";
+            this.btnPaiExpension.Id = 47;
+            this.btnPaiExpension.Name = "btnPaiExpension";
+            // 
+            // btnPaiRepCert
+            // 
+            this.btnPaiRepCert.Caption = "Замена свидетельства о регистрации выпуска";
+            this.btnPaiRepCert.Id = 48;
+            this.btnPaiRepCert.Name = "btnPaiRepCert";
+            // 
+            // btnPaiClose
+            // 
+            this.btnPaiClose.Caption = "Регистрация прекращения существования ПИФ";
+            this.btnPaiClose.Id = 49;
+            this.btnPaiClose.Name = "btnPaiClose";
+            // 
+            // barSubItem4
+            // 
+            this.barSubItem4.Caption = "Отказы";
+            this.barSubItem4.Id = 50;
+            this.barSubItem4.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnPaiRegRefuse),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnPaiChangeRefuse),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnPaiExtensionRefuse),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnPaiRepCertRefuse),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnPaiCloseRefuse)});
+            this.barSubItem4.Name = "barSubItem4";
+            // 
+            // btnPaiRegRefuse
+            // 
+            this.btnPaiRegRefuse.Caption = "Отказ в регистрации выпуска паев";
+            this.btnPaiRegRefuse.Id = 51;
+            this.btnPaiRegRefuse.Name = "btnPaiRegRefuse";
+            // 
+            // btnPaiChangeRefuse
+            // 
+            this.btnPaiChangeRefuse.Caption = "Отказ в согласовании изменений в правила ПИФ";
+            this.btnPaiChangeRefuse.Id = 52;
+            this.btnPaiChangeRefuse.Name = "btnPaiChangeRefuse";
+            // 
+            // btnPaiExtensionRefuse
+            // 
+            this.btnPaiExtensionRefuse.Caption = "Отказ в продлении срока первоначального размещения паев";
+            this.btnPaiExtensionRefuse.Id = 53;
+            this.btnPaiExtensionRefuse.Name = "btnPaiExtensionRefuse";
+            // 
+            // btnPaiRepCertRefuse
+            // 
+            this.btnPaiRepCertRefuse.Caption = "Отказ в утверждении отчета об итогах размещения паев";
+            this.btnPaiRepCertRefuse.Id = 54;
+            this.btnPaiRepCertRefuse.Name = "btnPaiRepCertRefuse";
+            // 
+            // btnPaiCloseRefuse
+            // 
+            this.btnPaiCloseRefuse.Caption = "Отказ в принятии к сведению информации о прекращении существования ПИФ";
+            this.btnPaiCloseRefuse.Id = 55;
+            this.btnPaiCloseRefuse.Name = "btnPaiCloseRefuse";
+
+            // barButtonItem13
+            // 
+            this.barButtonItem13.Caption = "КДР";
+            this.barButtonItem13.Id = 32;
+            this.barButtonItem13.Name = "barButtonItem13";
+            // 
+            // barButtonItem14
+            // 
+            this.barButtonItem14.Caption = "barButtonItem14";
+            this.barButtonItem14.Id = 33;
+            this.barButtonItem14.Name = "barButtonItem14";
+            // 
+            // barSubItem2
+            // 
+            this.barSubItem2.Caption = "КДР";
+            this.barSubItem2.Id = 34;
+            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnKdrReg),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnKdrChange),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnKdrRepPla),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnKdrRepPay),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnKdrChangeDoc),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDenial),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnKdrCancel),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnKdrSuspendRep),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnKdrDenialSupend)});
+            this.barSubItem2.Name = "barSubItem2";
+            // 
+            // btnKdrReg
+            // 
+            this.btnKdrReg.Caption = "Регистрация выпуска КДР";
+            this.btnKdrReg.Id = 35;
+            this.btnKdrReg.Name = "btnKdrReg";
+            this.btnKdrReg.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKdrReg_ItemClick);
+            // 
+            // btnKdrChange
+            // 
+            this.btnKdrChange.Caption = "Регистрация изменений в проспект выпуска КДР";
+            this.btnKdrChange.Id = 36;
+            this.btnKdrChange.Name = "btnKdrChange";
+            this.btnKdrChange.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKdrChange_ItemClick);
+            // 
+            // btnKdrRepPla
+            // 
+            this.btnKdrRepPla.Caption = "Утверждение отчета об итогах размещения КДР";
+            this.btnKdrRepPla.Id = 37;
+            this.btnKdrRepPla.Name = "btnKdrRepPla";
+            this.btnKdrRepPla.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKdrRepPla_ItemClick);
+            // 
+            // btnKdrRepPay
+            // 
+            this.btnKdrRepPay.Caption = "Утверждение отчета об итогах погашения КДР";
+            this.btnKdrRepPay.Id = 38;
+            this.btnKdrRepPay.Name = "btnKdrRepPay";
+            this.btnKdrRepPay.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKdrRepPay_ItemClick);
+            // 
+            // btnKdrChangeDoc
+            // 
+            this.btnKdrChangeDoc.Caption = "Замена свидетельства о регистрации выпуска КДР";
+            this.btnKdrChangeDoc.Id = 39;
+            this.btnKdrChangeDoc.Name = "btnKdrChangeDoc";
+            this.btnKdrChangeDoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKdrChangeDoc_ItemClick);
+            // 
+            // btnDenial
+            // 
+            this.btnDenial.Caption = "Регистрация отказов";
+            this.btnDenial.Id = 40;
+            this.btnDenial.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnKdrDenialReg),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnKdrDenialChange),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnKdrDenialRepPla),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnKdrDenialRepPay),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnKdrDenialCancel)});
+            this.btnDenial.Name = "btnDenial";
+            // 
+            // btnKdrDenialReg
+            // 
+            this.btnKdrDenialReg.Caption = "Отказ в регистрации проспекта выпуска КДР";
+            this.btnKdrDenialReg.Id = 41;
+            this.btnKdrDenialReg.Name = "btnKdrDenialReg";
+            this.btnKdrDenialReg.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKdrDenialReg_ItemClick);
+            // 
+            // btnKdrDenialChange
+            // 
+            this.btnKdrDenialChange.Caption = "Отказ в регистрации изменений в проспект выпуска КДР";
+            this.btnKdrDenialChange.Id = 42;
+            this.btnKdrDenialChange.Name = "btnKdrDenialChange";
+            this.btnKdrDenialChange.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKdrDenialChange_ItemClick);
+            // 
+            // btnKdrDenialRepPla
+            // 
+            this.btnKdrDenialRepPla.Caption = "Отказ в утверждении отчета об итогах размещения КДР";
+            this.btnKdrDenialRepPla.Id = 43;
+            this.btnKdrDenialRepPla.Name = "btnKdrDenialRepPla";
+            this.btnKdrDenialRepPla.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKdrDenialRepPla_ItemClick);
+            // 
+            // btnKdrDenialRepPay
+            // 
+            this.btnKdrDenialRepPay.Caption = "Отказ в утверждении отчета об итогах погашения КДР";
+            this.btnKdrDenialRepPay.Id = 44;
+            this.btnKdrDenialRepPay.Name = "btnKdrDenialRepPay";
+            this.btnKdrDenialRepPay.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKdrDenialRepPay_ItemClick);
+            // 
+            // btnKdrDenialCancel
+            // 
+            this.btnKdrDenialCancel.Caption = "Отказ в аннулировании выпуска КДР";
+            this.btnKdrDenialCancel.Id = 46;
+            this.btnKdrDenialCancel.Name = "btnKdrDenialCancel";
+            this.btnKdrDenialCancel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKdrDenialCancel_ItemClick);
+            // 
+            // btnKdrCancel
+            // 
+            this.btnKdrCancel.Caption = "Аннулирование выпуска КДР";
+            this.btnKdrCancel.Id = 45;
+            this.btnKdrCancel.Name = "btnKdrCancel";
+            this.btnKdrCancel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKdrCancel_ItemClick);
+            // 
+            // btnKdrSuspendRep
+            // 
+            this.btnKdrSuspendRep.Caption = "Приостановление размещения либо обращения КДР";
+            this.btnKdrSuspendRep.Id = 47;
+            this.btnKdrSuspendRep.Name = "btnKdrSuspendRep";
+            this.btnKdrSuspendRep.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKdrSuspendRep_ItemClick);
+            // 
+            // btnKdrDenialSupend
+            // 
+            this.btnKdrDenialSupend.Caption = "Отмена решения о приостановлении размещения КДР";
+            this.btnKdrDenialSupend.Id = 48;
+            this.btnKdrDenialSupend.Name = "btnKdrDenialSupend";
+            this.btnKdrDenialSupend.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKdrDenialSupend_ItemClick);
+            // 
+            // ProcessListForm
+            // 
+            this.ClientSize = new System.Drawing.Size(852, 615);
+            this.Name = "ProcessListForm";
+            this.Text = "Процессы";
+            this.Load += new System.EventHandler(this.ProcessListForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gridMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridMainView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainBS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bondBS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConfirmBS)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private DevExpress.XtraBars.BarSubItem btnShre;
+        private DevExpress.XtraBars.BarDockingMenuItem barDockingMenuItem1;
+        private DevExpress.XtraBars.Docking.DockManager dockManager1;
+        private BSB.Actions.MyActionList MainActionList;
+        private BSB.Actions.MyAction aProcessknd;
+        private DevExpress.XtraBars.BarListItem barListItem1;
+        private DevExpress.XtraBars.BarSubItem barSubItem1;
+        private System.Windows.Forms.TreeView tvMenu;
+        private DevExpress.XtraBars.BarSubItem btnBond;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridID;
+        private DevExpress.XtraGrid.Columns.GridColumn gridPROCESS_NAME;
+        private DevExpress.XtraGrid.Columns.GridColumn gridDBEGIN;
+        private DevExpress.XtraGrid.Columns.GridColumn gridNextCs;
+        private System.Windows.Forms.BindingSource bondBS;
+        private DevExpress.XtraGrid.Columns.GridColumn gridName_ru;
+        private DevExpress.XtraGrid.Columns.GridColumn gridUser;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btnShareReg;
+        private DevExpress.XtraBars.BarButtonItem btnShareChange;
+        private DevExpress.XtraBars.BarButtonItem btnShareCancel;
+        private DevExpress.XtraBars.BarButtonItem btnShareCancelSuspendRepPla;
+        private DevExpress.XtraBars.BarButtonItem btnShareChangeRepPla;
+        private DevExpress.XtraBars.BarButtonItem btnShareDenialCancel;
+        private DevExpress.XtraBars.BarButtonItem btnShareDenialChange;
+        private DevExpress.XtraBars.BarButtonItem btnShareDenialReg;
+        private DevExpress.XtraBars.BarButtonItem btnShareDenialRepPla;
+        private DevExpress.XtraBars.BarButtonItem btnShareSuspendRepPla;
+        private DevExpress.XtraBars.BarButtonItem btnBondOpReg;
+        private DevExpress.XtraBars.BarButtonItem btnOpReg;
+        private DevExpress.XtraBars.BarButtonItem btnShareChageDoc;
+        private DevExpress.XtraBars.BarButtonItem btnOpen;
+        private DevExpress.XtraBars.BarButtonItem btnConfirm;
+        private DevExpress.XtraBars.BarButtonItem btnDestroyProcess;
+        private DevExpress.XtraBars.BarButtonItem btnOpChange;
+        private DevExpress.XtraBars.BarButtonItem BtnShareRepPla;
+        private System.Windows.Forms.BindingSource ConfirmBS;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem6;        
+        private DevExpress.XtraBars.BarButtonItem btnAnnulRefuse;
+        private DevExpress.XtraBars.BarButtonItem btnBondRepCert;
+        private DevExpress.XtraBars.BarButtonItem btnRegOpChangeRefuse;
+        private DevExpress.XtraBars.BarButtonItem btnBondOpChangeRefuse;
+        private DevExpress.XtraBars.BarButtonItem btnBondRegRefuse;
+        private DevExpress.XtraBars.BarButtonItem btnRegOpRefuse;
+        private DevExpress.XtraBars.BarButtonItem btnReportRefuse;
+        private DevExpress.XtraBars.BarButtonItem btnBondOpRefuse;
+        private DevExpress.XtraBars.BarButtonItem btnRpmReport;
+        private DevExpress.XtraBars.BarButtonItem btnBondChangeRegRefuse;
+        private DevExpress.XtraBars.BarButtonItem btnRegAnnul;
+        private DevExpress.XtraBars.BarButtonItem btnIssueReport;
+        private DevExpress.XtraBars.BarButtonItem btnSuspension;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.BarSubItem barSubItem3;
+        private DevExpress.XtraBars.BarButtonItem btnRegPai;
+        private DevExpress.XtraBars.BarButtonItem btnPaiChange;
+        private DevExpress.XtraBars.BarButtonItem btnPaiReport;
+        private DevExpress.XtraBars.BarButtonItem btnPaiExpension;
+        private DevExpress.XtraBars.BarButtonItem btnPaiRepCert;
+        private DevExpress.XtraBars.BarButtonItem btnPaiClose;
+        private DevExpress.XtraBars.BarSubItem barSubItem4;
+        private DevExpress.XtraBars.BarButtonItem btnPaiRegRefuse;
+        private DevExpress.XtraBars.BarButtonItem btnPaiChangeRefuse;
+        private DevExpress.XtraBars.BarButtonItem btnPaiExtensionRefuse;
+        private DevExpress.XtraBars.BarButtonItem btnPaiRepCertRefuse;
+        private DevExpress.XtraBars.BarButtonItem btnPaiCloseRefuse;   
+        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem11;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem12;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem13;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem14;
+        private DevExpress.XtraBars.BarSubItem barSubItem2;
+        private DevExpress.XtraBars.BarSubItem btnBondRefuse;
+        private DevExpress.XtraBars.BarButtonItem btnKdrReg;
+        private DevExpress.XtraBars.BarButtonItem btnKdrChange;
+        private DevExpress.XtraBars.BarButtonItem btnKdrRepPla;
+        private DevExpress.XtraBars.BarButtonItem btnKdrRepPay;
+        private DevExpress.XtraBars.BarButtonItem btnKdrChangeDoc;
+        private DevExpress.XtraBars.BarSubItem btnDenial;
+        private DevExpress.XtraBars.BarButtonItem btnKdrDenialReg;
+        private DevExpress.XtraBars.BarButtonItem btnKdrDenialChange;
+        private DevExpress.XtraBars.BarButtonItem btnKdrDenialRepPla;
+        private DevExpress.XtraBars.BarButtonItem btnKdrDenialRepPay;
+        private DevExpress.XtraBars.BarButtonItem btnKdrCancel;
+        private DevExpress.XtraBars.BarButtonItem btnKdrDenialCancel;
+        private DevExpress.XtraBars.BarButtonItem btnKdrSuspendRep;
+        private DevExpress.XtraBars.BarButtonItem btnKdrDenialSupend;
+    }
+}
+
+
+

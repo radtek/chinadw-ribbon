@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SharerDS" targetNamespace="http://tempuri.org/SharerDS.xsd" xmlns:mstns="http://tempuri.org/SharerDS.xsd" xmlns="http://tempuri.org/SharerDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString7" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString7 (Settings)" PropertyReference="ApplicationSettings.ARM_User.Properties.Settings.GlobalReference.Default.ConnectionString7" Provider="System.Data.OracleClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SharerDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="SharerDS" msprop:Generator_UserDSName="SharerDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="S_G_SHARER" msprop:Generator_TableClassName="S_G_SHARERDataTable" msprop:Generator_TableVarName="tableS_G_SHARER" msprop:Generator_TablePropName="S_G_SHARER" msprop:Generator_RowDeletingName="S_G_SHARERRowDeleting" msprop:Generator_UserTableName="S_G_SHARER" msprop:Generator_RowChangingName="S_G_SHARERRowChanging" msprop:Generator_RowEvHandlerName="S_G_SHARERRowChangeEventHandler" msprop:Generator_RowDeletedName="S_G_SHARERRowDeleted" msprop:Generator_RowEvArgName="S_G_SHARERRowChangeEvent" msprop:Generator_RowChangedName="S_G_SHARERRowChanged" msprop:Generator_RowClassName="S_G_SHARERRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="NAMERU" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="NAMERU" msprop:Generator_ColumnVarNameInTable="columnNAMERU" msprop:Generator_ColumnPropNameInTable="NAMERUColumn" msprop:Generator_UserColumnName="NAMERU">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NAMEKZ" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="NAMEKZ" msprop:Generator_ColumnVarNameInTable="columnNAMEKZ" msprop:Generator_ColumnPropNameInTable="NAMEKZColumn" msprop:Generator_UserColumnName="NAMEKZ">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IIN_BIN_OKPO_NUMBER" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="IIN_BIN_OKPO_NUMBER" msprop:Generator_ColumnVarNameInTable="columnIIN_BIN_OKPO_NUMBER" msprop:Generator_ColumnPropNameInTable="IIN_BIN_OKPO_NUMBERColumn" msprop:Generator_UserColumnName="IIN_BIN_OKPO_NUMBER">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="S_G_DOCUMENT_KND" msprop:Generator_ColumnVarNameInTable="columnS_G_DOCUMENT_KND" msprop:Generator_ColumnPropNameInRow="S_G_DOCUMENT_KND" msprop:Generator_ColumnPropNameInTable="S_G_DOCUMENT_KNDColumn" msprop:Generator_UserColumnName="S_G_DOCUMENT_KND" type="xs:decimal" />
+              <xs:element name="DOC_NUM_UD_LICH" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="DOC_NUM_UD_LICH" msprop:Generator_ColumnVarNameInTable="columnDOC_NUM_UD_LICH" msprop:Generator_ColumnPropNameInTable="DOC_NUM_UD_LICHColumn" msprop:Generator_UserColumnName="DOC_NUM_UD_LICH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DOC_DATE" msprop:Generator_ColumnVarNameInTable="columnDOC_DATE" msprop:Generator_ColumnPropNameInRow="DOC_DATE" msprop:Generator_ColumnPropNameInTable="DOC_DATEColumn" msprop:Generator_UserColumnName="DOC_DATE" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="IS_DELETE" msprop:Generator_ColumnVarNameInTable="columnIS_DELETE" msprop:Generator_ColumnPropNameInRow="IS_DELETE" msprop:Generator_ColumnPropNameInTable="IS_DELETEColumn" msprop:Generator_UserColumnName="IS_DELETE" type="xs:decimal" />
+              <xs:element name="DATLAST" msprop:Generator_ColumnVarNameInTable="columnDATLAST" msprop:Generator_ColumnPropNameInRow="DATLAST" msprop:Generator_ColumnPropNameInTable="DATLASTColumn" msprop:Generator_UserColumnName="DATLAST" type="xs:dateTime" />
+              <xs:element name="ID_USR" msprop:Generator_ColumnVarNameInTable="columnID_USR" msprop:Generator_ColumnPropNameInRow="ID_USR" msprop:Generator_ColumnPropNameInTable="ID_USRColumn" msprop:Generator_UserColumnName="ID_USR" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:S_G_SHARER" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

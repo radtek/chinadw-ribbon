@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="YearsQuarterMonthDS" targetNamespace="http://tempuri.org/YearsQuarterMonthDS.xsd" xmlns:mstns="http://tempuri.org/YearsQuarterMonthDS.xsd" xmlns="http://tempuri.org/YearsQuarterMonthDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString7" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString7 (Settings)" PropertyReference="ApplicationSettings.ARM_User.Properties.Settings.GlobalReference.Default.ConnectionString7" Provider="System.Data.OracleClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="YearsQuarterMonthDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="YearsQuarterMonthDS" msprop:Generator_UserDSName="YearsQuarterMonthDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="G_REPORT_STR" msprop:Generator_TableClassName="G_REPORT_STRDataTable" msprop:Generator_TableVarName="tableG_REPORT_STR" msprop:Generator_RowChangedName="G_REPORT_STRRowChanged" msprop:Generator_TablePropName="G_REPORT_STR" msprop:Generator_RowDeletingName="G_REPORT_STRRowDeleting" msprop:Generator_RowChangingName="G_REPORT_STRRowChanging" msprop:Generator_RowEvHandlerName="G_REPORT_STRRowChangeEventHandler" msprop:Generator_RowDeletedName="G_REPORT_STRRowDeleted" msprop:Generator_RowClassName="G_REPORT_STRRow" msprop:Generator_UserTableName="G_REPORT_STR" msprop:Generator_RowEvArgName="G_REPORT_STRRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="NAME_RU" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="NAME_RU" msprop:Generator_ColumnVarNameInTable="columnNAME_RU" msprop:Generator_ColumnPropNameInTable="NAME_RUColumn" msprop:Generator_UserColumnName="NAME_RU">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1024" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NAME_KZ" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="NAME_KZ" msprop:Generator_ColumnVarNameInTable="columnNAME_KZ" msprop:Generator_ColumnPropNameInTable="NAME_KZColumn" msprop:Generator_UserColumnName="NAME_KZ" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1024" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="YEAR" msprop:Generator_ColumnVarNameInTable="columnYEAR" msprop:Generator_ColumnPropNameInRow="YEAR" msprop:Generator_ColumnPropNameInTable="YEARColumn" msprop:Generator_UserColumnName="YEAR" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="YEAR_END" msprop:Generator_ColumnVarNameInTable="columnYEAR_END" msprop:Generator_ColumnPropNameInRow="YEAR_END" msprop:Generator_ColumnPropNameInTable="YEAR_ENDColumn" msprop:Generator_UserColumnName="YEAR_END" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:G_REPORT_STR" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

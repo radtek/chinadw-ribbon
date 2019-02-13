@@ -1,0 +1,538 @@
+﻿using System;
+using ARM_User.BusinessLayer.Common;
+using ARM_User.MapperLayer.Common;
+using BSB.Common;
+
+namespace ARM_User.BusinessLayer.Guides
+{
+    public class IssuersGuides : DomainObject
+    {
+        #region Fileds
+        private string okpo, bin, name_kz, name_ru, name_eng, address, phone, fax, email,
+                       chief_fm, regnum, address2, managecode, managenum;
+        private DateTime? reg_date, rereg_date, managedate;
+        private Region region;
+        private ClassifierOKED activeknd;
+        private OLF olf;
+        private SpecIssuer spec;
+        private SpecBus spec_activeknd;
+        private BankCust custodian;
+        private Listing listing;
+        private Rating rating;
+        private BankCust payagent;
+        private Audit audit;
+        private RegOrganMU regorganmu;
+        private JurPersCreateMethod jurcreathst;        
+        private decimal value_capital;
+        private decimal id_managecom;
+        private int is_public, is_finagent, is_rfca, is_govhaveshare,
+                    is_nonres, is_havetechbuy, is_havecode, is_commerce, is_haveorder;
+        private decimal? idSecurities, g_person;
+        #endregion Fileds
+
+        #region propertis
+
+        public string Okpo
+        {
+            get { return okpo; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                okpo = value;
+                NotifyPropertyChanged("Okpo");
+            }
+        }
+        public decimal? IdSecurities
+        {
+            get { return idSecurities; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                idSecurities = value;
+                NotifyPropertyChanged("IdSecurities");
+            }
+        }
+        public decimal? G_person
+        {
+            get { return g_person; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                g_person = value;
+                NotifyPropertyChanged("G_person");
+            }
+        }
+        public string Bin
+        {
+            get { return bin; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                bin = value;
+                NotifyPropertyChanged("Bin");
+            }
+        }
+        public string Name_kz
+        {
+            get { return name_kz; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                name_kz = value;
+                NotifyPropertyChanged("Name_kz");
+            }
+        }
+        public string Name_eng
+        {
+            get { return name_eng; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                name_eng = value;
+                NotifyPropertyChanged("Name_eng");
+            }
+        }
+        public string Name_ru
+        {
+            get { return name_ru; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                name_ru = value;
+                NotifyPropertyChanged("Name_ru");
+            }
+        }
+        public string Address
+        {
+            get { return address; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                address = value;
+                NotifyPropertyChanged("Address");
+            }
+        }
+        public string Address2
+        {
+            get { return address2; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                address2 = value;
+                NotifyPropertyChanged("Address2");
+            }
+        }
+        public string Phone
+        {
+            get { return phone; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                phone = value;
+                NotifyPropertyChanged("Phone");
+            }
+        }
+        public string Fax
+        {
+            get { return fax; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                fax = value;
+                NotifyPropertyChanged("Fax");
+            }
+        }
+        public string Email
+        {
+            get { return email; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                email = value;
+                NotifyPropertyChanged("Email");
+            }
+        }
+        public string Chief_fm
+        {
+            get { return chief_fm; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                chief_fm = value;
+                NotifyPropertyChanged("Chief_fm");
+            }
+        }
+        public DateTime? Reg_date
+        {
+            get { return reg_date; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                reg_date = value;
+                NotifyPropertyChanged("Reg_date");
+            }
+        }
+        public DateTime? Rereg_date
+        {
+            get { return rereg_date; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                rereg_date = value;
+                NotifyPropertyChanged("Rereg_date");
+            }
+        }
+        public ClassifierOKED Activeknd
+        {
+            get { return activeknd; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                activeknd = value;
+                NotifyPropertyChanged("Activeknd");
+            }
+        }
+        public SpecIssuer Spec
+        {
+            get { return spec; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                spec = value;
+                NotifyPropertyChanged("Spec");
+            }
+        }        
+        public SpecBus Spec_activeknd
+        {
+            get { return spec_activeknd; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                spec_activeknd = value;
+                NotifyPropertyChanged("Spec_activeknd");
+            }
+        }
+        public decimal Id_managecom
+        {
+            get { return id_managecom; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                id_managecom = value;
+                NotifyPropertyChanged("Id_managecom");
+            }
+        }
+        public BankCust Custodian
+        {
+            get { return custodian; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                custodian = value;
+                NotifyPropertyChanged("Custodian");
+            }
+        }        
+        public Listing Listing
+        {
+            get { return listing; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                listing = value;
+                NotifyPropertyChanged("Listing");
+            }
+        }
+        public Rating Rating
+        {
+            get { return rating; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                rating = value;
+                NotifyPropertyChanged("Rating");
+            }
+        }
+        public string Regnum
+        {
+            get { return regnum; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                regnum = value;
+                NotifyPropertyChanged("Regnum");
+            }
+        }       
+        public Region Region
+        {
+            get { return region; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                region = value;
+                NotifyPropertyChanged("Region");
+            }
+        }
+        public int Is_public
+        {
+            get { return is_public; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                is_public = value;
+                NotifyPropertyChanged("Is_public");
+            }
+        }
+        public int Is_finagent
+        {
+            get { return is_finagent; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                is_finagent = value;
+                NotifyPropertyChanged("Is_finagent");
+            }
+        }
+        public int Is_rfca
+        {
+            get { return is_rfca; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                is_rfca = value;
+                NotifyPropertyChanged("Is_rfca");
+            }
+        }
+        public int Is_govhaveshare
+        {
+            get { return is_govhaveshare; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                is_govhaveshare = value;
+                NotifyPropertyChanged("Is_govhaveshare");
+            }
+        }
+        public int Is_nonres
+        {
+            get { return is_nonres; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                is_nonres = value;
+                NotifyPropertyChanged("Is_nonres");
+            }
+        }
+        public int Is_havetechbuy
+        {
+            get { return is_havetechbuy; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                is_havetechbuy = value;
+                NotifyPropertyChanged("Is_havetechbuy");
+            }
+        }
+        public int Is_havecode
+        {
+            get { return is_havecode; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                is_havecode = value;
+                NotifyPropertyChanged("Is_havecode");
+            }
+        }
+        public int Is_commerce
+        {
+            get { return is_commerce; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                is_commerce = value;
+                NotifyPropertyChanged("Is_commerce");
+            }
+        }
+        public int Is_haveorder
+        {
+            get { return is_haveorder; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                is_haveorder = value;
+                NotifyPropertyChanged("Is_haveorder");
+            }
+        }
+        public decimal Value_capital
+        {
+            get { return value_capital; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                value_capital = value;
+                NotifyPropertyChanged("Value_capital");
+            }
+        }
+        public OLF Olf
+        {
+            get { return olf; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                olf = value;
+                NotifyPropertyChanged("Olf");
+            }
+        }
+        public BankCust Payagent
+        {
+            get { return payagent; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                payagent = value;
+                NotifyPropertyChanged("Payagent");
+            }
+        }
+        public Audit Audit
+        {
+            get { return audit; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                audit = value;
+                NotifyPropertyChanged("Audit");
+            }
+        }
+        public RegOrganMU Regorganmu
+        {
+            get { return regorganmu; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                regorganmu = value;
+                NotifyPropertyChanged("Regorganmu");
+            }
+        }
+        public JurPersCreateMethod Jurcreathst
+        {
+            get { return jurcreathst; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                jurcreathst = value;
+                NotifyPropertyChanged("Jurcreathst");
+            }
+        }
+        public string Managecode
+        {
+            get { return managecode; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                managecode = value;
+                NotifyPropertyChanged("Managecode");
+            }
+        }
+        public string Managenum
+        {
+            get { return managenum; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                managenum = value;
+                NotifyPropertyChanged("Managenum");
+            }
+        }
+        public DateTime? Managedate
+        {
+            get { return managedate; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                managedate = value;
+                NotifyPropertyChanged("Managedate");
+            }
+        }
+        #endregion
+
+        public IssuersGuides()
+        {
+        }
+
+        public IssuersGuides(decimal id, string okpo, string bin, string name_kz, string name_ru,string name_eng, string address,
+                             string phone, string fax, string email, string chief_fm, DateTime? reg_date, DateTime? rereg_date, ClassifierOKED activeknd,
+                             SpecIssuer spec, SpecBus spec_activeknd, decimal id_managecom, BankCust custodian, int is_public, int is_finagent, int is_rfca,
+                             int is_govhaveshare, int is_nonres, int is_havetechbuy, int is_havecode, Listing listing, Rating rating, int is_commerce,
+                             int is_haveorder, string regnum, Region region, string address2, RegOrganMU regorganmu, OLF olf, BankCust payagent, Audit audit, decimal value_capital, JurPersCreateMethod jurcreathst,
+                             string managecode, string managenum, DateTime? managedate, decimal? idSecurities, decimal? g_person)
+            : base(id)
+        {
+            this.okpo = okpo;
+            this.bin = bin;            
+            this.name_kz = name_kz;
+            this.name_ru = name_ru;
+            this.name_eng = name_eng;
+            this.address = address;
+            this.address2 = address2;
+            this.phone = phone;
+            this.fax = fax;
+            this.email = email;
+            this.chief_fm = chief_fm;
+            this.reg_date = reg_date;
+            this.rereg_date = rereg_date;
+            this.spec_activeknd = spec_activeknd; 
+            this.spec = spec; 
+            this.activeknd = activeknd;
+            this.id_managecom = id_managecom;
+            this.custodian = custodian;
+            this.is_public = is_public;
+            this.is_finagent = is_finagent;
+            this.is_rfca = is_rfca;
+            this.is_govhaveshare = is_govhaveshare;
+            this.is_nonres = is_nonres;
+            this.is_havecode = is_havecode;
+            this.listing =  listing; 
+            this.rating =  rating; 
+            this.is_commerce = is_commerce;
+            this.is_haveorder = is_haveorder;            
+            this.regnum = regnum;
+            this.region = region;
+            this.payagent = payagent;
+            this.audit = audit;
+            this.olf = olf;
+            this.regorganmu = regorganmu;
+            this.value_capital = value_capital;
+            this.jurcreathst = jurcreathst;
+            this.idSecurities = idSecurities;
+            this.managecode = managecode;
+            this.managedate = managedate;
+            this.managenum = managenum;
+            this.g_person = g_person;
+        }      
+        public static IssuersGuides CreateNew()
+        {
+            return CreateNew<IssuersGuides>();
+        }
+
+        public interface IIssuerHstFinder : ISimpleFinder<IssuersGuides, IssuersGuidesList>
+        {
+            IssuersGuides FindByCondition(decimal id);
+            IssuersGuidesList FindByCondition(string bin, string nameRu, string nameManagecom, decimal? idRegion);
+        }
+        
+
+       /* public override void Validate()
+        {
+            base.Validate();
+            if (okpo == null)
+                throw new PropertyNullException(LangTranslate.UiGetText("ОКПО "));
+            if (bin == null)
+                throw new PropertyNullException(LangTranslate.UiGetText("БИН"));
+        }*/
+    }
+    public class IssuersGuidesList : DOList<IssuersGuides>
+    {
+    }
+}
+
+
+

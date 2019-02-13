@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+using ARM_User.BusinessLayer.Guides;
+using ARM_User.MapperLayer.Common;
+
+
+namespace ARM_User.DisplayLayer.Popup
+{
+    public partial class CategoryControlsPopupListForm : ARM_User.DisplayLayer.Base.ChoiceBaseForm
+    {
+        public CategoryControlsPopupListForm()
+        {
+            InitializeComponent();
+        }
+        private void ChoiceCategoryControlsListForm_Load(object sender, EventArgs e)
+        {
+
+            MainBS.DataSource = MapperRegistry.Instance.GetCategoryControlsMapper().FindAll();
+        }
+    
+    }
+}

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CurrencyECBDS" targetNamespace="http://tempuri.org/CurrencyECBDS.xsd" xmlns:mstns="http://tempuri.org/CurrencyECBDS.xsd" xmlns="http://tempuri.org/CurrencyECBDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString7" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString7 (Settings)" PropertyReference="ApplicationSettings.ARM_User.Properties.Settings.GlobalReference.Default.ConnectionString7" Provider="System.Data.OracleClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CurrencyECBDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CurrencyECBDS" msprop:Generator_UserDSName="CurrencyECBDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="S_G_CURRENCY_ECB" msprop:Generator_TableClassName="S_G_CURRENCY_ECBDataTable" msprop:Generator_TableVarName="tableS_G_CURRENCY_ECB" msprop:Generator_TablePropName="S_G_CURRENCY_ECB" msprop:Generator_RowDeletingName="S_G_CURRENCY_ECBRowDeleting" msprop:Generator_RowChangingName="S_G_CURRENCY_ECBRowChanging" msprop:Generator_RowEvHandlerName="S_G_CURRENCY_ECBRowChangeEventHandler" msprop:Generator_RowDeletedName="S_G_CURRENCY_ECBRowDeleted" msprop:Generator_UserTableName="S_G_CURRENCY_ECB" msprop:Generator_RowChangedName="S_G_CURRENCY_ECBRowChanged" msprop:Generator_RowEvArgName="S_G_CURRENCY_ECBRowChangeEvent" msprop:Generator_RowClassName="S_G_CURRENCY_ECBRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="CODE" msprop:Generator_ColumnVarNameInTable="columnCODE" msprop:Generator_ColumnPropNameInRow="CODE" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="CODEColumn" msprop:Generator_UserColumnName="CODE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESIGNATION_NIN" msprop:Generator_ColumnVarNameInTable="columnDESIGNATION_NIN" msprop:Generator_ColumnPropNameInRow="DESIGNATION_NIN" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="DESIGNATION_NINColumn" msprop:Generator_UserColumnName="DESIGNATION_NIN">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NAMERU" msprop:Generator_ColumnVarNameInTable="columnNAMERU" msprop:Generator_ColumnPropNameInRow="NAMERU" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="NAMERUColumn" msprop:Generator_UserColumnName="NAMERU">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NAMEKZ" msprop:Generator_ColumnVarNameInTable="columnNAMEKZ" msprop:Generator_ColumnPropNameInRow="NAMEKZ" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="NAMEKZColumn" msprop:Generator_UserColumnName="NAMEKZ">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IS_DELETE" msprop:Generator_ColumnVarNameInTable="columnIS_DELETE" msprop:Generator_ColumnPropNameInRow="IS_DELETE" msprop:Generator_ColumnPropNameInTable="IS_DELETEColumn" msprop:Generator_UserColumnName="IS_DELETE" type="xs:decimal" />
+              <xs:element name="DATLAST" msprop:Generator_ColumnVarNameInTable="columnDATLAST" msprop:Generator_ColumnPropNameInRow="DATLAST" msprop:Generator_ColumnPropNameInTable="DATLASTColumn" msprop:Generator_UserColumnName="DATLAST" type="xs:dateTime" />
+              <xs:element name="ID_USR" msprop:Generator_ColumnVarNameInTable="columnID_USR" msprop:Generator_ColumnPropNameInRow="ID_USR" msprop:Generator_ColumnPropNameInTable="ID_USRColumn" msprop:Generator_UserColumnName="ID_USR" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:S_G_CURRENCY_ECB" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

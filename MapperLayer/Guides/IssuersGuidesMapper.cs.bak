@@ -1,0 +1,420 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Data;
+using ARM_User.BusinessLayer.Common;
+using ARM_User.BusinessLayer.Guides.Simple;
+using ARM_User.BusinessLayer.Guides;
+using ARM_User.DataLayer.DataSet.GuidesDataSet;
+using ARM_User.MapperLayer.Common;
+using ARM_User.DataLayer;
+using ARM_User.MapperLayer.Guides.Simple;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
+using Oracle.DataAccess.Client;
+using Oracle.DataAccess.Types;
+
+namespace ARM_User.MapperLayer.Guides
+{
+ public class IssuersGuidesMapper
+      : SimpleMapper<IssuersGuides, IssuersGuidesList, IssuersGuidesDS.G_JUR_PERSONDataTable, IssuersGuidesDS.G_JUR_PERSONRow>, IssuersGuides.IIssuerHstFinder
+    {
+     public override int GetPriority()
+     {
+         return 1;
+     }
+     protected override IssuersGuides CreateByRow(IssuersGuidesDS.G_JUR_PERSONRow row)
+        {
+            var obj = new IssuersGuides(
+             row.ID,
+             row.OKPO,
+             row.BIN,             
+             row.NAME_KZ,
+             row.NAME_RU,
+             row.NAME_ENG,
+             row.ADDRESS,             
+             row.PHONE,
+             row.FAX,
+             row.E_MAIL,
+             row.CHIEF_FM,
+             row.IsREG_DATENull() ? null : (DateTime?) row.REG_DATE,
+             row.IsREREG_DATENull() ? null : (DateTime?) row.REREG_DATE,
+             row.IsID_ACTIVEKNDNull() ? null : MapperRegistry.Instance.GetClassifierOKEDMapper().Find(row.ID_ACTIVEKND),
+             row.IsID_SPECNull() ? null :  MapperRegistry.Instance.GetSpecIssuerMapper().Find(row.ID_SPEC),
+             row.IsID_SPEC_ACTIVEKNDNull() ? null : MapperRegistry.Instance.GetSpecBusMapper().Find(row.ID_SPEC_ACTIVEKND),
+             row.ID_MANAGECOM,
+             row.IsID_CUSTODIANNull() ? null : MapperRegistry.Instance.GetBankCustMapper().Find(row.ID_CUSTODIAN),
+             row.IS_PUBLIC,
+             row.IS_FINAGENT,
+             row.IS_RFCA,
+             row.IS_GOVHAVESHARE,
+             row.IS_NONRES,
+             row.IS_HAVETECHBUY,
+             row.IS_HAVECODE,
+             row.IsID_LISTINGNull() ? null : MapperRegistry.Instance.GetListingMapper().Find(row.ID_LISTING),
+             row.IsID_RATINGNull() ? null : MapperRegistry.Instance.GetRatingMapper().Find(row.ID_RATING),
+             row.IS_COMMERCE,
+             row.IS_HAVEORDER,
+             row.REGNUM,
+             row.IsID_REGIONNull() ? null :  MapperRegistry.Instance.GetRegionMapper().Find(row.ID_REGION),
+             row.ADDRESS2,
+             row.IsID_REGAUTHNull() ? null :  MapperRegistry.Instance.GetRegOrganMUMapper().Find(row.ID_REGAUTH),             
+             row.IsID_OLFNull() ? null : MapperRegistry.Instance.GetOLFMapper().Find(row.ID_OLF),
+             row.IsID_PAGENTNull() ? null : MapperRegistry.Instance.GetBankCustMapper().Find(row.ID_PAGENT),
+             row.IsID_AUDITNull() ? null :  MapperRegistry.Instance.GetAuditMapper().Find(row.ID_AUDIT),
+             row.VALUE_CAPITAL,
+             row.IsID_CREATHISNull() ? null : MapperRegistry.Instance.GetJurPersCreateMethodMapper().Find(row.ID_CREATHIS),
+             row.MANAGECODE,
+             row.MANAGENUM,
+             row.IsMANAGEDATENull() ? null : (DateTime?) row.MANAGEDATE,
+             row.IsID_SECURITIESNull() ? null : (decimal?)row.ID_SECURITIES, 
+             row.IsG_PERSONNull() ? null : (decimal?) row.G_PERSON
+             );
+
+            return obj;
+        }
+
+       
+        public override void Insert(ICollection<DomainObject> objCollection)
+        {
+            try
+            {
+                foreach (var obj in objCollection)
+                {
+                    var IssuersGuides = (IssuersGuides)obj;
+
+                    using (var cmd = Connection.CreateCommand())
+                    {
+                        cmd.BindByName = true;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.CommandText = "G_Insert_Jur_Person";
+                        cmd.Parameters.Add("g_jur_person_", OracleDbType.Decimal, ParameterDirection.Output);
+                        cmd.Parameters.Add("G_Person_", OracleDbType.Decimal, ParameterDirection.InputOutput);
+                        cmd.Parameters.Add("Okpo_", OracleDbType.Varchar2, ParameterDirection.Input);
+                        cmd.Parameters.Add("Bin_", OracleDbType.Varchar2, ParameterDirection.Input);
+                        cmd.Parameters.Add("Name_kz_", OracleDbType.Varchar2, ParameterDirection.Input);
+                        cmd.Parameters.Add("Name_ru_", OracleDbType.Varchar2, ParameterDirection.Input);
+                        cmd.Parameters.Add("Name_eng_", OracleDbType.Varchar2, ParameterDirection.Input);
+                        cmd.Parameters.Add("Address_", OracleDbType.Varchar2, ParameterDirection.Input);
+                        cmd.Parameters.Add("Address2_", OracleDbType.Varchar2, ParameterDirection.Input);
+                        cmd.Parameters.Add("Phone_", OracleDbType.Varchar2, ParameterDirection.Input);
+                        cmd.Parameters.Add("Fax_", OracleDbType.Varchar2, ParameterDirection.Input);
+                        cmd.Parameters.Add("Email_", OracleDbType.Varchar2, ParameterDirection.Input);
+                        cmd.Parameters.Add("Chief_fm_", OracleDbType.Varchar2, ParameterDirection.Input);
+                        cmd.Parameters.Add("Reg_Date_", OracleDbType.Date, ParameterDirection.Input);
+                        cmd.Parameters.Add("Rereg_date_", OracleDbType.Date, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_activeknd_", OracleDbType.Decimal, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_spec_", OracleDbType.Decimal, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_spec_activeknd_", OracleDbType.Decimal, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_managecom_", OracleDbType.Decimal, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_custodian_", OracleDbType.Decimal, ParameterDirection.Input);
+                        cmd.Parameters.Add("Is_public_", OracleDbType.Int16, ParameterDirection.Input);
+                        cmd.Parameters.Add("Is_finagent_", OracleDbType.Int16, ParameterDirection.Input);
+                        cmd.Parameters.Add("Is_rfca_", OracleDbType.Int16, ParameterDirection.Input);
+                        cmd.Parameters.Add("Is_govhaveshare_", OracleDbType.Int16, ParameterDirection.Input);
+                        cmd.Parameters.Add("Is_nonres_", OracleDbType.Int16, ParameterDirection.Input);
+                        cmd.Parameters.Add("Is_havetechbuy_", OracleDbType.Int16, ParameterDirection.Input);
+                        cmd.Parameters.Add("Is_havecode_", OracleDbType.Int16, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_listing_", OracleDbType.Decimal, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_rating_", OracleDbType.Decimal, ParameterDirection.Input);
+                        cmd.Parameters.Add("Is_commerce_", OracleDbType.Int16, ParameterDirection.Input);
+                        cmd.Parameters.Add("Is_haveorder_", OracleDbType.Int16, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_regauth_", OracleDbType.Decimal, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_Creathis_", OracleDbType.Decimal, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_region_", OracleDbType.Decimal, ParameterDirection.Input);
+                        cmd.Parameters.Add("Is_active_", OracleDbType.Decimal, ParameterDirection.Input); 
+                        cmd.Parameters.Add("Id_Olf_", OracleDbType.Decimal, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_Audit_", OracleDbType.Decimal, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_Pagent_", OracleDbType.Decimal, ParameterDirection.Input);
+                        cmd.Parameters.Add("Value_Capital_", OracleDbType.Decimal, ParameterDirection.Input);
+                        cmd.Parameters.Add("Regnum_", OracleDbType.Varchar2, ParameterDirection.Input);
+                        cmd.Parameters.Add("IdSecurities_", OracleDbType.Decimal, ParameterDirection.Input);
+                        cmd.Parameters.Add("Err_Code", OracleDbType.Decimal, ParameterDirection.Output);
+                        cmd.Parameters.Add("Err_Msg", OracleDbType.Varchar2, ParameterDirection.Output);
+
+                        cmd.Parameters["g_person_"].Value = (IssuersGuides.G_person == null) ? (decimal?)null : IssuersGuides.G_person;
+                        cmd.Parameters["Okpo_"].Value =(IssuersGuides.Okpo == null) ? null : IssuersGuides.Okpo;
+                        cmd.Parameters["Bin_"].Value = (IssuersGuides.Bin == null) ? null : IssuersGuides.Bin;
+                        cmd.Parameters["Name_kz_"].Value = (IssuersGuides.Name_kz == null) ? null : IssuersGuides.Name_kz;
+                        cmd.Parameters["Name_ru_"].Value = (IssuersGuides.Name_ru == null) ? null : IssuersGuides.Name_ru;
+                        cmd.Parameters["Name_eng_"].Value =(IssuersGuides.Name_eng == null) ? null : IssuersGuides.Name_eng;
+                        cmd.Parameters["Address_"].Value = (IssuersGuides.Address == null) ? null : IssuersGuides.Address;
+                        cmd.Parameters["Address2_"].Value = (IssuersGuides.Address2 == null) ? null : IssuersGuides.Address2;
+                        cmd.Parameters["Phone_"].Value = (IssuersGuides.Phone == null) ? null : IssuersGuides.Phone;
+                        cmd.Parameters["Fax_"].Value = (IssuersGuides.Fax == null) ? null : IssuersGuides.Fax;
+                        cmd.Parameters["Email_"].Value = (IssuersGuides.Email == null) ? null : IssuersGuides.Email;
+                        cmd.Parameters["Chief_fm_"].Value = (IssuersGuides.Chief_fm == null) ? null : IssuersGuides.Chief_fm;
+                        cmd.Parameters["Reg_Date_"].Value = (IssuersGuides.Reg_date == null) ? (DateTime?)null : IssuersGuides.Reg_date;
+                        cmd.Parameters["Rereg_date_"].Value = (IssuersGuides.Rereg_date == null) ? (DateTime?)null : IssuersGuides.Rereg_date;
+                        cmd.Parameters["Id_Activeknd_"].Value = (IssuersGuides.Activeknd == null) ? (decimal?)null : IssuersGuides.Activeknd.Id;
+                        cmd.Parameters["Id_Spec_"].Value = (IssuersGuides.Spec == null) ? (decimal?)null : IssuersGuides.Spec.Id;
+                        cmd.Parameters["Id_Spec_Activeknd_"].Value = (IssuersGuides.Spec_activeknd == null) ? (decimal?)null : IssuersGuides.Spec_activeknd.Id;
+                        cmd.Parameters["Id_Managecom_"].Value = null;//(IssuersGuides.Managecom == null) ? (decimal?)null : IssuersGuides.Managecom.Id;
+                        cmd.Parameters["Id_Custodian_"].Value = (IssuersGuides.Custodian == null) ? (decimal?)null : IssuersGuides.Custodian.Id;
+                        cmd.Parameters["Is_Public_"].Value = (IssuersGuides.Is_public == null) ? (int?)null : IssuersGuides.Is_public;
+                        cmd.Parameters["Is_Finagent_"].Value = (IssuersGuides.Is_finagent == null) ? (int?)null : IssuersGuides.Is_finagent;
+                        cmd.Parameters["Is_rfca_"].Value = (IssuersGuides.Is_rfca == null) ? (int?)null : IssuersGuides.Is_rfca;
+                        cmd.Parameters["Is_govhaveshare_"].Value = (IssuersGuides.Is_govhaveshare == null) ? (int?)null : IssuersGuides.Is_govhaveshare;
+                        cmd.Parameters["Is_nonres_"].Value = (IssuersGuides.Is_nonres == null) ? (int?)null : IssuersGuides.Is_nonres;
+                        cmd.Parameters["Is_havetechbuy_"].Value = (IssuersGuides.Is_havetechbuy == null) ? (int?)null : IssuersGuides.Is_havetechbuy;
+                        cmd.Parameters["Is_Havecode_"].Value = (IssuersGuides.Is_havecode == null) ? (int?)null : IssuersGuides.Is_havecode;
+                        cmd.Parameters["Id_Listing_"].Value = (IssuersGuides.Listing == null) ? (decimal?)null : IssuersGuides.Listing.Id;
+                        cmd.Parameters["Id_Rating_"].Value = (IssuersGuides.Rating == null) ? (decimal?)null : IssuersGuides.Rating.Id;
+                        cmd.Parameters["Is_Commerce_"].Value = (IssuersGuides.Is_commerce == null) ? (int?)null : IssuersGuides.Is_commerce;
+                        cmd.Parameters["Is_Haveorder_"].Value = (IssuersGuides.Is_haveorder == null) ? (int?)null : IssuersGuides.Is_haveorder;
+                        cmd.Parameters["Id_Regauth_"].Value = (IssuersGuides.Regorganmu == null) ? (decimal?)null : IssuersGuides.Regorganmu.Id;
+                        cmd.Parameters["Id_Creathis_"].Value = (IssuersGuides.Jurcreathst == null) ? (decimal?)null : IssuersGuides.Jurcreathst.Id;
+                        cmd.Parameters["Id_Region_"].Value = (IssuersGuides.Region == null) ? (decimal?)null : IssuersGuides.Region.Id;
+                        cmd.Parameters["Id_Olf_"].Value = (IssuersGuides.Olf == null) ? (decimal?)null : IssuersGuides.Olf.Id;
+                        cmd.Parameters["Id_Audit_"].Value = (IssuersGuides.Audit == null) ? (decimal?)null : IssuersGuides.Audit.Id;
+                        cmd.Parameters["Id_Pagent_"].Value = (IssuersGuides.Payagent == null) ? (decimal?)null : IssuersGuides.Payagent.Id;
+                        cmd.Parameters["Value_Capital_"].Value = (IssuersGuides.Value_capital == null) ? (decimal?)null : IssuersGuides.Value_capital;
+                        cmd.Parameters["Regnum_"].Value = (IssuersGuides.Regnum == null) ? null : IssuersGuides.Regnum;                        
+                        cmd.Parameters["IdSecurities_"].Value = (IssuersGuides.IdSecurities == null) ? (decimal?)null : IssuersGuides.IdSecurities;
+
+                        cmd.Parameters["Err_Msg"].Size = 4000;
+
+                        cmd.ExecuteNonQuery();
+
+                        if (!((OracleDecimal)cmd.Parameters["Err_Code"].Value).IsNull)
+                        {
+                            var errCode = ((OracleDecimal)cmd.Parameters["Err_Code"].Value).ToInt32();
+                            var errMsg = cmd.Parameters["Err_Msg"].Value.ToString();
+                            if (errCode != 0)
+                                throw new OraCustomException(errCode, errMsg);
+                        }
+
+                        obj.SetId(((OracleDecimal)(cmd.Parameters["G_Jur_Person_"].Value)).Value);
+
+                        MarkAsNeedLoad();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                var rethrow = ExceptionPolicy.HandleException(ex, "Data Policy");
+                if (rethrow)
+                    throw;
+            }
+        }
+        public override void Update(ICollection<DomainObject> objCollection)
+        {
+            try
+            {
+                foreach (var obj in objCollection)
+                {
+                    var IssuersGuides = (IssuersGuides)obj;
+
+                    using (var cmd = Connection.CreateCommand())
+                    {
+                        cmd.BindByName = true;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.CommandText = "G_Update_Jur_Person";
+                        cmd.Parameters.Add("G_Jur_Person_", OracleDbType.Decimal, ParameterDirection.Input);
+                        cmd.Parameters.Add("Okpo_", OracleDbType.Varchar2, ParameterDirection.Input);
+                        cmd.Parameters.Add("Bin_", OracleDbType.Varchar2, ParameterDirection.Input);
+                        cmd.Parameters.Add("Name_kz_", OracleDbType.Varchar2, ParameterDirection.Input);
+                        cmd.Parameters.Add("Name_ru_", OracleDbType.Varchar2, ParameterDirection.Input);
+                        cmd.Parameters.Add("Name_eng_", OracleDbType.Varchar2, ParameterDirection.Input);
+                        cmd.Parameters.Add("Address_", OracleDbType.Varchar2, ParameterDirection.Input);
+                        cmd.Parameters.Add("Address2_", OracleDbType.Varchar2, ParameterDirection.Input);
+                        cmd.Parameters.Add("Phone_", OracleDbType.Varchar2, ParameterDirection.Input);
+                        cmd.Parameters.Add("Fax_", OracleDbType.Varchar2, ParameterDirection.Input);
+                        cmd.Parameters.Add("Email_", OracleDbType.Varchar2, ParameterDirection.Input);
+                        cmd.Parameters.Add("Chief_fm_", OracleDbType.Varchar2, ParameterDirection.Input);
+                        cmd.Parameters.Add("Reg_Date_", OracleDbType.Date, ParameterDirection.Input);
+                        cmd.Parameters.Add("Rereg_date_", OracleDbType.Date, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_activeknd_", OracleDbType.Int32, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_spec_", OracleDbType.Int32, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_spec_activeknd_", OracleDbType.Int32, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_managecom_", OracleDbType.Int32, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_custodian_", OracleDbType.Int32, ParameterDirection.Input);
+                        cmd.Parameters.Add("Is_public_", OracleDbType.Int32, ParameterDirection.Input);
+                        cmd.Parameters.Add("Is_finagent_", OracleDbType.Int32, ParameterDirection.Input);
+                        cmd.Parameters.Add("Is_rfca_", OracleDbType.Int32, ParameterDirection.Input);
+                        cmd.Parameters.Add("Is_govhaveshare_", OracleDbType.Int32, ParameterDirection.Input);
+                        cmd.Parameters.Add("Is_nonres_", OracleDbType.Int32, ParameterDirection.Input);
+                        cmd.Parameters.Add("Is_havetechbuy_", OracleDbType.Int32, ParameterDirection.Input);
+                        cmd.Parameters.Add("Is_havecode_", OracleDbType.Int32, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_listing_", OracleDbType.Int32, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_rating_", OracleDbType.Int32, ParameterDirection.Input);
+                        cmd.Parameters.Add("Is_commerce_", OracleDbType.Int32, ParameterDirection.Input);
+                        cmd.Parameters.Add("Is_haveorder_", OracleDbType.Int32, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_regauth_", OracleDbType.Int32, ParameterDirection.Input);
+                        cmd.Parameters.Add("Regnum_", OracleDbType.Varchar2, ParameterDirection.Input);
+                        cmd.Parameters.Add("Value_Capital_", OracleDbType.Double, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_creathis_", OracleDbType.Int32, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_region_", OracleDbType.Int32, ParameterDirection.Input);
+                     //   cmd.Parameters.Add("Is_active_", OracleDbType.Int32, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_Audit_", OracleDbType.Int32, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_Pagent_", OracleDbType.Int32, ParameterDirection.Input);
+                        cmd.Parameters.Add("Id_olf_", OracleDbType.Int32, ParameterDirection.Input);
+                      //  cmd.Parameters.Add("Id_process_", OracleDbType.Int32, ParameterDirection.Input);
+                        cmd.Parameters.Add("idSecurities_", OracleDbType.Int32, ParameterDirection.Input);
+                        cmd.Parameters.Add("Err_Code", OracleDbType.Decimal, ParameterDirection.Output);
+                        cmd.Parameters.Add("Err_Msg", OracleDbType.Varchar2, ParameterDirection.Output);
+
+                        cmd.Parameters["g_jur_person_"].Value = IssuersGuides.Id;
+                        cmd.Parameters["Okpo_"].Value = IssuersGuides.Okpo;
+                        cmd.Parameters["Bin_"].Value = IssuersGuides.Bin;
+                        cmd.Parameters["Name_kz_"].Value = IssuersGuides.Name_kz;
+                        cmd.Parameters["Name_ru_"].Value = IssuersGuides.Name_ru;
+                        cmd.Parameters["Name_eng_"].Value = IssuersGuides.Name_eng;
+                        cmd.Parameters["Address_"].Value = IssuersGuides.Address;
+                        cmd.Parameters["Address2_"].Value = IssuersGuides.Address2;
+                        cmd.Parameters["Phone_"].Value = IssuersGuides.Phone;
+                        cmd.Parameters["Fax_"].Value = IssuersGuides.Fax;
+                        cmd.Parameters["Email_"].Value = IssuersGuides.Email;
+                        cmd.Parameters["Chief_fm_"].Value = IssuersGuides.Chief_fm;
+                        cmd.Parameters["Reg_date_"].Value = IssuersGuides.Reg_date;
+                        cmd.Parameters["Rereg_date_"].Value = IssuersGuides.Rereg_date;
+                        cmd.Parameters["Id_Activeknd_"].Value = (IssuersGuides.Activeknd == null) ? (decimal?)null : IssuersGuides.Activeknd.Id;
+                        cmd.Parameters["Id_spec_"].Value = (IssuersGuides.Spec == null) ? (decimal?)null : IssuersGuides.Spec.Id;
+                        cmd.Parameters["Id_spec_activeknd_"].Value = (IssuersGuides.Spec_activeknd == null) ? (decimal?)null : IssuersGuides.Spec_activeknd.Id;
+                        cmd.Parameters["Id_managecom_"].Value = IssuersGuides.Id_managecom;
+                        cmd.Parameters["Id_custodian_"].Value = (IssuersGuides.Custodian == null) ? (decimal?)null : IssuersGuides.Custodian.Id;
+                        cmd.Parameters["Is_public_"].Value = IssuersGuides.Is_public;
+                        cmd.Parameters["Is_finagent_"].Value = IssuersGuides.Is_finagent;
+                        cmd.Parameters["Is_rfca_"].Value = IssuersGuides.Is_rfca;
+                        cmd.Parameters["Is_govhaveshare_"].Value = IssuersGuides.Is_govhaveshare;
+                        cmd.Parameters["Is_nonres_"].Value = IssuersGuides.Is_nonres;
+                        cmd.Parameters["Is_havetechbuy_"].Value = IssuersGuides.Is_havetechbuy;
+                        cmd.Parameters["Is_havecode_"].Value = IssuersGuides.Is_havecode;
+                        cmd.Parameters["Id_listing_"].Value = (IssuersGuides.Listing == null) ? (decimal?)null : IssuersGuides.Listing.Id;
+                        cmd.Parameters["Id_rating_"].Value = (IssuersGuides.Rating == null) ? (decimal?)null : IssuersGuides.Rating.Id;
+                        cmd.Parameters["Is_commerce_"].Value = IssuersGuides.Is_commerce;
+                        cmd.Parameters["Is_haveorder_"].Value = IssuersGuides.Is_haveorder;
+                        cmd.Parameters["Id_regauth_"].Value = (IssuersGuides.Regorganmu == null) ? (decimal?)null : IssuersGuides.Regorganmu.Id;
+                        cmd.Parameters["Regnum_"].Value = IssuersGuides.Regnum;
+                        cmd.Parameters["Value_Capital_"].Value = IssuersGuides.Value_capital;
+                        cmd.Parameters["Id_creathis_"].Value = (IssuersGuides.Jurcreathst == null) ? (decimal?)null : IssuersGuides.Jurcreathst.Id;
+                        cmd.Parameters["Id_region_"].Value = (IssuersGuides.Region == null) ? (decimal?)null : IssuersGuides.Region.Id;
+                        if (IssuersGuides.Audit != null)
+                        cmd.Parameters["Id_Audit_"].Value = IssuersGuides.Audit.Id;
+                        if (IssuersGuides.Payagent != null)
+                        cmd.Parameters["Id_Pagent_"].Value = IssuersGuides.Payagent.Id;
+                     //   cmd.Parameters["Is_active_"].Value = IssuersGuides.Is_active;
+                        cmd.Parameters["Id_Olf_"].Value = (IssuersGuides.Olf == null) ? (decimal?)null : IssuersGuides.Olf.Id;
+                        cmd.Parameters["idSecurities_"].Value = IssuersGuides.IdSecurities;
+                        cmd.Parameters["Err_Msg"].Size = 4000;
+
+                        cmd.ExecuteNonQuery();
+
+                        if (!((OracleDecimal)cmd.Parameters["Err_Code"].Value).IsNull)
+                        {
+                            var errCode = ((OracleDecimal)cmd.Parameters["Err_Code"].Value).ToInt32();
+                            var errMsg = cmd.Parameters["Err_Msg"].Value.ToString();
+                            if (errCode != 0)
+                                throw new OraCustomException(errCode, errMsg);
+                        }
+
+                        MarkAsNeedLoad();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                var rethrow = ExceptionPolicy.HandleException(ex, "Data Policy");
+                if (rethrow)
+                    throw;
+            }
+        }
+        public override void Delete(ICollection<DomainObject> objCollection)
+        {
+            try
+            {
+                foreach (var obj in objCollection)
+                {
+                    using (var cmd = Connection.CreateCommand())
+                    {
+                        cmd.BindByName = true;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.CommandText = "G_Delete_Jur_Person";
+                        cmd.Parameters.Add("G_Person_", OracleDbType.Decimal, ParameterDirection.Input);
+                        cmd.Parameters.Add("Err_Code", OracleDbType.Decimal, ParameterDirection.Output);
+                        cmd.Parameters.Add("Err_Msg", OracleDbType.Varchar2, ParameterDirection.Output);
+                        cmd.Parameters["G_person_"].Value = obj.Id;
+                        cmd.Parameters["Err_Msg"].Size = 4000;
+
+                        cmd.ExecuteNonQuery();
+
+                        if (!((OracleDecimal)cmd.Parameters["Err_Code"].Value).IsNull)
+                        {
+                            var errCode = ((OracleDecimal)cmd.Parameters["Err_Code"].Value).ToInt32();
+                            var errMsg = cmd.Parameters["Err_Msg"].Value.ToString();
+                            if (errCode != 0)
+                                throw new OraCustomException(errCode, errMsg);
+                        }
+
+                        MarkAsNeedLoad();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                var rethrow = ExceptionPolicy.HandleException(ex, "Data Policy");
+                if (rethrow)
+                    throw;
+            }
+        }
+
+        #region IIssuer
+
+        public virtual IssuersGuides FindByCondition(decimal id)
+        {
+            IssuersGuidesList objList = new IssuersGuidesList();
+            objList.Loader = new VLLoader(new IssuerHstLoader(id), this);
+            return objList[0];
+        }
+
+        public class IssuerHstLoader : TableLoader
+        {
+            private readonly decimal id;
+
+            public IssuerHstLoader(decimal id)
+            {
+                this.id = id;
+            }
+
+            public override ICollection CreateAndLoad()
+            {
+                var gw = DataGatewayFactoryHolder.CacheFactory.GetIssuersGuidesGateway();
+                var tab = new IssuersGuidesDS.G_JUR_PERSONDataTable();
+                gw.Load(tab, id);
+                return tab.Rows;
+            }
+        }
+
+        public virtual IssuersGuidesList FindByCondition(string bin, string nameRu, string nameManagecom, decimal? idRegion)
+        {
+            var objList = new IssuersGuidesList();
+            objList.Loader = new VLLoader(new ByConditionTableLoader(bin, nameRu, nameManagecom, idRegion), this);
+            return objList;
+        }
+        public class ByConditionTableLoader : TableLoader
+        {
+            private readonly string bin, nameRu, nameManagecom;
+            private readonly decimal? idRegion;
+            public ByConditionTableLoader(string bin, string nameRu, string nameManagecom, decimal? idRegion)
+            {
+                this.bin = bin;
+                this.nameRu = nameRu;
+                this.nameManagecom = nameManagecom;
+                this.idRegion = idRegion;
+            }
+
+            public override ICollection CreateAndLoad()
+            {
+                var gw = DataGatewayFactoryHolder.CacheFactory.GetIssuersGuidesGateway();
+                var tab = new IssuersGuidesDS.G_JUR_PERSONDataTable();
+                gw.Load(tab, bin, nameRu, nameManagecom, idRegion);
+                return tab.Rows;
+            }
+        }
+        #endregion
+
+        protected override string IdName()
+        {
+            return "Id";
+        }
+    }
+}

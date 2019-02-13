@@ -1,0 +1,96 @@
+﻿using System;
+using ARM_User.BusinessLayer.Common;
+using BSB.Common;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
+
+namespace ARM_User.BusinessLayer.Guides
+{
+    public class BasePrescription : DomainObject
+    {
+        #region Fileds
+
+        private string nameRu, nameKz;
+        private bool isDelete;
+
+        #endregion Fileds
+
+        public BasePrescription()
+        {
+        }
+
+        public BasePrescription(decimal id, string nameRu, string nameKz, bool isDelete, User editUser, DateTime? editTime)
+            : base(id, editUser, editTime)
+        {
+            this.nameRu = nameRu;
+            this.nameKz = nameKz;
+            this.isDelete = isDelete;
+        }
+
+        public static BasePrescription CreateNew()
+        {
+            return CreateNew<BasePrescription>();
+        }
+
+        #region propertis
+
+        public string NameRu
+        {
+            get { return nameRu; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                nameRu = value;
+                NotifyPropertyChanged("NameRu");
+            }
+        }
+
+        public string NameKz
+        {
+            get { return nameKz; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                nameKz = value;
+                NotifyPropertyChanged("NameKz");
+            }
+        }
+        public bool IsDelete
+        {
+            get { return isDelete; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                isDelete = value;
+                NotifyPropertyChanged("IsDelete");
+            }
+        }
+
+        public override void Delete()
+        {
+            try
+            {
+                UnitOfWork.Instance.BeginTransaction();
+                IsDelete = true;
+                UnitOfWork.Instance.Commit();
+            }
+            catch (Exception ex)
+            {
+                if (UnitOfWork.Instance.IsTransactionStarted)
+                {
+                    UnitOfWork.Instance.Rollback();
+                }
+                var rethrow = ExceptionPolicy.HandleException(ex, "Display Policy");
+                if (rethrow)
+                {
+                    throw;
+                }
+            }
+        }
+
+        #endregion
+    }
+
+    public class BasePrescriptionList : DOList<BasePrescription>
+    {
+    }
+}

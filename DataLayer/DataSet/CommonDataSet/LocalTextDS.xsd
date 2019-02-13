@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LocalTextDS" targetNamespace="http://tempuri.org/LocalTextDS.xsd" xmlns:mstns="http://tempuri.org/LocalTextDS.xsd" xmlns="http://tempuri.org/LocalTextDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LocalTextDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="LocalTextDS" msprop:Generator_UserDSName="LocalTextDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="REF_LOCAL_TEXT" msprop:Generator_TableClassName="REF_LOCAL_TEXTDataTable" msprop:Generator_TableVarName="tableREF_LOCAL_TEXT" msprop:Generator_TablePropName="REF_LOCAL_TEXT" msprop:Generator_RowDeletingName="REF_LOCAL_TEXTRowDeleting" msprop:Generator_UserTableName="REF_LOCAL_TEXT" msprop:Generator_RowChangingName="REF_LOCAL_TEXTRowChanging" msprop:Generator_RowEvHandlerName="REF_LOCAL_TEXTRowChangeEventHandler" msprop:Generator_RowDeletedName="REF_LOCAL_TEXTRowDeleted" msprop:Generator_RowEvArgName="REF_LOCAL_TEXTRowChangeEvent" msprop:Generator_RowChangedName="REF_LOCAL_TEXTRowChanged" msprop:Generator_RowClassName="REF_LOCAL_TEXTRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LANG_ID" msprop:Generator_ColumnVarNameInTable="columnLANG_ID" msprop:Generator_ColumnPropNameInRow="LANG_ID" msprop:Generator_ColumnPropNameInTable="LANG_IDColumn" msprop:Generator_UserColumnName="LANG_ID" type="xs:decimal" minOccurs="0" />
+              <xs:element name="KEY_TEXT" msprop:Generator_ColumnVarNameInTable="columnKEY_TEXT" msprop:Generator_ColumnPropNameInRow="KEY_TEXT" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="KEY_TEXTColumn" msprop:Generator_UserColumnName="KEY_TEXT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOCAL_TEXT" msprop:Generator_ColumnVarNameInTable="columnLOCAL_TEXT" msprop:Generator_ColumnPropNameInRow="LOCAL_TEXT" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="LOCAL_TEXTColumn" msprop:Generator_UserColumnName="LOCAL_TEXT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="EDIT_TIME" msprop:Generator_ColumnVarNameInTable="columnEDIT_TIME" msprop:Generator_ColumnPropNameInRow="EDIT_TIME" msprop:Generator_ColumnPropNameInTable="EDIT_TIMEColumn" msprop:Generator_UserColumnName="EDIT_TIME" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EDIT_USER_ID" msprop:Generator_ColumnVarNameInTable="columnEDIT_USER_ID" msprop:Generator_ColumnPropNameInRow="EDIT_USER_ID" msprop:Generator_ColumnPropNameInTable="EDIT_USER_IDColumn" msprop:Generator_UserColumnName="EDIT_USER_ID" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:REF_LOCAL_TEXT" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

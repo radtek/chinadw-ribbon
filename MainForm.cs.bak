@@ -1,0 +1,3910 @@
+using System;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.IO;
+using System.Timers;
+using System.Windows.Forms;
+using ARM_User.BusinessLayer.Common;
+using ARM_User.DisplayLayer.Guides;
+using ARM_User.DisplayLayer.BondDisplay;
+using ARM_User.DisplayLayer.PaiDisplay;
+using BSB.Actions;
+using BSB.Common;
+using BSB.Common.DB;
+using BSB.Common.DB.Admin;
+using BSB.Win32API;
+using DevExpress.LookAndFeel;
+using DevExpress.Skins;
+using DevExpress.Utils;
+using DevExpress.XtraBars;
+using DevExpress.XtraBars.Docking;
+using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Views.Grid;
+using Oracle.DataAccess.Client;
+using ARM_User.BusinessLayer.Journal;
+using Timer = System.Timers.Timer;
+using ARM_User.DisplayLayer.ShareDisplay;
+using ARM_User.DisplayLayer.Common;
+using ARM_User.DisplayLayer.KazDepReceiptDisplay;
+using ARM_User.DisplayLayer.IslamSecuritiesDisplay;
+
+namespace ARM_User
+{
+  /// <summary>
+  ///   Summary description for Form1.
+  /// </summary>
+  public class MainForm : XtraForm
+  {
+    #region Windows Form Designer generated code
+
+    /// <summary>
+    ///   Required method for Designer support - do not modify
+    ///   the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent()
+    {
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+        this.MainBarManager = new DevExpress.XtraBars.BarManager();
+        this.bar1 = new DevExpress.XtraBars.Bar();
+        this.BarSubItem1 = new DevExpress.XtraBars.BarSubItem();
+        this.iConnect = new DevExpress.XtraBars.BarButtonItem();
+        this.iDisconnect = new DevExpress.XtraBars.BarButtonItem();
+        this.iLockApplication = new DevExpress.XtraBars.BarButtonItem();
+        this.iRefresh = new DevExpress.XtraBars.BarButtonItem();
+        this.iChangePassword = new DevExpress.XtraBars.BarButtonItem();
+        this.iExit = new DevExpress.XtraBars.BarButtonItem();
+        this.barSubItemView = new DevExpress.XtraBars.BarSubItem();
+        this.barButtonItemMenuPanel = new DevExpress.XtraBars.BarButtonItem();
+        this.barButtonItemMsgPanel = new DevExpress.XtraBars.BarButtonItem();
+        this.iPaintStyle = new DevExpress.XtraBars.BarSubItem();
+        this.ipsWXP = new DevExpress.XtraBars.BarButtonItem();
+        this.ipsOXP = new DevExpress.XtraBars.BarButtonItem();
+        this.ipsO2K = new DevExpress.XtraBars.BarButtonItem();
+        this.ipsO2003 = new DevExpress.XtraBars.BarButtonItem();
+        this.iSkins = new DevExpress.XtraBars.BarSubItem();
+        this.iSCaramel = new DevExpress.XtraBars.BarButtonItem();
+        this.iSAsphaltWorld = new DevExpress.XtraBars.BarButtonItem();
+        this.iSLiquidSky = new DevExpress.XtraBars.BarButtonItem();
+        this.iSCoffee = new DevExpress.XtraBars.BarButtonItem();
+        this.iSStardust = new DevExpress.XtraBars.BarButtonItem();
+        this.iSGlassOceans = new DevExpress.XtraBars.BarButtonItem();
+        this.iSMoneyTwins = new DevExpress.XtraBars.BarButtonItem();
+        this.iSLondonLiquidSky = new DevExpress.XtraBars.BarButtonItem();
+        this.mWindow = new DevExpress.XtraBars.BarSubItem();
+        this.iCascade = new DevExpress.XtraBars.BarButtonItem();
+        this.iTileHorizontal = new DevExpress.XtraBars.BarButtonItem();
+        this.iTileVertical = new DevExpress.XtraBars.BarButtonItem();
+        this.iCloseAllWindows = new DevExpress.XtraBars.BarButtonItem();
+        this.BarMdiChildrenListItem = new DevExpress.XtraBars.BarMdiChildrenListItem();
+        this.BarSubItem2 = new DevExpress.XtraBars.BarSubItem();
+        this.iAbout = new DevExpress.XtraBars.BarButtonItem();
+        this.InfoGuide = new DevExpress.XtraBars.BarButtonItem();
+        this.bar2 = new DevExpress.XtraBars.Bar();
+        this.bar3 = new DevExpress.XtraBars.Bar();
+        this.barHint = new DevExpress.XtraBars.BarStaticItem();
+        this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+        this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+        this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+        this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+        this.MainDockManager = new DevExpress.XtraBars.Docking.DockManager();
+        this.hideContainerLeft = new DevExpress.XtraBars.Docking.AutoHideContainer();
+        this.dpMenu = new DevExpress.XtraBars.Docking.DockPanel();
+        this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+        this.tvMenu = new System.Windows.Forms.TreeView();
+        this.dpMessages = new DevExpress.XtraBars.Docking.DockPanel();
+        this.controlContainer1 = new DevExpress.XtraBars.Docking.ControlContainer();
+        this.gridMessages = new DevExpress.XtraGrid.GridControl();
+        this.viewMessages = new DevExpress.XtraGrid.Views.Grid.GridView();
+        this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
+        this.repositoryItemImageComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
+        this.imMessages = new DevExpress.Utils.ImageCollection();
+        this.colType = new DevExpress.XtraGrid.Columns.GridColumn();
+        this.colText = new DevExpress.XtraGrid.Columns.GridColumn();
+        this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+        this.imMain = new System.Windows.Forms.ImageList();
+        this.iMenuExpand = new DevExpress.XtraBars.BarButtonItem();
+        this.iMenuCollapse = new DevExpress.XtraBars.BarButtonItem();
+        this.iMenuExpandNode = new DevExpress.XtraBars.BarButtonItem();
+        this.iMenuCollapseNode = new DevExpress.XtraBars.BarButtonItem();
+        this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+        this.popupMenu = new DevExpress.XtraBars.PopupMenu();
+        this.defaultLookAndFeel = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+        this.tmIdle = new System.Timers.Timer();
+        this.tmCheckInterval = new System.Timers.Timer();
+        this.tcMDIChildren = new System.Windows.Forms.TabControl();
+        this.toolTipController = new DevExpress.Utils.ToolTipController();
+        this.MainActionList = new BSB.Actions.MyActionList(this.components);
+        this.aConnect = new BSB.Actions.MyAction(this.components);
+        this.aDisconnect = new BSB.Actions.MyAction(this.components);
+        this.aRefreshOfficRights = new BSB.Actions.MyAction(this.components);
+        this.aChangePassword = new BSB.Actions.MyAction(this.components);
+        this.aLockApplication = new BSB.Actions.MyAction(this.components);
+        this.aSetCurrentLanguage = new BSB.Actions.MyAction(this.components);
+        this.aFundKnd = new BSB.Actions.MyAction(this.components);
+        this.aIssueECB = new BSB.Actions.MyAction(this.components);
+        this.aCurrencyECB = new BSB.Actions.MyAction(this.components);
+        this.aIssuersGuidesList = new BSB.Actions.MyAction(this.components);
+        this.aBankCust = new BSB.Actions.MyAction(this.components);
+        this.aCategoryControls = new BSB.Actions.MyAction(this.components);
+        this.aClassifierOKED = new BSB.Actions.MyAction(this.components);
+        this.aSpecBus = new BSB.Actions.MyAction(this.components);
+        this.aSignPartNores = new BSB.Actions.MyAction(this.components);
+        this.aSpecIssuer = new BSB.Actions.MyAction(this.components);
+        this.aAbilityConvert = new BSB.Actions.MyAction(this.components);
+        this.aReg = new BSB.Actions.MyAction(this.components);
+        this.aRegion = new BSB.Actions.MyAction(this.components);
+        this.aAudit = new BSB.Actions.MyAction(this.components);
+        this.aKindECB = new BSB.Actions.MyAction(this.components);
+        this.aIssOrganCont = new BSB.Actions.MyAction(this.components);
+        this.aDateTypeLocal = new BSB.Actions.MyAction(this.components);
+        this.aDocKnd = new BSB.Actions.MyAction(this.components);
+        this.aAddCategoryShare = new BSB.Actions.MyAction(this.components);
+        this.aCategoryECB = new BSB.Actions.MyAction(this.components);
+        this.aIndexRewards = new BSB.Actions.MyAction(this.components);
+        this.aProcessknd = new BSB.Actions.MyAction(this.components);
+        this.aOLF = new BSB.Actions.MyAction(this.components);
+        this.aListing = new BSB.Actions.MyAction(this.components);
+        this.aRating = new BSB.Actions.MyAction(this.components);
+        this.aRegOrganMU = new BSB.Actions.MyAction(this.components);
+        this.aStateShareUk = new BSB.Actions.MyAction(this.components);
+        this.aAppointment = new BSB.Actions.MyAction(this.components);
+        this.aRepKnd = new BSB.Actions.MyAction(this.components);
+        this.aSignatory = new BSB.Actions.MyAction(this.components);
+        this.aExecutor = new BSB.Actions.MyAction(this.components);
+        this.aCatHolderEcb = new BSB.Actions.MyAction(this.components);
+        this.aIssueStsECB = new BSB.Actions.MyAction(this.components);
+        this.aIssuersGCB = new BSB.Actions.MyAction(this.components);
+        this.aKindGCB = new BSB.Actions.MyAction(this.components);
+        this.aDebtRepayment = new BSB.Actions.MyAction(this.components);
+        this.aStsReport = new BSB.Actions.MyAction(this.components);
+        this.aKindRegBonds = new BSB.Actions.MyAction(this.components);
+        this.aArticlesKOAP = new BSB.Actions.MyAction(this.components);
+        this.aCauseChangesRep = new BSB.Actions.MyAction(this.components);
+        this.aSuspension = new BSB.Actions.MyAction(this.components);
+        this.aCountry = new BSB.Actions.MyAction(this.components);
+        this.aDecisionAdmOffences = new BSB.Actions.MyAction(this.components);
+        this.aFormCollection = new BSB.Actions.MyAction(this.components);
+        this.aJurPersSts = new BSB.Actions.MyAction(this.components);
+        this.aReasonAnnulECB = new BSB.Actions.MyAction(this.components);
+        this.aUnitDimPerECB = new BSB.Actions.MyAction(this.components);
+        this.aJurPersCreateMethod = new BSB.Actions.MyAction(this.components);
+        this.aMethodLocalECB = new BSB.Actions.MyAction(this.components);
+        this.aPlaceAccommECB = new BSB.Actions.MyAction(this.components);
+        this.aReasonChangeShareIssue = new BSB.Actions.MyAction(this.components);
+        this.aStsStAccommECB = new BSB.Actions.MyAction(this.components);
+        this.aDecVerifInf = new BSB.Actions.MyAction(this.components);
+        this.aBasePrescription = new BSB.Actions.MyAction(this.components);
+        this.aViolationKnd = new BSB.Actions.MyAction(this.components);
+        this.aOrganRegIssueECB = new BSB.Actions.MyAction(this.components);
+        this.aMRP = new BSB.Actions.MyAction(this.components);
+        this.aResolutionDR = new BSB.Actions.MyAction(this.components);
+        this.aStatusECB = new BSB.Actions.MyAction(this.components);
+        this.aStatusLicense = new BSB.Actions.MyAction(this.components);
+        this.aCondMonitorValid = new BSB.Actions.MyAction(this.components);
+        this.aSharer = new BSB.Actions.MyAction(this.components);
+        this.aReasonSuspensionECB = new BSB.Actions.MyAction(this.components);
+        this.aDecTreadCard = new BSB.Actions.MyAction(this.components);
+        this.aProcess = new BSB.Actions.MyAction(this.components);
+        this.aBondRegistry = new BSB.Actions.MyAction(this.components);
+        this.aBondReestr = new BSB.Actions.MyAction(this.components);
+        this.aBondRefuseJournal = new BSB.Actions.MyAction(this.components);
+        this.aShareJournalReestr = new BSB.Actions.MyAction(this.components);
+        this.aShareJournalChanges = new BSB.Actions.MyAction(this.components);
+        this.aShareReestr = new BSB.Actions.MyAction(this.components);
+        this.aShareJournalDenial = new BSB.Actions.MyAction(this.components);
+        this.aKazDepRecReestr = new BSB.Actions.MyAction(this.components);
+        this.aPaiReestr = new BSB.Actions.MyAction(this.components);
+        this.aPaiRefuse = new BSB.Actions.MyAction(this.components);
+        this.aKndSanctions = new BSB.Actions.MyAction(this.components);
+        this.aIslamSecJournalDenial = new BSB.Actions.MyAction();
+        ((System.ComponentModel.ISupportInitialize)(this.MainBarManager)).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)(this.MainDockManager)).BeginInit();
+        this.hideContainerLeft.SuspendLayout();
+        this.dpMenu.SuspendLayout();
+        this.dockPanel1_Container.SuspendLayout();
+        this.dpMessages.SuspendLayout();
+        this.controlContainer1.SuspendLayout();
+        ((System.ComponentModel.ISupportInitialize)(this.gridMessages)).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)(this.viewMessages)).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox1)).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)(this.imMessages)).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)(this.popupMenu)).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)(this.tmIdle)).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)(this.tmCheckInterval)).BeginInit();
+        this.SuspendLayout();
+        // 
+        // MainBarManager
+        // 
+        this.MainBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar1,
+            this.bar2,
+            this.bar3});
+        this.MainBarManager.Categories.AddRange(new DevExpress.XtraBars.BarManagerCategory[] {
+            new DevExpress.XtraBars.BarManagerCategory("Справка", new System.Guid("cac15f5a-1f8e-43ad-b9d6-5225fb64e467")),
+            new DevExpress.XtraBars.BarManagerCategory("База данных", new System.Guid("cab7762b-f378-41ff-ae31-89aa33dc34db")),
+            new DevExpress.XtraBars.BarManagerCategory("Меню", new System.Guid("4f31361d-1b22-40a3-92c8-db911363509d")),
+            new DevExpress.XtraBars.BarManagerCategory("Вид", new System.Guid("72357ab3-5503-454a-be9f-14acecaa5e4b")),
+            new DevExpress.XtraBars.BarManagerCategory("Окно", new System.Guid("747d4ad8-974a-42d0-85a0-48a038d83763")),
+            new DevExpress.XtraBars.BarManagerCategory("Стиль", new System.Guid("db168634-9068-4b8a-834b-70143f4d7bcf")),
+            new DevExpress.XtraBars.BarManagerCategory("Рабочее меню", new System.Guid("81d48205-e99e-4e12-aa2b-1551e99931bd")),
+            new DevExpress.XtraBars.BarManagerCategory("Скины", new System.Guid("48098e1d-c466-4488-8b96-4056c7a53445"))});
+        this.MainBarManager.DockControls.Add(this.barDockControlTop);
+        this.MainBarManager.DockControls.Add(this.barDockControlBottom);
+        this.MainBarManager.DockControls.Add(this.barDockControlLeft);
+        this.MainBarManager.DockControls.Add(this.barDockControlRight);
+        this.MainBarManager.DockManager = this.MainDockManager;
+        this.MainBarManager.Form = this;
+        this.MainBarManager.Images = this.imMain;
+        this.MainBarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.BarSubItem1,
+            this.barSubItemView,
+            this.mWindow,
+            this.BarSubItem2,
+            this.iConnect,
+            this.iDisconnect,
+            this.iLockApplication,
+            this.iRefresh,
+            this.iChangePassword,
+            this.iExit,
+            this.iAbout,
+            this.barHint,
+            this.iCascade,
+            this.iTileHorizontal,
+            this.iTileVertical,
+            this.iCloseAllWindows,
+            this.BarMdiChildrenListItem,
+            this.ipsWXP,
+            this.ipsOXP,
+            this.ipsO2K,
+            this.ipsO2003,
+            this.iMenuExpand,
+            this.iMenuCollapse,
+            this.iMenuExpandNode,
+            this.iMenuCollapseNode,
+            this.iSkins,
+            this.iSCaramel,
+            this.iSAsphaltWorld,
+            this.iSLiquidSky,
+            this.iSCoffee,
+            this.iSStardust,
+            this.iSGlassOceans,
+            this.iSMoneyTwins,
+            this.iSLondonLiquidSky,
+            this.barButtonItemMenuPanel,
+            this.barButtonItemMsgPanel,
+            this.iPaintStyle,
+            this.InfoGuide});
+        this.MainBarManager.MainMenu = this.bar1;
+        this.MainBarManager.MaxItemId = 54;
+        this.MainBarManager.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemTextEdit1});
+        this.MainBarManager.StatusBar = this.bar3;
+        // 
+        // bar1
+        // 
+        this.bar1.BarName = "Custom 1";
+        this.bar1.DockCol = 0;
+        this.bar1.DockRow = 0;
+        this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+        this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.BarSubItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItemView),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mWindow),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BarSubItem2)});
+        this.bar1.OptionsBar.AllowQuickCustomization = false;
+        this.bar1.OptionsBar.DisableClose = true;
+        this.bar1.OptionsBar.DisableCustomization = true;
+        this.bar1.OptionsBar.DrawDragBorder = false;
+        this.bar1.OptionsBar.MultiLine = true;
+        this.bar1.OptionsBar.UseWholeRow = true;
+        this.bar1.Text = "Главное меню";
+        // 
+        // BarSubItem1
+        // 
+        this.BarSubItem1.Caption = "&База данных";
+        this.BarSubItem1.CategoryGuid = new System.Guid("4f31361d-1b22-40a3-92c8-db911363509d");
+        this.BarSubItem1.Id = 13;
+        this.BarSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.iConnect),
+            new DevExpress.XtraBars.LinkPersistInfo(this.iDisconnect),
+            new DevExpress.XtraBars.LinkPersistInfo(this.iLockApplication, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.iRefresh, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.iChangePassword, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.iExit, true)});
+        this.BarSubItem1.Name = "BarSubItem1";
+        // 
+        // iConnect
+        // 
+        this.iConnect.Caption = "&Подключиться к базе данных";
+        this.iConnect.CategoryGuid = new System.Guid("cab7762b-f378-41ff-ae31-89aa33dc34db");
+        this.iConnect.Hint = "Подключиться к базе данных";
+        this.iConnect.Id = 15;
+        this.iConnect.ImageIndex = 7;
+        this.iConnect.Name = "iConnect";
+        this.iConnect.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItemConnect_ItemClick);
+        // 
+        // iDisconnect
+        // 
+        this.iDisconnect.Caption = "&Отключиться от базы данных";
+        this.iDisconnect.CategoryGuid = new System.Guid("cab7762b-f378-41ff-ae31-89aa33dc34db");
+        this.iDisconnect.Enabled = false;
+        this.iDisconnect.Hint = "Отключиться от базы данных";
+        this.iDisconnect.Id = 16;
+        this.iDisconnect.ImageIndex = 6;
+        this.iDisconnect.Name = "iDisconnect";
+        this.iDisconnect.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iDisconnect_ItemClick);
+        // 
+        // iLockApplication
+        // 
+        this.iLockApplication.Caption = "Заблокировать";
+        this.iLockApplication.CategoryGuid = new System.Guid("cab7762b-f378-41ff-ae31-89aa33dc34db");
+        this.iLockApplication.Enabled = false;
+        this.iLockApplication.Hint = "Заблокировать приложение";
+        this.iLockApplication.Id = 35;
+        this.iLockApplication.ImageIndex = 20;
+        this.iLockApplication.Name = "iLockApplication";
+        this.iLockApplication.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iLockApplication_ItemClick);
+        // 
+        // iRefresh
+        // 
+        this.iRefresh.Caption = "Перечитать права пользователя";
+        this.iRefresh.CategoryGuid = new System.Guid("cab7762b-f378-41ff-ae31-89aa33dc34db");
+        this.iRefresh.Enabled = false;
+        this.iRefresh.Hint = "Перечитать права пользователя";
+        this.iRefresh.Id = 17;
+        this.iRefresh.ImageIndex = 15;
+        this.iRefresh.Name = "iRefresh";
+        this.iRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iRefresh_ItemClick);
+        // 
+        // iChangePassword
+        // 
+        this.iChangePassword.Caption = "&Изменить пароль пользователя";
+        this.iChangePassword.CategoryGuid = new System.Guid("cab7762b-f378-41ff-ae31-89aa33dc34db");
+        this.iChangePassword.Enabled = false;
+        this.iChangePassword.Hint = "Изменить пароль пользователя";
+        this.iChangePassword.Id = 18;
+        this.iChangePassword.ImageIndex = 10;
+        this.iChangePassword.Name = "iChangePassword";
+        this.iChangePassword.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iChangePassword_ItemClick);
+        // 
+        // iExit
+        // 
+        this.iExit.Caption = "&Выход";
+        this.iExit.CategoryGuid = new System.Guid("4f31361d-1b22-40a3-92c8-db911363509d");
+        this.iExit.Id = 19;
+        this.iExit.Name = "iExit";
+        this.iExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iExit_ItemClick);
+        // 
+        // barSubItemView
+        // 
+        this.barSubItemView.Caption = "Ви&д";
+        this.barSubItemView.CategoryGuid = new System.Guid("4f31361d-1b22-40a3-92c8-db911363509d");
+        this.barSubItemView.Id = 22;
+        this.barSubItemView.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemMenuPanel),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemMsgPanel),
+            new DevExpress.XtraBars.LinkPersistInfo(this.iPaintStyle)});
+        this.barSubItemView.Name = "barSubItemView";
+        // 
+        // barButtonItemMenuPanel
+        // 
+        this.barButtonItemMenuPanel.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+        this.barButtonItemMenuPanel.Caption = "Панель меню";
+        this.barButtonItemMenuPanel.CategoryGuid = new System.Guid("72357ab3-5503-454a-be9f-14acecaa5e4b");
+        this.barButtonItemMenuPanel.Down = true;
+        this.barButtonItemMenuPanel.Hint = "Скрыть\\Показать панель меню";
+        this.barButtonItemMenuPanel.Id = 23;
+        this.barButtonItemMenuPanel.ImageIndex = 16;
+        this.barButtonItemMenuPanel.Name = "barButtonItemMenuPanel";
+        this.barButtonItemMenuPanel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemMenuPanel_ItemClick);
+        // 
+        // barButtonItemMsgPanel
+        // 
+        this.barButtonItemMsgPanel.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+        this.barButtonItemMsgPanel.Caption = "Панель сообщений";
+        this.barButtonItemMsgPanel.CategoryGuid = new System.Guid("72357ab3-5503-454a-be9f-14acecaa5e4b");
+        this.barButtonItemMsgPanel.Down = true;
+        this.barButtonItemMsgPanel.Hint = "Скрыть\\Показать панель сообщений";
+        this.barButtonItemMsgPanel.Id = 52;
+        this.barButtonItemMsgPanel.ImageIndex = 26;
+        this.barButtonItemMsgPanel.Name = "barButtonItemMsgPanel";
+        this.barButtonItemMsgPanel.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+        this.barButtonItemMsgPanel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemMsgPanel_ItemClick);
+        // 
+        // iPaintStyle
+        // 
+        this.iPaintStyle.Caption = "Стиль раскраски";
+        this.iPaintStyle.CategoryGuid = new System.Guid("72357ab3-5503-454a-be9f-14acecaa5e4b");
+        this.iPaintStyle.Id = 34;
+        this.iPaintStyle.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.ipsWXP),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ipsOXP),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ipsO2K),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ipsO2003),
+            new DevExpress.XtraBars.LinkPersistInfo(this.iSkins)});
+        this.iPaintStyle.Name = "iPaintStyle";
+        this.iPaintStyle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+        // 
+        // ipsWXP
+        // 
+        this.ipsWXP.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+        this.ipsWXP.Caption = "Windows XP";
+        this.ipsWXP.CategoryGuid = new System.Guid("db168634-9068-4b8a-834b-70143f4d7bcf");
+        this.ipsWXP.Description = "WindowsXP";
+        this.ipsWXP.GroupIndex = 1;
+        this.ipsWXP.Id = 30;
+        this.ipsWXP.Name = "ipsWXP";
+        this.ipsWXP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ips_ItemClick);
+        // 
+        // ipsOXP
+        // 
+        this.ipsOXP.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+        this.ipsOXP.Caption = "Office XP";
+        this.ipsOXP.CategoryGuid = new System.Guid("db168634-9068-4b8a-834b-70143f4d7bcf");
+        this.ipsOXP.Description = "OfficeXP";
+        this.ipsOXP.GroupIndex = 1;
+        this.ipsOXP.Id = 31;
+        this.ipsOXP.Name = "ipsOXP";
+        this.ipsOXP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ips_ItemClick);
+        // 
+        // ipsO2K
+        // 
+        this.ipsO2K.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+        this.ipsO2K.Caption = "Office 2000";
+        this.ipsO2K.CategoryGuid = new System.Guid("db168634-9068-4b8a-834b-70143f4d7bcf");
+        this.ipsO2K.Description = "Office2000";
+        this.ipsO2K.GroupIndex = 1;
+        this.ipsO2K.Id = 32;
+        this.ipsO2K.Name = "ipsO2K";
+        this.ipsO2K.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ips_ItemClick);
+        // 
+        // ipsO2003
+        // 
+        this.ipsO2003.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+        this.ipsO2003.Caption = "Office 2003";
+        this.ipsO2003.CategoryGuid = new System.Guid("db168634-9068-4b8a-834b-70143f4d7bcf");
+        this.ipsO2003.Description = "Office2003";
+        this.ipsO2003.GroupIndex = 1;
+        this.ipsO2003.Id = 33;
+        this.ipsO2003.Name = "ipsO2003";
+        this.ipsO2003.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ips_ItemClick);
+        // 
+        // iSkins
+        // 
+        this.iSkins.Caption = "Скины";
+        this.iSkins.CategoryGuid = new System.Guid("db168634-9068-4b8a-834b-70143f4d7bcf");
+        this.iSkins.Id = 41;
+        this.iSkins.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.iSCaramel),
+            new DevExpress.XtraBars.LinkPersistInfo(this.iSAsphaltWorld),
+            new DevExpress.XtraBars.LinkPersistInfo(this.iSLiquidSky),
+            new DevExpress.XtraBars.LinkPersistInfo(this.iSCoffee),
+            new DevExpress.XtraBars.LinkPersistInfo(this.iSStardust),
+            new DevExpress.XtraBars.LinkPersistInfo(this.iSGlassOceans),
+            new DevExpress.XtraBars.LinkPersistInfo(this.iSMoneyTwins),
+            new DevExpress.XtraBars.LinkPersistInfo(this.iSLondonLiquidSky)});
+        this.iSkins.Name = "iSkins";
+        // 
+        // iSCaramel
+        // 
+        this.iSCaramel.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+        this.iSCaramel.Caption = "Caramel";
+        this.iSCaramel.CategoryGuid = new System.Guid("48098e1d-c466-4488-8b96-4056c7a53445");
+        this.iSCaramel.GroupIndex = 1;
+        this.iSCaramel.Id = 42;
+        this.iSCaramel.Name = "iSCaramel";
+        this.iSCaramel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iSkins_ItemClick);
+        // 
+        // iSAsphaltWorld
+        // 
+        this.iSAsphaltWorld.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+        this.iSAsphaltWorld.Caption = "The Asphalt World";
+        this.iSAsphaltWorld.CategoryGuid = new System.Guid("48098e1d-c466-4488-8b96-4056c7a53445");
+        this.iSAsphaltWorld.GroupIndex = 1;
+        this.iSAsphaltWorld.Id = 43;
+        this.iSAsphaltWorld.Name = "iSAsphaltWorld";
+        this.iSAsphaltWorld.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iSkins_ItemClick);
+        // 
+        // iSLiquidSky
+        // 
+        this.iSLiquidSky.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+        this.iSLiquidSky.Caption = "Liquid Sky";
+        this.iSLiquidSky.CategoryGuid = new System.Guid("48098e1d-c466-4488-8b96-4056c7a53445");
+        this.iSLiquidSky.GroupIndex = 1;
+        this.iSLiquidSky.Id = 44;
+        this.iSLiquidSky.Name = "iSLiquidSky";
+        this.iSLiquidSky.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iSkins_ItemClick);
+        // 
+        // iSCoffee
+        // 
+        this.iSCoffee.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+        this.iSCoffee.Caption = "Coffee";
+        this.iSCoffee.CategoryGuid = new System.Guid("48098e1d-c466-4488-8b96-4056c7a53445");
+        this.iSCoffee.GroupIndex = 1;
+        this.iSCoffee.Id = 45;
+        this.iSCoffee.Name = "iSCoffee";
+        this.iSCoffee.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iSkins_ItemClick);
+        // 
+        // iSStardust
+        // 
+        this.iSStardust.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+        this.iSStardust.Caption = "Stardust";
+        this.iSStardust.CategoryGuid = new System.Guid("48098e1d-c466-4488-8b96-4056c7a53445");
+        this.iSStardust.GroupIndex = 1;
+        this.iSStardust.Id = 46;
+        this.iSStardust.Name = "iSStardust";
+        this.iSStardust.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iSkins_ItemClick);
+        // 
+        // iSGlassOceans
+        // 
+        this.iSGlassOceans.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+        this.iSGlassOceans.Caption = "Glass Oceans";
+        this.iSGlassOceans.CategoryGuid = new System.Guid("48098e1d-c466-4488-8b96-4056c7a53445");
+        this.iSGlassOceans.GroupIndex = 1;
+        this.iSGlassOceans.Id = 47;
+        this.iSGlassOceans.Name = "iSGlassOceans";
+        this.iSGlassOceans.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iSkins_ItemClick);
+        // 
+        // iSMoneyTwins
+        // 
+        this.iSMoneyTwins.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+        this.iSMoneyTwins.Caption = "Money Twins";
+        this.iSMoneyTwins.CategoryGuid = new System.Guid("48098e1d-c466-4488-8b96-4056c7a53445");
+        this.iSMoneyTwins.GroupIndex = 1;
+        this.iSMoneyTwins.Id = 48;
+        this.iSMoneyTwins.Name = "iSMoneyTwins";
+        this.iSMoneyTwins.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iSkins_ItemClick);
+        // 
+        // iSLondonLiquidSky
+        // 
+        this.iSLondonLiquidSky.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+        this.iSLondonLiquidSky.Caption = "London Liquid Sky";
+        this.iSLondonLiquidSky.CategoryGuid = new System.Guid("48098e1d-c466-4488-8b96-4056c7a53445");
+        this.iSLondonLiquidSky.GroupIndex = 1;
+        this.iSLondonLiquidSky.Id = 49;
+        this.iSLondonLiquidSky.Name = "iSLondonLiquidSky";
+        this.iSLondonLiquidSky.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iSkins_ItemClick);
+        // 
+        // mWindow
+        // 
+        this.mWindow.Caption = "О&кно";
+        this.mWindow.CategoryGuid = new System.Guid("4f31361d-1b22-40a3-92c8-db911363509d");
+        this.mWindow.Id = 28;
+        this.mWindow.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.iCascade),
+            new DevExpress.XtraBars.LinkPersistInfo(this.iTileHorizontal),
+            new DevExpress.XtraBars.LinkPersistInfo(this.iTileVertical),
+            new DevExpress.XtraBars.LinkPersistInfo(this.iCloseAllWindows),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BarMdiChildrenListItem, true)});
+        this.mWindow.Name = "mWindow";
+        // 
+        // iCascade
+        // 
+        this.iCascade.Caption = "Каскадом";
+        this.iCascade.CategoryGuid = new System.Guid("747d4ad8-974a-42d0-85a0-48a038d83763");
+        this.iCascade.Id = 24;
+        this.iCascade.ImageIndex = 17;
+        this.iCascade.Name = "iCascade";
+        this.iCascade.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iCascade_ItemClick);
+        // 
+        // iTileHorizontal
+        // 
+        this.iTileHorizontal.Caption = "Расположить горизонтально";
+        this.iTileHorizontal.CategoryGuid = new System.Guid("747d4ad8-974a-42d0-85a0-48a038d83763");
+        this.iTileHorizontal.Id = 25;
+        this.iTileHorizontal.ImageIndex = 19;
+        this.iTileHorizontal.Name = "iTileHorizontal";
+        this.iTileHorizontal.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iTileHorizontal_ItemClick);
+        // 
+        // iTileVertical
+        // 
+        this.iTileVertical.Caption = "Расположить вертикально";
+        this.iTileVertical.CategoryGuid = new System.Guid("747d4ad8-974a-42d0-85a0-48a038d83763");
+        this.iTileVertical.Id = 26;
+        this.iTileVertical.ImageIndex = 18;
+        this.iTileVertical.Name = "iTileVertical";
+        this.iTileVertical.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iTileVertical_ItemClick);
+        // 
+        // iCloseAllWindows
+        // 
+        this.iCloseAllWindows.Caption = "Закрыть Все";
+        this.iCloseAllWindows.CategoryGuid = new System.Guid("747d4ad8-974a-42d0-85a0-48a038d83763");
+        this.iCloseAllWindows.Id = 36;
+        this.iCloseAllWindows.Name = "iCloseAllWindows";
+        this.iCloseAllWindows.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iCloseAllWindows_ItemClick);
+        // 
+        // BarMdiChildrenListItem
+        // 
+        this.BarMdiChildrenListItem.Caption = "Окна";
+        this.BarMdiChildrenListItem.CategoryGuid = new System.Guid("747d4ad8-974a-42d0-85a0-48a038d83763");
+        this.BarMdiChildrenListItem.Id = 29;
+        this.BarMdiChildrenListItem.Name = "BarMdiChildrenListItem";
+        // 
+        // BarSubItem2
+        // 
+        this.BarSubItem2.Caption = "&Справка";
+        this.BarSubItem2.CategoryGuid = new System.Guid("4f31361d-1b22-40a3-92c8-db911363509d");
+        this.BarSubItem2.Id = 14;
+        this.BarSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.iAbout),
+            new DevExpress.XtraBars.LinkPersistInfo(this.InfoGuide)});
+        this.BarSubItem2.Name = "BarSubItem2";
+        // 
+        // iAbout
+        // 
+        this.iAbout.Caption = "&О программе...";
+        this.iAbout.CategoryGuid = new System.Guid("cac15f5a-1f8e-43ad-b9d6-5225fb64e467");
+        this.iAbout.Id = 20;
+        this.iAbout.ImageIndex = 14;
+        this.iAbout.Name = "iAbout";
+        this.iAbout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iAbout_ItemClick);
+        // 
+        // InfoGuide
+        // 
+        this.InfoGuide.Caption = "&Справочная информация";
+        this.InfoGuide.Glyph = ((System.Drawing.Image)(resources.GetObject("InfoGuide.Glyph")));
+        this.InfoGuide.Id = 54;
+        this.InfoGuide.Name = "InfoGuide";
+        this.InfoGuide.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+        this.InfoGuide.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.InfoGuide_ItemClick);
+        // 
+        // bar2
+        // 
+        this.bar2.BarName = "Custom 2";
+        this.bar2.DockCol = 0;
+        this.bar2.DockRow = 1;
+        this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+        this.bar2.FloatLocation = new System.Drawing.Point(175, 165);
+        this.bar2.FloatSize = new System.Drawing.Size(85, 65);
+        this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.iConnect),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.iDisconnect, DevExpress.XtraBars.BarItemPaintStyle.Standard),
+            new DevExpress.XtraBars.LinkPersistInfo(this.iLockApplication, true),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.iRefresh, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.Standard),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.iChangePassword, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.Standard),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemMenuPanel, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemMsgPanel)});
+        this.bar2.OptionsBar.AllowQuickCustomization = false;
+        this.bar2.OptionsBar.UseWholeRow = true;
+        this.bar2.Text = "Основной";
+        // 
+        // bar3
+        // 
+        this.bar3.BarName = "Custom 3";
+        this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
+        this.bar3.DockCol = 0;
+        this.bar3.DockRow = 0;
+        this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+        this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barHint)});
+        this.bar3.OptionsBar.AllowQuickCustomization = false;
+        this.bar3.OptionsBar.DrawDragBorder = false;
+        this.bar3.OptionsBar.DrawSizeGrip = true;
+        this.bar3.OptionsBar.UseWholeRow = true;
+        this.bar3.Text = "Нижний";
+        // 
+        // barHint
+        // 
+        this.barHint.AutoSize = DevExpress.XtraBars.BarStaticItemSize.Spring;
+        this.barHint.Id = 21;
+        this.barHint.Name = "barHint";
+        this.barHint.TextAlignment = System.Drawing.StringAlignment.Near;
+        this.barHint.Width = 32;
+        // 
+        // barDockControlTop
+        // 
+        this.barDockControlTop.CausesValidation = false;
+        this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+        this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+        this.barDockControlTop.Size = new System.Drawing.Size(599, 48);
+        // 
+        // barDockControlBottom
+        // 
+        this.barDockControlBottom.CausesValidation = false;
+        this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+        this.barDockControlBottom.Location = new System.Drawing.Point(0, 393);
+        this.barDockControlBottom.Size = new System.Drawing.Size(599, 22);
+        // 
+        // barDockControlLeft
+        // 
+        this.barDockControlLeft.CausesValidation = false;
+        this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+        this.barDockControlLeft.Location = new System.Drawing.Point(0, 48);
+        this.barDockControlLeft.Size = new System.Drawing.Size(0, 345);
+        // 
+        // barDockControlRight
+        // 
+        this.barDockControlRight.CausesValidation = false;
+        this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+        this.barDockControlRight.Location = new System.Drawing.Point(599, 48);
+        this.barDockControlRight.Size = new System.Drawing.Size(0, 345);
+        // 
+        // MainDockManager
+        // 
+        this.MainDockManager.AutoHideContainers.AddRange(new DevExpress.XtraBars.Docking.AutoHideContainer[] {
+            this.hideContainerLeft});
+        this.MainDockManager.Form = this;
+        this.MainDockManager.HiddenPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
+            this.dpMessages});
+        this.MainDockManager.MenuManager = this.MainBarManager;
+        this.MainDockManager.TopZIndexControls.AddRange(new string[] {
+            "DevExpress.XtraBars.BarDockControl",
+            "System.Windows.Forms.StatusBar"});
+        // 
+        // hideContainerLeft
+        // 
+        this.hideContainerLeft.BackColor = System.Drawing.SystemColors.Control;
+        this.hideContainerLeft.Controls.Add(this.dpMenu);
+        this.hideContainerLeft.Dock = System.Windows.Forms.DockStyle.Left;
+        this.hideContainerLeft.Location = new System.Drawing.Point(0, 48);
+        this.hideContainerLeft.Name = "hideContainerLeft";
+        this.hideContainerLeft.Size = new System.Drawing.Size(19, 345);
+        // 
+        // dpMenu
+        // 
+        this.dpMenu.Controls.Add(this.dockPanel1_Container);
+        this.dpMenu.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
+        this.dpMenu.ID = new System.Guid("6bbfbc01-ccf9-4a45-b503-7eaef7a61ec9");
+        this.dpMenu.Location = new System.Drawing.Point(0, 0);
+        this.dpMenu.Name = "dpMenu";
+        this.dpMenu.OriginalSize = new System.Drawing.Size(219, 326);
+        this.dpMenu.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Left;
+        this.dpMenu.SavedIndex = 0;
+        this.dpMenu.Size = new System.Drawing.Size(219, 326);
+        this.dpMenu.Text = " Меню";
+        this.dpMenu.Visibility = DevExpress.XtraBars.Docking.DockVisibility.AutoHide;
+        this.dpMenu.VisibilityChanged += new DevExpress.XtraBars.Docking.VisibilityChangedEventHandler(this.dpMenu_VisibilityChanged);
+        // 
+        // dockPanel1_Container
+        // 
+        this.dockPanel1_Container.Controls.Add(this.tvMenu);
+        this.dockPanel1_Container.Location = new System.Drawing.Point(3, 27);
+        this.dockPanel1_Container.Name = "dockPanel1_Container";
+        this.dockPanel1_Container.Size = new System.Drawing.Size(213, 296);
+        this.dockPanel1_Container.TabIndex = 0;
+        // 
+        // tvMenu
+        // 
+        this.tvMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+        this.tvMenu.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+        this.tvMenu.Location = new System.Drawing.Point(0, 0);
+        this.tvMenu.Name = "tvMenu";
+        this.MainBarManager.SetPopupContextMenu(this.tvMenu, this.popupMenu);
+        this.tvMenu.Size = new System.Drawing.Size(213, 296);
+        this.tvMenu.TabIndex = 0;
+        this.tvMenu.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.tvMenu_AfterCollapse);
+        this.tvMenu.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.tvMenu_AfterExpand);
+        this.tvMenu.DoubleClick += new System.EventHandler(this.tvMenu_DoubleClick);
+        // 
+        // dpMessages
+        // 
+        this.dpMessages.Controls.Add(this.controlContainer1);
+        this.dpMessages.Dock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
+        this.dpMessages.FloatSize = new System.Drawing.Size(419, 152);
+        this.dpMessages.FloatVertical = true;
+        this.dpMessages.ID = new System.Guid("7613deef-a254-4501-8ddf-ebf83bb0b1a6");
+        this.dpMessages.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+        this.dpMessages.Location = new System.Drawing.Point(0, 0);
+        this.dpMessages.Name = "dpMessages";
+        this.dpMessages.OriginalSize = new System.Drawing.Size(577, 50);
+        this.dpMessages.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
+        this.dpMessages.SavedIndex = 0;
+        this.dpMessages.Size = new System.Drawing.Size(580, 50);
+        this.dpMessages.Text = "Сообщения";
+        this.dpMessages.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Hidden;
+        this.dpMessages.VisibilityChanged += new DevExpress.XtraBars.Docking.VisibilityChangedEventHandler(this.dpMessages_VisibilityChanged);
+        // 
+        // controlContainer1
+        // 
+        this.controlContainer1.Controls.Add(this.gridMessages);
+        this.controlContainer1.Location = new System.Drawing.Point(3, 27);
+        this.controlContainer1.Name = "controlContainer1";
+        this.controlContainer1.Size = new System.Drawing.Size(574, 20);
+        this.controlContainer1.TabIndex = 0;
+        // 
+        // gridMessages
+        // 
+        this.gridMessages.Dock = System.Windows.Forms.DockStyle.Fill;
+        this.gridMessages.Location = new System.Drawing.Point(0, 0);
+        this.gridMessages.MainView = this.viewMessages;
+        this.gridMessages.Name = "gridMessages";
+        this.gridMessages.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemImageComboBox1,
+            this.repositoryItemMemoEdit1});
+        this.gridMessages.Size = new System.Drawing.Size(574, 20);
+        this.gridMessages.TabIndex = 0;
+        this.gridMessages.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.viewMessages});
+        // 
+        // viewMessages
+        // 
+        this.viewMessages.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+        this.viewMessages.Appearance.EvenRow.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+        this.viewMessages.Appearance.EvenRow.ForeColor = System.Drawing.Color.White;
+        this.viewMessages.Appearance.EvenRow.Options.UseBackColor = true;
+        this.viewMessages.Appearance.EvenRow.Options.UseForeColor = true;
+        this.viewMessages.Appearance.FocusedCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+        this.viewMessages.Appearance.FocusedCell.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+        this.viewMessages.Appearance.FocusedCell.ForeColor = System.Drawing.Color.White;
+        this.viewMessages.Appearance.FocusedCell.Options.UseBackColor = true;
+        this.viewMessages.Appearance.FocusedCell.Options.UseForeColor = true;
+        this.viewMessages.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+        this.viewMessages.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+        this.viewMessages.Appearance.FocusedRow.ForeColor = System.Drawing.Color.White;
+        this.viewMessages.Appearance.FocusedRow.Options.UseBackColor = true;
+        this.viewMessages.Appearance.FocusedRow.Options.UseForeColor = true;
+        this.viewMessages.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+        this.viewMessages.Appearance.HideSelectionRow.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+        this.viewMessages.Appearance.HideSelectionRow.Options.UseBackColor = true;
+        this.viewMessages.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+        this.viewMessages.Appearance.Row.ForeColor = System.Drawing.Color.Red;
+        this.viewMessages.Appearance.Row.Options.UseFont = true;
+        this.viewMessages.Appearance.Row.Options.UseForeColor = true;
+        this.viewMessages.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+        this.viewMessages.Appearance.SelectedRow.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+        this.viewMessages.Appearance.SelectedRow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+        this.viewMessages.Appearance.SelectedRow.Options.UseBackColor = true;
+        this.viewMessages.Appearance.SelectedRow.Options.UseForeColor = true;
+        this.viewMessages.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colStatus,
+            this.colType,
+            this.colText});
+        this.viewMessages.GridControl = this.gridMessages;
+        this.viewMessages.Name = "viewMessages";
+        this.viewMessages.OptionsView.AllowCellMerge = true;
+        this.viewMessages.OptionsView.RowAutoHeight = true;
+        this.viewMessages.OptionsView.ShowColumnHeaders = false;
+        this.viewMessages.OptionsView.ShowDetailButtons = false;
+        this.viewMessages.OptionsView.ShowGroupPanel = false;
+        this.viewMessages.OptionsView.ShowIndicator = false;
+        // 
+        // colStatus
+        // 
+        this.colStatus.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+        this.colStatus.ColumnEdit = this.repositoryItemImageComboBox1;
+        this.colStatus.FieldName = "col_STATUS";
+        this.colStatus.ImageIndex = 0;
+        this.colStatus.MinWidth = 10;
+        this.colStatus.Name = "colStatus";
+        this.colStatus.OptionsColumn.AllowEdit = false;
+        this.colStatus.OptionsColumn.AllowFocus = false;
+        this.colStatus.OptionsColumn.FixedWidth = true;
+        this.colStatus.OptionsColumn.ReadOnly = true;
+        this.colStatus.Visible = true;
+        this.colStatus.VisibleIndex = 0;
+        this.colStatus.Width = 20;
+        // 
+        // repositoryItemImageComboBox1
+        // 
+        this.repositoryItemImageComboBox1.AutoHeight = false;
+        this.repositoryItemImageComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+        this.repositoryItemImageComboBox1.Items.AddRange(new DevExpress.XtraEditors.Controls.ImageComboBoxItem[] {
+            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("", 0, 2),
+            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("", 1, 3),
+            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("", 2, 4)});
+        this.repositoryItemImageComboBox1.Name = "repositoryItemImageComboBox1";
+        this.repositoryItemImageComboBox1.SmallImages = this.imMessages;
+        // 
+        // imMessages
+        // 
+        this.imMessages.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imMessages.ImageStream")));
+        // 
+        // colType
+        // 
+        this.colType.AppearanceCell.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+        this.colType.AppearanceCell.Options.UseFont = true;
+        this.colType.AppearanceCell.Options.UseTextOptions = true;
+        this.colType.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+        this.colType.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+        this.colType.Caption = "Тип сообщения";
+        this.colType.FieldName = "col_TYPE";
+        this.colType.Name = "colType";
+        this.colType.OptionsColumn.AllowEdit = false;
+        this.colType.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+        this.colType.OptionsColumn.FixedWidth = true;
+        this.colType.OptionsColumn.ReadOnly = true;
+        this.colType.Visible = true;
+        this.colType.VisibleIndex = 1;
+        this.colType.Width = 130;
+        // 
+        // colText
+        // 
+        this.colText.AppearanceCell.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+        this.colText.AppearanceCell.Options.UseFont = true;
+        this.colText.AppearanceCell.Options.UseTextOptions = true;
+        this.colText.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+        this.colText.Caption = "Текст";
+        this.colText.ColumnEdit = this.repositoryItemMemoEdit1;
+        this.colText.FieldName = "col_TEXT";
+        this.colText.Name = "colText";
+        this.colText.OptionsColumn.AllowEdit = false;
+        this.colText.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+        this.colText.OptionsColumn.ReadOnly = true;
+        this.colText.Visible = true;
+        this.colText.VisibleIndex = 2;
+        this.colText.Width = 403;
+        // 
+        // repositoryItemMemoEdit1
+        // 
+        this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
+        this.repositoryItemMemoEdit1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+        // 
+        // imMain
+        // 
+        this.imMain.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imMain.ImageStream")));
+        this.imMain.TransparentColor = System.Drawing.Color.Transparent;
+        this.imMain.Images.SetKeyName(0, "");
+        this.imMain.Images.SetKeyName(1, "");
+        this.imMain.Images.SetKeyName(2, "");
+        this.imMain.Images.SetKeyName(3, "");
+        this.imMain.Images.SetKeyName(4, "");
+        this.imMain.Images.SetKeyName(5, "");
+        this.imMain.Images.SetKeyName(6, "");
+        this.imMain.Images.SetKeyName(7, "");
+        this.imMain.Images.SetKeyName(8, "");
+        this.imMain.Images.SetKeyName(9, "");
+        this.imMain.Images.SetKeyName(10, "");
+        this.imMain.Images.SetKeyName(11, "");
+        this.imMain.Images.SetKeyName(12, "");
+        this.imMain.Images.SetKeyName(13, "");
+        this.imMain.Images.SetKeyName(14, "");
+        this.imMain.Images.SetKeyName(15, "");
+        this.imMain.Images.SetKeyName(16, "");
+        this.imMain.Images.SetKeyName(17, "");
+        this.imMain.Images.SetKeyName(18, "");
+        this.imMain.Images.SetKeyName(19, "");
+        this.imMain.Images.SetKeyName(20, "");
+        this.imMain.Images.SetKeyName(21, "");
+        this.imMain.Images.SetKeyName(22, "");
+        this.imMain.Images.SetKeyName(23, "");
+        this.imMain.Images.SetKeyName(24, "");
+        this.imMain.Images.SetKeyName(25, "");
+        this.imMain.Images.SetKeyName(26, "");
+        // 
+        // iMenuExpand
+        // 
+        this.iMenuExpand.Caption = "Развернуть меню";
+        this.iMenuExpand.CategoryGuid = new System.Guid("81d48205-e99e-4e12-aa2b-1551e99931bd");
+        this.iMenuExpand.Hint = "Развернуть меню";
+        this.iMenuExpand.Id = 37;
+        this.iMenuExpand.ImageIndex = 26;
+        this.iMenuExpand.Name = "iMenuExpand";
+        this.iMenuExpand.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iMenuExpand_ItemClick);
+        // 
+        // iMenuCollapse
+        // 
+        this.iMenuCollapse.Caption = "Свернуть меню";
+        this.iMenuCollapse.CategoryGuid = new System.Guid("81d48205-e99e-4e12-aa2b-1551e99931bd");
+        this.iMenuCollapse.Hint = "Свернуть меню";
+        this.iMenuCollapse.Id = 38;
+        this.iMenuCollapse.ImageIndex = 27;
+        this.iMenuCollapse.Name = "iMenuCollapse";
+        this.iMenuCollapse.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iMenuCollapse_ItemClick);
+        // 
+        // iMenuExpandNode
+        // 
+        this.iMenuExpandNode.Caption = "Развернуть подменю";
+        this.iMenuExpandNode.CategoryGuid = new System.Guid("81d48205-e99e-4e12-aa2b-1551e99931bd");
+        this.iMenuExpandNode.Hint = "Развернуть подменю";
+        this.iMenuExpandNode.Id = 39;
+        this.iMenuExpandNode.Name = "iMenuExpandNode";
+        this.iMenuExpandNode.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iMenuExpandNode_ItemClick);
+        // 
+        // iMenuCollapseNode
+        // 
+        this.iMenuCollapseNode.Caption = "Свернуть подменю";
+        this.iMenuCollapseNode.CategoryGuid = new System.Guid("81d48205-e99e-4e12-aa2b-1551e99931bd");
+        this.iMenuCollapseNode.Hint = "Свернуть подменю";
+        this.iMenuCollapseNode.Id = 40;
+        this.iMenuCollapseNode.Name = "iMenuCollapseNode";
+        this.iMenuCollapseNode.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iMenuCollapseNode_ItemClick);
+        // 
+        // repositoryItemTextEdit1
+        // 
+        this.repositoryItemTextEdit1.AutoHeight = false;
+        this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+        // 
+        // popupMenu
+        // 
+        this.popupMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.iMenuExpandNode),
+            new DevExpress.XtraBars.LinkPersistInfo(this.iMenuCollapseNode),
+            new DevExpress.XtraBars.LinkPersistInfo(this.iMenuExpand, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.iMenuCollapse)});
+        this.popupMenu.Manager = this.MainBarManager;
+        this.popupMenu.Name = "popupMenu";
+        // 
+        // defaultLookAndFeel
+        // 
+        this.defaultLookAndFeel.LookAndFeel.SkinName = "Stardust";
+        this.defaultLookAndFeel.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
+        // 
+        // tmIdle
+        // 
+        this.tmIdle.Interval = 100000D;
+        this.tmIdle.SynchronizingObject = this;
+        this.tmIdle.Elapsed += new System.Timers.ElapsedEventHandler(this.tmIdle_Elapsed);
+        // 
+        // tmCheckInterval
+        // 
+        this.tmCheckInterval.Interval = 1000D;
+        this.tmCheckInterval.SynchronizingObject = this;
+        this.tmCheckInterval.Elapsed += new System.Timers.ElapsedEventHandler(this.tmCheckInterval_Elapsed);
+        // 
+        // tcMDIChildren
+        // 
+        this.tcMDIChildren.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+        this.tcMDIChildren.Appearance = System.Windows.Forms.TabAppearance.Buttons;
+        this.tcMDIChildren.Dock = System.Windows.Forms.DockStyle.Bottom;
+        this.tcMDIChildren.HotTrack = true;
+        this.tcMDIChildren.Location = new System.Drawing.Point(19, 369);
+        this.tcMDIChildren.Name = "tcMDIChildren";
+        this.tcMDIChildren.SelectedIndex = 0;
+        this.tcMDIChildren.Size = new System.Drawing.Size(580, 24);
+        this.tcMDIChildren.TabIndex = 10;
+        this.tcMDIChildren.Visible = false;
+        this.tcMDIChildren.SelectedIndexChanged += new System.EventHandler(this.tcMDIChildren_SelectedIndexChanged);
+        // 
+        // MainActionList
+        // 
+        this.MainActionList.MyActions.AddRange(new BSB.Actions.MyAction[] {
+            this.aConnect,
+            this.aDisconnect,
+            this.aRefreshOfficRights,
+            this.aChangePassword,
+            this.aLockApplication,
+            this.aSetCurrentLanguage,
+            this.aFundKnd,
+            this.aIssueECB,
+            this.aCurrencyECB,
+            this.aIssuersGuidesList,
+            this.aBankCust,
+            this.aCategoryControls,
+            this.aClassifierOKED,
+            this.aSpecBus,
+            this.aSignPartNores,
+            this.aSpecIssuer,
+            this.aAbilityConvert,
+            this.aReg,
+            this.aRegion,
+            this.aAudit,
+            this.aKindECB,
+            this.aIssOrganCont,
+            this.aDateTypeLocal,
+            this.aDocKnd,
+            this.aAddCategoryShare,
+            this.aCategoryECB,
+            this.aIndexRewards,
+            this.aProcessknd,
+            this.aOLF,
+            this.aListing,
+            this.aRating,
+            this.aRegOrganMU,
+            this.aStateShareUk,
+            this.aAppointment,
+            this.aRepKnd,
+            this.aSignatory,
+            this.aExecutor,
+            this.aCatHolderEcb,
+            this.aIssueStsECB,
+            this.aIssuersGCB,
+            this.aKindGCB,
+            this.aDebtRepayment,
+            this.aStsReport,
+            this.aKindRegBonds,
+            this.aArticlesKOAP,
+            this.aCauseChangesRep,
+            this.aSuspension,
+            this.aCountry,
+            this.aDecisionAdmOffences,
+            this.aFormCollection,
+            this.aJurPersSts,
+            this.aReasonAnnulECB,
+            this.aUnitDimPerECB,
+            this.aJurPersCreateMethod,
+            this.aMethodLocalECB,
+            this.aPlaceAccommECB,
+            this.aReasonChangeShareIssue,
+            this.aStsStAccommECB,
+            this.aDecVerifInf,
+            this.aBasePrescription,
+            this.aViolationKnd,
+            this.aOrganRegIssueECB,
+            this.aMRP,
+            this.aResolutionDR,
+            this.aStatusECB,
+            this.aStatusLicense,
+            this.aCondMonitorValid,
+            this.aSharer,
+            this.aReasonSuspensionECB,
+            this.aProcessknd,
+            this.aDecTreadCard,
+            this.aProcess,
+            this.aBondRegistry,
+            this.aBondReestr,
+            this.aBondRefuseJournal,
+            this.aShareJournalReestr,
+            this.aShareJournalChanges,
+            this.aShareReestr,
+            this.aShareJournalDenial,
+            this.aKazDepRecReestr,
+            this.aKazDepRecJournalDenial,
+            this.aIslamSecReestr,
+            this.aPaiReestr,
+            this.aPaiRefuse,
+            this.aKndSanctions,
+            this.aIslamSecJournalDenial});
+        // 
+        // aConnect
+        // 
+        this.aConnect.Caption = null;
+        this.aConnect.Category = "База данных";
+        this.aConnect.Code = "aConnect";
+        this.aConnect.Enabled = true;
+        this.aConnect.MakeDisabledOnExec = true;
+        this.aConnect.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aConnectExecute);
+        // 
+        // aDisconnect
+        // 
+        this.aDisconnect.Caption = null;
+        this.aDisconnect.Category = "База данных";
+        this.aDisconnect.Code = "aDisconnect";
+        this.aDisconnect.Enabled = true;
+        this.aDisconnect.MakeDisabledOnExec = true;
+        this.aDisconnect.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aDisconnectExecute);
+        // 
+        // aRefreshOfficRights
+        // 
+        this.aRefreshOfficRights.Caption = null;
+        this.aRefreshOfficRights.Category = "База данных";
+        this.aRefreshOfficRights.Code = "aRefreshOfficRights";
+        this.aRefreshOfficRights.Enabled = true;
+        this.aRefreshOfficRights.MakeDisabledOnExec = true;
+        this.aRefreshOfficRights.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aRefreshOfficRightsExecute);
+        // 
+        // aChangePassword
+        // 
+        this.aChangePassword.Caption = null;
+        this.aChangePassword.Category = "База данных";
+        this.aChangePassword.Code = "aChangePassword";
+        this.aChangePassword.Enabled = true;
+        this.aChangePassword.MakeDisabledOnExec = true;
+        this.aChangePassword.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aChangePasswordExecute);
+        // 
+        // aLockApplication
+        // 
+        this.aLockApplication.Caption = null;
+        this.aLockApplication.Category = "База данных";
+        this.aLockApplication.Code = "aLockApplication";
+        this.aLockApplication.Enabled = true;
+        this.aLockApplication.MakeDisabledOnExec = true;
+        this.aLockApplication.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aLockApplicationExecute);
+        // 
+        // aSetCurrentLanguage
+        // 
+        this.aSetCurrentLanguage.Caption = null;
+        this.aSetCurrentLanguage.Category = null;
+        this.aSetCurrentLanguage.Code = "aSetCurrentLanguage";
+        this.aSetCurrentLanguage.Enabled = true;
+        this.aSetCurrentLanguage.MakeDisabledOnExec = true;
+        this.aSetCurrentLanguage.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aSetCurrentLanguage_Execute);
+        // 
+        // aFundKnd
+        // 
+        this.aFundKnd.Caption = null;
+        this.aFundKnd.Category = null;
+        this.aFundKnd.Code = "aFundKnd";
+        this.aFundKnd.Enabled = true;
+        this.aFundKnd.MakeDisabledOnExec = true;
+        this.aFundKnd.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aFundKnd_Execute);
+        // 
+        // aIssueECB
+        // 
+        this.aIssueECB.Caption = null;
+        this.aIssueECB.Category = null;
+        this.aIssueECB.Code = "aIssueECB";
+        this.aIssueECB.Enabled = true;
+        this.aIssueECB.MakeDisabledOnExec = true;
+        this.aIssueECB.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aIssueECB_Execute);
+        // 
+        // aCurrencyECB
+        // 
+        this.aCurrencyECB.Caption = null;
+        this.aCurrencyECB.Category = null;
+        this.aCurrencyECB.Code = "aCurrencyECB";
+        this.aCurrencyECB.Enabled = true;
+        this.aCurrencyECB.MakeDisabledOnExec = true;
+        this.aCurrencyECB.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aCurrencyECB_Execute);
+        // 
+        // aIssuersGuidesList
+        // 
+        this.aIssuersGuidesList.Caption = null;
+        this.aIssuersGuidesList.Category = null;
+        this.aIssuersGuidesList.Code = "aIssuersGuidesList";
+        this.aIssuersGuidesList.Enabled = true;
+        this.aIssuersGuidesList.MakeDisabledOnExec = true;
+        this.aIssuersGuidesList.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aIssuersGuidesList_Execute);
+        // 
+        // aBankCust
+        // 
+        this.aBankCust.Caption = null;
+        this.aBankCust.Category = null;
+        this.aBankCust.Code = "aBankCust";
+        this.aBankCust.Enabled = true;
+        this.aBankCust.MakeDisabledOnExec = true;
+        this.aBankCust.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aBankCust_Execute);
+        // 
+        // aCategoryControls
+        // 
+        this.aCategoryControls.Caption = null;
+        this.aCategoryControls.Category = null;
+        this.aCategoryControls.Code = "aCategoryControls";
+        this.aCategoryControls.Enabled = true;
+        this.aCategoryControls.MakeDisabledOnExec = true;
+        this.aCategoryControls.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aCategoryControls_Execute);
+        // 
+        // aClassifierOKED
+        // 
+        this.aClassifierOKED.Caption = null;
+        this.aClassifierOKED.Category = null;
+        this.aClassifierOKED.Code = "aClassifierOKED";
+        this.aClassifierOKED.Enabled = true;
+        this.aClassifierOKED.MakeDisabledOnExec = true;
+        this.aClassifierOKED.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aClassifierOKED_Execute);
+        // 
+        // aSpecBus
+        // 
+        this.aSpecBus.Caption = null;
+        this.aSpecBus.Category = null;
+        this.aSpecBus.Code = "aSpecBus";
+        this.aSpecBus.Enabled = true;
+        this.aSpecBus.MakeDisabledOnExec = true;
+        this.aSpecBus.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aSpecBus_Execute);
+        // 
+        // aSignPartNores
+        // 
+        this.aSignPartNores.Caption = null;
+        this.aSignPartNores.Category = null;
+        this.aSignPartNores.Code = "aSignPartNores";
+        this.aSignPartNores.Enabled = true;
+        this.aSignPartNores.MakeDisabledOnExec = true;
+        this.aSignPartNores.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aSignPartNores_Execute);
+        // 
+        // aSpecIssuer
+        // 
+        this.aSpecIssuer.Caption = null;
+        this.aSpecIssuer.Category = null;
+        this.aSpecIssuer.Code = "aSpecIssuer";
+        this.aSpecIssuer.Enabled = true;
+        this.aSpecIssuer.MakeDisabledOnExec = true;
+        this.aSpecIssuer.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aSpecIssuer_Execute);
+        // 
+        // aAbilityConvert
+        // 
+        this.aAbilityConvert.Caption = null;
+        this.aAbilityConvert.Category = null;
+        this.aAbilityConvert.Code = "aAbilityConvert";
+        this.aAbilityConvert.Enabled = true;
+        this.aAbilityConvert.MakeDisabledOnExec = true;
+        this.aAbilityConvert.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aAbilityConvert_Execute);
+        // 
+        // aReg
+        // 
+        this.aReg.Caption = null;
+        this.aReg.Category = null;
+        this.aReg.Code = "aReg";
+        this.aReg.Enabled = true;
+        this.aReg.MakeDisabledOnExec = true;
+        this.aReg.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aReg_Execute);
+        // 
+        // aRegion
+        // 
+        this.aRegion.Caption = null;
+        this.aRegion.Category = null;
+        this.aRegion.Code = "aRegion";
+        this.aRegion.Enabled = true;
+        this.aRegion.MakeDisabledOnExec = true;
+        this.aRegion.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aRegion_Execute);
+        // 
+        // aAudit
+        // 
+        this.aAudit.Caption = null;
+        this.aAudit.Category = null;
+        this.aAudit.Code = "aAudit";
+        this.aAudit.Enabled = true;
+        this.aAudit.MakeDisabledOnExec = true;
+        this.aAudit.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aAudit_Execute);
+        // 
+        // aKindECB
+        // 
+        this.aKindECB.Caption = null;
+        this.aKindECB.Category = null;
+        this.aKindECB.Code = "aKindECB";
+        this.aKindECB.Enabled = true;
+        this.aKindECB.MakeDisabledOnExec = true;
+        this.aKindECB.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aKindECB_Execute);
+        // 
+        // aIssOrganCont
+        // 
+        this.aIssOrganCont.Caption = null;
+        this.aIssOrganCont.Category = null;
+        this.aIssOrganCont.Code = "aIssOrganCont";
+        this.aIssOrganCont.Enabled = true;
+        this.aIssOrganCont.MakeDisabledOnExec = true;
+        this.aIssOrganCont.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aIssOrganCont_Execute);
+        // 
+        // aDateTypeLocal
+        // 
+        this.aDateTypeLocal.Caption = null;
+        this.aDateTypeLocal.Category = null;
+        this.aDateTypeLocal.Code = "aDateTypeLocal";
+        this.aDateTypeLocal.Enabled = true;
+        this.aDateTypeLocal.MakeDisabledOnExec = true;
+        this.aDateTypeLocal.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aDateTypeLocal_Execute);
+        // 
+        // aDocKnd
+        // 
+        this.aDocKnd.Caption = null;
+        this.aDocKnd.Category = null;
+        this.aDocKnd.Code = "aDocKnd";
+        this.aDocKnd.Enabled = true;
+        this.aDocKnd.MakeDisabledOnExec = true;
+        this.aDocKnd.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aDocKnd_Execute);
+        // 
+        // aAddCategoryShare
+        // 
+        this.aAddCategoryShare.Caption = null;
+        this.aAddCategoryShare.Category = null;
+        this.aAddCategoryShare.Code = "aAddCategoryShare";
+        this.aAddCategoryShare.Enabled = true;
+        this.aAddCategoryShare.MakeDisabledOnExec = true;
+        this.aAddCategoryShare.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aAddCategoryShare_Execute);
+        // 
+        // aCategoryECB
+        // 
+        this.aCategoryECB.Caption = null;
+        this.aCategoryECB.Category = null;
+        this.aCategoryECB.Code = "aCategoryECB";
+        this.aCategoryECB.Enabled = true;
+        this.aCategoryECB.MakeDisabledOnExec = true;
+        this.aCategoryECB.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aCategoryECB_Execute);
+        // 
+        // aIndexRewards
+        // 
+        this.aIndexRewards.Caption = null;
+        this.aIndexRewards.Category = null;
+        this.aIndexRewards.Code = "aIndexRewards";
+        this.aIndexRewards.Enabled = true;
+        this.aIndexRewards.MakeDisabledOnExec = true;
+        this.aIndexRewards.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aIndexRewards_Execute);
+        // 
+        // aProcessknd
+        // 
+        this.aProcessknd.Caption = null;
+        this.aProcessknd.Category = null;
+        this.aProcessknd.Code = "aProcessknd";
+        this.aProcessknd.Enabled = true;
+        this.aProcessknd.MakeDisabledOnExec = true;
+        this.aProcessknd.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aProcessknd_Execute);
+        // 
+        // aOLF
+        // 
+        this.aOLF.Caption = null;
+        this.aOLF.Category = null;
+        this.aOLF.Code = "aOLF";
+        this.aOLF.Enabled = true;
+        this.aOLF.MakeDisabledOnExec = true;
+        this.aOLF.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aOLF_Execute);
+        // 
+        // aListing
+        // 
+        this.aListing.Caption = null;
+        this.aListing.Category = null;
+        this.aListing.Code = "aListing";
+        this.aListing.Enabled = true;
+        this.aListing.MakeDisabledOnExec = true;
+        this.aListing.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aListing_Execute);
+        // 
+        // aRating
+        // 
+        this.aRating.Caption = null;
+        this.aRating.Category = null;
+        this.aRating.Code = "aRating";
+        this.aRating.Enabled = true;
+        this.aRating.MakeDisabledOnExec = true;
+        this.aRating.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aRating_Execute);
+        // 
+        // aRegOrganMU
+        // 
+        this.aRegOrganMU.Caption = null;
+        this.aRegOrganMU.Category = null;
+        this.aRegOrganMU.Code = "aRegOrganMU";
+        this.aRegOrganMU.Enabled = true;
+        this.aRegOrganMU.MakeDisabledOnExec = true;
+        this.aRegOrganMU.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aRegOrganMU_Execute);
+        // 
+        // aStateShareUk
+        // 
+        this.aStateShareUk.Caption = null;
+        this.aStateShareUk.Category = null;
+        this.aStateShareUk.Code = "aStateShareUk";
+        this.aStateShareUk.Enabled = true;
+        this.aStateShareUk.MakeDisabledOnExec = true;
+        this.aStateShareUk.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aStateShareUk_Execute);
+        // 
+        // aAppointment
+        // 
+        this.aAppointment.Caption = null;
+        this.aAppointment.Category = null;
+        this.aAppointment.Code = "aAppointment";
+        this.aAppointment.Enabled = true;
+        this.aAppointment.MakeDisabledOnExec = true;
+        this.aAppointment.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aAppointment_Execute);
+        // 
+        // aRepKnd
+        // 
+        this.aRepKnd.Caption = null;
+        this.aRepKnd.Category = null;
+        this.aRepKnd.Code = "aRepKnd";
+        this.aRepKnd.Enabled = true;
+        this.aRepKnd.MakeDisabledOnExec = true;
+        this.aRepKnd.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aRepKnd_Execute);
+        // 
+        // aSignatory
+        // 
+        this.aSignatory.Caption = null;
+        this.aSignatory.Category = null;
+        this.aSignatory.Code = "aSignatory";
+        this.aSignatory.Enabled = true;
+        this.aSignatory.MakeDisabledOnExec = true;
+        this.aSignatory.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aSignatory_Execute);
+        // 
+        // aExecutor
+        // 
+        this.aExecutor.Caption = null;
+        this.aExecutor.Category = null;
+        this.aExecutor.Code = "aExecutor";
+        this.aExecutor.Enabled = true;
+        this.aExecutor.MakeDisabledOnExec = true;
+        this.aExecutor.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aExecutor_Execute);
+        // 
+        // aCatHolderEcb
+        // 
+        this.aCatHolderEcb.Caption = null;
+        this.aCatHolderEcb.Category = null;
+        this.aCatHolderEcb.Code = "aCatHolderEcb";
+        this.aCatHolderEcb.Enabled = true;
+        this.aCatHolderEcb.MakeDisabledOnExec = true;
+        this.aCatHolderEcb.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aCatHolderEcb_Execute);
+        // 
+        // aIssueStsECB
+        // 
+        this.aIssueStsECB.Caption = null;
+        this.aIssueStsECB.Category = null;
+        this.aIssueStsECB.Code = "aIssueStsECB";
+        this.aIssueStsECB.Enabled = true;
+        this.aIssueStsECB.MakeDisabledOnExec = true;
+        this.aIssueStsECB.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aIssueStsECB_Execute);
+        // 
+        // aIssuersGCB
+        // 
+        this.aIssuersGCB.Caption = null;
+        this.aIssuersGCB.Category = null;
+        this.aIssuersGCB.Code = "aIssuersGCB";
+        this.aIssuersGCB.Enabled = true;
+        this.aIssuersGCB.MakeDisabledOnExec = true;
+        this.aIssuersGCB.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aIssuersGCB_Execute);
+        // 
+        // aKindGCB
+        // 
+        this.aKindGCB.Caption = null;
+        this.aKindGCB.Category = null;
+        this.aKindGCB.Code = "aKindGCB";
+        this.aKindGCB.Enabled = true;
+        this.aKindGCB.MakeDisabledOnExec = true;
+        this.aKindGCB.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aKindGCB_Execute);
+        // 
+        // aDebtRepayment
+        // 
+        this.aDebtRepayment.Caption = null;
+        this.aDebtRepayment.Category = null;
+        this.aDebtRepayment.Code = "aDebtRepayment";
+        this.aDebtRepayment.Enabled = true;
+        this.aDebtRepayment.MakeDisabledOnExec = true;
+        this.aDebtRepayment.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aDebtRepayment_Execute);
+        // 
+        // aStsReport
+        // 
+        this.aStsReport.Caption = null;
+        this.aStsReport.Category = null;
+        this.aStsReport.Code = "aStsReport";
+        this.aStsReport.Enabled = true;
+        this.aStsReport.MakeDisabledOnExec = true;
+        this.aStsReport.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aStsReport_Execute);
+        // 
+        // aKindRegBonds
+        // 
+        this.aKindRegBonds.Caption = null;
+        this.aKindRegBonds.Category = null;
+        this.aKindRegBonds.Code = "aKindRegBonds";
+        this.aKindRegBonds.Enabled = true;
+        this.aKindRegBonds.MakeDisabledOnExec = true;
+        this.aKindRegBonds.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aKindRegBonds_Execute);
+        // 
+        // aArticlesKOAP
+        // 
+        this.aArticlesKOAP.Caption = null;
+        this.aArticlesKOAP.Category = null;
+        this.aArticlesKOAP.Code = "aArticlesKOAP";
+        this.aArticlesKOAP.Enabled = true;
+        this.aArticlesKOAP.MakeDisabledOnExec = true;
+        this.aArticlesKOAP.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aArticlesKOAP_Execute);
+        // 
+        // aCauseChangesRep
+        // 
+        this.aCauseChangesRep.Caption = null;
+        this.aCauseChangesRep.Category = null;
+        this.aCauseChangesRep.Code = "aCauseChangesRep";
+        this.aCauseChangesRep.Enabled = true;
+        this.aCauseChangesRep.MakeDisabledOnExec = true;
+        this.aCauseChangesRep.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aCauseChangesRep_Execute);
+        // 
+        // aSuspension
+        // 
+        this.aSuspension.Caption = null;
+        this.aSuspension.Category = null;
+        this.aSuspension.Code = "aSuspension";
+        this.aSuspension.Enabled = true;
+        this.aSuspension.MakeDisabledOnExec = true;
+        this.aSuspension.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aSuspension_Execute);
+        // 
+        // aCountry
+        // 
+        this.aCountry.Caption = null;
+        this.aCountry.Category = null;
+        this.aCountry.Code = "aCountry";
+        this.aCountry.Enabled = true;
+        this.aCountry.MakeDisabledOnExec = true;
+        this.aCountry.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aCountry_Execute);
+        // 
+        // aDecisionAdmOffences
+        // 
+        this.aDecisionAdmOffences.Caption = null;
+        this.aDecisionAdmOffences.Category = null;
+        this.aDecisionAdmOffences.Code = "aDecisionAdmOffences";
+        this.aDecisionAdmOffences.Enabled = true;
+        this.aDecisionAdmOffences.MakeDisabledOnExec = true;
+        this.aDecisionAdmOffences.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aDecisionAdmOffences_Execute);
+        // 
+        // aFormCollection
+        // 
+        this.aFormCollection.Caption = null;
+        this.aFormCollection.Category = null;
+        this.aFormCollection.Code = "aFormCollection";
+        this.aFormCollection.Enabled = true;
+        this.aFormCollection.MakeDisabledOnExec = true;
+        this.aFormCollection.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aFormCollection_Execute);
+        // 
+        // aJurPersSts
+        // 
+        this.aJurPersSts.Caption = null;
+        this.aJurPersSts.Category = null;
+        this.aJurPersSts.Code = "aJurPersSts";
+        this.aJurPersSts.Enabled = true;
+        this.aJurPersSts.MakeDisabledOnExec = true;
+        this.aJurPersSts.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aJurPersSts_Execute);
+        // 
+        // aReasonAnnulECB
+        // 
+        this.aReasonAnnulECB.Caption = null;
+        this.aReasonAnnulECB.Category = null;
+        this.aReasonAnnulECB.Code = "aReasonAnnulECB";
+        this.aReasonAnnulECB.Enabled = true;
+        this.aReasonAnnulECB.MakeDisabledOnExec = true;
+        this.aReasonAnnulECB.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aReasonAnnulECB_Execute);
+        // 
+        // aUnitDimPerECB
+        // 
+        this.aUnitDimPerECB.Caption = null;
+        this.aUnitDimPerECB.Category = null;
+        this.aUnitDimPerECB.Code = "aUnitDimPerECB";
+        this.aUnitDimPerECB.Enabled = true;
+        this.aUnitDimPerECB.MakeDisabledOnExec = true;
+        this.aUnitDimPerECB.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aUnitDimPerECB_Execute);
+        // 
+        // aJurPersCreateMethod
+        // 
+        this.aJurPersCreateMethod.Caption = null;
+        this.aJurPersCreateMethod.Category = null;
+        this.aJurPersCreateMethod.Code = "aJurPersCreateMethod";
+        this.aJurPersCreateMethod.Enabled = true;
+        this.aJurPersCreateMethod.MakeDisabledOnExec = true;
+        this.aJurPersCreateMethod.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aJurPersCreateMethod_Execute);
+        // 
+        // aMethodLocalECB
+        // 
+        this.aMethodLocalECB.Caption = null;
+        this.aMethodLocalECB.Category = null;
+        this.aMethodLocalECB.Code = "aMethodLocalECB";
+        this.aMethodLocalECB.Enabled = true;
+        this.aMethodLocalECB.MakeDisabledOnExec = true;
+        this.aMethodLocalECB.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aMethodLocalECB_Execute);
+        // 
+        // aPlaceAccommECB
+        // 
+        this.aPlaceAccommECB.Caption = null;
+        this.aPlaceAccommECB.Category = null;
+        this.aPlaceAccommECB.Code = "aPlaceAccommECB";
+        this.aPlaceAccommECB.Enabled = true;
+        this.aPlaceAccommECB.MakeDisabledOnExec = true;
+        this.aPlaceAccommECB.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aPlaceAccommECB_Execute);
+        // 
+        // aReasonChangeShareIssue
+        // 
+        this.aReasonChangeShareIssue.Caption = null;
+        this.aReasonChangeShareIssue.Category = null;
+        this.aReasonChangeShareIssue.Code = "aReasonChangeShareIssue";
+        this.aReasonChangeShareIssue.Enabled = true;
+        this.aReasonChangeShareIssue.MakeDisabledOnExec = true;
+        this.aReasonChangeShareIssue.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aReasonChangeShareIssue_Execute);
+        // 
+        // aStsStAccommECB
+        // 
+        this.aStsStAccommECB.Caption = null;
+        this.aStsStAccommECB.Category = null;
+        this.aStsStAccommECB.Code = "aStsStAccommECB";
+        this.aStsStAccommECB.Enabled = true;
+        this.aStsStAccommECB.MakeDisabledOnExec = true;
+        this.aStsStAccommECB.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aStsStAccommECB_Execute);
+        // 
+        // aDecVerifInf
+        // 
+        this.aDecVerifInf.Caption = null;
+        this.aDecVerifInf.Category = null;
+        this.aDecVerifInf.Code = "aDecVerifInf";
+        this.aDecVerifInf.Enabled = true;
+        this.aDecVerifInf.MakeDisabledOnExec = true;
+        this.aDecVerifInf.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aDecVerifInf_Execute);
+        // 
+        // aBasePrescription
+        // 
+        this.aBasePrescription.Caption = null;
+        this.aBasePrescription.Category = null;
+        this.aBasePrescription.Code = "aBasePrescription";
+        this.aBasePrescription.Enabled = true;
+        this.aBasePrescription.MakeDisabledOnExec = true;
+        this.aBasePrescription.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aBasePrescription_Execute);
+        // 
+        // aViolationKnd
+        // 
+        this.aViolationKnd.Caption = null;
+        this.aViolationKnd.Category = null;
+        this.aViolationKnd.Code = "aViolationKnd";
+        this.aViolationKnd.Enabled = true;
+        this.aViolationKnd.MakeDisabledOnExec = true;
+        this.aViolationKnd.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aViolationKnd_Execute);
+        // 
+        // aOrganRegIssueECB
+        // 
+        this.aOrganRegIssueECB.Caption = null;
+        this.aOrganRegIssueECB.Category = null;
+        this.aOrganRegIssueECB.Code = "aOrganRegIssueECB";
+        this.aOrganRegIssueECB.Enabled = true;
+        this.aOrganRegIssueECB.MakeDisabledOnExec = true;
+        this.aOrganRegIssueECB.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aOrganRegIssueECB_Execute);
+        // 
+        // aMRP
+        // 
+        this.aMRP.Caption = null;
+        this.aMRP.Category = null;
+        this.aMRP.Code = "aMRP";
+        this.aMRP.Enabled = true;
+        this.aMRP.MakeDisabledOnExec = true;
+        this.aMRP.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aMRP_Execute);
+        // 
+        // aResolutionDR
+        // 
+        this.aResolutionDR.Caption = null;
+        this.aResolutionDR.Category = null;
+        this.aResolutionDR.Code = "aResolutionDR";
+        this.aResolutionDR.Enabled = true;
+        this.aResolutionDR.MakeDisabledOnExec = true;
+        this.aResolutionDR.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aResolutionDR_Execute);
+        // 
+        // aStatusECB
+        // 
+        this.aStatusECB.Caption = null;
+        this.aStatusECB.Category = null;
+        this.aStatusECB.Code = "aStatusECB";
+        this.aStatusECB.Enabled = true;
+        this.aStatusECB.MakeDisabledOnExec = true;
+        this.aStatusECB.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aStatusECB_Execute);
+        // 
+        // aStatusLicense
+        // 
+        this.aStatusLicense.Caption = null;
+        this.aStatusLicense.Category = null;
+        this.aStatusLicense.Code = "aStatusLicense";
+        this.aStatusLicense.Enabled = true;
+        this.aStatusLicense.MakeDisabledOnExec = true;
+        this.aStatusLicense.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aStatusLicense_Execute);
+        // 
+        // aCondMonitorValid
+        // 
+        this.aCondMonitorValid.Caption = null;
+        this.aCondMonitorValid.Category = null;
+        this.aCondMonitorValid.Code = "aCondMonitorValid";
+        this.aCondMonitorValid.Enabled = true;
+        this.aCondMonitorValid.MakeDisabledOnExec = true;
+        this.aCondMonitorValid.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aCondMonitorValid_Execute);
+        // 
+        // aSharer
+        // 
+        this.aSharer.Caption = null;
+        this.aSharer.Category = null;
+        this.aSharer.Code = "aSharer";
+        this.aSharer.Enabled = true;
+        this.aSharer.MakeDisabledOnExec = true;
+        this.aSharer.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aSharer_Execute);
+        // 
+        // aReasonSuspensionECB
+        // 
+        this.aReasonSuspensionECB.Caption = null;
+        this.aReasonSuspensionECB.Category = null;
+        this.aReasonSuspensionECB.Code = "aReasonSuspensionECB";
+        this.aReasonSuspensionECB.Enabled = true;
+        this.aReasonSuspensionECB.MakeDisabledOnExec = true;
+        this.aReasonSuspensionECB.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aReasonSuspensionECB_Execute);
+        // 
+        // aDecTreadCard
+        // 
+        this.aDecTreadCard.Caption = null;
+        this.aDecTreadCard.Category = null;
+        this.aDecTreadCard.Code = "aDecTreadCard";
+        this.aDecTreadCard.Enabled = true;
+        this.aDecTreadCard.MakeDisabledOnExec = true;
+        this.aDecTreadCard.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aDecTreadCard_Execute);
+        // 
+        // aProcess
+        // 
+        this.aProcess.Caption = null;
+        this.aProcess.Category = null;
+        this.aProcess.Code = "aProcess";
+        this.aProcess.Enabled = true;
+        this.aProcess.MakeDisabledOnExec = true;
+        this.aProcess.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aProcess_Execute);
+        // 
+        // aBondRegistry
+        // 
+        this.aBondRegistry.Caption = null;
+        this.aBondRegistry.Category = null;
+        this.aBondRegistry.Code = "aBondRegistry";
+        this.aBondRegistry.Enabled = true;
+        this.aBondRegistry.MakeDisabledOnExec = true;
+        this.aBondRegistry.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aBondRegistry_Execute);
+        // 
+        // aBondReestr
+        // 
+        this.aBondReestr.Caption = null;
+        this.aBondReestr.Category = null;
+        this.aBondReestr.Code = "aBondReestr";
+        this.aBondReestr.Enabled = true;
+        this.aBondReestr.MakeDisabledOnExec = true;
+        this.aBondReestr.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aBondReestr_Execute);
+        // 
+        // aBondRefuseJournal
+        // 
+        this.aBondRefuseJournal.Caption = null;
+        this.aBondRefuseJournal.Category = null;
+        this.aBondRefuseJournal.Code = "aBondRefuseJournal";
+        this.aBondRefuseJournal.Enabled = true;
+        this.aBondRefuseJournal.MakeDisabledOnExec = true;
+        this.aBondRefuseJournal.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aBondRefuseJournal_Execute);
+        // 
+        // aShareJournalReestr
+        // 
+        this.aShareJournalReestr.Caption = null;
+        this.aShareJournalReestr.Category = null;
+        this.aShareJournalReestr.Code = "aShareJournalReestr";
+        this.aShareJournalReestr.Enabled = true;
+        this.aShareJournalReestr.MakeDisabledOnExec = true;
+        // 
+        // aShareJournalChanges
+        // 
+        this.aShareJournalChanges.Caption = null;
+        this.aShareJournalChanges.Category = null;
+        this.aShareJournalChanges.Code = "aShareJournalChanges";
+        this.aShareJournalChanges.Enabled = true;
+        this.aShareJournalChanges.MakeDisabledOnExec = true;
+        // 
+        // aShareReestr
+        // 
+        this.aShareReestr.Caption = null;
+        this.aShareReestr.Category = null;
+        this.aShareReestr.Code = "aShareReestr";
+        this.aShareReestr.Enabled = true;
+        this.aShareReestr.MakeDisabledOnExec = true;
+        this.aShareReestr.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aShareReestr_Execute);
+        // 
+        // aShareJournalDenial
+        // 
+        this.aShareJournalDenial.Caption = null;
+        this.aShareJournalDenial.Category = null;
+        this.aShareJournalDenial.Code = "aShareJournalDenial";
+        this.aShareJournalDenial.Enabled = true;
+        this.aShareJournalDenial.MakeDisabledOnExec = true;
+        this.aShareJournalDenial.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aShareJournalDenial_Execute);
+        // 
+        // aKazDepRecReestr
+        // 
+        this.aKazDepRecReestr.Caption = null;
+        this.aKazDepRecReestr.Category = null;
+        this.aKazDepRecReestr.Code = "aKazDepRecReestr";
+        this.aKazDepRecReestr.Enabled = true;
+        this.aKazDepRecReestr.MakeDisabledOnExec = true;
+        this.aKazDepRecReestr.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aKazDepRecReestr_Execute);
+        // 
+        // aKazDepRecJournalDenial
+        // 
+        this.aKazDepRecJournalDenial.Caption = null;
+        this.aKazDepRecJournalDenial.Category = null;
+        this.aKazDepRecJournalDenial.Code = null;
+        this.aKazDepRecJournalDenial.Enabled = true;
+        this.aKazDepRecJournalDenial.MakeDisabledOnExec = true;
+        // 
+        // aIslamSecReestr
+        // 
+        this.aIslamSecReestr.Caption = null;
+        this.aIslamSecReestr.Category = null;
+        this.aIslamSecReestr.Code = "aIslamSecReestr";
+        this.aIslamSecReestr.Enabled = true;
+        this.aIslamSecReestr.MakeDisabledOnExec = true;
+        this.aIslamSecReestr.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aIslamSecReestr_Execute);
+        // 
+        // aPaiReestr
+        // 
+        this.aPaiReestr.Caption = null;
+        this.aPaiReestr.Category = null;
+        this.aPaiReestr.Code = "aPaiReestr";
+        this.aPaiReestr.Enabled = true;
+        this.aPaiReestr.MakeDisabledOnExec = true;
+        this.aPaiReestr.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aPaiReestr_Execute);
+        // 
+        // aPaiRefuse
+        // 
+        this.aPaiRefuse.Caption = null;
+        this.aPaiRefuse.Category = null;
+        this.aPaiRefuse.Code = "aPaiRefuse";
+        this.aPaiRefuse.Enabled = true;
+        this.aPaiRefuse.MakeDisabledOnExec = true;
+        this.aPaiRefuse.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aPaiRefuse_Execute);
+        // 
+        // aKndSanctions
+        // 
+        this.aKndSanctions.Caption = null;
+        this.aKndSanctions.Category = null;
+        this.aKndSanctions.Code = "aKndSanctions";
+        this.aKndSanctions.Enabled = true;
+        this.aKndSanctions.MakeDisabledOnExec = true;
+        this.aKndSanctions.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aKndSanction_Execute);
+        // aIslamSecJournalDenial
+        // 
+        this.aIslamSecJournalDenial.Caption = null;
+        this.aIslamSecJournalDenial.Category = null;
+        this.aIslamSecJournalDenial.Code = "aIslamSecJournalDenial";
+        this.aIslamSecJournalDenial.Enabled = true;
+        this.aIslamSecJournalDenial.MakeDisabledOnExec = true;
+        this.aIslamSecJournalDenial.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aIslamSecJournalDenial_Execute);
+        // 
+        // MainForm
+        // 
+        this.AutoScaleBaseSize = new System.Drawing.Size(5, 14);
+        this.ClientSize = new System.Drawing.Size(599, 415);
+        this.Controls.Add(this.tcMDIChildren);
+        this.Controls.Add(this.hideContainerLeft);
+        this.Controls.Add(this.barDockControlLeft);
+        this.Controls.Add(this.barDockControlRight);
+        this.Controls.Add(this.barDockControlBottom);
+        this.Controls.Add(this.barDockControlTop);
+        this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+        this.IsMdiContainer = true;
+        this.Name = "MainForm";
+        this.Text = "MainForm";
+        this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+        this.Closing += new System.ComponentModel.CancelEventHandler(this.frmMain_Closing);
+        this.Closed += new System.EventHandler(this.frmMain_Closed);
+        this.Load += new System.EventHandler(this.frmMain_Load);
+        this.MdiChildActivate += new System.EventHandler(this.frmMain_MdiChildActivate);
+        ((System.ComponentModel.ISupportInitialize)(this.MainBarManager)).EndInit();
+        ((System.ComponentModel.ISupportInitialize)(this.MainDockManager)).EndInit();
+        this.hideContainerLeft.ResumeLayout(false);
+        this.dpMenu.ResumeLayout(false);
+        this.dockPanel1_Container.ResumeLayout(false);
+        this.dpMessages.ResumeLayout(false);
+        this.controlContainer1.ResumeLayout(false);
+        ((System.ComponentModel.ISupportInitialize)(this.gridMessages)).EndInit();
+        ((System.ComponentModel.ISupportInitialize)(this.viewMessages)).EndInit();
+        ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox1)).EndInit();
+        ((System.ComponentModel.ISupportInitialize)(this.imMessages)).EndInit();
+        ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
+        ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
+        ((System.ComponentModel.ISupportInitialize)(this.popupMenu)).EndInit();
+        ((System.ComponentModel.ISupportInitialize)(this.tmIdle)).EndInit();
+        ((System.ComponentModel.ISupportInitialize)(this.tmCheckInterval)).EndInit();
+        this.ResumeLayout(false);
+
+    }
+
+    #endregion
+
+    #region [О программе]
+
+    private void iAbout_ItemClick(object sender, ItemClickEventArgs e)
+    {
+      var ad = new TfrmAbout();
+      try
+      {
+        ad.ShowDialog(this);
+      }
+      finally
+      {
+        ad.Dispose();
+      }
+    }
+
+    #endregion
+
+    #region [Процедура для обработки всех сообщений для окна]
+
+    protected override void WndProc(ref Message m)
+    {
+      switch (m.Msg)
+      {
+        // The WM_ACTIVATEAPP message occurs when the application
+        // becomes the active application or becomes inactive.
+        case (int) WinMessage.WM_ACTIVATEAPP:
+          OnWMActivateApp(ref m);
+          break;
+        case (int) WinMessage.WM_QUERYOPEN:
+          OnWMQOpen(ref m);
+          return;
+        case WM_AFTERSHOW:
+          AfterShow(ref m);
+          return;
+      }
+      base.WndProc(ref m);
+    }
+
+    #endregion
+
+    private void InfoGuide_ItemClick(object sender, ItemClickEventArgs e)
+    {
+      //frmGuideInfo ad = new frmGuideInfo();
+      //ad.MdiParent = this;
+      //ad.Show();
+    }
+
+    
+
+    #region Fields
+
+    private const int WM_AFTERSHOW = (Int32) WinMessage.WM_USER + 1;
+    private MyAction aChangePassword;
+    private MyAction aConnect;
+    private MyAction aDisconnect;
+    private MyAction aLockApplication;
+    private MyAction aRefreshOfficRights;
+    private MyAction aSetCurrentLanguage;
+    private Bar bar1;
+    private Bar bar2;
+    private Bar bar3;
+    private BarButtonItem barButtonItemMenuPanel;
+    private BarButtonItem barButtonItemMsgPanel;
+    private BarDockControl barDockControlBottom;
+    private BarDockControl barDockControlLeft;
+    private BarDockControl barDockControlRight;
+    private BarDockControl barDockControlTop;
+    private BarStaticItem barHint;
+    private BarMdiChildrenListItem BarMdiChildrenListItem;
+    private BarSubItem BarSubItem1;
+    private BarSubItem BarSubItem2;
+    private BarSubItem barSubItemView;
+    private GridColumn colStatus;
+    private GridColumn colText;
+    private GridColumn colType;
+    private IContainer components;
+    private ControlContainer controlContainer1;
+    private DefaultLookAndFeel defaultLookAndFeel;
+    private ControlContainer dockPanel1_Container;
+    private DockPanel dpMenu;
+    private DockPanel dpMessages;
+    private GridControl gridMessages;
+    private BarButtonItem iAbout;
+    private BarButtonItem iCascade;
+    private BarButtonItem iChangePassword;
+    private BarButtonItem iCloseAllWindows;
+    private BarButtonItem iConnect;
+    private BarButtonItem iDisconnect;
+    private BarButtonItem iExit;
+    private BarButtonItem iLockApplication;
+    private BarButtonItem iMenuCollapse;
+    private BarButtonItem iMenuCollapseNode;
+    private BarButtonItem iMenuExpand;
+    private BarButtonItem iMenuExpandNode;
+    public ImageList imMain;
+    private ImageCollection imMessages;
+    private BarButtonItem InfoGuide;
+    private BarSubItem iPaintStyle;
+    private BarButtonItem ipsO2003;
+    private BarButtonItem ipsO2K;
+    private BarButtonItem ipsOXP;
+    private BarButtonItem ipsWXP;
+    private BarButtonItem iRefresh;
+    private BarButtonItem iSAsphaltWorld;
+    private BarButtonItem iSCaramel;
+    private BarButtonItem iSCoffee;
+    private BarButtonItem iSGlassOceans;
+    private BarSubItem iSkins;
+    private BarButtonItem iSLiquidSky;
+    private BarButtonItem iSLondonLiquidSky;
+    private BarButtonItem iSMoneyTwins;
+    private BarButtonItem iSStardust;
+    private BarButtonItem iTileHorizontal;
+    private BarButtonItem iTileVertical;
+    private MyActionList MainActionList;
+    public BarManager MainBarManager;
+    private DockManager MainDockManager;
+    private BarSubItem mWindow;
+    private PopupMenu popupMenu;
+    private RepositoryItemImageComboBox repositoryItemImageComboBox1;
+    private RepositoryItemMemoEdit repositoryItemMemoEdit1;
+    private RepositoryItemTextEdit repositoryItemTextEdit1;
+    private TabControl tcMDIChildren;
+    public Timer tmCheckInterval;
+    public Timer tmIdle;
+    private ToolTipController toolTipController;
+    private TreeView tvMenu;
+    private GridView viewMessages;
+    private MyAction aFundKnd;
+    private MyAction aIssueECB;
+    private MyAction aCurrencyECB;
+    private MyAction aIssuersGuidesList;
+    private MyAction aBankCust;
+    private MyAction aClassifierOKED;
+    private MyAction aSpecBus;
+    private MyAction aSignPartNores;
+    private MyAction aCategoryControls;
+    private MyAction aSpecIssuer;
+    private MyAction aAbilityConvert;
+    private MyAction aKindECB;
+    private MyAction aIssOrganCont;
+    private MyAction aDateTypeLocal;
+    private MyAction aDocKnd;
+    private MyAction aAddCategoryShare;
+    private MyAction aCategoryECB;
+    private MyAction aIndexRewards;
+    private MyAction aProcessknd;
+    private MyAction aProcess;
+    private MyAction aOLF;
+    private MyAction aListing;
+    private MyAction aRating;
+    private MyAction aRegOrganMU;
+    private MyAction aStateShareUk;
+    private MyAction aAppointment;
+    private MyAction aRepKnd;
+    private MyAction aSignatory;
+    private MyAction aExecutor;
+    private MyAction aCatHolderEcb;
+    private MyAction aIssueStsECB;
+    private MyAction aIssuersGCB;
+    private MyAction aKindGCB;
+    private MyAction aDebtRepayment;
+    private MyAction aStsReport;
+    private MyAction aKindRegBonds;
+    private MyAction aArticlesKOAP;
+    private MyAction aCauseChangesRep;
+    private MyAction aSuspension;
+    private MyAction aCountry;
+    private MyAction aDecisionAdmOffences;
+    private MyAction aFormCollection;
+    private MyAction aJurPersSts;
+    private MyAction aReasonAnnulECB;
+    private MyAction aUnitDimPerECB;
+    private MyAction aJurPersCreateMethod;
+    private MyAction aMethodLocalECB;
+    private MyAction aPlaceAccommECB;
+    private MyAction aReasonChangeShareIssue;
+    private MyAction aStsStAccommECB;
+    private MyAction aDecVerifInf;
+    private MyAction aBasePrescription;
+    private MyAction aViolationKnd;
+    private MyAction aOrganRegIssueECB;
+    private MyAction aMRP;
+    private MyAction aResolutionDR;
+    private MyAction aStatusECB;
+    private MyAction aStatusLicense;
+    private MyAction aCondMonitorValid;
+    private MyAction aSharer;
+    private MyAction aReasonSuspensionECB;
+    private MyAction aDecTreadCard;
+    private MyAction aReg;
+    private MyAction aRegion;
+    private MyAction aAudit;
+    private MyAction aBondRegistry;
+    private MyAction aBondReestr;
+    private MyAction aBondRefuseJournal;
+    private AutoHideContainer hideContainerLeft;
+    private MyAction aShareJournalReestr;
+    private MyAction aShareJournalChanges;
+    private MyAction aShareReestr;
+    private MyAction aShareJournalDenial;
+    private MyAction aKazDepRecReestr;
+    private MyAction aKazDepRecJournalDenial;
+    private MyAction aIslamSecReestr;
+    private MyAction aPaiReestr;
+    private MyAction aPaiRefuse;
+    private MyAction aKndSanctions;
+    private MyAction aIslamSecJournalDenial;
+    private readonly string xmlPath = Path.GetDirectoryName(Application.ExecutablePath) + @"\Xml\";
+
+    #endregion
+
+
+    public TreeView GetTvMenu()
+    {
+        return this.tvMenu;
+    }
+
+    #region Guides
+    private void aFundKnd_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new FunkndListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aIssueECB_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new IssueECBListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aCurrencyECB_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new CurrencyECBListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aIssuersGuidesList_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new IssuersGuidesListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aBankCust_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new BankCustListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aClassifierOKED_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new ClassifierOKEDListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aSpecBus_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new SpecBusListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aSignPartNores_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new SignPartNoresListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aCategoryControls_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new CategoryControlsListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aSpecIssuer_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new SpecIssuerListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aAbilityConvert_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new AbilityConvertListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aKindECB_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new KindECBListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aIssOrganCont_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new IssOrganControlListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aDateTypeLocal_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new DateTypeLocalListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aDocKnd_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new DocKndListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aAddCategoryShare_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new AddCategoryShareListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aCategoryECB_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new CategoryECBListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aIndexRewards_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new IndexRewardsListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aProcessknd_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new ProcesskndList();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aProcess_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new ProcessListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aOLF_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new OLFListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aListing_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new ListingListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aRating_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new RatingListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aRegOrganMU_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new RegOrganMUListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aStateShareUk_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new StateShareUKListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }   
+    private void aAppointment_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new AppointmentListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aRepKnd_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new RepKndListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aSignatory_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new SignatoryListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aExecutor_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new ExecutorListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aCatHolderEcb_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new CatHolderEcbListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aIssueStsECB_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new IssueStsECBListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aIssuersGCB_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new IssuersGCBListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aKindGCB_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new KindGCBListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aDebtRepayment_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new DebtRepaymentListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aStsReport_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new StsReportListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aKindRegBonds_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new KindRegBondsListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aArticlesKOAP_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new ArticlesKOAPListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aCauseChangesRep_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new CauseChangesRepListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aSuspension_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new SuspensionListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aCountry_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new CountryListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aDecisionAdmOffences_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new DecisionAdmOffencesListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aFormCollection_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new FormCollectionListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aJurPersSts_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new JurPersStsListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aReasonAnnulECB_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new ReasonAnnulECBListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aUnitDimPerECB_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new UnitDimPerECBListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aJurPersCreateMethod_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new JurPersCreateMethodListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aMethodLocalECB_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new MethodLocalECBListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aPlaceAccommECB_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new PlaceAccommECBListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aReasonChangeShareIssue_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new ReasonChangeShareIssueListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aStsStAccommECB_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new StsStAccommECBListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aDecVerifInf_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new DecVerifInfListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aBasePrescription_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new BasePrescriptionListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aViolationKnd_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new ViolationKndListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aOrganRegIssueECB_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new OrganRegIssueECBListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aMRP_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new MRPListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aResolutionDR_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new ResolutionDRListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aStatusECB_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new StatusECBListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aStatusLicense_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new StatusLicenseListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aCondMonitorValid_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new CondMonitorValidListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aSharer_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new SharerListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aReasonSuspensionECB_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new ReasonSuspensionECBListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }   
+    private void aDecTreadCard_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new DecTreadCardListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aReg_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new RegListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aRegion_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new RegionListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aAudit_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new AuditListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aBondRegistry_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new BondRegistryListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aBondReestr_Execute(object sender, TActionEventArgs ae)
+   {
+       var frm = new BondJournalFilterForm();
+       frm.MdiParent = this;
+       frm.Show();
+   }
+    private void aBondRefuseJournal_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new BondRefuseJournalForm();
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aPaiReestr_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new PaiReestrFilterForm();
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aPaiRefuse_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new PaiRefuseJournalForm();
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    #endregion
+
+    #region [Create and Dispose Form]
+
+    public MainForm()
+    {
+      //
+      // Required for Windows Form Designer support
+      //
+      InitializeComponent();
+      //
+      // TODO: Add any constructor code after InitializeComponent call
+      //
+    }
+
+    /// <summary>
+    ///   Clean up any resources being used.
+    /// </summary>
+    protected override void Dispose(bool disposing)
+    {
+      if (disposing)
+      {
+        if (components != null)
+        {
+          components.Dispose();
+        }
+      }
+
+      base.Dispose(disposing);
+    }
+
+    #endregion
+
+    #region [Загрузка и инициализация]
+
+    /// <summary>
+    ///   The main entry point for the application.
+    /// </summary>
+    [STAThread]
+    private static void Main()
+    {
+      /* Инициализация приложения */
+      InitApplication.InitializeApp();
+
+      var frm = new MainForm();
+      Application.AddMessageFilter(new TMessageFilter(frm));
+      Application.Run(frm);
+
+      InitApplication.UnInitializeApp();
+    }
+
+    /// <summary>
+    ///   Загрузка и инициализация главного окна
+    /// </summary>
+    private void frmMain_Load(object sender, EventArgs e)
+    {
+      //dpMessages.Visibility = DockVisibility.AutoHide;
+      dmControler.Init(this);
+      MainBarManager.Images = dmControler.frmMain.imMain;
+      tcMDIChildren.ImageList = dmControler.frmMain.imMain;
+      tvMenu.ImageList = dmControler.frmMain.imMain;
+      Text = InitApplication.AppTitle;
+      barHint.Caption = string.Format(LangTranslate.UiGetText("Версия: {0}"), Application.ProductVersion);
+      InitBars();
+      InitDockPanels();
+
+      // Устанавливаем стиль приложения
+      defaultLookAndFeel.LookAndFeel.SetStyle(InitApplication.style, InitApplication.useWindowsXPTheme,
+        InitApplication.useDefaultLookAndFeel, InitApplication.skinName);
+
+      switch (InitApplication.style)
+      {
+        case LookAndFeelStyle.Flat:
+          ipsWXP.Down = true;
+          break;
+        case LookAndFeelStyle.UltraFlat:
+          ipsOXP.Down = true;
+          break;
+        case LookAndFeelStyle.Style3D:
+          ipsO2K.Down = true;
+          break;
+        case LookAndFeelStyle.Office2003:
+          ipsO2003.Down = true;
+          break;
+        default:
+          switch (InitApplication.skinName)
+          {
+            case "Caramel":
+              iSCaramel.Down = true;
+              break;
+            case "The Asphalt World":
+              iSAsphaltWorld.Down = true;
+              break;
+            case "Liquid Sky":
+              iSLiquidSky.Down = true;
+              break;
+            case "Coffee":
+              iSCoffee.Down = true;
+              break;
+            case "Stardust":
+              iSStardust.Down = true;
+              break;
+            case "Glass Oceans":
+              iSGlassOceans.Down = true;
+              break;
+            case "Money Twins":
+              iSMoneyTwins.Down = true;
+              break;
+            case "London Liquid Sky":
+              iSLondonLiquidSky.Down = true;
+              break;
+            default:
+              break;
+          }
+          break;
+      }
+      ;
+
+      if (SkinManager.AllowFormSkins)
+        SkinManager.DisableFormSkins();
+      else
+        SkinManager.EnableFormSkins();
+      LookAndFeelHelper.ForceDefaultLookAndFeelChanged();
+
+      // Сообщение о начале работы приложения
+      Win32.PostMessage(Handle, WM_AFTERSHOW, IntPtr.Zero, IntPtr.Zero);
+      //hideContainerBottom.Visible = false;
+    }
+
+    /// <summary>
+    ///   Начало работы
+    /// </summary>
+    private void AfterShow(ref Message m)
+    {
+      MainBarManager.BeginUpdate();
+      MainBarManager.EndUpdate();
+
+      aDisconnect.OnExecute();
+      aConnect.OnExecute();
+    }
+
+    #endregion
+
+    #region [Подключение и отсоединение к\от базы данных]
+
+    /// <summary>
+    ///   Событие: Подключение к БД
+    /// </summary>
+    private void BarButtonItemConnect_ItemClick(object sender, ItemClickEventArgs e)
+    {
+      aConnect.OnExecute();
+    }
+
+    /// <summary>
+    ///   Событие: Отключение от БД
+    /// </summary>
+    private void iDisconnect_ItemClick(object sender, ItemClickEventArgs e)
+    {
+      aDisconnect.OnExecute();
+    }
+
+    /// <summary>
+    ///   Отключение от БД
+    /// </summary>
+    private void aDisconnectExecute(object sender, TActionEventArgs e)
+    {
+      // Проверка на подключение к БД
+      if (dmControler.frmMain.oracleConnection.State == ConnectionState.Closed)
+        return;
+
+      // Проверяем можем ли мы закрыть все активные окна
+      foreach (var Children in MdiChildren)
+        if (Children is MDIChildForm)
+          if (!((MDIChildForm) Children).CanClose())
+            return;
+
+      // Закрываем все активные окна
+      foreach (var Children in MdiChildren)
+        Children.Close();
+
+      // Прячем Меню
+      dpMenu.Visibility = DockVisibility.AutoHide;
+
+      // Прячем панель сообщений
+      dpMessages.Visibility = DockVisibility.Hidden;
+
+      // Отключаемся от БД}
+      if (!DBSupport.DisconnectFromOracle(dmControler.frmMain.oracleConnection))
+        return;
+
+      SetConnectActions(false);
+
+      // Уничтожаем меню
+      DestroyMenu();
+
+      // Уничтожаем панель сообщений
+      DestroyMsgPanel();
+
+      Text = InitApplication.AppTitle;
+    }
+
+    /// <summary>
+    ///   Подключение к БД
+    /// </summary>
+    private void aConnectExecute(object sender, TActionEventArgs e)
+    {
+      // Проверка на подключение к БД
+      if (dmControler.frmMain.oracleConnection.State == ConnectionState.Open)
+        return;
+
+      // Подключаемся к БД
+      if (!DBSupport.ConnectToOracle(dmControler.frmMain.oracleConnection))
+        return;
+
+      SetConnectActions(true);
+
+      // Подключение к БД выполнено, проверяем, прописан ли пользователь в Official
+      if (!DBSupport.IsUserOfficial())
+      {
+        XtraMessageBox.Show(LangTranslate.UiGetText("Данный пользователь не имеет прав на работу с базой данных"),
+          LangTranslate.UiGetText("В доступе отказано"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        aDisconnect.OnExecute();
+        return;
+      }
+
+      // Пользователь прописан в Official,
+      // проверяем, не заблокировано ли должностное лицо администратором
+      if (DBSupport.IsOfficialBlocked())
+      {
+        XtraMessageBox.Show(LangTranslate.UiGetText("Данное должностное лицо заблокировано администратором"),
+          LangTranslate.UiGetText("В доступе отказано"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        aDisconnect.OnExecute();
+        return;
+      }
+
+      // Пользователь не заблокирован. Не истек ли срок действия пароля пользователя
+      if (dmControler.frmMain.DBLogin != "ADMIN")
+      {
+        var PassChangeDate = DBSupport.GetUserPasswordChangeDate(dmControler.frmMain.DBLogin).Date;
+        var CurrServerTime = DBSupport.GetServerTime().Date;
+
+        var param = new TPkgParams();
+        param.oc = dmControler.frmMain.oracleConnection;
+        var MaxPassAge = Convert.ToInt32(param.GetSystemSetupParam("MAX_PASSWORD_AGE"));
+        var PassExpireAlarmDays = Convert.ToInt32(param.GetSystemSetupParam("PASSWORD_EXPIRE_ALARM_DAYS"));
+
+        var CurrPassAge = (CurrServerTime - PassChangeDate).Days;
+        if ((CurrPassAge < MaxPassAge) && (CurrPassAge >= MaxPassAge - PassExpireAlarmDays))
+        {
+          // Приближается конец срока действия пароля. Предупреждаем пользователя
+          XtraMessageBox.Show(
+            String.Format(LangTranslate.UiGetText("Срок действия пароля истечет через {0} дн."),
+              (PassChangeDate.AddDays(MaxPassAge) - CurrServerTime).Days),
+            LangTranslate.UiGetText("Внимание"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        /*else if (CurrPassAge >= MaxPassAge)
+        {
+          // Устанавливаем флаг блокировки пользователя
+          DBSupport.SetCurrOfficialBlocked(2 /* Истек срок действия пароля */ //);
+        /*    XtraMessageBox.Show(
+            LangTranslate.UiGetText("Срок действия пароля истек") + Environment.NewLine +
+            LangTranslate.UiGetText("Обратитесь к администратору базы данных"),
+            LangTranslate.UiGetText("Внимание"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+          aDisconnect.OnExecute();
+          return;
+        }*/
+      }
+
+      Int32 Computer;
+      string ComputerName;
+      // С должностным лицом все в порядке, проверяем, зарегистрирован ли компьютер в БД
+      if (!DBSupport.IsCompRegistered(out Computer, out ComputerName))
+      {
+        if (XtraMessageBox.Show(
+          LangTranslate.UiGetText("Данный компьютер не зарегистрирован в базе данных") + Environment.NewLine +
+          LangTranslate.UiGetText("Зарегистрировать его?"), LangTranslate.UiGetText("Внимание"), MessageBoxButtons.YesNo,
+          MessageBoxIcon.Question) != DialogResult.Yes)
+        {
+          aDisconnect.OnExecute();
+          return;
+        }
+
+        // Пытаемся зарегистрировать компьютер в БД
+        if (!DBSupport.RegisterComputer(out Computer, out ComputerName))
+        {
+          aDisconnect.OnExecute();
+          return;
+        }
+      }
+
+      // Компьютер зарегистрирован в БД, проверяем, не заблокирован ли он
+      if (DBSupport.IsCompBlocked(Computer))
+      {
+        XtraMessageBox.Show(
+          LangTranslate.UiGetText("Данный компьютер заблокирован администратором") + Environment.NewLine +
+          LangTranslate.UiGetText("В доступе отказано"), LangTranslate.UiGetText("Внимание"), MessageBoxButtons.OK,
+          MessageBoxIcon.Warning);
+        aDisconnect.OnExecute();
+        return;
+      }
+
+      var oldCursor = Cursor.Current;
+      Cursor.Current = Cursors.WaitCursor;
+      try
+      {
+        // Заполняем таблицы прав и меню текущего должн. лица
+        if (!DBSupport.FillCurrOfficTables(dmControler.frmMain.oracleConnection))
+        {
+          XtraMessageBox.Show(
+            LangTranslate.UiGetText("Ошибка заполнения таблиц прав и меню пользователя") + Environment.NewLine +
+            LangTranslate.UiGetText("В доступе отказано"), LangTranslate.UiGetText("Внимание"), MessageBoxButtons.OK,
+            MessageBoxIcon.Error);
+          aDisconnect.OnExecute();
+          return;
+        }
+
+        // Корректируем объектные привилегии текущего должн. лица
+        DBSupport.CorrectCurrOfficGrants(dmControler.frmMain.oracleConnection);
+      }
+      finally
+      {
+        Cursor.Current = oldCursor;
+      }
+
+      #region [Выбираем язык интерфейса]
+
+      InitApplication.CurrentLangId = LangTranslate.SelectLang();
+      aSetCurrentLanguage.OnExecute();
+
+      #endregion
+
+      // Создаем меню
+      CreateMenu();
+
+      // Показываем Меню
+      dpMenu.Visibility = DockVisibility.Visible;
+
+      // Создаем панель сообщений
+      CreateMsgPanel();
+
+      // Показываем панель сообщений
+      if (viewMessages.RowCount > 0)
+        dpMessages.Visibility = DockVisibility.Hidden;
+      else
+        dpMessages.Visibility = DockVisibility.Hidden;
+
+      Text = String.Format(LangTranslate.UiGetText("{0} [ пользователь - {1}@{2} ]"),
+        LangTranslate.UiGetText(InitApplication.AppTitle), DBSupport.GetOfficialName(), dmControler.frmMain.DBDatabase);
+
+      DBSupport.SetParams();
+
+      // Читаем интервал неактивности до блокировки приложения
+      var par = new TPkgParams();
+      par.oc = dmControler.frmMain.oracleConnection;
+      tmIdle.Interval = Int32.Parse(par.GetSystemSetupParam("APPLICATION_LOCK_INTERVAL"))*1000;
+      tmCheckInterval.Interval = 1*1000;
+
+      if (InitApplication.CurrentLangId == LanguageIds.Kazakh)
+        new LangTranslate().UISetupTexts(this);
+    }
+
+    #endregion
+
+    #region [Создание, уничтожение и работа с панелью сообщений]
+
+    private void CreateMsgPanel()
+    {
+      DataTable dt = null;
+      if (tvMenu.Nodes.Count > 0)
+      {
+        try
+        {
+          if (gridMessages.DataSource == null)
+          {
+            dt = new DataTable();
+            dt.Columns.Add("col_STATUS", typeof (Int32));
+            dt.Columns.Add("col_TYPE", typeof (string));
+            dt.Columns.Add("col_TEXT", typeof (string));
+          }
+          else dt = (DataTable) gridMessages.DataSource;
+          gridMessages.DataSource = dt;
+        }
+        finally
+        {
+          dt.Dispose();
+        }
+      }
+    }
+
+    private void AddMessageToMsgPanel(ref DataTable dt_, Int32 status, string type, string text)
+    {
+      dt_.BeginLoadData();
+      dt_.LoadDataRow(new object[] {status, type, text}, false);
+      dt_.EndLoadData();
+    }
+
+    private void DestroyMsgPanel()
+    {
+      if (gridMessages.DataSource != null)
+        ((DataTable) gridMessages.DataSource).Clear();
+    }
+
+    #endregion
+
+    #region [Создание, уничтожение и работа с меню]
+
+    /// <summary>
+    ///   Создаем меню
+    /// </summary>
+    private bool CreateMenu()
+    {
+      var bResult = false;
+      if (dmControler.frmMain.oracleConnection.State != ConnectionState.Open)
+        throw new Exception(LangTranslate.UiGetText("Нет соединения с БД"));
+
+      DataTable dt;
+      Int32 ErrCode;
+      string ErrMsg;
+
+      var ofr = new TPkgOfficialRight();
+      try
+      {
+        ofr.oc = dmControler.frmMain.oracleConnection;
+        ofr.ReadCurrOfficMenusAList(InitApplication.AppId, out dt, out ErrCode, out ErrMsg);
+        try
+        {
+          if (ErrCode != 0)
+          {
+            DBSupport.DBErrorHandler(ErrCode, ErrMsg);
+            return bResult;
+          }
+
+          TreeNode NewNode, ParentNode = null;
+          foreach (DataRow row in dt.Rows)
+          {
+            if (row["CAPTION"].ToString() == "-") // Игнорируем разделители
+              continue;
+
+            // Вставляем подменю / элемент меню
+            if (row["PARENT_ID"] == DBNull.Value)
+            {
+              // Вставляем подменю верхнего уровня
+              NewNode = new TreeNode();
+              tvMenu.Nodes.Add(NewNode);
+            }
+            else
+            {
+              // Ищем родительское подменю по Parent_ID = App_Menu_Item предка
+              ParentNode = FindParentNode(tvMenu, null, Convert.ToInt32(row["PARENT_ID"]));
+              if (ParentNode != null)
+              {
+                // Добавляем дочернее подменю / элемент меню
+                NewNode = new TreeNode();
+                ParentNode.Nodes.Add(NewNode);
+              }
+              else
+                NewNode = null;
+            }
+
+            if (NewNode != null)
+            {
+              var md = new TMenuData();
+              if (Convert.ToInt32(row["ITEM_KIND"]) == 3)
+              {
+                if (row["ACTION"].ToString() != String.Empty)
+                {
+                  foreach (var action in MainActionList.MyActions)
+                  {
+                    if (action.Code == row["ACTION"].ToString())
+                    {
+                      action.Enabled = true;
+                      action.MakeDisabledOnExec = Convert.ToInt32(row["MAKE_DISABLED_ON_EXEC"]) == 1;
+                      md.pAction = action;
+                      break;
+                    }
+                  }
+                }
+              }
+
+              md.pCaption = LangTranslate.UiGetText(row["CAPTION"].ToString());
+              md.pHint = LangTranslate.UiGetText(row["HINT"].ToString());
+              md.pImageIndex = Convert.ToInt32(row["IMAGE_INDEX"]);
+              md.pAppMenuItem = Convert.ToInt32(row["APP_MENU_ITEM"]);
+
+              if (md.pImageIndex == -1)
+              {
+                if (Convert.ToInt32(row["ITEM_KIND"]) == 3)
+                {
+                  NewNode.SelectedImageIndex = 22;
+                  NewNode.ImageIndex = 22;
+                }
+                else
+                {
+                  NewNode.SelectedImageIndex = 24;
+                  NewNode.ImageIndex = 24;
+                }
+              }
+              else
+              {
+                NewNode.SelectedImageIndex = md.pImageIndex;
+                NewNode.ImageIndex = md.pImageIndex;
+              }
+
+              NewNode.Text = md.pCaption;
+              NewNode.Tag = md;
+            }
+          }
+        }
+        finally
+        {
+          dt.Clear();
+          dt.Dispose();
+        }
+      }
+      catch (OracleException oe)
+      {
+        DBSupport.DBErrorHandler(oe.Number, oe.Message + Environment.NewLine + "(occured in frmMain.CreateMenu).");
+      }
+      catch (Exception oe)
+      {
+        XtraMessageBox.Show(oe.Message + Environment.NewLine + "(occured in frmMain.CreateMenu).",
+          LangTranslate.UiGetText("Ошибка"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+      }
+
+      return bResult;
+    }
+
+    /// <summary>
+    ///   Уничтожает меню
+    /// </summary>
+    private void DestroyMenu()
+    {
+      tvMenu.Nodes.Clear();
+    }
+
+    private void iMenuExpand_ItemClick(object sender, ItemClickEventArgs e)
+    {
+      tvMenu.ExpandAll();
+    }
+
+    private void iMenuCollapse_ItemClick(object sender, ItemClickEventArgs e)
+    {
+      tvMenu.CollapseAll();
+    }
+
+    private void iMenuExpandNode_ItemClick(object sender, ItemClickEventArgs e)
+    {
+      if (tvMenu.SelectedNode != null)
+        tvMenu.SelectedNode.Expand();
+    }
+
+    private void iMenuCollapseNode_ItemClick(object sender, ItemClickEventArgs e)
+    {
+      if (tvMenu.SelectedNode != null)
+        tvMenu.SelectedNode.Collapse();
+    }
+
+    private void tvMenu_AfterCollapse(object sender, TreeViewEventArgs e)
+    {
+      var md = e.Node.Tag as TMenuData;
+      if (md != null)
+      {
+        if (md.pImageIndex == -1)
+        {
+          e.Node.ImageIndex = 24;
+          e.Node.SelectedImageIndex = 24;
+        }
+      }
+    }
+
+    private void tvMenu_AfterExpand(object sender, TreeViewEventArgs e)
+    {
+      var md = e.Node.Tag as TMenuData;
+      if (md != null)
+      {
+        if (md.pImageIndex == -1)
+        {
+          e.Node.ImageIndex = 23;
+          e.Node.SelectedImageIndex = 23;
+        }
+      }
+    }
+
+    private TreeNode FindParentNode(TreeView tr, TreeNode node, Int32 ParentID)
+    {
+      TreeNode oResult = null;
+
+      if (node == null)
+      {
+        foreach (TreeNode CurNode in tr.Nodes)
+        {
+          var mdata = (TMenuData) CurNode.Tag;
+          if (mdata.pAppMenuItem == ParentID)
+            return CurNode;
+          if (CurNode.Nodes.Count > 0)
+            oResult = FindParentNode(tvMenu, CurNode, ParentID);
+          if (oResult != null)
+            return oResult;
+        }
+      }
+      else
+      {
+        foreach (TreeNode CurNode in node.Nodes)
+        {
+          var mdata = (TMenuData) CurNode.Tag;
+          if (mdata.pAppMenuItem == ParentID)
+            return CurNode;
+          if (CurNode.Nodes.Count > 0)
+            oResult = FindParentNode(tvMenu, CurNode, ParentID);
+
+          if (oResult != null)
+            return oResult;
+        }
+      }
+
+      return oResult;
+    }
+
+    private void tvMenu_DoubleClick(object sender, EventArgs e)
+    {
+      var node = tvMenu.SelectedNode;
+      if (node != null)
+      {
+        var md = (TMenuData) node.Tag;
+        if (md.pAction != null)
+        {
+          if (md.pAction.Enabled)
+          {
+            if (md.pAction.MakeDisabledOnExec)
+            {
+              node.ForeColor = Color.FromArgb(100, 100, 100);
+              md.pAction.Enabled = false;
+            }
+
+            var oldCursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+              md.pAction.OnExecute();
+            }
+            finally
+            {
+              Cursor.Current = oldCursor;
+            }
+          }
+        }
+      }
+    }
+
+    private void _RepaintMenu(TreeNodeCollection nodes)
+    {
+      foreach (TreeNode _node in nodes)
+      {
+        var md = _node.Tag as TMenuData;
+        if (md != null && md.pAction != null)
+        {
+          if (!md.pAction.Enabled)
+            _node.ForeColor = Color.FromArgb(100, 100, 100);
+          else
+            _node.ForeColor = Color.Black;
+        }
+
+        if (_node.Nodes != null)
+          _RepaintMenu(_node.Nodes);
+      }
+    }
+
+    public void RepaintMenu()
+    {
+      tvMenu.BeginUpdate();
+      _RepaintMenu(tvMenu.Nodes);
+      tvMenu.EndUpdate();
+    }
+
+    #endregion
+
+    #region [Блокировка приложения]
+
+    private bool FApplicationLocked;
+    private IntPtr FForegroundWindowHandle;
+    public TfrmUnlockApplication FUnlockApplicationForm;
+
+    private void iLockApplication_ItemClick(object sender, ItemClickEventArgs e)
+    {
+      aLockApplication.OnExecute();
+    }
+
+    private void aLockApplicationExecute(object sender, TActionEventArgs e)
+    {
+      FApplicationLocked = true;
+      FForegroundWindowHandle = Win32.GetForegroundWindow();
+      Win32.ShowWindow(Handle, CmdShow.SW_MINIMIZE);
+    }
+
+    /// <summary>
+    ///   Обрабатывает сообщение от Windows - WM_ACTIVATEAPP
+    /// </summary>
+    private void OnWMActivateApp(ref Message m)
+    {
+      var appActive = (((int) m.WParam != 0));
+
+      if (FApplicationLocked && appActive)
+      {
+        if (FUnlockApplicationForm == null)
+        {
+          FUnlockApplicationForm = new TfrmUnlockApplication();
+          try
+          {
+            if (FUnlockApplicationForm.ShowDialog() == DialogResult.OK)
+            {
+              FApplicationLocked = false;
+              if (Win32.IsIconic(Handle))
+                Win32.ShowWindow(Handle, CmdShow.SW_RESTORE);
+              Win32.SetForegroundWindow(FForegroundWindowHandle);
+            }
+            else
+              Win32.ShowWindow(Handle, CmdShow.SW_MINIMIZE);
+          }
+          finally
+          {
+            FUnlockApplicationForm.Dispose();
+            FUnlockApplicationForm = null;
+          }
+        }
+        else
+          FUnlockApplicationForm.BringToFront();
+      }
+    }
+
+    private void OnWMQOpen(ref Message m)
+    {
+      if (FApplicationLocked)
+        m.Result = new IntPtr(0);
+      else
+        m.Result = new IntPtr(1);
+    }
+
+    private void tmIdle_Elapsed(object sender, ElapsedEventArgs e)
+    {
+      //Actions["aLockApplication"].Execute();
+    }
+
+    private void tmCheckInterval_Elapsed(object sender, ElapsedEventArgs e)
+    {
+      tmCheckInterval.Enabled = false;
+      tmIdle.Enabled = true;
+    }
+
+    #endregion
+
+    #region [Панель дочерних окон]
+
+    /// <summary>
+    ///   Признак того, что выбор закладки сделал пользователь а не программа
+    /// </summary>
+    private bool UserSelTab = true;
+
+    /// <summary>
+    ///   Признак того, что выбор окна сделал пользователь а не программа
+    /// </summary>
+    private bool UserWinActivate = true;
+
+    /// <summary>
+    ///   Создать взаимодействие между окном и панелью окон
+    /// </summary>
+    public void AttachPanelToWindow(Form frm)
+    {
+      frm.Closed += win_Closed;
+      frm.Activated += win_Activated;
+
+      var tp = new TabPage(frm.Text);
+      tp.ImageIndex = 21;
+      tp.Tag = frm;
+      tcMDIChildren.TabPages.Add(tp);
+      tp.Text = LangTranslate.UiGetText(tp.Text);
+    }
+
+    private void win_Closed(object sender, EventArgs e)
+    {
+      foreach (TabPage tp in tcMDIChildren.TabPages)
+      {
+        if (tp.Tag == sender)
+        {
+          UserSelTab = false;
+          tcMDIChildren.TabPages.Remove(tp);
+        }
+      }
+    }
+
+    private void win_Activated(object sender, EventArgs e)
+    {
+      if (!UserWinActivate)
+      {
+        UserWinActivate = true;
+        return;
+      }
+
+      foreach (TabPage tp in tcMDIChildren.TabPages)
+      {
+        if (tp.Tag == sender)
+        {
+          UserSelTab = false;
+          tcMDIChildren.SelectedTab = tp;
+        }
+      }
+    }
+
+    private void tcMDIChildren_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      if (!UserSelTab)
+      {
+        UserSelTab = true;
+        return;
+      }
+
+      if (tcMDIChildren.SelectedTab == null) return;
+
+      var fr = (Form) tcMDIChildren.SelectedTab.Tag;
+      UserWinActivate = false;
+      fr.Activate();
+    }
+
+    #endregion
+
+    #region [Обновление прав пользователя]
+
+    private void iRefresh_ItemClick(object sender, ItemClickEventArgs e)
+    {
+      aRefreshOfficRights.OnExecute();
+    }
+
+    /// <summary>
+    ///   Обновление прав пользователя и перестройка меню
+    /// </summary>
+    private void aRefreshOfficRightsExecute(object sender, TActionEventArgs e)
+    {
+      var oldCursor = Cursor.Current;
+      Cursor.Current = Cursors.WaitCursor;
+      try
+      {
+        // Заполняем таблицы прав и меню текущего должн. лица
+        if (!DBSupport.FillCurrOfficTables(dmControler.frmMain.oracleConnection))
+        {
+          XtraMessageBox.Show(
+            LangTranslate.UiGetText("Ошибка заполнения таблиц прав и меню пользователя") + Environment.NewLine +
+            LangTranslate.UiGetText("В доступе отказано"), "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+          aDisconnect.OnExecute();
+          return;
+        }
+
+        // Корректируем объектные привилегии текущего должн. лица
+        DBSupport.CorrectCurrOfficGrants(dmControler.frmMain.oracleConnection);
+      }
+      finally
+      {
+        Cursor.Current = oldCursor;
+      }
+
+      // Вызываем процедуру инициализации переменных в БД
+      DBSupport.SetParams();
+
+      if (MdiChildren.Length > 0)
+      {
+        if (XtraMessageBox.Show(
+          LangTranslate.UiGetText("Для пересоздания меню необходимо закрыть все открытые окна") + Environment.NewLine +
+          LangTranslate.UiGetText("Пересоздать меню?"), LangTranslate.UiGetText("Внимание"), MessageBoxButtons.YesNo,
+          MessageBoxIcon.Question) == DialogResult.Yes)
+        {
+          // Закрываем все активные окна
+          foreach (var f in MdiChildren)
+            f.Close();
+
+          // Уничтожаем меню
+          DestroyMenu();
+          // Уничтожаем панель сообщений
+          DestroyMsgPanel();
+          // Создаем меню
+          CreateMenu();
+          // Создаем панель сообщений
+          CreateMsgPanel();
+          // Показываем панель сообщений
+          if (viewMessages.RowCount > 0)
+            dpMessages.Visibility = DockVisibility.Hidden;
+          else
+            dpMessages.Visibility = DockVisibility.Hidden;
+        }
+      }
+      else
+      {
+        // Уничтожаем меню
+        DestroyMenu();
+        // Уничтожаем панель сообщений
+        DestroyMsgPanel();
+        // Создаем меню
+        CreateMenu();
+        // Создаем панель сообщений
+        CreateMsgPanel();
+        // Показываем панель сообщений
+        if (viewMessages.RowCount > 0)
+            dpMessages.Visibility = DockVisibility.Hidden;
+        else
+            dpMessages.Visibility = DockVisibility.Hidden;
+      }
+
+      UnitOfWork.Instance.Clear();
+    }
+
+    #endregion
+
+    #region [Изменение пароля пользователя]
+
+    private void iChangePassword_ItemClick(object sender, ItemClickEventArgs e)
+    {
+      aChangePassword.OnExecute();
+    }
+
+    /// <summary>
+    ///   Изменяет текущий пароль пользователя
+    /// </summary>
+    private void aChangePasswordExecute(object sender, TActionEventArgs e)
+    {
+      var cp = new TfrmChangePassword();
+      try
+      {
+        if (cp.ShowDialog(this) == DialogResult.OK)
+        {
+          aDisconnect.OnExecute();
+          aConnect.OnExecute();
+        }
+      }
+      finally
+      {
+        cp.Dispose();
+      }
+    }
+
+    #endregion
+
+    #region [Работа со стилями приложения]
+
+    private void iSkins_ItemClick(object sender, ItemClickEventArgs e)
+    {
+      defaultLookAndFeel.LookAndFeel.Style = LookAndFeelStyle.Skin;
+      defaultLookAndFeel.LookAndFeel.SkinName = e.Item.Caption;
+
+      InitApplication.style = LookAndFeelStyle.Skin;
+      InitApplication.skinName = e.Item.Caption;
+    }
+
+    private void ips_ItemClick(object sender, ItemClickEventArgs e)
+    {
+      switch (e.Item.Description)
+      {
+        case "WindowsXP":
+          defaultLookAndFeel.LookAndFeel.Style = LookAndFeelStyle.Flat;
+          break;
+        case "OfficeXP":
+          defaultLookAndFeel.LookAndFeel.Style = LookAndFeelStyle.UltraFlat;
+          break;
+        case "Office2000":
+          defaultLookAndFeel.LookAndFeel.Style = LookAndFeelStyle.Style3D;
+          break;
+        case "Office2003":
+          defaultLookAndFeel.LookAndFeel.Style = LookAndFeelStyle.Office2003;
+          break;
+        default:
+          break;
+      }
+
+      InitApplication.style = defaultLookAndFeel.LookAndFeel.Style;
+    }
+
+    #endregion
+
+    #region [Закрытие приложения]
+
+    private void frmMain_Closing(object sender, CancelEventArgs e)
+    {
+      // Отключаемся от БД (с закрытием всех активных окон)
+      aDisconnect.OnExecute();
+
+      if (dmControler.frmMain.oracleConnection.State != ConnectionState.Closed)
+      {
+        XtraMessageBox.Show(LangTranslate.UiGetText("Не выполнено отключение от базы данных") + Environment.NewLine +
+                            LangTranslate.UiGetText("Работа программы не завершена"),
+          LangTranslate.UiGetText("Внимание"), MessageBoxButtons.OK,
+          MessageBoxIcon.Warning);
+        e.Cancel = true;
+        return;
+      }
+
+      e.Cancel = false;
+      dpMessages.DockManager.SaveToXml(xmlPath + @"MsgPanel_DEFAULT.xml");
+    }
+
+    private void frmMain_Closed(object sender, EventArgs e)
+    {
+      dmControler.UnInit();
+    }
+
+    private void iExit_ItemClick(object sender, ItemClickEventArgs e)
+    {
+      Application.Exit();
+    }
+
+    #endregion
+
+    #region [Разное]
+
+    private void SetConnectActions(bool Connected)
+    {
+      iConnect.Enabled = !Connected;
+      iDisconnect.Enabled = Connected;
+      iRefresh.Enabled = Connected;
+      iChangePassword.Enabled = Connected;
+      iLockApplication.Enabled = Connected;
+    }
+
+    private void frmMain_MdiChildActivate(object sender, EventArgs e)
+    {
+      InitBars();
+    }
+
+    private void InitBars()
+    {
+      var ActiveMdiForm = ActiveMdiChild != null;
+
+      iCascade.Enabled = ActiveMdiForm;
+      iTileHorizontal.Enabled = ActiveMdiForm;
+      iTileVertical.Enabled = ActiveMdiForm;
+      iCloseAllWindows.Enabled = ActiveMdiForm;
+
+      if (!ActiveMdiForm)
+        tcMDIChildren.Visible = false;
+      else if (!tcMDIChildren.Visible)
+        tcMDIChildren.Visible = true;
+    }
+
+    private void InitDockPanels()
+    {
+      if (!Directory.Exists(xmlPath))
+        Directory.CreateDirectory(xmlPath);
+      //TODO:
+      //if (File.Exists(xmlPath + @"MsgPanel_DEFAULT.xml"))
+      //  dpMessages.DockManager.RestoreFromXml(xmlPath + @"MsgPanel_DEFAULT.xml");
+      dpMenu.Visibility = DockVisibility.Hidden;
+      dpMessages.Visibility = DockVisibility.Hidden;
+    }
+
+    private void dpMenu_VisibilityChanged(object sender, VisibilityChangedEventArgs e)
+    {
+      switch (dpMenu.Visibility)
+      {
+        case DockVisibility.Visible:
+          barButtonItemMenuPanel.Down = true;
+          break;
+        case DockVisibility.Hidden:
+          barButtonItemMenuPanel.Down = false;
+          break;
+        default:
+          break;
+      }
+    }
+
+    private void dpMessages_VisibilityChanged(object sender, VisibilityChangedEventArgs e)
+    {
+      switch (dpMessages.Visibility)
+      {
+        case DockVisibility.Visible:
+          barButtonItemMsgPanel.Down = true;
+          break;
+        case DockVisibility.Hidden:
+          barButtonItemMsgPanel.Down = false;
+          break;
+        default:
+          break;
+      }
+    }
+
+    private void barButtonItemMenuPanel_ItemClick(object sender, ItemClickEventArgs e)
+    {
+      if (barButtonItemMenuPanel.Down)
+        dpMenu.Visibility = DockVisibility.Visible;
+      else
+        dpMenu.Visibility = DockVisibility.Hidden;
+    }
+
+    private void barButtonItemMsgPanel_ItemClick(object sender, ItemClickEventArgs e)
+    {
+      if (barButtonItemMsgPanel.Down)
+          dpMessages.Visibility = DockVisibility.Hidden;
+      else
+        dpMessages.Visibility = DockVisibility.Hidden;
+    }
+
+    private void iCascade_ItemClick(object sender, ItemClickEventArgs e)
+    {
+      LayoutMdi(MdiLayout.Cascade);
+    }
+
+    private void iTileHorizontal_ItemClick(object sender, ItemClickEventArgs e)
+    {
+      LayoutMdi(MdiLayout.TileHorizontal);
+    }
+
+    private void iTileVertical_ItemClick(object sender, ItemClickEventArgs e)
+    {
+      LayoutMdi(MdiLayout.TileVertical);
+    }
+
+    private void iCloseAllWindows_ItemClick(object sender, ItemClickEventArgs e)
+    {
+      foreach (var fr in MdiChildren)
+        fr.Close();
+    }
+
+    #endregion
+
+    #region [События по пунктам меню]
+
+    private void aSetCurrentLanguage_Execute(object sender, TActionEventArgs ae)
+    {
+      var conn = dmControler.frmMain.oracleConnection;
+      var trans = conn.BeginTransaction();
+      try
+      {
+        var cmd = conn.CreateCommand();
+        try
+        {
+          cmd.CommandType = CommandType.Text;
+          cmd.CommandText = "begin main.pkg_lang.current_lang_id := " + (decimal) InitApplication.CurrentLangId +
+                            "; end;";
+          cmd.ExecuteNonQuery();
+        }
+        finally
+        {
+          cmd.Dispose();
+        }
+      }
+      finally
+      {
+        trans.Dispose();
+      }
+    }
+
+    private void aRefShared_Execute(object sender, TActionEventArgs ae)
+    {
+      //SharedForm frm = new SharedForm();
+      //frm.pAction = (MyAction)sender;
+      //frm.MdiParent = this;
+      //frm.Show();  
+    }
+
+    #endregion
+
+   
+
+    private void hideContainerLeft_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void aShareReestr_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new ShareReestrListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+
+    private void aShareJournalDenial_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new ShareJournalDenialListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+
+    private void aKazDepRecReestr_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new KazDepReceiptReestrListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+
+    private void aKndSanction_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new KndSanctionsListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aKazDepRecJournalDenial_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new KazDepRecJournalDenialListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+
+    private void aIslamSecReestr_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new IslamSecReestrListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+
+    private void aIslamSecJournalDenial_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new IslamSecJournalDenialListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+
+      
+  }
+
+  #region [Фильтр сообщений]
+
+  /// <summary>
+  ///   Фильтр сообщений всего приложения
+  /// </summary>
+  public class TMessageFilter : IMessageFilter
+  {
+    private readonly MainForm frm;
+
+    public TMessageFilter(MainForm frm)
+    {
+      this.frm = frm;
+    }
+
+    public bool PreFilterMessage(ref Message m)
+    {
+      if (m.Msg == (int) WinMessage.WM_MOUSEMOVE || m.Msg == (int) WinMessage.WM_NCMOUSEMOVE ||
+          m.Msg == (int) WinMessage.WM_KEYDOWN || m.Msg == (int) WinMessage.WM_SYSKEYDOWN)
+      {
+        if (dmControler.frmMain.oracleConnection.State == ConnectionState.Open)
+        {
+          if (!frm.tmCheckInterval.Enabled && frm.FUnlockApplicationForm == null)
+          {
+            frm.tmIdle.Enabled = false;
+            frm.tmCheckInterval.Enabled = true;
+          }
+        }
+      }
+
+      return false;
+    }
+  }
+
+  #endregion
+}

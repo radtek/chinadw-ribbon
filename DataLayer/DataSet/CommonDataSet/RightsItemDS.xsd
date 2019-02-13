@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RightsItemDS" targetNamespace="http://tempuri.org/RightsItemDS.xsd" xmlns:mstns="http://tempuri.org/RightsItemDS.xsd" xmlns="http://tempuri.org/RightsItemDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RightsItemDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="RightsItemDS" msprop:Generator_UserDSName="RightsItemDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CURRENT_OFFICIAL_RIGHTS_x0023_" msprop:Generator_TableClassName="_CURRENT_OFFICIAL_RIGHTS_DataTable" msprop:Generator_TableVarName="_tableCURRENT_OFFICIAL_RIGHTS_" msprop:Generator_TablePropName="_CURRENT_OFFICIAL_RIGHTS_" msprop:Generator_RowDeletingName="_CURRENT_OFFICIAL_RIGHTS_RowDeleting" msprop:Generator_UserTableName="CURRENT_OFFICIAL_RIGHTS#" msprop:Generator_RowChangingName="_CURRENT_OFFICIAL_RIGHTS_RowChanging" msprop:Generator_RowEvHandlerName="_CURRENT_OFFICIAL_RIGHTS_RowChangeEventHandler" msprop:Generator_RowDeletedName="_CURRENT_OFFICIAL_RIGHTS_RowDeleted" msprop:Generator_RowEvArgName="_CURRENT_OFFICIAL_RIGHTS_RowChangeEvent" msprop:Generator_RowChangedName="_CURRENT_OFFICIAL_RIGHTS_RowChanged" msprop:Generator_RowClassName="_CURRENT_OFFICIAL_RIGHTS_Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RIGHTS_ITEM" msprop:Generator_ColumnVarNameInTable="columnRIGHTS_ITEM" msprop:Generator_ColumnPropNameInRow="RIGHTS_ITEM" msprop:Generator_ColumnPropNameInTable="RIGHTS_ITEMColumn" msprop:Generator_UserColumnName="RIGHTS_ITEM" type="xs:decimal" />
+              <xs:element name="RIGHT_OWNER" msprop:Generator_ColumnVarNameInTable="columnRIGHT_OWNER" msprop:Generator_ColumnPropNameInRow="RIGHT_OWNER" msprop:Generator_ColumnPropNameInTable="RIGHT_OWNERColumn" msprop:Generator_UserColumnName="RIGHT_OWNER" type="xs:decimal" />
+              <xs:element name="OWNER_TYPE" msprop:Generator_ColumnVarNameInTable="columnOWNER_TYPE" msprop:Generator_ColumnPropNameInRow="OWNER_TYPE" msprop:Generator_ColumnPropNameInTable="OWNER_TYPEColumn" msprop:Generator_UserColumnName="OWNER_TYPE" type="xs:decimal" />
+              <xs:element name="PERMITTED" msprop:Generator_ColumnVarNameInTable="columnPERMITTED" msprop:Generator_ColumnPropNameInRow="PERMITTED" msprop:Generator_ColumnPropNameInTable="PERMITTEDColumn" msprop:Generator_UserColumnName="PERMITTED" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:CURRENT_OFFICIAL_RIGHTS_x0023_" />
+      <xs:field xpath="mstns:RIGHTS_ITEM" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

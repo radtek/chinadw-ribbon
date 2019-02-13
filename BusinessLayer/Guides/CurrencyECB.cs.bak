@@ -1,0 +1,121 @@
+﻿using System;
+using ARM_User.BusinessLayer.Common;
+using BSB.Common;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
+
+namespace ARM_User.BusinessLayer.Guides
+{
+    public class CurrencyECB : DomainObject
+    {
+        #region Fileds
+
+        private string code, nameru, namekz, desig;
+        private bool isdelete;
+        #endregion Fileds
+
+        public CurrencyECB()
+        {
+        }
+
+        public CurrencyECB(decimal id, string code, string desig, string nameru, string namekz, bool isdelete, User editUser, DateTime? editTime)
+            : base(id, editUser, editTime)
+        {
+            this.code = code;
+            this.desig = desig;
+            this.nameru = nameru;
+            this.namekz = namekz;
+            this.isdelete = isdelete;
+        }
+
+        public static CurrencyECB CreateNew()
+        {
+            return CreateNew<CurrencyECB>();
+        }
+
+       
+        #region propertis
+
+        public string Code
+        {
+            get { return code; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                code = value;
+                NotifyPropertyChanged("Code");
+            }
+        }
+
+        public string Desig
+        {
+            get { return desig; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                desig = value;
+                NotifyPropertyChanged("Desig");
+            }
+        }
+        
+        public string Nameru
+        {
+            get { return nameru; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                nameru = value;
+                NotifyPropertyChanged("Nameru");
+            }
+        }
+
+        public string Namekz
+        {
+            get { return namekz; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                namekz = value;
+                NotifyPropertyChanged("Namekz");
+            }
+        }
+        
+        public bool Isdelete
+        {
+            get { return isdelete; }
+            set
+            {
+                NotifyBeforeObjectChange();
+                isdelete = value;
+                NotifyPropertyChanged("Isdelete");
+            }
+        }
+
+        public override void Delete()
+        {
+            try
+            {
+                UnitOfWork.Instance.BeginTransaction();
+                Isdelete = true;
+                UnitOfWork.Instance.Commit();
+            }
+            catch (Exception ex)
+            {
+                if (UnitOfWork.Instance.IsTransactionStarted)
+                {
+                    UnitOfWork.Instance.Rollback();
+                }
+                var rethrow = ExceptionPolicy.HandleException(ex, "Display Policy");
+                if (rethrow)
+                {
+                    throw;
+                }
+            }
+        }
+
+        #endregion
+    }
+
+    public class CurrencyECBList : DOList<CurrencyECB>
+    {
+    }
+}

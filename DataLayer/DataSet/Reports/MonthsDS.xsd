@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MonthsDS" targetNamespace="http://tempuri.org/MonthsDS.xsd" xmlns:mstns="http://tempuri.org/MonthsDS.xsd" xmlns="http://tempuri.org/MonthsDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString7" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString7 (Settings)" PropertyReference="ApplicationSettings.ARM_User.Properties.Settings.GlobalReference.Default.ConnectionString7" Provider="System.Data.OracleClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MonthsDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="MonthsDS" msprop:Generator_UserDSName="MonthsDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="G_MONTHS" msprop:Generator_TableClassName="G_MONTHSDataTable" msprop:Generator_TableVarName="tableG_MONTHS" msprop:Generator_TablePropName="G_MONTHS" msprop:Generator_RowDeletingName="G_MONTHSRowDeleting" msprop:Generator_RowChangingName="G_MONTHSRowChanging" msprop:Generator_RowEvHandlerName="G_MONTHSRowChangeEventHandler" msprop:Generator_RowDeletedName="G_MONTHSRowDeleted" msprop:Generator_UserTableName="G_MONTHS" msprop:Generator_RowChangedName="G_MONTHSRowChanged" msprop:Generator_RowEvArgName="G_MONTHSRowChangeEvent" msprop:Generator_RowClassName="G_MONTHSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="NAME_RU" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="NAME_RU" msprop:Generator_ColumnVarNameInTable="columnNAME_RU" msprop:Generator_ColumnPropNameInTable="NAME_RUColumn" msprop:Generator_UserColumnName="NAME_RU">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1024" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NAME_KZ" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="NAME_KZ" msprop:Generator_ColumnVarNameInTable="columnNAME_KZ" msprop:Generator_ColumnPropNameInTable="NAME_KZColumn" msprop:Generator_UserColumnName="NAME_KZ" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1024" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MONTH" msprop:Generator_ColumnVarNameInTable="columnMONTH" msprop:Generator_ColumnPropNameInRow="MONTH" msprop:Generator_ColumnPropNameInTable="MONTHColumn" msprop:Generator_UserColumnName="MONTH" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="MONTH_END" msprop:Generator_ColumnVarNameInTable="columnMONTH_END" msprop:Generator_ColumnPropNameInRow="MONTH_END" msprop:Generator_ColumnPropNameInTable="MONTH_ENDColumn" msprop:Generator_UserColumnName="MONTH_END" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:G_MONTHS" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

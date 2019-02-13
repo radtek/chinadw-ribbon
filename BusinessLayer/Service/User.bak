@@ -1,0 +1,43 @@
+using ARM_User.BusinessLayer.Common;
+
+namespace ARM_User.BusinessLayer.Guides
+{
+  public class User : SimpleGuideDO
+  {
+    #region Fields
+    protected string email;
+    #endregion
+
+    #region Constructors
+    public User(decimal id, string name, string email)
+      : base(id, name)
+    {
+      this.email = email;
+    }
+    #endregion
+
+    #region Properties
+    public string Email
+    {
+      get { return email; }
+      set
+      {
+        if (email != value)
+        {
+          NotifyBeforeObjectChange();
+          email = value;
+          NotifyPropertyChanged("Email");
+        }
+      }
+    }
+    #endregion
+
+    public interface IUserFinder : ISimpleFinder<User, UserList>
+    {
+    }
+  }
+
+  public class UserList : DOList<User>
+  {
+  }
+}

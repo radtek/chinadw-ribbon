@@ -1,0 +1,121 @@
+﻿using System;
+using ARM_User.BusinessLayer.Common;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
+
+
+namespace ARM_User.BusinessLayer.Guides
+{
+  public class IssuersBaseAsset : DomainObject
+  {
+    public IssuersBaseAsset()
+    {
+    }
+
+    public IssuersBaseAsset(decimal id, string nameru, string namekz, OLF olf,Country country, bool isDelete, User editUser, DateTime? editTime)
+      : base(id, editUser, editTime)
+    {
+      this.olf = olf;
+      this.nameru = nameru;
+      this.namekz = namekz;
+      this.country = country;
+      this.isDelete = isDelete;
+    }
+
+    public static IssuersBaseAsset CreateNew()
+    {
+      return CreateNew<IssuersBaseAsset>();
+    }
+
+    #region Fileds
+
+    private string nameru, namekz;
+    private bool isDelete;
+    private OLF olf;
+    private Country country;
+
+    #endregion Fileds
+
+    #region propertis
+
+    public OLF Olf
+    {
+        get { return olf; }
+      set
+      {
+        NotifyBeforeObjectChange();
+        olf = value;
+        NotifyPropertyChanged("Olf");
+      }
+    }
+    public Country Country
+    {
+        get { return country; }
+        set
+        {
+            NotifyBeforeObjectChange();
+            country = value;
+            NotifyPropertyChanged("Country");
+        }
+    }
+    public string Nameru
+    {
+      get { return nameru; }
+      set
+      {
+        NotifyBeforeObjectChange();
+        nameru = value;
+        NotifyPropertyChanged("Nameru");
+      }
+    }
+
+    public string Namekz
+    {
+      get { return namekz; }
+      set
+      {
+        NotifyBeforeObjectChange();
+        namekz = value;
+        NotifyPropertyChanged("Namekz");
+      }
+    }
+
+    public bool IsDelete
+    {
+      get { return isDelete; }
+      set
+      {
+        NotifyBeforeObjectChange();
+        isDelete = value;
+        NotifyPropertyChanged("IsDelete");
+      }
+    }
+
+    public override void Delete()
+    {
+      try
+      {
+        UnitOfWork.Instance.BeginTransaction();
+        IsDelete = true;
+        UnitOfWork.Instance.Commit();
+      }
+      catch (Exception ex)
+      {
+        if (UnitOfWork.Instance.IsTransactionStarted)
+        {
+          UnitOfWork.Instance.Rollback();
+        }
+        var rethrow = ExceptionPolicy.HandleException(ex, "Display Policy");
+        if (rethrow)
+        {
+          throw;
+        }
+      }
+    }
+
+    #endregion
+  }
+
+  public class IssuersBaseAssetList : DOList<IssuersBaseAsset>
+  {
+  }
+}

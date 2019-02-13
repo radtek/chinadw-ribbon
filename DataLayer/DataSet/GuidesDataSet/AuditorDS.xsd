@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AuditorDS" targetNamespace="http://tempuri.org/AuditorDS.xsd" xmlns:mstns="http://tempuri.org/AuditorDS.xsd" xmlns="http://tempuri.org/AuditorDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString7" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString7 (Settings)" PropertyReference="ApplicationSettings.ARM_User.Properties.Settings.GlobalReference.Default.ConnectionString7" Provider="System.Data.OracleClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AuditorDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="AuditorDS" msprop:Generator_UserDSName="AuditorDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="S_G_AUDITORS" msprop:Generator_TableClassName="S_G_AUDITORSDataTable" msprop:Generator_TableVarName="tableS_G_AUDITORS" msprop:Generator_RowChangedName="S_G_AUDITORSRowChanged" msprop:Generator_TablePropName="S_G_AUDITORS" msprop:Generator_RowDeletingName="S_G_AUDITORSRowDeleting" msprop:Generator_RowChangingName="S_G_AUDITORSRowChanging" msprop:Generator_RowEvHandlerName="S_G_AUDITORSRowChangeEventHandler" msprop:Generator_RowDeletedName="S_G_AUDITORSRowDeleted" msprop:Generator_RowClassName="S_G_AUDITORSRow" msprop:Generator_UserTableName="S_G_AUDITORS" msprop:Generator_RowEvArgName="S_G_AUDITORSRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="NAMERU" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="NAMERU" msprop:Generator_ColumnVarNameInTable="columnNAMERU" msprop:Generator_ColumnPropNameInTable="NAMERUColumn" msprop:Generator_UserColumnName="NAMERU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:S_G_AUDITORS" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

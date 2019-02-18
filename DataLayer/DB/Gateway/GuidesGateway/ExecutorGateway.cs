@@ -23,7 +23,7 @@ namespace ARM_User.DataLayer.DB.Gateway
         {
           cmd.BindByName = true;
           cmd.CommandType = CommandType.StoredProcedure;
-          cmd.CommandText = "main.S_G_READ_EXECUTOR_LIST";
+          cmd.CommandText = "prepared.S_G_READ_EXECUTOR_LIST";
           cmd.Parameters.Add("Cur", OracleDbType.RefCursor, ParameterDirection.Output);
           cmd.Parameters.Add("Err_Code", OracleDbType.Decimal, ParameterDirection.Output);
           cmd.Parameters.Add("Err_Msg", OracleDbType.Varchar2, ParameterDirection.Output);
@@ -51,7 +51,7 @@ namespace ARM_User.DataLayer.DB.Gateway
             {
                 cmd.BindByName = true;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "main.S_G_READ_EXECUTOR_LIST";
+                cmd.CommandText = "prepared.S_G_READ_EXECUTOR_LIST";
                 cmd.Parameters.Add("Cur", OracleDbType.RefCursor, ParameterDirection.Output);
                 cmd.Parameters.Add("id_guides_", OracleDbType.Decimal, ParameterDirection.Input);
                 cmd.Parameters.Add("IdKnd_", OracleDbType.Decimal, ParameterDirection.Input);
@@ -85,7 +85,7 @@ namespace ARM_User.DataLayer.DB.Gateway
             {
                 cmd.BindByName = true;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "main.S_G_READ_EXECUTOR_SIMPLE";
+                cmd.CommandText = "prepared.S_G_READ_EXECUTOR_SIMPLE";
                 cmd.Parameters.Add("Cur", OracleDbType.RefCursor, ParameterDirection.Output);
                 cmd.Parameters.Add("id_", OracleDbType.Decimal, ParameterDirection.Input);                
                 cmd.Parameters.Add("Err_Code", OracleDbType.Decimal, ParameterDirection.Output);

@@ -39,7 +39,7 @@ namespace ARM_User.MapperLayer.Guides.Simple
           {
             cmd.BindByName = true;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "main.pkg_ref.ins_local_text";
+            cmd.CommandText = "prepared.pkg_ref.ins_local_text";
             cmd.Parameters.Add("p_id", OracleDbType.Decimal, ParameterDirection.Output);
             cmd.Parameters.Add("p_key_text", OracleDbType.Varchar2, ParameterDirection.Input);
             cmd.Parameters.Add("p_local_text", OracleDbType.Varchar2, ParameterDirection.Input);
@@ -90,7 +90,7 @@ namespace ARM_User.MapperLayer.Guides.Simple
           {
             cmd.BindByName = true;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "main.pkg_ref.upd_local_text";
+            cmd.CommandText = "prepared.pkg_ref.upd_local_text";
             cmd.Parameters.Add("p_id", OracleDbType.Decimal, ParameterDirection.Input);
             cmd.Parameters.Add("p_key_text", OracleDbType.Varchar2, ParameterDirection.Input);
             cmd.Parameters.Add("p_local_text", OracleDbType.Varchar2, ParameterDirection.Input);
@@ -138,7 +138,7 @@ namespace ARM_User.MapperLayer.Guides.Simple
           {
             cmd.BindByName = true;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "main.pkg_ref.del_local_text";
+            cmd.CommandText = "prepared.pkg_ref.del_local_text";
             cmd.Parameters.Add("p_id", OracleDbType.Decimal, ParameterDirection.Input);
             cmd.Parameters.Add("p_do_commit", OracleDbType.Decimal, ParameterDirection.Input);
             cmd.Parameters.Add("p_err_code", OracleDbType.Decimal, ParameterDirection.Output);

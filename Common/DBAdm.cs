@@ -711,9 +711,9 @@ namespace BSB.Common.DB.Admin
       {
         ocmd.CommandText = "declare\n" +
                            "  result boolean;\n" +
-                           "  p_err_rec main.pkg_err.err_rec_t;\n" +
+                           "  p_err_rec prepared.pkg_err.err_rec_t;\n" +
                            "begin\n" +
-                           "  result := main.pkg_err.get_err(p_err_rec => p_err_rec);\n" +
+                           "  result := prepared.pkg_err.get_err(p_err_rec => p_err_rec);\n" +
                            "\n" +
                            "  :msg := p_err_rec.msg;\n" +
                            "  :error := p_err_rec.error;\n" +
@@ -774,7 +774,7 @@ namespace BSB.Common.DB.Admin
       try
       {
         ocmd.CommandText = "begin\n" +
-                           "  :result := main.pkg_err.geterrors;\n" +
+                           "  :result := prepared.pkg_err.geterrors;\n" +
                            "end;";
         ocmd.BindByName = true;
         ocmd.Parameters.Add("result", OracleDbType.Varchar2, ParameterDirection.ReturnValue);

@@ -59,7 +59,7 @@ namespace ARM_User.MapperLayer.Guides
         using (var cmd = Connection.CreateCommand())
         {
           cmd.BindByName = true;
-          cmd.CommandText = "select " + (langId == LanguageIds.Russian ? "TEMPLATE_RU" : "TEMPLATE_KZ") + " TEMPLATE from MAIN.G_FORM where ID = :p_id";
+          cmd.CommandText = "select " + (langId == LanguageIds.Russian ? "TEMPLATE_RU" : "TEMPLATE_KZ") + " TEMPLATE from prepared.G_FORM where ID = :p_id";
           cmd.Parameters.Add("p_id", OracleDbType.Int32, id, ParameterDirection.Input);
 
           var adapter = new OracleDataAdapter(cmd);

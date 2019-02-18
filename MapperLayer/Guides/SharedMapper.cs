@@ -38,7 +38,7 @@ namespace ARM_User.MapperLayer.Guides.Simple
           {
             cmd.BindByName = true;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "main.pkg_ref.ins_shared";
+            cmd.CommandText = "prepared.pkg_ref.ins_shared";
             cmd.Parameters.Add("p_id", OracleDbType.Decimal, ParameterDirection.Output);
             cmd.Parameters.Add("p_parent_id", OracleDbType.Decimal, ParameterDirection.Input);
             cmd.Parameters.Add("p_code", OracleDbType.Varchar2, ParameterDirection.Input);
@@ -91,7 +91,7 @@ namespace ARM_User.MapperLayer.Guides.Simple
           {
             cmd.BindByName = true;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "main.pkg_ref.upd_shared";
+            cmd.CommandText = "prepared.pkg_ref.upd_shared";
             cmd.Parameters.Add("p_id", OracleDbType.Decimal, ParameterDirection.Input);
             cmd.Parameters.Add("p_parent_id", OracleDbType.Decimal, ParameterDirection.Input);
             cmd.Parameters.Add("p_code", OracleDbType.Varchar2, ParameterDirection.Input);
@@ -140,7 +140,7 @@ namespace ARM_User.MapperLayer.Guides.Simple
           {
             cmd.BindByName = true;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "main.pkg_ref.del_shared";
+            cmd.CommandText = "prepared.pkg_ref.del_shared";
             cmd.Parameters.Add("p_id", OracleDbType.Decimal, ParameterDirection.Input);
             cmd.Parameters.Add("p_do_commit", OracleDbType.Decimal, ParameterDirection.Input);
             cmd.Parameters.Add("p_err_code", OracleDbType.Decimal, ParameterDirection.Output);

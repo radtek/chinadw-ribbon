@@ -2627,7 +2627,7 @@ namespace ARM_User
         try
         {
           cmd.CommandType = CommandType.Text;
-          cmd.CommandText = "begin main.pkg_lang.current_lang_id := " + (decimal) InitApplication.CurrentLangId +
+          cmd.CommandText = "begin prepared.pkg_lang.current_lang_id := " + (decimal) InitApplication.CurrentLangId +
                             "; end;";
           cmd.ExecuteNonQuery();
         }

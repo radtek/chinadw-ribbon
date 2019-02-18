@@ -24,7 +24,7 @@ namespace ARM_User.DataLayer.DB.Gateway
                 {
                     cmd.BindByName = true;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "main.G_READ_REP_FORM_LIST";
+                    cmd.CommandText = "prepared.G_READ_REP_FORM_LIST";
                     cmd.Parameters.Add("Report_Knd_", OracleDbType.Decimal, ParameterDirection.Input);
                     cmd.Parameters.Add("IdUsr_", OracleDbType.Decimal, ParameterDirection.Input);
                     cmd.Parameters.Add("Cur", OracleDbType.RefCursor, ParameterDirection.Output);

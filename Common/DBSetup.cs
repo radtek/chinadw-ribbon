@@ -29,7 +29,7 @@ namespace BSB.Common.DB
       {
         try
         {
-          ocmd.CommandText = "main.pkg_app.get_app_version";
+          ocmd.CommandText = "prepared.pkg_app.get_app_version";
           ocmd.CommandType = CommandType.StoredProcedure;
           ocmd.BindByName = true;
           ocmd.Parameters.Add("p_cur", OracleDbType.RefCursor, ParameterDirection.Output);

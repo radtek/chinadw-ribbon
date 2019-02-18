@@ -29,7 +29,7 @@ namespace ARM_User.DataLayer.DB.Gateway
                 {
                     cmd.BindByName = true;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "main.R_Read_Restructure_List";
+                    cmd.CommandText = "prepared.R_Read_Restructure_List";
                     cmd.Parameters.Add("Id_", OracleDbType.Decimal, ParameterDirection.Input);
                     cmd.Parameters.Add("IdSts_", OracleDbType.Decimal, ParameterDirection.Input);
                     cmd.Parameters.Add("Cur", OracleDbType.RefCursor, ParameterDirection.Output);

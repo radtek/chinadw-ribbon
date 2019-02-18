@@ -17,7 +17,7 @@ namespace ARM_User.DataLayer.DB.Gateway
                 {
                     cmd.BindByName = true;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "prepared.G_READ_SHARER_LIST";
+                    cmd.CommandText = "main.G_READ_SHARER_LIST";
                     cmd.Parameters.Add("Cur", OracleDbType.RefCursor, ParameterDirection.Output);
                     cmd.Parameters.Add("Err_Code", OracleDbType.Decimal, ParameterDirection.Output);
                     cmd.Parameters.Add("Err_Msg", OracleDbType.Varchar2, ParameterDirection.Output);

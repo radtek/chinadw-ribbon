@@ -25,7 +25,7 @@ namespace ARM_User.DataLayer.DB.Gateway
                 {
                     cmd.BindByName = true;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "prepared.g_read_g_currency_ecb_list";
+                    cmd.CommandText = "main.g_read_g_currency_ecb_list";
                     cmd.Parameters.Add("Cur", OracleDbType.RefCursor, ParameterDirection.Output);
                     cmd.Parameters.Add("Err_Code", OracleDbType.Decimal, ParameterDirection.Output);
                     cmd.Parameters.Add("Err_Msg", OracleDbType.Varchar2, ParameterDirection.Output);
@@ -53,7 +53,7 @@ namespace ARM_User.DataLayer.DB.Gateway
                 {
                     cmd.BindByName = true;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "prepared.g_read_g_currency_ecb_list";
+                    cmd.CommandText = "main.g_read_g_currency_ecb_list";
                     cmd.Parameters.Add("Cur", OracleDbType.RefCursor, ParameterDirection.Output);
                     cmd.Parameters.Add("id_guides_", OracleDbType.Decimal, ParameterDirection.Input);
                     cmd.Parameters.Add("id_", OracleDbType.Decimal, ParameterDirection.Input);

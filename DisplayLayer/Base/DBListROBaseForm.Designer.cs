@@ -50,17 +50,16 @@
         // 
         // barDockControlLeft
         // 
-        this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
-        this.barDockControlLeft.Size = new System.Drawing.Size(0, 378);
+        this.barDockControlLeft.Size = new System.Drawing.Size(0, 371);
         // 
         // barDockControlRight
         // 
-        this.barDockControlRight.Location = new System.Drawing.Point(515, 24);
-        this.barDockControlRight.Size = new System.Drawing.Size(0, 378);
+        this.barDockControlRight.Location = new System.Drawing.Point(515, 31);
+        this.barDockControlRight.Size = new System.Drawing.Size(0, 371);
         // 
         // barDockControlTop
         // 
-        this.barDockControlTop.Size = new System.Drawing.Size(515, 24);
+        this.barDockControlTop.Size = new System.Drawing.Size(515, 31);
         // 
         // barManager
         // 
@@ -81,10 +80,10 @@
         // 
         this.gridMain.DataSource = this.MainBS;
         this.gridMain.Dock = System.Windows.Forms.DockStyle.Fill;
-        this.gridMain.Location = new System.Drawing.Point(0, 24);
+        this.gridMain.Location = new System.Drawing.Point(0, 31);
         this.gridMain.MainView = this.gridMainView;
         this.gridMain.Name = "gridMain";
-        this.gridMain.Size = new System.Drawing.Size(515, 378);
+        this.gridMain.Size = new System.Drawing.Size(515, 371);
         this.gridMain.TabIndex = 5;
         this.gridMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridMainView});

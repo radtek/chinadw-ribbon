@@ -7,10 +7,10 @@ using System.Reflection;
 //
 
 [assembly: AssemblyTitle("")]
-[assembly: AssemblyDescription("¿»œ ’ƒ")]
+[assembly: AssemblyDescription("¿»œ √–›÷¡")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("BSB NBRK")]
-[assembly: AssemblyProduct("¿»œ ’ƒ")]
+[assembly: AssemblyProduct("¿»œ √–›÷¡")]
 [assembly: AssemblyCopyright("2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -42,7 +42,7 @@ using System.Reflection;
 
 
 
-[assembly: AssemblyVersion("1.0.0.2")]
+[assembly: AssemblyVersion("1.0.0.1")]
 
 //
 // In order to sign your assembly you must specify a key to use. Refer to the 
@@ -80,7 +80,7 @@ using System.Reflection;
 
 
 
-[assembly: AssemblyFileVersion("1.0.0.2")]
+[assembly: AssemblyFileVersion("1.0.0.1")]
 
 
 

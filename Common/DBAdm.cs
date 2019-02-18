@@ -39,7 +39,7 @@ namespace BSB.Common.DB.Admin
         ErrMsg = ocmd.Parameters["err_msg"].Value.ToString();
 
         return ((OracleDate) ocmd.Parameters["result"].Value).Value;
-      }
+      }        
       finally
       {
         ocmd.Dispose();
@@ -418,7 +418,11 @@ namespace BSB.Common.DB.Admin
           return;
         computer = ((OracleDecimal) ocmd.Parameters["computer_"].Value).ToInt32();
       }
-      finally
+            catch (Exception oe)
+            {
+                DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in TPkgOfficial.InsertComputer)");
+            }
+            finally
       {
         ocmd.Dispose();
       }
@@ -455,6 +459,10 @@ namespace BSB.Common.DB.Admin
           err_code = ((OracleDecimal) ocmd.Parameters["err_code"].Value).ToInt32();
           err_msg = ocmd.Parameters["err_msg"].Value.ToString();
           Result = ((OracleDecimal) ocmd.Parameters["result"].Value).ToInt32();
+        }
+        catch (Exception oe)
+        {
+            DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in TPkgOfficial.IsCompBlocked)");
         }
         finally
         {
@@ -507,6 +515,10 @@ namespace BSB.Common.DB.Admin
           err_code = ((OracleDecimal) ocmd.Parameters["err_code"].Value).ToInt32();
           err_msg = ocmd.Parameters["err_msg"].Value.ToString();
         }
+        catch (Exception oe)
+        {
+            DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in TPkgOfficial.FillCurrOfficTables)");
+        }
         finally
         {
           ocmd.Dispose();
@@ -547,15 +559,15 @@ namespace BSB.Common.DB.Admin
           err_code = ((OracleDecimal) ocmd.Parameters["err_code"].Value).ToInt32();
           err_msg = ocmd.Parameters["err_msg"].Value.ToString();
         }
+        catch (Exception oe)
+        {
+            DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in TPkgOfficial.CorrectCurrOfficGrants)");
+        }
         finally
         {
           ocmd.Dispose();
         }
-      }
-      catch (OracleException oe)
-      {
-        DBSupport.DBErrorHandler(oe.Number, oe.Message + "\r\n(occured in TPkgOfficialRight.CorrectCurrOfficGrants).");
-      }
+      }      
       catch (Exception oe)
       {
         XtraMessageBox.Show(oe.Message + "\r\n(occured in TPkgOfficialRight.CorrectCurrOfficGrants).",
@@ -589,7 +601,11 @@ namespace BSB.Common.DB.Admin
         err_code = ((OracleDecimal) ocmd.Parameters["err_code"].Value).ToInt32();
         err_msg = ocmd.Parameters["err_msg"].Value.ToString();
       }
-      finally
+        catch (Exception oe)
+        {
+            DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in TPkgOfficial.ReadCurrOfficMenusAList)");
+        }
+        finally
       {
         ocmd.Dispose();
       }
@@ -628,18 +644,18 @@ namespace BSB.Common.DB.Admin
           err_code = ((OracleDecimal) ocmd.Parameters["err_code"].Value).ToInt32();
           err_msg = ocmd.Parameters["err_msg"].Value.ToString();
         }
+        catch (Exception oe)
+        {
+            DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in TPkgOfficial.SetParams)");
+        }
         finally
         {
           ocmd.Dispose();
         }
-      }
-      catch (OracleException oe)
-      {
-        DBSupport.DBErrorHandler(oe.Number, oe.Message + "\r\n(occured in TPkgConnectionParam.SetParams).");
-      }
+      }      
       catch (Exception oe)
-      {
-        XtraMessageBox.Show(oe.Message + "\r\n(occured in TPkgConnectionParam.SetParams).",
+      {         
+         XtraMessageBox.Show(oe.Message + "\r\n(occured in TPkgConnectionParam.SetParams).",
           LangTranslate.UiGetText("Îøèáêà"), MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
@@ -669,7 +685,11 @@ namespace BSB.Common.DB.Admin
 
         iResult = ((OracleDecimal) ocmd.Parameters["result"].Value).ToInt32();
       }
-      finally
+      catch (Exception oe)
+       {
+        DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in TPkgOfficial.IsAppIdentified)");
+       }
+    finally
       {
         ocmd.Dispose();
       }
@@ -711,9 +731,9 @@ namespace BSB.Common.DB.Admin
       {
         ocmd.CommandText = "declare\n" +
                            "  result boolean;\n" +
-                           "  p_err_rec prepared.pkg_err.err_rec_t;\n" +
+                           "  p_err_rec main.pkg_err.err_rec_t;\n" +
                            "begin\n" +
-                           "  result := prepared.pkg_err.get_err(p_err_rec => p_err_rec);\n" +
+                           "  result := main.pkg_err.get_err(p_err_rec => p_err_rec);\n" +
                            "\n" +
                            "  :msg := p_err_rec.msg;\n" +
                            "  :error := p_err_rec.error;\n" +
@@ -754,7 +774,11 @@ namespace BSB.Common.DB.Admin
 
         Result = (((OracleDecimal) ocmd.Parameters["result"].Value).ToInt32() == 1 ? true : false);
       }
-      finally
+      catch (Exception oe)
+      {
+        DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in TPkgOfficial.GetErr)");
+      }
+    finally
       {
         ocmd.Dispose();
       }
@@ -774,7 +798,7 @@ namespace BSB.Common.DB.Admin
       try
       {
         ocmd.CommandText = "begin\n" +
-                           "  :result := prepared.pkg_err.geterrors;\n" +
+                           "  :result := main.pkg_err.geterrors;\n" +
                            "end;";
         ocmd.BindByName = true;
         ocmd.Parameters.Add("result", OracleDbType.Varchar2, ParameterDirection.ReturnValue);
@@ -784,7 +808,11 @@ namespace BSB.Common.DB.Admin
         if (ocmd.Parameters["result"].Value != DBNull.Value)
           Result = ocmd.Parameters["result"].Value.ToString();
       }
-      finally
+            catch (Exception oe)
+            {
+                DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in TPkgOfficial.GetErrors)");
+            }
+            finally
       {
         ocmd.Dispose();
       }

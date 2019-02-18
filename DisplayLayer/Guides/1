@@ -1,0 +1,81 @@
+﻿using System;
+using System.Windows.Forms;
+using ARM_User.BusinessLayer.Common;
+using ARM_User.BusinessLayer.Guides;
+using ARM_User.DisplayLayer.Base;
+using ARM_User.ServiceLayer.Service.Editor;
+using BSB.Common;
+using DevExpress.XtraEditors;
+
+namespace ARM_User.DisplayLayer.Guides
+{
+  public partial class DecisionAdmOffencesForm : SimpleDBEditGBForm
+  {
+    protected DecisionAdmOffences decisionadmoffences;
+
+    public DecisionAdmOffencesForm()
+    {
+      InitializeComponent();
+
+      UnitOfWork.Instance.BeginTransaction();
+      decisionadmoffences = DecisionAdmOffences.CreateNew();
+      State = EditorState.Insert;
+    }
+
+    public DecisionAdmOffencesForm(DecisionAdmOffences decisionadmoffences, EditorState state)
+    {
+      InitializeComponent();
+      this.state = state;
+      if (State == EditorState.Edit)
+        UnitOfWork.Instance.BeginTransaction();
+      this.decisionadmoffences = decisionadmoffences;
+    }
+
+    public DecisionAdmOffences DecisionAdmOffences
+    {
+      get { return decisionadmoffences; }
+    }
+
+    private void DecisionAdmOffencesForm_Load(object sender, EventArgs e)
+    {
+      if (Site != null) return;
+
+      MainBS.Add(decisionadmoffences);
+      edNameRu.DataBindings.Add("EditValue", MainBS, "NameRu", true);
+      edNameKz.DataBindings.Add("EditValue", MainBS, "NameKz", true);
+      edNameEn.DataBindings.Add("EditValue", MainBS, "NameEn", true);
+      cbDel.DataBindings.Add("EditValue", MainBS, "IsDelete", true);
+      wdDateLast.DataBindings.Add("EditValue", MainBS, "EditTime", true);
+      wdUserName.DataBindings.Add("EditValue", MainBS, "EditUser", true);
+
+
+      readOnlyControls.Add(wdDateLast);
+      readOnlyControls.Add(wdUserName);
+
+      SetEditorsStatus();
+
+      foreach (var control in readOnlyControls)
+        EditorUtils.ReadOnlyControl(control, true);
+
+      if (State == EditorState.Insert)
+        Text = "Ввод новых реквизитов справочника \"Решение по адм. правонарушениям\"";
+      else if (State == EditorState.Edit)
+        Text = "Редактирование реквизитов справочника \"Решение по адм. правонарушениям\"";
+    }
+
+    protected override bool Validate()
+    {
+      if (decisionadmoffences.NameRu == null)
+      {
+        XtraMessageBox.Show(
+          LangTranslate.UiGetText("Наименование (рус) не заполнен"),
+          LangTranslate.UiGetText("Внимание"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        edNameRu.Focus();
+        return false;
+      }
+
+
+      return true;
+    }
+  }
+}

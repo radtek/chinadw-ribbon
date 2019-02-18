@@ -1,0 +1,57 @@
+﻿using System;
+using ARM_User.BusinessLayer.Common;
+using ARM_User.BusinessLayer.Guides;
+using ARM_User.DisplayLayer.Base;
+using ARM_User.ServiceLayer.Service.Editor;
+using System.Windows.Forms;
+
+namespace ARM_User.DisplayLayer.Guides
+{
+  public partial class FundkndForm : SimpleDBEditGBForm
+  {
+    protected Fundknd fundknd;
+
+    public FundkndForm()
+    {
+      InitializeComponent();
+
+      UnitOfWork.Instance.BeginTransaction();
+      fundknd = Fundknd.CreateNew();
+      State = EditorState.Insert;
+    }
+
+    public FundkndForm(Fundknd fundknd, EditorState state)
+    {
+      InitializeComponent();
+      this.state = state;
+      if (State == EditorState.Edit)
+        UnitOfWork.Instance.BeginTransaction();
+      this.fundknd = fundknd;
+    }
+
+    public Fundknd Fundknd
+    {
+      get { return fundknd; }
+    }
+
+    private void FundkndForm_Load(object sender, EventArgs e)
+    {
+      if (Site != null) return;
+
+      MainBS.Add(fundknd);
+      edCode.DataBindings.Add("EditValue", MainBS, "Code", true);
+      edNameRu.DataBindings.Add("EditValue", MainBS, "Nameru", true);
+      edNameKz.DataBindings.Add("EditValue", MainBS, "Namekz", true);
+      wdDateLast.DataBindings.Add("EditValue", MainBS, "EditTime", true);
+      wdUserName.DataBindings.Add("EditValue", MainBS, "EditUser", true);
+
+      readOnlyControls.Add(wdDateLast);
+      readOnlyControls.Add(wdUserName);
+      
+      SetEditorsStatus();
+
+      foreach (Control control in readOnlyControls)
+        EditorUtils.ReadOnlyControl(control, true);
+    }
+  }
+}

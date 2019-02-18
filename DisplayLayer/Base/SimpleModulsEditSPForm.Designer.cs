@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SimpleModulsEditSPForm));
+            this.tcMain = new DevExpress.XtraTab.XtraTabControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
@@ -36,6 +37,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tcMain)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +46,18 @@
             this.panelControl1.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.Controls.Add(this.panel1);
+            this.panelControl1.Controls.Add(this.tcMain);
             this.panelControl1.Size = new System.Drawing.Size(506, 426);
+            // 
+            // tcMain
+            // 
+            this.tcMain.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tcMain.HeaderLocation = DevExpress.XtraTab.TabHeaderLocation.Bottom;
+            this.tcMain.Location = new System.Drawing.Point(2, 2);
+            this.tcMain.Name = "tcMain";
+            this.tcMain.PaintStyleName = "WindowsXP";
+            this.tcMain.Size = new System.Drawing.Size(502, 350);
+            this.tcMain.TabIndex = 1;
             // 
             // panel1
             // 
@@ -101,6 +114,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tcMain)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -111,5 +125,6 @@
         protected System.Windows.Forms.Panel panel1;
         protected DevExpress.XtraEditors.SimpleButton btnCancel;
         protected DevExpress.XtraEditors.SimpleButton btnSave;
+        public DevExpress.XtraTab.XtraTabControl tcMain;
     }
 }

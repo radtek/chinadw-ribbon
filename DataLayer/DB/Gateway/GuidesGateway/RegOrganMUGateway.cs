@@ -23,7 +23,7 @@ namespace ARM_User.DataLayer.DB.Gateway
         {
           cmd.BindByName = true;
           cmd.CommandType = CommandType.StoredProcedure;
-          cmd.CommandText = "prepared.S_G_READ_REG_ORGAN_MU_LIST";
+          cmd.CommandText = "main.S_G_READ_REG_ORGAN_MU_LIST";
           cmd.Parameters.Add("Cur", OracleDbType.RefCursor, ParameterDirection.Output);
           cmd.Parameters.Add("Err_Code", OracleDbType.Decimal, ParameterDirection.Output);
           cmd.Parameters.Add("Err_Msg", OracleDbType.Varchar2, ParameterDirection.Output);
@@ -51,7 +51,7 @@ namespace ARM_User.DataLayer.DB.Gateway
             {
                 cmd.BindByName = true;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "prepared.S_G_READ_REG_ORGAN_MU_LIST";
+                cmd.CommandText = "main.S_G_READ_REG_ORGAN_MU_LIST";
                 cmd.Parameters.Add("Cur", OracleDbType.RefCursor, ParameterDirection.Output);
                 cmd.Parameters.Add("id_guides_", OracleDbType.Decimal, ParameterDirection.Input);
                 cmd.Parameters.Add("id_ref_", OracleDbType.Decimal, ParameterDirection.Input);

@@ -58,7 +58,7 @@ namespace ARM_User.DisplayLayer.Base
       set { getObj = value; }
     }
 
-    private void gridView1_DoubleClick(object sender, EventArgs e)
+    public virtual void gridView1_DoubleClick(object sender, EventArgs e)
     {
       if (treeMain.Selection.Count != 0)
       {

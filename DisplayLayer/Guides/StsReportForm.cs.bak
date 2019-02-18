@@ -1,0 +1,86 @@
+﻿using System;
+using System.Windows.Forms;
+using ARM_User.BusinessLayer.Common;
+using ARM_User.BusinessLayer.Guides;
+using ARM_User.DisplayLayer.Base;
+using ARM_User.ServiceLayer.Service.Editor;
+using BSB.Common;
+using DevExpress.XtraEditors;
+
+namespace ARM_User.DisplayLayer.Guides
+{
+  public partial class StsReportForm : SimpleDBEditGBForm
+  {
+    protected StsReport stsreport;
+
+    public StsReportForm()
+    {
+      InitializeComponent();
+
+      UnitOfWork.Instance.BeginTransaction();
+      stsreport = StsReport.CreateNew();
+      State = EditorState.Insert;
+    }
+
+    public StsReportForm(StsReport stsreport, EditorState state)
+    {
+      InitializeComponent();
+      this.state = state;
+      if (State == EditorState.Edit)
+        UnitOfWork.Instance.BeginTransaction();
+      this.stsreport = stsreport;
+    }
+
+    public StsReport StsReport
+    {
+      get { return stsreport; }
+    }
+
+    private void StsReportForm_Load(object sender, EventArgs e)
+    {
+      if (Site != null) return;
+
+      MainBS.Add(stsreport);
+      edNameRu.DataBindings.Add("EditValue", MainBS, "NameRu", true);
+      edNameKz.DataBindings.Add("EditValue", MainBS, "NameKz", true);
+      cbDel.DataBindings.Add("EditValue", MainBS, "IsDelete", true);
+      wdDateLast.DataBindings.Add("EditValue", MainBS, "EditTime", true);
+      wdUserName.DataBindings.Add("EditValue", MainBS, "EditUser", true);
+
+
+      readOnlyControls.Add(wdDateLast);
+      readOnlyControls.Add(wdUserName);
+
+      SetEditorsStatus();
+
+      foreach (var control in readOnlyControls)
+        EditorUtils.ReadOnlyControl(control, true);
+
+      if (State == EditorState.Insert)
+        Text = "Ввод новых реквизитов справочника \"Статус предоставления отчета\"";
+      else if (State == EditorState.Edit)
+        Text = "Редактирование реквизитов справочника \"Статус предоставления отчета\"";
+    }
+
+    protected override bool Validate()
+    {
+      if (stsreport.NameRu == null)
+      {
+        XtraMessageBox.Show(
+          LangTranslate.UiGetText("Наименование (рус) не заполнен"),
+          LangTranslate.UiGetText("Внимание"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        edNameRu.Focus();
+        return false;
+      }
+      if (stsreport.NameKz == null)
+      {
+        XtraMessageBox.Show(
+          LangTranslate.UiGetText("Наименование (каз) не заполнен"),
+          LangTranslate.UiGetText("Внимание"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        edNameKz.Focus();
+        return false;
+      }
+      return true;
+    }
+  }
+}

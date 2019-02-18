@@ -1,0 +1,114 @@
+﻿using System;
+using System.ComponentModel;
+using System.Windows.Forms;
+using ARM_User.BusinessLayer.Common;
+using ARM_User.BusinessLayer.Guides;
+using ARM_User.DisplayLayer.Guides.Base;
+using ARM_User.MapperLayer.Common;
+using ARM_User.ServiceLayer.Service.Editor;
+using BSB.Common;
+using DevExpress.XtraBars;
+using DevExpress.XtraEditors;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
+
+namespace ARM_User.DisplayLayer.Guides
+{
+  public partial class FunkndListForm : DBListROBaseForm
+  {
+    public FunkndListForm()
+    {
+      InitializeComponent();
+    }
+
+    private void btnRefresh_ItemClick(object sender, ItemClickEventArgs e)
+    {
+    }
+
+    private void btnAdd_ItemClick(object sender, ItemClickEventArgs e)
+    {
+      var form = new FundkndForm();
+      if (form.ShowDialog() == DialogResult.OK)
+      {
+        MainBS.Add(form.Fundknd);
+        MainBS.Position = ((IDOList) MainBS.DataSource).IndexOf(form.Fundknd);
+      }
+      else
+        CancelEdit(form.Fundknd);
+    }
+
+    private void FunkndListForm_Load(object sender, EventArgs e)
+    {
+      try
+      {
+        MainBS.DataSource = MapperRegistry.Instance.GetFundkndMapper().FindAll();
+        gridMain.DataSource = MainBS;
+      }
+      catch (Exception ex)
+      {
+        var rethrow = ExceptionPolicy.HandleException(ex, "Display Policy");
+        if (rethrow)
+          throw;
+      }
+    }
+
+    private void BtnView_ItemClick(object sender, ItemClickEventArgs e)
+    {
+      Fundknd funknd = (Fundknd) MainBS.Current;
+      if (funknd == null) return;
+      new FundkndForm(funknd, EditorState.View).ShowDialog();
+    }
+
+    private void BtnDelete_ItemClick(object sender, ItemClickEventArgs e)
+    {
+      if (MainBS.Current == null) return;
+
+      try
+      {
+        if (
+          XtraMessageBox.Show(
+            LangTranslate.UiGetText("Вы действительно хотите удалить запись?"),
+            LangTranslate.UiGetText("Внимание"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+        {
+          UnitOfWork.Instance.BeginTransaction();
+          ((Fundknd) MainBS.Current).Delete();
+          UnitOfWork.Instance.Commit();
+        }
+      }
+      catch (Exception ex)
+      {
+        if (UnitOfWork.Instance.IsTransactionStarted)
+          UnitOfWork.Instance.Rollback();
+        var rethrow = ExceptionPolicy.HandleException(ex, "Display Policy");
+        if (rethrow)
+          throw;
+      }
+    }
+
+    private void btnEdit_ItemClick(object sender, ItemClickEventArgs e)
+    {
+      if (MainBS.Current == null) return;
+      try
+      {
+        var form = new FundkndForm((Fundknd) MainBS.Current, EditorState.Edit);
+        if (form.ShowDialog() == DialogResult.Cancel)
+          CancelEdit(form.Fundknd);
+      }
+      catch (Exception ex)
+      {
+        var rethrow = ExceptionPolicy.HandleException(ex, "Display Policy");
+        if (rethrow)
+          throw;
+      }
+    }
+
+    public void CancelEdit(Fundknd fundknd)
+    {
+      if (UnitOfWork.Instance.IsTransactionStarted)
+        UnitOfWork.Instance.Rollback();
+      MainBS.CancelEdit();
+      //if (fundknd != null)
+      //  MainBS.Remove(fundknd);
+      ((IDOList) MainBS.DataSource).NotifyListChanged(ListChangedType.Reset, 0);
+    }
+  }
+}

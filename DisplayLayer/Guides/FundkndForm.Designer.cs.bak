@@ -1,0 +1,403 @@
+﻿namespace ARM_User.DisplayLayer.Guides
+{
+    partial class FundkndForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FundkndForm));
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.edCode = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.edNameKz = new DevExpress.XtraEditors.TextEdit();
+            this.edNameRu = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.vwDateLast = new DevExpress.XtraEditors.TextEdit();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.vwUser_Name = new DevExpress.XtraEditors.TextEdit();
+            this.vwUserCode = new DevExpress.XtraEditors.TextEdit();
+            this.label5 = new System.Windows.Forms.Label();
+            this.wdDateLast = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.wdUserName = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
+            this.xtraTabPage1.SuspendLayout();
+            this.xtraTabPage2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MainBS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.edNameKz.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edNameRu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwDateLast.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwUser_Name.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwUserCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wdDateLast.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
+            this.layoutControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wdUserName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // xtraTabControl1
+            // 
+            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
+            this.xtraTabControl1.Size = new System.Drawing.Size(474, 273);
+            // 
+            // xtraTabPage1
+            // 
+            this.xtraTabPage1.Controls.Add(this.layoutControl1);
+            this.xtraTabPage1.Size = new System.Drawing.Size(466, 245);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(282, 8);
+            this.btnSave.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(385, 8);
+            this.btnCancel.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
+            // 
+            // xtraTabPage2
+            // 
+            this.xtraTabPage2.Controls.Add(this.layoutControl2);
+            this.xtraTabPage2.Size = new System.Drawing.Size(466, 245);
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(2, 288);
+            this.panel1.Size = new System.Drawing.Size(474, 38);
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Appearance.BackColor = System.Drawing.SystemColors.Control;
+            this.panelControl1.Appearance.Options.UseBackColor = true;
+            this.panelControl1.Size = new System.Drawing.Size(478, 328);
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.CustomizationFormText = "layoutControlGroup1";
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 5;
+            this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(526, 338);
+            this.layoutControlGroup1.Text = "layoutControlGroup1";
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // edCode
+            // 
+            this.edCode.Location = new System.Drawing.Point(158, 12);
+            this.edCode.Name = "edCode";
+            this.edCode.Size = new System.Drawing.Size(296, 20);
+            this.edCode.StyleController = this.layoutControl1;
+            this.edCode.TabIndex = 41;
+            // 
+            // layoutControl1
+            // 
+            this.layoutControl1.Controls.Add(this.edNameKz);
+            this.layoutControl1.Controls.Add(this.edNameRu);
+            this.layoutControl1.Controls.Add(this.edCode);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(310, 94, 250, 350);
+            this.layoutControl1.Root = this.layoutControlGroup2;
+            this.layoutControl1.Size = new System.Drawing.Size(466, 245);
+            this.layoutControl1.TabIndex = 3;
+            this.layoutControl1.Text = "layoutControl1";
+            // 
+            // edNameKz
+            // 
+            this.edNameKz.Location = new System.Drawing.Point(158, 60);
+            this.edNameKz.Name = "edNameKz";
+            this.edNameKz.Size = new System.Drawing.Size(296, 20);
+            this.edNameKz.StyleController = this.layoutControl1;
+            this.edNameKz.TabIndex = 45;
+            // 
+            // edNameRu
+            // 
+            this.edNameRu.Location = new System.Drawing.Point(158, 36);
+            this.edNameRu.Name = "edNameRu";
+            this.edNameRu.Size = new System.Drawing.Size(296, 20);
+            this.edNameRu.StyleController = this.layoutControl1;
+            this.edNameRu.TabIndex = 43;
+            // 
+            // layoutControlGroup2
+            // 
+            this.layoutControlGroup2.CustomizationFormText = "layoutControlGroup2";
+            this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup2.GroupBordersVisible = false;
+            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem2,
+            this.layoutControlItem3});
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup2.Name = "layoutControlGroup2";
+            this.layoutControlGroup2.Size = new System.Drawing.Size(466, 245);
+            this.layoutControlGroup2.Text = "layoutControlGroup2";
+            this.layoutControlGroup2.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.edCode;
+            this.layoutControlItem1.CustomizationFormText = "Код";
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(446, 24);
+            this.layoutControlItem1.Text = "Код";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(143, 13);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.edNameRu;
+            this.layoutControlItem2.CustomizationFormText = "Наименование на русском";
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(446, 24);
+            this.layoutControlItem2.Text = "Наименование на русском";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(143, 13);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.edNameKz;
+            this.layoutControlItem3.CustomizationFormText = "Наименование на казахском";
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(446, 177);
+            this.layoutControlItem3.Text = "Наименование на казахском";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(143, 13);
+            // 
+            // vwDateLast
+            // 
+            this.vwDateLast.Location = new System.Drawing.Point(245, 29);
+            this.vwDateLast.Name = "vwDateLast";
+            this.vwDateLast.Size = new System.Drawing.Size(227, 20);
+            this.vwDateLast.TabIndex = 42;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(14, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(201, 14);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "Дата последнего редактирования";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label4.Location = new System.Drawing.Point(14, 63);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(172, 28);
+            this.label4.TabIndex = 43;
+            this.label4.Text = "Код пользователя \r\nредактировавшего последим";
+            // 
+            // vwUser_Name
+            // 
+            this.vwUser_Name.Location = new System.Drawing.Point(243, 111);
+            this.vwUser_Name.Name = "vwUser_Name";
+            this.vwUser_Name.Size = new System.Drawing.Size(227, 20);
+            this.vwUser_Name.TabIndex = 44;
+            // 
+            // vwUserCode
+            // 
+            this.vwUserCode.Location = new System.Drawing.Point(245, 67);
+            this.vwUserCode.Name = "vwUserCode";
+            this.vwUserCode.Size = new System.Drawing.Size(227, 20);
+            this.vwUserCode.TabIndex = 45;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label5.Location = new System.Drawing.Point(11, 107);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(172, 28);
+            this.label5.TabIndex = 46;
+            this.label5.Text = "Имя пользователя \r\nредактировавшего последим";
+            // 
+            // wdDateLast
+            // 
+            this.wdDateLast.Location = new System.Drawing.Point(264, 12);
+            this.wdDateLast.Name = "wdDateLast";
+            this.wdDateLast.Size = new System.Drawing.Size(190, 20);
+            this.wdDateLast.StyleController = this.layoutControl2;
+            this.wdDateLast.TabIndex = 42;
+            // 
+            // layoutControl2
+            // 
+            this.layoutControl2.Controls.Add(this.wdUserName);
+            this.layoutControl2.Controls.Add(this.wdDateLast);
+            this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl2.Name = "layoutControl2";
+            this.layoutControl2.Root = this.layoutControlGroup3;
+            this.layoutControl2.Size = new System.Drawing.Size(466, 245);
+            this.layoutControl2.TabIndex = 3;
+            this.layoutControl2.Text = "layoutControl2";
+            // 
+            // wdUserName
+            // 
+            this.wdUserName.Location = new System.Drawing.Point(264, 36);
+            this.wdUserName.Name = "wdUserName";
+            this.wdUserName.Size = new System.Drawing.Size(190, 20);
+            this.wdUserName.StyleController = this.layoutControl2;
+            this.wdUserName.TabIndex = 46;
+            // 
+            // layoutControlGroup3
+            // 
+            this.layoutControlGroup3.CustomizationFormText = "layoutControlGroup3";
+            this.layoutControlGroup3.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup3.GroupBordersVisible = false;
+            this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem4,
+            this.layoutControlItem6});
+            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup3.Name = "layoutControlGroup3";
+            this.layoutControlGroup3.Size = new System.Drawing.Size(466, 245);
+            this.layoutControlGroup3.Text = "layoutControlGroup3";
+            this.layoutControlGroup3.TextVisible = false;
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.wdDateLast;
+            this.layoutControlItem4.CustomizationFormText = "Дата последнего редактирования";
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(446, 24);
+            this.layoutControlItem4.Text = "Дата последнего редактирования";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(249, 13);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.wdUserName;
+            this.layoutControlItem6.CustomizationFormText = "Имя пользователя, редактировавшего последим";
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(446, 201);
+            this.layoutControlItem6.Text = "Имя пользователя, редактировавшего последим";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(249, 13);
+            // 
+            // FundkndForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.ClientSize = new System.Drawing.Size(478, 357);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FundkndForm";
+            this.Load += new System.EventHandler(this.FundkndForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
+            this.xtraTabPage1.ResumeLayout(false);
+            this.xtraTabPage2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.MainBS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.edNameKz.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edNameRu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwDateLast.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwUser_Name.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwUserCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wdDateLast.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
+            this.layoutControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.wdUserName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        protected DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        protected DevExpress.XtraEditors.TextEdit edCode;
+        protected DevExpress.XtraEditors.TextEdit edNameRu;
+        protected DevExpress.XtraEditors.TextEdit edNameKz;
+        protected DevExpress.XtraEditors.TextEdit vwDateLast;
+        protected System.Windows.Forms.Label label3;
+        protected System.Windows.Forms.Label label4;
+        protected DevExpress.XtraEditors.TextEdit vwUser_Name;
+        protected DevExpress.XtraEditors.TextEdit vwUserCode;
+        protected System.Windows.Forms.Label label5;
+        protected DevExpress.XtraEditors.TextEdit wdDateLast;
+        protected DevExpress.XtraEditors.TextEdit wdUserName;
+        protected DevExpress.XtraLayout.LayoutControl layoutControl1;
+        protected DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
+        protected DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        protected DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        protected DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        protected DevExpress.XtraLayout.LayoutControl layoutControl2;
+        protected DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
+        protected DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        protected DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+
+    }
+}

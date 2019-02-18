@@ -52,7 +52,7 @@ namespace ARM_User.DisplayLayer.Base
         State != EditorState.Edit && State != EditorState.Insert);
     }
 
-    private void btnSave_Click(object sender, EventArgs e)
+    public virtual void btnSave_Click(object sender, EventArgs e)
     {
       try
       {
@@ -101,7 +101,7 @@ namespace ARM_User.DisplayLayer.Base
     protected virtual bool Validate() { return true; }
 
 
-    private void btnCancel_Click(object sender, EventArgs e)
+    public void btnCancel_Click(object sender, EventArgs e)
     {
         if (dmControler.frmMain.oracleConnection.State != ConnectionState.Open)
         {

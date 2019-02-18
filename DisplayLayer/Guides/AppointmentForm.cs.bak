@@ -1,0 +1,88 @@
+﻿using System;
+using System.Windows.Forms;
+using ARM_User.BusinessLayer.Common;
+using ARM_User.BusinessLayer.Guides;
+using ARM_User.DisplayLayer.Base;
+using ARM_User.ServiceLayer.Service.Editor;
+using BSB.Common;
+using DevExpress.XtraEditors;
+
+namespace ARM_User.DisplayLayer.Guides
+{
+  public partial class AppointmentForm : SimpleDBEditGBForm
+  {
+    protected Appointment appointment;
+
+    public AppointmentForm()
+    {
+      InitializeComponent();
+
+      UnitOfWork.Instance.BeginTransaction();
+      appointment = Appointment.CreateNew();
+      State = EditorState.Insert;
+    }
+
+    public AppointmentForm(Appointment appointment, EditorState state)
+    {
+      InitializeComponent();
+      this.state = state;
+      if (State == EditorState.Edit)
+        UnitOfWork.Instance.BeginTransaction();
+      this.appointment = appointment;
+    }
+
+    public Appointment Appointment
+    {
+      get { return appointment; }
+    }
+
+    private void AppointmentForm_Load(object sender, EventArgs e)
+    {
+      if (Site != null) return;
+
+      MainBS.Add(appointment);
+      edNameRu.DataBindings.Add("EditValue", MainBS, "Nameru", true);
+      edNameKz.DataBindings.Add("EditValue", MainBS, "Namekz", true);
+      cbDel.DataBindings.Add("EditValue", MainBS, "Isdelete", true);
+      wdDateLast.DataBindings.Add("EditValue", MainBS, "EditTime", true);
+      wdUserName.DataBindings.Add("EditValue", MainBS, "EditUser", true);
+
+
+      readOnlyControls.Add(wdDateLast);
+      readOnlyControls.Add(wdUserName);
+
+      SetEditorsStatus();
+
+      foreach (var control in readOnlyControls)
+        EditorUtils.ReadOnlyControl(control, true);
+
+      if (State == EditorState.Insert)
+        Text = "Ввод новых реквизитов справочника \"Должность\"";
+      else if (State == EditorState.Edit)
+        Text = "Редактирование реквизитов справочника \"Должность\"";
+    }
+
+    protected override bool Validate()
+    {
+      if (appointment.NameRu == null)
+      {
+        XtraMessageBox.Show(
+          LangTranslate.UiGetText("Наименование (рус) не заполнен"),
+          LangTranslate.UiGetText("Внимание"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        edNameRu.Focus();
+        return false;
+      }
+      if (appointment.NameKz == null)
+      {
+        XtraMessageBox.Show(
+          LangTranslate.UiGetText("Наименование (каз) не заполнен"),
+          LangTranslate.UiGetText("Внимание"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        edNameKz.Focus();
+        return false;
+      }
+
+
+      return true;
+    }
+  }
+}

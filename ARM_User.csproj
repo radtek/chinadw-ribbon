@@ -283,7 +283,7 @@
     </Reference>
     <Reference Include="Oracle.DataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Oracle\product\product\11.2.0\client_1\odp.net\bin\2.x\Oracle.DataAccess.dll</HintPath>
+      <HintPath>C:\Oracle\product\product\11.2.0\client_1\odp.net\bin\2.x\Oracle.DataAccess.dll</HintPath>
     </Reference>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL" />
     <Reference Include="Oracle.ManagedDataAccessDTC, Version=4.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342" />
@@ -424,9 +424,6 @@
     <Compile Include="BusinessLayer\Service\User.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Common\MDIChildHdForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Common\SetCurrOfficialBlocked.cs" />
     <Compile Include="DataLayer\DataSet\CommonDataSet\LocalTextDS.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -486,12 +483,6 @@
       <DependentUpon>YearsQuarterMonthDS.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataLayer\DB\Gateway\GuidesGateway\RepFormGateway.cs" />
-    <Compile Include="DisplayLayer\Base\DBHdBaseForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DisplayLayer\Base\DBHdBaseForm.Designer.cs">
-      <DependentUpon>DBHdBaseForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="DisplayLayer\Common\MessageBoxForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -576,17 +567,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SharerDS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DisplayLayer\Main\ClientDataForm.cs">
+    <Compile Include="New\DB\DB_ExtraPokazListForm.cs" />
+    <Compile Include="New\DB\DIM_ExtraPokaz.cs" />
+    <Compile Include="New\Guide\ExtraPokazADDForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DisplayLayer\Main\ClientDataForm.Designer.cs">
-      <DependentUpon>ClientDataForm.cs</DependentUpon>
+    <Compile Include="New\Guide\ExtraPokazADDForm.Designer.cs">
+      <DependentUpon>ExtraPokazADDForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DisplayLayer\Main\ClientForm.cs">
+    <Compile Include="New\Guide\ExtraPokazListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DisplayLayer\Main\ClientForm.Designer.cs">
-      <DependentUpon>ClientForm.cs</DependentUpon>
+    <Compile Include="New\Guide\ExtraPokazListForm.Designer.cs">
+      <DependentUpon>ExtraPokazListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DisplayLayer\Popup\CurrencyPopupListForm.cs">
       <SubType>Form</SubType>
@@ -1001,6 +994,30 @@
     <Compile Include="MapperLayer\Guides\RegOrganMUMapper.cs" />
     <Compile Include="MapperLayer\Guides\SharedMapper.cs" />
     <Compile Include="MapperLayer\Guides\SharerMapper.cs" />
+    <Compile Include="New\Guide\ExtraPokazPopupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\Guide\ExtraPokazPopupForm.Designer.cs">
+      <DependentUpon>ExtraPokazPopupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\Guide\LoansAddExtraPokazForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\Guide\LoansAddExtraPokazForm.Designer.cs">
+      <DependentUpon>LoansAddExtraPokazForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\Guide\LoansAddPokazForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\Guide\LoansAddPokazForm.Designer.cs">
+      <DependentUpon>LoansAddPokazForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\Guide\LoansListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\Guide\LoansListForm.Designer.cs">
+      <DependentUpon>LoansListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ServiceLayer\Reporting\Excel\Rep12InfFactsBond.cs" />
     <Compile Include="ServiceLayer\Reporting\Excel\Rep20FromXML.cs" />
     <Compile Include="ServiceLayer\Reporting\Excel\Rep75FromXML.cs" />
@@ -1151,12 +1168,6 @@
     <Compile Include="ServiceLayer\Registers\Base\IReadOnly.cs" />
     <Compile Include="ServiceLayer\Reporting\Excel\Main\ReportToExcel.cs" />
     <Compile Include="Settings.cs" />
-    <EmbeddedResource Include="Common\MDIChildHdForm.resx">
-      <DependentUpon>MDIChildHdForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DisplayLayer\Base\DBHdBaseForm.resx">
-      <DependentUpon>DBHdBaseForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DisplayLayer\Base\SimpleConfirmEditForm.resx">
       <DependentUpon>SimpleConfirmEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1287,6 +1298,12 @@
     <EmbeddedResource Include="DisplayLayer\Base\MultiPageListROBaseForm.resx">
       <DependentUpon>MultiPageListROBaseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="New\Guide\ExtraPokazADDForm.resx">
+      <DependentUpon>ExtraPokazADDForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\Guide\ExtraPokazListForm.resx">
+      <DependentUpon>ExtraPokazListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DisplayLayer\Guides\RegOrganMUForm.resx">
       <DependentUpon>RegOrganMUForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1298,12 +1315,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DisplayLayer\Guides\SharerListForm.resx">
       <DependentUpon>SharerListForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DisplayLayer\Main\ClientDataForm.resx">
-      <DependentUpon>ClientDataForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DisplayLayer\Main\ClientForm.resx">
-      <DependentUpon>ClientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DisplayLayer\Popup\CurrencyPopupListForm.resx">
       <DependentUpon>CurrencyPopupListForm.cs</DependentUpon>
@@ -1390,6 +1401,19 @@
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="New\Guide\ExtraPokazPopupForm.resx">
+      <DependentUpon>ExtraPokazPopupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\Guide\LoansAddExtraPokazForm.resx">
+      <DependentUpon>LoansAddExtraPokazForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\Guide\LoansAddPokazForm.resx">
+      <DependentUpon>LoansAddPokazForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\Guide\LoansListForm.resx">
+      <DependentUpon>LoansListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Translate\ChooseLangForm.resx">
       <DependentUpon>ChooseLangForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1423,7 +1447,9 @@
     <None Include="Resources\filter.png" />
     <None Include="Resources\Non-Printing Chars.bmp" />
     <None Include="Resources\attachmentverticalpaperclipinterfacesymbol_79872.ico" />
+    <None Include="Resources\4TbpB7R4c.png" />
     <Content Include="Resources\clip.ico" />
+    <None Include="Resources\filter1.png" />
     <Content Include="Resources\otmena.PNG" />
     <None Include="Resources\question.png" />
     <Content Include="Resources\redo.gif" />
@@ -1687,6 +1713,7 @@
   <ItemGroup>
     <Folder Include="BusinessLayer\Guides\Base\Common\" />
     <Folder Include="BusinessLayer\Guides\Common\" />
+    <Folder Include="New\Base\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">

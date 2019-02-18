@@ -47,11 +47,11 @@
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
-            this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
             this.xtraTabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainBS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -78,11 +78,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.SuspendLayout();
             // 
-            // xtraTabControl1
-            // 
-            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(485, 179);
-            // 
             // xtraTabPage1
             // 
             this.xtraTabPage1.Controls.Add(this.layoutControl1);
@@ -101,12 +96,17 @@
             // xtraTabPage2
             // 
             this.xtraTabPage2.Controls.Add(this.layoutControl2);
-            this.xtraTabPage2.Size = new System.Drawing.Size(477, 151);
+            this.xtraTabPage2.Size = new System.Drawing.Size(469, 151);
             // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(2, 189);
             this.panel1.Size = new System.Drawing.Size(485, 26);
+            // 
+            // xtraTabControl1
+            // 
+            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
+            this.xtraTabControl1.Size = new System.Drawing.Size(485, 179);
             // 
             // panelControl1
             // 
@@ -130,44 +130,44 @@
             // 
             // cbDel
             // 
-            this.cbDel.Location = new System.Drawing.Point(12, 108);
+            this.cbDel.Location = new System.Drawing.Point(5, 101);
             this.cbDel.Name = "cbDel";
             this.cbDel.Properties.Caption = "Признак \"Удален\"";
-            this.cbDel.Size = new System.Drawing.Size(436, 19);
+            this.cbDel.Size = new System.Drawing.Size(450, 18);
             this.cbDel.StyleController = this.layoutControl1;
             this.cbDel.TabIndex = 8;
             // 
             // edNameKz
             // 
-            this.edNameKz.Location = new System.Drawing.Point(128, 84);
+            this.edNameKz.Location = new System.Drawing.Point(121, 77);
             this.edNameKz.Name = "edNameKz";
-            this.edNameKz.Size = new System.Drawing.Size(320, 20);
+            this.edNameKz.Size = new System.Drawing.Size(314, 20);
             this.edNameKz.StyleController = this.layoutControl1;
             this.edNameKz.TabIndex = 7;
             // 
             // edNameRu
             // 
-            this.edNameRu.Location = new System.Drawing.Point(128, 60);
+            this.edNameRu.Location = new System.Drawing.Point(121, 53);
             this.edNameRu.Name = "edNameRu";
-            this.edNameRu.Size = new System.Drawing.Size(320, 20);
+            this.edNameRu.Size = new System.Drawing.Size(314, 20);
             this.edNameRu.StyleController = this.layoutControl1;
             this.edNameRu.TabIndex = 6;
             // 
             // edDesig
             // 
-            this.edDesig.Location = new System.Drawing.Point(128, 36);
+            this.edDesig.Location = new System.Drawing.Point(121, 29);
             this.edDesig.Name = "edDesig";
             this.edDesig.Properties.MaxLength = 1;
-            this.edDesig.Size = new System.Drawing.Size(320, 20);
+            this.edDesig.Size = new System.Drawing.Size(314, 20);
             this.edDesig.StyleController = this.layoutControl1;
             this.edDesig.TabIndex = 5;
             // 
             // edCode
             // 
-            this.edCode.Location = new System.Drawing.Point(128, 12);
+            this.edCode.Location = new System.Drawing.Point(121, 5);
             this.edCode.Name = "edCode";
             this.edCode.Properties.MaxLength = 3;
-            this.edCode.Size = new System.Drawing.Size(320, 20);
+            this.edCode.Size = new System.Drawing.Size(314, 20);
             this.edCode.StyleController = this.layoutControl1;
             this.edCode.TabIndex = 4;
             // 
@@ -196,7 +196,7 @@
             this.layoutControlItem1.MaxSize = new System.Drawing.Size(440, 24);
             this.layoutControlItem1.MinSize = new System.Drawing.Size(440, 24);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(440, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(460, 24);
             this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem1.Text = "Код";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(113, 13);
@@ -209,7 +209,7 @@
             this.layoutControlItem2.MaxSize = new System.Drawing.Size(440, 24);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(440, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(440, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(460, 24);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.Text = "Обозначение для НИН";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(113, 13);
@@ -222,7 +222,7 @@
             this.layoutControlItem3.MaxSize = new System.Drawing.Size(440, 24);
             this.layoutControlItem3.MinSize = new System.Drawing.Size(440, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(440, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(460, 24);
             this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem3.Text = "Наименование (рус)";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(113, 13);
@@ -235,7 +235,7 @@
             this.layoutControlItem4.MaxSize = new System.Drawing.Size(440, 24);
             this.layoutControlItem4.MinSize = new System.Drawing.Size(440, 24);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(440, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(460, 24);
             this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem4.Text = "Наименование (каз)";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(113, 13);
@@ -246,7 +246,7 @@
             this.layoutControlItem5.CustomizationFormText = "layoutControlItem5";
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(440, 23);
+            this.layoutControlItem5.Size = new System.Drawing.Size(460, 43);
             this.layoutControlItem5.Text = "layoutControlItem5";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextToControlDistance = 0;
@@ -265,19 +265,19 @@
             // 
             // wdDateLast
             // 
-            this.wdDateLast.Location = new System.Drawing.Point(256, 12);
+            this.wdDateLast.Location = new System.Drawing.Point(249, 5);
             this.wdDateLast.MenuManager = this.barManager1;
             this.wdDateLast.Name = "wdDateLast";
-            this.wdDateLast.Size = new System.Drawing.Size(181, 20);
+            this.wdDateLast.Size = new System.Drawing.Size(195, 20);
             this.wdDateLast.StyleController = this.layoutControl2;
             this.wdDateLast.TabIndex = 5;
             // 
             // wdUserName
             // 
-            this.wdUserName.Location = new System.Drawing.Point(256, 36);
+            this.wdUserName.Location = new System.Drawing.Point(249, 35);
             this.wdUserName.MenuManager = this.barManager1;
             this.wdUserName.Name = "wdUserName";
-            this.wdUserName.Size = new System.Drawing.Size(181, 20);
+            this.wdUserName.Size = new System.Drawing.Size(195, 20);
             this.wdUserName.StyleController = this.layoutControl2;
             this.wdUserName.TabIndex = 4;
             // 
@@ -299,9 +299,9 @@
             // 
             this.layoutControlItem6.Control = this.wdUserName;
             this.layoutControlItem6.CustomizationFormText = "Имя пользователя, редактировавшего послед.";
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 30);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(429, 27);
+            this.layoutControlItem6.Size = new System.Drawing.Size(449, 41);
             this.layoutControlItem6.Text = "Имя пользователя, редактировавшего послед.";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(241, 13);
             // 
@@ -311,7 +311,7 @@
             this.layoutControlItem7.CustomizationFormText = "Дата последнего редактирования";
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(429, 24);
+            this.layoutControlItem7.Size = new System.Drawing.Size(449, 30);
             this.layoutControlItem7.Text = "Дата последнего редактирования";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(241, 13);
             // 
@@ -323,11 +323,11 @@
             this.Name = "CurrencyECBForm";
             this.Text = "Просмотр реквизитов справочника \"Коды для обозначения валют и фондов\"";
             this.Load += new System.EventHandler(this.CurrencyECBForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
-            this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MainBS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);

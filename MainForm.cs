@@ -29,7 +29,6 @@ using System.Diagnostics;
 using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
 using BSB.Common.DataGateway.Oracle;
 using Oracle.DataAccess.Types;
-using ARM_User.DisplayLayer.Main;
 
 namespace ARM_User
 {
@@ -40,11 +39,22 @@ namespace ARM_User
   {
     #region Windows Form Designer generated code
       public Boolean create = false;
-      public decimal count;
+      public decimal count;      
       public Boolean iconnectlang = false;
+      private MyAction aStatusLoadToSaid;
+      private MyAction aGovSecJournalStatus;
       public Timer tmCheckGovSec;
       public Boolean kazlang = false;
-      private MyAction aClients;
+      private MyAction aShareAffiliatesInfo;
+      private MyAction aFounderList;
+      private MyAction aAssignee;
+      private MyAction aProvisionKnd;
+      private MyAction aAssets;
+      private MyAction aPeriodicity;
+      private MyAction aProtocolIsin;
+        private MyAction myAction1;
+        private MyAction myAction2;
+        private MyAction aExtraPokaz;
         public decimal iscancelpassword = 0;
 
     /// <summary>
@@ -103,6 +113,10 @@ namespace ARM_User
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.MainDockManager = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.hideContainerLeft = new DevExpress.XtraBars.Docking.AutoHideContainer();
+            this.dpMenu = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.tvMenu = new System.Windows.Forms.TreeView();
             this.dpMessages = new DevExpress.XtraBars.Docking.DockPanel();
             this.controlContainer1 = new DevExpress.XtraBars.Docking.ControlContainer();
             this.gridMessages = new DevExpress.XtraGrid.GridControl();
@@ -113,9 +127,6 @@ namespace ARM_User
             this.colType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colText = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.dpMenu = new DevExpress.XtraBars.Docking.DockPanel();
-            this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.tvMenu = new System.Windows.Forms.TreeView();
             this.imMain = new System.Windows.Forms.ImageList(this.components);
             this.iMenuExpand = new DevExpress.XtraBars.BarButtonItem();
             this.iMenuCollapse = new DevExpress.XtraBars.BarButtonItem();
@@ -137,17 +148,128 @@ namespace ARM_User
             this.aChangePassword = new BSB.Actions.MyAction(this.components);
             this.aLockApplication = new BSB.Actions.MyAction(this.components);
             this.aSetCurrentLanguage = new BSB.Actions.MyAction(this.components);
+            this.aFundKnd = new BSB.Actions.MyAction(this.components);
+            this.aIssueECB = new BSB.Actions.MyAction(this.components);
             this.aCurrencyECB = new BSB.Actions.MyAction(this.components);
+            this.aIssuersGuidesList = new BSB.Actions.MyAction(this.components);
+            this.aBankCust = new BSB.Actions.MyAction(this.components);
+            this.aCategoryControls = new BSB.Actions.MyAction(this.components);
+            this.aClassifierOKED = new BSB.Actions.MyAction(this.components);
+            this.aSpecBus = new BSB.Actions.MyAction(this.components);
+            this.aSignPartNores = new BSB.Actions.MyAction(this.components);
+            this.aSpecIssuer = new BSB.Actions.MyAction(this.components);
+            this.aAbilityConvert = new BSB.Actions.MyAction(this.components);
+            this.aReg = new BSB.Actions.MyAction(this.components);
+            this.aRegion = new BSB.Actions.MyAction(this.components);
+            this.aAudit = new BSB.Actions.MyAction(this.components);
+            this.aKindECB = new BSB.Actions.MyAction(this.components);
+            this.aIssOrganCont = new BSB.Actions.MyAction(this.components);
+            this.aDateTypeLocal = new BSB.Actions.MyAction(this.components);
+            this.aDocKnd = new BSB.Actions.MyAction(this.components);
+            this.aAddCategoryShare = new BSB.Actions.MyAction(this.components);
+            this.aCategoryECB = new BSB.Actions.MyAction(this.components);
+            this.aIndexRewards = new BSB.Actions.MyAction(this.components);
+            this.aProcessknd = new BSB.Actions.MyAction(this.components);
+            this.aOLF = new BSB.Actions.MyAction(this.components);
+            this.aListing = new BSB.Actions.MyAction(this.components);
+            this.aRating = new BSB.Actions.MyAction(this.components);
             this.aRegOrganMU = new BSB.Actions.MyAction(this.components);
+            this.aStateShareUk = new BSB.Actions.MyAction(this.components);
+            this.aAppointment = new BSB.Actions.MyAction(this.components);
+            this.aRepKnd = new BSB.Actions.MyAction(this.components);
+            this.aSignatory = new BSB.Actions.MyAction(this.components);
             this.aExecutor = new BSB.Actions.MyAction(this.components);
+            this.aCatHolderEcb = new BSB.Actions.MyAction(this.components);
+            this.aIssueStsECB = new BSB.Actions.MyAction(this.components);
+            this.aIssuersGCB = new BSB.Actions.MyAction(this.components);
+            this.aKindGCB = new BSB.Actions.MyAction(this.components);
+            this.aDebtRepayment = new BSB.Actions.MyAction(this.components);
+            this.aStsReport = new BSB.Actions.MyAction(this.components);
+            this.aKindRegBonds = new BSB.Actions.MyAction(this.components);
+            this.aArticlesKOAP = new BSB.Actions.MyAction(this.components);
+            this.aCauseChangesRep = new BSB.Actions.MyAction(this.components);
+            this.aSuspension = new BSB.Actions.MyAction(this.components);
+            this.aCountry = new BSB.Actions.MyAction(this.components);
+            this.aDecisionAdmOffences = new BSB.Actions.MyAction(this.components);
+            this.aFormCollection = new BSB.Actions.MyAction(this.components);
+            this.aJurPersSts = new BSB.Actions.MyAction(this.components);
+            this.aReasonAnnulECB = new BSB.Actions.MyAction(this.components);
+            this.aUnitDimPerECB = new BSB.Actions.MyAction(this.components);
+            this.aJurPersCreateMethod = new BSB.Actions.MyAction(this.components);
+            this.aMethodLocalECB = new BSB.Actions.MyAction(this.components);
+            this.aPlaceAccommECB = new BSB.Actions.MyAction(this.components);
+            this.aReasonChangeShareIssue = new BSB.Actions.MyAction(this.components);
+            this.aStsStAccommECB = new BSB.Actions.MyAction(this.components);
+            this.aDecVerifInf = new BSB.Actions.MyAction(this.components);
+            this.aBasePrescription = new BSB.Actions.MyAction(this.components);
+            this.aViolationKnd = new BSB.Actions.MyAction(this.components);
+            this.aOrganRegIssueECB = new BSB.Actions.MyAction(this.components);
+            this.aMRP = new BSB.Actions.MyAction(this.components);
+            this.aResolutionDR = new BSB.Actions.MyAction(this.components);
+            this.aStatusECB = new BSB.Actions.MyAction(this.components);
+            this.aStatusLicense = new BSB.Actions.MyAction(this.components);
+            this.aCondMonitorValid = new BSB.Actions.MyAction(this.components);
             this.aSharer = new BSB.Actions.MyAction(this.components);
+            this.aReasonSuspensionECB = new BSB.Actions.MyAction(this.components);
+            this.aDecTreadCard = new BSB.Actions.MyAction(this.components);
+            this.aProcess = new BSB.Actions.MyAction(this.components);
+            this.aBondRegistry = new BSB.Actions.MyAction(this.components);
+            this.aBondReestr = new BSB.Actions.MyAction(this.components);
+            this.aBondRefuseJournal = new BSB.Actions.MyAction(this.components);
+            this.aShareJournalReestr = new BSB.Actions.MyAction(this.components);
+            this.aShareJournalChanges = new BSB.Actions.MyAction(this.components);
+            this.aShareReestr = new BSB.Actions.MyAction(this.components);
+            this.aShareJournalDenial = new BSB.Actions.MyAction(this.components);
+            this.aKazDepRecReestr = new BSB.Actions.MyAction(this.components);
+            this.aKazDepRecJournalDenial = new BSB.Actions.MyAction(this.components);
+            this.aIslamSecReestr = new BSB.Actions.MyAction(this.components);
+            this.aPaiReestr = new BSB.Actions.MyAction(this.components);
+            this.aPermJournal = new BSB.Actions.MyAction(this.components);
+            this.aPermRegRefuse = new BSB.Actions.MyAction(this.components);
+            this.aPaiRefuse = new BSB.Actions.MyAction(this.components);
+            this.aKndSanctions = new BSB.Actions.MyAction(this.components);
+            this.aIslamSecJournalDenial = new BSB.Actions.MyAction(this.components);
+            this.aGovSecResstr = new BSB.Actions.MyAction(this.components);
+            this.aIssuer = new BSB.Actions.MyAction(this.components);
+            this.aBondCorrection = new BSB.Actions.MyAction(this.components);
             this.aRepForm = new BSB.Actions.MyAction(this.components);
+            this.aPaiCorrection = new BSB.Actions.MyAction(this.components);
+            this.aDepRepJournal = new BSB.Actions.MyAction(this.components);
+            this.aCorrectionDepRep = new BSB.Actions.MyAction(this.components);
+            this.aCorrectionPerm = new BSB.Actions.MyAction(this.components);
+            this.aCorrectionShare = new BSB.Actions.MyAction(this.components);
+            this.aCorrectionKdr = new BSB.Actions.MyAction(this.components);
+            this.aCorrectionGovSec = new BSB.Actions.MyAction(this.components);
+            this.aCorrectionIslam = new BSB.Actions.MyAction(this.components);
             this.aKazLang = new BSB.Actions.MyAction(this.components);
             this.aRuLang = new BSB.Actions.MyAction(this.components);
-            this.aClients = new BSB.Actions.MyAction(this.components);
+            this.aViolation = new BSB.Actions.MyAction(this.components);
+            this.aViolCapSize = new BSB.Actions.MyAction(this.components);
+            this.aViolIssueReport = new BSB.Actions.MyAction(this.components);
+            this.aViolRpmReport = new BSB.Actions.MyAction(this.components);
+            this.aViolEnforc = new BSB.Actions.MyAction(this.components);
+            this.aViolSanctions = new BSB.Actions.MyAction(this.components);
+            this.aViolRefuseDoc = new BSB.Actions.MyAction(this.components);
+            this.aCorrectionViolation = new BSB.Actions.MyAction(this.components);
+            this.aStatusLoadToSaid = new BSB.Actions.MyAction(this.components);
+            this.aGovSecJournalStatus = new BSB.Actions.MyAction(this.components);
+            this.aShareAffiliatesInfo = new BSB.Actions.MyAction(this.components);
+            this.aDefaultList = new BSB.Actions.MyAction(this.components);
+            this.aFounderList = new BSB.Actions.MyAction(this.components);
+            this.aAssignee = new BSB.Actions.MyAction(this.components);
+            this.aProvisionKnd = new BSB.Actions.MyAction(this.components);
+            this.aAssets = new BSB.Actions.MyAction(this.components);
+            this.aPeriodicity = new BSB.Actions.MyAction(this.components);
+            this.aProtocolIsin = new BSB.Actions.MyAction(this.components);
+            this.myAction1 = new BSB.Actions.MyAction(this.components);
+            this.myAction2 = new BSB.Actions.MyAction(this.components);
+            this.aExtraPokaz = new BSB.Actions.MyAction(this.components);
             this.tmCheckGovSec = new System.Timers.Timer();
             ((System.ComponentModel.ISupportInitialize)(this.MainBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainDockManager)).BeginInit();
+            this.hideContainerLeft.SuspendLayout();
+            this.dpMenu.SuspendLayout();
+            this.dockPanel1_Container.SuspendLayout();
             this.dpMessages.SuspendLayout();
             this.controlContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridMessages)).BeginInit();
@@ -155,8 +277,6 @@ namespace ARM_User
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imMessages)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
-            this.dpMenu.SuspendLayout();
-            this.dockPanel1_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tmIdle)).BeginInit();
@@ -382,6 +502,7 @@ namespace ARM_User
             new DevExpress.XtraBars.LinkPersistInfo(this.ipsO2003),
             new DevExpress.XtraBars.LinkPersistInfo(this.iSkins)});
             this.iPaintStyle.Name = "iPaintStyle";
+            this.iPaintStyle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // ipsWXP
             // 
@@ -719,14 +840,60 @@ namespace ARM_User
             // 
             // MainDockManager
             // 
+            this.MainDockManager.AutoHideContainers.AddRange(new DevExpress.XtraBars.Docking.AutoHideContainer[] {
+            this.hideContainerLeft});
             this.MainDockManager.Form = this;
             this.MainDockManager.HiddenPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
-            this.dpMessages,
-            this.dpMenu});
+            this.dpMessages});
             this.MainDockManager.MenuManager = this.MainBarManager;
             this.MainDockManager.TopZIndexControls.AddRange(new string[] {
             "DevExpress.XtraBars.BarDockControl",
             "System.Windows.Forms.StatusBar"});
+            // 
+            // hideContainerLeft
+            // 
+            this.hideContainerLeft.BackColor = System.Drawing.SystemColors.Control;
+            this.hideContainerLeft.Controls.Add(this.dpMenu);
+            this.hideContainerLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.hideContainerLeft.Location = new System.Drawing.Point(0, 48);
+            this.hideContainerLeft.Name = "hideContainerLeft";
+            this.hideContainerLeft.Size = new System.Drawing.Size(19, 345);
+            // 
+            // dpMenu
+            // 
+            this.dpMenu.Controls.Add(this.dockPanel1_Container);
+            this.dpMenu.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
+            this.dpMenu.ID = new System.Guid("6bbfbc01-ccf9-4a45-b503-7eaef7a61ec9");
+            this.dpMenu.Location = new System.Drawing.Point(19, 48);
+            this.dpMenu.Name = "dpMenu";
+            this.dpMenu.OriginalSize = new System.Drawing.Size(219, 326);
+            this.dpMenu.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Left;
+            this.dpMenu.SavedIndex = 0;
+            this.dpMenu.Size = new System.Drawing.Size(219, 345);
+            this.dpMenu.Text = " Меню";
+            this.dpMenu.Visibility = DevExpress.XtraBars.Docking.DockVisibility.AutoHide;
+            this.dpMenu.VisibilityChanged += new DevExpress.XtraBars.Docking.VisibilityChangedEventHandler(this.dpMenu_VisibilityChanged);
+            // 
+            // dockPanel1_Container
+            // 
+            this.dockPanel1_Container.Controls.Add(this.tvMenu);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 27);
+            this.dockPanel1_Container.Name = "dockPanel1_Container";
+            this.dockPanel1_Container.Size = new System.Drawing.Size(213, 315);
+            this.dockPanel1_Container.TabIndex = 0;
+            // 
+            // tvMenu
+            // 
+            this.tvMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvMenu.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tvMenu.Location = new System.Drawing.Point(0, 0);
+            this.tvMenu.Name = "tvMenu";
+            this.MainBarManager.SetPopupContextMenu(this.tvMenu, this.popupMenu);
+            this.tvMenu.Size = new System.Drawing.Size(213, 315);
+            this.tvMenu.TabIndex = 0;
+            this.tvMenu.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.tvMenu_AfterCollapse);
+            this.tvMenu.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.tvMenu_AfterExpand);
+            this.tvMenu.DoubleClick += new System.EventHandler(this.tvMenu_DoubleClick);
             // 
             // dpMessages
             // 
@@ -882,43 +1049,6 @@ namespace ARM_User
             this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
             this.repositoryItemMemoEdit1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             // 
-            // dpMenu
-            // 
-            this.dpMenu.Controls.Add(this.dockPanel1_Container);
-            this.dpMenu.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
-            this.dpMenu.ID = new System.Guid("6bbfbc01-ccf9-4a45-b503-7eaef7a61ec9");
-            this.dpMenu.Location = new System.Drawing.Point(0, 0);
-            this.dpMenu.Name = "dpMenu";
-            this.dpMenu.OriginalSize = new System.Drawing.Size(219, 326);
-            this.dpMenu.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Left;
-            this.dpMenu.SavedIndex = 0;
-            this.dpMenu.Size = new System.Drawing.Size(219, 345);
-            this.dpMenu.Text = " Меню";
-            this.dpMenu.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Hidden;
-            this.dpMenu.VisibilityChanged += new DevExpress.XtraBars.Docking.VisibilityChangedEventHandler(this.dpMenu_VisibilityChanged);
-            // 
-            // dockPanel1_Container
-            // 
-            this.dockPanel1_Container.Controls.Add(this.tvMenu);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 27);
-            this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(213, 315);
-            this.dockPanel1_Container.TabIndex = 0;
-            // 
-            // tvMenu
-            // 
-            this.tvMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tvMenu.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tvMenu.LineColor = System.Drawing.Color.Empty;
-            this.tvMenu.Location = new System.Drawing.Point(0, 0);
-            this.tvMenu.Name = "tvMenu";
-            this.MainBarManager.SetPopupContextMenu(this.tvMenu, this.popupMenu);
-            this.tvMenu.Size = new System.Drawing.Size(213, 315);
-            this.tvMenu.TabIndex = 0;
-            this.tvMenu.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.tvMenu_AfterCollapse);
-            this.tvMenu.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.tvMenu_AfterExpand);
-            this.tvMenu.DoubleClick += new System.EventHandler(this.tvMenu_DoubleClick);
-            // 
             // imMain
             // 
             this.imMain.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imMain.ImageStream")));
@@ -1038,10 +1168,10 @@ namespace ARM_User
             this.tcMDIChildren.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.tcMDIChildren.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tcMDIChildren.HotTrack = true;
-            this.tcMDIChildren.Location = new System.Drawing.Point(0, 369);
+            this.tcMDIChildren.Location = new System.Drawing.Point(19, 369);
             this.tcMDIChildren.Name = "tcMDIChildren";
             this.tcMDIChildren.SelectedIndex = 0;
-            this.tcMDIChildren.Size = new System.Drawing.Size(599, 24);
+            this.tcMDIChildren.Size = new System.Drawing.Size(580, 24);
             this.tcMDIChildren.TabIndex = 10;
             this.tcMDIChildren.Visible = false;
             this.tcMDIChildren.SelectedIndexChanged += new System.EventHandler(this.tcMDIChildren_SelectedIndexChanged);
@@ -1055,14 +1185,124 @@ namespace ARM_User
             this.aChangePassword,
             this.aLockApplication,
             this.aSetCurrentLanguage,
+            this.aFundKnd,
+            this.aIssueECB,
             this.aCurrencyECB,
+            this.aIssuersGuidesList,
+            this.aBankCust,
+            this.aCategoryControls,
+            this.aClassifierOKED,
+            this.aSpecBus,
+            this.aSignPartNores,
+            this.aSpecIssuer,
+            this.aAbilityConvert,
+            this.aReg,
+            this.aRegion,
+            this.aAudit,
+            this.aKindECB,
+            this.aIssOrganCont,
+            this.aDateTypeLocal,
+            this.aDocKnd,
+            this.aAddCategoryShare,
+            this.aCategoryECB,
+            this.aIndexRewards,
+            this.aProcessknd,
+            this.aOLF,
+            this.aListing,
+            this.aRating,
             this.aRegOrganMU,
+            this.aStateShareUk,
+            this.aAppointment,
+            this.aRepKnd,
+            this.aSignatory,
             this.aExecutor,
+            this.aCatHolderEcb,
+            this.aIssueStsECB,
+            this.aIssuersGCB,
+            this.aKindGCB,
+            this.aDebtRepayment,
+            this.aStsReport,
+            this.aKindRegBonds,
+            this.aArticlesKOAP,
+            this.aCauseChangesRep,
+            this.aSuspension,
+            this.aCountry,
+            this.aDecisionAdmOffences,
+            this.aFormCollection,
+            this.aJurPersSts,
+            this.aReasonAnnulECB,
+            this.aUnitDimPerECB,
+            this.aJurPersCreateMethod,
+            this.aMethodLocalECB,
+            this.aPlaceAccommECB,
+            this.aReasonChangeShareIssue,
+            this.aStsStAccommECB,
+            this.aDecVerifInf,
+            this.aBasePrescription,
+            this.aViolationKnd,
+            this.aOrganRegIssueECB,
+            this.aMRP,
+            this.aResolutionDR,
+            this.aStatusECB,
+            this.aStatusLicense,
+            this.aCondMonitorValid,
             this.aSharer,
+            this.aReasonSuspensionECB,
+            this.aProcessknd,
+            this.aDecTreadCard,
+            this.aProcess,
+            this.aBondRegistry,
+            this.aBondReestr,
+            this.aBondRefuseJournal,
+            this.aShareJournalReestr,
+            this.aShareJournalChanges,
+            this.aShareReestr,
+            this.aShareJournalDenial,
+            this.aKazDepRecReestr,
+            this.aKazDepRecJournalDenial,
+            this.aIslamSecReestr,
+            this.aPaiReestr,
+            this.aPermJournal,
+            this.aPermRegRefuse,
+            this.aPaiRefuse,
+            this.aKndSanctions,
+            this.aIslamSecJournalDenial,
+            this.aGovSecResstr,
+            this.aIssuer,
+            this.aBondCorrection,
             this.aRepForm,
+            this.aBondCorrection,
+            this.aPaiCorrection,
+            this.aDepRepJournal,
+            this.aCorrectionDepRep,
+            this.aCorrectionPerm,
+            this.aCorrectionShare,
+            this.aCorrectionKdr,
+            this.aCorrectionGovSec,
+            this.aCorrectionIslam,
             this.aKazLang,
             this.aRuLang,
-            this.aClients});
+            this.aViolation,
+            this.aViolCapSize,
+            this.aViolIssueReport,
+            this.aViolRpmReport,
+            this.aViolEnforc,
+            this.aViolSanctions,
+            this.aViolRefuseDoc,
+            this.aCorrectionViolation,
+            this.aStatusLoadToSaid,
+            this.aGovSecJournalStatus,
+            this.aShareAffiliatesInfo,
+            this.aDefaultList,
+            this.aFounderList,
+            this.aAssignee,
+            this.aProvisionKnd,
+            this.aAssets,
+            this.aPeriodicity,
+            this.aProtocolIsin,
+            this.myAction1,
+            this.myAction2,
+            this.aExtraPokaz});
             // 
             // aConnect
             // 
@@ -1118,6 +1358,22 @@ namespace ARM_User
             this.aSetCurrentLanguage.MakeDisabledOnExec = true;
             this.aSetCurrentLanguage.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aSetCurrentLanguage_Execute);
             // 
+            // aFundKnd
+            // 
+            this.aFundKnd.Caption = null;
+            this.aFundKnd.Category = null;
+            this.aFundKnd.Code = null;
+            this.aFundKnd.Enabled = true;
+            this.aFundKnd.MakeDisabledOnExec = true;
+            // 
+            // aIssueECB
+            // 
+            this.aIssueECB.Caption = null;
+            this.aIssueECB.Category = null;
+            this.aIssueECB.Code = null;
+            this.aIssueECB.Enabled = true;
+            this.aIssueECB.MakeDisabledOnExec = true;
+            // 
             // aCurrencyECB
             // 
             this.aCurrencyECB.Caption = null;
@@ -1126,6 +1382,182 @@ namespace ARM_User
             this.aCurrencyECB.Enabled = true;
             this.aCurrencyECB.MakeDisabledOnExec = true;
             this.aCurrencyECB.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aCurrencyECB_Execute);
+            // 
+            // aIssuersGuidesList
+            // 
+            this.aIssuersGuidesList.Caption = null;
+            this.aIssuersGuidesList.Category = null;
+            this.aIssuersGuidesList.Code = null;
+            this.aIssuersGuidesList.Enabled = true;
+            this.aIssuersGuidesList.MakeDisabledOnExec = true;
+            // 
+            // aBankCust
+            // 
+            this.aBankCust.Caption = null;
+            this.aBankCust.Category = null;
+            this.aBankCust.Code = null;
+            this.aBankCust.Enabled = true;
+            this.aBankCust.MakeDisabledOnExec = true;
+            // 
+            // aCategoryControls
+            // 
+            this.aCategoryControls.Caption = null;
+            this.aCategoryControls.Category = null;
+            this.aCategoryControls.Code = null;
+            this.aCategoryControls.Enabled = true;
+            this.aCategoryControls.MakeDisabledOnExec = true;
+            // 
+            // aClassifierOKED
+            // 
+            this.aClassifierOKED.Caption = null;
+            this.aClassifierOKED.Category = null;
+            this.aClassifierOKED.Code = null;
+            this.aClassifierOKED.Enabled = true;
+            this.aClassifierOKED.MakeDisabledOnExec = true;
+            // 
+            // aSpecBus
+            // 
+            this.aSpecBus.Caption = null;
+            this.aSpecBus.Category = null;
+            this.aSpecBus.Code = null;
+            this.aSpecBus.Enabled = true;
+            this.aSpecBus.MakeDisabledOnExec = true;
+            // 
+            // aSignPartNores
+            // 
+            this.aSignPartNores.Caption = null;
+            this.aSignPartNores.Category = null;
+            this.aSignPartNores.Code = null;
+            this.aSignPartNores.Enabled = true;
+            this.aSignPartNores.MakeDisabledOnExec = true;
+            // 
+            // aSpecIssuer
+            // 
+            this.aSpecIssuer.Caption = null;
+            this.aSpecIssuer.Category = null;
+            this.aSpecIssuer.Code = null;
+            this.aSpecIssuer.Enabled = true;
+            this.aSpecIssuer.MakeDisabledOnExec = true;
+            // 
+            // aAbilityConvert
+            // 
+            this.aAbilityConvert.Caption = null;
+            this.aAbilityConvert.Category = null;
+            this.aAbilityConvert.Code = null;
+            this.aAbilityConvert.Enabled = true;
+            this.aAbilityConvert.MakeDisabledOnExec = true;
+            // 
+            // aReg
+            // 
+            this.aReg.Caption = null;
+            this.aReg.Category = null;
+            this.aReg.Code = null;
+            this.aReg.Enabled = true;
+            this.aReg.MakeDisabledOnExec = true;
+            // 
+            // aRegion
+            // 
+            this.aRegion.Caption = null;
+            this.aRegion.Category = null;
+            this.aRegion.Code = null;
+            this.aRegion.Enabled = true;
+            this.aRegion.MakeDisabledOnExec = true;
+            // 
+            // aAudit
+            // 
+            this.aAudit.Caption = null;
+            this.aAudit.Category = null;
+            this.aAudit.Code = null;
+            this.aAudit.Enabled = true;
+            this.aAudit.MakeDisabledOnExec = true;
+            // 
+            // aKindECB
+            // 
+            this.aKindECB.Caption = null;
+            this.aKindECB.Category = null;
+            this.aKindECB.Code = null;
+            this.aKindECB.Enabled = true;
+            this.aKindECB.MakeDisabledOnExec = true;
+            // 
+            // aIssOrganCont
+            // 
+            this.aIssOrganCont.Caption = null;
+            this.aIssOrganCont.Category = null;
+            this.aIssOrganCont.Code = null;
+            this.aIssOrganCont.Enabled = true;
+            this.aIssOrganCont.MakeDisabledOnExec = true;
+            // 
+            // aDateTypeLocal
+            // 
+            this.aDateTypeLocal.Caption = null;
+            this.aDateTypeLocal.Category = null;
+            this.aDateTypeLocal.Code = null;
+            this.aDateTypeLocal.Enabled = true;
+            this.aDateTypeLocal.MakeDisabledOnExec = true;
+            // 
+            // aDocKnd
+            // 
+            this.aDocKnd.Caption = null;
+            this.aDocKnd.Category = null;
+            this.aDocKnd.Code = null;
+            this.aDocKnd.Enabled = true;
+            this.aDocKnd.MakeDisabledOnExec = true;
+            // 
+            // aAddCategoryShare
+            // 
+            this.aAddCategoryShare.Caption = null;
+            this.aAddCategoryShare.Category = null;
+            this.aAddCategoryShare.Code = null;
+            this.aAddCategoryShare.Enabled = true;
+            this.aAddCategoryShare.MakeDisabledOnExec = true;
+            // 
+            // aCategoryECB
+            // 
+            this.aCategoryECB.Caption = null;
+            this.aCategoryECB.Category = null;
+            this.aCategoryECB.Code = null;
+            this.aCategoryECB.Enabled = true;
+            this.aCategoryECB.MakeDisabledOnExec = true;
+            // 
+            // aIndexRewards
+            // 
+            this.aIndexRewards.Caption = null;
+            this.aIndexRewards.Category = null;
+            this.aIndexRewards.Code = null;
+            this.aIndexRewards.Enabled = true;
+            this.aIndexRewards.MakeDisabledOnExec = true;
+            // 
+            // aProcessknd
+            // 
+            this.aProcessknd.Caption = null;
+            this.aProcessknd.Category = null;
+            this.aProcessknd.Code = null;
+            this.aProcessknd.Enabled = true;
+            this.aProcessknd.MakeDisabledOnExec = true;
+            // 
+            // aOLF
+            // 
+            this.aOLF.Caption = null;
+            this.aOLF.Category = null;
+            this.aOLF.Code = null;
+            this.aOLF.Enabled = true;
+            this.aOLF.MakeDisabledOnExec = true;
+            // 
+            // aListing
+            // 
+            this.aListing.Caption = null;
+            this.aListing.Category = null;
+            this.aListing.Code = null;
+            this.aListing.Enabled = true;
+            this.aListing.MakeDisabledOnExec = true;
+            // 
+            // aRating
+            // 
+            this.aRating.Caption = null;
+            this.aRating.Category = null;
+            this.aRating.Code = null;
+            this.aRating.Enabled = true;
+            this.aRating.MakeDisabledOnExec = true;
             // 
             // aRegOrganMU
             // 
@@ -1136,6 +1568,38 @@ namespace ARM_User
             this.aRegOrganMU.MakeDisabledOnExec = true;
             this.aRegOrganMU.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aRegOrganMU_Execute);
             // 
+            // aStateShareUk
+            // 
+            this.aStateShareUk.Caption = null;
+            this.aStateShareUk.Category = null;
+            this.aStateShareUk.Code = null;
+            this.aStateShareUk.Enabled = true;
+            this.aStateShareUk.MakeDisabledOnExec = true;
+            // 
+            // aAppointment
+            // 
+            this.aAppointment.Caption = null;
+            this.aAppointment.Category = null;
+            this.aAppointment.Code = null;
+            this.aAppointment.Enabled = true;
+            this.aAppointment.MakeDisabledOnExec = true;
+            // 
+            // aRepKnd
+            // 
+            this.aRepKnd.Caption = null;
+            this.aRepKnd.Category = null;
+            this.aRepKnd.Code = null;
+            this.aRepKnd.Enabled = true;
+            this.aRepKnd.MakeDisabledOnExec = true;
+            // 
+            // aSignatory
+            // 
+            this.aSignatory.Caption = null;
+            this.aSignatory.Category = null;
+            this.aSignatory.Code = null;
+            this.aSignatory.Enabled = true;
+            this.aSignatory.MakeDisabledOnExec = true;
+            // 
             // aExecutor
             // 
             this.aExecutor.Caption = null;
@@ -1144,6 +1608,246 @@ namespace ARM_User
             this.aExecutor.Enabled = true;
             this.aExecutor.MakeDisabledOnExec = true;
             this.aExecutor.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aExecutor_Execute);
+            // 
+            // aCatHolderEcb
+            // 
+            this.aCatHolderEcb.Caption = null;
+            this.aCatHolderEcb.Category = null;
+            this.aCatHolderEcb.Code = null;
+            this.aCatHolderEcb.Enabled = true;
+            this.aCatHolderEcb.MakeDisabledOnExec = true;
+            // 
+            // aIssueStsECB
+            // 
+            this.aIssueStsECB.Caption = null;
+            this.aIssueStsECB.Category = null;
+            this.aIssueStsECB.Code = null;
+            this.aIssueStsECB.Enabled = true;
+            this.aIssueStsECB.MakeDisabledOnExec = true;
+            // 
+            // aIssuersGCB
+            // 
+            this.aIssuersGCB.Caption = null;
+            this.aIssuersGCB.Category = null;
+            this.aIssuersGCB.Code = null;
+            this.aIssuersGCB.Enabled = true;
+            this.aIssuersGCB.MakeDisabledOnExec = true;
+            // 
+            // aKindGCB
+            // 
+            this.aKindGCB.Caption = null;
+            this.aKindGCB.Category = null;
+            this.aKindGCB.Code = null;
+            this.aKindGCB.Enabled = true;
+            this.aKindGCB.MakeDisabledOnExec = true;
+            // 
+            // aDebtRepayment
+            // 
+            this.aDebtRepayment.Caption = null;
+            this.aDebtRepayment.Category = null;
+            this.aDebtRepayment.Code = null;
+            this.aDebtRepayment.Enabled = true;
+            this.aDebtRepayment.MakeDisabledOnExec = true;
+            // 
+            // aStsReport
+            // 
+            this.aStsReport.Caption = null;
+            this.aStsReport.Category = null;
+            this.aStsReport.Code = null;
+            this.aStsReport.Enabled = true;
+            this.aStsReport.MakeDisabledOnExec = true;
+            // 
+            // aKindRegBonds
+            // 
+            this.aKindRegBonds.Caption = null;
+            this.aKindRegBonds.Category = null;
+            this.aKindRegBonds.Code = null;
+            this.aKindRegBonds.Enabled = true;
+            this.aKindRegBonds.MakeDisabledOnExec = true;
+            // 
+            // aArticlesKOAP
+            // 
+            this.aArticlesKOAP.Caption = null;
+            this.aArticlesKOAP.Category = null;
+            this.aArticlesKOAP.Code = null;
+            this.aArticlesKOAP.Enabled = true;
+            this.aArticlesKOAP.MakeDisabledOnExec = true;
+            // 
+            // aCauseChangesRep
+            // 
+            this.aCauseChangesRep.Caption = null;
+            this.aCauseChangesRep.Category = null;
+            this.aCauseChangesRep.Code = null;
+            this.aCauseChangesRep.Enabled = true;
+            this.aCauseChangesRep.MakeDisabledOnExec = true;
+            // 
+            // aSuspension
+            // 
+            this.aSuspension.Caption = null;
+            this.aSuspension.Category = null;
+            this.aSuspension.Code = null;
+            this.aSuspension.Enabled = true;
+            this.aSuspension.MakeDisabledOnExec = true;
+            // 
+            // aCountry
+            // 
+            this.aCountry.Caption = null;
+            this.aCountry.Category = null;
+            this.aCountry.Code = null;
+            this.aCountry.Enabled = true;
+            this.aCountry.MakeDisabledOnExec = true;
+            // 
+            // aDecisionAdmOffences
+            // 
+            this.aDecisionAdmOffences.Caption = null;
+            this.aDecisionAdmOffences.Category = null;
+            this.aDecisionAdmOffences.Code = null;
+            this.aDecisionAdmOffences.Enabled = true;
+            this.aDecisionAdmOffences.MakeDisabledOnExec = true;
+            // 
+            // aFormCollection
+            // 
+            this.aFormCollection.Caption = null;
+            this.aFormCollection.Category = null;
+            this.aFormCollection.Code = null;
+            this.aFormCollection.Enabled = true;
+            this.aFormCollection.MakeDisabledOnExec = true;
+            // 
+            // aJurPersSts
+            // 
+            this.aJurPersSts.Caption = null;
+            this.aJurPersSts.Category = null;
+            this.aJurPersSts.Code = null;
+            this.aJurPersSts.Enabled = true;
+            this.aJurPersSts.MakeDisabledOnExec = true;
+            // 
+            // aReasonAnnulECB
+            // 
+            this.aReasonAnnulECB.Caption = null;
+            this.aReasonAnnulECB.Category = null;
+            this.aReasonAnnulECB.Code = null;
+            this.aReasonAnnulECB.Enabled = true;
+            this.aReasonAnnulECB.MakeDisabledOnExec = true;
+            // 
+            // aUnitDimPerECB
+            // 
+            this.aUnitDimPerECB.Caption = null;
+            this.aUnitDimPerECB.Category = null;
+            this.aUnitDimPerECB.Code = null;
+            this.aUnitDimPerECB.Enabled = true;
+            this.aUnitDimPerECB.MakeDisabledOnExec = true;
+            // 
+            // aJurPersCreateMethod
+            // 
+            this.aJurPersCreateMethod.Caption = null;
+            this.aJurPersCreateMethod.Category = null;
+            this.aJurPersCreateMethod.Code = null;
+            this.aJurPersCreateMethod.Enabled = true;
+            this.aJurPersCreateMethod.MakeDisabledOnExec = true;
+            // 
+            // aMethodLocalECB
+            // 
+            this.aMethodLocalECB.Caption = null;
+            this.aMethodLocalECB.Category = null;
+            this.aMethodLocalECB.Code = null;
+            this.aMethodLocalECB.Enabled = true;
+            this.aMethodLocalECB.MakeDisabledOnExec = true;
+            // 
+            // aPlaceAccommECB
+            // 
+            this.aPlaceAccommECB.Caption = null;
+            this.aPlaceAccommECB.Category = null;
+            this.aPlaceAccommECB.Code = null;
+            this.aPlaceAccommECB.Enabled = true;
+            this.aPlaceAccommECB.MakeDisabledOnExec = true;
+            // 
+            // aReasonChangeShareIssue
+            // 
+            this.aReasonChangeShareIssue.Caption = null;
+            this.aReasonChangeShareIssue.Category = null;
+            this.aReasonChangeShareIssue.Code = null;
+            this.aReasonChangeShareIssue.Enabled = true;
+            this.aReasonChangeShareIssue.MakeDisabledOnExec = true;
+            // 
+            // aStsStAccommECB
+            // 
+            this.aStsStAccommECB.Caption = null;
+            this.aStsStAccommECB.Category = null;
+            this.aStsStAccommECB.Code = null;
+            this.aStsStAccommECB.Enabled = true;
+            this.aStsStAccommECB.MakeDisabledOnExec = true;
+            // 
+            // aDecVerifInf
+            // 
+            this.aDecVerifInf.Caption = null;
+            this.aDecVerifInf.Category = null;
+            this.aDecVerifInf.Code = null;
+            this.aDecVerifInf.Enabled = true;
+            this.aDecVerifInf.MakeDisabledOnExec = true;
+            // 
+            // aBasePrescription
+            // 
+            this.aBasePrescription.Caption = null;
+            this.aBasePrescription.Category = null;
+            this.aBasePrescription.Code = null;
+            this.aBasePrescription.Enabled = true;
+            this.aBasePrescription.MakeDisabledOnExec = true;
+            // 
+            // aViolationKnd
+            // 
+            this.aViolationKnd.Caption = null;
+            this.aViolationKnd.Category = null;
+            this.aViolationKnd.Code = null;
+            this.aViolationKnd.Enabled = true;
+            this.aViolationKnd.MakeDisabledOnExec = true;
+            // 
+            // aOrganRegIssueECB
+            // 
+            this.aOrganRegIssueECB.Caption = null;
+            this.aOrganRegIssueECB.Category = null;
+            this.aOrganRegIssueECB.Code = null;
+            this.aOrganRegIssueECB.Enabled = true;
+            this.aOrganRegIssueECB.MakeDisabledOnExec = true;
+            // 
+            // aMRP
+            // 
+            this.aMRP.Caption = null;
+            this.aMRP.Category = null;
+            this.aMRP.Code = null;
+            this.aMRP.Enabled = true;
+            this.aMRP.MakeDisabledOnExec = true;
+            // 
+            // aResolutionDR
+            // 
+            this.aResolutionDR.Caption = null;
+            this.aResolutionDR.Category = null;
+            this.aResolutionDR.Code = null;
+            this.aResolutionDR.Enabled = true;
+            this.aResolutionDR.MakeDisabledOnExec = true;
+            // 
+            // aStatusECB
+            // 
+            this.aStatusECB.Caption = null;
+            this.aStatusECB.Category = null;
+            this.aStatusECB.Code = null;
+            this.aStatusECB.Enabled = true;
+            this.aStatusECB.MakeDisabledOnExec = true;
+            // 
+            // aStatusLicense
+            // 
+            this.aStatusLicense.Caption = null;
+            this.aStatusLicense.Category = null;
+            this.aStatusLicense.Code = null;
+            this.aStatusLicense.Enabled = true;
+            this.aStatusLicense.MakeDisabledOnExec = true;
+            // 
+            // aCondMonitorValid
+            // 
+            this.aCondMonitorValid.Caption = null;
+            this.aCondMonitorValid.Category = null;
+            this.aCondMonitorValid.Code = null;
+            this.aCondMonitorValid.Enabled = true;
+            this.aCondMonitorValid.MakeDisabledOnExec = true;
             // 
             // aSharer
             // 
@@ -1154,6 +1858,190 @@ namespace ARM_User
             this.aSharer.MakeDisabledOnExec = true;
             this.aSharer.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aSharer_Execute);
             // 
+            // aReasonSuspensionECB
+            // 
+            this.aReasonSuspensionECB.Caption = null;
+            this.aReasonSuspensionECB.Category = null;
+            this.aReasonSuspensionECB.Code = null;
+            this.aReasonSuspensionECB.Enabled = true;
+            this.aReasonSuspensionECB.MakeDisabledOnExec = true;
+            // 
+            // aDecTreadCard
+            // 
+            this.aDecTreadCard.Caption = null;
+            this.aDecTreadCard.Category = null;
+            this.aDecTreadCard.Code = null;
+            this.aDecTreadCard.Enabled = true;
+            this.aDecTreadCard.MakeDisabledOnExec = true;
+            // 
+            // aProcess
+            // 
+            this.aProcess.Caption = null;
+            this.aProcess.Category = null;
+            this.aProcess.Code = null;
+            this.aProcess.Enabled = true;
+            this.aProcess.MakeDisabledOnExec = true;
+            // 
+            // aBondRegistry
+            // 
+            this.aBondRegistry.Caption = null;
+            this.aBondRegistry.Category = null;
+            this.aBondRegistry.Code = null;
+            this.aBondRegistry.Enabled = true;
+            this.aBondRegistry.MakeDisabledOnExec = true;
+            // 
+            // aBondReestr
+            // 
+            this.aBondReestr.Caption = null;
+            this.aBondReestr.Category = null;
+            this.aBondReestr.Code = null;
+            this.aBondReestr.Enabled = true;
+            this.aBondReestr.MakeDisabledOnExec = true;
+            // 
+            // aBondRefuseJournal
+            // 
+            this.aBondRefuseJournal.Caption = null;
+            this.aBondRefuseJournal.Category = null;
+            this.aBondRefuseJournal.Code = null;
+            this.aBondRefuseJournal.Enabled = true;
+            this.aBondRefuseJournal.MakeDisabledOnExec = true;
+            // 
+            // aShareJournalReestr
+            // 
+            this.aShareJournalReestr.Caption = null;
+            this.aShareJournalReestr.Category = null;
+            this.aShareJournalReestr.Code = "aShareJournalReestr";
+            this.aShareJournalReestr.Enabled = true;
+            this.aShareJournalReestr.MakeDisabledOnExec = true;
+            // 
+            // aShareJournalChanges
+            // 
+            this.aShareJournalChanges.Caption = null;
+            this.aShareJournalChanges.Category = null;
+            this.aShareJournalChanges.Code = "aShareJournalChanges";
+            this.aShareJournalChanges.Enabled = true;
+            this.aShareJournalChanges.MakeDisabledOnExec = true;
+            // 
+            // aShareReestr
+            // 
+            this.aShareReestr.Caption = null;
+            this.aShareReestr.Category = null;
+            this.aShareReestr.Code = "aShareReestr";
+            this.aShareReestr.Enabled = true;
+            this.aShareReestr.MakeDisabledOnExec = true;
+            this.aShareReestr.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aShareReestr_Execute);
+            // 
+            // aShareJournalDenial
+            // 
+            this.aShareJournalDenial.Caption = null;
+            this.aShareJournalDenial.Category = null;
+            this.aShareJournalDenial.Code = "aShareJournalDenial";
+            this.aShareJournalDenial.Enabled = true;
+            this.aShareJournalDenial.MakeDisabledOnExec = true;
+            this.aShareJournalDenial.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aShareJournalDenial_Execute);
+            // 
+            // aKazDepRecReestr
+            // 
+            this.aKazDepRecReestr.Caption = null;
+            this.aKazDepRecReestr.Category = null;
+            this.aKazDepRecReestr.Code = "aKazDepRecReestr";
+            this.aKazDepRecReestr.Enabled = true;
+            this.aKazDepRecReestr.MakeDisabledOnExec = true;
+            this.aKazDepRecReestr.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aKazDepRecReestr_Execute);
+            // 
+            // aKazDepRecJournalDenial
+            // 
+            this.aKazDepRecJournalDenial.Caption = null;
+            this.aKazDepRecJournalDenial.Category = null;
+            this.aKazDepRecJournalDenial.Code = "aKazDepRecJournalDenial";
+            this.aKazDepRecJournalDenial.Enabled = true;
+            this.aKazDepRecJournalDenial.MakeDisabledOnExec = true;
+            this.aKazDepRecJournalDenial.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aKazDepRecJournalDenial_Execute);
+            // 
+            // aIslamSecReestr
+            // 
+            this.aIslamSecReestr.Caption = null;
+            this.aIslamSecReestr.Category = null;
+            this.aIslamSecReestr.Code = "aIslamSecReestr";
+            this.aIslamSecReestr.Enabled = true;
+            this.aIslamSecReestr.MakeDisabledOnExec = true;
+            this.aIslamSecReestr.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aIslamSecReestr_Execute);
+            // 
+            // aPaiReestr
+            // 
+            this.aPaiReestr.Caption = null;
+            this.aPaiReestr.Category = null;
+            this.aPaiReestr.Code = null;
+            this.aPaiReestr.Enabled = true;
+            this.aPaiReestr.MakeDisabledOnExec = true;
+            // 
+            // aPermJournal
+            // 
+            this.aPermJournal.Caption = null;
+            this.aPermJournal.Category = null;
+            this.aPermJournal.Code = null;
+            this.aPermJournal.Enabled = true;
+            this.aPermJournal.MakeDisabledOnExec = true;
+            // 
+            // aPermRegRefuse
+            // 
+            this.aPermRegRefuse.Caption = null;
+            this.aPermRegRefuse.Category = null;
+            this.aPermRegRefuse.Code = null;
+            this.aPermRegRefuse.Enabled = true;
+            this.aPermRegRefuse.MakeDisabledOnExec = true;
+            // 
+            // aPaiRefuse
+            // 
+            this.aPaiRefuse.Caption = null;
+            this.aPaiRefuse.Category = null;
+            this.aPaiRefuse.Code = null;
+            this.aPaiRefuse.Enabled = true;
+            this.aPaiRefuse.MakeDisabledOnExec = true;
+            // 
+            // aKndSanctions
+            // 
+            this.aKndSanctions.Caption = null;
+            this.aKndSanctions.Category = null;
+            this.aKndSanctions.Code = "aKndSanctions";
+            this.aKndSanctions.Enabled = true;
+            this.aKndSanctions.MakeDisabledOnExec = true;
+            this.aKndSanctions.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aKndSanction_Execute);
+            // 
+            // aIslamSecJournalDenial
+            // 
+            this.aIslamSecJournalDenial.Caption = null;
+            this.aIslamSecJournalDenial.Category = null;
+            this.aIslamSecJournalDenial.Code = "aIslamSecJournalDenial";
+            this.aIslamSecJournalDenial.Enabled = true;
+            this.aIslamSecJournalDenial.MakeDisabledOnExec = true;
+            this.aIslamSecJournalDenial.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aIslamSecJournalDenial_Execute);
+            // 
+            // aGovSecResstr
+            // 
+            this.aGovSecResstr.Caption = null;
+            this.aGovSecResstr.Category = null;
+            this.aGovSecResstr.Code = "aGovSecResstr";
+            this.aGovSecResstr.Enabled = true;
+            this.aGovSecResstr.MakeDisabledOnExec = true;
+            this.aGovSecResstr.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aGovSecResstr_Execute);
+            // 
+            // aIssuer
+            // 
+            this.aIssuer.Caption = null;
+            this.aIssuer.Category = null;
+            this.aIssuer.Code = null;
+            this.aIssuer.Enabled = true;
+            this.aIssuer.MakeDisabledOnExec = true;
+            // 
+            // aBondCorrection
+            // 
+            this.aBondCorrection.Caption = null;
+            this.aBondCorrection.Category = null;
+            this.aBondCorrection.Code = null;
+            this.aBondCorrection.Enabled = true;
+            this.aBondCorrection.MakeDisabledOnExec = true;
+            // 
             // aRepForm
             // 
             this.aRepForm.Caption = null;
@@ -1162,6 +2050,70 @@ namespace ARM_User
             this.aRepForm.Enabled = true;
             this.aRepForm.MakeDisabledOnExec = true;
             this.aRepForm.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aRepForm_Execute);
+            // 
+            // aPaiCorrection
+            // 
+            this.aPaiCorrection.Caption = null;
+            this.aPaiCorrection.Category = null;
+            this.aPaiCorrection.Code = null;
+            this.aPaiCorrection.Enabled = true;
+            this.aPaiCorrection.MakeDisabledOnExec = true;
+            // 
+            // aDepRepJournal
+            // 
+            this.aDepRepJournal.Caption = null;
+            this.aDepRepJournal.Category = null;
+            this.aDepRepJournal.Code = null;
+            this.aDepRepJournal.Enabled = true;
+            this.aDepRepJournal.MakeDisabledOnExec = true;
+            // 
+            // aCorrectionDepRep
+            // 
+            this.aCorrectionDepRep.Caption = null;
+            this.aCorrectionDepRep.Category = null;
+            this.aCorrectionDepRep.Code = null;
+            this.aCorrectionDepRep.Enabled = true;
+            this.aCorrectionDepRep.MakeDisabledOnExec = true;
+            // 
+            // aCorrectionPerm
+            // 
+            this.aCorrectionPerm.Caption = null;
+            this.aCorrectionPerm.Category = null;
+            this.aCorrectionPerm.Code = null;
+            this.aCorrectionPerm.Enabled = true;
+            this.aCorrectionPerm.MakeDisabledOnExec = true;
+            // 
+            // aCorrectionShare
+            // 
+            this.aCorrectionShare.Caption = null;
+            this.aCorrectionShare.Category = null;
+            this.aCorrectionShare.Code = null;
+            this.aCorrectionShare.Enabled = true;
+            this.aCorrectionShare.MakeDisabledOnExec = true;
+            // 
+            // aCorrectionKdr
+            // 
+            this.aCorrectionKdr.Caption = null;
+            this.aCorrectionKdr.Category = null;
+            this.aCorrectionKdr.Code = null;
+            this.aCorrectionKdr.Enabled = true;
+            this.aCorrectionKdr.MakeDisabledOnExec = true;
+            // 
+            // aCorrectionGovSec
+            // 
+            this.aCorrectionGovSec.Caption = null;
+            this.aCorrectionGovSec.Category = null;
+            this.aCorrectionGovSec.Code = null;
+            this.aCorrectionGovSec.Enabled = true;
+            this.aCorrectionGovSec.MakeDisabledOnExec = true;
+            // 
+            // aCorrectionIslam
+            // 
+            this.aCorrectionIslam.Caption = null;
+            this.aCorrectionIslam.Category = null;
+            this.aCorrectionIslam.Code = null;
+            this.aCorrectionIslam.Enabled = true;
+            this.aCorrectionIslam.MakeDisabledOnExec = true;
             // 
             // aKazLang
             // 
@@ -1181,14 +2133,175 @@ namespace ARM_User
             this.aRuLang.MakeDisabledOnExec = true;
             this.aRuLang.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aRuLang_Execute);
             // 
-            // aClients
+            // aViolation
             // 
-            this.aClients.Caption = null;
-            this.aClients.Category = null;
-            this.aClients.Code = "aClients";
-            this.aClients.Enabled = true;
-            this.aClients.MakeDisabledOnExec = true;
-            this.aClients.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aClient_Execute);
+            this.aViolation.Caption = null;
+            this.aViolation.Category = null;
+            this.aViolation.Code = null;
+            this.aViolation.Enabled = true;
+            this.aViolation.MakeDisabledOnExec = true;
+            // 
+            // aViolCapSize
+            // 
+            this.aViolCapSize.Caption = null;
+            this.aViolCapSize.Category = null;
+            this.aViolCapSize.Code = "aViolCapSize";
+            this.aViolCapSize.Enabled = true;
+            this.aViolCapSize.MakeDisabledOnExec = true;
+            this.aViolCapSize.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aViolCapSize_Execute);
+            // 
+            // aViolIssueReport
+            // 
+            this.aViolIssueReport.Caption = null;
+            this.aViolIssueReport.Category = null;
+            this.aViolIssueReport.Code = null;
+            this.aViolIssueReport.Enabled = true;
+            this.aViolIssueReport.MakeDisabledOnExec = true;
+            // 
+            // aViolRpmReport
+            // 
+            this.aViolRpmReport.Caption = null;
+            this.aViolRpmReport.Category = null;
+            this.aViolRpmReport.Code = null;
+            this.aViolRpmReport.Enabled = true;
+            this.aViolRpmReport.MakeDisabledOnExec = true;
+            // 
+            // aViolEnforc
+            // 
+            this.aViolEnforc.Caption = null;
+            this.aViolEnforc.Category = null;
+            this.aViolEnforc.Code = null;
+            this.aViolEnforc.Enabled = true;
+            this.aViolEnforc.MakeDisabledOnExec = true;
+            // 
+            // aViolSanctions
+            // 
+            this.aViolSanctions.Caption = null;
+            this.aViolSanctions.Category = null;
+            this.aViolSanctions.Code = null;
+            this.aViolSanctions.Enabled = true;
+            this.aViolSanctions.MakeDisabledOnExec = true;
+            // 
+            // aViolRefuseDoc
+            // 
+            this.aViolRefuseDoc.Caption = null;
+            this.aViolRefuseDoc.Category = null;
+            this.aViolRefuseDoc.Code = null;
+            this.aViolRefuseDoc.Enabled = true;
+            this.aViolRefuseDoc.MakeDisabledOnExec = true;
+            // 
+            // aCorrectionViolation
+            // 
+            this.aCorrectionViolation.Caption = null;
+            this.aCorrectionViolation.Category = null;
+            this.aCorrectionViolation.Code = null;
+            this.aCorrectionViolation.Enabled = true;
+            this.aCorrectionViolation.MakeDisabledOnExec = true;
+            // 
+            // aStatusLoadToSaid
+            // 
+            this.aStatusLoadToSaid.Caption = null;
+            this.aStatusLoadToSaid.Category = null;
+            this.aStatusLoadToSaid.Code = null;
+            this.aStatusLoadToSaid.Enabled = true;
+            this.aStatusLoadToSaid.MakeDisabledOnExec = true;
+            // 
+            // aGovSecJournalStatus
+            // 
+            this.aGovSecJournalStatus.Caption = null;
+            this.aGovSecJournalStatus.Category = null;
+            this.aGovSecJournalStatus.Code = null;
+            this.aGovSecJournalStatus.Enabled = true;
+            this.aGovSecJournalStatus.MakeDisabledOnExec = true;
+            // 
+            // aShareAffiliatesInfo
+            // 
+            this.aShareAffiliatesInfo.Caption = null;
+            this.aShareAffiliatesInfo.Category = null;
+            this.aShareAffiliatesInfo.Code = null;
+            this.aShareAffiliatesInfo.Enabled = true;
+            this.aShareAffiliatesInfo.MakeDisabledOnExec = true;
+            // 
+            // aDefaultList
+            // 
+            this.aDefaultList.Caption = null;
+            this.aDefaultList.Category = null;
+            this.aDefaultList.Code = null;
+            this.aDefaultList.Enabled = true;
+            this.aDefaultList.MakeDisabledOnExec = true;
+            // 
+            // aFounderList
+            // 
+            this.aFounderList.Caption = null;
+            this.aFounderList.Category = null;
+            this.aFounderList.Code = null;
+            this.aFounderList.Enabled = true;
+            this.aFounderList.MakeDisabledOnExec = true;
+            // 
+            // aAssignee
+            // 
+            this.aAssignee.Caption = null;
+            this.aAssignee.Category = null;
+            this.aAssignee.Code = null;
+            this.aAssignee.Enabled = true;
+            this.aAssignee.MakeDisabledOnExec = true;
+            // 
+            // aProvisionKnd
+            // 
+            this.aProvisionKnd.Caption = null;
+            this.aProvisionKnd.Category = null;
+            this.aProvisionKnd.Code = null;
+            this.aProvisionKnd.Enabled = true;
+            this.aProvisionKnd.MakeDisabledOnExec = true;
+            // 
+            // aAssets
+            // 
+            this.aAssets.Caption = null;
+            this.aAssets.Category = null;
+            this.aAssets.Code = null;
+            this.aAssets.Enabled = true;
+            this.aAssets.MakeDisabledOnExec = true;
+            // 
+            // aPeriodicity
+            // 
+            this.aPeriodicity.Caption = null;
+            this.aPeriodicity.Category = null;
+            this.aPeriodicity.Code = null;
+            this.aPeriodicity.Enabled = true;
+            this.aPeriodicity.MakeDisabledOnExec = true;
+            // 
+            // aProtocolIsin
+            // 
+            this.aProtocolIsin.Caption = null;
+            this.aProtocolIsin.Category = null;
+            this.aProtocolIsin.Code = null;
+            this.aProtocolIsin.Enabled = true;
+            this.aProtocolIsin.MakeDisabledOnExec = true;
+            // 
+            // myAction1
+            // 
+            this.myAction1.Caption = null;
+            this.myAction1.Category = null;
+            this.myAction1.Code = null;
+            this.myAction1.Enabled = true;
+            this.myAction1.MakeDisabledOnExec = true;
+            // 
+            // myAction2
+            // 
+            this.myAction2.Caption = null;
+            this.myAction2.Category = null;
+            this.myAction2.Code = null;
+            this.myAction2.Enabled = true;
+            this.myAction2.MakeDisabledOnExec = true;
+            // 
+            // aExtraPokaz
+            // 
+            this.aExtraPokaz.Caption = "Дополнительные признаки";
+            this.aExtraPokaz.Category = null;
+            this.aExtraPokaz.Code = "aExtraPokaz";
+            this.aExtraPokaz.Enabled = true;
+            this.aExtraPokaz.MakeDisabledOnExec = true;
+            this.aExtraPokaz.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aExtraPokaz_Execute);
             // 
             // tmCheckGovSec
             // 
@@ -1201,6 +2314,7 @@ namespace ARM_User
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 14);
             this.ClientSize = new System.Drawing.Size(599, 415);
             this.Controls.Add(this.tcMDIChildren);
+            this.Controls.Add(this.hideContainerLeft);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -1216,6 +2330,9 @@ namespace ARM_User
             this.MdiChildActivate += new System.EventHandler(this.frmMain_MdiChildActivate);
             ((System.ComponentModel.ISupportInitialize)(this.MainBarManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainDockManager)).EndInit();
+            this.hideContainerLeft.ResumeLayout(false);
+            this.dpMenu.ResumeLayout(false);
+            this.dockPanel1_Container.ResumeLayout(false);
             this.dpMessages.ResumeLayout(false);
             this.controlContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridMessages)).EndInit();
@@ -1223,8 +2340,6 @@ namespace ARM_User
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imMessages)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
-            this.dpMenu.ResumeLayout(false);
-            this.dockPanel1_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tmIdle)).EndInit();
@@ -1362,11 +2477,100 @@ namespace ARM_User
     private ToolTipController toolTipController;
     private TreeView tvMenu;
     private GridView viewMessages;
+    private MyAction aFundKnd;
+    private MyAction aIssueECB;
     private MyAction aCurrencyECB;
+    private MyAction aIssuersGuidesList;
+    private MyAction aBankCust;
+    private MyAction aClassifierOKED;
+    private MyAction aSpecBus;
+    private MyAction aSignPartNores;
+    private MyAction aCategoryControls;
+    private MyAction aSpecIssuer;
+    private MyAction aAbilityConvert;
+    private MyAction aKindECB;
+    private MyAction aIssOrganCont;
+    private MyAction aDateTypeLocal;
+    private MyAction aDocKnd;
+    private MyAction aAddCategoryShare;
+    private MyAction aCategoryECB;
+    private MyAction aIndexRewards;
+    private MyAction aProcessknd;
+    private MyAction aProcess;
+    private MyAction aOLF;
+    private MyAction aListing;
+    private MyAction aRating;
     private MyAction aRegOrganMU;
+    private MyAction aStateShareUk;
+    private MyAction aAppointment;
+    private MyAction aRepKnd;
+    private MyAction aSignatory;
     private MyAction aExecutor;
+    private MyAction aCatHolderEcb;
+    private MyAction aIssueStsECB;
+    private MyAction aIssuersGCB;
+    private MyAction aKindGCB;
+    private MyAction aDebtRepayment;
+    private MyAction aStsReport;
+    private MyAction aKindRegBonds;
+    private MyAction aArticlesKOAP;
+    private MyAction aCauseChangesRep;
+    private MyAction aSuspension;
+    private MyAction aCountry;
+    private MyAction aDecisionAdmOffences;
+    private MyAction aFormCollection;
+    private MyAction aJurPersSts;
+    private MyAction aReasonAnnulECB;
+    private MyAction aUnitDimPerECB;
+    private MyAction aJurPersCreateMethod;
+    private MyAction aMethodLocalECB;
+    private MyAction aPlaceAccommECB;
+    private MyAction aReasonChangeShareIssue;
+    private MyAction aStsStAccommECB;
+    private MyAction aDecVerifInf;
+    private MyAction aBasePrescription;
+    private MyAction aViolationKnd;
+    private MyAction aOrganRegIssueECB;
+    private MyAction aMRP;
+    private MyAction aResolutionDR;
+    private MyAction aStatusECB;
+    private MyAction aStatusLicense;
+    private MyAction aCondMonitorValid;
     private MyAction aSharer;
+    private MyAction aReasonSuspensionECB;
+    private MyAction aDecTreadCard;
+    private MyAction aReg;
+    private MyAction aRegion;
+    private MyAction aAudit;
+    private MyAction aBondRegistry;
+    private MyAction aBondReestr;
+    private MyAction aBondRefuseJournal;
+    private AutoHideContainer hideContainerLeft;
+    private MyAction aShareJournalReestr;
+    private MyAction aShareJournalChanges;
+    private MyAction aShareReestr;
+    private MyAction aShareJournalDenial;
+    private MyAction aKazDepRecReestr;
+    private MyAction aKazDepRecJournalDenial;
+    private MyAction aIslamSecReestr;
+    private MyAction aPaiReestr;
+    private MyAction aPermJournal;
+    private MyAction aPaiRefuse;
     private MyAction aRepForm;
+    private MyAction aKndSanctions;
+    private MyAction aIslamSecJournalDenial;
+    private MyAction aGovSecResstr;
+    private MyAction aPermRegRefuse;
+    private MyAction aIssuer;
+    private MyAction aBondCorrection;
+    private MyAction aPaiCorrection;
+    private MyAction aDepRepJournal;
+    private MyAction aCorrectionDepRep;
+    private MyAction aCorrectionPerm;
+    private MyAction aCorrectionShare;
+    private MyAction aCorrectionKdr;
+    private MyAction aCorrectionGovSec;
+    private MyAction aCorrectionIslam;
     private BarButtonItem barButtonItem1;
     private BarSubItem barSubItem4;
     private BarSubItem barSubItem3;
@@ -1375,7 +2579,16 @@ namespace ARM_User
     private BarCheckItem barCheckKz;
     private MyAction aKazLang;
     private MyAction aRuLang;
+    private MyAction aViolation;
+    private MyAction aViolCapSize;
+    private MyAction aViolIssueReport;
+    private MyAction aViolRpmReport;
+    private MyAction aViolEnforc;
+    private MyAction aViolSanctions;
+    private MyAction aViolRefuseDoc;
     private BarButtonItem barBtnSetTimesLoad;
+    private MyAction aCorrectionViolation;
+    private MyAction aDefaultList;
     private readonly string xmlPath = Path.GetDirectoryName(Application.ExecutablePath) + @"\Xml\";
 
     #endregion
@@ -1427,7 +2640,10 @@ namespace ARM_User
     }
     private void aExtraPokaz_Execute(object sender, TActionEventArgs ae)
     {
-           
+            var frm = new ExtraPokazListForm();
+            frm.pAction = (MyAction)sender;
+            frm.MdiParent = this;
+            frm.Show();
     }
     #endregion
 
@@ -1791,7 +3007,7 @@ namespace ARM_User
         }
 
         // Корректируем объектные привилегии текущего должн. лица
-        DBSupport.CorrectCurrOfficGrants(dmControler.frmMain.oracleConnection);
+        // Beles DBSupport.CorrectCurrOfficGrants(dmControler.frmMain.oracleConnection);
       }
       finally
       {
@@ -2891,14 +4107,6 @@ namespace ARM_User
     private void barCheckRu_CheckedChanged(object sender, ItemClickEventArgs e)
     {
 
-    }
-
-    private void aClient_Execute(object sender, TActionEventArgs ae)
-    {
-        var frm = new ClientDataForm();
-        frm.pAction = (MyAction)sender;
-        frm.MdiParent = this;
-        frm.Show();
     }
     
  

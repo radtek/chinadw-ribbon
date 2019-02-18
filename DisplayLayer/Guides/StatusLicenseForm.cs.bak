@@ -1,0 +1,89 @@
+﻿using System;
+using ARM_User.BusinessLayer.Common;
+using ARM_User.BusinessLayer.Guides;
+using ARM_User.DisplayLayer.Base;
+using ARM_User.ServiceLayer.Service.Editor;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using BSB.Common;
+
+namespace ARM_User.DisplayLayer.Guides
+{
+    public partial class StatusLicenseForm : SimpleDBEditGBForm
+    {
+        protected StatusLicense statuslicense;
+
+        public StatusLicenseForm()
+        {
+            InitializeComponent();
+
+            UnitOfWork.Instance.BeginTransaction();
+            statuslicense = StatusLicense.CreateNew();
+            State = EditorState.Insert;
+
+        }
+
+        public StatusLicenseForm(StatusLicense statuslicense, EditorState state)
+        {
+            InitializeComponent();
+            this.state = state;
+            if (State == EditorState.Edit)
+                UnitOfWork.Instance.BeginTransaction();
+            this.statuslicense = statuslicense;
+        }
+
+        public StatusLicense StatusLicense
+        {
+            get { return statuslicense; }
+        }
+
+        private void StatusLicenseForm_Load(object sender, EventArgs e)
+        {
+            if (Site != null) return;
+
+            MainBS.Add(statuslicense);
+            edNameRu.DataBindings.Add("EditValue", MainBS, "Nameru", true);
+            edNameKz.DataBindings.Add("EditValue", MainBS, "Namekz", true);
+            cbDel.DataBindings.Add("EditValue", MainBS, "IsDelete", true);
+            wdDateLast.DataBindings.Add("EditValue", MainBS, "EditTime", true);
+            wdUserName.DataBindings.Add("EditValue", MainBS, "EditUser", true);
+
+            readOnlyControls.Add(wdDateLast);
+            readOnlyControls.Add(wdUserName);
+
+            SetEditorsStatus();
+
+            foreach (Control control in readOnlyControls)
+                EditorUtils.ReadOnlyControl(control, true);
+
+            if (State == EditorState.Insert)
+                Text = "Ввод новых реквизитов справочника \"Статус лицензий\"";
+            else if (State == EditorState.Edit)
+                Text = "Редактирование реквизитов справочника \"Статус лицензий\"";
+
+        }
+
+        protected override bool Validate()
+        {
+            if (string.IsNullOrEmpty(statuslicense.NameRu) || string.IsNullOrWhiteSpace(statuslicense.NameRu))
+            {
+                XtraMessageBox.Show(
+                    LangTranslate.UiGetText("Наименование (рус) не заполнено"),
+                    LangTranslate.UiGetText("Внимание"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                edNameRu.Focus();
+                return false;
+            }
+            if (string.IsNullOrEmpty(statuslicense.NameKz) || string.IsNullOrWhiteSpace(statuslicense.NameKz))
+            {
+                XtraMessageBox.Show(
+                    LangTranslate.UiGetText("Наименование (каз) не заполнено"),
+                    LangTranslate.UiGetText("Внимание"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                edNameKz.Focus();
+                return false;
+            }
+            return true;
+        }
+
+
+    }
+}

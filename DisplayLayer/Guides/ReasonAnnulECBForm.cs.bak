@@ -1,0 +1,122 @@
+﻿using System;
+using ARM_User.BusinessLayer.Common;
+using ARM_User.BusinessLayer.Guides;
+using ARM_User.DisplayLayer.Base;
+using ARM_User.ServiceLayer.Service.Editor;
+using System.Windows.Forms;
+using ARM_User.DisplayLayer.Popup;
+using DevExpress.XtraEditors;
+using BSB.Common;
+using DevExpress.XtraEditors.Controls;
+
+namespace ARM_User.DisplayLayer.Guides
+{
+    public partial class ReasonAnnulECBForm : SimpleDBEditGBForm
+    {
+        protected ReasonAnnulECB reasonannulecb;
+
+        public ReasonAnnulECBForm()
+        {
+            InitializeComponent();
+
+            UnitOfWork.Instance.BeginTransaction();
+            reasonannulecb = ReasonAnnulECB.CreateNew();
+            State = EditorState.Insert;
+        }
+
+        public ReasonAnnulECBForm(ReasonAnnulECB reasonannulecb, EditorState state)
+        {
+            InitializeComponent();
+            this.state = state;
+            if (State == EditorState.Edit)
+                UnitOfWork.Instance.BeginTransaction();
+            this.reasonannulecb = reasonannulecb;
+        }
+
+        public ReasonAnnulECB ReasonAnnulECB
+        {
+            get { return reasonannulecb; }
+        }
+
+        private void ReasonAnnulECBForm_Load(object sender, EventArgs e)
+        {
+
+            if (Site != null) return;
+
+            MainBS.Add(reasonannulecb);
+
+            edCode.DataBindings.Add("EditValue", MainBS, "Code", true);
+            edNameRu.DataBindings.Add("EditValue", MainBS, "NameRu", true);
+            edNameKz.DataBindings.Add("EditValue", MainBS, "NameKz", true);
+            edNoteRu.DataBindings.Add("EditValue", MainBS, "NoteRu", true);
+            edNoteKz.DataBindings.Add("EditValue", MainBS, "NoteKz", true);
+            edStsIssue.DataBindings.Add("EditValue", MainBS, "JurPersSts", true);
+            cbDel.DataBindings.Add("EditValue", MainBS, "IsDelete", true);
+            cbSignVolun.DataBindings.Add("EditValue", MainBS, "SignVolun", true);
+            wdDateLast.DataBindings.Add("EditValue", MainBS, "EditTime", true);
+            wdUserName.DataBindings.Add("EditValue", MainBS, "EditUser", true);
+
+            readOnlyControls.Add(wdDateLast);
+            readOnlyControls.Add(wdUserName);
+
+            SetEditorsStatus();
+
+            foreach (Control control in readOnlyControls)
+                EditorUtils.ReadOnlyControl(control, true);
+
+            if (State == EditorState.Insert)
+                Text = "Ввод новых реквизитов справочника \"Причина аннулирования выпуска ЭЦБ\"";
+            else if (State == EditorState.Edit)
+                Text = "Редактирование реквизитов справочника \"Причина аннулирования выпуска ЭЦБ\"";
+
+        }
+
+        protected override bool Validate()
+        {
+            if (string.IsNullOrEmpty(reasonannulecb.Code) || string.IsNullOrWhiteSpace(reasonannulecb.Code))
+            {
+                XtraMessageBox.Show(
+                    LangTranslate.UiGetText("Код не заполнен"),
+                    LangTranslate.UiGetText("Внимание"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                edCode.Focus();
+                return false;
+            }
+            if (string.IsNullOrEmpty(reasonannulecb.NameRu) || string.IsNullOrWhiteSpace(reasonannulecb.NameRu))
+            {
+                XtraMessageBox.Show(
+                    LangTranslate.UiGetText("Наименование (рус) не заполнено"),
+                    LangTranslate.UiGetText("Внимание"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                edNameRu.Focus();
+                return false;
+            }
+            if (string.IsNullOrEmpty(reasonannulecb.NameKz) || string.IsNullOrWhiteSpace(reasonannulecb.NameKz))
+            {
+                XtraMessageBox.Show(
+                    LangTranslate.UiGetText("Наименование (каз) не заполнено"),
+                    LangTranslate.UiGetText("Внимание"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                edNameKz.Focus();
+                return false;
+            }
+            return true;
+        }
+
+        private void edStsIssue_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (e.Button.Kind == DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)
+                ((DevExpress.XtraEditors.BaseEdit)sender).EditValue = null;
+
+            if (e.Button.Kind == ButtonPredefines.Ellipsis)
+            {
+                var f = new JurPersStsPopupListForm();
+                f.SelectedObject = ReasonAnnulECB.JurPersSts;
+
+                if (f.ShowDialog() == DialogResult.OK)
+                {
+                    ReasonAnnulECB.JurPersSts = (JurPersSts)f.SelectedObject;
+                }
+            }
+        }
+
+
+    }
+}

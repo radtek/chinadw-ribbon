@@ -26,7 +26,7 @@ namespace ARM_User.DataLayer.DB.Gateway
         {
           cmd.BindByName = true;
           cmd.CommandType = CommandType.StoredProcedure;
-          cmd.CommandText = "prepared.pkg_ref.read_shared_list";
+          cmd.CommandText = "main.pkg_ref.read_shared_list";
           cmd.Parameters.Add("p_cur", OracleDbType.RefCursor, ParameterDirection.Output);
           cmd.Parameters.Add("p_err_code", OracleDbType.Decimal, ParameterDirection.Output);
           cmd.Parameters.Add("p_err_msg", OracleDbType.Varchar2, ParameterDirection.Output);

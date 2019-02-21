@@ -173,6 +173,70 @@ namespace ARM_User.New.DB
                 DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_LoansListForm.PRO_DELETE_LOANS_ADD_MAP)");
             }
         }
+        // INSERT LOANS  POKAZ
+        public void pro_insert_loans_map(Int32 loan_sid_, DateTime report_date_,
+            Int32 abs_dimension_id_, Int32 pokaz_id_)
+        {
+            try
+            {
+                OracleCommand cmd = pConncection.CreateCommand();
+                cmd.BindByName = true;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "PREPARED.pkg_interface_orepations.pro_insert_loans_map";
+                cmd.Parameters.Add("loan_sid_", OracleDbType.Int32, loan_sid_, ParameterDirection.Input);
+                cmd.Parameters.Add("report_date_", OracleDbType.Date, report_date_, ParameterDirection.Input);
+                cmd.Parameters.Add("abs_dimension_id_", OracleDbType.Int32, abs_dimension_id_, ParameterDirection.Input);
+                cmd.Parameters.Add("pokaz_id_", OracleDbType.Int32, pokaz_id_, ParameterDirection.Input);
+                
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception oe)
+            {
+                DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_LoansListForm.pro_insert_loans_map)");
+            }
+        }
+        // INSERT LOANS  POKAZ
+        public void pro_update_loans_map(Int32 loan_sid_, DateTime report_date_,
+            Int32 abs_dimension_id_, Int32 pokaz_id_)
+        {
+            try
+            {
+                OracleCommand cmd = pConncection.CreateCommand();
+                cmd.BindByName = true;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "PREPARED.pkg_interface_orepations.pro_update_loans_map";
+                cmd.Parameters.Add("loan_sid_", OracleDbType.Int32, loan_sid_, ParameterDirection.Input);
+                cmd.Parameters.Add("report_date_", OracleDbType.Date, report_date_, ParameterDirection.Input);
+                cmd.Parameters.Add("abs_dimension_id_", OracleDbType.Int32, abs_dimension_id_, ParameterDirection.Input);
+                cmd.Parameters.Add("pokaz_id_", OracleDbType.Int32, pokaz_id_, ParameterDirection.Input);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception oe)
+            {
+                DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_LoansListForm.pro_update_loans_map)");
+            }
+        }
+        // DELETE LOANS EXTRA POKAZ
+        public void pro_delete_loans_map(Int32 loan_sid_, DateTime report_date_, Int32 abs_dimension_id_, Int32 pokaz_id_)
+        {
+            try
+            {
+                OracleCommand cmd = pConncection.CreateCommand();
+                cmd.BindByName = true;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "PREPARED.pkg_interface_orepations.pro_delete_loans_map";
+                cmd.Parameters.Add("loan_sid_", OracleDbType.Int32, loan_sid_, ParameterDirection.Input);
+                cmd.Parameters.Add("report_date_", OracleDbType.Date, report_date_, ParameterDirection.Input);
+                cmd.Parameters.Add("abs_dimension_id_", OracleDbType.Int32, abs_dimension_id_, ParameterDirection.Input);
+                cmd.Parameters.Add("pokaz_id_", OracleDbType.Int32, pokaz_id_, ParameterDirection.Input);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception oe)
+            {
+                DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_LoansListForm.pro_delete_loans_map)");
+            }
+        }
     }
     
 }

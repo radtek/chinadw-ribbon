@@ -1,5 +1,6 @@
 ﻿using ARM_User.New.DB;
 using BSB.Common;
+using BSB.Common.DB;
 using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace ARM_User.New.Guide
         public Int32 pokaz_id;
         public String code;
         public String name;
+        public DateTime report_date;
         #region [Preperties]
         private DB_LoansListForm db = null;
         #endregion
@@ -48,7 +50,8 @@ namespace ARM_User.New.Guide
                 te_abs_dimension_id.Text = abs_dimension_id.ToString();
                 te_pokaz_id.Text = pokaz_id.ToString();
                 te_code.Text = code;
-                te_name.Text = name;                
+                te_name.Text = name;
+                if (view) cbGuides.Enabled = false;
             }
             
         }
@@ -66,18 +69,48 @@ namespace ARM_User.New.Guide
         }
         public override void btnSave_Click(object sender, EventArgs e)
         {
-            Close();
-        }
+            if (Validate())
+            {
+                Cursor = Cursors.WaitCursor;
+                loan_sid = Convert.ToInt32(te_loan_sid.Text);                
+                
+                abs_dimension_id = Convert.ToInt32(te_abs_dimension_id.Text);
+                pokaz_id = Convert.ToInt32(te_pokaz_id.Text);
 
-        private void cbGuides_CheckedChanged(object sender, EventArgs e)
-        {
-            var frm = new LoansPopupForm();
-                frm.ShowDialog();
-        }
 
+                if (State == ServiceLayer.Service.Editor.EditorState.Insert)
+                {
+                    try
+                    {
+                        db.pro_insert_loans_map(loan_sid, report_date, abs_dimension_id, pokaz_id);
+                    }
+                    catch (Exception oe)
+                    {
+                        DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_LoansListForm.pro_insert_loans_map)");
+                    }
+                }
+                else if (State == ServiceLayer.Service.Editor.EditorState.Edit)
+                {
+                    try
+                    {
+                        db.pro_update_loans_map(loan_sid, report_date, abs_dimension_id, pokaz_id);
+                    }
+                    catch (Exception oe)
+                    {
+                        DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_LoansListForm.pro_update_loans_map)");
+                    }
+                }
+                DialogResult = DialogResult.OK;
+                Close();
+                Cursor = Cursors.Default;
+            }
+        }
+        
         private void cbGuides_Click(object sender, EventArgs e)
         {
             var frm = new ExtraPokazPopupForm();
+            if (State == ServiceLayer.Service.Editor.EditorState.Edit) frm.id = pokaz_id;
+            frm.report_date = report_date;            
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 te_abs_dimension_id.Text = Convert.ToString(frm.abs_dimension_id);

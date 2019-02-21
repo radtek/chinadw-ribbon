@@ -1068,12 +1068,6 @@
     <Compile Include="New\Guide\LoansListForm.Designer.cs">
       <DependentUpon>LoansListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="New\Guide\LoansPopupForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="New\Guide\LoansPopupForm.Designer.cs">
-      <DependentUpon>LoansPopupForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="ServiceLayer\Reporting\Excel\Rep12InfFactsBond.cs" />
     <Compile Include="ServiceLayer\Reporting\Excel\Rep20FromXML.cs" />
     <Compile Include="ServiceLayer\Reporting\Excel\Rep75FromXML.cs" />
@@ -1471,9 +1465,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="New\Guide\LoansListForm.resx">
       <DependentUpon>LoansListForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="New\Guide\LoansPopupForm.resx">
-      <DependentUpon>LoansPopupForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Translate\ChooseLangForm.resx">

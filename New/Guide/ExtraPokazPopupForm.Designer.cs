@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExtraPokazPopupForm));
             this.dsMain = new System.Data.DataSet();
             this.dataTablePopup = new System.Data.DataTable();
             this.dataColumn1 = new System.Data.DataColumn();
@@ -48,14 +49,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataTablePopup)).BeginInit();
             this.SuspendLayout();
             // 
+            // btnOk
+            // 
+            this.btnOk.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOk.ImageOptions.Image")));
+            this.btnOk.Location = new System.Drawing.Point(246, 6);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
+            this.btnCancel.Location = new System.Drawing.Point(336, 6);
+            // 
             // panelControl2
             // 
-            this.panelControl2.Location = new System.Drawing.Point(311, 0);
+            this.panelControl2.Location = new System.Drawing.Point(0, 309);
+            this.panelControl2.Size = new System.Drawing.Size(432, 40);
             // 
             // panelControl1
             // 
-            this.panelControl1.Location = new System.Drawing.Point(0, 308);
-            this.panelControl1.Size = new System.Drawing.Size(511, 41);
+            this.panelControl1.Size = new System.Drawing.Size(432, 349);
             // 
             // treeMain
             // 
@@ -63,16 +74,20 @@
             this.колNAME,
             this.колCODE,
             this.колLEVEL});
+            this.treeMain.Cursor = System.Windows.Forms.Cursors.Default;
             this.treeMain.DataMember = "TablePopup";
             this.treeMain.KeyFieldName = "";
             this.treeMain.OptionsBehavior.Editable = false;
-            this.treeMain.OptionsFind.AllowFindPanel = true;
+            this.treeMain.OptionsFind.AlwaysVisible = true;
+            this.treeMain.OptionsFind.FindDelay = 100;
+            this.treeMain.OptionsFind.FindMode = DevExpress.XtraTreeList.FindMode.Always;
+            this.treeMain.OptionsFind.ShowFindButton = false;
             this.treeMain.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.treeMain.ParentFieldName = "";
-            this.treeMain.Size = new System.Drawing.Size(511, 308);
+            this.treeMain.Size = new System.Drawing.Size(432, 309);
             this.treeMain.TreeLevelWidth = 12;
             this.treeMain.GetNodeDisplayValue += new DevExpress.XtraTreeList.GetNodeDisplayValueEventHandler(this.treeMain_GetNodeDisplayValue);
-            this.treeMain.AfterFocusNode += new DevExpress.XtraTreeList.NodeEventHandler(this.treeMain_AfterFocusNode);            
+            this.treeMain.AfterFocusNode += new DevExpress.XtraTreeList.NodeEventHandler(this.treeMain_AfterFocusNode);
             // 
             // dsMain
             // 
@@ -120,7 +135,7 @@
             this.колNAME.Name = "колNAME";
             this.колNAME.Visible = true;
             this.колNAME.VisibleIndex = 0;
-            this.колNAME.Width = 165;
+            this.колNAME.Width = 274;
             // 
             // колCODE
             // 
@@ -129,7 +144,7 @@
             this.колCODE.Name = "колCODE";
             this.колCODE.Visible = true;
             this.колCODE.VisibleIndex = 1;
-            this.колCODE.Width = 165;
+            this.колCODE.Width = 220;
             // 
             // колLEVEL
             // 
@@ -141,7 +156,7 @@
             // ExtraPokazPopupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(511, 349);
+            this.ClientSize = new System.Drawing.Size(432, 349);
             this.Name = "ExtraPokazPopupForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Абстракный справочник";

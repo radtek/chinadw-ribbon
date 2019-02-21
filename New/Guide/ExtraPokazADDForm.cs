@@ -49,6 +49,8 @@ namespace ARM_User.New.Guide
         private void btGuides_Click(object sender, EventArgs e)
         {
             var frm = new ExtraPokazPopupForm();
+            frm.report_date = report_date_;
+            if (State == ServiceLayer.Service.Editor.EditorState.Edit) frm.id = pokaz_id_;
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 tbABSDimId.Text = Convert.ToString(frm.abs_dimension_id);

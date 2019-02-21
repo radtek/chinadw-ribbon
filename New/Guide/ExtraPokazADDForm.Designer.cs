@@ -316,6 +316,7 @@
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(452, 194);
             this.layoutControlGroup2.TextVisible = false;
+            this.layoutControlGroup2.DoubleClick += new System.EventHandler(this.btGuides_Click);
             // 
             // layoutControlItem4
             // 
@@ -379,7 +380,6 @@
             // 
             // btGuides
             // 
-            this.btGuides.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("checkButton1.ImageOptions.Image")));
             this.btGuides.Location = new System.Drawing.Point(361, 354);
             this.btGuides.Name = "btGuides";
             this.btGuides.Size = new System.Drawing.Size(111, 23);

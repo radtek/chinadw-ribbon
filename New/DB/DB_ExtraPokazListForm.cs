@@ -85,7 +85,7 @@ namespace ARM_User.New.DB
                 cmd.Dispose();
             }
         }
-        public void getPopupRead(ref DataSet ds)
+        public void getPopupRead(ref DataSet ds, DateTime date_, Int32 id_=0)
         {
             if (ds.Tables.Contains("TablePopup")) ds.Tables["TablePopup"].Clear();
 
@@ -94,8 +94,10 @@ namespace ARM_User.New.DB
             {
                 cmd.BindByName = true;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "PREPARED.g_read_g_extra_pokaz_popup"; //gzet_manual_obl --> get_adm_users                
-                cmd.Parameters.Add("cur", OracleDbType.RefCursor, ParameterDirection.Output);                
+                cmd.CommandText = "PREPARED.g_read_g_extra_pokaz_popup";
+                cmd.Parameters.Add("cur", OracleDbType.RefCursor, ParameterDirection.Output);
+                cmd.Parameters.Add("id_", OracleDbType.Int32, id_, ParameterDirection.Input);
+                cmd.Parameters.Add("date_", OracleDbType.Date, date_.Date, ParameterDirection.Input);
                 cmd.Parameters.Add("err_code", OracleDbType.Int16, ParameterDirection.Output);
                 cmd.Parameters.Add("err_msg", OracleDbType.Clob, ParameterDirection.Output);
 

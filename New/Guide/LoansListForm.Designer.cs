@@ -460,31 +460,31 @@
             // 
             // dc_LOAN_SID
             // 
-            this.dc_LOAN_SID.ColumnName = "LOAN_SID";
+            this.dc_LOAN_SID.ColumnName = "loan_sid";
             this.dc_LOAN_SID.DataType = typeof(int);
             // 
             // dc_REPORT_DATE
             // 
-            this.dc_REPORT_DATE.ColumnName = "REPORT_DATE";
+            this.dc_REPORT_DATE.ColumnName = "report_date";
             this.dc_REPORT_DATE.DataType = typeof(System.DateTime);
             // 
             // dc_ABS_DIMENSION_ID
             // 
-            this.dc_ABS_DIMENSION_ID.ColumnName = "ABS_DIMENSION_ID";
+            this.dc_ABS_DIMENSION_ID.ColumnName = "abs_dimension_id";
             this.dc_ABS_DIMENSION_ID.DataType = typeof(int);
             // 
             // dc_POKAZ_ID
             // 
-            this.dc_POKAZ_ID.ColumnName = "POKAZ_ID";
+            this.dc_POKAZ_ID.ColumnName = "pokaz_id";
             this.dc_POKAZ_ID.DataType = typeof(int);
             // 
             // dc_NAME_POKAZ
             // 
-            this.dc_NAME_POKAZ.ColumnName = "NAME_POKAZ";
+            this.dc_NAME_POKAZ.ColumnName = "name_pokaz";
             // 
             // dc_CODE_POKAZ
             // 
-            this.dc_CODE_POKAZ.ColumnName = "CODE_POKAZ";
+            this.dc_CODE_POKAZ.ColumnName = "code_pokaz";
             // 
             // dc_dim_name
             // 
@@ -496,7 +496,7 @@
             // 
             // dc_T_SYSDATE
             // 
-            this.dc_T_SYSDATE.ColumnName = "T_SYSDATE";
+            this.dc_T_SYSDATE.ColumnName = "t_sysdate";
             this.dc_T_SYSDATE.DataType = typeof(System.DateTime);
             // 
             // bandedGridView1
@@ -1078,7 +1078,7 @@
             // 
             // colLOAN_SID
             // 
-            this.colLOAN_SID.FieldName = "LOAN_SID";
+            this.colLOAN_SID.FieldName = "loan_sid";
             this.colLOAN_SID.Name = "colLOAN_SID";
             this.colLOAN_SID.Visible = true;
             this.colLOAN_SID.Width = 77;
@@ -1086,7 +1086,7 @@
             // col_REPORT_DATE
             // 
             this.col_REPORT_DATE.Caption = "REPORT_DATE";
-            this.col_REPORT_DATE.FieldName = "REPORT_DATE";
+            this.col_REPORT_DATE.FieldName = "report_date";
             this.col_REPORT_DATE.Name = "col_REPORT_DATE";
             this.col_REPORT_DATE.Visible = true;
             this.col_REPORT_DATE.Width = 77;
@@ -1094,7 +1094,7 @@
             // colABS_DIMENSION_ID
             // 
             this.colABS_DIMENSION_ID.Caption = "ABS_DIMENSION_ID";
-            this.colABS_DIMENSION_ID.FieldName = "ABS_DIMENSION_ID";
+            this.colABS_DIMENSION_ID.FieldName = "abs_dimension_id";
             this.colABS_DIMENSION_ID.Name = "colABS_DIMENSION_ID";
             this.colABS_DIMENSION_ID.Visible = true;
             this.colABS_DIMENSION_ID.Width = 77;
@@ -1102,7 +1102,7 @@
             // colPOKAZ_ID
             // 
             this.colPOKAZ_ID.Caption = "POKAZ_ID";
-            this.colPOKAZ_ID.FieldName = "POKAZ_ID";
+            this.colPOKAZ_ID.FieldName = "pokaz_id";
             this.colPOKAZ_ID.Name = "colPOKAZ_ID";
             this.colPOKAZ_ID.Visible = true;
             this.colPOKAZ_ID.Width = 77;
@@ -1110,7 +1110,7 @@
             // colNAME_POKAZ
             // 
             this.colNAME_POKAZ.Caption = "NAME_POKAZ";
-            this.colNAME_POKAZ.FieldName = "NAME_POKAZ";
+            this.colNAME_POKAZ.FieldName = "name_pokaz";
             this.colNAME_POKAZ.Name = "colNAME_POKAZ";
             this.colNAME_POKAZ.Visible = true;
             this.colNAME_POKAZ.Width = 85;
@@ -1118,7 +1118,7 @@
             // colCODE_POKAZ
             // 
             this.colCODE_POKAZ.Caption = "CODE_POKAZ";
-            this.colCODE_POKAZ.FieldName = "CODE_POKAZ";
+            this.colCODE_POKAZ.FieldName = "code_pokaz";
             this.colCODE_POKAZ.Name = "colCODE_POKAZ";
             this.colCODE_POKAZ.Visible = true;
             // 
@@ -1140,7 +1140,7 @@
             // col_T_SYSDATE
             // 
             this.col_T_SYSDATE.Caption = "T_SYSDATE";
-            this.col_T_SYSDATE.FieldName = "T_SYSDATE";
+            this.col_T_SYSDATE.FieldName = "t_sysdate";
             this.col_T_SYSDATE.Name = "col_T_SYSDATE";
             this.col_T_SYSDATE.Visible = true;
             this.col_T_SYSDATE.Width = 77;
@@ -1197,6 +1197,7 @@
             this.tsbPokazEdit.Name = "tsbPokazEdit";
             this.tsbPokazEdit.Size = new System.Drawing.Size(23, 22);
             this.tsbPokazEdit.Text = "Редактировать";
+            this.tsbPokazEdit.Click += new System.EventHandler(this.tsbPokazEdit_Click);
             // 
             // tsbPokazDelete
             // 
@@ -1206,6 +1207,7 @@
             this.tsbPokazDelete.Name = "tsbPokazDelete";
             this.tsbPokazDelete.Size = new System.Drawing.Size(23, 22);
             this.tsbPokazDelete.Text = "Удалить";
+            this.tsbPokazDelete.Click += new System.EventHandler(this.tsbPokazDelete_Click);
             // 
             // bCount
             // 

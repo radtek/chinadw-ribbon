@@ -290,7 +290,6 @@ namespace ARM_User.New.Guide
                 refreshListExtraPokaz();
                 Cursor = Cursors.Default;
             }
-
         }
 
         private void tsbPokazAdd_Click(object sender, EventArgs e)
@@ -298,6 +297,10 @@ namespace ARM_User.New.Guide
             var frm = new LoansAddPokazForm();
             frm.Text = "Добавить дополнительный показатель";
 
+            String s = beData.EditValue.ToString();
+            DateTime FilterDateTime = Convert.ToDateTime(s);
+
+            frm.report_date = Convert.ToDateTime(FilterDateTime.Date);
             frm.State = ServiceLayer.Service.Editor.EditorState.Insert;
             frm.loan_sid = getCurrentID("tsCredits", "loan_sid");
             frm.contract_no = getCurrentName("tsCredits", "contract_no");
@@ -312,20 +315,81 @@ namespace ARM_User.New.Guide
             var frm = new LoansAddPokazForm();
             frm.Text = "Просмотр дополнительного показателя";
 
-            frm.State = ServiceLayer.Service.Editor.EditorState.Insert;
+            frm.State = ServiceLayer.Service.Editor.EditorState.View;
             frm.loan_sid = getCurrentID("tsCredits", "loan_sid");
             frm.contract_no = getCurrentName("tsCredits", "contract_no");
             frm.ref_no = getCurrentName("tsCredits", "ref_no");
 
+            String s = beData.EditValue.ToString();
+            DateTime FilterDateTime = Convert.ToDateTime(s);
+
+            frm.report_date = Convert.ToDateTime(FilterDateTime.Date);
             frm.dim_name = getCurrentName("tsPokaz", "dim_name");
             frm.dim_part = getCurrentName("tsPokaz", "dim_part");
             frm.abs_dimension_id = getCurrentID("tsPokaz", "abs_dimension_id");
             frm.pokaz_id = getCurrentID("tsPokaz", "pokaz_id");
-            frm.code = getCurrentName("tsPokaz", "code");
-            frm.name = getCurrentName("tsPokaz","name");
+            frm.code = getCurrentName("tsPokaz", "code_pokaz");
+            frm.name = getCurrentName("tsPokaz", "name_pokaz");
 
             frm.ShowDialog();
             refreshListPokaz();
+        }
+
+        private void tsbPokazEdit_Click(object sender, EventArgs e)
+        {
+            var frm = new LoansAddPokazForm();
+            frm.Text = "Изменить дополнительный показатель";
+
+            frm.State = ServiceLayer.Service.Editor.EditorState.Edit;
+            frm.loan_sid = getCurrentID("tsCredits", "loan_sid");
+            frm.contract_no = getCurrentName("tsCredits", "contract_no");
+            frm.ref_no = getCurrentName("tsCredits", "ref_no");
+
+            String s = beData.EditValue.ToString();
+            DateTime FilterDateTime = Convert.ToDateTime(s);
+
+            frm.report_date = Convert.ToDateTime(FilterDateTime.Date);
+            frm.dim_name = getCurrentName("tsPokaz", "dim_name");
+            frm.dim_part = getCurrentName("tsPokaz", "dim_part");
+            frm.abs_dimension_id = getCurrentID("tsPokaz", "abs_dimension_id");
+            frm.pokaz_id = getCurrentID("tsPokaz", "pokaz_id");
+            frm.code = getCurrentName("tsPokaz", "code_pokaz");
+            frm.name = getCurrentName("tsPokaz", "name_pokaz");
+
+            frm.ShowDialog();
+            refreshListPokaz();
+        }
+
+        private void tsbPokazDelete_Click(object sender, EventArgs e)
+        {
+            Int32 loan_sid_ = getCurrentID("tsCredits", "loan_sid");
+
+            String s = beData.EditValue.ToString();
+            DateTime FilterDateTime = Convert.ToDateTime(s);
+
+            DateTime report_date_ = Convert.ToDateTime(FilterDateTime.Date);
+            Int32 abs_dimension_id = getCurrentID("tsPokaz", "abs_dimension_id");
+            Int32 pokaz_id = getCurrentID("tsPokaz", "pokaz_id");
+
+            // Вы хотите удалить?
+            if (
+              XtraMessageBox.Show(
+                LangTranslate.UiGetText("Вы действительно хотите удалить запись?"),
+                LangTranslate.UiGetText("Внимание"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                Cursor = Cursors.WaitCursor;
+                try
+                {
+                    db.pro_delete_loans_map(loan_sid_, report_date_, abs_dimension_id, pokaz_id);
+                }
+                catch (Exception oe)
+                {
+                    DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_LoansListForm.pro_delete_loans_map)");
+                }
+
+                refreshListPokaz();
+                Cursor = Cursors.Default;
+            }
         }
     }
 }

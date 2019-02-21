@@ -279,6 +279,7 @@ namespace ARM_User.New.Guide
             this.dataLayoutControl2.Size = new System.Drawing.Size(384, 228);
             this.dataLayoutControl2.TabIndex = 0;
             this.dataLayoutControl2.Text = "dataLayoutControl2";
+            this.dataLayoutControl2.DoubleClick += new System.EventHandler(this.cbGuides_Click);
             // 
             // cbGuides
             // 
@@ -289,7 +290,6 @@ namespace ARM_User.New.Guide
             this.cbGuides.StyleController = this.dataLayoutControl2;
             this.cbGuides.TabIndex = 10;
             this.cbGuides.Text = "Справочники";
-            this.cbGuides.CheckedChanged += new System.EventHandler(this.cbGuides_Click);
             this.cbGuides.Click += new System.EventHandler(this.cbGuides_Click);
             // 
             // te_name

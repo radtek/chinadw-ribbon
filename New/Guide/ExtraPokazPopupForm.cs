@@ -28,6 +28,7 @@ namespace ARM_User.New.Guide
             public String dim_part;
             public String note;
             public Int32 level_no;
+            public Int32 id=-1;
 
         #endregion
         public ExtraPokazPopupForm()
@@ -39,7 +40,7 @@ namespace ARM_User.New.Guide
         private void ExtraPokazPopupForm_Load(object sender, EventArgs e)
         {
             db = new DB_ExtraPokazListForm(dmControler.frmMain.oracleConnection);            
-            db.getPopupRead(ref dsMain);
+            db.getPopupRead(ref dsMain, report_date, id);
             treeMain.DataSource = dsMain;
             treeMain.DataMember = "TablePopup";
             treeMain.KeyFieldName = "POKAZ_ID";

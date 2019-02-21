@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExtraPokazListForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.gcCustomers = new DevExpress.XtraGrid.GridControl();
             this.dsMain = new System.Data.DataSet();
@@ -79,7 +79,7 @@
             this.barEditItemDate = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.barButtonRefresh = new DevExpress.XtraBars.BarButtonItem();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
@@ -104,7 +104,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvRatings)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
@@ -112,22 +112,22 @@
             // 
             // barDockControlBottom
             // 
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 511);
-            this.barDockControlBottom.Size = new System.Drawing.Size(819, 0);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 505);
+            this.barDockControlBottom.Size = new System.Drawing.Size(813, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 487);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 481);
             // 
             // barDockControlRight
             // 
-            this.barDockControlRight.Location = new System.Drawing.Point(819, 24);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 487);
+            this.barDockControlRight.Location = new System.Drawing.Point(813, 24);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 481);
             // 
             // barDockControlTop
             // 
-            this.barDockControlTop.Size = new System.Drawing.Size(819, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(813, 24);
             // 
             // barManager
             // 
@@ -153,6 +153,11 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemFilter),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemSearch)});
             // 
+            // iEnableAutoSize
+            // 
+            this.iEnableAutoSize.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("iEnableAutoSize.ImageOptions.Image")));
+            this.iEnableAutoSize.ImageOptions.ImageIndex = 0;
+            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -169,8 +174,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.gcRatings);
             this.splitContainer1.Panel2.Controls.Add(this.toolStrip1);
-            this.splitContainer1.Size = new System.Drawing.Size(819, 487);
-            this.splitContainer1.SplitterDistance = 242;
+            this.splitContainer1.Size = new System.Drawing.Size(813, 481);
+            this.splitContainer1.SplitterDistance = 238;
             this.splitContainer1.TabIndex = 4;
             // 
             // gcCustomers
@@ -182,7 +187,7 @@
             this.gcCustomers.MainView = this.gvCustomers;
             this.gcCustomers.MenuManager = this.barManager;
             this.gcCustomers.Name = "gcCustomers";
-            this.gcCustomers.Size = new System.Drawing.Size(819, 242);
+            this.gcCustomers.Size = new System.Drawing.Size(813, 238);
             this.gcCustomers.TabIndex = 2;
             this.gcCustomers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCustomers});
@@ -392,7 +397,7 @@
             this.gcRatings.MainView = this.gvRatings;
             this.gcRatings.MenuManager = this.barManager;
             this.gcRatings.Name = "gcRatings";
-            this.gcRatings.Size = new System.Drawing.Size(819, 216);
+            this.gcRatings.Size = new System.Drawing.Size(813, 214);
             this.gcRatings.TabIndex = 2;
             this.gcRatings.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvRatings});
@@ -489,7 +494,7 @@
             this.tsbDelete});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(819, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(813, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -548,9 +553,9 @@
             this.barEditItemDate.Caption = "Дата";
             this.barEditItemDate.Edit = this.repositoryItemDateEdit1;
             this.barEditItemDate.EditValue = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
+            this.barEditItemDate.EditWidth = 93;
             this.barEditItemDate.Id = 1;
             this.barEditItemDate.Name = "barEditItemDate";
-            this.barEditItemDate.Width = 93;
             this.barEditItemDate.EditValueChanged += new System.EventHandler(this.barEditItemDate_EditValueChanged);
             // 
             // repositoryItemDateEdit1
@@ -558,16 +563,16 @@
             this.repositoryItemDateEdit1.AutoHeight = false;
             this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
-            this.repositoryItemDateEdit1.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
             // 
             // barButtonRefresh
             // 
             this.barButtonRefresh.Caption = "Обновить";
-            this.barButtonRefresh.Glyph = global::ARM_User.Properties.Resources.refresh;
             this.barButtonRefresh.Id = 2;
-            this.barButtonRefresh.LargeGlyph = global::ARM_User.Properties.Resources.refresh;
+            this.barButtonRefresh.ImageOptions.Image = global::ARM_User.Properties.Resources.refresh;
+            this.barButtonRefresh.ImageOptions.LargeImage = global::ARM_User.Properties.Resources.refresh;
             this.barButtonRefresh.Name = "barButtonRefresh";
             this.barButtonRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonRefresh_ItemClick);
             // 
@@ -578,49 +583,52 @@
             this.barManager1.DockControls.Add(this.barDockControl3);
             this.barManager1.DockControls.Add(this.barDockControl4);
             this.barManager1.Form = this;
-            this.barManager1.MaxItemId = 0;
             // 
             // barDockControl1
             // 
             this.barDockControl1.CausesValidation = false;
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl1.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl1.Size = new System.Drawing.Size(819, 0);
+            this.barDockControl1.Manager = this.barManager1;
+            this.barDockControl1.Size = new System.Drawing.Size(813, 0);
             // 
             // barDockControl2
             // 
             this.barDockControl2.CausesValidation = false;
             this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl2.Location = new System.Drawing.Point(0, 511);
-            this.barDockControl2.Size = new System.Drawing.Size(819, 0);
+            this.barDockControl2.Location = new System.Drawing.Point(0, 505);
+            this.barDockControl2.Manager = this.barManager1;
+            this.barDockControl2.Size = new System.Drawing.Size(813, 0);
             // 
             // barDockControl3
             // 
             this.barDockControl3.CausesValidation = false;
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl3.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl3.Size = new System.Drawing.Size(0, 511);
+            this.barDockControl3.Manager = this.barManager1;
+            this.barDockControl3.Size = new System.Drawing.Size(0, 505);
             // 
             // barDockControl4
             // 
             this.barDockControl4.CausesValidation = false;
             this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl4.Location = new System.Drawing.Point(819, 0);
-            this.barDockControl4.Size = new System.Drawing.Size(0, 511);
+            this.barDockControl4.Location = new System.Drawing.Point(813, 0);
+            this.barDockControl4.Manager = this.barManager1;
+            this.barDockControl4.Size = new System.Drawing.Size(0, 505);
             // 
             // barButtonItemFilter
             // 
             this.barButtonItemFilter.Caption = "Фильтр";
-            this.barButtonItemFilter.Glyph = global::ARM_User.Properties.Resources.filter;
             this.barButtonItemFilter.Id = 3;
+            this.barButtonItemFilter.ImageOptions.Image = global::ARM_User.Properties.Resources.filter;
             this.barButtonItemFilter.Name = "barButtonItemFilter";
             this.barButtonItemFilter.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemFilter_ItemClick);
             // 
             // barButtonItemSearch
             // 
             this.barButtonItemSearch.Caption = "Поиск";
-            this.barButtonItemSearch.Glyph = global::ARM_User.Properties.Resources.view;
             this.barButtonItemSearch.Id = 4;
+            this.barButtonItemSearch.ImageOptions.Image = global::ARM_User.Properties.Resources.view;
             this.barButtonItemSearch.Name = "barButtonItemSearch";
             this.barButtonItemSearch.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemSearch_ItemClick);
             // 
@@ -628,10 +636,10 @@
             // 
             this.beCount.Caption = "Количество";
             this.beCount.Edit = this.repositoryItemTextEdit1;
+            this.beCount.EditWidth = 40;
             this.beCount.Enabled = false;
             this.beCount.Id = 5;
             this.beCount.Name = "beCount";
-            this.beCount.Width = 40;
             // 
             // repositoryItemTextEdit1
             // 
@@ -653,7 +661,7 @@
             // 
             // ExtraPokazListForm
             // 
-            this.ClientSize = new System.Drawing.Size(819, 511);
+            this.ClientSize = new System.Drawing.Size(813, 505);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.barDockControl3);
             this.Controls.Add(this.barDockControl4);
@@ -688,12 +696,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvRatings)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

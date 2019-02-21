@@ -29,6 +29,7 @@ using System.Diagnostics;
 using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
 using BSB.Common.DataGateway.Oracle;
 using Oracle.DataAccess.Types;
+using ARM_User.New.Guide;
 
 namespace ARM_User
 {
@@ -55,6 +56,8 @@ namespace ARM_User
         private MyAction myAction1;
         private MyAction myAction2;
         private MyAction aExtraPokaz;
+        private MyAction aClients;
+        private MyAction aCredits;
         public decimal iscancelpassword = 0;
 
     /// <summary>
@@ -264,7 +267,9 @@ namespace ARM_User
             this.myAction1 = new BSB.Actions.MyAction(this.components);
             this.myAction2 = new BSB.Actions.MyAction(this.components);
             this.aExtraPokaz = new BSB.Actions.MyAction(this.components);
+            this.aClients = new BSB.Actions.MyAction(this.components);
             this.tmCheckGovSec = new System.Timers.Timer();
+            this.aCredits = new BSB.Actions.MyAction(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.MainBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainDockManager)).BeginInit();
             this.hideContainerLeft.SuspendLayout();
@@ -1302,7 +1307,9 @@ namespace ARM_User
             this.aProtocolIsin,
             this.myAction1,
             this.myAction2,
-            this.aExtraPokaz});
+            this.aExtraPokaz,
+            this.aClients,
+            this.aCredits});
             // 
             // aConnect
             // 
@@ -2303,11 +2310,29 @@ namespace ARM_User
             this.aExtraPokaz.MakeDisabledOnExec = true;
             this.aExtraPokaz.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aExtraPokaz_Execute);
             // 
+            // aClients
+            // 
+            this.aClients.Caption = "Дополнительные признаки";
+            this.aClients.Category = null;
+            this.aClients.Code = "aClients";
+            this.aClients.Enabled = true;
+            this.aClients.MakeDisabledOnExec = true;
+            this.aClients.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aClients_Execute);
+            // 
             // tmCheckGovSec
             // 
             this.tmCheckGovSec.Enabled = true;
             this.tmCheckGovSec.Interval = 5000D;
             this.tmCheckGovSec.SynchronizingObject = this;
+            // 
+            // aCredits
+            // 
+            this.aCredits.Caption = "";
+            this.aCredits.Category = null;
+            this.aCredits.Code = "aCredits";
+            this.aCredits.Enabled = true;
+            this.aCredits.MakeDisabledOnExec = true;
+            this.aCredits.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aCredits_Execute);
             // 
             // MainForm
             // 
@@ -2640,10 +2665,24 @@ namespace ARM_User
     }
     private void aExtraPokaz_Execute(object sender, TActionEventArgs ae)
     {
-            var frm = new ExtraPokazListForm();
-            frm.pAction = (MyAction)sender;
-            frm.MdiParent = this;
-            frm.Show();
+        var frm = new ExtraPokazListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aClients_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new ExtraPokazListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aCredits_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new LoansListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
     }
     #endregion
 
@@ -3007,7 +3046,7 @@ namespace ARM_User
         }
 
         // Корректируем объектные привилегии текущего должн. лица
-        // Beles DBSupport.CorrectCurrOfficGrants(dmControler.frmMain.oracleConnection);
+        // Beles  DBSupport.CorrectCurrOfficGrants(dmControler.frmMain.oracleConnection);
       }
       finally
       {

@@ -9,9 +9,9 @@ using DevExpress.XtraEditors;
 
 namespace ARM_User.DisplayLayer.Base
 {
-  public partial class ChoiceTreeBaseForm : XtraForm
-  {
-    protected DomainObject firstSelectedObject;
+    public partial class ChoiceTreeBaseForm : DevExpress.XtraEditors.XtraForm
+    {
+        protected DomainObject firstSelectedObject;
     protected DomainObject getObj;
     /* protected DomainObjects[] SelectedObjects;*/
 

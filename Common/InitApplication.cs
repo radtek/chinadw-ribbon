@@ -15,12 +15,12 @@ namespace BSB.Common
   /// </summary>
   public class InitApplication
   {
-      public const string ProductName = "Государственный реестр эмиссионных ценных бумаг: АРМ \"Пользователь\"";
-      public const string AppName = "Государственный реестр эмиссионных ценных бумаг: АРМ \"Пользователь\"";
-      public const string AppTitle = "Государственный реестр эмиссионных ценных бумаг: АРМ \"Пользователь\"";
+      public const string ProductName = "АИП ХД CHINA: АРМ \"Пользователь\"";
+      public const string AppName = "АИП ХД CHINA: АРМ \"Пользователь\"";
+      public const string AppTitle = "АИП ХД CHINA: АРМ \"Пользователь\"";
     public const string BSB_APP_GUID = "0901197F-D627-4104-B25D-2E4750A30D52";
     public const int AppId = 2/*1004*/;
-    public const string RegAppKey = "Software\\BSB\\Gercb\\ARM_User";
+    public const string RegAppKey = "Software\\BSB\\HDCHINA\\ARM_User";
     public static DataView dvLocaleResource;
     public static RegistryKey RegSetupRoot = Registry.CurrentUser;
     public static CultureInfo AppCulture = new CultureInfo("ru-RU");

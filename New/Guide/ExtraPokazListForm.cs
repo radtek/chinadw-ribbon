@@ -75,7 +75,7 @@ namespace ARM_User.DisplayLayer.Guides
             }
             else
             {
-                if (dsMain.Tables.Contains("TableList2")) dsMain.Tables["TableList2"].Clear();                
+                if (dsMain.Tables.Contains("TableList2")) dsMain.Tables["TableList2"].Clear();
             }
             Cursor = Cursors.Default;
         }
@@ -181,7 +181,7 @@ namespace ARM_User.DisplayLayer.Guides
         private void tsbInsert_Click(object sender, EventArgs e)
         {   
             var frm = new ExtraPokazADDForm();
-            frm.Text = "Втавить показатель";
+            frm.Text = "Вставить показатель";
             frm.State = ServiceLayer.Service.Editor.EditorState.Insert;
             // from clients
             frm.customer_sid_ = getCurrentID("TableList1", "CUSTOMER_SID");

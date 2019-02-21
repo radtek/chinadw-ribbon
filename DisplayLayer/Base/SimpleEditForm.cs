@@ -98,7 +98,7 @@ namespace ARM_User.DisplayLayer.Base
       }
     }
 
-    protected virtual bool Validate() { return true; }
+    protected new virtual bool Validate() { return true; }
 
 
     public void btnCancel_Click(object sender, EventArgs e)

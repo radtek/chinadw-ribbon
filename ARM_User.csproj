@@ -7,7 +7,7 @@
     <ProjectGuid>{C908E08A-E3AC-4D4F-84C8-E07314283617}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ApplicationIcon>Resources\cubes.ico</ApplicationIcon>
+    <ApplicationIcon>icon1_L4i_icon.ico</ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
     <AssemblyName>ARM_User</AssemblyName>
@@ -174,6 +174,7 @@
     <Reference Include="DevExpress.DataAccess.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v18.2.UI, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DemoReports.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Diagram.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DXCore.Controls.Data.v6.3, Version=12.2.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d" />
     <Reference Include="DevExpress.DXCore.Controls.Printing.v6.3.Core, Version=12.2.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d" />
     <Reference Include="DevExpress.DXCore.Controls.Utils.v6.3, Version=12.2.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d" />
@@ -236,6 +237,7 @@
     <Reference Include="DevExpress.XtraCharts.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.XtraDiagram.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -275,6 +277,8 @@
     <Reference Include="DevExpress.XtraRichEdit.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
@@ -610,14 +614,39 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SharerDS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="New\DB\DB_ExtraPokazListForm.cs" />
-    <Compile Include="New\DB\DB_LoansListForm.cs" />
-    <Compile Include="New\DB\DIM_ExtraPokaz.cs" />
-    <Compile Include="New\Guide\ExtraPokazADDForm.cs">
+    <Compile Include="DisplayLayer\Guides\Base\ChinaGuideBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="New\Guide\ExtraPokazADDForm.Designer.cs">
-      <DependentUpon>ExtraPokazADDForm.cs</DependentUpon>
+    <Compile Include="DisplayLayer\Guides\Base\ChinaGuideBaseForm.Designer.cs">
+      <DependentUpon>ChinaGuideBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayLayer\Guides\Base\ChinaSimpleEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisplayLayer\Guides\Base\ChinaSimpleEditForm.Designer.cs">
+      <DependentUpon>ChinaSimpleEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayLayer\Guides\Base\ChinaTwoPanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisplayLayer\Guides\Base\ChinaTwoPanelForm.Designer.cs">
+      <DependentUpon>ChinaTwoPanelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\DB\DB_ExtraPokazListForm.cs" />
+    <Compile Include="New\DB\DB_LoansListForm.cs" />
+    <Compile Include="New\DB\DB_Reports.cs" />
+    <Compile Include="New\DB\DIM_ExtraPokaz.cs" />
+    <Compile Include="New\Guide\ReportsListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\Guide\ReportsListForm.Designer.cs">
+      <DependentUpon>ReportsListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\Guide\ExtraPokazADDForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\Guide\ExtraPokazADDForm2.Designer.cs">
+      <DependentUpon>ExtraPokazADDForm2.cs</DependentUpon>
     </Compile>
     <Compile Include="New\Guide\ExtraPokazListForm.cs">
       <SubType>Form</SubType>
@@ -1044,6 +1073,12 @@
     <Compile Include="New\Guide\ExtraPokazPopupForm.Designer.cs">
       <DependentUpon>ExtraPokazPopupForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="New\Guide\ExtraPokazADDForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\Guide\ExtraPokazADDForm.Designer.cs">
+      <DependentUpon>ExtraPokazADDForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="New\Guide\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1291,6 +1326,15 @@
     <EmbeddedResource Include="DisplayLayer\Base\DBListTreeBaseForm.resx">
       <DependentUpon>DBListTreeBaseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DisplayLayer\Guides\Base\ChinaGuideBaseForm.resx">
+      <DependentUpon>ChinaGuideBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisplayLayer\Guides\Base\ChinaSimpleEditForm.resx">
+      <DependentUpon>ChinaSimpleEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisplayLayer\Guides\Base\ChinaTwoPanelForm.resx">
+      <DependentUpon>ChinaTwoPanelForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DisplayLayer\Guides\Base\GuidesBaseTabForm.resx">
       <DependentUpon>GuidesBaseTabForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1348,8 +1392,11 @@
     <EmbeddedResource Include="DisplayLayer\Base\MultiPageListROBaseForm.resx">
       <DependentUpon>MultiPageListROBaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="New\Guide\ExtraPokazADDForm.resx">
-      <DependentUpon>ExtraPokazADDForm.cs</DependentUpon>
+    <EmbeddedResource Include="New\Guide\ReportsListForm.resx">
+      <DependentUpon>ReportsListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\Guide\ExtraPokazADDForm2.resx">
+      <DependentUpon>ExtraPokazADDForm2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="New\Guide\ExtraPokazListForm.resx">
       <DependentUpon>ExtraPokazListForm.cs</DependentUpon>
@@ -1454,6 +1501,9 @@
     <EmbeddedResource Include="New\Guide\ExtraPokazPopupForm.resx">
       <DependentUpon>ExtraPokazPopupForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="New\Guide\ExtraPokazADDForm.resx">
+      <DependentUpon>ExtraPokazADDForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="New\Guide\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -1485,6 +1535,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cubes.ico" />
+    <Content Include="icon1_L4i_icon.ico" />
     <Content Include="MasterDetail.ico" />
     <None Include="DataLayer\DataSet\GuidesDataSet\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -1520,6 +1571,7 @@
     <Content Include="Resources\save.PNG" />
     <Content Include="Resources\undo.gif" />
     <Content Include="Resources\word.png" />
+    <None Include="Resources\searchsettingbutton.svg" />
     <None Include="Resources\Фильтр.png" />
     <None Include="BusinessLayer\Service\User.bak" />
     <None Include="ClassDiagram1.cd" />

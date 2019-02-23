@@ -371,6 +371,16 @@ namespace ARM_User.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage searchsettingbutton {
+            get {
+                object obj = ResourceManager.GetObject("searchsettingbutton", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap stdframes_6 {

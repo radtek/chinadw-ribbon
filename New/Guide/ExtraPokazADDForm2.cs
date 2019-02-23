@@ -1,4 +1,5 @@
-﻿using ARM_User.New.DB;
+﻿using ARM_User.BusinessLayer.Common;
+using ARM_User.New.DB;
 using BSB.Common;
 using DevExpress.XtraEditors;
 using System;
@@ -11,9 +12,10 @@ using System.Windows.Forms;
 
 namespace ARM_User.New.Guide
 {
-    public partial class ExtraPokazADDForm : ARM_User.DisplayLayer.Guides.Base.ChinaSimpleEditForm
+
+    public partial class ExtraPokazADDForm2 : ARM_User.DisplayLayer.Base.SimpleEditForm
     {
-        #region [Preperties]
+#region [Preperties]
         private DB_ExtraPokazListForm db = null;
         //view parameter        
         public Int32 customer_sid_;
@@ -23,20 +25,46 @@ namespace ARM_User.New.Guide
         public Int32 abs_dimension_id_;
         public Int32 pokaz_id_;
         // Ratings
-        public String dim_name_;
-        public String part_name;
-        public String abs_name_;
-        public String abs_code_;
+        public String dim_name_ ;
+        public String part_name ;
+        public String abs_name_ ;
+        public String abs_code_ ;
         public String customer_name_;
         public String customer_no_;
         private Boolean isChanched;
-        #endregion
-        public ExtraPokazADDForm()
+#endregion
+        public ExtraPokazADDForm2()
         {
             InitializeComponent();
+            db = new DB_ExtraPokazListForm(dmControler.frmMain.oracleConnection);
+            
+            /*if (State == ServiceLayer.Service.Editor.EditorState.Edit || 
+                State == ServiceLayer.Service.Editor.EditorState.Insert)
+            {
+                if (!UnitOfWork.Instance.IsTransactionStarted)
+                    UnitOfWork.Instance.BeginTransaction();
+            }*/
         }
-        public override void OnLoad(object sender, EventArgs e)
+
+        private void btGuides_Click(object sender, EventArgs e)
         {
+            var frm = new ExtraPokazPopupForm();
+            frm.report_date = report_date_;
+            if (State == ServiceLayer.Service.Editor.EditorState.Edit) frm.id = pokaz_id_;
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                tbABSDimId.Text = Convert.ToString(frm.abs_dimension_id);
+                tbPokazId.Text = Convert.ToString(frm.pokaz_id);
+                tbName.Text = Convert.ToString(frm.name);
+                tbCode.Text = Convert.ToString(frm.code);
+                tbDimName.Text = Convert.ToString(frm.dim_name);
+                tbDimPart.Text = Convert.ToString(frm.dim_part);
+            }
+
+        }
+        private void ExtraPokazADDForm_Load(object sender, EventArgs e)
+        {
+            
             tbCustomerSid.Text = Convert.ToString(customer_sid_);
             tbCustomerName.Text = Convert.ToString(customer_name);
             tbCustomerCode.Text = Convert.ToString(customer_code);
@@ -51,35 +79,20 @@ namespace ARM_User.New.Guide
                 tbPokazId.Text = Convert.ToString(pokaz_id_);
                 tbCode.Text = Convert.ToString(abs_code_);
                 tbName.Text = abs_name_;
-                if (insert) btGuides.Enabled = false;
+                if(insert) btGuides.Enabled = false;
             }
         }
         protected override bool Validate()
         {
-            if (tbDimName.Text == "")
+            if (tbDimName.Text =="")
             {
                 XtraMessageBox.Show(
                     LangTranslate.UiGetText("Выберите показатель из справочника"),
                     LangTranslate.UiGetText("Внимание"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                btGuides.Focus();
+                btGuides.Focus();                
                 return false;
             }
             return true;
-        }
-        public override void btGuides_Click(object sender, EventArgs e)
-        {
-            var frm = new ExtraPokazPopupForm();
-            frm.report_date = report_date_;
-            if (State == ServiceLayer.Service.Editor.EditorState.Edit) frm.id = pokaz_id_;
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                tbABSDimId.Text = Convert.ToString(frm.abs_dimension_id);
-                tbPokazId.Text = Convert.ToString(frm.pokaz_id);
-                tbName.Text = Convert.ToString(frm.name);
-                tbCode.Text = Convert.ToString(frm.code);
-                tbDimName.Text = Convert.ToString(frm.dim_name);
-                tbDimPart.Text = Convert.ToString(frm.dim_part);
-            }
         }
         public override void btnSave_Click(object sender, EventArgs e)
         {
@@ -90,7 +103,6 @@ namespace ARM_User.New.Guide
                 abs_dimension_id_ = Convert.ToInt32(tbABSDimId.Text);
                 pokaz_id_ = Convert.ToInt32(tbPokazId.Text);
 
-                db = new DB_ExtraPokazListForm(dmControler.frmMain.oracleConnection);
                 if (State == ServiceLayer.Service.Editor.EditorState.Insert)
                 {
                     db.insertCostomerMap(customer_sid_, report_date_, abs_dimension_id_, pokaz_id_);

@@ -58,6 +58,7 @@ namespace ARM_User
         private MyAction aExtraPokaz;
         private MyAction aClients;
         private MyAction aCredits;
+        private MyAction aRepList;
         public decimal iscancelpassword = 0;
 
     /// <summary>
@@ -268,8 +269,9 @@ namespace ARM_User
             this.myAction2 = new BSB.Actions.MyAction(this.components);
             this.aExtraPokaz = new BSB.Actions.MyAction(this.components);
             this.aClients = new BSB.Actions.MyAction(this.components);
-            this.tmCheckGovSec = new System.Timers.Timer();
             this.aCredits = new BSB.Actions.MyAction(this.components);
+            this.tmCheckGovSec = new System.Timers.Timer();
+            this.aRepList = new BSB.Actions.MyAction(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.MainBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainDockManager)).BeginInit();
             this.hideContainerLeft.SuspendLayout();
@@ -403,7 +405,7 @@ namespace ARM_User
             this.iConnect.CategoryGuid = new System.Guid("cab7762b-f378-41ff-ae31-89aa33dc34db");
             this.iConnect.Hint = "Подключиться к базе данных";
             this.iConnect.Id = 15;
-            this.iConnect.ImageIndex = 7;
+            this.iConnect.ImageOptions.ImageIndex = 7;
             this.iConnect.Name = "iConnect";
             this.iConnect.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItemConnect_ItemClick);
             // 
@@ -414,7 +416,7 @@ namespace ARM_User
             this.iDisconnect.Enabled = false;
             this.iDisconnect.Hint = "Отключиться от базы данных";
             this.iDisconnect.Id = 16;
-            this.iDisconnect.ImageIndex = 6;
+            this.iDisconnect.ImageOptions.ImageIndex = 6;
             this.iDisconnect.Name = "iDisconnect";
             this.iDisconnect.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iDisconnect_ItemClick);
             // 
@@ -425,7 +427,7 @@ namespace ARM_User
             this.iLockApplication.Enabled = false;
             this.iLockApplication.Hint = "Заблокировать приложение";
             this.iLockApplication.Id = 35;
-            this.iLockApplication.ImageIndex = 20;
+            this.iLockApplication.ImageOptions.ImageIndex = 20;
             this.iLockApplication.Name = "iLockApplication";
             this.iLockApplication.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iLockApplication_ItemClick);
             // 
@@ -436,7 +438,7 @@ namespace ARM_User
             this.iRefresh.Enabled = false;
             this.iRefresh.Hint = "Перечитать права пользователя";
             this.iRefresh.Id = 17;
-            this.iRefresh.ImageIndex = 15;
+            this.iRefresh.ImageOptions.ImageIndex = 15;
             this.iRefresh.Name = "iRefresh";
             this.iRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iRefresh_ItemClick);
             // 
@@ -447,7 +449,7 @@ namespace ARM_User
             this.iChangePassword.Enabled = false;
             this.iChangePassword.Hint = "Изменить пароль пользователя";
             this.iChangePassword.Id = 18;
-            this.iChangePassword.ImageIndex = 10;
+            this.iChangePassword.ImageOptions.ImageIndex = 10;
             this.iChangePassword.Name = "iChangePassword";
             this.iChangePassword.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iChangePassword_ItemClick);
             // 
@@ -478,7 +480,7 @@ namespace ARM_User
             this.barButtonItemMenuPanel.Down = true;
             this.barButtonItemMenuPanel.Hint = "Скрыть\\Показать панель меню";
             this.barButtonItemMenuPanel.Id = 23;
-            this.barButtonItemMenuPanel.ImageIndex = 16;
+            this.barButtonItemMenuPanel.ImageOptions.ImageIndex = 16;
             this.barButtonItemMenuPanel.Name = "barButtonItemMenuPanel";
             this.barButtonItemMenuPanel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemMenuPanel_ItemClick);
             // 
@@ -490,7 +492,7 @@ namespace ARM_User
             this.barButtonItemMsgPanel.Down = true;
             this.barButtonItemMsgPanel.Hint = "Скрыть\\Показать панель сообщений";
             this.barButtonItemMsgPanel.Id = 52;
-            this.barButtonItemMsgPanel.ImageIndex = 26;
+            this.barButtonItemMsgPanel.ImageOptions.ImageIndex = 26;
             this.barButtonItemMsgPanel.Name = "barButtonItemMsgPanel";
             this.barButtonItemMsgPanel.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItemMsgPanel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemMsgPanel_ItemClick);
@@ -667,7 +669,7 @@ namespace ARM_User
             this.iCascade.Caption = "Каскадом";
             this.iCascade.CategoryGuid = new System.Guid("747d4ad8-974a-42d0-85a0-48a038d83763");
             this.iCascade.Id = 24;
-            this.iCascade.ImageIndex = 17;
+            this.iCascade.ImageOptions.ImageIndex = 17;
             this.iCascade.Name = "iCascade";
             this.iCascade.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iCascade_ItemClick);
             // 
@@ -676,7 +678,7 @@ namespace ARM_User
             this.iTileHorizontal.Caption = "Расположить горизонтально";
             this.iTileHorizontal.CategoryGuid = new System.Guid("747d4ad8-974a-42d0-85a0-48a038d83763");
             this.iTileHorizontal.Id = 25;
-            this.iTileHorizontal.ImageIndex = 19;
+            this.iTileHorizontal.ImageOptions.ImageIndex = 19;
             this.iTileHorizontal.Name = "iTileHorizontal";
             this.iTileHorizontal.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iTileHorizontal_ItemClick);
             // 
@@ -685,7 +687,7 @@ namespace ARM_User
             this.iTileVertical.Caption = "Расположить вертикально";
             this.iTileVertical.CategoryGuid = new System.Guid("747d4ad8-974a-42d0-85a0-48a038d83763");
             this.iTileVertical.Id = 26;
-            this.iTileVertical.ImageIndex = 18;
+            this.iTileVertical.ImageOptions.ImageIndex = 18;
             this.iTileVertical.Name = "iTileVertical";
             this.iTileVertical.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iTileVertical_ItemClick);
             // 
@@ -759,15 +761,15 @@ namespace ARM_User
             this.iAbout.Caption = "О программе...";
             this.iAbout.CategoryGuid = new System.Guid("cac15f5a-1f8e-43ad-b9d6-5225fb64e467");
             this.iAbout.Id = 20;
-            this.iAbout.ImageIndex = 14;
+            this.iAbout.ImageOptions.ImageIndex = 14;
             this.iAbout.Name = "iAbout";
             this.iAbout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iAbout_ItemClick);
             // 
             // InfoGuide
             // 
             this.InfoGuide.Caption = "&Справочная информация";
-            this.InfoGuide.Glyph = ((System.Drawing.Image)(resources.GetObject("InfoGuide.Glyph")));
             this.InfoGuide.Id = 54;
+            this.InfoGuide.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("InfoGuide.ImageOptions.Image")));
             this.InfoGuide.Name = "InfoGuide";
             this.InfoGuide.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.InfoGuide.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.InfoGuide_ItemClick);
@@ -812,7 +814,7 @@ namespace ARM_User
             this.barHint.AutoSize = DevExpress.XtraBars.BarStaticItemSize.Spring;
             this.barHint.Id = 21;
             this.barHint.Name = "barHint";
-            this.barHint.TextAlignment = System.Drawing.StringAlignment.Near;
+            this.barHint.Size = new System.Drawing.Size(32, 0);
             this.barHint.Width = 32;
             // 
             // barDockControlTop
@@ -820,6 +822,7 @@ namespace ARM_User
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.MainBarManager;
             this.barDockControlTop.Size = new System.Drawing.Size(599, 48);
             // 
             // barDockControlBottom
@@ -827,6 +830,7 @@ namespace ARM_User
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 393);
+            this.barDockControlBottom.Manager = this.MainBarManager;
             this.barDockControlBottom.Size = new System.Drawing.Size(599, 22);
             // 
             // barDockControlLeft
@@ -834,6 +838,7 @@ namespace ARM_User
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 48);
+            this.barDockControlLeft.Manager = this.MainBarManager;
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 345);
             // 
             // barDockControlRight
@@ -841,6 +846,7 @@ namespace ARM_User
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(599, 48);
+            this.barDockControlRight.Manager = this.MainBarManager;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 345);
             // 
             // MainDockManager
@@ -862,7 +868,7 @@ namespace ARM_User
             this.hideContainerLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.hideContainerLeft.Location = new System.Drawing.Point(0, 48);
             this.hideContainerLeft.Name = "hideContainerLeft";
-            this.hideContainerLeft.Size = new System.Drawing.Size(19, 345);
+            this.hideContainerLeft.Size = new System.Drawing.Size(20, 345);
             // 
             // dpMenu
             // 
@@ -987,7 +993,7 @@ namespace ARM_User
             this.colStatus.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.colStatus.ColumnEdit = this.repositoryItemImageComboBox1;
             this.colStatus.FieldName = "col_STATUS";
-            this.colStatus.ImageIndex = 0;
+            this.colStatus.ImageOptions.ImageIndex = 0;
             this.colStatus.MinWidth = 10;
             this.colStatus.Name = "colStatus";
             this.colStatus.OptionsColumn.AllowEdit = false;
@@ -1092,7 +1098,7 @@ namespace ARM_User
             this.iMenuExpand.CategoryGuid = new System.Guid("81d48205-e99e-4e12-aa2b-1551e99931bd");
             this.iMenuExpand.Hint = "Развернуть меню";
             this.iMenuExpand.Id = 37;
-            this.iMenuExpand.ImageIndex = 26;
+            this.iMenuExpand.ImageOptions.ImageIndex = 26;
             this.iMenuExpand.Name = "iMenuExpand";
             this.iMenuExpand.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iMenuExpand_ItemClick);
             // 
@@ -1102,7 +1108,7 @@ namespace ARM_User
             this.iMenuCollapse.CategoryGuid = new System.Guid("81d48205-e99e-4e12-aa2b-1551e99931bd");
             this.iMenuCollapse.Hint = "Свернуть меню";
             this.iMenuCollapse.Id = 38;
-            this.iMenuCollapse.ImageIndex = 27;
+            this.iMenuCollapse.ImageOptions.ImageIndex = 27;
             this.iMenuCollapse.Name = "iMenuCollapse";
             this.iMenuCollapse.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iMenuCollapse_ItemClick);
             // 
@@ -1173,10 +1179,10 @@ namespace ARM_User
             this.tcMDIChildren.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.tcMDIChildren.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tcMDIChildren.HotTrack = true;
-            this.tcMDIChildren.Location = new System.Drawing.Point(19, 369);
+            this.tcMDIChildren.Location = new System.Drawing.Point(20, 369);
             this.tcMDIChildren.Name = "tcMDIChildren";
             this.tcMDIChildren.SelectedIndex = 0;
-            this.tcMDIChildren.Size = new System.Drawing.Size(580, 24);
+            this.tcMDIChildren.Size = new System.Drawing.Size(579, 24);
             this.tcMDIChildren.TabIndex = 10;
             this.tcMDIChildren.Visible = false;
             this.tcMDIChildren.SelectedIndexChanged += new System.EventHandler(this.tcMDIChildren_SelectedIndexChanged);
@@ -1309,7 +1315,8 @@ namespace ARM_User
             this.myAction2,
             this.aExtraPokaz,
             this.aClients,
-            this.aCredits});
+            this.aCredits,
+            this.aRepList});
             // 
             // aConnect
             // 
@@ -2319,12 +2326,6 @@ namespace ARM_User
             this.aClients.MakeDisabledOnExec = true;
             this.aClients.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aClients_Execute);
             // 
-            // tmCheckGovSec
-            // 
-            this.tmCheckGovSec.Enabled = true;
-            this.tmCheckGovSec.Interval = 5000D;
-            this.tmCheckGovSec.SynchronizingObject = this;
-            // 
             // aCredits
             // 
             this.aCredits.Caption = "";
@@ -2333,6 +2334,21 @@ namespace ARM_User
             this.aCredits.Enabled = true;
             this.aCredits.MakeDisabledOnExec = true;
             this.aCredits.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aCredits_Execute);
+            // 
+            // tmCheckGovSec
+            // 
+            this.tmCheckGovSec.Enabled = true;
+            this.tmCheckGovSec.Interval = 5000D;
+            this.tmCheckGovSec.SynchronizingObject = this;
+            // 
+            // aRepList
+            // 
+            this.aRepList.Caption = "Настройка отчетов";
+            this.aRepList.Category = null;
+            this.aRepList.Code = "aRepList";
+            this.aRepList.Enabled = true;
+            this.aRepList.MakeDisabledOnExec = true;
+            this.aRepList.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aRepList_Execute);
             // 
             // MainForm
             // 
@@ -2371,6 +2387,7 @@ namespace ARM_User
             ((System.ComponentModel.ISupportInitialize)(this.tmCheckInterval)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tmCheckGovSec)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
     }
 
@@ -2680,6 +2697,13 @@ namespace ARM_User
     private void aCredits_Execute(object sender, TActionEventArgs ae)
     {
         var frm = new LoansListForm();
+        frm.pAction = (MyAction)sender;
+        frm.MdiParent = this;
+        frm.Show();
+    }
+    private void aRepList_Execute(object sender, TActionEventArgs ae)
+    {
+        var frm = new ReportsListForm();
         frm.pAction = (MyAction)sender;
         frm.MdiParent = this;
         frm.Show();

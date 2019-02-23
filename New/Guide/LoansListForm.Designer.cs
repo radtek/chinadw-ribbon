@@ -73,10 +73,7 @@
             this.dc_T_SYSDATE = new System.Data.DataColumn();
             this.bandedGridView1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
             this.gbGredits = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.bandedGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn4 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn5 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn6 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn7 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -106,8 +103,6 @@
             this.gcList2 = new DevExpress.XtraGrid.GridControl();
             this.bgvExtraPokaz = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
             this.gbExtraPokaz = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.colsat_loans_sid = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colloan_sid1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colreport_date = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colsrc_ddfcnt = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colcreg_contract_no = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -125,10 +120,7 @@
             this.gcList3 = new DevExpress.XtraGrid.GridControl();
             this.bandedGridView2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
             this.gbPokaz = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.colLOAN_SID = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.col_REPORT_DATE = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colABS_DIMENSION_ID = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colPOKAZ_ID = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colNAME_POKAZ = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colCODE_POKAZ = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.col_dim_name = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -142,6 +134,8 @@
             this.tsbPokazDelete = new System.Windows.Forms.ToolStripButton();
             this.bCount = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -168,6 +162,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bandedGridView2)).BeginInit();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
             // 
             // barDockControlBottom
@@ -196,8 +191,9 @@
             this.beData,
             this.bbFilter,
             this.bbSearch,
-            this.bCount});
-            this.barManager.MaxItemId = 6;
+            this.bCount,
+            this.barButtonItem1});
+            this.barManager.MaxItemId = 7;
             this.barManager.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemDateEdit1,
             this.repositoryItemTextEdit1});
@@ -205,11 +201,12 @@
             // barMenu
             // 
             this.barMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.bCount),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.bbRefresh, DevExpress.XtraBars.BarItemPaintStyle.Standard),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bCount, true),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.bbRefresh, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.Standard),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.beData, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbFilter),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbSearch)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbSearch),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1)});
             // 
             // iEnableAutoSize
             // 
@@ -501,17 +498,15 @@
             // 
             // bandedGridView1
             // 
-            this.bandedGridView1.Appearance.HeaderPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.bandedGridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.bandedGridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.bandedGridView1.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.bandedGridView1.Appearance.HeaderPanel.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.bandedGridView1.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
             this.gbGredits});
+            this.bandedGridView1.ColumnPanelRowHeight = 10;
             this.bandedGridView1.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
-            this.bandedGridColumn1,
-            this.bandedGridColumn2,
             this.bandedGridColumn3,
-            this.bandedGridColumn4,
             this.bandedGridColumn5,
             this.bandedGridColumn6,
             this.bandedGridColumn7,
@@ -535,8 +530,12 @@
             this.bandedGridView1.OptionsFind.FindMode = DevExpress.XtraEditors.FindMode.Always;
             this.bandedGridView1.OptionsFind.SearchInPreview = true;
             this.bandedGridView1.OptionsFind.ShowFindButton = false;
+            this.bandedGridView1.OptionsNavigation.AutoFocusNewRow = true;
             this.bandedGridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.bandedGridView1.OptionsView.BestFitMaxRowCount = 1;
+            this.bandedGridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.bandedGridView1.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.SmartTag;
+            this.bandedGridView1.OptionsView.RowAutoHeight = true;
             this.bandedGridView1.OptionsView.ShowGroupPanel = false;
             this.bandedGridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.bandedGridColumn12, DevExpress.Data.ColumnSortOrder.Ascending)});
@@ -546,11 +545,8 @@
             // 
             this.gbGredits.AppearanceHeader.Options.UseTextOptions = true;
             this.gbGredits.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gbGredits.Caption = "Договора Кредитов";
-            this.gbGredits.Columns.Add(this.bandedGridColumn1);
-            this.gbGredits.Columns.Add(this.bandedGridColumn2);
+            this.gbGredits.Caption = "Договора кредитов";
             this.gbGredits.Columns.Add(this.bandedGridColumn3);
-            this.gbGredits.Columns.Add(this.bandedGridColumn4);
             this.gbGredits.Columns.Add(this.bandedGridColumn5);
             this.gbGredits.Columns.Add(this.bandedGridColumn6);
             this.gbGredits.Columns.Add(this.bandedGridColumn7);
@@ -563,23 +559,7 @@
             this.gbGredits.Columns.Add(this.bandedGridColumn14);
             this.gbGredits.Name = "gbGredits";
             this.gbGredits.VisibleIndex = 0;
-            this.gbGredits.Width = 853;
-            // 
-            // bandedGridColumn1
-            // 
-            this.bandedGridColumn1.Caption = "ID";
-            this.bandedGridColumn1.FieldName = "P_LOANS_SID";
-            this.bandedGridColumn1.Name = "bandedGridColumn1";
-            this.bandedGridColumn1.Visible = true;
-            this.bandedGridColumn1.Width = 37;
-            // 
-            // bandedGridColumn2
-            // 
-            this.bandedGridColumn2.Caption = "LOAN_SID";
-            this.bandedGridColumn2.FieldName = "LOAN_SID";
-            this.bandedGridColumn2.Name = "bandedGridColumn2";
-            this.bandedGridColumn2.Visible = true;
-            this.bandedGridColumn2.Width = 37;
+            this.gbGredits.Width = 742;
             // 
             // bandedGridColumn3
             // 
@@ -588,14 +568,6 @@
             this.bandedGridColumn3.Name = "bandedGridColumn3";
             this.bandedGridColumn3.Visible = true;
             this.bandedGridColumn3.Width = 37;
-            // 
-            // bandedGridColumn4
-            // 
-            this.bandedGridColumn4.Caption = "Статус договора(Код)";
-            this.bandedGridColumn4.FieldName = "STATUS_CODE";
-            this.bandedGridColumn4.Name = "bandedGridColumn4";
-            this.bandedGridColumn4.Visible = true;
-            this.bandedGridColumn4.Width = 37;
             // 
             // bandedGridColumn5
             // 
@@ -854,10 +826,8 @@
             // 
             this.bgvExtraPokaz.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
             this.gbExtraPokaz});
-            this.bgvExtraPokaz.ColumnPanelRowHeight = 1;
+            this.bgvExtraPokaz.ColumnPanelRowHeight = 3;
             this.bgvExtraPokaz.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
-            this.colsat_loans_sid,
-            this.colloan_sid1,
             this.colreport_date,
             this.colsrc_ddfcnt,
             this.colcreg_contract_no,
@@ -871,6 +841,7 @@
             this.bgvExtraPokaz.OptionsNavigation.AutoFocusNewRow = true;
             this.bgvExtraPokaz.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.bgvExtraPokaz.OptionsView.ShowGroupPanel = false;
+            this.bgvExtraPokaz.RowHeight = 20;
             this.bgvExtraPokaz.ViewCaption = "Кредиты";
             // 
             // gbExtraPokaz
@@ -878,8 +849,6 @@
             this.gbExtraPokaz.AppearanceHeader.Options.UseTextOptions = true;
             this.gbExtraPokaz.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gbExtraPokaz.Caption = "Дополнительные показатели";
-            this.gbExtraPokaz.Columns.Add(this.colsat_loans_sid);
-            this.gbExtraPokaz.Columns.Add(this.colloan_sid1);
             this.gbExtraPokaz.Columns.Add(this.colreport_date);
             this.gbExtraPokaz.Columns.Add(this.colsrc_ddfcnt);
             this.gbExtraPokaz.Columns.Add(this.colcreg_contract_no);
@@ -888,52 +857,59 @@
             this.gbExtraPokaz.Columns.Add(this.colsrv_system_date);
             this.gbExtraPokaz.Name = "gbExtraPokaz";
             this.gbExtraPokaz.VisibleIndex = 0;
-            this.gbExtraPokaz.Width = 600;
-            // 
-            // colsat_loans_sid
-            // 
-            this.colsat_loans_sid.FieldName = "sat_loans_sid";
-            this.colsat_loans_sid.Name = "colsat_loans_sid";
-            this.colsat_loans_sid.Visible = true;
-            // 
-            // colloan_sid1
-            // 
-            this.colloan_sid1.FieldName = "loan_sid";
-            this.colloan_sid1.Name = "colloan_sid1";
-            this.colloan_sid1.Visible = true;
+            this.gbExtraPokaz.Width = 450;
             // 
             // colreport_date
             // 
+            this.colreport_date.AppearanceHeader.Options.UseTextOptions = true;
+            this.colreport_date.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colreport_date.AutoFillDown = true;
+            this.colreport_date.Caption = "Дата действия показателя";
             this.colreport_date.FieldName = "report_date";
             this.colreport_date.Name = "colreport_date";
             this.colreport_date.Visible = true;
             // 
             // colsrc_ddfcnt
             // 
+            this.colsrc_ddfcnt.AppearanceHeader.Options.UseTextOptions = true;
+            this.colsrc_ddfcnt.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colsrc_ddfcnt.Caption = "№ договора (BOC)";
             this.colsrc_ddfcnt.FieldName = "src_ddfcnt";
             this.colsrc_ddfcnt.Name = "colsrc_ddfcnt";
             this.colsrc_ddfcnt.Visible = true;
             // 
             // colcreg_contract_no
             // 
+            this.colcreg_contract_no.AppearanceHeader.Options.UseTextOptions = true;
+            this.colcreg_contract_no.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colcreg_contract_no.Caption = "№ договора (Кред. регистр)";
             this.colcreg_contract_no.FieldName = "creg_contract_no";
             this.colcreg_contract_no.Name = "colcreg_contract_no";
             this.colcreg_contract_no.Visible = true;
             // 
             // colcreg_contract_date
             // 
+            this.colcreg_contract_date.AppearanceHeader.Options.UseTextOptions = true;
+            this.colcreg_contract_date.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colcreg_contract_date.Caption = "Дата договора (Кред. регистр)";
             this.colcreg_contract_date.FieldName = "creg_contract_date";
             this.colcreg_contract_date.Name = "colcreg_contract_date";
             this.colcreg_contract_date.Visible = true;
             // 
             // colcrreg_line_contract_no
             // 
+            this.colcrreg_line_contract_no.AppearanceHeader.Options.UseTextOptions = true;
+            this.colcrreg_line_contract_no.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colcrreg_line_contract_no.Caption = "№ договора кред линии (Кред. регистр)";
             this.colcrreg_line_contract_no.FieldName = "crreg_line_contract_no";
             this.colcrreg_line_contract_no.Name = "colcrreg_line_contract_no";
             this.colcrreg_line_contract_no.Visible = true;
             // 
             // colsrv_system_date
             // 
+            this.colsrv_system_date.AppearanceHeader.Options.UseTextOptions = true;
+            this.colsrv_system_date.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colsrv_system_date.Caption = "Текущая дата";
             this.colsrv_system_date.FieldName = "srv_system_date";
             this.colsrv_system_date.Name = "colsrv_system_date";
             this.colsrv_system_date.Visible = true;
@@ -1033,10 +1009,7 @@
             this.bandedGridView2.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
             this.gbPokaz});
             this.bandedGridView2.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
-            this.colLOAN_SID,
             this.col_REPORT_DATE,
-            this.colABS_DIMENSION_ID,
-            this.colPOKAZ_ID,
             this.colNAME_POKAZ,
             this.colCODE_POKAZ,
             this.col_dim_name,
@@ -1055,6 +1028,7 @@
             this.bandedGridView2.OptionsFind.FindMode = DevExpress.XtraEditors.FindMode.Always;
             this.bandedGridView2.OptionsFind.SearchInPreview = true;
             this.bandedGridView2.OptionsFind.ShowFindButton = false;
+            this.bandedGridView2.OptionsNavigation.AutoFocusNewRow = true;
             this.bandedGridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.bandedGridView2.OptionsView.ShowGroupPanel = false;
             // 
@@ -1063,10 +1037,7 @@
             this.gbPokaz.AppearanceHeader.Options.UseTextOptions = true;
             this.gbPokaz.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gbPokaz.Caption = "Показатели из абстрактного справочника";
-            this.gbPokaz.Columns.Add(this.colLOAN_SID);
             this.gbPokaz.Columns.Add(this.col_REPORT_DATE);
-            this.gbPokaz.Columns.Add(this.colABS_DIMENSION_ID);
-            this.gbPokaz.Columns.Add(this.colPOKAZ_ID);
             this.gbPokaz.Columns.Add(this.colNAME_POKAZ);
             this.gbPokaz.Columns.Add(this.colCODE_POKAZ);
             this.gbPokaz.Columns.Add(this.col_dim_name);
@@ -1074,42 +1045,19 @@
             this.gbPokaz.Columns.Add(this.col_T_SYSDATE);
             this.gbPokaz.Name = "gbPokaz";
             this.gbPokaz.VisibleIndex = 0;
-            this.gbPokaz.Width = 693;
-            // 
-            // colLOAN_SID
-            // 
-            this.colLOAN_SID.FieldName = "loan_sid";
-            this.colLOAN_SID.Name = "colLOAN_SID";
-            this.colLOAN_SID.Visible = true;
-            this.colLOAN_SID.Width = 77;
+            this.gbPokaz.Width = 462;
             // 
             // col_REPORT_DATE
             // 
-            this.col_REPORT_DATE.Caption = "REPORT_DATE";
+            this.col_REPORT_DATE.Caption = "Дата действия показателя";
             this.col_REPORT_DATE.FieldName = "report_date";
             this.col_REPORT_DATE.Name = "col_REPORT_DATE";
             this.col_REPORT_DATE.Visible = true;
             this.col_REPORT_DATE.Width = 77;
             // 
-            // colABS_DIMENSION_ID
-            // 
-            this.colABS_DIMENSION_ID.Caption = "ABS_DIMENSION_ID";
-            this.colABS_DIMENSION_ID.FieldName = "abs_dimension_id";
-            this.colABS_DIMENSION_ID.Name = "colABS_DIMENSION_ID";
-            this.colABS_DIMENSION_ID.Visible = true;
-            this.colABS_DIMENSION_ID.Width = 77;
-            // 
-            // colPOKAZ_ID
-            // 
-            this.colPOKAZ_ID.Caption = "POKAZ_ID";
-            this.colPOKAZ_ID.FieldName = "pokaz_id";
-            this.colPOKAZ_ID.Name = "colPOKAZ_ID";
-            this.colPOKAZ_ID.Visible = true;
-            this.colPOKAZ_ID.Width = 77;
-            // 
             // colNAME_POKAZ
             // 
-            this.colNAME_POKAZ.Caption = "NAME_POKAZ";
+            this.colNAME_POKAZ.Caption = "Показатель (Наим.)";
             this.colNAME_POKAZ.FieldName = "name_pokaz";
             this.colNAME_POKAZ.Name = "colNAME_POKAZ";
             this.colNAME_POKAZ.Visible = true;
@@ -1117,14 +1065,14 @@
             // 
             // colCODE_POKAZ
             // 
-            this.colCODE_POKAZ.Caption = "CODE_POKAZ";
+            this.colCODE_POKAZ.Caption = "Показатель (Код)";
             this.colCODE_POKAZ.FieldName = "code_pokaz";
             this.colCODE_POKAZ.Name = "colCODE_POKAZ";
             this.colCODE_POKAZ.Visible = true;
             // 
             // col_dim_name
             // 
-            this.col_dim_name.Caption = "dim_name";
+            this.col_dim_name.Caption = "Справочник(Наим.)";
             this.col_dim_name.FieldName = "dim_name";
             this.col_dim_name.Name = "col_dim_name";
             this.col_dim_name.Visible = true;
@@ -1132,14 +1080,14 @@
             // 
             // col_dim_part
             // 
-            this.col_dim_part.Caption = "dim_part";
+            this.col_dim_part.Caption = "Справочник(подраздел)";
             this.col_dim_part.FieldName = "dim_part";
             this.col_dim_part.Name = "col_dim_part";
             this.col_dim_part.Visible = true;
             // 
             // col_T_SYSDATE
             // 
-            this.col_T_SYSDATE.Caption = "T_SYSDATE";
+            this.col_T_SYSDATE.Caption = "Текущая дата";
             this.col_T_SYSDATE.FieldName = "t_sysdate";
             this.col_T_SYSDATE.Name = "col_T_SYSDATE";
             this.col_T_SYSDATE.Visible = true;
@@ -1219,6 +1167,10 @@
             this.bCount.Id = 5;
             this.bCount.ItemAppearance.Disabled.BackColor = System.Drawing.Color.White;
             this.bCount.ItemAppearance.Disabled.Options.UseBackColor = true;
+            this.bCount.ItemAppearance.Normal.BackColor = System.Drawing.Color.White;
+            this.bCount.ItemAppearance.Normal.Options.UseBackColor = true;
+            this.bCount.ItemInMenuAppearance.Normal.BackColor = System.Drawing.Color.White;
+            this.bCount.ItemInMenuAppearance.Normal.Options.UseBackColor = true;
             this.bCount.Name = "bCount";
             // 
             // repositoryItemTextEdit1
@@ -1228,10 +1180,28 @@
             this.repositoryItemTextEdit1.AutoHeight = false;
             this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.ActAsDropDown = true;
+            this.barButtonItem1.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.DropDownControl = this.popupMenu1;
+            this.barButtonItem1.Id = 6;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // popupMenu1
+            // 
+            this.popupMenu1.Manager = this.barManager;
+            this.popupMenu1.Name = "popupMenu1";
+            // 
             // LoansListForm
             // 
             this.ClientSize = new System.Drawing.Size(1062, 575);
             this.Controls.Add(this.splitContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoansListForm";
             this.Text = "Кредиты";
             this.Load += new System.EventHandler(this.LoansListForm_Load);
@@ -1270,6 +1240,7 @@
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1335,8 +1306,6 @@
         private System.Data.DataColumn dc_T_SYSDATE;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView bgvExtraPokaz;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gbExtraPokaz;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colsat_loans_sid;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colloan_sid1;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colreport_date;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colsrc_ddfcnt;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colcreg_contract_no;
@@ -1363,10 +1332,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView bandedGridView1;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gbGredits;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn1;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn2;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn3;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn4;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn5;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn6;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn7;
@@ -1379,10 +1345,7 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn14;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView bandedGridView2;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gbPokaz;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colLOAN_SID;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn col_REPORT_DATE;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colABS_DIMENSION_ID;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colPOKAZ_ID;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colNAME_POKAZ;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colCODE_POKAZ;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn col_dim_name;
@@ -1390,5 +1353,7 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn col_T_SYSDATE;
         private System.Windows.Forms.ToolStripButton tsbPokazDelete;
         private System.Windows.Forms.ToolStripButton tsbPokazEdit;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.PopupMenu popupMenu1;
     }
 }

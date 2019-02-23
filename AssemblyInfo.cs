@@ -7,11 +7,11 @@ using System.Reflection;
 //
 
 [assembly: AssemblyTitle("")]
-[assembly: AssemblyDescription("ÀÈÏ ÃĞİÖÁ")]
+[assembly: AssemblyDescription("ÀÈÏ ÕÄ CHINA")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("BSB NBRK")]
-[assembly: AssemblyProduct("ÀÈÏ ÃĞİÖÁ")]
-[assembly: AssemblyCopyright("2015")]
+[assembly: AssemblyProduct("ÀÈÏ ÕÄ CHINA")]
+[assembly: AssemblyCopyright("2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

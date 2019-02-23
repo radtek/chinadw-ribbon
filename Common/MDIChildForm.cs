@@ -57,16 +57,15 @@ namespace BSB.Common
     /// </summary>
     private void InitializeComponent()
     {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIChildForm));
-            this.toolTipController = new DevExpress.Utils.ToolTipController(this.components);
+            this.toolTipController = new DevExpress.Utils.ToolTipController();
             this.iEnableAutoSize = new DevExpress.XtraBars.BarButtonItem();
             this.barMenu = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.barManager = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager = new DevExpress.XtraBars.BarManager();
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,10 +74,10 @@ namespace BSB.Common
             this.iEnableAutoSize.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
             this.iEnableAutoSize.Caption = "Автоподгонка окна";
             this.iEnableAutoSize.Down = true;
-            this.iEnableAutoSize.Glyph = ((System.Drawing.Image)(resources.GetObject("iEnableAutoSize.Glyph")));
             this.iEnableAutoSize.Hint = "Включение/выключение автоподгонки окна под размеры экрана";
             this.iEnableAutoSize.Id = 0;
-            this.iEnableAutoSize.ImageIndex = 0;
+            this.iEnableAutoSize.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("iEnableAutoSize.ImageOptions.Image")));
+            this.iEnableAutoSize.ImageOptions.ImageIndex = 0;
             this.iEnableAutoSize.Name = "iEnableAutoSize";
             this.iEnableAutoSize.DownChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.iEnableAutoSize_DownChanged);
             this.iEnableAutoSize.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iEnableAutoSize_DownChanged);
@@ -98,6 +97,7 @@ namespace BSB.Common
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager;
             this.barDockControlTop.Size = new System.Drawing.Size(505, 31);
             // 
             // barDockControlBottom
@@ -105,6 +105,7 @@ namespace BSB.Common
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 397);
+            this.barDockControlBottom.Manager = this.barManager;
             this.barDockControlBottom.Size = new System.Drawing.Size(505, 0);
             // 
             // barDockControlLeft
@@ -112,6 +113,7 @@ namespace BSB.Common
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 31);
+            this.barDockControlLeft.Manager = this.barManager;
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 366);
             // 
             // barDockControlRight
@@ -119,6 +121,7 @@ namespace BSB.Common
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(505, 31);
+            this.barDockControlRight.Manager = this.barManager;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 366);
             // 
             // barManager
@@ -148,6 +151,7 @@ namespace BSB.Common
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MDIChildForm";
             this.ShowInTaskbar = false;
@@ -157,6 +161,7 @@ namespace BSB.Common
             this.Load += new System.EventHandler(this.TfrmMDIChildForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
     }
 

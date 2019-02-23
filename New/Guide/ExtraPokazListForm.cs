@@ -23,19 +23,17 @@ namespace ARM_User.DisplayLayer.Guides
         public ExtraPokazListForm()
         {
             InitializeComponent();
-        }        
-        private void ExtraPokazListForm_Load(object sender, EventArgs e)
-        {            
             db = new DB_ExtraPokazListForm(dmControler.frmMain.oracleConnection);
-            refreshCustomer();
-            reSize();
             gvCustomers.OptionsView.ShowAutoFilterRow = false;
             barButtonItemFilter.Glyph = Properties.Resources.filter;
             gvCustomers.OptionsFind.ClearFindOnClose = true;
             gvCustomers.OptionsFind.ShowFindButton = false;
             gvCustomers.OptionsFind.FindMode = FindMode.Always;
-
-
+            refreshCustomer();
+        }        
+        private void ExtraPokazListForm_Load(object sender, EventArgs e)
+        {
+            //reSize();
         }
         private void refreshCustomer()
         {
@@ -175,7 +173,7 @@ namespace ARM_User.DisplayLayer.Guides
 
         private void ExtraPokazListForm_Resize(object sender, EventArgs e)
         {
-            reSize();
+            //reSize();
         }
 
         private void tsbInsert_Click(object sender, EventArgs e)
@@ -273,6 +271,11 @@ namespace ARM_User.DisplayLayer.Guides
         private void barEditItemDate_EditValueChanged(object sender, EventArgs e)
         {
             refreshCustomer();            
+        }
+
+        private void ExtraPokazListForm_Shown(object sender, EventArgs e)
+        {
+
         }
     }
 }

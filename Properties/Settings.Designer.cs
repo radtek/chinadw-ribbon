@@ -133,5 +133,17 @@ namespace ARM_User.Properties {
                 return ((string)(this["ConnectionString10"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("tablePeriod.ord")]
+        public string ава {
+            get {
+                return ((string)(this["ава"]));
+            }
+            set {
+                this["ава"] = value;
+            }
+        }
     }
 }

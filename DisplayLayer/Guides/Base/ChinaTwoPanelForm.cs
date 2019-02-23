@@ -6,11 +6,11 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace ARM_User.New.Guide
+namespace ARM_User.DisplayLayer.Guides.Base
 {
-    public partial class Form1 : ARM_User.DisplayLayer.Guides.Base.ChinaTwoPanelForm
+    public partial class ChinaTwoPanelForm : ARM_User.DisplayLayer.Guides.Base.ChinaGuideBaseForm
     {
-        public Form1()
+        public ChinaTwoPanelForm()
         {
             InitializeComponent();
         }

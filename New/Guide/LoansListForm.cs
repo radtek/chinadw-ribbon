@@ -131,8 +131,7 @@ namespace ARM_User.New.Guide
 
             splitContainer1.SplitterDistance = splitContainer1.Height-150;
             db = new DB_LoansListForm(dmControler.frmMain.oracleConnection);
-            refreshListCredits();
-            
+            refreshListCredits();            
         }
         private void gvList1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
@@ -390,6 +389,12 @@ namespace ARM_User.New.Guide
                 refreshListPokaz();
                 Cursor = Cursors.Default;
             }
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Boolean x = bandedGridView1.OptionsView.EnableAppearanceOddRow;            
+            bandedGridView1.OptionsView.EnableAppearanceOddRow = !x;
         }
     }
 }

@@ -90,5 +90,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=grecbnb_250;User ID=main;Password=main;Unicode=True</Value>
     </Setting>
+    <Setting Name="ава" Type="System.String" Scope="User">
+      <Value Profile="(Default)">tablePeriod.ord</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

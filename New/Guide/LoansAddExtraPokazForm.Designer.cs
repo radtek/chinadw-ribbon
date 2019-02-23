@@ -197,7 +197,7 @@
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(418, 30);
-            this.layoutControlItem1.Text = "LOAN_SID";
+            this.layoutControlItem1.Text = "ID";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(96, 13);
             // 
             // layoutControlItem2

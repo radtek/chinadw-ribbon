@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExtraPokazListForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.gcCustomers = new DevExpress.XtraGrid.GridControl();
@@ -79,7 +80,7 @@
             this.barEditItemDate = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.barButtonRefresh = new DevExpress.XtraBars.BarButtonItem();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
@@ -117,17 +118,17 @@
             // 
             // barDockControlLeft
             // 
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 481);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 31);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 474);
             // 
             // barDockControlRight
             // 
-            this.barDockControlRight.Location = new System.Drawing.Point(813, 24);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 481);
+            this.barDockControlRight.Location = new System.Drawing.Point(813, 31);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 474);
             // 
             // barDockControlTop
             // 
-            this.barDockControlTop.Size = new System.Drawing.Size(813, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(813, 31);
             // 
             // barManager
             // 
@@ -161,7 +162,7 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 31);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -174,8 +175,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.gcRatings);
             this.splitContainer1.Panel2.Controls.Add(this.toolStrip1);
-            this.splitContainer1.Size = new System.Drawing.Size(813, 481);
-            this.splitContainer1.SplitterDistance = 238;
+            this.splitContainer1.Size = new System.Drawing.Size(813, 474);
+            this.splitContainer1.SplitterDistance = 233;
             this.splitContainer1.TabIndex = 4;
             // 
             // gcCustomers
@@ -187,7 +188,7 @@
             this.gcCustomers.MainView = this.gvCustomers;
             this.gcCustomers.MenuManager = this.barManager;
             this.gcCustomers.Name = "gcCustomers";
-            this.gcCustomers.Size = new System.Drawing.Size(813, 238);
+            this.gcCustomers.Size = new System.Drawing.Size(813, 233);
             this.gcCustomers.TabIndex = 2;
             this.gcCustomers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCustomers});
@@ -329,56 +330,67 @@
             // 
             this.colP_CUSTOMER_ID.FieldName = "P_CUSTOMER_ID";
             this.colP_CUSTOMER_ID.Name = "colP_CUSTOMER_ID";
-            this.colP_CUSTOMER_ID.Visible = true;
-            this.colP_CUSTOMER_ID.VisibleIndex = 0;
             this.colP_CUSTOMER_ID.Width = 114;
             // 
             // colCUSTOMER_SID
             // 
             this.colCUSTOMER_SID.FieldName = "CUSTOMER_SID";
             this.colCUSTOMER_SID.Name = "colCUSTOMER_SID";
-            this.colCUSTOMER_SID.Visible = true;
-            this.colCUSTOMER_SID.VisibleIndex = 1;
             this.colCUSTOMER_SID.Width = 114;
             // 
             // colSRC_CUSTOMER_NO
             // 
+            this.colSRC_CUSTOMER_NO.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSRC_CUSTOMER_NO.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSRC_CUSTOMER_NO.Caption = "Номер клиента";
             this.colSRC_CUSTOMER_NO.FieldName = "SRC_CUSTOMER_NO";
             this.colSRC_CUSTOMER_NO.Name = "colSRC_CUSTOMER_NO";
             this.colSRC_CUSTOMER_NO.Visible = true;
-            this.colSRC_CUSTOMER_NO.VisibleIndex = 2;
+            this.colSRC_CUSTOMER_NO.VisibleIndex = 0;
             this.colSRC_CUSTOMER_NO.Width = 132;
             // 
             // colFULL_NAME
             // 
+            this.colFULL_NAME.AppearanceHeader.Options.UseTextOptions = true;
+            this.colFULL_NAME.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colFULL_NAME.Caption = "Полное наименование";
             this.colFULL_NAME.FieldName = "FULL_NAME";
             this.colFULL_NAME.Name = "colFULL_NAME";
             this.colFULL_NAME.Visible = true;
-            this.colFULL_NAME.VisibleIndex = 3;
+            this.colFULL_NAME.VisibleIndex = 1;
             this.colFULL_NAME.Width = 109;
             // 
             // colRNN_NO
             // 
+            this.colRNN_NO.AppearanceHeader.Options.UseTextOptions = true;
+            this.colRNN_NO.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colRNN_NO.Caption = "РНН";
             this.colRNN_NO.FieldName = "RNN_NO";
             this.colRNN_NO.Name = "colRNN_NO";
             this.colRNN_NO.Visible = true;
-            this.colRNN_NO.VisibleIndex = 4;
+            this.colRNN_NO.VisibleIndex = 2;
             this.colRNN_NO.Width = 109;
             // 
             // colBIN_NO
             // 
+            this.colBIN_NO.AppearanceHeader.Options.UseTextOptions = true;
+            this.colBIN_NO.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colBIN_NO.Caption = "ВИН";
             this.colBIN_NO.FieldName = "BIN_NO";
             this.colBIN_NO.Name = "colBIN_NO";
             this.colBIN_NO.Visible = true;
-            this.colBIN_NO.VisibleIndex = 5;
+            this.colBIN_NO.VisibleIndex = 3;
             this.colBIN_NO.Width = 109;
             // 
             // colIIN_NO
             // 
+            this.colIIN_NO.AppearanceHeader.Options.UseTextOptions = true;
+            this.colIIN_NO.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colIIN_NO.Caption = "ИИН";
             this.colIIN_NO.FieldName = "IIN_NO";
             this.colIIN_NO.Name = "colIIN_NO";
             this.colIIN_NO.Visible = true;
-            this.colIIN_NO.VisibleIndex = 6;
+            this.colIIN_NO.VisibleIndex = 4;
             this.colIIN_NO.Width = 114;
             // 
             // filterControl1
@@ -397,7 +409,7 @@
             this.gcRatings.MainView = this.gvRatings;
             this.gcRatings.MenuManager = this.barManager;
             this.gcRatings.Name = "gcRatings";
-            this.gcRatings.Size = new System.Drawing.Size(813, 214);
+            this.gcRatings.Size = new System.Drawing.Size(813, 212);
             this.gcRatings.TabIndex = 2;
             this.gcRatings.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvRatings});
@@ -425,64 +437,78 @@
             // 
             this.colCUSTOMER_SID1.FieldName = "CUSTOMER_SID";
             this.colCUSTOMER_SID1.Name = "colCUSTOMER_SID1";
-            this.colCUSTOMER_SID1.Visible = true;
-            this.colCUSTOMER_SID1.VisibleIndex = 0;
             // 
             // colREPORT_DATE
             // 
+            this.colREPORT_DATE.AppearanceHeader.Options.UseTextOptions = true;
+            this.colREPORT_DATE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colREPORT_DATE.Caption = "Дата";
             this.colREPORT_DATE.FieldName = "REPORT_DATE";
             this.colREPORT_DATE.Name = "colREPORT_DATE";
             this.colREPORT_DATE.Visible = true;
-            this.colREPORT_DATE.VisibleIndex = 1;
+            this.colREPORT_DATE.VisibleIndex = 0;
             // 
             // colABS_DIMENSION_ID
             // 
             this.colABS_DIMENSION_ID.FieldName = "ABS_DIMENSION_ID";
             this.colABS_DIMENSION_ID.Name = "colABS_DIMENSION_ID";
-            this.colABS_DIMENSION_ID.Visible = true;
-            this.colABS_DIMENSION_ID.VisibleIndex = 2;
             // 
             // colPOKAZ_ID
             // 
             this.colPOKAZ_ID.FieldName = "POKAZ_ID";
             this.colPOKAZ_ID.Name = "colPOKAZ_ID";
-            this.colPOKAZ_ID.Visible = true;
-            this.colPOKAZ_ID.VisibleIndex = 3;
             // 
             // colNAME_POKAZ
             // 
+            this.colNAME_POKAZ.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNAME_POKAZ.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNAME_POKAZ.Caption = "Наименование показателя";
             this.colNAME_POKAZ.FieldName = "NAME_POKAZ";
+            this.colNAME_POKAZ.MinWidth = 60;
             this.colNAME_POKAZ.Name = "colNAME_POKAZ";
+            this.colNAME_POKAZ.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.colNAME_POKAZ.Visible = true;
-            this.colNAME_POKAZ.VisibleIndex = 4;
+            this.colNAME_POKAZ.VisibleIndex = 1;
             // 
             // colCODE_POKAZ
             // 
+            this.colCODE_POKAZ.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCODE_POKAZ.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCODE_POKAZ.Caption = "Код";
             this.colCODE_POKAZ.FieldName = "CODE_POKAZ";
             this.colCODE_POKAZ.Name = "colCODE_POKAZ";
             this.colCODE_POKAZ.Visible = true;
-            this.colCODE_POKAZ.VisibleIndex = 5;
+            this.colCODE_POKAZ.VisibleIndex = 2;
             // 
             // colDIM_NAME
             // 
+            this.colDIM_NAME.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDIM_NAME.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDIM_NAME.Caption = "Наименование справочника";
             this.colDIM_NAME.FieldName = "DIM_NAME";
             this.colDIM_NAME.Name = "colDIM_NAME";
             this.colDIM_NAME.Visible = true;
-            this.colDIM_NAME.VisibleIndex = 6;
+            this.colDIM_NAME.VisibleIndex = 3;
             // 
             // colDIM_PART
             // 
+            this.colDIM_PART.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDIM_PART.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDIM_PART.Caption = "Раздел справочника";
             this.colDIM_PART.FieldName = "DIM_PART";
             this.colDIM_PART.Name = "colDIM_PART";
             this.colDIM_PART.Visible = true;
-            this.colDIM_PART.VisibleIndex = 7;
+            this.colDIM_PART.VisibleIndex = 4;
             // 
             // colT_SYSDATE
             // 
+            this.colT_SYSDATE.AppearanceHeader.Options.UseTextOptions = true;
+            this.colT_SYSDATE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colT_SYSDATE.Caption = "Текущая дата";
             this.colT_SYSDATE.FieldName = "T_SYSDATE";
             this.colT_SYSDATE.Name = "colT_SYSDATE";
             this.colT_SYSDATE.Visible = true;
-            this.colT_SYSDATE.VisibleIndex = 8;
+            this.colT_SYSDATE.VisibleIndex = 5;
             // 
             // toolStrip1
             // 
@@ -555,6 +581,8 @@
             this.barEditItemDate.EditValue = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
             this.barEditItemDate.EditWidth = 93;
             this.barEditItemDate.Id = 1;
+            this.barEditItemDate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barEditItemDate.ImageOptions.Image")));
+            this.barEditItemDate.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barEditItemDate.ImageOptions.LargeImage")));
             this.barEditItemDate.Name = "barEditItemDate";
             this.barEditItemDate.EditValueChanged += new System.EventHandler(this.barEditItemDate_EditValueChanged);
             // 
@@ -667,10 +695,12 @@
             this.Controls.Add(this.barDockControl4);
             this.Controls.Add(this.barDockControl2);
             this.Controls.Add(this.barDockControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ExtraPokazListForm";
             this.Text = "Дополнительные показатели";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ExtraPokazListForm_FormClosed);
             this.Load += new System.EventHandler(this.ExtraPokazListForm_Load);
+            this.Shown += new System.EventHandler(this.ExtraPokazListForm_Shown);
             this.Resize += new System.EventHandler(this.ExtraPokazListForm_Resize);
             this.Controls.SetChildIndex(this.barDockControl1, 0);
             this.Controls.SetChildIndex(this.barDockControl2, 0);

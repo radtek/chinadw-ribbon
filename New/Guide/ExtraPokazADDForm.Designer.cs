@@ -29,47 +29,55 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExtraPokazADDForm));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.tbCustomerCode = new System.Windows.Forms.TextBox();
-            this.tbCustomerName = new System.Windows.Forms.TextBox();
-            this.tbCustomerSid = new System.Windows.Forms.TextBox();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.tbCustomerCode = new DevExpress.XtraEditors.TextEdit();
+            this.tbCustomerName = new DevExpress.XtraEditors.TextEdit();
+            this.tbCustomerSid = new DevExpress.XtraEditors.TextEdit();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
-            this.tbName = new System.Windows.Forms.TextBox();
-            this.tbCode = new System.Windows.Forms.TextBox();
-            this.tbPokazId = new System.Windows.Forms.TextBox();
-            this.tbABSDimId = new System.Windows.Forms.TextBox();
-            this.tbDimPart = new System.Windows.Forms.TextBox();
-            this.tbDimName = new System.Windows.Forms.TextBox();
-            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.tbName = new DevExpress.XtraEditors.TextEdit();
+            this.tbCode = new DevExpress.XtraEditors.TextEdit();
+            this.tbPokazId = new DevExpress.XtraEditors.TextEdit();
+            this.tbABSDimId = new DevExpress.XtraEditors.TextEdit();
+            this.tbDimPart = new DevExpress.XtraEditors.TextEdit();
+            this.tbDimName = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btGuides = new DevExpress.XtraEditors.CheckButton();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainBS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCustomerCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCustomerName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCustomerSid.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPokazId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbABSDimId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbDimPart.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbDimName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
@@ -77,6 +85,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             this.SuspendLayout();
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.Appearance.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupControl2.Appearance.Options.UseBackColor = true;
+            this.groupControl2.Controls.Add(this.layoutControl2);
+            this.groupControl2.Location = new System.Drawing.Point(2, 125);
+            this.groupControl2.Padding = new System.Windows.Forms.Padding(5);
+            this.groupControl2.Size = new System.Drawing.Size(477, 214);
+            this.groupControl2.Text = "Показатель";
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Appearance.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupControl1.Appearance.Options.UseBackColor = true;
+            this.groupControl1.Controls.Add(this.layoutControl1);
+            this.groupControl1.Padding = new System.Windows.Forms.Padding(5);
+            this.groupControl1.Size = new System.Drawing.Size(477, 123);
+            this.groupControl1.Text = "Клиент";
+            // 
+            // btGuides
+            // 
+            this.btGuides.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btGuides.ImageOptions.Image")));
+            this.btGuides.Location = new System.Drawing.Point(370, 345);
             // 
             // btnSave
             // 
@@ -100,8 +132,7 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(2, 391);
-            this.panel1.Size = new System.Drawing.Size(483, 31);
+            this.panel1.Location = new System.Drawing.Point(2, 375);
             // 
             // barButtonItemBeginEdit
             // 
@@ -123,25 +154,7 @@
             // 
             this.panelControl1.Appearance.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panelControl1.Appearance.Options.UseBackColor = true;
-            this.panelControl1.Controls.Add(this.btGuides);
-            this.panelControl1.Controls.Add(this.groupBox2);
-            this.panelControl1.Controls.Add(this.groupBox1);
-            this.panelControl1.Size = new System.Drawing.Size(487, 424);
-            this.panelControl1.Controls.SetChildIndex(this.groupBox1, 0);
-            this.panelControl1.Controls.SetChildIndex(this.groupBox2, 0);
-            this.panelControl1.Controls.SetChildIndex(this.btGuides, 0);
-            this.panelControl1.Controls.SetChildIndex(this.panel1, 0);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox1.Controls.Add(this.layoutControl1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(463, 112);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Клиент";
+            this.panelControl1.Size = new System.Drawing.Size(481, 408);
             // 
             // layoutControl1
             // 
@@ -149,92 +162,89 @@
             this.layoutControl1.Controls.Add(this.tbCustomerName);
             this.layoutControl1.Controls.Add(this.tbCustomerSid);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(3, 17);
+            this.layoutControl1.Location = new System.Drawing.Point(7, 25);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(10);
             this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(893, 303, 250, 350);
-            this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(457, 92);
+            this.layoutControl1.Root = this.Root;
+            this.layoutControl1.Size = new System.Drawing.Size(463, 91);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // tbCustomerCode
             // 
-            this.tbCustomerCode.BackColor = System.Drawing.Color.White;
-            this.tbCustomerCode.Location = new System.Drawing.Point(97, 65);
+            this.tbCustomerCode.Location = new System.Drawing.Point(90, 60);
+            this.tbCustomerCode.MenuManager = this.barManager1;
             this.tbCustomerCode.Name = "tbCustomerCode";
-            this.tbCustomerCode.Size = new System.Drawing.Size(355, 20);
+            this.tbCustomerCode.Properties.Appearance.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbCustomerCode.Properties.Appearance.Options.UseBackColor = true;
+            this.tbCustomerCode.Properties.ReadOnly = true;
+            this.tbCustomerCode.Size = new System.Drawing.Size(344, 20);
+            this.tbCustomerCode.StyleController = this.layoutControl1;
             this.tbCustomerCode.TabIndex = 6;
             // 
             // tbCustomerName
             // 
-            this.tbCustomerName.BackColor = System.Drawing.Color.White;
-            this.tbCustomerName.Location = new System.Drawing.Point(97, 35);
+            this.tbCustomerName.Location = new System.Drawing.Point(90, 36);
+            this.tbCustomerName.MenuManager = this.barManager1;
             this.tbCustomerName.Name = "tbCustomerName";
-            this.tbCustomerName.Size = new System.Drawing.Size(355, 20);
+            this.tbCustomerName.Properties.Appearance.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbCustomerName.Properties.Appearance.Options.UseBackColor = true;
+            this.tbCustomerName.Properties.ReadOnly = true;
+            this.tbCustomerName.Size = new System.Drawing.Size(344, 20);
+            this.tbCustomerName.StyleController = this.layoutControl1;
             this.tbCustomerName.TabIndex = 5;
             // 
             // tbCustomerSid
             // 
-            this.tbCustomerSid.BackColor = System.Drawing.Color.White;
-            this.tbCustomerSid.Location = new System.Drawing.Point(97, 5);
+            this.tbCustomerSid.Location = new System.Drawing.Point(90, 12);
+            this.tbCustomerSid.MenuManager = this.barManager1;
             this.tbCustomerSid.Name = "tbCustomerSid";
-            this.tbCustomerSid.Size = new System.Drawing.Size(355, 20);
+            this.tbCustomerSid.Properties.Appearance.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbCustomerSid.Properties.Appearance.Options.UseBackColor = true;
+            this.tbCustomerSid.Properties.ReadOnly = true;
+            this.tbCustomerSid.Size = new System.Drawing.Size(344, 20);
+            this.tbCustomerSid.StyleController = this.layoutControl1;
             this.tbCustomerSid.TabIndex = 4;
             // 
-            // layoutControlGroup1
+            // Root
             // 
-            this.layoutControlGroup1.CustomizationFormText = "layoutControlGroup1";
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.Root.GroupBordersVisible = false;
+            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
-            this.layoutControlItem3,
-            this.layoutControlItem2});
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(457, 92);
-            this.layoutControlGroup1.TextVisible = false;
+            this.layoutControlItem2,
+            this.layoutControlItem3});
+            this.Root.Name = "Root";
+            this.Root.OptionsItemText.TextToControlDistance = 5;
+            this.Root.Size = new System.Drawing.Size(446, 92);
+            this.Root.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.tbCustomerSid;
-            this.layoutControlItem1.CustomizationFormText = "CUSTOMER_SID";
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(457, 30);
-            this.layoutControlItem1.Text = "CUSTOMER_SID";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(89, 13);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.tbCustomerCode;
-            this.layoutControlItem3.CustomizationFormText = "CUSTOMER_CODE";
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 60);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(457, 32);
-            this.layoutControlItem3.Text = "CUSTOMER_CODE";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(89, 13);
+            this.layoutControlItem1.Size = new System.Drawing.Size(426, 24);
+            this.layoutControlItem1.Text = "ID";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(73, 13);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.tbCustomerName;
-            this.layoutControlItem2.CustomizationFormText = "CUSTOMER_NAME";
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 30);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(457, 30);
-            this.layoutControlItem2.Text = "CUSTOMER_NAME";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(89, 13);
+            this.layoutControlItem2.Size = new System.Drawing.Size(426, 24);
+            this.layoutControlItem2.Text = "Найменование";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(73, 13);
             // 
-            // groupBox2
+            // layoutControlItem3
             // 
-            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox2.Controls.Add(this.layoutControl2);
-            this.groupBox2.Location = new System.Drawing.Point(12, 130);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox2.Size = new System.Drawing.Size(462, 218);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Показатель ";
+            this.layoutControlItem3.Control = this.tbCustomerCode;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(426, 24);
+            this.layoutControlItem3.Text = "Код";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(73, 13);
             // 
             // layoutControl2
             // 
@@ -245,173 +255,191 @@
             this.layoutControl2.Controls.Add(this.tbDimPart);
             this.layoutControl2.Controls.Add(this.tbDimName);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl2.Location = new System.Drawing.Point(5, 19);
+            this.layoutControl2.Location = new System.Drawing.Point(7, 25);
+            this.layoutControl2.Margin = new System.Windows.Forms.Padding(0);
             this.layoutControl2.Name = "layoutControl2";
-            this.layoutControl2.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1076, 130, 250, 350);
-            this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(452, 194);
+            this.layoutControl2.Root = this.layoutControlGroup1;
+            this.layoutControl2.Size = new System.Drawing.Size(463, 182);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
             // tbName
             // 
-            this.tbName.BackColor = System.Drawing.Color.White;
-            this.tbName.Location = new System.Drawing.Point(107, 155);
+            this.tbName.Location = new System.Drawing.Point(158, 132);
+            this.tbName.MenuManager = this.barManager1;
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(340, 20);
+            this.tbName.Properties.Appearance.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbName.Properties.Appearance.Options.UseBackColor = true;
+            this.tbName.Properties.ReadOnly = true;
+            this.tbName.Size = new System.Drawing.Size(293, 20);
+            this.tbName.StyleController = this.layoutControl2;
             this.tbName.TabIndex = 9;
             // 
             // tbCode
             // 
-            this.tbCode.BackColor = System.Drawing.Color.White;
-            this.tbCode.Location = new System.Drawing.Point(107, 125);
+            this.tbCode.Location = new System.Drawing.Point(158, 108);
+            this.tbCode.MenuManager = this.barManager1;
             this.tbCode.Name = "tbCode";
-            this.tbCode.Size = new System.Drawing.Size(340, 20);
+            this.tbCode.Properties.Appearance.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbCode.Properties.Appearance.Options.UseBackColor = true;
+            this.tbCode.Properties.ReadOnly = true;
+            this.tbCode.Size = new System.Drawing.Size(293, 20);
+            this.tbCode.StyleController = this.layoutControl2;
             this.tbCode.TabIndex = 8;
             // 
             // tbPokazId
             // 
-            this.tbPokazId.BackColor = System.Drawing.Color.White;
-            this.tbPokazId.Location = new System.Drawing.Point(107, 95);
+            this.tbPokazId.Location = new System.Drawing.Point(158, 84);
+            this.tbPokazId.MenuManager = this.barManager1;
             this.tbPokazId.Name = "tbPokazId";
-            this.tbPokazId.Size = new System.Drawing.Size(340, 20);
+            this.tbPokazId.Properties.Appearance.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbPokazId.Properties.Appearance.Options.UseBackColor = true;
+            this.tbPokazId.Properties.ReadOnly = true;
+            this.tbPokazId.Size = new System.Drawing.Size(293, 20);
+            this.tbPokazId.StyleController = this.layoutControl2;
             this.tbPokazId.TabIndex = 7;
             // 
             // tbABSDimId
             // 
-            this.tbABSDimId.BackColor = System.Drawing.Color.White;
-            this.tbABSDimId.Location = new System.Drawing.Point(107, 65);
+            this.tbABSDimId.Location = new System.Drawing.Point(158, 60);
+            this.tbABSDimId.MenuManager = this.barManager1;
             this.tbABSDimId.Name = "tbABSDimId";
-            this.tbABSDimId.Size = new System.Drawing.Size(340, 20);
+            this.tbABSDimId.Properties.Appearance.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbABSDimId.Properties.Appearance.Options.UseBackColor = true;
+            this.tbABSDimId.Properties.ReadOnly = true;
+            this.tbABSDimId.Size = new System.Drawing.Size(293, 20);
+            this.tbABSDimId.StyleController = this.layoutControl2;
             this.tbABSDimId.TabIndex = 6;
             // 
             // tbDimPart
             // 
-            this.tbDimPart.BackColor = System.Drawing.Color.White;
-            this.tbDimPart.Location = new System.Drawing.Point(107, 35);
+            this.tbDimPart.Location = new System.Drawing.Point(158, 36);
+            this.tbDimPart.MenuManager = this.barManager1;
             this.tbDimPart.Name = "tbDimPart";
-            this.tbDimPart.Size = new System.Drawing.Size(340, 20);
+            this.tbDimPart.Properties.Appearance.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbDimPart.Properties.Appearance.Options.UseBackColor = true;
+            this.tbDimPart.Properties.ReadOnly = true;
+            this.tbDimPart.Size = new System.Drawing.Size(293, 20);
+            this.tbDimPart.StyleController = this.layoutControl2;
             this.tbDimPart.TabIndex = 5;
             // 
             // tbDimName
             // 
-            this.tbDimName.BackColor = System.Drawing.Color.White;
-            this.tbDimName.Location = new System.Drawing.Point(107, 5);
+            this.tbDimName.Location = new System.Drawing.Point(158, 12);
+            this.tbDimName.MenuManager = this.barManager1;
             this.tbDimName.Name = "tbDimName";
-            this.tbDimName.Size = new System.Drawing.Size(340, 20);
+            this.tbDimName.Properties.Appearance.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbDimName.Properties.Appearance.Options.UseBackColor = true;
+            this.tbDimName.Properties.ReadOnly = true;
+            this.tbDimName.Size = new System.Drawing.Size(293, 20);
+            this.tbDimName.StyleController = this.layoutControl2;
             this.tbDimName.TabIndex = 4;
             // 
-            // layoutControlGroup2
+            // layoutControlGroup1
             // 
-            this.layoutControlGroup2.CustomizationFormText = "layoutControlGroup2";
-            this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup2.GroupBordersVisible = false;
-            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem4,
             this.layoutControlItem5,
             this.layoutControlItem6,
             this.layoutControlItem7,
             this.layoutControlItem8,
             this.layoutControlItem9});
-            this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(452, 194);
-            this.layoutControlGroup2.TextVisible = false;
-            this.layoutControlGroup2.DoubleClick += new System.EventHandler(this.btGuides_Click);
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 5;
+            this.layoutControlGroup1.Size = new System.Drawing.Size(463, 182);
+            this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.tbDimName;
-            this.layoutControlItem4.CustomizationFormText = "DIM_NAME";
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(452, 30);
-            this.layoutControlItem4.Text = "DIM_NAME";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(99, 13);
+            this.layoutControlItem4.Size = new System.Drawing.Size(443, 24);
+            this.layoutControlItem4.Text = "Найменование справочника";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(141, 13);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.tbDimPart;
-            this.layoutControlItem5.CustomizationFormText = "DIM_PART";
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 30);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(452, 30);
-            this.layoutControlItem5.Text = "DIM_PART";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(99, 13);
+            this.layoutControlItem5.Size = new System.Drawing.Size(443, 24);
+            this.layoutControlItem5.Text = "Раздел справочника";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(141, 13);
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.tbABSDimId;
-            this.layoutControlItem6.CustomizationFormText = "ABS_DIMENSION_ID";
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 60);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(452, 30);
+            this.layoutControlItem6.Size = new System.Drawing.Size(443, 24);
             this.layoutControlItem6.Text = "ABS_DIMENSION_ID";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(99, 13);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(141, 13);
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.tbPokazId;
-            this.layoutControlItem7.CustomizationFormText = "POKAZ_ID";
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 90);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(452, 30);
-            this.layoutControlItem7.Text = "POKAZ_ID";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(99, 13);
+            this.layoutControlItem7.Size = new System.Drawing.Size(443, 24);
+            this.layoutControlItem7.Text = "ID показателя";
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(141, 13);
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.tbCode;
-            this.layoutControlItem8.CustomizationFormText = "CODE";
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 120);
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(452, 30);
-            this.layoutControlItem8.Text = "CODE";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(99, 13);
+            this.layoutControlItem8.Size = new System.Drawing.Size(443, 24);
+            this.layoutControlItem8.Text = "Код";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(141, 13);
             // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.tbName;
-            this.layoutControlItem9.CustomizationFormText = "NAME";
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 150);
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 120);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(452, 44);
-            this.layoutControlItem9.Text = "NAME";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(99, 13);
-            // 
-            // btGuides
-            // 
-            this.btGuides.Location = new System.Drawing.Point(361, 354);
-            this.btGuides.Name = "btGuides";
-            this.btGuides.Size = new System.Drawing.Size(111, 23);
-            this.btGuides.TabIndex = 2;
-            this.btGuides.Text = "Справочники";
-            this.btGuides.Click += new System.EventHandler(this.btGuides_Click);
+            this.layoutControlItem9.Size = new System.Drawing.Size(443, 42);
+            this.layoutControlItem9.Text = "Найменование";
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(141, 13);
             // 
             // ExtraPokazADDForm
             // 
             this.Appearance.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(487, 424);
+            this.ClientSize = new System.Drawing.Size(481, 408);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ExtraPokazADDForm";
-            this.Load += new System.EventHandler(this.ExtraPokazADDForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MainBS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCustomerCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCustomerName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCustomerSid.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPokazId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbABSDimId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbDimPart.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbDimName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
@@ -425,30 +453,27 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox2;
+        private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraEditors.TextEdit tbCustomerSid;
+        private DevExpress.XtraLayout.LayoutControlGroup Root;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraEditors.TextEdit tbCustomerName;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraEditors.TextEdit tbCustomerCode;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControl layoutControl2;
-        private System.Windows.Forms.TextBox tbName;
-        private System.Windows.Forms.TextBox tbCode;
-        private System.Windows.Forms.TextBox tbPokazId;
-        private System.Windows.Forms.TextBox tbABSDimId;
-        private System.Windows.Forms.TextBox tbDimPart;
-        private System.Windows.Forms.TextBox tbDimName;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
+        private DevExpress.XtraEditors.TextEdit tbName;
+        private DevExpress.XtraEditors.TextEdit tbCode;
+        private DevExpress.XtraEditors.TextEdit tbPokazId;
+        private DevExpress.XtraEditors.TextEdit tbABSDimId;
+        private DevExpress.XtraEditors.TextEdit tbDimPart;
+        private DevExpress.XtraEditors.TextEdit tbDimName;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private System.Windows.Forms.TextBox tbCustomerCode;
-        private System.Windows.Forms.TextBox tbCustomerName;
-        private System.Windows.Forms.TextBox tbCustomerSid;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraEditors.CheckButton btGuides;
     }
 }

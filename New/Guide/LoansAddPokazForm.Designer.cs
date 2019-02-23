@@ -119,8 +119,8 @@ namespace ARM_User.New.Guide
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(2, 396);
-            this.panel1.Size = new System.Drawing.Size(398, 31);
+            this.panel1.Location = new System.Drawing.Point(2, 380);
+            this.panel1.Size = new System.Drawing.Size(405, 31);
             // 
             // barButtonItemBeginEdit
             // 
@@ -144,7 +144,7 @@ namespace ARM_User.New.Guide
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.Controls.Add(this.groupControl2);
             this.panelControl1.Controls.Add(this.groupControl1);
-            this.panelControl1.Size = new System.Drawing.Size(402, 429);
+            this.panelControl1.Size = new System.Drawing.Size(409, 413);
             this.panelControl1.Controls.SetChildIndex(this.groupControl1, 0);
             this.panelControl1.Controls.SetChildIndex(this.groupControl2, 0);
             this.panelControl1.Controls.SetChildIndex(this.panel1, 0);
@@ -157,7 +157,7 @@ namespace ARM_User.New.Guide
             this.groupControl1.Margin = new System.Windows.Forms.Padding(5);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.groupControl1.Size = new System.Drawing.Size(398, 128);
+            this.groupControl1.Size = new System.Drawing.Size(405, 128);
             this.groupControl1.TabIndex = 8;
             this.groupControl1.Text = "Кредиты";
             // 
@@ -167,47 +167,47 @@ namespace ARM_User.New.Guide
             this.dataLayoutControl1.Controls.Add(this.te_ref_no);
             this.dataLayoutControl1.Controls.Add(this.te_loan_sid);
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataLayoutControl1.Location = new System.Drawing.Point(7, 23);
+            this.dataLayoutControl1.Location = new System.Drawing.Point(7, 25);
             this.dataLayoutControl1.Margin = new System.Windows.Forms.Padding(0);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
             this.dataLayoutControl1.Root = this.Root;
-            this.dataLayoutControl1.Size = new System.Drawing.Size(384, 98);
+            this.dataLayoutControl1.Size = new System.Drawing.Size(391, 96);
             this.dataLayoutControl1.TabIndex = 0;
             this.dataLayoutControl1.Text = "dataLayoutCredits";
             // 
             // te_contract_no
             // 
-            this.te_contract_no.Location = new System.Drawing.Point(81, 65);
+            this.te_contract_no.Location = new System.Drawing.Point(88, 60);
             this.te_contract_no.MenuManager = this.barManager1;
             this.te_contract_no.Name = "te_contract_no";
             this.te_contract_no.Properties.Appearance.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.te_contract_no.Properties.Appearance.Options.UseBackColor = true;
             this.te_contract_no.Properties.ReadOnly = true;
-            this.te_contract_no.Size = new System.Drawing.Size(298, 20);
+            this.te_contract_no.Size = new System.Drawing.Size(291, 20);
             this.te_contract_no.StyleController = this.dataLayoutControl1;
             this.te_contract_no.TabIndex = 6;
             // 
             // te_ref_no
             // 
-            this.te_ref_no.Location = new System.Drawing.Point(81, 35);
+            this.te_ref_no.Location = new System.Drawing.Point(88, 36);
             this.te_ref_no.MenuManager = this.barManager1;
             this.te_ref_no.Name = "te_ref_no";
             this.te_ref_no.Properties.Appearance.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.te_ref_no.Properties.Appearance.Options.UseBackColor = true;
             this.te_ref_no.Properties.ReadOnly = true;
-            this.te_ref_no.Size = new System.Drawing.Size(298, 20);
+            this.te_ref_no.Size = new System.Drawing.Size(291, 20);
             this.te_ref_no.StyleController = this.dataLayoutControl1;
             this.te_ref_no.TabIndex = 5;
             // 
             // te_loan_sid
             // 
-            this.te_loan_sid.Location = new System.Drawing.Point(81, 5);
+            this.te_loan_sid.Location = new System.Drawing.Point(88, 12);
             this.te_loan_sid.MenuManager = this.barManager1;
             this.te_loan_sid.Name = "te_loan_sid";
             this.te_loan_sid.Properties.Appearance.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.te_loan_sid.Properties.Appearance.Options.UseBackColor = true;
             this.te_loan_sid.Properties.ReadOnly = true;
-            this.te_loan_sid.Size = new System.Drawing.Size(298, 20);
+            this.te_loan_sid.Size = new System.Drawing.Size(291, 20);
             this.te_loan_sid.StyleController = this.dataLayoutControl1;
             this.te_loan_sid.TabIndex = 4;
             // 
@@ -221,7 +221,7 @@ namespace ARM_User.New.Guide
             this.layoutControlItem12});
             this.Root.Name = "Root";
             this.Root.OptionsItemText.TextToControlDistance = 5;
-            this.Root.Size = new System.Drawing.Size(384, 98);
+            this.Root.Size = new System.Drawing.Size(391, 96);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem10
@@ -229,25 +229,25 @@ namespace ARM_User.New.Guide
             this.layoutControlItem10.Control = this.te_loan_sid;
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(384, 30);
+            this.layoutControlItem10.Size = new System.Drawing.Size(371, 24);
             this.layoutControlItem10.Text = "LOAN_SID";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(71, 13);
             // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.te_ref_no;
-            this.layoutControlItem11.Location = new System.Drawing.Point(0, 30);
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(384, 30);
+            this.layoutControlItem11.Size = new System.Drawing.Size(371, 24);
             this.layoutControlItem11.Text = "№ референса";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(71, 13);
             // 
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.te_contract_no;
-            this.layoutControlItem12.Location = new System.Drawing.Point(0, 60);
+            this.layoutControlItem12.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(384, 38);
+            this.layoutControlItem12.Size = new System.Drawing.Size(371, 28);
             this.layoutControlItem12.Text = "№ договора";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(71, 13);
             // 
@@ -259,7 +259,7 @@ namespace ARM_User.New.Guide
             this.groupControl2.Margin = new System.Windows.Forms.Padding(5);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.groupControl2.Size = new System.Drawing.Size(398, 258);
+            this.groupControl2.Size = new System.Drawing.Size(405, 247);
             this.groupControl2.TabIndex = 9;
             this.groupControl2.Text = "Показатели";
             // 
@@ -273,10 +273,10 @@ namespace ARM_User.New.Guide
             this.dataLayoutControl2.Controls.Add(this.te_dim_part);
             this.dataLayoutControl2.Controls.Add(this.te_dim_name);
             this.dataLayoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataLayoutControl2.Location = new System.Drawing.Point(7, 23);
+            this.dataLayoutControl2.Location = new System.Drawing.Point(7, 25);
             this.dataLayoutControl2.Name = "dataLayoutControl2";
             this.dataLayoutControl2.Root = this.layoutControlGroup3;
-            this.dataLayoutControl2.Size = new System.Drawing.Size(384, 228);
+            this.dataLayoutControl2.Size = new System.Drawing.Size(391, 215);
             this.dataLayoutControl2.TabIndex = 0;
             this.dataLayoutControl2.Text = "dataLayoutControl2";
             this.dataLayoutControl2.DoubleClick += new System.EventHandler(this.cbGuides_Click);
@@ -284,9 +284,9 @@ namespace ARM_User.New.Guide
             // cbGuides
             // 
             this.cbGuides.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cbGuides.ImageOptions.Image")));
-            this.cbGuides.Location = new System.Drawing.Point(265, 185);
+            this.cbGuides.Location = new System.Drawing.Point(263, 156);
             this.cbGuides.Name = "cbGuides";
-            this.cbGuides.Size = new System.Drawing.Size(114, 22);
+            this.cbGuides.Size = new System.Drawing.Size(116, 22);
             this.cbGuides.StyleController = this.dataLayoutControl2;
             this.cbGuides.TabIndex = 10;
             this.cbGuides.Text = "Справочники";
@@ -294,73 +294,73 @@ namespace ARM_User.New.Guide
             // 
             // te_name
             // 
-            this.te_name.Location = new System.Drawing.Point(109, 155);
+            this.te_name.Location = new System.Drawing.Point(158, 132);
             this.te_name.MenuManager = this.barManager1;
             this.te_name.Name = "te_name";
             this.te_name.Properties.Appearance.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.te_name.Properties.Appearance.Options.UseBackColor = true;
             this.te_name.Properties.ReadOnly = true;
-            this.te_name.Size = new System.Drawing.Size(270, 20);
+            this.te_name.Size = new System.Drawing.Size(221, 20);
             this.te_name.StyleController = this.dataLayoutControl2;
             this.te_name.TabIndex = 9;
             // 
             // te_code
             // 
-            this.te_code.Location = new System.Drawing.Point(109, 125);
+            this.te_code.Location = new System.Drawing.Point(158, 108);
             this.te_code.MenuManager = this.barManager1;
             this.te_code.Name = "te_code";
             this.te_code.Properties.Appearance.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.te_code.Properties.Appearance.Options.UseBackColor = true;
             this.te_code.Properties.ReadOnly = true;
-            this.te_code.Size = new System.Drawing.Size(270, 20);
+            this.te_code.Size = new System.Drawing.Size(221, 20);
             this.te_code.StyleController = this.dataLayoutControl2;
             this.te_code.TabIndex = 8;
             // 
             // te_pokaz_id
             // 
-            this.te_pokaz_id.Location = new System.Drawing.Point(109, 95);
+            this.te_pokaz_id.Location = new System.Drawing.Point(158, 84);
             this.te_pokaz_id.MenuManager = this.barManager1;
             this.te_pokaz_id.Name = "te_pokaz_id";
             this.te_pokaz_id.Properties.Appearance.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.te_pokaz_id.Properties.Appearance.Options.UseBackColor = true;
             this.te_pokaz_id.Properties.ReadOnly = true;
-            this.te_pokaz_id.Size = new System.Drawing.Size(270, 20);
+            this.te_pokaz_id.Size = new System.Drawing.Size(221, 20);
             this.te_pokaz_id.StyleController = this.dataLayoutControl2;
             this.te_pokaz_id.TabIndex = 7;
             // 
             // te_abs_dimension_id
             // 
-            this.te_abs_dimension_id.Location = new System.Drawing.Point(109, 65);
+            this.te_abs_dimension_id.Location = new System.Drawing.Point(158, 60);
             this.te_abs_dimension_id.MenuManager = this.barManager1;
             this.te_abs_dimension_id.Name = "te_abs_dimension_id";
             this.te_abs_dimension_id.Properties.Appearance.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.te_abs_dimension_id.Properties.Appearance.Options.UseBackColor = true;
             this.te_abs_dimension_id.Properties.ReadOnly = true;
-            this.te_abs_dimension_id.Size = new System.Drawing.Size(270, 20);
+            this.te_abs_dimension_id.Size = new System.Drawing.Size(221, 20);
             this.te_abs_dimension_id.StyleController = this.dataLayoutControl2;
             this.te_abs_dimension_id.TabIndex = 6;
             // 
             // te_dim_part
             // 
-            this.te_dim_part.Location = new System.Drawing.Point(109, 35);
+            this.te_dim_part.Location = new System.Drawing.Point(158, 36);
             this.te_dim_part.MenuManager = this.barManager1;
             this.te_dim_part.Name = "te_dim_part";
             this.te_dim_part.Properties.Appearance.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.te_dim_part.Properties.Appearance.Options.UseBackColor = true;
             this.te_dim_part.Properties.ReadOnly = true;
-            this.te_dim_part.Size = new System.Drawing.Size(270, 20);
+            this.te_dim_part.Size = new System.Drawing.Size(221, 20);
             this.te_dim_part.StyleController = this.dataLayoutControl2;
             this.te_dim_part.TabIndex = 5;
             // 
             // te_dim_name
             // 
-            this.te_dim_name.Location = new System.Drawing.Point(109, 5);
+            this.te_dim_name.Location = new System.Drawing.Point(158, 12);
             this.te_dim_name.MenuManager = this.barManager1;
             this.te_dim_name.Name = "te_dim_name";
             this.te_dim_name.Properties.Appearance.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.te_dim_name.Properties.Appearance.Options.UseBackColor = true;
             this.te_dim_name.Properties.ReadOnly = true;
-            this.te_dim_name.Size = new System.Drawing.Size(270, 20);
+            this.te_dim_name.Size = new System.Drawing.Size(221, 20);
             this.te_dim_name.StyleController = this.dataLayoutControl2;
             this.te_dim_name.TabIndex = 4;
             // 
@@ -379,7 +379,7 @@ namespace ARM_User.New.Guide
             this.layoutControlItem1});
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.OptionsItemText.TextToControlDistance = 5;
-            this.layoutControlGroup3.Size = new System.Drawing.Size(384, 228);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(391, 215);
             this.layoutControlGroup3.TextVisible = false;
             // 
             // layoutControlItem13
@@ -387,76 +387,76 @@ namespace ARM_User.New.Guide
             this.layoutControlItem13.Control = this.te_dim_name;
             this.layoutControlItem13.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(384, 30);
-            this.layoutControlItem13.Text = "DIM_NAME";
-            this.layoutControlItem13.TextSize = new System.Drawing.Size(99, 13);
+            this.layoutControlItem13.Size = new System.Drawing.Size(371, 24);
+            this.layoutControlItem13.Text = "Найменование справочника";
+            this.layoutControlItem13.TextSize = new System.Drawing.Size(141, 13);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 180);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 144);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(260, 48);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(251, 51);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem14
             // 
             this.layoutControlItem14.Control = this.te_dim_part;
-            this.layoutControlItem14.Location = new System.Drawing.Point(0, 30);
+            this.layoutControlItem14.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(384, 30);
-            this.layoutControlItem14.Text = "DIM_PART";
-            this.layoutControlItem14.TextSize = new System.Drawing.Size(99, 13);
+            this.layoutControlItem14.Size = new System.Drawing.Size(371, 24);
+            this.layoutControlItem14.Text = "Раздел справочника";
+            this.layoutControlItem14.TextSize = new System.Drawing.Size(141, 13);
             // 
             // layoutControlItem15
             // 
             this.layoutControlItem15.Control = this.te_abs_dimension_id;
-            this.layoutControlItem15.Location = new System.Drawing.Point(0, 60);
+            this.layoutControlItem15.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(384, 30);
+            this.layoutControlItem15.Size = new System.Drawing.Size(371, 24);
             this.layoutControlItem15.Text = "ABS_DIMENSION_ID";
-            this.layoutControlItem15.TextSize = new System.Drawing.Size(99, 13);
+            this.layoutControlItem15.TextSize = new System.Drawing.Size(141, 13);
             // 
             // layoutControlItem16
             // 
             this.layoutControlItem16.Control = this.te_pokaz_id;
-            this.layoutControlItem16.Location = new System.Drawing.Point(0, 90);
+            this.layoutControlItem16.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(384, 30);
-            this.layoutControlItem16.Text = "POKAZ_ID";
-            this.layoutControlItem16.TextSize = new System.Drawing.Size(99, 13);
+            this.layoutControlItem16.Size = new System.Drawing.Size(371, 24);
+            this.layoutControlItem16.Text = "ID показателя";
+            this.layoutControlItem16.TextSize = new System.Drawing.Size(141, 13);
             // 
             // layoutControlItem17
             // 
             this.layoutControlItem17.Control = this.te_code;
-            this.layoutControlItem17.Location = new System.Drawing.Point(0, 120);
+            this.layoutControlItem17.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem17.Name = "layoutControlItem17";
-            this.layoutControlItem17.Size = new System.Drawing.Size(384, 30);
-            this.layoutControlItem17.Text = "CODE";
-            this.layoutControlItem17.TextSize = new System.Drawing.Size(99, 13);
+            this.layoutControlItem17.Size = new System.Drawing.Size(371, 24);
+            this.layoutControlItem17.Text = "Код";
+            this.layoutControlItem17.TextSize = new System.Drawing.Size(141, 13);
             // 
             // layoutControlItem18
             // 
             this.layoutControlItem18.Control = this.te_name;
-            this.layoutControlItem18.Location = new System.Drawing.Point(0, 150);
+            this.layoutControlItem18.Location = new System.Drawing.Point(0, 120);
             this.layoutControlItem18.Name = "layoutControlItem18";
-            this.layoutControlItem18.Size = new System.Drawing.Size(384, 30);
-            this.layoutControlItem18.Text = "NAME";
-            this.layoutControlItem18.TextSize = new System.Drawing.Size(99, 13);
+            this.layoutControlItem18.Size = new System.Drawing.Size(371, 24);
+            this.layoutControlItem18.Text = "Найменование";
+            this.layoutControlItem18.TextSize = new System.Drawing.Size(141, 13);
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.cbGuides;
-            this.layoutControlItem1.Location = new System.Drawing.Point(260, 180);
+            this.layoutControlItem1.Location = new System.Drawing.Point(251, 144);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(124, 48);
+            this.layoutControlItem1.Size = new System.Drawing.Size(120, 51);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // LoansAddPokazForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(402, 429);
+            this.ClientSize = new System.Drawing.Size(409, 413);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoansAddPokazForm";
             this.Load += new System.EventHandler(this.LoansAddPokazForm_Load);

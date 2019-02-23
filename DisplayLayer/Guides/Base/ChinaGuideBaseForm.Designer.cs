@@ -1,6 +1,6 @@
-﻿namespace ARM_User.New.Guide
+﻿namespace ARM_User.DisplayLayer.Guides.Base
 {
-    partial class Form1
+    partial class ChinaGuideBaseForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChinaGuideBaseForm));
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,41 +56,22 @@
             // 
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
             // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 370);
-            this.barDockControlBottom.Size = new System.Drawing.Size(490, 0);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 31);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 339);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.Location = new System.Drawing.Point(490, 31);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 339);
-            // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.Size = new System.Drawing.Size(490, 31);
-            // 
             // barMenu
             // 
-            this.barMenu.OptionsBar.MultiLine = true;
-            this.barMenu.OptionsBar.UseWholeRow = true;
+            this.barMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnRefresh)});
             // 
             // iEnableAutoSize
             // 
             this.iEnableAutoSize.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("iEnableAutoSize.ImageOptions.Image")));
             this.iEnableAutoSize.ImageOptions.ImageIndex = 0;
             // 
-            // Form1
+            // ChinaGuideBaseForm
             // 
-            this.ClientSize = new System.Drawing.Size(490, 370);
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(515, 369);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "ChinaGuideBaseForm";
+            this.Text = "ChinaGuideBaseForm";
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

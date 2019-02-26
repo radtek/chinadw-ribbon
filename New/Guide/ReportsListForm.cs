@@ -7,7 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-
+using PagedList;
 namespace ARM_User.New.Guide
 {
     public partial class ReportsListForm : ARM_User.DisplayLayer.Guides.Base.ChinaGuideBaseForm
@@ -18,14 +18,13 @@ namespace ARM_User.New.Guide
         public ReportsListForm()
         {
             InitializeComponent();
+            
         }
 
         private void ReportsListForm_Load(object sender, EventArgs e)
         {
             db = new DB_Reports();
-            refreshPeriod();
-            gridView1.OptionsNavigation.UseOfficePageNavigation = true;
-            gridView1.MoveNextPage();
+            refreshPeriod();            
         }
         private void refreshPeriod()
         {
@@ -43,12 +42,21 @@ namespace ARM_User.New.Guide
         private void refreshReports()
         {
             String s = bPeriod.EditValue.ToString();
-            db.getReadReportList(ref dsMain, s.Substring(0, 1));
-            bCount.Caption = dsMain.Tables["tableReports"].Rows.Count.ToString();
+            if (s != "") { 
+                db.getReadReportList(ref dsMain, s.Substring(0, 1));
+                bCount.Caption = dsMain.Tables["tableReports"].Rows.Count.ToString();
+                //dataGridViewPaging1.DataSource = dsMain.Tables["tableReports"];
+            }
+
         }               
         private void rbutton_ButtonPressed(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            MessageBox.Show("Кнопка нажата");
+            //MessageBox.Show("Кнопка нажата");
+            var frm = new Form2();
+            frm.Height = Height;
+            frm.Width = Convert.ToInt32(Width * 0.8);
+            frm.ShowDialog();
+
         }
         private void rPeriodComboBox_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {

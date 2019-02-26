@@ -121,6 +121,25 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="iEnableAutoSize.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAOJJREFUOE+Vks0K
+        gzAQhH3/NyhqS29tDz6MF09echARRPEHFRK3HWkkjWuqgSVE/GZnsvG874qiiALfd9b9FpD+f7ND4N96
+        PR8Uhj4vclQgyzJe5KgAXEJkE2dP4JN1TYYIAHX93AMnoGHsSikqioKEEJSm6XEHaA8YaxxH6vt+EXJG
+        MG2bk8H3tm2prut9ARvWZ3QGjHNZlucdNE2zws4I8zyz76mqqqUz4DzPeQeApZSrgDkFE8Yk2EsEPE0T
+        DcNAXdeRbRudnWO0Ydu2hpMk4R2YnV1wHMe8wDW40JnCU34DeNSzTyUj+LIAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="toolTipController.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <metadata name="dsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 95</value>
+  </metadata>
+  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 173</value>
+  </metadata>
   <data name="barEditItemDate.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -177,27 +196,8 @@
         YkFY1DlZgEhDWOQ5rBaERabp6EOqxITfNfEc+o4iMrWAHf0NCho+ZteVWqkAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="iEnableAutoSize.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAOJJREFUOE+Vks0K
-        gzAQhH3/NyhqS29tDz6MF09echARRPEHFRK3HWkkjWuqgSVE/GZnsvG874qiiALfd9b9FpD+f7ND4N96
-        PR8Uhj4vclQgyzJe5KgAXEJkE2dP4JN1TYYIAHX93AMnoGHsSikqioKEEJSm6XEHaA8YaxxH6vt+EXJG
-        MG2bk8H3tm2prut9ARvWZ3QGjHNZlucdNE2zws4I8zyz76mqqqUz4DzPeQeApZSrgDkFE8Yk2EsEPE0T
-        DcNAXdeRbRudnWO0Ydu2hpMk4R2YnV1wHMe8wDW40JnCU34DeNSzTyUj+LIAAAAASUVORK5CYII=
-</value>
-  </data>
-  <metadata name="toolTipController.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>135, 17</value>
-  </metadata>
-  <metadata name="dsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>279, 17</value>
-  </metadata>
-  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>495, 17</value>
-  </metadata>
   <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>370, 17</value>
+    <value>17, 134</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>61</value>

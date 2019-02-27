@@ -8,12 +8,12 @@ using System.Windows.Forms;
 
 namespace ARM_User.New.Guide
 {
-    public partial class DialogHTMLCelleditForm : ARM_User.DisplayLayer.Base.SimpleEditForm
+    public partial class ReportsCelleditForm : ARM_User.DisplayLayer.Base.SimpleEditForm
     {
     # region [field]
             public String HTMLText;
     #endregion
-        public DialogHTMLCelleditForm()
+        public ReportsCelleditForm()
         {
             InitializeComponent();
         }

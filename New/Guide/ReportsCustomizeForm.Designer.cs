@@ -1,6 +1,6 @@
 ﻿namespace ARM_User.New.Guide
 {
-    partial class Form2
+    partial class ReportsCustomizeForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportsCustomizeForm));
             this.dsMain = new System.Data.DataSet();
             this.dataTable1 = new System.Data.DataTable();
             this.ChinaGuideBaseFormlayoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
@@ -38,10 +38,10 @@
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.barEditItem2 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.barEditItem3 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.barEditItemDate = new DevExpress.XtraBars.BarEditItem();
+            this.barEditItemType = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemComboBox2 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMain)).BeginInit();
@@ -53,9 +53,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.rbEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,8 +107,8 @@
             // 
             this.barManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barEditItem1,
-            this.barEditItem2,
-            this.barEditItem3});
+            this.barEditItemDate,
+            this.barEditItemType});
             this.barManager.MaxItemId = 11;
             this.barManager.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemComboBox1,
@@ -118,8 +118,8 @@
             // barMenu
             // 
             this.barMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(((DevExpress.XtraBars.BarLinkUserDefines)((DevExpress.XtraBars.BarLinkUserDefines.PaintStyle | DevExpress.XtraBars.BarLinkUserDefines.Width))), this.barEditItem2, "", true, true, true, 97, null, DevExpress.XtraBars.BarItemPaintStyle.Caption),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, this.barEditItem3, "", false, true, true, 118)});
+            new DevExpress.XtraBars.LinkPersistInfo(((DevExpress.XtraBars.BarLinkUserDefines)((DevExpress.XtraBars.BarLinkUserDefines.PaintStyle | DevExpress.XtraBars.BarLinkUserDefines.Width))), this.barEditItemDate, "", true, true, true, 91, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(((DevExpress.XtraBars.BarLinkUserDefines)((DevExpress.XtraBars.BarLinkUserDefines.PaintStyle | DevExpress.XtraBars.BarLinkUserDefines.Width))), this.barEditItemType, "", false, true, true, 118, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             // 
             // iEnableAutoSize
             // 
@@ -165,8 +165,11 @@
             // 
             // gridView1
             // 
+            this.gridView1.ColumnPanelRowHeight = 1;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.CustomRowCellEdit += new DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventHandler(this.gridView1_CustomRowCellEdit);
             // 
             // rbEdit
@@ -203,21 +206,6 @@
             this.barEditItem1.Id = 8;
             this.barEditItem1.Name = "barEditItem1";
             // 
-            // repositoryItemComboBox1
-            // 
-            this.repositoryItemComboBox1.AutoHeight = false;
-            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
-            this.repositoryItemComboBox1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            // 
-            // barEditItem2
-            // 
-            this.barEditItem2.Caption = "Отчетная дата:";
-            this.barEditItem2.Edit = this.repositoryItemDateEdit1;
-            this.barEditItem2.Id = 9;
-            this.barEditItem2.Name = "barEditItem2";
-            // 
             // repositoryItemDateEdit1
             // 
             this.repositoryItemDateEdit1.AutoHeight = false;
@@ -226,13 +214,36 @@
             this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
+            this.repositoryItemDateEdit1.NullDate = "31.12.9999 23:59";
+            this.repositoryItemDateEdit1.NullText = "31.12.9999 23:59";
             // 
-            // barEditItem3
+            // repositoryItemComboBox1
             // 
-            this.barEditItem3.Caption = "beType";
-            this.barEditItem3.Edit = this.repositoryItemComboBox2;
-            this.barEditItem3.Id = 10;
-            this.barEditItem3.Name = "barEditItem3";
+            this.repositoryItemComboBox1.AutoHeight = false;
+            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
+            this.repositoryItemComboBox1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            // 
+            // barEditItemDate
+            // 
+            this.barEditItemDate.Caption = "Отчетная дата:";
+            this.barEditItemDate.Edit = this.repositoryItemDateEdit1;
+            this.barEditItemDate.EditValue = "01.02.2019";
+            this.barEditItemDate.Id = 9;
+            this.barEditItemDate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barEditItemDate.ImageOptions.Image")));
+            this.barEditItemDate.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barEditItemDate.ImageOptions.LargeImage")));
+            this.barEditItemDate.Name = "barEditItemDate";
+            this.barEditItemDate.EditValueChanged += new System.EventHandler(this.barEditItemDate_EditValueChanged);
+            // 
+            // barEditItemType
+            // 
+            this.barEditItemType.Caption = "тип:";
+            this.barEditItemType.Edit = this.repositoryItemComboBox2;
+            this.barEditItemType.Id = 10;
+            this.barEditItemType.Name = "barEditItemType";
+            this.barEditItemType.Tag = "1";
+            this.barEditItemType.EditValueChanged += new System.EventHandler(this.barEditItemDate_EditValueChanged);
             // 
             // repositoryItemComboBox2
             // 
@@ -246,12 +257,13 @@
             this.repositoryItemComboBox2.Name = "repositoryItemComboBox2";
             this.repositoryItemComboBox2.Tag = 1;
             // 
-            // Form2
+            // ReportsCustomizeForm
             // 
             this.ClientSize = new System.Drawing.Size(904, 389);
             this.Controls.Add(this.ChinaGuideBaseFormlayoutControl1ConvertedLayout);
-            this.Name = "Form2";
+            this.Name = "ReportsCustomizeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Настройка формы";
             this.Activated += new System.EventHandler(this.Form2_Activated);
             this.Load += new System.EventHandler(this.Form2_Load);
             this.Controls.SetChildIndex(this.barDockControlTop, 0);
@@ -269,9 +281,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.rbEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -289,9 +301,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraBars.BarEditItem barEditItem1;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
-        private DevExpress.XtraBars.BarEditItem barEditItem2;
+        private DevExpress.XtraBars.BarEditItem barEditItemDate;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
-        private DevExpress.XtraBars.BarEditItem barEditItem3;
+        private DevExpress.XtraBars.BarEditItem barEditItemType;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox2;
     }
 }

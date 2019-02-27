@@ -1,6 +1,6 @@
 ﻿namespace ARM_User.New.Guide
 {
-    partial class DialogHTMLCelleditForm
+    partial class ReportsCelleditForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogHTMLCelleditForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportsCelleditForm));
             this.virtualServerModeSource1 = new DevExpress.Data.VirtualServerModeSource(this.components);
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();

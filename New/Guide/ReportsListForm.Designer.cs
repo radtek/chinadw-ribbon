@@ -30,13 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportsListForm));
-            DevExpress.Utils.SimpleContextButton simpleContextButton1 = new DevExpress.Utils.SimpleContextButton();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.Utils.SimpleContextButton simpleContextButton2 = new DevExpress.Utils.SimpleContextButton();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.dsMain = new System.Data.DataSet();
             this.dataTable1 = new System.Data.DataTable();
             this.dataColumn1 = new System.Data.DataColumn();
@@ -66,18 +65,17 @@
             this.rpLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.winExplorerView1 = new DevExpress.XtraGrid.Views.WinExplorer.WinExplorerView();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.bandedGridView1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
-            this.colrep_num = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colname = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colcode = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colperiod = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colrep_type = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.coldate_begin = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.coldate_end = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.dcButton = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colrep_num = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colname = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colperiod = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colrep_type = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldate_begin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldate_end = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dcButton = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xpPageSelector1 = new DevExpress.Xpo.XPPageSelector(this.components);
             this.xpCollection1 = new DevExpress.Xpo.XPCollection(this.components);
-            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).BeginInit();
@@ -91,7 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rpLookUpEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.winExplorerView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bandedGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpCollection1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -276,12 +274,12 @@
             this.repositoryItemCheckedComboBoxEdit1.AutoHeight = false;
             this.repositoryItemCheckedComboBoxEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            simpleContextButton1.AlignmentOptions.Panel = DevExpress.Utils.ContextItemPanel.Center;
-            simpleContextButton1.AlignmentOptions.Position = DevExpress.Utils.ContextItemPosition.Far;
-            simpleContextButton1.Caption = "Yearly";
-            simpleContextButton1.Id = new System.Guid("c5bb465a-24d3-4224-b96a-ceef43c20624");
-            simpleContextButton1.Name = "simpleContextButton1";
-            this.repositoryItemCheckedComboBoxEdit1.ContextButtons.Add(simpleContextButton1);
+            simpleContextButton2.AlignmentOptions.Panel = DevExpress.Utils.ContextItemPanel.Center;
+            simpleContextButton2.AlignmentOptions.Position = DevExpress.Utils.ContextItemPosition.Far;
+            simpleContextButton2.Caption = "Yearly";
+            simpleContextButton2.Id = new System.Guid("c5bb465a-24d3-4224-b96a-ceef43c20624");
+            simpleContextButton2.Name = "simpleContextButton1";
+            this.repositoryItemCheckedComboBoxEdit1.ContextButtons.Add(simpleContextButton2);
             this.repositoryItemCheckedComboBoxEdit1.Name = "repositoryItemCheckedComboBoxEdit1";
             // 
             // bCount
@@ -332,16 +330,15 @@
             // 
             // rbutton
             // 
-            editorButtonImageOptions1.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
-            editorButtonImageOptions1.Image = global::ARM_User.Properties.Resources.gear;
-            editorButtonImageOptions1.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftTop;
-            serializableAppearanceObject1.Options.UseImage = true;
+            editorButtonImageOptions2.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            editorButtonImageOptions2.Image = global::ARM_User.Properties.Resources.gear;
+            editorButtonImageOptions2.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftTop;
+            serializableAppearanceObject5.Options.UseImage = true;
             this.rbutton.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Настройки", -1, true, true, true, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F10)), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Настройки", -1, true, true, true, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F10)), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.rbutton.Name = "rbutton";
             this.rbutton.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.rbutton.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.rbutton_ButtonPressed);
-            this.rbutton.ButtonPressed += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.rbutton_ButtonPressed);
             // 
             // rpLookUpEdit2
             // 
@@ -364,11 +361,8 @@
             this.gridControl1.DataMember = "tableReports";
             this.gridControl1.DataSource = this.dsMain;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.RelationName = "Level1";
-            this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
             this.gridControl1.Location = new System.Drawing.Point(0, 31);
-            this.gridControl1.MainView = this.bandedGridView1;
+            this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -377,14 +371,12 @@
             this.gridControl1.Size = new System.Drawing.Size(905, 457);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.bandedGridView1,
+            this.gridView1,
             this.winExplorerView1});
             // 
-            // bandedGridView1
+            // gridView1
             // 
-            this.bandedGridView1.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
-            this.gridBand1});
-            this.bandedGridView1.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colrep_num,
             this.colname,
             this.colcode,
@@ -393,12 +385,13 @@
             this.coldate_begin,
             this.coldate_end,
             this.dcButton});
-            this.bandedGridView1.GridControl = this.gridControl1;
-            this.bandedGridView1.Name = "bandedGridView1";
-            this.bandedGridView1.OptionsPrint.RtfPageHeader = resources.GetString("bandedGridView1.OptionsPrint.RtfPageHeader");
-            this.bandedGridView1.OptionsSelection.CheckBoxSelectorField = "period";
-            this.bandedGridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.bandedGridView1.OptionsView.ShowGroupPanelColumnsAsSingleRow = true;
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsPrint.RtfPageHeader = resources.GetString("gridView1.OptionsPrint.RtfPageHeader");
+            this.gridView1.OptionsSelection.CheckBoxSelectorField = "period";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colrep_num
             // 
@@ -406,8 +399,8 @@
             this.colrep_num.FieldName = "rep_num";
             this.colrep_num.Name = "colrep_num";
             this.colrep_num.OptionsColumn.AllowEdit = false;
-            this.colrep_num.RowCount = 2;
             this.colrep_num.Visible = true;
+            this.colrep_num.VisibleIndex = 0;
             this.colrep_num.Width = 43;
             // 
             // colname
@@ -416,8 +409,8 @@
             this.colname.FieldName = "name";
             this.colname.Name = "colname";
             this.colname.OptionsColumn.AllowEdit = false;
-            this.colname.RowCount = 2;
             this.colname.Visible = true;
+            this.colname.VisibleIndex = 1;
             this.colname.Width = 358;
             // 
             // colcode
@@ -426,8 +419,8 @@
             this.colcode.FieldName = "code";
             this.colcode.Name = "colcode";
             this.colcode.OptionsColumn.AllowEdit = false;
-            this.colcode.RowCount = 2;
             this.colcode.Visible = true;
+            this.colcode.VisibleIndex = 2;
             this.colcode.Width = 43;
             // 
             // colperiod
@@ -436,8 +429,8 @@
             this.colperiod.FieldName = "period";
             this.colperiod.Name = "colperiod";
             this.colperiod.OptionsColumn.AllowEdit = false;
-            this.colperiod.RowCount = 2;
             this.colperiod.Visible = true;
+            this.colperiod.VisibleIndex = 3;
             this.colperiod.Width = 88;
             // 
             // colrep_type
@@ -446,8 +439,6 @@
             this.colrep_type.FieldName = "rep_type";
             this.colrep_type.Name = "colrep_type";
             this.colrep_type.OptionsColumn.AllowEdit = false;
-            this.colrep_type.RowCount = 2;
-            this.colrep_type.Visible = true;
             this.colrep_type.Width = 88;
             // 
             // coldate_begin
@@ -456,8 +447,8 @@
             this.coldate_begin.FieldName = "date_begin";
             this.coldate_begin.Name = "coldate_begin";
             this.coldate_begin.OptionsColumn.AllowEdit = false;
-            this.coldate_begin.RowCount = 2;
             this.coldate_begin.Visible = true;
+            this.coldate_begin.VisibleIndex = 4;
             this.coldate_begin.Width = 80;
             // 
             // coldate_end
@@ -466,8 +457,8 @@
             this.coldate_end.FieldName = "date_end";
             this.coldate_end.Name = "coldate_end";
             this.coldate_end.OptionsColumn.AllowEdit = false;
-            this.coldate_end.RowCount = 2;
             this.coldate_end.Visible = true;
+            this.coldate_end.VisibleIndex = 5;
             this.coldate_end.Width = 87;
             // 
             // dcButton
@@ -475,30 +466,13 @@
             this.dcButton.Caption = "Кнопка для перехода  в форму настройки";
             this.dcButton.ColumnEdit = this.rbutton;
             this.dcButton.Name = "dcButton";
-            this.dcButton.RowCount = 2;
             this.dcButton.Visible = true;
+            this.dcButton.VisibleIndex = 6;
             this.dcButton.Width = 109;
             // 
             // xpPageSelector1
             // 
             this.xpPageSelector1.Collection = this.xpCollection1;
-            // 
-            // gridBand1
-            // 
-            this.gridBand1.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand1.Caption = "Список форм";
-            this.gridBand1.Columns.Add(this.colrep_num);
-            this.gridBand1.Columns.Add(this.colname);
-            this.gridBand1.Columns.Add(this.colcode);
-            this.gridBand1.Columns.Add(this.colperiod);
-            this.gridBand1.Columns.Add(this.colrep_type);
-            this.gridBand1.Columns.Add(this.coldate_begin);
-            this.gridBand1.Columns.Add(this.coldate_end);
-            this.gridBand1.Columns.Add(this.dcButton);
-            this.gridBand1.Name = "gridBand1";
-            this.gridBand1.VisibleIndex = 0;
-            this.gridBand1.Width = 896;
             // 
             // ReportsListForm
             // 
@@ -525,7 +499,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rpLookUpEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.winExplorerView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bandedGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpCollection1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -563,16 +537,15 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.Xpo.XPPageSelector xpPageSelector1;
         private DevExpress.Xpo.XPCollection xpCollection1;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView bandedGridView1;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colrep_num;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colname;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colcode;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colperiod;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colrep_type;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn coldate_begin;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn coldate_end;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn dcButton;
         private System.Data.DataColumn dataColumn10;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colrep_num;
+        private DevExpress.XtraGrid.Columns.GridColumn colname;
+        private DevExpress.XtraGrid.Columns.GridColumn colcode;
+        private DevExpress.XtraGrid.Columns.GridColumn colperiod;
+        private DevExpress.XtraGrid.Columns.GridColumn colrep_type;
+        private DevExpress.XtraGrid.Columns.GridColumn coldate_begin;
+        private DevExpress.XtraGrid.Columns.GridColumn coldate_end;
+        private DevExpress.XtraGrid.Columns.GridColumn dcButton;
     }
 }

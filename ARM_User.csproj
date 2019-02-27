@@ -644,17 +644,17 @@
     <Compile Include="New\DB\DB_LoansListForm.cs" />
     <Compile Include="New\DB\DB_Reports.cs" />
     <Compile Include="New\DB\DIM_ExtraPokaz.cs" />
-    <Compile Include="New\Guide\DialogHTMLCelleditForm.cs">
+    <Compile Include="New\Guide\ReportsCelleditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="New\Guide\DialogHTMLCelleditForm.Designer.cs">
-      <DependentUpon>DialogHTMLCelleditForm.cs</DependentUpon>
+    <Compile Include="New\Guide\ReportsCelleditForm.Designer.cs">
+      <DependentUpon>ReportsCelleditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="New\Guide\Form2.cs">
+    <Compile Include="New\Guide\ReportsCustomizeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="New\Guide\Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="New\Guide\ReportsCustomizeForm.Designer.cs">
+      <DependentUpon>ReportsCustomizeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="New\Guide\ReportsListForm.cs">
       <SubType>Form</SubType>
@@ -1412,11 +1412,11 @@
     <EmbeddedResource Include="DisplayLayer\Base\MultiPageListROBaseForm.resx">
       <DependentUpon>MultiPageListROBaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="New\Guide\DialogHTMLCelleditForm.resx">
-      <DependentUpon>DialogHTMLCelleditForm.cs</DependentUpon>
+    <EmbeddedResource Include="New\Guide\ReportsCelleditForm.resx">
+      <DependentUpon>ReportsCelleditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="New\Guide\Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="New\Guide\ReportsCustomizeForm.resx">
+      <DependentUpon>ReportsCustomizeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="New\Guide\ReportsListForm.resx">
       <DependentUpon>ReportsListForm.cs</DependentUpon>

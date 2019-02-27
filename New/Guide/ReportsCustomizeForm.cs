@@ -40,7 +40,7 @@ namespace ARM_User.New.Guide
         {
             String s = barEditItemDate.EditValue.ToString();
             DateTime FilterDateTime = Convert.ToDateTime(s);
-            DateTime report_date_ = Convert.ToDateTime(FilterDateTime.Date);            
+            DateTime report_date_ = Convert.ToDateTime(FilterDateTime.Date);
             rep_type_ = repositoryItemComboBox2.Items.IndexOf(barEditItemType.EditValue) + 1;
 
 
@@ -89,6 +89,7 @@ namespace ARM_User.New.Guide
                     foreach (DataRow row in dt.Rows)
                     {
                         gridView1.Columns[delta + j].Caption = row[dt.Columns[1]].ToString();
+                        gridView1.Columns[delta + j].FieldName = row[dt.Columns[0]].ToString();
                         j++;
                     }
                 }
@@ -97,12 +98,7 @@ namespace ARM_User.New.Guide
 
                 }
                 
-            }                
-            //}
-            /*catch (Exception oe)
-            {
-                DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + sql_arm_ + "(occured in refreshFormList) ");
-            }*/
+            } 
         }
 
         private void gridView1_CustomRowCellEdit(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
@@ -119,11 +115,20 @@ namespace ARM_User.New.Guide
 
         private void rbEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
+
+            String s_date = barEditItemDate.EditValue.ToString();
+            DateTime FilterDateTime = Convert.ToDateTime(s_date);
+
             String s = ((Control)sender).Text;
             var frm = new ReportsCelleditForm();
             frm.HTMLText = s;
+            frm.p_str_id = getCurrentID("tbForm21", "str_id");
+            frm.p_col_id = Convert.ToInt32(gridView1.FocusedColumn.FieldName);                        
+            frm.p_date = Convert.ToDateTime(FilterDateTime.Date);
             frm.ShowDialog();
-
+            /*String s2 = getCurrentName("tbForm21", "str_id");
+            String s3 = gridView1.FocusedColumn.FieldName;
+            MessageBox.Show(s2 +":"+s3);*/
         }
 
         private void Form2_Activated(object sender, EventArgs e)
@@ -140,6 +145,71 @@ namespace ARM_User.New.Guide
         private void barEditItemDate_EditValueChanged(object sender, EventArgs e)
         {
             refreshFormList();
+        }
+        #region [current date getting]
+        // Получить текущий ID задав table и field
+        private Int32 getCurrentID(String sTable, String sField)
+        {
+            Int32 result = -1;
+            DataRow row = null;
+            CurrencyManager ManagerTable = null;
+
+            // Создаем менеджера таблицы
+            try
+            {
+                ManagerTable = (CurrencyManager)this.BindingContext[dsMain, sTable];
+                row = (ManagerTable.Current as DataRowView).Row;
+                result = Convert.ToInt32(row[sField]);
+            }
+            catch (Exception ex)
+            {
+                result = -1;
+            }
+            return result;
+        }
+        private String getCurrentName(String sTable, String sField)
+        {
+            String result = "";
+            DataRow row = null;
+            CurrencyManager ManagerTable = null;
+
+            // Создаем менеджера таблицы
+            try
+            {
+                ManagerTable = (CurrencyManager)this.BindingContext[dsMain, sTable];
+                row = (ManagerTable.Current as DataRowView).Row;
+                result = Convert.ToString(row[sField]);
+            }
+            catch (Exception ex)
+            {
+                result = "";
+            }
+            return result;
+        }
+        private DateTime getCurrentReportDate(String sTable, String sField)
+        {
+            DateTime result = new DateTime();
+            DataRow row = null;
+            CurrencyManager ManagerTable = null;
+
+            // Создаем менеджера таблицы
+            try
+            {
+                ManagerTable = (CurrencyManager)this.BindingContext[dsMain, sTable];
+                row = (ManagerTable.Current as DataRowView).Row;
+                result = Convert.ToDateTime(row[sField]);
+            }
+            catch (Exception ex)
+            {
+                //result = -1;
+            }
+            return result;
+        }
+        #endregion
+
+        private void gridView1_ColumnPositionChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

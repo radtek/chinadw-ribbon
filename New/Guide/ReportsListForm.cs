@@ -81,14 +81,14 @@ namespace ARM_User.New.Guide
         private Int32 getCurrentID(String sTable, String sField)
         {
             Int32 result = -1;
-            DataRow row = null;
+            DataRow row = null;            
             CurrencyManager ManagerTable = null;
 
             // Создаем менеджера таблицы
             try
             {
                 ManagerTable = (CurrencyManager)this.BindingContext[dsMain, sTable];
-                row = (ManagerTable.Current as DataRowView).Row;
+                row = (ManagerTable.Current as DataRowView).Row;                
                 result = Convert.ToInt32(row[sField]);
             }
             catch (Exception ex)

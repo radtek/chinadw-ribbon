@@ -28,22 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportsCelleditForm));
-            this.virtualServerModeSource1 = new DevExpress.Data.VirtualServerModeSource(this.components);
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.checkButton1 = new DevExpress.XtraEditors.CheckButton();
+            this.cbCheck = new DevExpress.XtraEditors.CheckButton();
+            this.dsMain = new System.Data.DataSet();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainBS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.virtualServerModeSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMain)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
@@ -70,12 +69,12 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.checkButton1);
+            this.panel1.Controls.Add(this.cbCheck);
             this.panel1.Location = new System.Drawing.Point(2, 141);
             this.panel1.Size = new System.Drawing.Size(381, 31);
             this.panel1.Controls.SetChildIndex(this.btnSave, 0);
             this.panel1.Controls.SetChildIndex(this.btnCancel, 0);
-            this.panel1.Controls.SetChildIndex(this.checkButton1, 0);
+            this.panel1.Controls.SetChildIndex(this.cbCheck, 0);
             // 
             // barButtonItemBeginEdit
             // 
@@ -132,21 +131,26 @@
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             // 
-            // checkButton1
+            // cbCheck
             // 
-            this.checkButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("checkButton1.ImageOptions.Image")));
-            this.checkButton1.Location = new System.Drawing.Point(22, 5);
-            this.checkButton1.Name = "checkButton1";
-            this.checkButton1.Size = new System.Drawing.Size(89, 23);
-            this.checkButton1.TabIndex = 3;
-            this.checkButton1.Text = "Проверить";
+            this.cbCheck.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cbCheck.ImageOptions.Image")));
+            this.cbCheck.Location = new System.Drawing.Point(22, 5);
+            this.cbCheck.Name = "cbCheck";
+            this.cbCheck.Size = new System.Drawing.Size(89, 23);
+            this.cbCheck.TabIndex = 3;
+            this.cbCheck.Text = "Проверить";
+            this.cbCheck.CheckedChanged += new System.EventHandler(this.cbCheck_CheckedChanged);
             // 
-            // DialogHTMLCelleditForm
+            // dsMain
+            // 
+            this.dsMain.DataSetName = "NewDataSet";
+            // 
+            // ReportsCelleditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(385, 174);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "DialogHTMLCelleditForm";
+            this.Name = "ReportsCelleditForm";
             this.Text = "Редакирование ячейки";
             this.Load += new System.EventHandler(this.DialogHTMLCelleditForm_Load);
             this.panel1.ResumeLayout(false);
@@ -154,21 +158,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.virtualServerModeSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dsMain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private DevExpress.Data.VirtualServerModeSource virtualServerModeSource1;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private DevExpress.XtraEditors.CheckButton checkButton1;
+        private DevExpress.XtraEditors.CheckButton cbCheck;
+        private System.Data.DataSet dsMain;
     }
 }

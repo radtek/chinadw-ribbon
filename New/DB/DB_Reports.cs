@@ -75,9 +75,10 @@ namespace ARM_User.New.DB
                     // fileds of dataset
                     for (Int32 i = 0; i < dr.FieldCount; i++)
                     {
+                        String str = dr.GetName(i);
                         DataColumn table_column = new DataColumn();
-                        table_column.Caption = dr.GetName(i); ;
-                        table_column.ColumnName = dr.GetName(i); ;
+                        table_column.Caption = str;
+                        table_column.ColumnName = str;
                         table_column.DataType = dr.GetFieldType(i);
                         ds.Tables["tbForm21"].Columns.Add(table_column);
                     }

@@ -171,6 +171,7 @@
             this.gridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.CustomRowCellEdit += new DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventHandler(this.gridView1_CustomRowCellEdit);
+            this.gridView1.ColumnPositionChanged += new System.EventHandler(this.gridView1_ColumnPositionChanged);
             // 
             // rbEdit
             // 

@@ -68,6 +68,7 @@ namespace ARM_User.New.Guide
                 frm.Width = Convert.ToInt32(Width * 0.8);
                 frm.rep_type_ = Convert.ToInt32(getCurrentName("tableReports", "rep_type"));
                 frm.sql_arm_ = getCurrentName("tableReports", "sql_arm").ToString();
+                frm.report_id_ = getCurrentID("tableReports", "report_id");
                 frm.ShowDialog();
             }
                     

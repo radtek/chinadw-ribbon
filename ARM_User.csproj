@@ -644,6 +644,7 @@
     <Compile Include="New\DB\DB_LoansListForm.cs" />
     <Compile Include="New\DB\DB_Reports.cs" />
     <Compile Include="New\DB\DIM_ExtraPokaz.cs" />
+    <Compile Include="New\DB\ReportsCelleditFormGateWay.cs" />
     <Compile Include="New\Guide\ReportsCelleditForm.cs">
       <SubType>Form</SubType>
     </Compile>

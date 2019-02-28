@@ -30,10 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportsCelleditForm));
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
-            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.cbCheck = new DevExpress.XtraEditors.CheckButton();
+            this.xtabText = new DevExpress.XtraTab.XtraTabPage();
+            this.rtbText = new System.Windows.Forms.RichTextBox();
             this.dsMain = new System.Data.DataSet();
+            this.cbCheck = new DevExpress.XtraEditors.SimpleButton();
+            this.xtabSQL = new DevExpress.XtraTab.XtraTabPage();
+            this.rtbSQL = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainBS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -41,8 +43,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
-            this.xtraTabPage1.SuspendLayout();
+            this.xtabText.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsMain)).BeginInit();
+            this.xtabSQL.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSave
@@ -106,44 +109,65 @@
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraTabControl1.Location = new System.Drawing.Point(2, 2);
             this.xtraTabControl1.Name = "xtraTabControl1";
-            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
+            this.xtraTabControl1.SelectedTabPage = this.xtabText;
             this.xtraTabControl1.Size = new System.Drawing.Size(381, 139);
             this.xtraTabControl1.TabIndex = 5;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtraTabPage1});
+            this.xtabText,
+            this.xtabSQL});
             // 
-            // xtraTabPage1
+            // xtabText
             // 
-            this.xtraTabPage1.Controls.Add(this.richTextBox1);
-            this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(375, 111);
-            this.xtraTabPage1.Text = "Text";
+            this.xtabText.Controls.Add(this.rtbText);
+            this.xtabText.Name = "xtabText";
+            this.xtabText.Size = new System.Drawing.Size(375, 111);
+            this.xtabText.Text = "Text";
             // 
-            // richTextBox1
+            // rtbText
             // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.richTextBox1.Size = new System.Drawing.Size(375, 111);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
-            // 
-            // cbCheck
-            // 
-            this.cbCheck.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cbCheck.ImageOptions.Image")));
-            this.cbCheck.Location = new System.Drawing.Point(22, 5);
-            this.cbCheck.Name = "cbCheck";
-            this.cbCheck.Size = new System.Drawing.Size(89, 23);
-            this.cbCheck.TabIndex = 3;
-            this.cbCheck.Text = "Проверить";
-            this.cbCheck.CheckedChanged += new System.EventHandler(this.cbCheck_CheckedChanged);
+            this.rtbText.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rtbText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbText.Location = new System.Drawing.Point(0, 0);
+            this.rtbText.Name = "rtbText";
+            this.rtbText.ReadOnly = true;
+            this.rtbText.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.rtbText.Size = new System.Drawing.Size(375, 111);
+            this.rtbText.TabIndex = 1;
+            this.rtbText.Text = "";
             // 
             // dsMain
             // 
             this.dsMain.DataSetName = "NewDataSet";
+            // 
+            // cbCheck
+            // 
+            this.cbCheck.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cbCheck.ImageOptions.Image")));
+            this.cbCheck.Location = new System.Drawing.Point(10, 5);
+            this.cbCheck.Name = "cbCheck";
+            this.cbCheck.Size = new System.Drawing.Size(83, 23);
+            this.cbCheck.TabIndex = 4;
+            this.cbCheck.Text = "Проверить";
+            this.cbCheck.Click += new System.EventHandler(this.cbCheck_CheckedChanged);
+            // 
+            // xtabSQL
+            // 
+            this.xtabSQL.Controls.Add(this.rtbSQL);
+            this.xtabSQL.Name = "xtabSQL";
+            this.xtabSQL.Size = new System.Drawing.Size(375, 111);
+            this.xtabSQL.Text = "SQL";
+            // 
+            // rtbSQL
+            // 
+            this.rtbSQL.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rtbSQL.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbSQL.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbSQL.Location = new System.Drawing.Point(0, 0);
+            this.rtbSQL.Name = "rtbSQL";
+            this.rtbSQL.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.rtbSQL.Size = new System.Drawing.Size(375, 111);
+            this.rtbSQL.TabIndex = 2;
+            this.rtbSQL.Text = "";
             // 
             // ReportsCelleditForm
             // 
@@ -160,8 +184,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
-            this.xtraTabPage1.ResumeLayout(false);
+            this.xtabText.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dsMain)).EndInit();
+            this.xtabSQL.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,9 +194,11 @@
 
         #endregion
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private DevExpress.XtraEditors.CheckButton cbCheck;
+        private DevExpress.XtraTab.XtraTabPage xtabText;
+        private System.Windows.Forms.RichTextBox rtbText;
         private System.Data.DataSet dsMain;
+        private DevExpress.XtraEditors.SimpleButton cbCheck;
+        private DevExpress.XtraTab.XtraTabPage xtabSQL;
+        private System.Windows.Forms.RichTextBox rtbSQL;
     }
 }

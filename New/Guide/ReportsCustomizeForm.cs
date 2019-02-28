@@ -20,6 +20,7 @@ namespace ARM_User.New.Guide
 
         public Int32 rep_type_;
         public String sql_arm_;
+        public Int32 report_id_;
         #endregion
         public ReportsCustomizeForm()
         {
@@ -56,7 +57,7 @@ namespace ARM_User.New.Guide
                 return;
             }
 
-            db.getReadReporHeadertList(ref dsMain, rep_type_, report_date_);
+            db.getReadReporHeadertList(ref dsMain, rep_type_, report_date_, report_id_);
                 gridControl1.RefreshDataSource();
                 gridView1.PopulateColumns();
 

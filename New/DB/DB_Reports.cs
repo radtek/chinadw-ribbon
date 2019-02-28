@@ -105,7 +105,7 @@ namespace ARM_User.New.DB
                 }
             }
         }
-        public void getReadReporHeadertList(ref DataSet ds, Int32 type_, DateTime date_)
+        public void getReadReporHeadertList(ref DataSet ds, Int32 type_, DateTime date_, Int32 report_id_)
         {
             if (ds.Tables.Contains("tableReportsHeader"))
             {
@@ -124,6 +124,7 @@ namespace ARM_User.New.DB
                 cmd.CommandText = "PREPARED.g_read_g_reports_header";
                 cmd.Parameters.Add("cur", OracleDbType.RefCursor, ParameterDirection.Output);
                 cmd.Parameters.Add("type_", OracleDbType.Int32, type_, ParameterDirection.Input);
+                cmd.Parameters.Add("report_id_", OracleDbType.Int32, report_id_, ParameterDirection.Input);
                 cmd.Parameters.Add("date_", OracleDbType.Date, date_, ParameterDirection.Input);
                 cmd.Parameters.Add("err_code", OracleDbType.Int16, ParameterDirection.Output);
                 cmd.Parameters.Add("err_msg", OracleDbType.Clob, ParameterDirection.Output);

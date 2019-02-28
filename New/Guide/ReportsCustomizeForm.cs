@@ -21,6 +21,7 @@ namespace ARM_User.New.Guide
         public Int32 rep_type_;
         public String sql_arm_;
         public Int32 report_id_;
+        public Int32 rep_custom_type;
         #endregion
         public ReportsCustomizeForm()
         {
@@ -42,14 +43,11 @@ namespace ARM_User.New.Guide
             String s = barEditItemDate.EditValue.ToString();
             DateTime FilterDateTime = Convert.ToDateTime(s);
             DateTime report_date_ = Convert.ToDateTime(FilterDateTime.Date);
-            rep_type_ = repositoryItemComboBox2.Items.IndexOf(barEditItemType.EditValue) + 1;
+            rep_custom_type = repositoryItemComboBox2.Items.IndexOf(barEditItemType.EditValue) + 1;
 
-
-            /*try
-            {*/
             try
             {
-                db.getReportsListF21(ref dsMain, sql_arm_, rep_type_, report_date_);
+                db.getReportsListF21(ref dsMain, sql_arm_, rep_custom_type, report_date_);
             }
             catch (Exception oe)
             {
@@ -57,7 +55,7 @@ namespace ARM_User.New.Guide
                 return;
             }
 
-            db.getReadReporHeadertList(ref dsMain, rep_type_, report_date_, report_id_);
+            db.getReadReporHeadertList(ref dsMain, report_date_, report_id_);
                 gridControl1.RefreshDataSource();
                 gridView1.PopulateColumns();
 
@@ -68,6 +66,7 @@ namespace ARM_User.New.Guide
                     if (i > 3)
                     {
                         gridView1.Columns[i].Width = 150;
+                        gridView1.Columns[i].Caption = " ";
                         gridView1.Columns[i].AppearanceCell.BackColor = Color.SkyBlue;
                     }
                     else
@@ -90,7 +89,7 @@ namespace ARM_User.New.Guide
                     foreach (DataRow row in dt.Rows)
                     {
                         gridView1.Columns[delta + j].Caption = row[dt.Columns[1]].ToString();
-                        gridView1.Columns[delta + j].FieldName = row[dt.Columns[0]].ToString();
+                        gridView1.Columns[delta + j].FieldName = row[dt.Columns[0]].ToString();                        
                         j++;
                     }
                 }
@@ -121,15 +120,33 @@ namespace ARM_User.New.Guide
             DateTime FilterDateTime = Convert.ToDateTime(s_date);
 
             String s = ((Control)sender).Text;
-            var frm = new ReportsCelleditForm();
-            frm.HTMLText = s;
-            frm.p_str_id = getCurrentID("tbForm21", "str_id");
-            frm.p_col_id = Convert.ToInt32(gridView1.FocusedColumn.FieldName);                        
-            frm.p_date = Convert.ToDateTime(FilterDateTime.Date);
-            frm.ShowDialog();
-            /*String s2 = getCurrentName("tbForm21", "str_id");
-            String s3 = gridView1.FocusedColumn.FieldName;
-            MessageBox.Show(s2 +":"+s3);*/
+            if (s.Trim() != "")
+            {
+                /*тип отчета*/
+                switch (rep_type_)
+                {
+                    case 1: 
+                        {
+                            var frm = new ReportsCelleditForm();
+                            frm.HTMLText = s;
+                            frm.p_str_id = getCurrentID("tbForm21", "str_id");
+                            frm.p_col_id = Convert.ToInt32(gridView1.FocusedColumn.FieldName);
+                            frm.p_date = Convert.ToDateTime(FilterDateTime.Date);
+                            frm.p_type = rep_type_;
+                            frm.ShowDialog();
+                            break;
+                        }
+                    default:
+                        {
+                            String s2 = getCurrentName("tbForm21", "str_id");
+                            String s3 = gridView1.FocusedColumn.FieldName;
+                            MessageBox.Show("["+s2 +":"+s3+"]");
+                            break;
+                        }
+                
+                
+            }
+            }
         }
 
         private void Form2_Activated(object sender, EventArgs e)

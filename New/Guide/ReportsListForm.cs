@@ -8,6 +8,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using PagedList;
+using BSB.Common;
+
 namespace ARM_User.New.Guide
 {
     public partial class ReportsListForm : ARM_User.DisplayLayer.Guides.Base.ChinaGuideBaseForm
@@ -53,6 +55,8 @@ namespace ARM_User.New.Guide
         }               
         private void rbutton_ButtonPressed(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
+            //MessageBox.Show(" report_id:"+getCurrentID("tableReports", "report_id").ToString());
+
             Boolean fsql_arm = getCurrentName("tableReports", "sql_arm").ToString()=="";
             Boolean frep_type = getCurrentName("tableReports", "rep_type").ToString() == "";
             String s = "SQL_ARM или REP_TYPE пусто";            
@@ -63,15 +67,17 @@ namespace ARM_User.New.Guide
             }
             else
             {
+                Int32 rep_id = getCurrentID("tableReports", "report_id");
                 var frm = new ReportsCustomizeForm();
+                frm.Text = "["+rep_id.ToString()+"] "+getCurrentName("tableReports", "name").ToString();
                 frm.Height = Height;
                 frm.Width = Convert.ToInt32(Width * 0.8);
-                frm.rep_type_ = Convert.ToInt32(getCurrentName("tableReports", "rep_type"));
+                frm.rep_type_ = Convert.ToInt32(getCurrentName("tableReports", "rep_type")); /*Тип отчета*/
                 frm.sql_arm_ = getCurrentName("tableReports", "sql_arm").ToString();
-                frm.report_id_ = getCurrentID("tableReports", "report_id");
+                frm.report_id_ = rep_id;
                 frm.ShowDialog();
             }
-                    
+
         }
         private void rPeriodComboBox_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {

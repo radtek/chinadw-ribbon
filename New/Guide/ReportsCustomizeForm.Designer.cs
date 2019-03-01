@@ -86,22 +86,22 @@
             // 
             // barDockControlBottom
             // 
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 389);
-            this.barDockControlBottom.Size = new System.Drawing.Size(904, 0);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 383);
+            this.barDockControlBottom.Size = new System.Drawing.Size(898, 0);
             // 
             // barDockControlLeft
             // 
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 31);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 358);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 359);
             // 
             // barDockControlRight
             // 
-            this.barDockControlRight.Location = new System.Drawing.Point(904, 31);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 358);
+            this.barDockControlRight.Location = new System.Drawing.Point(898, 24);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 359);
             // 
             // barDockControlTop
             // 
-            this.barDockControlTop.Size = new System.Drawing.Size(904, 31);
+            this.barDockControlTop.Size = new System.Drawing.Size(898, 24);
             // 
             // barManager
             // 
@@ -140,24 +140,24 @@
             // 
             this.ChinaGuideBaseFormlayoutControl1ConvertedLayout.Controls.Add(this.gridControl1);
             this.ChinaGuideBaseFormlayoutControl1ConvertedLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ChinaGuideBaseFormlayoutControl1ConvertedLayout.Location = new System.Drawing.Point(0, 31);
+            this.ChinaGuideBaseFormlayoutControl1ConvertedLayout.Location = new System.Drawing.Point(0, 24);
             this.ChinaGuideBaseFormlayoutControl1ConvertedLayout.Name = "ChinaGuideBaseFormlayoutControl1ConvertedLayout";
             this.ChinaGuideBaseFormlayoutControl1ConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(999, 375, 650, 400);
             this.ChinaGuideBaseFormlayoutControl1ConvertedLayout.Root = this.layoutControlGroup1;
-            this.ChinaGuideBaseFormlayoutControl1ConvertedLayout.Size = new System.Drawing.Size(904, 358);
+            this.ChinaGuideBaseFormlayoutControl1ConvertedLayout.Size = new System.Drawing.Size(898, 359);
             this.ChinaGuideBaseFormlayoutControl1ConvertedLayout.TabIndex = 5;
             // 
             // gridControl1
             // 
             this.gridControl1.DataMember = "tbForm21";
             this.gridControl1.DataSource = this.dsMain;
-            this.gridControl1.Location = new System.Drawing.Point(12, 12);
+            this.gridControl1.Location = new System.Drawing.Point(5, 5);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.rbEdit});
-            this.gridControl1.Size = new System.Drawing.Size(880, 334);
+            this.gridControl1.Size = new System.Drawing.Size(888, 349);
             this.gridControl1.TabIndex = 5;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -188,7 +188,7 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(904, 358);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(898, 359);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -196,7 +196,7 @@
             this.layoutControlItem1.Control = this.gridControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(884, 338);
+            this.layoutControlItem1.Size = new System.Drawing.Size(898, 359);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -260,7 +260,7 @@
             // 
             // ReportsCustomizeForm
             // 
-            this.ClientSize = new System.Drawing.Size(904, 389);
+            this.ClientSize = new System.Drawing.Size(898, 383);
             this.Controls.Add(this.ChinaGuideBaseFormlayoutControl1ConvertedLayout);
             this.Name = "ReportsCustomizeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

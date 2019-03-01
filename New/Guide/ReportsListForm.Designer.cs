@@ -119,22 +119,22 @@
             // 
             // barDockControlBottom
             // 
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 488);
-            this.barDockControlBottom.Size = new System.Drawing.Size(905, 0);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 482);
+            this.barDockControlBottom.Size = new System.Drawing.Size(899, 0);
             // 
             // barDockControlLeft
             // 
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 31);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 457);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 458);
             // 
             // barDockControlRight
             // 
-            this.barDockControlRight.Location = new System.Drawing.Point(905, 31);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 457);
+            this.barDockControlRight.Location = new System.Drawing.Point(899, 24);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 458);
             // 
             // barDockControlTop
             // 
-            this.barDockControlTop.Size = new System.Drawing.Size(905, 31);
+            this.barDockControlTop.Size = new System.Drawing.Size(899, 24);
             // 
             // barManager
             // 
@@ -361,14 +361,14 @@
             this.gridControl1.DataMember = "tableReports";
             this.gridControl1.DataSource = this.dsMain;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 31);
+            this.gridControl1.Location = new System.Drawing.Point(0, 24);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.rbutton,
             this.rpLookUpEdit2});
-            this.gridControl1.Size = new System.Drawing.Size(905, 457);
+            this.gridControl1.Size = new System.Drawing.Size(899, 458);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -476,7 +476,7 @@
             // 
             // ReportsListForm
             // 
-            this.ClientSize = new System.Drawing.Size(905, 488);
+            this.ClientSize = new System.Drawing.Size(899, 482);
             this.Controls.Add(this.gridControl1);
             this.Name = "ReportsListForm";
             this.Text = "Список отчетов";

@@ -59,6 +59,7 @@ namespace ARM_User
         private MyAction aClients;
         private MyAction aCredits;
         private MyAction aRepList;
+        private MyAction aCalendarsOperationDays;
         public decimal iscancelpassword = 0;
 
     /// <summary>
@@ -270,8 +271,9 @@ namespace ARM_User
             this.aExtraPokaz = new BSB.Actions.MyAction(this.components);
             this.aClients = new BSB.Actions.MyAction(this.components);
             this.aCredits = new BSB.Actions.MyAction(this.components);
-            this.tmCheckGovSec = new System.Timers.Timer();
             this.aRepList = new BSB.Actions.MyAction(this.components);
+            this.tmCheckGovSec = new System.Timers.Timer();
+            this.aCalendarsOperationDays = new BSB.Actions.MyAction(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.MainBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainDockManager)).BeginInit();
             this.hideContainerLeft.SuspendLayout();
@@ -1316,7 +1318,8 @@ namespace ARM_User
             this.aExtraPokaz,
             this.aClients,
             this.aCredits,
-            this.aRepList});
+            this.aRepList,
+            this.aCalendarsOperationDays});
             // 
             // aConnect
             // 
@@ -2335,12 +2338,6 @@ namespace ARM_User
             this.aCredits.MakeDisabledOnExec = true;
             this.aCredits.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aCredits_Execute);
             // 
-            // tmCheckGovSec
-            // 
-            this.tmCheckGovSec.Enabled = true;
-            this.tmCheckGovSec.Interval = 5000D;
-            this.tmCheckGovSec.SynchronizingObject = this;
-            // 
             // aRepList
             // 
             this.aRepList.Caption = "Настройка отчетов";
@@ -2349,6 +2346,21 @@ namespace ARM_User
             this.aRepList.Enabled = true;
             this.aRepList.MakeDisabledOnExec = true;
             this.aRepList.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aRepList_Execute);
+            // 
+            // tmCheckGovSec
+            // 
+            this.tmCheckGovSec.Enabled = true;
+            this.tmCheckGovSec.Interval = 5000D;
+            this.tmCheckGovSec.SynchronizingObject = this;
+            // 
+            // aCalendarsOperationDays
+            // 
+            this.aCalendarsOperationDays.Caption = "Календар операционных дней";
+            this.aCalendarsOperationDays.Category = null;
+            this.aCalendarsOperationDays.Code = "aCalendarsOperationDays";
+            this.aCalendarsOperationDays.Enabled = true;
+            this.aCalendarsOperationDays.MakeDisabledOnExec = true;
+            this.aCalendarsOperationDays.Execute += new BSB.Actions.MyAction.ExecuteDelegate(this.aCalendarsOperationDays_Execute);
             // 
             // MainForm
             // 
@@ -2708,6 +2720,10 @@ namespace ARM_User
         frm.MdiParent = this;
         frm.Show();
     }
+        private void aCalendarsOperationDays_Execute(object sender, TActionEventArgs ae)
+        {
+            MessageBox.Show("OK");
+        }
     #endregion
 
         #region [Create and Dispose Form]

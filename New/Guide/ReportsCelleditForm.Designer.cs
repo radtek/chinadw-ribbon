@@ -110,6 +110,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(2, 2);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtabSQL;
+            this.xtraTabControl1.ShowTabHeader = DevExpress.Utils.DefaultBoolean.False;
             this.xtraTabControl1.Size = new System.Drawing.Size(381, 139);
             this.xtraTabControl1.TabIndex = 5;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
@@ -120,7 +121,7 @@
             // 
             this.xtabSQL.Controls.Add(this.rtbSQL);
             this.xtabSQL.Name = "xtabSQL";
-            this.xtabSQL.Size = new System.Drawing.Size(375, 111);
+            this.xtabSQL.Size = new System.Drawing.Size(379, 115);
             this.xtabSQL.Text = "SQL";
             // 
             // rtbSQL
@@ -131,7 +132,7 @@
             this.rtbSQL.Location = new System.Drawing.Point(0, 0);
             this.rtbSQL.Name = "rtbSQL";
             this.rtbSQL.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.rtbSQL.Size = new System.Drawing.Size(375, 111);
+            this.rtbSQL.Size = new System.Drawing.Size(379, 115);
             this.rtbSQL.TabIndex = 2;
             this.rtbSQL.Text = "";
             // 
@@ -139,7 +140,8 @@
             // 
             this.xtabText.Controls.Add(this.rtbText);
             this.xtabText.Name = "xtabText";
-            this.xtabText.Size = new System.Drawing.Size(375, 111);
+            this.xtabText.PageVisible = false;
+            this.xtabText.Size = new System.Drawing.Size(379, 137);
             this.xtabText.Text = "Text";
             // 
             // rtbText
@@ -151,7 +153,7 @@
             this.rtbText.Name = "rtbText";
             this.rtbText.ReadOnly = true;
             this.rtbText.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.rtbText.Size = new System.Drawing.Size(375, 111);
+            this.rtbText.Size = new System.Drawing.Size(379, 137);
             this.rtbText.TabIndex = 1;
             this.rtbText.Text = "";
             this.rtbText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtbText_KeyPress);

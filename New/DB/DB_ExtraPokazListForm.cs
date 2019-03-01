@@ -183,18 +183,19 @@ namespace ARM_User.New.DB
                 DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_ExtraPokazListForm.viewCusomerMap)");
             }
         }
-        public void insertCostomerMap(Int32 customer_sid_, DateTime report_date_, Int32 abs_dimension_id_, Int32 pokaz_id_)
+        public void insertLoansAddMap(Int32 loan_sid_, DateTime report_date_, Int32 abs_constant_dimension_id_, String map_value_, String note_)
         {
             try
             {
                 OracleCommand cmd = pConncection.CreateCommand();
                 cmd.BindByName = true;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "PREPARED.pkg_interface_orepations.pro_insert_customer_map";
-                cmd.Parameters.Add("customer_sid_", OracleDbType.Int32, customer_sid_,ParameterDirection.Input);
+                cmd.CommandText = "PREPARED.pkg_interface_orepations.pro_insert_loans_add_map";
+                cmd.Parameters.Add("loan_sid_", OracleDbType.Int32, loan_sid_, ParameterDirection.Input);
                 cmd.Parameters.Add("report_date_", OracleDbType.Date, report_date_, ParameterDirection.Input);
-                cmd.Parameters.Add("abs_dimension_id_",OracleDbType.Int32, abs_dimension_id_, ParameterDirection.Input);
-                cmd.Parameters.Add("pokaz_id_", OracleDbType.Int32, pokaz_id_, ParameterDirection.Input);
+                cmd.Parameters.Add("abs_constant_dimension_id_", OracleDbType.Int32, abs_constant_dimension_id_, ParameterDirection.Input);
+                cmd.Parameters.Add("map_value_", OracleDbType.Varchar2, map_value_, ParameterDirection.Input);
+                cmd.Parameters.Add("note_", OracleDbType.Varchar2, note_, ParameterDirection.Input);
                 cmd.ExecuteNonQuery();
             }
             catch(Exception oe)
@@ -202,18 +203,19 @@ namespace ARM_User.New.DB
                 DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_ExtraPokazListForm.insertCostomerMap)");
             }
         }
-        public void updateCostomerMap(Int32 customer_sid_, DateTime report_date_, Int32 abs_dimension_id_, Int32 pokaz_id_)
+        public void updateLoansAddMap(Int32 loan_sid_, DateTime report_date_, Int32 abs_constant_dimension_id_, String map_value_, String note_)
         {
             try
             {
                 OracleCommand cmd = pConncection.CreateCommand();
                 cmd.BindByName = true;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "PREPARED.pkg_interface_orepations.pro_update_customer_map";
-                cmd.Parameters.Add("customer_sid_", OracleDbType.Int32, customer_sid_, ParameterDirection.Input);
+                cmd.CommandText = "PREPARED.pkg_interface_orepations.pro_update_loans_add_map";
+                cmd.Parameters.Add("loan_sid_", OracleDbType.Int32, loan_sid_, ParameterDirection.Input);
                 cmd.Parameters.Add("report_date_", OracleDbType.Date, report_date_, ParameterDirection.Input);
-                cmd.Parameters.Add("abs_dimension_id_", OracleDbType.Int32, abs_dimension_id_, ParameterDirection.Input);
-                cmd.Parameters.Add("pokaz_id_", OracleDbType.Int32, pokaz_id_, ParameterDirection.Input);
+                cmd.Parameters.Add("abs_constant_dimension_id_", OracleDbType.Int32, abs_constant_dimension_id_, ParameterDirection.Input);
+                cmd.Parameters.Add("map_value_", OracleDbType.Varchar2, map_value_, ParameterDirection.Input);
+                cmd.Parameters.Add("note_", OracleDbType.Varchar2, note_, ParameterDirection.Input);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception oe)
@@ -221,18 +223,17 @@ namespace ARM_User.New.DB
                 DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_ExtraPokazListForm.updateCostomerMap)");
             }
         }
-        public void deleteCostomerMap(Int32 customer_sid_, DateTime report_date_, Int32 abs_dimension_id_, Int32 pokaz_id_)
+        public void deleteLoansDeleteMap(Int32 loan_sid_, DateTime report_date_, Int32 abs_constant_loans_map_id_ )
         {
             try
             {
                 OracleCommand cmd = pConncection.CreateCommand();
                 cmd.BindByName = true;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "PREPARED.pkg_interface_orepations.pro_delete_customer_map";
-                cmd.Parameters.Add("customer_sid_", OracleDbType.Int32, customer_sid_, ParameterDirection.Input);
+                cmd.CommandText = "PREPARED.pkg_interface_orepations.pro_delete_loans_add_map";
+                cmd.Parameters.Add("loan_sid_", OracleDbType.Int32, loan_sid_, ParameterDirection.Input);
                 cmd.Parameters.Add("report_date_", OracleDbType.Date, report_date_, ParameterDirection.Input);
-                cmd.Parameters.Add("abs_dimension_id_", OracleDbType.Int32, abs_dimension_id_, ParameterDirection.Input);
-                cmd.Parameters.Add("pokaz_id_", OracleDbType.Int32, pokaz_id_, ParameterDirection.Input);
+                cmd.Parameters.Add("abs_constant_loans_map_id_", OracleDbType.Int32, abs_constant_loans_map_id_, ParameterDirection.Input);                
                 cmd.ExecuteNonQuery();
             }
             catch (Exception oe)

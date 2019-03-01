@@ -30,21 +30,26 @@ namespace ARM_User.New.Guide
         private void DialogHTMLCelleditForm_Load(object sender, EventArgs e)
         {
             rtbText.Text = HTMLText;
-            rtbSQL.Text = getSQLText(p_str_id, p_col_id, p_date, p_type);
+            String str = null;
+            String result = getSQLText(p_str_id, p_col_id, p_date, p_type);
+
+            if (result == "null")
+                rtbSQL.Text = "";
+            else
+                rtbSQL.Text = result; 
         }
-        private Int32 check(Int32 p_str_id_, Int32 p_col_id_, DateTime p_date_)
+        private Int32 check(String p_sql_memo, DateTime p_date_)
         {
             using (OracleCommand cmd = dmControler.frmMain.oracleConnection.CreateCommand())
             {
                 try
                 {
-
                     cmd.CommandText = "begin" +
-                                           " :result := prepared.pkg_rep.sql_check(:p_str_id, :p_col_id, :p_date);" +
+                                           " :result := pkg_rep.sql_check_arm(:p_sql_memo, :p_date);" +
                                       "end;";
                     cmd.BindByName = true;
-                    cmd.Parameters.Add("p_str_id", OracleDbType.Int32, p_str_id_, ParameterDirection.Input);
-                    cmd.Parameters.Add("p_col_id", OracleDbType.Int32, p_col_id_, ParameterDirection.Input);
+                    cmd.Parameters.Add("p_sql_memo", OracleDbType.Varchar2, p_sql_memo, ParameterDirection.Input);
+                    cmd.Parameters["p_sql_memo"].Size = 1024;
                     cmd.Parameters.Add("p_date", OracleDbType.Date, p_date_, ParameterDirection.Input);
                     cmd.Parameters.Add("result", OracleDbType.Int32, ParameterDirection.ReturnValue);
                     cmd.ExecuteNonQuery();
@@ -78,7 +83,7 @@ namespace ARM_User.New.Guide
                     cmd.Parameters["result"].Size = 1024;
                     cmd.ExecuteNonQuery();
                     String result = ((OracleString)cmd.Parameters["result"].Value).ToString();
-
+                    
                     return result;
                 }
                 catch (Exception oe)
@@ -115,13 +120,18 @@ namespace ARM_User.New.Guide
         }
         private void cbCheck_CheckedChanged(object sender, EventArgs e)
         {
-            
-            if (check(p_str_id, p_col_id, p_date) == 0)
+            String s = rtbSQL.Text;
+            Int32 result = check(s, p_date);            
+            if (result == 0)                
                 XtraMessageBox.Show("correct", "Проверка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else  if(result == 1)
+                XtraMessageBox.Show("function null is not correct", "Проверка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else if (result == 2)
+                XtraMessageBox.Show("column_name is not correct", "Проверка", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 XtraMessageBox.Show("not correct", "Проверка", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
         }
+        
     
         public override void btnSave_Click(object sender, EventArgs e)
         {
@@ -137,7 +147,7 @@ namespace ARM_User.New.Guide
                 else
                 {
                     
-                    if (check(p_str_id, p_col_id, p_date) == 0)
+                    if (check(rtbSQL.Text, p_date) == 0)
                     {
                         saveSQLText(p_str_id, p_col_id, rtbSQL.Text, p_date, p_type);
                         DialogResult = DialogResult.OK;

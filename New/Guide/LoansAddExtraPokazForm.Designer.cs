@@ -3,14 +3,14 @@
     partial class LoansAddExtraPokazForm
     {
         /// <summary>
-        /// Обязательная переменная конструктора.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Освободить все используемые ресурсы.
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,53 +20,85 @@
             base.Dispose(disposing);
         }
 
-        #region Код, автоматически созданный конструктором форм Windows
+        #region Windows Form Designer generated code
 
         /// <summary>
-        /// Требуемый метод для поддержки конструктора — не изменяйте 
-        /// содержимое этого метода с помощью редактора кода.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoansAddExtraPokazForm));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.tbRef_no = new System.Windows.Forms.TextBox();
-            this.tbContract_no = new System.Windows.Forms.TextBox();
-            this.tbLoan_sid = new System.Windows.Forms.TextBox();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.te_contract_no = new DevExpress.XtraEditors.TextEdit();
+            this.te_ref_no = new DevExpress.XtraEditors.TextEdit();
+            this.te_loan_sid = new DevExpress.XtraEditors.TextEdit();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.lci_loan_sid = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.lci_ref_no = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lci_contract_no = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
-            this.dttCreg_contract_date = new System.Windows.Forms.DateTimePicker();
-            this.tbCrreg_line_contract_no = new System.Windows.Forms.TextBox();
-            this.tbGreg_contract_no = new System.Windows.Forms.TextBox();
-            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.te_map_value = new DevExpress.XtraEditors.TextEdit();
+            this.de_report_date = new DevExpress.XtraEditors.DateEdit();
+            this.te_name = new DevExpress.XtraEditors.ButtonEdit();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.lci_report_date = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.lci_name = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lci_map_value = new DevExpress.XtraLayout.LayoutControlItem();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainBS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.te_contract_no.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_ref_no.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_loan_sid.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_loan_sid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_ref_no)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_contract_no)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_map_value.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.de_report_date.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.de_report_date.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_name.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_report_date)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_name)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_map_value)).BeginInit();
             this.SuspendLayout();
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.layoutControl2);
+            this.groupControl2.Padding = new System.Windows.Forms.Padding(5);
+            this.groupControl2.Size = new System.Drawing.Size(477, 138);
+            this.groupControl2.Text = "Доп. информация";
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.layoutControl1);
+            this.groupControl1.Padding = new System.Windows.Forms.Padding(5);
+            this.groupControl1.Text = "Договор кредита";
+            // 
+            // btGuides
+            // 
+            this.btGuides.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btGuides.ImageOptions.Image")));
+            this.btGuides.Location = new System.Drawing.Point(359, 287);
+            this.btGuides.Size = new System.Drawing.Size(113, 23);
+            this.btGuides.Text = "Тип показателя";
+            this.btGuides.Visible = false;
             // 
             // btnSave
             // 
@@ -77,7 +109,6 @@
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
             this.btnSave.ImageOptions.ImageIndex = 12;
             this.btnSave.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
-            this.btnSave.TabIndex = 3;
             // 
             // btnCancel
             // 
@@ -88,13 +119,10 @@
             this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
             this.btnCancel.ImageOptions.ImageIndex = 12;
             this.btnCancel.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
-            this.btnCancel.TabIndex = 4;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel1.Location = new System.Drawing.Point(2, 293);
-            this.panel1.Size = new System.Drawing.Size(481, 31);
+            this.panel1.Location = new System.Drawing.Point(2, 284);
             // 
             // barButtonItemBeginEdit
             // 
@@ -116,230 +144,247 @@
             // 
             this.panelControl1.Appearance.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panelControl1.Appearance.Options.UseBackColor = true;
-            this.panelControl1.Controls.Add(this.groupBox1);
-            this.panelControl1.Controls.Add(this.groupBox2);
-            this.panelControl1.Size = new System.Drawing.Size(485, 326);
-            this.panelControl1.Controls.SetChildIndex(this.groupBox2, 0);
-            this.panelControl1.Controls.SetChildIndex(this.panel1, 0);
-            this.panelControl1.Controls.SetChildIndex(this.groupBox1, 0);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox1.Controls.Add(this.layoutControl1);
-            this.groupBox1.Location = new System.Drawing.Point(13, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(456, 129);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Договора  кредита";
+            this.panelControl1.Size = new System.Drawing.Size(481, 317);
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.tbRef_no);
-            this.layoutControl1.Controls.Add(this.tbContract_no);
-            this.layoutControl1.Controls.Add(this.tbLoan_sid);
-            this.layoutControl1.Location = new System.Drawing.Point(18, 21);
+            this.layoutControl1.Controls.Add(this.te_contract_no);
+            this.layoutControl1.Controls.Add(this.te_ref_no);
+            this.layoutControl1.Controls.Add(this.te_loan_sid);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(7, 23);
             this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(418, 94);
+            this.layoutControl1.Root = this.Root;
+            this.layoutControl1.Size = new System.Drawing.Size(463, 111);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // tbRef_no
+            // te_contract_no
             // 
-            this.tbRef_no.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tbRef_no.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbRef_no.Location = new System.Drawing.Point(106, 65);
-            this.tbRef_no.Name = "tbRef_no";
-            this.tbRef_no.ReadOnly = true;
-            this.tbRef_no.Size = new System.Drawing.Size(307, 20);
-            this.tbRef_no.TabIndex = 6;
+            this.te_contract_no.Location = new System.Drawing.Point(106, 65);
+            this.te_contract_no.MenuManager = this.barManager1;
+            this.te_contract_no.Name = "te_contract_no";
+            this.te_contract_no.Properties.AppearanceReadOnly.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.te_contract_no.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.te_contract_no.Properties.ReadOnly = true;
+            this.te_contract_no.Size = new System.Drawing.Size(352, 20);
+            this.te_contract_no.StyleController = this.layoutControl1;
+            this.te_contract_no.TabIndex = 6;
             // 
-            // tbContract_no
+            // te_ref_no
             // 
-            this.tbContract_no.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tbContract_no.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbContract_no.Location = new System.Drawing.Point(106, 35);
-            this.tbContract_no.Name = "tbContract_no";
-            this.tbContract_no.ReadOnly = true;
-            this.tbContract_no.Size = new System.Drawing.Size(307, 20);
-            this.tbContract_no.TabIndex = 5;
+            this.te_ref_no.Location = new System.Drawing.Point(106, 35);
+            this.te_ref_no.MenuManager = this.barManager1;
+            this.te_ref_no.Name = "te_ref_no";
+            this.te_ref_no.Properties.AppearanceReadOnly.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.te_ref_no.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.te_ref_no.Properties.ReadOnly = true;
+            this.te_ref_no.Size = new System.Drawing.Size(352, 20);
+            this.te_ref_no.StyleController = this.layoutControl1;
+            this.te_ref_no.TabIndex = 5;
             // 
-            // tbLoan_sid
+            // te_loan_sid
             // 
-            this.tbLoan_sid.BackColor = System.Drawing.SystemColors.Window;
-            this.tbLoan_sid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbLoan_sid.Location = new System.Drawing.Point(106, 5);
-            this.tbLoan_sid.Name = "tbLoan_sid";
-            this.tbLoan_sid.ReadOnly = true;
-            this.tbLoan_sid.Size = new System.Drawing.Size(307, 20);
-            this.tbLoan_sid.TabIndex = 4;
+            this.te_loan_sid.Location = new System.Drawing.Point(106, 5);
+            this.te_loan_sid.MenuManager = this.barManager1;
+            this.te_loan_sid.Name = "te_loan_sid";
+            this.te_loan_sid.Properties.AppearanceReadOnly.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.te_loan_sid.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.te_loan_sid.Properties.ReadOnly = true;
+            this.te_loan_sid.Size = new System.Drawing.Size(352, 20);
+            this.te_loan_sid.StyleController = this.layoutControl1;
+            this.te_loan_sid.TabIndex = 4;
             // 
-            // layoutControlGroup1
+            // Root
             // 
-            this.layoutControlGroup1.CustomizationFormText = "layoutControlGroup1";
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.layoutControlItem2,
-            this.layoutControlItem3});
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 5;
-            this.layoutControlGroup1.Size = new System.Drawing.Size(418, 94);
-            this.layoutControlGroup1.TextVisible = false;
+            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.Root.GroupBordersVisible = false;
+            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.lci_loan_sid,
+            this.emptySpaceItem1,
+            this.lci_ref_no,
+            this.lci_contract_no});
+            this.Root.Name = "Root";
+            this.Root.OptionsItemText.TextToControlDistance = 5;
+            this.Root.Size = new System.Drawing.Size(463, 111);
+            this.Root.TextVisible = false;
             // 
-            // layoutControlItem1
+            // lci_loan_sid
             // 
-            this.layoutControlItem1.Control = this.tbLoan_sid;
-            this.layoutControlItem1.CustomizationFormText = "LOAN_SID";
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(418, 30);
-            this.layoutControlItem1.Text = "ID";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(96, 13);
+            this.lci_loan_sid.Control = this.te_loan_sid;
+            this.lci_loan_sid.Location = new System.Drawing.Point(0, 0);
+            this.lci_loan_sid.Name = "lci_loan_sid";
+            this.lci_loan_sid.Size = new System.Drawing.Size(463, 30);
+            this.lci_loan_sid.Text = "ID договора";
+            this.lci_loan_sid.TextSize = new System.Drawing.Size(96, 13);
             // 
-            // layoutControlItem2
+            // emptySpaceItem1
             // 
-            this.layoutControlItem2.Control = this.tbContract_no;
-            this.layoutControlItem2.CustomizationFormText = "№ договора (ВОС)";
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 30);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(418, 30);
-            this.layoutControlItem2.Text = "№ договора (ВОС)";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(96, 13);
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 90);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(463, 21);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // layoutControlItem3
+            // lci_ref_no
             // 
-            this.layoutControlItem3.Control = this.tbRef_no;
-            this.layoutControlItem3.CustomizationFormText = "№ референса";
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 60);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(418, 34);
-            this.layoutControlItem3.Text = "№ референса";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(96, 13);
+            this.lci_ref_no.Control = this.te_ref_no;
+            this.lci_ref_no.Location = new System.Drawing.Point(0, 30);
+            this.lci_ref_no.Name = "lci_ref_no";
+            this.lci_ref_no.Size = new System.Drawing.Size(463, 30);
+            this.lci_ref_no.Text = "№ референса";
+            this.lci_ref_no.TextSize = new System.Drawing.Size(96, 13);
             // 
-            // groupBox2
+            // lci_contract_no
             // 
-            this.groupBox2.Controls.Add(this.layoutControl2);
-            this.groupBox2.Location = new System.Drawing.Point(13, 151);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(456, 132);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Доп. информация";
+            this.lci_contract_no.Control = this.te_contract_no;
+            this.lci_contract_no.Location = new System.Drawing.Point(0, 60);
+            this.lci_contract_no.Name = "lci_contract_no";
+            this.lci_contract_no.Size = new System.Drawing.Size(463, 30);
+            this.lci_contract_no.Text = "№ договора (BOC)";
+            this.lci_contract_no.TextSize = new System.Drawing.Size(96, 13);
             // 
             // layoutControl2
             // 
-            this.layoutControl2.Controls.Add(this.dttCreg_contract_date);
-            this.layoutControl2.Controls.Add(this.tbCrreg_line_contract_no);
-            this.layoutControl2.Controls.Add(this.tbGreg_contract_no);
-            this.layoutControl2.Location = new System.Drawing.Point(18, 21);
+            this.layoutControl2.Controls.Add(this.te_map_value);
+            this.layoutControl2.Controls.Add(this.de_report_date);
+            this.layoutControl2.Controls.Add(this.te_name);
+            this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl2.Location = new System.Drawing.Point(7, 23);
             this.layoutControl2.Name = "layoutControl2";
-            this.layoutControl2.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(474, 313, 650, 400);
-            this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(413, 95);
+            this.layoutControl2.Root = this.layoutControlGroup1;
+            this.layoutControl2.Size = new System.Drawing.Size(463, 108);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
-            // dttCreg_contract_date
+            // te_map_value
             // 
-            this.dttCreg_contract_date.CalendarMonthBackground = System.Drawing.SystemColors.ControlLightLight;
-            this.dttCreg_contract_date.Location = new System.Drawing.Point(219, 35);
-            this.dttCreg_contract_date.Name = "dttCreg_contract_date";
-            this.dttCreg_contract_date.Size = new System.Drawing.Size(189, 21);
-            this.dttCreg_contract_date.TabIndex = 1;
+            this.te_map_value.Location = new System.Drawing.Point(149, 65);
+            this.te_map_value.MenuManager = this.barManager1;
+            this.te_map_value.Name = "te_map_value";
+            this.te_map_value.Properties.AppearanceReadOnly.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.te_map_value.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.te_map_value.Size = new System.Drawing.Size(309, 20);
+            this.te_map_value.StyleController = this.layoutControl2;
+            this.te_map_value.TabIndex = 6;
             // 
-            // tbCrreg_line_contract_no
+            // de_report_date
             // 
-            this.tbCrreg_line_contract_no.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tbCrreg_line_contract_no.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbCrreg_line_contract_no.Location = new System.Drawing.Point(219, 65);
-            this.tbCrreg_line_contract_no.Name = "tbCrreg_line_contract_no";
-            this.tbCrreg_line_contract_no.Size = new System.Drawing.Size(189, 20);
-            this.tbCrreg_line_contract_no.TabIndex = 2;
+            this.de_report_date.EditValue = null;
+            this.de_report_date.Location = new System.Drawing.Point(149, 5);
+            this.de_report_date.MenuManager = this.barManager1;
+            this.de_report_date.Name = "de_report_date";
+            this.de_report_date.Properties.AppearanceReadOnly.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.de_report_date.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.de_report_date.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.de_report_date.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.de_report_date.Size = new System.Drawing.Size(309, 20);
+            this.de_report_date.StyleController = this.layoutControl2;
+            this.de_report_date.TabIndex = 4;
             // 
-            // tbGreg_contract_no
+            // te_name
             // 
-            this.tbGreg_contract_no.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tbGreg_contract_no.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbGreg_contract_no.Location = new System.Drawing.Point(219, 5);
-            this.tbGreg_contract_no.Name = "tbGreg_contract_no";
-            this.tbGreg_contract_no.Size = new System.Drawing.Size(189, 20);
-            this.tbGreg_contract_no.TabIndex = 0;
+            this.te_name.Location = new System.Drawing.Point(149, 35);
+            this.te_name.MenuManager = this.barManager1;
+            this.te_name.Name = "te_name";
+            this.te_name.Properties.AppearanceReadOnly.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.te_name.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.te_name.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.te_name.Properties.ReadOnly = true;
+            this.te_name.Size = new System.Drawing.Size(309, 20);
+            this.te_name.StyleController = this.layoutControl2;
+            this.te_name.TabIndex = 5;
+            this.te_name.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.te_name_ButtonClick);
             // 
-            // layoutControlGroup2
+            // layoutControlGroup1
             // 
-            this.layoutControlGroup2.CustomizationFormText = "layoutControlGroup2";
-            this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup2.GroupBordersVisible = false;
-            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem4,
-            this.layoutControlItem6,
-            this.layoutControlItem7});
-            this.layoutControlGroup2.Name = "Root";
-            this.layoutControlGroup2.OptionsItemText.TextToControlDistance = 5;
-            this.layoutControlGroup2.Size = new System.Drawing.Size(413, 95);
-            this.layoutControlGroup2.TextVisible = false;
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.lci_report_date,
+            this.emptySpaceItem2,
+            this.lci_name,
+            this.lci_map_value});
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 5;
+            this.layoutControlGroup1.Size = new System.Drawing.Size(463, 108);
+            this.layoutControlGroup1.TextVisible = false;
             // 
-            // layoutControlItem4
+            // lci_report_date
             // 
-            this.layoutControlItem4.Control = this.tbGreg_contract_no;
-            this.layoutControlItem4.CustomizationFormText = "№ договора (Кред. регистр)";
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(413, 30);
-            this.layoutControlItem4.Text = "№ договора (Кред. регистр)";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(209, 13);
+            this.lci_report_date.Control = this.de_report_date;
+            this.lci_report_date.Location = new System.Drawing.Point(0, 0);
+            this.lci_report_date.Name = "lci_report_date";
+            this.lci_report_date.Size = new System.Drawing.Size(463, 30);
+            this.lci_report_date.Text = "Дата действия показателя";
+            this.lci_report_date.TextSize = new System.Drawing.Size(139, 13);
             // 
-            // layoutControlItem6
+            // emptySpaceItem2
             // 
-            this.layoutControlItem6.Control = this.tbCrreg_line_contract_no;
-            this.layoutControlItem6.CustomizationFormText = "№ договора кред линии (Кред. регистр)";
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 60);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(413, 35);
-            this.layoutControlItem6.Text = "№ договора кред линии (Кред. регистр)";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(209, 13);
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 90);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(463, 18);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // layoutControlItem7
+            // lci_name
             // 
-            this.layoutControlItem7.Control = this.dttCreg_contract_date;
-            this.layoutControlItem7.CustomizationFormText = "Дата договора (Кред. регистр)";
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 30);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(413, 30);
-            this.layoutControlItem7.Text = "Дата договора (Кред. регистр)";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(209, 13);
+            this.lci_name.Control = this.te_name;
+            this.lci_name.Location = new System.Drawing.Point(0, 30);
+            this.lci_name.Name = "lci_name";
+            this.lci_name.Size = new System.Drawing.Size(463, 30);
+            this.lci_name.Text = "Наименование показателя";
+            this.lci_name.TextSize = new System.Drawing.Size(139, 13);
+            // 
+            // lci_map_value
+            // 
+            this.lci_map_value.Control = this.te_map_value;
+            this.lci_map_value.Location = new System.Drawing.Point(0, 60);
+            this.lci_map_value.Name = "lci_map_value";
+            this.lci_map_value.Size = new System.Drawing.Size(463, 30);
+            this.lci_map_value.Text = "Значение";
+            this.lci_map_value.TextSize = new System.Drawing.Size(139, 13);
             // 
             // LoansAddExtraPokazForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(485, 326);
+            this.ClientSize = new System.Drawing.Size(481, 317);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoansAddExtraPokazForm";
-            this.Text = "LoansAddExtraPokazForm";
             this.Load += new System.EventHandler(this.LoansAddExtraPokazForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MainBS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.te_contract_no.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_ref_no.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_loan_sid.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_loan_sid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_ref_no)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_contract_no)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_map_value.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.de_report_date.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.de_report_date.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_name.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_report_date)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_name)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_map_value)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,23 +392,23 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private DevExpress.XtraLayout.LayoutControl layoutControl2;
-        private System.Windows.Forms.DateTimePicker dttCreg_contract_date;
-        private System.Windows.Forms.TextBox tbCrreg_line_contract_no;
-        private System.Windows.Forms.TextBox tbGreg_contract_no;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private System.Windows.Forms.TextBox tbRef_no;
-        private System.Windows.Forms.TextBox tbContract_no;
-        private System.Windows.Forms.TextBox tbLoan_sid;
+        private DevExpress.XtraEditors.TextEdit te_contract_no;
+        private DevExpress.XtraEditors.TextEdit te_ref_no;
+        private DevExpress.XtraEditors.TextEdit te_loan_sid;
+        private DevExpress.XtraLayout.LayoutControlGroup Root;
+        private DevExpress.XtraLayout.LayoutControlItem lci_loan_sid;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraLayout.LayoutControlItem lci_ref_no;
+        private DevExpress.XtraLayout.LayoutControlItem lci_contract_no;
+        private DevExpress.XtraLayout.LayoutControl layoutControl2;
+        private DevExpress.XtraEditors.TextEdit te_map_value;
+        private DevExpress.XtraEditors.DateEdit de_report_date;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlItem lci_report_date;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+        private DevExpress.XtraLayout.LayoutControlItem lci_name;
+        private DevExpress.XtraLayout.LayoutControlItem lci_map_value;
+        private DevExpress.XtraEditors.ButtonEdit te_name;
     }
 }

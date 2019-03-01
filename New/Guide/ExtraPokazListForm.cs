@@ -254,7 +254,7 @@ namespace ARM_User.DisplayLayer.Guides
                 LangTranslate.UiGetText("Внимание"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 Cursor = Cursors.WaitCursor;
-                db.deleteCostomerMap(customer_sid_, report_date_, abs_dimension_id_, pokaz_id_);
+                //db.deleteLoansDeleteMap(customer_sid_, report_date_, abs_dimension_id_, pokaz_id_);
                 refreshRating();
                 Cursor = Cursors.Default;
             }

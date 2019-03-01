@@ -2720,10 +2720,10 @@ namespace ARM_User
         frm.MdiParent = this;
         frm.Show();
     }
-        private void aCalendarsOperationDays_Execute(object sender, TActionEventArgs ae)
-        {
-            MessageBox.Show("OK");
-        }
+    private void aCalendarsOperationDays_Execute(object sender, TActionEventArgs ae)
+    {
+        MessageBox.Show("OK");
+    }
     #endregion
 
         #region [Create and Dispose Form]

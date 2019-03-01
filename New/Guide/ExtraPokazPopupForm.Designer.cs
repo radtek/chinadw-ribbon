@@ -52,12 +52,12 @@
             // btnOk
             // 
             this.btnOk.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOk.ImageOptions.Image")));
-            this.btnOk.Location = new System.Drawing.Point(216, 6);
+            this.btnOk.Location = new System.Drawing.Point(246, 6);
             // 
             // btnCancel
             // 
             this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
-            this.btnCancel.Location = new System.Drawing.Point(306, 6);
+            this.btnCancel.Location = new System.Drawing.Point(336, 6);
             // 
             // panelControl2
             // 

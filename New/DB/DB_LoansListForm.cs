@@ -156,7 +156,7 @@ namespace ARM_User.New.DB
             }
         }
         // DELETE LOANS EXTRA POKAZ
-        public void pro_delete_loans_add_map(Int32 loan_sid_, DateTime report_date_)
+        public void pro_delete_loans_add_map(Int32 loan_sid_, DateTime report_date_, Int32 abs_constant_loans_map_id_)
         {
             try
             {
@@ -165,7 +165,8 @@ namespace ARM_User.New.DB
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "PREPARED.pkg_interface_orepations.pro_delete_loans_add_map";
                 cmd.Parameters.Add("loan_sid_", OracleDbType.Int32, loan_sid_, ParameterDirection.Input);
-                cmd.Parameters.Add("report_date_", OracleDbType.Date, report_date_, ParameterDirection.Input);                
+                cmd.Parameters.Add("report_date_", OracleDbType.Date, report_date_, ParameterDirection.Input);
+                cmd.Parameters.Add("abs_constant_loans_map_id_", OracleDbType.Int32, abs_constant_loans_map_id_, ParameterDirection.Input);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception oe)

@@ -131,7 +131,11 @@ namespace ARM_User.New.Guide
 
             splitContainer1.SplitterDistance = splitContainer1.Height-150;
             db = new DB_LoansListForm(dmControler.frmMain.oracleConnection);
-            refreshListCredits();            
+            refreshListCredits();
+            bgvExtraPokaz.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            bandedGridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            bandedGridView2.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+
         }
         private void gvList1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
@@ -213,7 +217,7 @@ namespace ARM_User.New.Guide
             frm.loan_sid = getCurrentID("tsCredits", "loan_sid");
             frm.contract_no = getCurrentName("tsCredits", "contract_no");
             frm.ref_no = getCurrentName("tsCredits", "ref_no");
-            
+            frm.abs_constant_dimension_id = getCurrentID("tsExtraPokaz", "abs_constant_loans_map_id");
             String s = beData.EditValue.ToString();
             DateTime FilterDateTime = Convert.ToDateTime(s);
             frm.report_date = Convert.ToDateTime(FilterDateTime.Date);
@@ -224,6 +228,7 @@ namespace ARM_User.New.Guide
 
         private void tsbExtraPokazEdit_Click(object sender, EventArgs e)
         {
+            
             var frm = new LoansAddExtraPokazForm();
             frm.Text = "Изменить дополнительный показатель";
             frm.State = ServiceLayer.Service.Editor.EditorState.Edit;
@@ -232,9 +237,10 @@ namespace ARM_User.New.Guide
             frm.contract_no = getCurrentName("tsCredits", "contract_no");
             frm.ref_no = getCurrentName("tsCredits", "ref_no");
 
-            frm.creg_contract_no = getCurrentName("tsExtraPokaz", "CREG_CONTRACT_NO");
-            frm.crreg_line_contract_no = getCurrentName("tsExtraPokaz", "CRREG_LINE_CONTRACT_NO");
-            frm.creg_contract_date = getCurrentName("tsExtraPokaz", "CREG_CONTRACT_DATE");
+            frm.report_date = getCurrentReportDate("tsExtraPokaz", "report_date");
+            frm.name = getCurrentName("tsExtraPokaz", "name");
+            frm.map_value = getCurrentName("tsExtraPokaz", "map_value");
+            frm.abs_constant_dimension_id = getCurrentID("tsExtraPokaz", "abs_constant_loans_map_id");
 
             String s = beData.EditValue.ToString();
             DateTime FilterDateTime = Convert.ToDateTime(s);
@@ -254,9 +260,9 @@ namespace ARM_User.New.Guide
             frm.contract_no = getCurrentName("tsCredits", "contract_no");
             frm.ref_no = getCurrentName("tsCredits", "ref_no");
 
-            frm.creg_contract_no = getCurrentName("tsExtraPokaz", "CREG_CONTRACT_NO");
-            frm.crreg_line_contract_no = getCurrentName("tsExtraPokaz", "CRREG_LINE_CONTRACT_NO");
-            frm.creg_contract_date = getCurrentName("tsExtraPokaz", "CREG_CONTRACT_DATE");
+            frm.report_date = getCurrentReportDate("tsExtraPokaz", "report_date");
+            frm.name = getCurrentName("tsExtraPokaz", "name");
+            frm.map_value = getCurrentName("tsExtraPokaz", "map_value");
 
             frm.ShowDialog();
             refreshListExtraPokaz();
@@ -264,8 +270,8 @@ namespace ARM_User.New.Guide
 
         private void tsbExtraPokazDelete_Click(object sender, EventArgs e)
         {
-            Int32 loan_sid_ = getCurrentID("tsCredits", "loan_sid");            
-
+            Int32 loan_sid_ = getCurrentID("tsCredits", "loan_sid");
+            Int32 abs_constant_loans_map_id_ = getCurrentID("tsExtraPokaz", "abs_constant_loans_map_id");
             String s = beData.EditValue.ToString();
             DateTime FilterDateTime = Convert.ToDateTime(s);
             DateTime report_date_ = Convert.ToDateTime(FilterDateTime.Date);
@@ -279,7 +285,7 @@ namespace ARM_User.New.Guide
                 Cursor = Cursors.WaitCursor;
                 try
                 {
-                    db.pro_delete_loans_add_map(loan_sid_, report_date_);
+                    db.pro_delete_loans_add_map(loan_sid_, report_date_, abs_constant_loans_map_id_);
                 }
                 catch (Exception oe)
                 {

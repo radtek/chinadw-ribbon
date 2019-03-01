@@ -645,6 +645,18 @@
     <Compile Include="New\DB\DB_Reports.cs" />
     <Compile Include="New\DB\DIM_ExtraPokaz.cs" />
     <Compile Include="New\DB\ReportsCelleditFormGateWay.cs" />
+    <Compile Include="New\Guide\LoansAddExtraPokazForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\Guide\LoansAddExtraPokazForm.Designer.cs">
+      <DependentUpon>LoansAddExtraPokazForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\Guide\LoansAddPopupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\Guide\LoansAddPopupForm.Designer.cs">
+      <DependentUpon>LoansAddPopupForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="New\Guide\ReportsCelleditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1106,11 +1118,11 @@
     <Compile Include="New\Guide\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="New\Guide\LoansAddExtraPokazForm.cs">
+    <Compile Include="New\Guide\LoansAddExtraPokazForm2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="New\Guide\LoansAddExtraPokazForm.Designer.cs">
-      <DependentUpon>LoansAddExtraPokazForm.cs</DependentUpon>
+    <Compile Include="New\Guide\LoansAddExtraPokazForm2.Designer.cs">
+      <DependentUpon>LoansAddExtraPokazForm2.cs</DependentUpon>
     </Compile>
     <Compile Include="New\Guide\LoansAddPokazForm.cs">
       <SubType>Form</SubType>
@@ -1413,6 +1425,12 @@
     <EmbeddedResource Include="DisplayLayer\Base\MultiPageListROBaseForm.resx">
       <DependentUpon>MultiPageListROBaseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="New\Guide\LoansAddExtraPokazForm.resx">
+      <DependentUpon>LoansAddExtraPokazForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\Guide\LoansAddPopupForm.resx">
+      <DependentUpon>LoansAddPopupForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="New\Guide\ReportsCelleditForm.resx">
       <DependentUpon>ReportsCelleditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1534,8 +1552,8 @@
     <EmbeddedResource Include="New\Guide\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="New\Guide\LoansAddExtraPokazForm.resx">
-      <DependentUpon>LoansAddExtraPokazForm.cs</DependentUpon>
+    <EmbeddedResource Include="New\Guide\LoansAddExtraPokazForm2.resx">
+      <DependentUpon>LoansAddExtraPokazForm2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="New\Guide\LoansAddPokazForm.resx">
       <DependentUpon>LoansAddPokazForm.cs</DependentUpon>

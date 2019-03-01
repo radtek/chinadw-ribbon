@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExtraPokazListForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.gcCustomers = new DevExpress.XtraGrid.GridControl();
@@ -80,7 +79,7 @@
             this.barEditItemDate = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.barButtonRefresh = new DevExpress.XtraBars.BarButtonItem();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
@@ -118,17 +117,17 @@
             // 
             // barDockControlLeft
             // 
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 31);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 474);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 481);
             // 
             // barDockControlRight
             // 
-            this.barDockControlRight.Location = new System.Drawing.Point(813, 31);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 474);
+            this.barDockControlRight.Location = new System.Drawing.Point(813, 24);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 481);
             // 
             // barDockControlTop
             // 
-            this.barDockControlTop.Size = new System.Drawing.Size(813, 31);
+            this.barDockControlTop.Size = new System.Drawing.Size(813, 24);
             // 
             // barManager
             // 
@@ -162,7 +161,7 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 31);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -175,8 +174,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.gcRatings);
             this.splitContainer1.Panel2.Controls.Add(this.toolStrip1);
-            this.splitContainer1.Size = new System.Drawing.Size(813, 474);
-            this.splitContainer1.SplitterDistance = 233;
+            this.splitContainer1.Size = new System.Drawing.Size(813, 481);
+            this.splitContainer1.SplitterDistance = 236;
             this.splitContainer1.TabIndex = 4;
             // 
             // gcCustomers
@@ -188,7 +187,7 @@
             this.gcCustomers.MainView = this.gvCustomers;
             this.gcCustomers.MenuManager = this.barManager;
             this.gcCustomers.Name = "gcCustomers";
-            this.gcCustomers.Size = new System.Drawing.Size(813, 233);
+            this.gcCustomers.Size = new System.Drawing.Size(813, 236);
             this.gcCustomers.TabIndex = 2;
             this.gcCustomers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCustomers});
@@ -409,7 +408,7 @@
             this.gcRatings.MainView = this.gvRatings;
             this.gcRatings.MenuManager = this.barManager;
             this.gcRatings.Name = "gcRatings";
-            this.gcRatings.Size = new System.Drawing.Size(813, 212);
+            this.gcRatings.Size = new System.Drawing.Size(813, 216);
             this.gcRatings.TabIndex = 2;
             this.gcRatings.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvRatings});

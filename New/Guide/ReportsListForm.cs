@@ -27,16 +27,19 @@ namespace ARM_User.New.Guide
         {
             db = new DB_Reports();
             refreshPeriod();
-            //gridView1.OptionsView.ColumnHeaderAutoHeight = true;
-
+            gridView1.OptionsView.AllowHtmlDrawHeaders = true;
+            gridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            db.getReadReportList(ref dsMain, "A");
+            bCount.Caption = dsMain.Tables["tableReports"].Rows.Count.ToString();
+            bPeriod.EditValue = rPeriodComboBox.Items[0].ToString();
         }
         private void refreshPeriod()
         {
             
             db.getReadListPeriods(ref dsMain);
 
-
-            DataTable dt = dsMain.Tables["tablePeriod"];
+            rPeriodComboBox.Items.Add("ALL");
+            DataTable dt = dsMain.Tables["tablePeriod"]; 
             foreach (DataRow row in dt.Rows)
             {
                 //foreach (DataColumn col in dt.Columns)                    

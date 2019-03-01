@@ -30,24 +30,25 @@ namespace ARM_User.New.Guide
 
         private void Form2_Load(object sender, EventArgs e)
         {   
-            refreshFormList();
-            barEditItemType.EditValue = repositoryItemComboBox2.Items[1];
+            
+            /*barEditItemType.EditValue = repositoryItemComboBox2.Items[1].ToString();
+            refreshFormList(1);*/
         }
 
         private void btnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            refreshFormList();
+            refreshFormList(rep_custom_type);
         }
-        private void refreshFormList()
+        private void refreshFormList(Int32 rep_custom_type_)
         {
             String s = barEditItemDate.EditValue.ToString();
             DateTime FilterDateTime = Convert.ToDateTime(s);
             DateTime report_date_ = Convert.ToDateTime(FilterDateTime.Date);
-            rep_custom_type = repositoryItemComboBox2.Items.IndexOf(barEditItemType.EditValue) + 1;
+            
 
             try
             {
-                db.getReportsListF21(ref dsMain, sql_arm_, rep_custom_type, report_date_);
+                db.getReportsListF21(ref dsMain, sql_arm_, rep_custom_type_, report_date_);
             }
             catch (Exception oe)
             {
@@ -63,18 +64,18 @@ namespace ARM_User.New.Guide
 
                 for (int i = 0; i < gridView1.Columns.Count; i++)
                 {
-                    if (i > 3)
-                    {
-                        gridView1.Columns[i].Width = 150;
-                        gridView1.Columns[i].Caption = " ";
-                        gridView1.Columns[i].AppearanceCell.BackColor = Color.SkyBlue;
-                    }
-                    else
+                    if (i <= 3)
                     {
                         gridView1.Columns[i].Caption = header[i];
                         gridView1.Columns[i].OptionsColumn.AllowEdit = false;
                         gridView1.Columns[i].OptionsColumn.AllowFocus = false;
                         gridView1.Columns[i].BestFit();
+                    }
+                    else
+                    {
+                        //gridView1.Columns[i].Width = 150;
+                        gridView1.Columns[i].Caption = " ";
+                        gridView1.Columns[i].AppearanceCell.BackColor = Color.SkyBlue;
                     }
                 }
 
@@ -157,12 +158,14 @@ namespace ARM_User.New.Guide
         private void gridControl1_Load(object sender, EventArgs e)
         {
             db = new DB_Reports();
-            refreshFormList();
+            barEditItemType.EditValue = repositoryItemComboBox2.Items[0].ToString();
+            refreshFormList(1);
         }
 
         private void barEditItemDate_EditValueChanged(object sender, EventArgs e)
         {
-            refreshFormList();
+            rep_custom_type = repositoryItemComboBox2.Items.IndexOf(barEditItemType.EditValue) + 1;
+            refreshFormList(rep_custom_type);
         }
         #region [current date getting]
         // Получить текущий ID задав table и field

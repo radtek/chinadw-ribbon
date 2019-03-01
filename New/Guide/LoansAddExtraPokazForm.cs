@@ -1,6 +1,5 @@
 ﻿using ARM_User.New.DB;
 using BSB.Common;
-using BSB.Common.DB;
 using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
@@ -12,45 +11,78 @@ using System.Windows.Forms;
 
 namespace ARM_User.New.Guide
 {
-    public partial class LoansAddExtraPokazForm : ARM_User.DisplayLayer.Base.SimpleEditForm
+    public partial class LoansAddExtraPokazForm : ARM_User.DisplayLayer.Guides.Base.ChinaSimpleEditForm
     {
-        public Int32 loan_sid;
-        public DateTime report_date;
+        private DB_ExtraPokazListForm db = null;
+
+    #region [global fields ]
+        public Int32 loan_sid;        
         public String contract_no;
         public String ref_no;
         /**/
-        public String creg_contract_no;
-        public String creg_contract_date;
-        public String crreg_line_contract_no;
+        public DateTime report_date;
+        public String name;
+        public String map_value;
+        public Int32 abs_constant_dimension_id;
+        public String note;
+    #endregion 
 
-        #region [Preperties]
-            private DB_LoansListForm db = null;
-        #endregion
         public LoansAddExtraPokazForm()
         {
             InitializeComponent();
-        }
 
+        }
+        protected override bool Validate()
+        {
+            if (te_name.Text == "")
+            {
+                XtraMessageBox.Show(
+                    LangTranslate.UiGetText("Выберите показатель"),
+                    LangTranslate.UiGetText("Внимание"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                te_name.Focus();
+                return false;
+            } else if (te_map_value.Text.Trim() =="")
+            {
+                XtraMessageBox.Show(
+                    LangTranslate.UiGetText("Введите значение"),
+                    LangTranslate.UiGetText("Внимание"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                te_map_value.Focus();
+                return false;
+            }
+            return true;
+        }
         private void LoansAddExtraPokazForm_Load(object sender, EventArgs e)
         {
-            tbLoan_sid.Text = loan_sid.ToString();
-            tbContract_no.Text = contract_no;
-            tbRef_no.Text = ref_no;
-            //VIEW
-            Boolean update = State == ServiceLayer.Service.Editor.EditorState.Edit;
+            te_loan_sid.Text = loan_sid.ToString();
+            te_ref_no.Text = ref_no.ToString();
+            te_contract_no.Text = contract_no.ToString();
             Boolean view = State == ServiceLayer.Service.Editor.EditorState.View;
-            if (!view) db = new DB_LoansListForm(dmControler.frmMain.oracleConnection);
-            if (update || view)
-            {                
-                tbCrreg_line_contract_no.Text = crreg_line_contract_no;
-                tbGreg_contract_no.Text = creg_contract_no;
-                dttCreg_contract_date.Value = Convert.ToDateTime(creg_contract_date);
-                if(view)
-                {
-                    tbCrreg_line_contract_no.ReadOnly = true;
-                    tbGreg_contract_no.ReadOnly = true;
-                    dttCreg_contract_date.Enabled = false;
-                }
+            Boolean update = State == ServiceLayer.Service.Editor.EditorState.Edit;
+
+            if (view||update)
+            {
+                de_report_date.EditValue = report_date;
+                te_name.Text = name;
+                te_map_value.Text = map_value;
+                
+                de_report_date.ReadOnly = !update;
+                te_name.ReadOnly = true;
+                te_map_value.ReadOnly = !update;
+            }
+            db = new DB_ExtraPokazListForm(dmControler.frmMain.oracleConnection);
+
+        }
+
+        private void te_name_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //MessageBox.Show("Тип показателей");
+            var frm = new LoansAddPopupForm();
+            frm.Text = "Тип показателей";
+            if (frm.ShowDialog()==DialogResult.OK)
+            {
+                te_name.Text = frm.NAME;
+                abs_constant_dimension_id = frm.ABS_CONSTANT_DIMENSION_ID;
+                note = frm.NOTE;
             }
         }
         public override void btnSave_Click(object sender, EventArgs e)
@@ -58,57 +90,21 @@ namespace ARM_User.New.Guide
             if (Validate())
             {
                 Cursor = Cursors.WaitCursor;
-                
-                creg_contract_no = tbGreg_contract_no.Text;
-                creg_contract_date = dttCreg_contract_date.Text;
-                crreg_line_contract_no = tbCrreg_line_contract_no.Text;
+                map_value = te_map_value.Text;
+                report_date = Convert.ToDateTime(de_report_date.EditValue);
 
                 if (State == ServiceLayer.Service.Editor.EditorState.Insert)
                 {
-                    try
-                    {
-                        db.pro_insert_loans_add_map(loan_sid, report_date, creg_contract_no, creg_contract_date, crreg_line_contract_no);
-                    }                        
-                    catch (Exception oe)                    
-                    {
-                        DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_LoansListForm.PRO_INSERT_LOANS_ADD_MAP)");
-                    }
+                    db.insertLoansAddMap(loan_sid, report_date, abs_constant_dimension_id, map_value, note);
                 }
                 else if (State == ServiceLayer.Service.Editor.EditorState.Edit)
                 {
-                    try
-                    {
-                        db.pro_update_loans_add_map(loan_sid, report_date, creg_contract_no, creg_contract_date, crreg_line_contract_no);
-                    }                    
-                    catch (Exception oe)
-                    {
-                        DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_LoansListForm.PRO_INSERT_LOANS_ADD_MAP)");
-                    }
+                    db.updateLoansAddMap(loan_sid, report_date, abs_constant_dimension_id, map_value, note);
                 }
                 DialogResult = DialogResult.OK;
                 Close();
                 Cursor = Cursors.Default;
-            }            
+            }
         }
-        protected override bool Validate()
-        {
-            if (tbGreg_contract_no.Text == "")
-            {
-                XtraMessageBox.Show(
-                    LangTranslate.UiGetText("Заполните № договора"),
-                    LangTranslate.UiGetText("Внимание"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tbGreg_contract_no.Focus();
-                return false;
-            }
-            if (tbCrreg_line_contract_no.Text == "")
-            {
-                XtraMessageBox.Show(
-                    LangTranslate.UiGetText("Заполните № договора кред линии"),
-                    LangTranslate.UiGetText("Внимание"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tbCrreg_line_contract_no.Focus();
-                return false;
-            }
-            return true;
-        }        
     }
 }

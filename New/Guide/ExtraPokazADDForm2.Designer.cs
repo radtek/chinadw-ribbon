@@ -100,8 +100,8 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(2, 391);
-            this.panel1.Size = new System.Drawing.Size(483, 31);
+            this.panel1.Location = new System.Drawing.Point(2, 384);
+            this.panel1.Size = new System.Drawing.Size(475, 31);
             // 
             // barButtonItemBeginEdit
             // 
@@ -126,7 +126,7 @@
             this.panelControl1.Controls.Add(this.btGuides);
             this.panelControl1.Controls.Add(this.groupBox2);
             this.panelControl1.Controls.Add(this.groupBox1);
-            this.panelControl1.Size = new System.Drawing.Size(487, 424);
+            this.panelControl1.Size = new System.Drawing.Size(479, 417);
             this.panelControl1.Controls.SetChildIndex(this.groupBox1, 0);
             this.panelControl1.Controls.SetChildIndex(this.groupBox2, 0);
             this.panelControl1.Controls.SetChildIndex(this.btGuides, 0);
@@ -393,7 +393,7 @@
             this.Appearance.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(487, 424);
+            this.ClientSize = new System.Drawing.Size(479, 417);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ExtraPokazADDForm2";
             this.Load += new System.EventHandler(this.ExtraPokazADDForm_Load);

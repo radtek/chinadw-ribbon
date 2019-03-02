@@ -217,7 +217,7 @@ namespace ARM_User.New.Guide
             frm.loan_sid = getCurrentID("tsCredits", "loan_sid");
             frm.contract_no = getCurrentName("tsCredits", "contract_no");
             frm.ref_no = getCurrentName("tsCredits", "ref_no");
-            frm.abs_constant_dimension_id = getCurrentID("tsExtraPokaz", "abs_constant_loans_map_id");
+            frm.abs_constant_dimension_id = getCurrentID("tsExtraPokaz", "abs_constant_dimension_id");
             String s = beData.EditValue.ToString();
             DateTime FilterDateTime = Convert.ToDateTime(s);
             frm.report_date = Convert.ToDateTime(FilterDateTime.Date);
@@ -240,7 +240,7 @@ namespace ARM_User.New.Guide
             frm.report_date = getCurrentReportDate("tsExtraPokaz", "report_date");
             frm.name = getCurrentName("tsExtraPokaz", "name");
             frm.map_value = getCurrentName("tsExtraPokaz", "map_value");
-            frm.abs_constant_dimension_id = getCurrentID("tsExtraPokaz", "abs_constant_loans_map_id");
+            frm.abs_constant_dimension_id = getCurrentID("tsExtraPokaz", "abs_constant_dimension_id");
 
             String s = beData.EditValue.ToString();
             DateTime FilterDateTime = Convert.ToDateTime(s);

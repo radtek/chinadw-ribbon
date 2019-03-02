@@ -289,6 +289,8 @@
             this.te_name.Location = new System.Drawing.Point(149, 35);
             this.te_name.MenuManager = this.barManager1;
             this.te_name.Name = "te_name";
+            this.te_name.Properties.AppearanceDisabled.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.te_name.Properties.AppearanceDisabled.Options.UseBackColor = true;
             this.te_name.Properties.AppearanceReadOnly.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.te_name.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.te_name.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {

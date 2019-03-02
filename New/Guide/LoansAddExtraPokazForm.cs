@@ -58,6 +58,7 @@ namespace ARM_User.New.Guide
             te_contract_no.Text = contract_no.ToString();
             Boolean view = State == ServiceLayer.Service.Editor.EditorState.View;
             Boolean update = State == ServiceLayer.Service.Editor.EditorState.Edit;
+            Boolean insert = State == ServiceLayer.Service.Editor.EditorState.Insert;
 
             if (view||update)
             {
@@ -69,6 +70,8 @@ namespace ARM_User.New.Guide
                 te_name.ReadOnly = true;
                 te_map_value.ReadOnly = !update;
             }
+            if (update) te_name.Enabled = false;
+            if (insert) de_report_date.EditValue = report_date;
             db = new DB_ExtraPokazListForm(dmControler.frmMain.oracleConnection);
 
         }
@@ -78,6 +81,8 @@ namespace ARM_User.New.Guide
             //MessageBox.Show("Тип показателей");
             var frm = new LoansAddPopupForm();
             frm.Text = "Тип показателей";
+            frm.loan_sid = loan_sid;
+            frm.report_date = report_date;
             if (frm.ShowDialog()==DialogResult.OK)
             {
                 te_name.Text = frm.NAME;

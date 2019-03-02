@@ -227,13 +227,13 @@
   <data name="btGuides.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxAAAAsQAa0jvXUAAAAPdEVYdFRpdGxlAEJvb2s7UmVhZMvDJr0AAABgSURBVDhP
+        YQUAAAAJcEhZcwAACw8AAAsPAZL5A6UAAAAPdEVYdFRpdGxlAEJvb2s7UmVhZMvDJr0AAABgSURBVDhP
         Y/j//z8DJZgizSCLwQYYGxv/x4F9geIgjFUe3QCQQegYphGrHDYDNgMNQcYwjdjEgfpRvYDNFnxiWA0Y
         dQFqDIDCg76xgC21EZ0SccU3vpQIzgbUyUyUZGcAZEew1r96h5UAAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>110, 17</value>
+    <value>17, 56</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

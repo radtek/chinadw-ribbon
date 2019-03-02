@@ -18,12 +18,16 @@ namespace ARM_User.New.Guide
         public String CODE;
         public String NOTE;
 
+        /*for filter dimension*/
+        public Int32 loan_sid;
+        public DateTime report_date;
+
         public LoansAddPopupForm()
         {
             InitializeComponent();
         }
         #region [Read List]
-        public void getReadPopuptList(ref DataSet ds)
+        public void getReadPopuptList(ref DataSet ds, Int32 loan_sid_, DateTime date_)
         {
             if (ds.Tables.Contains("tablePopupList")) ds.Tables["tablePopupList"].Clear();
 
@@ -32,7 +36,9 @@ namespace ARM_User.New.Guide
                 cmd.BindByName = true;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "PREPARED.g_read_g_loans_popup";
-                cmd.Parameters.Add("cur", OracleDbType.RefCursor, ParameterDirection.Output);                
+                cmd.Parameters.Add("cur", OracleDbType.RefCursor, ParameterDirection.Output);
+                cmd.Parameters.Add("loan_sid_", OracleDbType.Int32, loan_sid_, ParameterDirection.Input);
+                cmd.Parameters.Add("date_", OracleDbType.Date, date_, ParameterDirection.Input);
                 cmd.Parameters.Add("err_code", OracleDbType.Int16, ParameterDirection.Output);
                 cmd.Parameters.Add("err_msg", OracleDbType.Clob, ParameterDirection.Output);
 
@@ -56,7 +62,7 @@ namespace ARM_User.New.Guide
         #region [Current Data]
         private void LoansAddPopupForm_Load(object sender, EventArgs e)
         {
-            getReadPopuptList(ref dsMain);            
+            getReadPopuptList(ref dsMain,loan_sid,report_date);            
         }
         private Int32 getCurrentID(String sTable, String sField)
         {

@@ -193,6 +193,10 @@ namespace ARM_User.New.DB
                 }
             }
         }
-        
+
+        public static implicit operator DB_Reports(DB_RepSetupSQL v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

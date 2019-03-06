@@ -169,47 +169,59 @@ namespace BSB.Common
 
     private void TfrmMDIChildForm_Load(object sender, EventArgs e)
     {
-      // ѕровер€ем, в каком режиме запущенна форма, если в DesignMode то нечего не делаем.
-      // Ќужно провер€ть в случае наследовани€ форм.
-      if (DesignMode) return;
-
-      pParentForm = (MainForm) ParentForm;
-      //---- дл€ вызова меню
-      var md = (TMenuData)pParentForm.GetTvMenu().SelectedNode.Tag;
-      md.pForm = this;
-      //----
-
-      pParentForm.AttachPanelToWindow(this);
-      Icon = AppResource.MasterDetail;
-
-      foreach (Control c in ParentForm.Controls)
-      {
-        if (c is MdiClient)
+        try
         {
-          pParentMdiClient = c as MdiClient;
-          if (c != null)
-          {
-            pParentMdiClient.Resize += ParentMdiClient_Resize;
-            break;
-          }
+            // ѕровер€ем, в каком режиме запущенна форма, если в DesignMode то нечего не делаем.
+            // Ќужно провер€ть в случае наследовани€ форм.
+            if (DesignMode) return;
+            pParentForm = (MainForm)ParentForm;
+            //---- дл€ вызова меню
+            var md = (TMenuData)pParentForm.GetTvMenu().SelectedNode.Tag;
+            md.pForm = this;
+            //----
+
+
+
+            
+                pParentForm.AttachPanelToWindow(this);
+                Icon = AppResource.MasterDetail;
+            
+            
+
+
+            foreach (Control c in ParentForm.Controls)
+            {
+                if (c is MdiClient)
+                {
+                    pParentMdiClient = c as MdiClient;
+                    if (c != null)
+                    {
+                        pParentMdiClient.Resize += ParentMdiClient_Resize;
+                        break;
+                    }
+                }
+            }
+
+            if (pAutoSizeEnabled)
+            {
+                if (!iEnableAutoSize.Down)
+                    iEnableAutoSize.Down = true;
+                else
+                    SetFullSize();
+            }
+            else
+                iEnableAutoSize.Down = false;
+
+            GridUtilities.RestoreGridLayouts(this);
+
+            if (InitApplication.CurrentLangId == LanguageIds.Kazakh)
+                new LangTranslate().UISetupTexts(this, unTrControls);
         }
-      }
+        catch (Exception oe)
+        {
+        }
 
-      if (pAutoSizeEnabled)
-      {
-        if (!iEnableAutoSize.Down)
-          iEnableAutoSize.Down = true;
-        else
-          SetFullSize();
-      }
-      else
-        iEnableAutoSize.Down = false;
-
-      GridUtilities.RestoreGridLayouts(this);
-
-      if (InitApplication.CurrentLangId == LanguageIds.Kazakh)
-        new LangTranslate().UISetupTexts(this, unTrControls);
-    }
+        }
 
     private void iEnableAutoSize_DownChanged(object sender, ItemClickEventArgs e)
     {

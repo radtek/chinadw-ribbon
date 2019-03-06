@@ -643,8 +643,8 @@
     <Compile Include="New\DB\DB_ExtraPokazListForm.cs" />
     <Compile Include="New\DB\DB_LoansListForm.cs" />
     <Compile Include="New\DB\DB_Reports.cs" />
+    <Compile Include="New\DB\DB_RepSetupSQL.cs" />
     <Compile Include="New\DB\DIM_ExtraPokaz.cs" />
-    <Compile Include="New\DB\ReportsCelleditFormGateWay.cs" />
     <Compile Include="New\Guide\LoansAddExtraPokazForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -662,6 +662,18 @@
     </Compile>
     <Compile Include="New\Guide\ReportsCelleditForm.Designer.cs">
       <DependentUpon>ReportsCelleditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\Guide\ReportsCelleditFormShowEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\Guide\ReportsCelleditFormShowEdit.Designer.cs">
+      <DependentUpon>ReportsCelleditFormShowEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\Guide\ReportsCelleditFormType11.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\Guide\ReportsCelleditFormType11.Designer.cs">
+      <DependentUpon>ReportsCelleditFormType11.cs</DependentUpon>
     </Compile>
     <Compile Include="New\Guide\ReportsCustomizeForm.cs">
       <SubType>Form</SubType>
@@ -1433,6 +1445,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="New\Guide\ReportsCelleditForm.resx">
       <DependentUpon>ReportsCelleditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\Guide\ReportsCelleditFormShowEdit.resx">
+      <DependentUpon>ReportsCelleditFormShowEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\Guide\ReportsCelleditFormType11.resx">
+      <DependentUpon>ReportsCelleditFormType11.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="New\Guide\ReportsCustomizeForm.resx">
       <DependentUpon>ReportsCustomizeForm.cs</DependentUpon>

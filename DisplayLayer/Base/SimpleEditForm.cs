@@ -73,12 +73,12 @@ namespace ARM_User.DisplayLayer.Base
               if (state == EditorState.Insert || state == EditorState.Edit)
               {
                   //if (!Validate()) return;
-
+/*
                   MainBS.EndEdit();
                   if (lastException != null)
                       throw lastException;
 
-                  UnitOfWork.Instance.Commit();
+                  UnitOfWork.Instance.Commit();*/
               }
           }
         State = EditorState.View;
@@ -88,13 +88,13 @@ namespace ARM_User.DisplayLayer.Base
       }
       catch (Exception ex)
       {
-        MainBS.CancelEdit();
+        /*MainBS.CancelEdit();
         UnitOfWork.Instance.Rollback();
         if (sender == null)
           throw;
         var rethrow = ExceptionPolicy.HandleException(ex, "Display Policy");
         if (rethrow)
-          throw;
+          throw;*/
       }
     }
 
@@ -116,19 +116,19 @@ namespace ARM_User.DisplayLayer.Base
             {
                 if (State == EditorState.Insert || State == EditorState.Edit)
                 {
-                    MainBS.CancelEdit();
+                   /* MainBS.CancelEdit();
                     if (UnitOfWork.Instance.IsTransactionStarted)
-                        UnitOfWork.Instance.Rollback();
+                        UnitOfWork.Instance.Rollback();*/
                     State = EditorState.View;
                 }
             }
             catch (Exception ex)
             {
-                MainBS.CancelEdit();
+               /* MainBS.CancelEdit();
                 UnitOfWork.Instance.Rollback();
                 var rethrow = ExceptionPolicy.HandleException(ex, "Display Policy");
                 if (rethrow)
-                    throw;
+                    throw;*/
             }
         }
     }

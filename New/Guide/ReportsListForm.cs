@@ -58,6 +58,7 @@ namespace ARM_User.New.Guide
         }               
         private void rbutton_ButtonPressed(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
+            Cursor = Cursors.WaitCursor;
             //MessageBox.Show(" report_id:"+getCurrentID("tableReports", "report_id").ToString());
 
             Boolean fsql_arm = getCurrentName("tableReports", "sql_arm").ToString()=="";
@@ -80,7 +81,7 @@ namespace ARM_User.New.Guide
                 frm.report_id_ = rep_id;
                 frm.ShowDialog();
             }
-
+            Cursor = Cursors.Default;
         }
         private void rPeriodComboBox_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {

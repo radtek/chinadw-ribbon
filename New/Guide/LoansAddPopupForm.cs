@@ -13,6 +13,7 @@ namespace ARM_User.New.Guide
 {
     public partial class LoansAddPopupForm : ARM_User.DisplayLayer.Base.ChoiceTreeBaseForm
     {
+        #region [field]
         public Int32 ABS_CONSTANT_DIMENSION_ID;
         public String NAME;
         public String CODE;
@@ -21,7 +22,7 @@ namespace ARM_User.New.Guide
         /*for filter dimension*/
         public Int32 loan_sid;
         public DateTime report_date;
-
+        #endregion
         public LoansAddPopupForm()
         {
             InitializeComponent();
@@ -60,10 +61,7 @@ namespace ARM_User.New.Guide
         #endregion
 
         #region [Current Data]
-        private void LoansAddPopupForm_Load(object sender, EventArgs e)
-        {
-            getReadPopuptList(ref dsMain,loan_sid,report_date);            
-        }
+        
         private Int32 getCurrentID(String sTable, String sField)
         {
             Int32 result = -1;
@@ -102,7 +100,7 @@ namespace ARM_User.New.Guide
             }
             return result;
         }
-
+        #endregion
         private void LoansAddPopupForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             ABS_CONSTANT_DIMENSION_ID = getCurrentID("tablePopupList", "abs_constant_dimension_id");
@@ -110,6 +108,11 @@ namespace ARM_User.New.Guide
             CODE = getCurrentName("tablePopupList", "code");
             NOTE = getCurrentName("tablePopupList", "note");
         }
+        private void LoansAddPopupForm_Load(object sender, EventArgs e)
+        {
+            getReadPopuptList(ref dsMain, loan_sid, report_date);
+        }
     }
-    #endregion
+    
+    
 }

@@ -76,6 +76,7 @@
             this.dcButton = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xpPageSelector1 = new DevExpress.Xpo.XPPageSelector(this.components);
             this.xpCollection1 = new DevExpress.Xpo.XPCollection(this.components);
+            this.colsql_arm = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).BeginInit();
@@ -124,17 +125,17 @@
             // 
             // barDockControlLeft
             // 
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 458);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 31);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 451);
             // 
             // barDockControlRight
             // 
-            this.barDockControlRight.Location = new System.Drawing.Point(899, 24);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 458);
+            this.barDockControlRight.Location = new System.Drawing.Point(899, 31);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 451);
             // 
             // barDockControlTop
             // 
-            this.barDockControlTop.Size = new System.Drawing.Size(899, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(899, 31);
             // 
             // barManager
             // 
@@ -361,14 +362,14 @@
             this.gridControl1.DataMember = "tableReports";
             this.gridControl1.DataSource = this.dsMain;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 24);
+            this.gridControl1.Location = new System.Drawing.Point(0, 31);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.rbutton,
             this.rpLookUpEdit2});
-            this.gridControl1.Size = new System.Drawing.Size(899, 458);
+            this.gridControl1.Size = new System.Drawing.Size(899, 451);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -384,7 +385,8 @@
             this.colrep_type,
             this.coldate_begin,
             this.coldate_end,
-            this.dcButton});
+            this.dcButton,
+            this.colsql_arm});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsPrint.RtfPageHeader = resources.GetString("gridView1.OptionsPrint.RtfPageHeader");
@@ -474,6 +476,13 @@
             // 
             this.xpPageSelector1.Collection = this.xpCollection1;
             // 
+            // colsql_arm
+            // 
+            this.colsql_arm.FieldName = "sql_arm";
+            this.colsql_arm.Name = "colsql_arm";
+            this.colsql_arm.Visible = true;
+            this.colsql_arm.VisibleIndex = 7;
+            // 
             // ReportsListForm
             // 
             this.ClientSize = new System.Drawing.Size(899, 482);
@@ -547,5 +556,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn coldate_begin;
         private DevExpress.XtraGrid.Columns.GridColumn coldate_end;
         private DevExpress.XtraGrid.Columns.GridColumn dcButton;
+        private DevExpress.XtraGrid.Columns.GridColumn colsql_arm;
     }
 }

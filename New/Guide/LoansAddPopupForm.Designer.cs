@@ -60,22 +60,22 @@
             // btnOk
             // 
             this.btnOk.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOk.ImageOptions.Image")));
-            this.btnOk.Location = new System.Drawing.Point(402, 6);
+            this.btnOk.Location = new System.Drawing.Point(398, 6);
             // 
             // btnCancel
             // 
             this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
-            this.btnCancel.Location = new System.Drawing.Point(502, 6);
+            this.btnCancel.Location = new System.Drawing.Point(488, 6);
             // 
             // panelControl2
             // 
-            this.panelControl2.Location = new System.Drawing.Point(0, 251);
-            this.panelControl2.Size = new System.Drawing.Size(598, 40);
+            this.panelControl2.Location = new System.Drawing.Point(0, 239);
+            this.panelControl2.Size = new System.Drawing.Size(586, 40);
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.gridControl1);
-            this.panelControl1.Size = new System.Drawing.Size(598, 291);
+            this.panelControl1.Size = new System.Drawing.Size(586, 279);
             this.panelControl1.Controls.SetChildIndex(this.panelControl2, 0);
             this.panelControl1.Controls.SetChildIndex(this.treeMain, 0);
             this.panelControl1.Controls.SetChildIndex(this.gridControl1, 0);
@@ -93,7 +93,7 @@
             this.treeMain.OptionsFind.FindMode = DevExpress.XtraTreeList.FindMode.Always;
             this.treeMain.OptionsFind.ShowFindButton = false;
             this.treeMain.OptionsView.ShowTreeLines = DevExpress.Utils.DefaultBoolean.False;
-            this.treeMain.Size = new System.Drawing.Size(598, 251);
+            this.treeMain.Size = new System.Drawing.Size(586, 239);
             this.treeMain.TreeViewColumn = this.colabs_constant_dimension_id;
             // 
             // dsMain
@@ -174,7 +174,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(598, 251);
+            this.gridControl1.Size = new System.Drawing.Size(586, 239);
             this.gridControl1.TabIndex = 11;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -226,7 +226,7 @@
             // LoansAddPopupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(598, 291);
+            this.ClientSize = new System.Drawing.Size(586, 279);
             this.Name = "LoansAddPopupForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoansAddPopupForm_FormClosing);
             this.Load += new System.EventHandler(this.LoansAddPopupForm_Load);

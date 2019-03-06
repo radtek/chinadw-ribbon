@@ -57,30 +57,45 @@ namespace ARM_User.New.Guide
             }
 
             db.getReadReporHeadertList(ref dsMain, report_date_, report_id_);
-                gridControl1.RefreshDataSource();
-                gridView1.PopulateColumns();
+            gridControl1.RefreshDataSource();
+            gridView1.PopulateColumns();
 
-                string[] header = new string[] { "№", "num", "Найменование", "код" };
+            string[] header = new string[] { "№", "num", "Найменование", "код" };
 
-                for (int i = 0; i < gridView1.Columns.Count; i++)
+            if (gridView1.Columns.Count > 15) this.WindowState = FormWindowState.Maximized;
+               else this.WindowState = FormWindowState.Normal;
+
+            for (int i = 0; i < gridView1.Columns.Count; i++)
                 {
-                    if (i <= 3)
-                    {
-                        gridView1.Columns[i].Caption = header[i];
-                        gridView1.Columns[i].OptionsColumn.AllowEdit = false;
-                        gridView1.Columns[i].OptionsColumn.AllowFocus = false;
+                if (i <= 3)
+                {
+                    gridView1.Columns[i].Caption = header[i];
+                    gridView1.Columns[i].OptionsColumn.AllowEdit = false;
+                    gridView1.Columns[i].OptionsColumn.AllowFocus = false;
+                    if (i != 2) {
                         gridView1.Columns[i].BestFit();
+                        gridView1.OptionsView.ColumnAutoWidth = false;
+                    } else {
+                        gridView1.Columns[i].Width = 250;
+                        gridView1.OptionsView.ColumnAutoWidth = true;
                     }
+
+                    gridView1.Columns[i].Fixed = FixedStyle.Left;
+
+                }
                     else
                     {
                         //gridView1.Columns[i].Width = 150;
                         gridView1.Columns[i].Caption = " ";
-                        gridView1.Columns[i].AppearanceCell.BackColor = Color.SkyBlue;
+                    if (i % 2 == 0) gridView1.Columns[i].AppearanceCell.BackColor = Color.LightBlue;
+                    else {
+                        gridView1.Columns[i].AppearanceCell.BackColor = Color.White;                        
                     }
                 }
+                }
+            
 
-
-                DataTable dt = dsMain.Tables["tableReportsHeader"];
+            DataTable dt = dsMain.Tables["tableReportsHeader"];
                 int j = 0;
                 int delta = 4;
             if (dsMain.Tables["tableReportsHeader"].Rows.Count >= 0)
@@ -99,30 +114,38 @@ namespace ARM_User.New.Guide
 
                 }
                 
-            } 
+            }
+
+
+
         }
 
         private void gridView1_CustomRowCellEdit(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
         {
-            for(int i=4; i<gridView1.Columns.Count; i++)
+            
+            for (int i=4; i<gridView1.Columns.Count; i++)
             {
                 if (e.Column == gridView1.Columns[i])
                 {
                     e.Column.ColumnEdit = rbEdit;
                 }
             }
-            
         }
 
         private void rbEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-
+            Cursor = Cursors.WaitCursor;
             String s_date = barEditItemDate.EditValue.ToString();
             DateTime FilterDateTime = Convert.ToDateTime(s_date);
 
             String s = ((Control)sender).Text;
             if (s.Trim() != "")
             {
+                
+                Int32 str_id = getCurrentID("tbForm21", "str_id");
+                Int32 col_id = Convert.ToInt32(gridView1.FocusedColumn.FieldName);
+                DateTime rep_date = Convert.ToDateTime(FilterDateTime.Date);
+                
                 /*тип отчета*/
                 switch (rep_type_)
                 {
@@ -130,11 +153,22 @@ namespace ARM_User.New.Guide
                         {
                             var frm = new ReportsCelleditForm();
                             frm.HTMLText = s;
-                            frm.p_str_id = getCurrentID("tbForm21", "str_id");
-                            frm.p_col_id = Convert.ToInt32(gridView1.FocusedColumn.FieldName);
-                            frm.p_date = Convert.ToDateTime(FilterDateTime.Date);
+                            frm.p_str_id = str_id;
+                            frm.p_col_id = col_id;
+                            frm.p_date = rep_date;
                             frm.p_type = rep_type_;
                             frm.ShowDialog();
+                            break;
+                        }
+                    case 11:
+                        {
+                            var frm = new ReportsCelleditFormType11();
+                            frm.Text = "Редактирование ячейки";
+                            frm.p_str_id = str_id;
+                            frm.p_col_id = col_id;
+                            frm.p_date = rep_date;
+                            frm.p_type = rep_type_;
+                            frm.ShowDialog();                            
                             break;
                         }
                     default:
@@ -147,7 +181,9 @@ namespace ARM_User.New.Guide
                 
                 
             }
+                refreshFormList(rep_custom_type);
             }
+            Cursor = Cursors.Default;
         }
 
         private void Form2_Activated(object sender, EventArgs e)
@@ -160,6 +196,7 @@ namespace ARM_User.New.Guide
             db = new DB_Reports();
             barEditItemType.EditValue = repositoryItemComboBox2.Items[0].ToString();
             refreshFormList(1);
+            
         }
 
         private void barEditItemDate_EditValueChanged(object sender, EventArgs e)

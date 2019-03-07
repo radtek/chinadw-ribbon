@@ -15,16 +15,17 @@ namespace ARM_User.New.Guide
     public partial class ReportsListForm : ARM_User.DisplayLayer.Guides.Base.ChinaGuideBaseForm
     {
         #region [field]
-            private DB_Reports db;
+            private DB_Reports db;            
         #endregion
         public ReportsListForm()
         {
             InitializeComponent();
-            
+            //just
         }
 
         private void ReportsListForm_Load(object sender, EventArgs e)
         {
+            
             db = new DB_Reports();
             refreshPeriod();
             gridView1.OptionsView.AllowHtmlDrawHeaders = true;

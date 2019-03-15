@@ -85,7 +85,7 @@ namespace ARM_User.New.Guide
         {
             if (Validate())
             {
-                /*Cursor = Cursors.WaitCursor;
+                Cursor = Cursors.WaitCursor;
                 customer_sid_ = Convert.ToInt32(tbCustomerSid.Text);
                 abs_dimension_id_ = Convert.ToInt32(tbABSDimId.Text);
                 pokaz_id_ = Convert.ToInt32(tbPokazId.Text);
@@ -99,7 +99,7 @@ namespace ARM_User.New.Guide
                 {
                     db.updateLoansAddMap(customer_sid_, report_date_, abs_dimension_id_, pokaz_id_);
                 }
-                DialogResult = DialogResult.OK;*/
+                DialogResult = DialogResult.OK;
                 Close();
                 Cursor = Cursors.Default;
             }

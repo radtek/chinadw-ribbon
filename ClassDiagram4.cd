@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BSB.Common.DataGateway.Oracle.DataGateway">
+    <Position X="6.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQQgAAAAAAAAAMAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\DataGateway\Oracle\DataGateway.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BSB.Common.DataGateway.Oracle.ChildDataGateway">
+    <Position X="2" Y="5.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>IAAAgABAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\DataGateway\Oracle\DataGateway.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="BSB.Common.DataGateway.IDataGateway">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\DataGateway\IDataGateway.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BSB.Common.DataGateway.IChildDataGateway">
+    <Position X="3.25" Y="2.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\DataGateway\IDataGateway.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BSB.Common.DataGateway.IChildGroupDataGateway">
+    <Position X="0.5" Y="2.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\DataGateway\IDataGateway.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

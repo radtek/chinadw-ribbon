@@ -29,17 +29,23 @@ namespace ARM_User.New.Guide
         }
 
         private void Form2_Load(object sender, EventArgs e)
-        {   
-            
+        {
+
             /*barEditItemType.EditValue = repositoryItemComboBox2.Items[1].ToString();
-            refreshFormList(1);*/
+            /*refreshFormList(1);*/
         }
 
         private void btnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            rep_custom_type = repositoryItemComboBox2.Items.IndexOf(barEditItemType.EditValue) + 1;
+            /*if (rep_type_ == 11)
+            {
+                rep_custom_type += 10;
+            }*/
+
             refreshFormList(rep_custom_type);
         }
-        private void refreshFormList(Int32 rep_custom_type_)
+        public void refreshFormList(Int32 rep_custom_type_)
         {
             String s = barEditItemDate.EditValue.ToString();
             DateTime FilterDateTime = Convert.ToDateTime(s);
@@ -87,6 +93,7 @@ namespace ARM_User.New.Guide
                     {
                         //gridView1.Columns[i].Width = 150;
                         gridView1.Columns[i].Caption = " ";
+                        //gridView1.Columns[i].OptionsColumn.AllowEdit = false;
                     if (i % 2 == 0) gridView1.Columns[i].AppearanceCell.BackColor = Color.LightBlue;
                     else {
                         gridView1.Columns[i].AppearanceCell.BackColor = Color.White;                        
@@ -115,9 +122,6 @@ namespace ARM_User.New.Guide
                 }
                 
             }
-
-
-
         }
 
         private void gridView1_CustomRowCellEdit(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
@@ -145,21 +149,22 @@ namespace ARM_User.New.Guide
                 Int32 str_id = getCurrentID("tbForm21", "str_id");
                 Int32 col_id = Convert.ToInt32(gridView1.FocusedColumn.FieldName);
                 DateTime rep_date = Convert.ToDateTime(FilterDateTime.Date);
+                if (rep_type_==11) rep_custom_type += 10;
                 
                 /*тип отчета*/
-                switch (rep_type_)
+                switch (rep_custom_type)
                 {
-                    case 1: 
+                    /*case 1: 
                         {
                             var frm = new ReportsCelleditForm();
                             frm.HTMLText = s;
                             frm.p_str_id = str_id;
                             frm.p_col_id = col_id;
                             frm.p_date = rep_date;
-                            frm.p_type = rep_type_;
+                            frm.p_type = rep_custom_type; //rep_type_;
                             frm.ShowDialog();
                             break;
-                        }
+                        }*/
                     case 11:
                         {
                             var frm = new ReportsCelleditFormType11();
@@ -167,16 +172,26 @@ namespace ARM_User.New.Guide
                             frm.p_str_id = str_id;
                             frm.p_col_id = col_id;
                             frm.p_date = rep_date;
-                            frm.p_type = rep_type_;
-                            frm.ShowDialog();                            
+                            frm.p_setup_type = rep_custom_type;// +10; //rep_type_; 
+                            frm.ShowDialog();
+                            rep_custom_type -= 10;
                             break;
                         }
                     default:
                         {
-                            String s2 = getCurrentName("tbForm21", "str_id");
+                            var frm = new ReportsCelleditForm();
+                            frm.HTMLText = s;
+                            frm.p_str_id = str_id;
+                            frm.p_col_id = col_id;
+                            frm.p_date = rep_date;
+                            frm.p_type = rep_custom_type; //rep_type_;
+                            frm.ShowDialog();
+                            if (rep_custom_type > 10) rep_custom_type -= 10;
+                            break;
+                            /*String s2 = getCurrentName("tbForm21", "str_id");
                             String s3 = gridView1.FocusedColumn.FieldName;
                             MessageBox.Show("["+s2 +":"+s3+"]");
-                            break;
+                            break;*/
                         }
                 
                 
@@ -195,13 +210,13 @@ namespace ARM_User.New.Guide
         {
             db = new DB_Reports();
             barEditItemType.EditValue = repositoryItemComboBox2.Items[0].ToString();
-            refreshFormList(1);
-            
+            refreshFormList(1);            
         }
 
         private void barEditItemDate_EditValueChanged(object sender, EventArgs e)
         {
             rep_custom_type = repositoryItemComboBox2.Items.IndexOf(barEditItemType.EditValue) + 1;
+            //if (rep_type_ == 11) rep_custom_type += 10;
             refreshFormList(rep_custom_type);
         }
         #region [current date getting]
@@ -268,6 +283,16 @@ namespace ARM_User.New.Guide
         private void gridView1_ColumnPositionChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {            
+            //richTextBox1.Text = e.CellValue.ToString();
+        }
+
+        private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            MessageBox.Show("OK!..");
         }
     }
 }

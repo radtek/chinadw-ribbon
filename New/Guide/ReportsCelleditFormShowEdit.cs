@@ -39,7 +39,10 @@ namespace ARM_User.New.Guide
         private void ReportsCelleditFormShowEdit_Load(object sender, EventArgs e)
         {
             db = new DB_RepSetupSQL();
-            te_value.Text = p_VALUE.ToString();            
+            if (p_VALUE != 0)
+                te_value.Text = p_VALUE.ToString();
+            else
+                te_value.Text = "";
         }
         protected override bool Validate()
         {
@@ -97,7 +100,7 @@ namespace ARM_User.New.Guide
                 try
                 {
                     cmd.CommandText = "begin" +
-                                           " :result := prepared.pkg_rep.sql_check_arm_proc(:p_mart_col, :p_sql_memo, :p_dat, :p_type);" +
+                                           " :result := reporter.pkg_rep.sql_check_arm_proc(:p_mart_col, :p_sql_memo, :p_dat, :p_type);" +
                                       "end;";
                     cmd.BindByName = true;
                     cmd.Parameters.Add("p_mart_col", OracleDbType.Int32, p_mart_col, ParameterDirection.Input);
@@ -112,7 +115,7 @@ namespace ARM_User.New.Guide
                 }
                 catch (Exception oe)
                 {
-                    DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_Reports)" + "PREPARED.pkg_rep.sql_check");
+                    DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_Reports)" + "reporter.pkg_rep.sql_check");
                     return -1;
                 }
             }

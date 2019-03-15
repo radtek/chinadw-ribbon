@@ -19,7 +19,7 @@ namespace ARM_User.New.Guide
         public Int32 p_str_id;
         public Int32 p_col_id;
         public DateTime p_date;
-        public Int32 p_type;
+        public Int32 p_setup_type;
         #endregion
         public ReportsCelleditFormType11()
         {
@@ -50,7 +50,7 @@ namespace ARM_User.New.Guide
                                    " and t.head_gl_str_id = :P_STR_ID" +
                                    " and t.head_gl_col_id = :P_COL_ID " +
                                  "ORDER BY t.rep_setup_id";
-                cmd.Parameters.Add("REP_TYPE", OracleDbType.Int32, 11, ParameterDirection.Input);
+                cmd.Parameters.Add("REP_TYPE", OracleDbType.Int32, p_setup_type, ParameterDirection.Input);
                 cmd.Parameters.Add("P_REP_DATE", OracleDbType.Date, p_date, ParameterDirection.Input);
                 cmd.Parameters.Add("P_STR_ID", OracleDbType.Int32, p_str_id, ParameterDirection.Input);
                 cmd.Parameters.Add("P_COL_ID", OracleDbType.Int32, p_col_id, ParameterDirection.Input);
@@ -152,7 +152,7 @@ namespace ARM_User.New.Guide
             frm.p_mart_col = getCurrentID("tbForm11", "rep_mart_col_gl_id");
             frm.p_rep_setup_id = getCurrentID("tbForm11", "rep_setup_id");
             frm.p_date = p_date;
-            frm.p_type = p_type;
+            frm.p_type = p_setup_type;
             frm.ShowDialog();
             getCellList(ref dsMain);
         }
@@ -168,12 +168,14 @@ namespace ARM_User.New.Guide
             frm.p_col_id = getCurrentID("tbForm11", "head_gl_col_id");
             frm.p_mart_col = getCurrentID("tbForm11", "rep_mart_col_gl_id");
             frm.p_date = p_date;
-            frm.p_type = p_type;
+            frm.p_type = p_setup_type;
             frm.ShowDialog();
             getCellList(ref dsMain);
         }
-        
 
-        
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            tsbEdit_Click(sender, e);
+        }
     }
 }

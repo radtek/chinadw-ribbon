@@ -26,7 +26,7 @@ namespace ARM_User.New.DB
                 {
 
                     cmd.CommandText = "begin" +
-                                           " :result := prepared.pkg_rep.get_rep_setup_sql_text(:p_str, :p_col, :p_dat, :p_type);" +
+                                           " :result := reporter.pkg_rep.get_rep_setup_sql_text(:p_str, :p_col, :p_dat, :p_type);" +
                                       "end;";
                     cmd.BindByName = true;
                     cmd.Parameters.Add("p_str", OracleDbType.Int32, p_str_id_, ParameterDirection.Input);
@@ -55,7 +55,7 @@ namespace ARM_User.New.DB
                 try
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "prepared.pkg_rep.upd_rep_setup_sql_text";
+                    cmd.CommandText = "reporter.pkg_rep.upd_rep_setup_sql_text";
                     cmd.BindByName = true;
                     cmd.Parameters.Add("p_str", OracleDbType.Int32, p_str_id_, ParameterDirection.Input);
                     cmd.Parameters.Add("p_col", OracleDbType.Int32, p_col_id_, ParameterDirection.Input);
@@ -67,7 +67,7 @@ namespace ARM_User.New.DB
                 catch (Exception oe)
                 {
                     String s = "p_str_id_:" + p_str_id_.ToString() + "\n p_col:" + p_col_id_.ToString() + "\n p_sql_memo:" + p_sql_memo + "\n p_dat:" + p_date_.ToString() + "\n p_type:" + p_type_.ToString();
-                    DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "prepared.pkg_rep.get_rep_setup_sql_text\n " + s);
+                    DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "reporter.pkg_rep.get_rep_setup_sql_text\n " + s);
 
                 }
             }
@@ -79,7 +79,7 @@ namespace ARM_User.New.DB
                 try
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "prepared.pkg_rep.ins_rep_setup_sql_text";
+                    cmd.CommandText = "reporter.pkg_rep.ins_rep_setup_sql_text";
                     cmd.BindByName = true;
                     cmd.Parameters.Add("p_str", OracleDbType.Int32, p_str_id_, ParameterDirection.Input);
                     cmd.Parameters.Add("p_col", OracleDbType.Int32, p_col_id_, ParameterDirection.Input);
@@ -92,7 +92,7 @@ namespace ARM_User.New.DB
                 catch (Exception oe)
                 {
                     String s = "p_str_id_:" + p_str_id_.ToString() + "\n p_col:" + p_col_id_.ToString() + "\n p_sql_memo:" + p_sql_memo + "\n p_dat:" + p_date_.ToString() + "\n p_type:" + p_type_.ToString();
-                    DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "prepared.pkg_rep.get_rep_setup_sql_text\n " + s);
+                    DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "reporter.pkg_rep.get_rep_setup_sql_text\n " + s);
 
                 }
             }
@@ -104,7 +104,7 @@ namespace ARM_User.New.DB
                 try
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "prepared.pkg_rep.ins_sql_text_arm_proc";
+                    cmd.CommandText = "reporter.pkg_rep.ins_sql_text_arm_proc";
                     cmd.BindByName = true;
                     cmd.Parameters.Add("p_str", OracleDbType.Int32, p_str_id_, ParameterDirection.Input);
                     cmd.Parameters.Add("p_col", OracleDbType.Int32, p_col_id_, ParameterDirection.Input);
@@ -117,7 +117,7 @@ namespace ARM_User.New.DB
                 catch (Exception oe)
                 {
                     String s = "p_str_id_:" + p_str_id_.ToString() + "\n p_col:" + p_col_id_.ToString() + "\n p_sql_memo:" + p_sql_memo + "\n p_dat:" + p_date_.ToString() + "\n p_type:" + p_type_.ToString();
-                    DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "prepared.pkg_rep.get_rep_setup_sql_text\n " + s);
+                    DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "reporter.pkg_rep.get_rep_setup_sql_text\n " + s);
 
                 }
             }
@@ -129,7 +129,7 @@ namespace ARM_User.New.DB
                 try
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "prepared.pkg_rep.upd_sql_text_arm_proc";
+                    cmd.CommandText = "reporter.pkg_rep.upd_sql_text_arm_proc";
                     cmd.BindByName = true;
                     cmd.Parameters.Add("p_rep_setup_id", OracleDbType.Int32, p_rep_setup_id, ParameterDirection.Input);                    
                     cmd.Parameters.Add("p_sql_memo", OracleDbType.Varchar2, p_sql_memo, ParameterDirection.Input);
@@ -139,7 +139,7 @@ namespace ARM_User.New.DB
                 }
                 catch (Exception oe)
                 {                    
-                    DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "prepared.pkg_rep.upd_sql_text_arm_proc\n " );
+                    DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "reporter.pkg_rep.upd_sql_text_arm_proc\n " );
                 }
             }
         }

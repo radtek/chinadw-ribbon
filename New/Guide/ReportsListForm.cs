@@ -73,7 +73,7 @@ namespace ARM_User.New.Guide
             else
             {
                 Int32 rep_id = getCurrentID("tableReports", "report_id");
-                var frm = new ReportsCustomizeForm();
+                var frm = new ReportsCustomizeForm();                
                 frm.Text = "["+rep_id.ToString()+"] "+getCurrentName("tableReports", "name").ToString();
                 frm.Height = Height;
                 frm.Width = Convert.ToInt32(Width * 0.8);

@@ -115,6 +115,10 @@
             this.te_value.Location = new System.Drawing.Point(65, 12);
             this.te_value.MenuManager = this.barManager1;
             this.te_value.Name = "te_value";
+            this.te_value.Properties.Mask.BeepOnError = true;
+            this.te_value.Properties.Mask.EditMask = "\\d?\\d?\\d?\\d?";
+            this.te_value.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
+            this.te_value.Properties.Mask.PlaceHolder = '-';
             this.te_value.Size = new System.Drawing.Size(221, 20);
             this.te_value.StyleController = this.layoutControl1;
             this.te_value.TabIndex = 4;

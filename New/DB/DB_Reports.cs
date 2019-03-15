@@ -30,7 +30,8 @@ namespace ARM_User.New.DB
             getStandartReadList(ref ds, "tablePeriod", "PREPARED.g_read_g_reports_period_list");
         }
         public void getReadReportList(ref DataSet ds, String filter_text_)
-        {            
+        {
+            
             if (ds.Tables.Contains("tableReports")) ds.Tables["tableReports"].Clear();
 
             using (OracleCommand cmd = pConncection.CreateCommand())
@@ -50,7 +51,7 @@ namespace ARM_User.New.DB
                 }
                 catch (Exception oe)
                 {
-                    DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_Reports)" + "PREPARED.g_read_g_reports_report_list");
+                    DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_Reports)" + "PREPARED.g_read_g_reports_report_list");                    
                 }
                 finally
                 {

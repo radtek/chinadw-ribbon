@@ -74,9 +74,9 @@
             this.coldate_begin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldate_end = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dcButton = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsql_arm = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xpPageSelector1 = new DevExpress.Xpo.XPPageSelector(this.components);
             this.xpCollection1 = new DevExpress.Xpo.XPCollection(this.components);
-            this.colsql_arm = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).BeginInit();
@@ -317,7 +317,7 @@
             this.bPeriod.Caption = "bPeriod";
             this.bPeriod.Edit = this.rPeriodComboBox;
             this.bPeriod.Id = 14;
-            this.bPeriod.ImageOptions.Image = global::ARM_User.Properties.Resources.add2;
+//            this.bPeriod.ImageOptions.Image = global::ARM_User.Properties.Resources.add2;
             this.bPeriod.Name = "bPeriod";
             // 
             // rPeriodComboBox
@@ -332,7 +332,7 @@
             // rbutton
             // 
             editorButtonImageOptions1.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
-            editorButtonImageOptions1.Image = global::ARM_User.Properties.Resources.gear;
+//            editorButtonImageOptions1.Image = global::ARM_User.Properties.Resources.gear;
             editorButtonImageOptions1.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftTop;
             serializableAppearanceObject1.Options.UseImage = true;
             this.rbutton.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -472,16 +472,16 @@
             this.dcButton.VisibleIndex = 6;
             this.dcButton.Width = 109;
             // 
-            // xpPageSelector1
-            // 
-            this.xpPageSelector1.Collection = this.xpCollection1;
-            // 
             // colsql_arm
             // 
             this.colsql_arm.FieldName = "sql_arm";
             this.colsql_arm.Name = "colsql_arm";
             this.colsql_arm.Visible = true;
             this.colsql_arm.VisibleIndex = 7;
+            // 
+            // xpPageSelector1
+            // 
+            this.xpPageSelector1.Collection = this.xpCollection1;
             // 
             // ReportsListForm
             // 

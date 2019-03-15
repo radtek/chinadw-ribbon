@@ -56,7 +56,7 @@
             this.btnSave.Appearance.Options.UseForeColor = true;
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
             this.btnSave.ImageOptions.ImageIndex = 12;
-            this.btnSave.Location = new System.Drawing.Point(191, 5);
+            this.btnSave.Location = new System.Drawing.Point(368, 5);
             this.btnSave.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
             // 
             // btnCancel
@@ -67,14 +67,14 @@
             this.btnCancel.Appearance.Options.UseForeColor = true;
             this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
             this.btnCancel.ImageOptions.ImageIndex = 12;
-            this.btnCancel.Location = new System.Drawing.Point(282, 5);
+            this.btnCancel.Location = new System.Drawing.Point(459, 5);
             this.btnCancel.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.cbCheck);
-            this.panel1.Location = new System.Drawing.Point(2, 141);
-            this.panel1.Size = new System.Drawing.Size(381, 31);
+            this.panel1.Location = new System.Drawing.Point(2, 286);
+            this.panel1.Size = new System.Drawing.Size(548, 31);
             this.panel1.Controls.SetChildIndex(this.btnSave, 0);
             this.panel1.Controls.SetChildIndex(this.btnCancel, 0);
             this.panel1.Controls.SetChildIndex(this.cbCheck, 0);
@@ -100,7 +100,7 @@
             this.panelControl1.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.Controls.Add(this.xtraTabControl1);
-            this.panelControl1.Size = new System.Drawing.Size(385, 174);
+            this.panelControl1.Size = new System.Drawing.Size(552, 319);
             this.panelControl1.Controls.SetChildIndex(this.panel1, 0);
             this.panelControl1.Controls.SetChildIndex(this.xtraTabControl1, 0);
             // 
@@ -111,7 +111,7 @@
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtabSQL;
             this.xtraTabControl1.ShowTabHeader = DevExpress.Utils.DefaultBoolean.False;
-            this.xtraTabControl1.Size = new System.Drawing.Size(381, 139);
+            this.xtraTabControl1.Size = new System.Drawing.Size(548, 284);
             this.xtraTabControl1.TabIndex = 5;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtabText,
@@ -121,7 +121,7 @@
             // 
             this.xtabSQL.Controls.Add(this.rtbSQL);
             this.xtabSQL.Name = "xtabSQL";
-            this.xtabSQL.Size = new System.Drawing.Size(379, 115);
+            this.xtabSQL.Size = new System.Drawing.Size(546, 282);
             this.xtabSQL.Text = "SQL";
             // 
             // rtbSQL
@@ -132,7 +132,7 @@
             this.rtbSQL.Location = new System.Drawing.Point(0, 0);
             this.rtbSQL.Name = "rtbSQL";
             this.rtbSQL.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.rtbSQL.Size = new System.Drawing.Size(379, 115);
+            this.rtbSQL.Size = new System.Drawing.Size(546, 282);
             this.rtbSQL.TabIndex = 2;
             this.rtbSQL.Text = "";
             // 
@@ -141,7 +141,7 @@
             this.xtabText.Controls.Add(this.rtbText);
             this.xtabText.Name = "xtabText";
             this.xtabText.PageVisible = false;
-            this.xtabText.Size = new System.Drawing.Size(379, 137);
+            this.xtabText.Size = new System.Drawing.Size(471, 377);
             this.xtabText.Text = "Text";
             // 
             // rtbText
@@ -153,7 +153,7 @@
             this.rtbText.Name = "rtbText";
             this.rtbText.ReadOnly = true;
             this.rtbText.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.rtbText.Size = new System.Drawing.Size(379, 137);
+            this.rtbText.Size = new System.Drawing.Size(471, 377);
             this.rtbText.TabIndex = 1;
             this.rtbText.Text = "";
             this.rtbText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtbText_KeyPress);
@@ -175,7 +175,7 @@
             // ReportsCelleditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(385, 174);
+            this.ClientSize = new System.Drawing.Size(552, 319);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ReportsCelleditForm";
             this.Text = "Редакирование ячейки";

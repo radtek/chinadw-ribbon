@@ -316,7 +316,7 @@ namespace BSB.Common.DB
         edbDatabase.Text = LogonDatabase;
         edLogin.Text = LogonUsername;
         if (edLogin.Text == "SUPERUSER")
-            edPassword.Text = "Super_123";
+            edPassword.Text = "Qwerty_12345";
       }
     }
 

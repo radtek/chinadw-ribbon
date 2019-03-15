@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ARM_User", "ARM_User.csproj
 EndProject
 Project("{040ECBDE-118F-47B7-BE98-E6E3FFCE59D0}") = "Setup", "Setup\Setup.nsisproj", "{944083CE-BAA4-484D-B72D-9E3F115D7405}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "HDChina", "..\SetupHDChina\SetupHDChina.vdproj", "{B1340F32-AB8B-4031-83C4-BC80231416B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,16 @@ Global
 		{944083CE-BAA4-484D-B72D-9E3F115D7405}.Release|x64.ActiveCfg = Release|x86
 		{944083CE-BAA4-484D-B72D-9E3F115D7405}.Release|x86.ActiveCfg = Release|x86
 		{944083CE-BAA4-484D-B72D-9E3F115D7405}.Release|x86.Build.0 = Release|x86
+		{B1340F32-AB8B-4031-83C4-BC80231416B0}.Debug|Any CPU.ActiveCfg = Debug
+		{B1340F32-AB8B-4031-83C4-BC80231416B0}.Debug|Default.ActiveCfg = Debug
+		{B1340F32-AB8B-4031-83C4-BC80231416B0}.Debug|Default.Build.0 = Debug
+		{B1340F32-AB8B-4031-83C4-BC80231416B0}.Debug|x64.ActiveCfg = Debug
+		{B1340F32-AB8B-4031-83C4-BC80231416B0}.Debug|x86.ActiveCfg = Debug
+		{B1340F32-AB8B-4031-83C4-BC80231416B0}.Release|Any CPU.ActiveCfg = Release
+		{B1340F32-AB8B-4031-83C4-BC80231416B0}.Release|Default.ActiveCfg = Release
+		{B1340F32-AB8B-4031-83C4-BC80231416B0}.Release|Default.Build.0 = Release
+		{B1340F32-AB8B-4031-83C4-BC80231416B0}.Release|x64.ActiveCfg = Release
+		{B1340F32-AB8B-4031-83C4-BC80231416B0}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

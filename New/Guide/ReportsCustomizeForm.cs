@@ -47,6 +47,7 @@ namespace ARM_User.New.Guide
         }
         public void refreshFormList(Int32 rep_custom_type_)
         {
+            Cursor = Cursors.WaitCursor;
             String s = barEditItemDate.EditValue.ToString();
             DateTime FilterDateTime = Convert.ToDateTime(s);
             DateTime report_date_ = Convert.ToDateTime(FilterDateTime.Date);
@@ -65,7 +66,8 @@ namespace ARM_User.New.Guide
             db.getReadReporHeadertList(ref dsMain, report_date_, report_id_);
             gridControl1.RefreshDataSource();
             gridView1.PopulateColumns();
-
+            
+            
             string[] header = new string[] { "№", "num", "Найменование", "код" };
 
             if (gridView1.Columns.Count > 15) this.WindowState = FormWindowState.Maximized;
@@ -93,7 +95,9 @@ namespace ARM_User.New.Guide
                     {
                         //gridView1.Columns[i].Width = 150;
                         gridView1.Columns[i].Caption = " ";
-                        //gridView1.Columns[i].OptionsColumn.AllowEdit = false;
+                    //gridView1.Columns[i].AppearanceCell.Font = new Font("Times New Roman", 7);
+                    //gridView1.Columns[i].AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+                    //gridView1.Columns[i].OptionsColumn.AllowEdit = false;
                     if (i % 2 == 0) gridView1.Columns[i].AppearanceCell.BackColor = Color.LightBlue;
                     else {
                         gridView1.Columns[i].AppearanceCell.BackColor = Color.White;                        
@@ -122,18 +126,13 @@ namespace ARM_User.New.Guide
                 }
                 
             }
+            Cursor = Cursors.Default;
         }
 
         private void gridView1_CustomRowCellEdit(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
         {
             
-            for (int i=4; i<gridView1.Columns.Count; i++)
-            {
-                if (e.Column == gridView1.Columns[i])
-                {
-                    e.Column.ColumnEdit = rbEdit;
-                }
-            }
+            
         }
 
         private void rbEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -149,8 +148,8 @@ namespace ARM_User.New.Guide
                 Int32 str_id = getCurrentID("tbForm21", "str_id");
                 Int32 col_id = Convert.ToInt32(gridView1.FocusedColumn.FieldName);
                 DateTime rep_date = Convert.ToDateTime(FilterDateTime.Date);
-                if (rep_type_==11) rep_custom_type += 10;
-                
+
+                if (rep_type_ == 11) rep_custom_type += 10;
                 /*тип отчета*/
                 switch (rep_custom_type)
                 {
@@ -167,8 +166,10 @@ namespace ARM_User.New.Guide
                         }*/
                     case 11:
                         {
+                            
                             var frm = new ReportsCelleditFormType11();
-                            frm.Text = "Редактирование ячейки";
+                            //frm.Text = "Редактирование ячейки";
+                            frm.Text = s;
                             frm.p_str_id = str_id;
                             frm.p_col_id = col_id;
                             frm.p_date = rep_date;
@@ -180,6 +181,7 @@ namespace ARM_User.New.Guide
                     default:
                         {
                             var frm = new ReportsCelleditForm();
+                            frm.Text = s;
                             frm.HTMLText = s;
                             frm.p_str_id = str_id;
                             frm.p_col_id = col_id;
@@ -293,6 +295,17 @@ namespace ARM_User.New.Guide
         private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
         {
             MessageBox.Show("OK!..");
+        }
+
+        private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            for (int i = 4; i < gridView1.Columns.Count; i++)
+            {
+                if (e.Column == gridView1.Columns[i])
+                {
+                    e.Column.ColumnEdit = rbEdit;
+                }
+            }
         }
     }
 }

@@ -79,22 +79,22 @@
             // 
             // barDockControlBottom
             // 
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 443);
-            this.barDockControlBottom.Size = new System.Drawing.Size(627, 0);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 437);
+            this.barDockControlBottom.Size = new System.Drawing.Size(621, 0);
             // 
             // barDockControlLeft
             // 
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 31);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 412);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 413);
             // 
             // barDockControlRight
             // 
-            this.barDockControlRight.Location = new System.Drawing.Point(627, 31);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 412);
+            this.barDockControlRight.Location = new System.Drawing.Point(621, 24);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 413);
             // 
             // barDockControlTop
             // 
-            this.barDockControlTop.Size = new System.Drawing.Size(627, 31);
+            this.barDockControlTop.Size = new System.Drawing.Size(621, 24);
             // 
             // barManager
             // 
@@ -192,13 +192,13 @@
             this.gridControl1.DataMember = "tbForm21";
             this.gridControl1.DataSource = this.dsMain;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 31);
+            this.gridControl1.Location = new System.Drawing.Point(0, 24);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.rbEdit});
-            this.gridControl1.Size = new System.Drawing.Size(627, 412);
+            this.gridControl1.Size = new System.Drawing.Size(621, 413);
             this.gridControl1.TabIndex = 9;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -213,15 +213,19 @@
             this.gridView1.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsScrollAnnotations.ShowFocusedRow = DevExpress.Utils.DefaultBoolean.True;
-            this.gridView1.OptionsView.BestFitMode = DevExpress.XtraGrid.Views.Grid.GridBestFitMode.Fast;
+            this.gridView1.OptionsView.BestFitMaxRowCount = 2;
             this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.OptionsView.ShowHorizontalLines = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView1.RowHeight = 2;
+            this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
             this.gridView1.CustomRowCellEdit += new DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventHandler(this.gridView1_CustomRowCellEdit);
             // 
             // rbEdit
             // 
+            this.rbEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.rbEdit.Appearance.Options.UseFont = true;
             this.rbEdit.AutoHeight = false;
             this.rbEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
@@ -230,7 +234,7 @@
             // 
             // ReportsCustomizeForm
             // 
-            this.ClientSize = new System.Drawing.Size(627, 443);
+            this.ClientSize = new System.Drawing.Size(621, 437);
             this.Controls.Add(this.gridControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = true;

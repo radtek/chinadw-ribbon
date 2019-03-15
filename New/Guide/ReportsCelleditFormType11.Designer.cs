@@ -79,8 +79,8 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(2, 294);
-            this.panel1.Size = new System.Drawing.Size(729, 31);
+            this.panel1.Location = new System.Drawing.Point(2, 288);
+            this.panel1.Size = new System.Drawing.Size(723, 31);
             // 
             // barButtonItemBeginEdit
             // 
@@ -104,7 +104,7 @@
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.Controls.Add(this.gridControl1);
             this.panelControl1.Controls.Add(this.toolStrip1);
-            this.panelControl1.Size = new System.Drawing.Size(733, 327);
+            this.panelControl1.Size = new System.Drawing.Size(727, 321);
             this.panelControl1.Controls.SetChildIndex(this.panel1, 0);
             this.panelControl1.Controls.SetChildIndex(this.toolStrip1, 0);
             this.panelControl1.Controls.SetChildIndex(this.gridControl1, 0);
@@ -140,7 +140,7 @@
             this.tsbEdit});
             this.toolStrip1.Location = new System.Drawing.Point(2, 2);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(729, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(723, 25);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -195,7 +195,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(729, 267);
+            this.gridControl1.Size = new System.Drawing.Size(723, 261);
             this.gridControl1.TabIndex = 7;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -234,7 +234,7 @@
             // ReportsCelleditFormType11
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(733, 327);
+            this.ClientSize = new System.Drawing.Size(727, 321);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ReportsCelleditFormType11";
             this.Load += new System.EventHandler(this.ReportsCelleditFormType11_Load);

@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportsListForm));
-            DevExpress.Utils.SimpleContextButton simpleContextButton1 = new DevExpress.Utils.SimpleContextButton();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SimpleContextButton simpleContextButton2 = new DevExpress.Utils.SimpleContextButton();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.dsMain = new System.Data.DataSet();
             this.dataTable1 = new System.Data.DataTable();
             this.dataColumn1 = new System.Data.DataColumn();
@@ -74,7 +74,6 @@
             this.coldate_begin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldate_end = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dcButton = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colsql_arm = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xpPageSelector1 = new DevExpress.Xpo.XPPageSelector(this.components);
             this.xpCollection1 = new DevExpress.Xpo.XPCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).BeginInit();
@@ -125,17 +124,17 @@
             // 
             // barDockControlLeft
             // 
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 31);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 451);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 458);
             // 
             // barDockControlRight
             // 
-            this.barDockControlRight.Location = new System.Drawing.Point(899, 31);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 451);
+            this.barDockControlRight.Location = new System.Drawing.Point(899, 24);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 458);
             // 
             // barDockControlTop
             // 
-            this.barDockControlTop.Size = new System.Drawing.Size(899, 31);
+            this.barDockControlTop.Size = new System.Drawing.Size(899, 24);
             // 
             // barManager
             // 
@@ -275,12 +274,12 @@
             this.repositoryItemCheckedComboBoxEdit1.AutoHeight = false;
             this.repositoryItemCheckedComboBoxEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            simpleContextButton1.AlignmentOptions.Panel = DevExpress.Utils.ContextItemPanel.Center;
-            simpleContextButton1.AlignmentOptions.Position = DevExpress.Utils.ContextItemPosition.Far;
-            simpleContextButton1.Caption = "Yearly";
-            simpleContextButton1.Id = new System.Guid("c5bb465a-24d3-4224-b96a-ceef43c20624");
-            simpleContextButton1.Name = "simpleContextButton1";
-            this.repositoryItemCheckedComboBoxEdit1.ContextButtons.Add(simpleContextButton1);
+            simpleContextButton2.AlignmentOptions.Panel = DevExpress.Utils.ContextItemPanel.Center;
+            simpleContextButton2.AlignmentOptions.Position = DevExpress.Utils.ContextItemPosition.Far;
+            simpleContextButton2.Caption = "Yearly";
+            simpleContextButton2.Id = new System.Guid("c5bb465a-24d3-4224-b96a-ceef43c20624");
+            simpleContextButton2.Name = "simpleContextButton1";
+            this.repositoryItemCheckedComboBoxEdit1.ContextButtons.Add(simpleContextButton2);
             this.repositoryItemCheckedComboBoxEdit1.Name = "repositoryItemCheckedComboBoxEdit1";
             // 
             // bCount
@@ -317,7 +316,6 @@
             this.bPeriod.Caption = "bPeriod";
             this.bPeriod.Edit = this.rPeriodComboBox;
             this.bPeriod.Id = 14;
-//            this.bPeriod.ImageOptions.Image = global::ARM_User.Properties.Resources.add2;
             this.bPeriod.Name = "bPeriod";
             // 
             // rPeriodComboBox
@@ -331,12 +329,11 @@
             // 
             // rbutton
             // 
-            editorButtonImageOptions1.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
-//            editorButtonImageOptions1.Image = global::ARM_User.Properties.Resources.gear;
-            editorButtonImageOptions1.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftTop;
-            serializableAppearanceObject1.Options.UseImage = true;
+            editorButtonImageOptions2.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            editorButtonImageOptions2.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftTop;
+            serializableAppearanceObject5.Options.UseImage = true;
             this.rbutton.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Настройки", -1, true, true, true, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F10)), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Настройки", -1, true, true, true, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F10)), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.rbutton.Name = "rbutton";
             this.rbutton.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.rbutton.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.rbutton_ButtonPressed);
@@ -362,14 +359,14 @@
             this.gridControl1.DataMember = "tableReports";
             this.gridControl1.DataSource = this.dsMain;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 31);
+            this.gridControl1.Location = new System.Drawing.Point(0, 24);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.rbutton,
             this.rpLookUpEdit2});
-            this.gridControl1.Size = new System.Drawing.Size(899, 451);
+            this.gridControl1.Size = new System.Drawing.Size(899, 458);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -385,8 +382,7 @@
             this.colrep_type,
             this.coldate_begin,
             this.coldate_end,
-            this.dcButton,
-            this.colsql_arm});
+            this.dcButton});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsPrint.RtfPageHeader = resources.GetString("gridView1.OptionsPrint.RtfPageHeader");
@@ -403,7 +399,7 @@
             this.colrep_num.OptionsColumn.AllowEdit = false;
             this.colrep_num.Visible = true;
             this.colrep_num.VisibleIndex = 0;
-            this.colrep_num.Width = 43;
+            this.colrep_num.Width = 46;
             // 
             // colname
             // 
@@ -413,7 +409,7 @@
             this.colname.OptionsColumn.AllowEdit = false;
             this.colname.Visible = true;
             this.colname.VisibleIndex = 1;
-            this.colname.Width = 358;
+            this.colname.Width = 390;
             // 
             // colcode
             // 
@@ -423,7 +419,7 @@
             this.colcode.OptionsColumn.AllowEdit = false;
             this.colcode.Visible = true;
             this.colcode.VisibleIndex = 2;
-            this.colcode.Width = 43;
+            this.colcode.Width = 46;
             // 
             // colperiod
             // 
@@ -433,7 +429,7 @@
             this.colperiod.OptionsColumn.AllowEdit = false;
             this.colperiod.Visible = true;
             this.colperiod.VisibleIndex = 3;
-            this.colperiod.Width = 88;
+            this.colperiod.Width = 96;
             // 
             // colrep_type
             // 
@@ -451,7 +447,7 @@
             this.coldate_begin.OptionsColumn.AllowEdit = false;
             this.coldate_begin.Visible = true;
             this.coldate_begin.VisibleIndex = 4;
-            this.coldate_begin.Width = 80;
+            this.coldate_begin.Width = 87;
             // 
             // coldate_end
             // 
@@ -461,23 +457,17 @@
             this.coldate_end.OptionsColumn.AllowEdit = false;
             this.coldate_end.Visible = true;
             this.coldate_end.VisibleIndex = 5;
-            this.coldate_end.Width = 87;
+            this.coldate_end.Width = 94;
             // 
             // dcButton
             // 
             this.dcButton.Caption = "Кнопка для перехода  в форму настройки";
             this.dcButton.ColumnEdit = this.rbutton;
             this.dcButton.Name = "dcButton";
+            this.dcButton.OptionsColumn.FixedWidth = true;
             this.dcButton.Visible = true;
             this.dcButton.VisibleIndex = 6;
-            this.dcButton.Width = 109;
-            // 
-            // colsql_arm
-            // 
-            this.colsql_arm.FieldName = "sql_arm";
-            this.colsql_arm.Name = "colsql_arm";
-            this.colsql_arm.Visible = true;
-            this.colsql_arm.VisibleIndex = 7;
+            this.dcButton.Width = 80;
             // 
             // xpPageSelector1
             // 
@@ -556,6 +546,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn coldate_begin;
         private DevExpress.XtraGrid.Columns.GridColumn coldate_end;
         private DevExpress.XtraGrid.Columns.GridColumn dcButton;
-        private DevExpress.XtraGrid.Columns.GridColumn colsql_arm;
     }
 }

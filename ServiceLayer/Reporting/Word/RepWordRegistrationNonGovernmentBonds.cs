@@ -10,8 +10,8 @@ using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
 using DevExpress.XtraPrinting.Native;
 using DevExpress.XtraEditors;
 using System.Drawing;
-using Oracle.DataAccess.Client;
-using Oracle.DataAccess.Types;
+using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 
 
 namespace ARM_User.ServiceLayer.Reporting

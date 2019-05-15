@@ -3,6 +3,7 @@ using System.Data;
 using System.Globalization;
 using System.Threading;
 using ARM_User.BusinessLayer.Guides;
+using ARM_User.Properties;
 using DevExpress.LookAndFeel;
 using DevExpress.UserSkins;
 using Microsoft.Win32;
@@ -15,9 +16,9 @@ namespace BSB.Common
   /// </summary>
   public class InitApplication
   {
-      public const string ProductName = "АИП ХД CHINA: АРМ \"Пользователь\"";
-      public const string AppName = "АИП ХД CHINA: АРМ \"Пользователь\"";
-      public const string AppTitle = "АИП ХД CHINA: АРМ \"Пользователь\"";
+    public const string ProductName = "АИП ХД CHINA: АРМ \"Пользователь\"";
+    public const string AppName = "АИП ХД CHINA: АРМ \"Пользователь\"";
+    public const string AppTitle = "АИП ХД CHINA: АРМ \"Пользователь\"";
     public const string BSB_APP_GUID = "0901197F-D627-4104-B25D-2E4750A30D52";
     public const int AppId = 2/*1004*/;
     public const string RegAppKey = "Software\\BSB\\HDCHINA\\ARM_User";
@@ -50,6 +51,7 @@ namespace BSB.Common
       BonusSkins.Register();
 
       LoadLastValues();
+      
     }
 
     public static void UnInitializeApp()
@@ -77,8 +79,10 @@ namespace BSB.Common
         if (reg.GetValue("useDefaultLookAndFeel") == null)
           reg.SetValue("useDefaultLookAndFeel", true);
 
+        String s = reg.GetValue("skinName").ToString();
+               
         if (reg.GetValue("skinName") == null)
-          reg.SetValue("skinName", "Caramel");
+          reg.SetValue("skinName", "Office 2007 blue");
 
         if (reg.GetValue("LookAndFeelStyle") != null)
         {
@@ -110,6 +114,7 @@ namespace BSB.Common
 
         if (reg.GetValue("skinName") != null)
           skinName = reg.GetValue("skinName").ToString();
+        
       }
     }
 
@@ -146,7 +151,7 @@ namespace BSB.Common
         }
         reg.SetValue("useWindowsXPTheme", useWindowsXPTheme);
         reg.SetValue("useDefaultLookAndFeel", useDefaultLookAndFeel);
-        reg.SetValue("skinName", skinName);
+        reg.SetValue("skinName", skinName); 
       }
     }
   }

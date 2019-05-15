@@ -118,21 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="toolTipController.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>152, 15</value>
+    <value>363, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="iEnableAutoSize.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAOJJREFUOE+Vks0K
-        gzAQhH3/NyhqS29tDz6MF09echARRPEHFRK3HWkkjWuqgSVE/GZnsvG874qiiALfd9b9FpD+f7ND4N96
-        PR8Uhj4vclQgyzJe5KgAXEJkE2dP4JN1TYYIAHX93AMnoGHsSikqioKEEJSm6XEHaA8YaxxH6vt+EXJG
-        MG2bk8H3tm2prut9ARvWZ3QGjHNZlucdNE2zws4I8zyz76mqqqUz4DzPeQeApZSrgDkFE8Yk2EsEPE0T
-        DcNAXdeRbRudnWO0Ydu2hpMk4R2YnV1wHMe8wDW40JnCU34DeNSzTyUj+LIAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA3klEQVQ4T5WRywqDMBBF8/9/UNSW7tou
+        /Bg3rty4EBFE8YEK6jRXE9vqaOOFMEnMOU6I0HFdl2zLOhz3m03q+DYQ/Mvr+SDHsXiJqSCKIl5iKkAg
+        2VxnTyA/qdksAKjHTKpwArm91GEYKEkSCsOQgiAw7wABjLRtS3VdT6JDgVyq2W+wX5Yl5Xm+L5DTqero
+        Nf4MGOs0Tc93UBTFAh9eYRzHqa6TZdkCx3HMCwD3fa+QTyeo3zBeghUA7rqOmqahqqo2bWt49xnX8Lpt
+        Dfu+zwtMYc/zeMHVvpwaQgjxBnjUs09RsaopAAAAAElFTkSuQmCC
 </value>
   </data>
   <metadata name="barManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>223, 17</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -300,4 +300,7 @@
         AAA=
 </value>
   </data>
+  <metadata name="styleController1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>535, 17</value>
+  </metadata>
 </root>

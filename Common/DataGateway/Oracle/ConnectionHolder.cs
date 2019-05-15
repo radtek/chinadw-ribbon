@@ -1,9 +1,9 @@
+using Oracle.ManagedDataAccess.Client;
 using System.Data;
-using Oracle.DataAccess.Client;
 
 namespace BSB.Common.DataGateway.Oracle
 {
-  public class ConnectionHolder
+    public class ConnectionHolder
   {
     protected static ConnectionHolder _Instance;
 

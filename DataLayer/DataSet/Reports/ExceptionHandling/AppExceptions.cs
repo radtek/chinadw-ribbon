@@ -1,7 +1,8 @@
 using System;
 using System.Runtime.Serialization;
 using BSB.Common;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
+//using Oracle.ManagedDataAccess.Client;
 
 namespace ARM_User
 {

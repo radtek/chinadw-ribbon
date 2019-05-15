@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChinaTwoPanelForm));
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
-            this.toolTipController1 = new DevExpress.Utils.ToolTipController();
+            this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -66,17 +67,17 @@
             // 
             // barDockControlLeft
             // 
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 31);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 338);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 28);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 341);
             // 
             // barDockControlRight
             // 
-            this.barDockControlRight.Location = new System.Drawing.Point(515, 31);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 338);
+            this.barDockControlRight.Location = new System.Drawing.Point(515, 28);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 341);
             // 
             // barDockControlTop
             // 
-            this.barDockControlTop.Size = new System.Drawing.Size(515, 31);
+            this.barDockControlTop.Size = new System.Drawing.Size(515, 28);
             // 
             // barManager
             // 
@@ -103,11 +104,11 @@
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Horizontal = false;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 31);
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 28);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(515, 338);
+            this.splitContainerControl1.Size = new System.Drawing.Size(515, 341);
             this.splitContainerControl1.SplitterPosition = 146;
             this.splitContainerControl1.TabIndex = 4;
             // 
@@ -157,12 +158,11 @@
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarStaticItem barStaticItem1;
         private DevExpress.Utils.ToolTipController toolTipController1;
         private DevExpress.XtraBars.Bar bar1;
+        public DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using BSB.Common.DB;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -85,7 +86,7 @@ namespace ARM_User.New.DB
                 cmd.Dispose();
             }
         }
-        public void getPopupRead(ref DataSet ds, DateTime date_, Int32 id_=0)
+        public void getPopupRead(ref DataSet ds, DateTime date_, String note_, Int32 id_=0)
         {
             if (ds.Tables.Contains("TablePopup")) ds.Tables["TablePopup"].Clear();
 
@@ -98,6 +99,7 @@ namespace ARM_User.New.DB
                 cmd.Parameters.Add("cur", OracleDbType.RefCursor, ParameterDirection.Output);
                 cmd.Parameters.Add("id_", OracleDbType.Int32, id_, ParameterDirection.Input);
                 cmd.Parameters.Add("date_", OracleDbType.Date, date_.Date, ParameterDirection.Input);
+                cmd.Parameters.Add("note_",OracleDbType.Varchar2,note_,ParameterDirection.Input);
                 cmd.Parameters.Add("err_code", OracleDbType.Int16, ParameterDirection.Output);
                 cmd.Parameters.Add("err_msg", OracleDbType.Clob, ParameterDirection.Output);
 

@@ -3,8 +3,8 @@ using ARM_User.Reports;
 using BSB.Common;
 using BSB.Common.DataGateway.Oracle;
 using Microsoft.Office.Interop.Excel;
-using Oracle.DataAccess.Client;
-using Oracle.DataAccess.Types;
+using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,6 +14,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using Oracle.ManagedDataAccess.Types;
 
 namespace ARM_User.ServiceLayer.Reporting.Excel
 {

@@ -2,21 +2,13 @@
 using System.Windows.Forms;
 using BSB.Common;
 using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Controls;
-using ARM_User.DisplayLayer.Popup;
-using ARM_User.BusinessLayer.Guides;
 using ARM_User.MapperLayer.Common;
-using ARM_User.BusinessLayer.Common;
 using BSB.Common.DB;
-using System.Data;
 using ARM_User.BusinessLayer.Reports;
-using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
-using BSB.Common.DataGateway.Oracle;
-using Oracle.DataAccess.Client;
 
 namespace ARM_User.DisplayLayer.Service
 {
-  public partial class ChooseRepYearQuarterForm : ParametersForOutputForm
+    public partial class ChooseRepYearQuarterForm : ParametersForOutputForm
   {
     protected bool isValid;
     protected Decimal yearsId;

@@ -3,7 +3,7 @@ using ARM_User.New.Guide;
 using BSB.Common;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,9 +21,10 @@ namespace ARM_User.DisplayLayer.Guides
         #endregion
 
         public ExtraPokazListForm()
-        {
+        {   
             InitializeComponent();
             db = new DB_ExtraPokazListForm(dmControler.frmMain.oracleConnection);
+            beData.EditValue = (DateTime)System.DateTime.Today;
             gvCustomers.OptionsView.ShowAutoFilterRow = false;
             barButtonItemFilter.Glyph = Properties.Resources.filter;
             gvCustomers.OptionsFind.ClearFindOnClose = true;
@@ -38,8 +39,8 @@ namespace ARM_User.DisplayLayer.Guides
         private void refreshCustomer()
         {
             //repositoryItemDateEdit1.val
-            Cursor = Cursors.WaitCursor;
-            String s = barEditItemDate.EditValue.ToString();
+            splashScreenManager.ShowWaitForm();
+            String s = beData.EditValue.ToString();
             DateTime FilterDateTime = Convert.ToDateTime(s);
             db.getReadList(ref dsMain, FilterDateTime.Date);
 
@@ -55,15 +56,15 @@ namespace ARM_User.DisplayLayer.Guides
                 splitContainer1.Panel2Collapsed = false;
                 splitContainer1.Panel2.Show();
             }
-            Cursor = Cursors.Default;
+            splashScreenManager.CloseWaitForm();
         }
         private void refreshRating()
         {
-            Cursor = Cursors.WaitCursor;
+            splashScreenManager.ShowWaitForm();
             Int32 iID = getCurrentID("TableList1", "CUSTOMER_SID");            
             if (iID > 0)
             {
-                String s = barEditItemDate.EditValue.ToString();
+                String s = beData.EditValue.ToString();
                 DateTime FilterDateTime = Convert.ToDateTime(s);
                 db.getReadList2(ref dsMain, FilterDateTime.Date, iID);
                 Int32 xCount = dsMain.Tables["TableList2"].Rows.Count;
@@ -75,7 +76,8 @@ namespace ARM_User.DisplayLayer.Guides
             {
                 if (dsMain.Tables.Contains("TableList2")) dsMain.Tables["TableList2"].Clear();
             }
-            Cursor = Cursors.Default;
+            //System.Threading.Thread.Sleep(5000);
+            splashScreenManager.CloseWaitForm();
         }
         private void reSize()
         {            
@@ -178,14 +180,15 @@ namespace ARM_User.DisplayLayer.Guides
 
         private void tsbInsert_Click(object sender, EventArgs e)
         {   
-            var frm = new ExtraPokazADDForm();
+            var frm = new CreditsExtraPokazADDForm();
             frm.Text = "Вставить показатель";
             frm.State = ServiceLayer.Service.Editor.EditorState.Insert;
+            
             // from clients
             frm.customer_sid_ = getCurrentID("TableList1", "CUSTOMER_SID");
             frm.customer_name = getCurrentName("TableList1", "FULL_NAME");
             frm.customer_code = getCurrentID("TableList1", "SRC_CUSTOMER_NO");
-            String s = barEditItemDate.EditValue.ToString();
+            String s = beData.EditValue.ToString();
             DateTime FilterDateTime = Convert.ToDateTime(s);
             frm.report_date_ = Convert.ToDateTime(FilterDateTime.Date);
             frm.ShowDialog();
@@ -194,7 +197,7 @@ namespace ARM_User.DisplayLayer.Guides
 
         private void tsbView_Click(object sender, EventArgs e)
         {
-            var frm = new ExtraPokazADDForm();
+            var frm = new CreditsExtraPokazADDForm();
             frm.Text = "Просмотр показателя";
             frm.State = ServiceLayer.Service.Editor.EditorState.View;
             
@@ -214,13 +217,13 @@ namespace ARM_User.DisplayLayer.Guides
 
         private void tsbEdit_Click(object sender, EventArgs e)
         {
-            var frm = new ExtraPokazADDForm();
+            var frm = new CreditsExtraPokazADDForm();
             frm.Text = "Редактирование показателя";
             frm.State = ServiceLayer.Service.Editor.EditorState.Edit;
             frm.customer_sid_ = getCurrentID("TableList1", "CUSTOMER_SID");
             frm.customer_name = getCurrentName("TableList1", "FULL_NAME");
             frm.customer_code = getCurrentID("TableList1", "SRC_CUSTOMER_NO");
-            String s = barEditItemDate.EditValue.ToString();
+            String s = beData.EditValue.ToString();
             DateTime FilterDateTime = Convert.ToDateTime(s);
             frm.report_date_ = Convert.ToDateTime(FilterDateTime.Date);
             // from ratings
@@ -244,7 +247,7 @@ namespace ARM_User.DisplayLayer.Guides
             Int32 customer_sid_ = getCurrentID("TableList1", "CUSTOMER_SID");
             Int32 abs_dimension_id_ = getCurrentID("TableList2", "ABS_DIMENSION_ID");
             Int32 pokaz_id_ = getCurrentID("TableList2", "POKAZ_ID");
-            String s = barEditItemDate.EditValue.ToString();
+            String s = beData.EditValue.ToString();
             DateTime FilterDateTime = Convert.ToDateTime(s);
             DateTime report_date_ = Convert.ToDateTime(FilterDateTime.Date);
             // Вы хотите удалить?
@@ -253,10 +256,12 @@ namespace ARM_User.DisplayLayer.Guides
                 LangTranslate.UiGetText("Вы действительно хотите удалить запись?"),
                 LangTranslate.UiGetText("Внимание"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                Cursor = Cursors.WaitCursor;
+                splashScreenManager.ShowWaitForm();
                 db.deleteLoansDeleteMap(customer_sid_, report_date_, abs_dimension_id_, pokaz_id_);
+                splashScreenManager.CloseWaitForm();
+
                 refreshRating();
-                Cursor = Cursors.Default;
+                
             }
                 
         }

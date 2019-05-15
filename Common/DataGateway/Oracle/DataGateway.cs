@@ -1,7 +1,7 @@
 using System;
 using System.Data;
 using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 
 namespace BSB.Common.DataGateway.Oracle
 {

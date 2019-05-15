@@ -8,152 +8,184 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ARM_User.Properties {
-    
-    
+namespace ARM_User.Properties
+{
+
+
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
+    {
+
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-        
-        public static Settings Default {
-            get {
+
+        public static Settings Default
+        {
+            get
+            {
                 return defaultInstance;
             }
         }
-        
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("DATA SOURCE=KBAL11PAVL;PASSWORD=main;PERSIST SECURITY INFO=True;USER ID=MAIN")]
-        public string ConnectionString {
-            get {
+        public string ConnectionString
+        {
+            get
+            {
                 return ((string)(this["ConnectionString"]));
             }
         }
-        
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("DATA SOURCE=KBAL11PAVL;PASSWORD=main;USER ID=MAIN")]
-        public string ConnectionString1 {
-            get {
+        public string ConnectionString1
+        {
+            get
+            {
                 return ((string)(this["ConnectionString1"]));
             }
         }
-        
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("DATA SOURCE=KBAL11PAVL;PASSWORD=ADM;PERSIST SECURITY INFO=True;USER ID=ADM")]
-        public string ConnectionString2 {
-            get {
+        public string ConnectionString2
+        {
+            get
+            {
                 return ((string)(this["ConnectionString2"]));
             }
         }
-        
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=cbal_stend;Persist Security Info=True;User ID=main;Password=main;Unic" +
             "ode=True")]
-        public string ConnectionString3 {
-            get {
+        public string ConnectionString3
+        {
+            get
+            {
                 return ((string)(this["ConnectionString3"]));
             }
         }
-        
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("DATA SOURCE=CBAL_STEND;PASSWORD=main;USER ID=MAIN")]
-        public string ConnectionString4 {
-            get {
+        public string ConnectionString4
+        {
+            get
+            {
                 return ((string)(this["ConnectionString4"]));
             }
         }
-        
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("DATA SOURCE=XE;PASSWORD=main;USER ID=MAIN")]
-        public string ConnectionString5 {
-            get {
+        public string ConnectionString5
+        {
+            get
+            {
                 return ((string)(this["ConnectionString5"]));
             }
         }
-        
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("DATA SOURCE=CBAL_NEW;PASSWORD=asdf2016#;PERSIST SECURITY INFO=True;USER ID=MAIN")]
-        public string ConnectionString6 {
-            get {
+        public string ConnectionString6
+        {
+            get
+            {
                 return ((string)(this["ConnectionString6"]));
             }
         }
-        
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=grecbpavl;User ID=main;Password=main;Unicode=True")]
-        public string ConnectionString7 {
-            get {
+        public string ConnectionString7
+        {
+            get
+            {
                 return ((string)(this["ConnectionString7"]));
             }
         }
-        
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("DATA SOURCE=GRECBPAVL;PASSWORD=main;USER ID=MAIN")]
-        public string ConnectionString8 {
-            get {
+        public string ConnectionString8
+        {
+            get
+            {
                 return ((string)(this["ConnectionString8"]));
             }
         }
-        
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=grecb;User ID=main;Password=main;Unicode=True")]
-        public string ConnectionString9 {
-            get {
+        public string ConnectionString9
+        {
+            get
+            {
                 return ((string)(this["ConnectionString9"]));
             }
         }
-        
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=grecbnb_250;User ID=main;Password=main;Unicode=True")]
-        public string ConnectionString10 {
-            get {
+        public string ConnectionString10
+        {
+            get
+            {
                 return ((string)(this["ConnectionString10"]));
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("tablePeriod.ord")]
-        public string ава {
-            get {
+        public string ава
+        {
+            get
+            {
                 return ((string)(this["ава"]));
             }
-            set {
+            set
+            {
                 this["ава"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("tablePeriod.ord")]
-        public string sss {
-            get {
+        public string sss
+        {
+            get
+            {
                 return ((string)(this["sss"]));
             }
-            set {
+            set
+            {
                 this["sss"] = value;
             }
         }

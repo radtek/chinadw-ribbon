@@ -2,8 +2,8 @@ using System;
 using System.Data;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using Oracle.DataAccess.Client;
-using Oracle.DataAccess.Types;
+using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 
 namespace BSB.Common.DB.Admin
 {

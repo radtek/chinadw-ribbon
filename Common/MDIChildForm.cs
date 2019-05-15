@@ -7,6 +7,7 @@ using ARM_User;
 using ARM_User.DisplayLayer.Common;
 using ARM_User.Resources;
 using BSB.Actions;
+using DevExpress.LookAndFeel;
 using DevExpress.Utils;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
@@ -14,11 +15,11 @@ using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
 
 namespace BSB.Common
 {
-  /// <summary>
-  ///   Summary description for frmMDIChildForm.
-  /// </summary>
-  public class MDIChildForm : XtraForm
-  {
+    /// <summary>
+    ///   Summary description for frmMDIChildForm.
+    /// </summary>
+    public class MDIChildForm : DevExpress.XtraEditors.XtraForm
+    {
     public MDIChildForm()
     {
       //
@@ -26,8 +27,8 @@ namespace BSB.Common
       //
       InitializeComponent();
 
-      unTrControls = new List<Control>();
-    }
+      unTrControls = new List<Control>();      
+        }
 
     public bool AutoSizeEnabled
     {
@@ -62,11 +63,15 @@ namespace BSB.Common
             this.iEnableAutoSize = new DevExpress.XtraBars.BarButtonItem();
             this.barMenu = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barManager = new DevExpress.XtraBars.BarManager();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.barManager = new DevExpress.XtraBars.BarManager();
+            this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ARM_User.New.Guide.WaitForm2), true, true, true);
+            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.styleController1 = new DevExpress.XtraEditors.StyleController();
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.styleController1)).BeginInit();
             this.SuspendLayout();
             // 
             // iEnableAutoSize
@@ -98,31 +103,7 @@ namespace BSB.Common
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager;
-            this.barDockControlTop.Size = new System.Drawing.Size(505, 31);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 397);
-            this.barDockControlBottom.Manager = this.barManager;
-            this.barDockControlBottom.Size = new System.Drawing.Size(505, 0);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 31);
-            this.barDockControlLeft.Manager = this.barManager;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 366);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(505, 31);
-            this.barDockControlRight.Manager = this.barManager;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 366);
+            this.barDockControlTop.Size = new System.Drawing.Size(505, 36);
             // 
             // barManager
             // 
@@ -143,9 +124,46 @@ namespace BSB.Common
             this.barManager.MdiMenuMergeStyle = DevExpress.XtraBars.BarMdiMenuMergeStyle.Never;
             this.barManager.ToolTipController = this.toolTipController;
             // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 397);
+            this.barDockControlBottom.Manager = this.barManager;
+            this.barDockControlBottom.Size = new System.Drawing.Size(505, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 36);
+            this.barDockControlLeft.Manager = this.barManager;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 361);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(505, 36);
+            this.barDockControlRight.Manager = this.barManager;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 361);
+            // 
+            // splashScreenManager
+            // 
+            this.splashScreenManager.ClosingDelay = 500;
+            // 
+            // ribbonPage2
+            // 
+            this.ribbonPage2.Name = "ribbonPage2";
+            this.ribbonPage2.Text = "ribbonPage2";
+            // 
+            // styleController1
+            // 
+            this.styleController1.PropertiesChanged += new System.EventHandler(this.styleController1_PropertiesChanged);
+            // 
             // MDIChildForm
             // 
-            this.AutoScaleBaseSize = new System.Drawing.Size(5, 14);
+            this.AutoScaleBaseSize = new System.Drawing.Size(6, 18);
             this.ClientSize = new System.Drawing.Size(505, 397);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -159,7 +177,9 @@ namespace BSB.Common
             this.Closed += new System.EventHandler(this.TfrmMDIChildForm_Closed);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TfrmMDIChildForm_FormClosing);
             this.Load += new System.EventHandler(this.TfrmMDIChildForm_Load);
+            this.ParentChanged += new System.EventHandler(this.MDIChildForm_ParentChanged);
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.styleController1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,6 +190,7 @@ namespace BSB.Common
     private void TfrmMDIChildForm_Load(object sender, EventArgs e)
     {
         try
+
         {
             // Проверяем, в каком режиме запущенна форма, если в DesignMode то нечего не делаем.
             // Нужно проверять в случае наследования форм.
@@ -179,18 +200,12 @@ namespace BSB.Common
             var md = (TMenuData)pParentForm.GetTvMenu().SelectedNode.Tag;
             md.pForm = this;
             //----
-
-
-
-            
                 pParentForm.AttachPanelToWindow(this);
-                Icon = AppResource.MasterDetail;
-            
-            
-
+                //Icon = AppResource.MasterDetail;
 
             foreach (Control c in ParentForm.Controls)
             {
+                
                 if (c is MdiClient)
                 {
                     pParentMdiClient = c as MdiClient;
@@ -220,10 +235,10 @@ namespace BSB.Common
         catch (Exception oe)
         {
         }
-
+           
         }
-
-    private void iEnableAutoSize_DownChanged(object sender, ItemClickEventArgs e)
+        
+        private void iEnableAutoSize_DownChanged(object sender, ItemClickEventArgs e)
     {
       SetFullSize();
     }
@@ -319,8 +334,33 @@ namespace BSB.Common
     protected bool pAutoSizeEnabled = true;
     private MainForm pParentForm;
     private MdiClient pParentMdiClient;
-    protected ToolTipController toolTipController;
+        public DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
+        public StyleController styleController1;
+        protected ToolTipController toolTipController;
 
-    #endregion
-  }
+        #endregion
+
+        private void styleController1_PropertiesChanged(object sender, EventArgs e)
+        {
+            InitSkin();
+        }
+        public virtual void InitSkin()
+        {
+            try
+            {
+                LookAndFeel.UseDefaultLookAndFeel = true;
+                LookAndFeel.SetSkinStyle(InitApplication.skinName);
+                LookAndFeel.Style = InitApplication.style;
+            }
+            catch(Exception oe)
+            {
+            }
+            
+        }
+        private void MDIChildForm_ParentChanged(object sender, EventArgs e)
+        {
+            InitSkin();
+        }
+    }
 }

@@ -3,7 +3,7 @@ using System.Data;
 using BSB.Common.DataGateway.Oracle;
 using BSB.Common.DataGateway;
 using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 
 namespace ARM_User.DataLayer.DB.Gateway
 {

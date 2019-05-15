@@ -28,13 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoansListForm));
-            this.bbRefresh = new DevExpress.XtraBars.BarButtonItem();
-            this.beData = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.bbFilter = new DevExpress.XtraBars.BarButtonItem();
-            this.bbSearch = new DevExpress.XtraBars.BarButtonItem();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gcList1 = new DevExpress.XtraGrid.GridControl();
             this.dsMain = new System.Data.DataSet();
             this.dtCredits = new System.Data.DataTable();
@@ -100,6 +96,84 @@
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bbRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.beData = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.bbFilter = new DevExpress.XtraBars.BarButtonItem();
+            this.bbSearch = new DevExpress.XtraBars.BarButtonItem();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.dsMain2 = new System.Data.DataSet();
+            this.dataTable1 = new System.Data.DataTable();
+            this.dataColumn10 = new System.Data.DataColumn();
+            this.dataColumn11 = new System.Data.DataColumn();
+            this.dataColumn12 = new System.Data.DataColumn();
+            this.dataColumn13 = new System.Data.DataColumn();
+            this.dataColumn14 = new System.Data.DataColumn();
+            this.dataColumn15 = new System.Data.DataColumn();
+            this.dataColumn16 = new System.Data.DataColumn();
+            this.dataColumn17 = new System.Data.DataColumn();
+            this.dataColumn18 = new System.Data.DataColumn();
+            this.dataColumn19 = new System.Data.DataColumn();
+            this.dataColumn20 = new System.Data.DataColumn();
+            this.dataColumn21 = new System.Data.DataColumn();
+            this.dataColumn22 = new System.Data.DataColumn();
+            this.dataColumn23 = new System.Data.DataColumn();
+            this.dataColumn24 = new System.Data.DataColumn();
+            this.dataColumn25 = new System.Data.DataColumn();
+            this.dataColumn26 = new System.Data.DataColumn();
+            this.dataColumn27 = new System.Data.DataColumn();
+            this.dataColumn28 = new System.Data.DataColumn();
+            this.dataColumn29 = new System.Data.DataColumn();
+            this.dataColumn30 = new System.Data.DataColumn();
+            this.dataColumn31 = new System.Data.DataColumn();
+            this.dataColumn32 = new System.Data.DataColumn();
+            this.dataColumn33 = new System.Data.DataColumn();
+            this.dataColumn34 = new System.Data.DataColumn();
+            this.dataColumn35 = new System.Data.DataColumn();
+            this.dataColumn36 = new System.Data.DataColumn();
+            this.dataColumn37 = new System.Data.DataColumn();
+            this.dataColumn38 = new System.Data.DataColumn();
+            this.dataColumn39 = new System.Data.DataColumn();
+            this.dataColumn40 = new System.Data.DataColumn();
+            this.dataColumn41 = new System.Data.DataColumn();
+            this.dataColumn42 = new System.Data.DataColumn();
+            this.dataColumn43 = new System.Data.DataColumn();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colP_LOANS_SID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLOAN_SID1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCUSTOMER_NO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSTATUS_CODE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSTATUS_NAME = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colREF_NO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCONTRACT_NO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDRAWDOWN_DATE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMATURITY_DATE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colYEAR_NO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCURRENCY_CODE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAMOUNT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRATE_INTEREST = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCUSTOMER_NAME = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRMN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colREPORT_DATE1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNOTE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLEVEL_NO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLOAN_CLASS_ABS_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLOAN_CLASS_NAME = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLOAN_CLASS_CODE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLOAN_PURPOSE_ABS_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLOAN_PURPOSE_NAME = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLOAN_PURPOSE_CODE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLOAN_OBJECT_ABS_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLOAN_OBJECT_NAME = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLOAN_OBJECT_CODE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLOAN_OBJECT_STAT_ABS_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLOAN_OBJECT_STAT_NAME = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLOAN_OBJECT_STAT_CODE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLOAN_TYPE_PLEDGE_STAT_ABS_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLOAN_TYPE_PLEDGE_STAT_NAME = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLOAN_TYPE_PLEDGE_STAT_CODE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colREPORT_DATE_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.gcList2 = new DevExpress.XtraGrid.GridControl();
             this.bgvExtraPokaz = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
@@ -139,13 +213,10 @@
             this.bCount = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbExport = new DevExpress.XtraBars.BarButtonItem();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcList1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtCredits)).BeginInit();
@@ -153,6 +224,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtPokaz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bandedGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvList1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMain2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -174,17 +255,17 @@
             // 
             // barDockControlLeft
             // 
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 551);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 28);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 547);
             // 
             // barDockControlRight
             // 
-            this.barDockControlRight.Location = new System.Drawing.Point(1062, 24);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 551);
+            this.barDockControlRight.Location = new System.Drawing.Point(1062, 28);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 547);
             // 
             // barDockControlTop
             // 
-            this.barDockControlTop.Size = new System.Drawing.Size(1062, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(1062, 28);
             // 
             // barManager
             // 
@@ -194,8 +275,9 @@
             this.bbFilter,
             this.bbSearch,
             this.bCount,
-            this.barButtonItem1});
-            this.barManager.MaxItemId = 7;
+            this.barButtonItem1,
+            this.bbExport});
+            this.barManager.MaxItemId = 8;
             this.barManager.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemDateEdit1,
             this.repositoryItemTextEdit1});
@@ -208,100 +290,39 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.beData, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbFilter),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbSearch),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbExport)});
             // 
             // iEnableAutoSize
             // 
             this.iEnableAutoSize.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("iEnableAutoSize.ImageOptions.Image")));
             this.iEnableAutoSize.ImageOptions.ImageIndex = 0;
             // 
-            // bbRefresh
+            // gridView1
             // 
-            this.bbRefresh.Caption = "Обновить";
-            this.bbRefresh.Description = "Обновить";
-            this.bbRefresh.Hint = "Обновить";
-            this.bbRefresh.Id = 1;
-            this.bbRefresh.ImageOptions.Image = global::ARM_User.Properties.Resources.refresh;
-            this.bbRefresh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbRefresh.ImageOptions.LargeImage")));
-            this.bbRefresh.Name = "bbRefresh";
-            this.bbRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbRefresh_ItemClick);
-            // 
-            // beData
-            // 
-            this.beData.Caption = "Дата";
-            this.beData.Description = "Дата";
-            this.beData.Edit = this.repositoryItemDateEdit1;
-            this.beData.EditValue = new System.DateTime(2019, 1, 24, 0, 0, 0, 0);
-            this.beData.EditWidth = 101;
-            this.beData.Hint = "Дата";
-            this.beData.Id = 2;
-            this.beData.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("beData.ImageOptions.Image")));
-            this.beData.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("beData.ImageOptions.LargeImage")));
-            this.beData.Name = "beData";
-            this.beData.EditValueChanged += new System.EventHandler(this.beData_EditValueChanged);
-            // 
-            // repositoryItemDateEdit1
-            // 
-            this.repositoryItemDateEdit1.AutoHeight = false;
-            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
-            // 
-            // bbFilter
-            // 
-            this.bbFilter.Caption = "Фильтр";
-            this.bbFilter.Description = "Фильтр";
-            this.bbFilter.Hint = "Фильтр";
-            this.bbFilter.Id = 3;
-            this.bbFilter.ImageOptions.Image = global::ARM_User.Properties.Resources.filter;
-            this.bbFilter.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbFilter.ImageOptions.LargeImage")));
-            this.bbFilter.Name = "bbFilter";
-            this.bbFilter.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbFilter_ItemClick);
-            // 
-            // bbSearch
-            // 
-            this.bbSearch.Caption = "Поиск";
-            this.bbSearch.Description = "Поиск";
-            this.bbSearch.Hint = "Поиск";
-            this.bbSearch.Id = 4;
-            this.bbSearch.ImageOptions.Image = global::ARM_User.Properties.Resources.view;
-            this.bbSearch.Name = "bbSearch";
-            this.bbSearch.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbSearch_ItemClick);
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.gcList1);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1062, 551);
-            this.splitContainer1.SplitterDistance = 243;
-            this.splitContainer1.TabIndex = 4;
+            this.gridView1.GridControl = this.gcList1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             // 
             // gcList1
             // 
             this.gcList1.DataMember = "tsCredits";
             this.gcList1.DataSource = this.dsMain;
             this.gcList1.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode1.LevelTemplate = this.gridView1;
+            gridLevelNode1.RelationName = "Level1";
+            this.gcList1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
             this.gcList1.Location = new System.Drawing.Point(0, 0);
             this.gcList1.MainView = this.bandedGridView1;
             this.gcList1.MenuManager = this.barManager;
             this.gcList1.Name = "gcList1";
-            this.gcList1.Size = new System.Drawing.Size(1062, 243);
+            this.gcList1.Size = new System.Drawing.Size(1062, 241);
             this.gcList1.TabIndex = 3;
             this.gcList1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bandedGridView1,
-            this.gvList1});
+            this.gvList1,
+            this.gridView1});
             // 
             // dsMain
             // 
@@ -538,11 +559,16 @@
             this.bandedGridView1.OptionsFind.SearchInPreview = true;
             this.bandedGridView1.OptionsFind.ShowFindButton = false;
             this.bandedGridView1.OptionsNavigation.AutoFocusNewRow = true;
+            this.bandedGridView1.OptionsScrollAnnotations.ShowFocusedRow = DevExpress.Utils.DefaultBoolean.True;
+            this.bandedGridView1.OptionsScrollAnnotations.ShowSelectedRows = DevExpress.Utils.DefaultBoolean.True;
             this.bandedGridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.bandedGridView1.OptionsSelection.MultiSelect = true;
+            this.bandedGridView1.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.bandedGridView1.OptionsView.BestFitMaxRowCount = 1;
             this.bandedGridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.bandedGridView1.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.SmartTag;
             this.bandedGridView1.OptionsView.RowAutoHeight = true;
+            this.bandedGridView1.OptionsView.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.bandedGridView1.OptionsView.ShowGroupPanel = false;
             this.bandedGridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.bandedGridColumn12, DevExpress.Data.ColumnSortOrder.Ascending)});
@@ -647,6 +673,8 @@
             // 
             this.bandedGridColumn13.AutoFillDown = true;
             this.bandedGridColumn13.Caption = "Сумма договора";
+            this.bandedGridColumn13.DisplayFormat.FormatString = "{0:###,##0.#\\}";
+            this.bandedGridColumn13.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn13.FieldName = "AMOUNT";
             this.bandedGridColumn13.Name = "bandedGridColumn13";
             this.bandedGridColumn13.Visible = true;
@@ -795,6 +823,638 @@
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.Width = 35;
             // 
+            // bbRefresh
+            // 
+            this.bbRefresh.Caption = "Обновить";
+            this.bbRefresh.Description = "Обновить";
+            this.bbRefresh.Hint = "Обновить";
+            this.bbRefresh.Id = 1;
+            this.bbRefresh.ImageOptions.Image = global::ARM_User.Properties.Resources.refresh;
+            this.bbRefresh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbRefresh.ImageOptions.LargeImage")));
+            this.bbRefresh.Name = "bbRefresh";
+            this.bbRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbRefresh_ItemClick);
+            // 
+            // beData
+            // 
+            this.beData.Caption = "Дата";
+            this.beData.Description = "Дата";
+            this.beData.Edit = this.repositoryItemDateEdit1;
+            this.beData.EditValue = new System.DateTime(2019, 1, 24, 0, 0, 0, 0);
+            this.beData.EditWidth = 101;
+            this.beData.Hint = "Дата";
+            this.beData.Id = 2;
+            this.beData.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("beData.ImageOptions.Image")));
+            this.beData.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("beData.ImageOptions.LargeImage")));
+            this.beData.Name = "beData";
+            this.beData.EditValueChanged += new System.EventHandler(this.beData_EditValueChanged);
+            // 
+            // repositoryItemDateEdit1
+            // 
+            this.repositoryItemDateEdit1.AutoHeight = false;
+            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
+            // 
+            // bbFilter
+            // 
+            this.bbFilter.Caption = "Фильтр";
+            this.bbFilter.Description = "Фильтр";
+            this.bbFilter.Hint = "Фильтр";
+            this.bbFilter.Id = 3;
+            this.bbFilter.ImageOptions.Image = global::ARM_User.Properties.Resources.filter;
+            this.bbFilter.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbFilter.ImageOptions.LargeImage")));
+            this.bbFilter.Name = "bbFilter";
+            this.bbFilter.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbFilter_ItemClick);
+            // 
+            // bbSearch
+            // 
+            this.bbSearch.Caption = "Поиск";
+            this.bbSearch.Description = "Поиск";
+            this.bbSearch.Hint = "Поиск";
+            this.bbSearch.Id = 4;
+            this.bbSearch.ImageOptions.Image = global::ARM_User.Properties.Resources.view;
+            this.bbSearch.Name = "bbSearch";
+            this.bbSearch.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbSearch_ItemClick);
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 28);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.gridControl1);
+            this.splitContainer1.Panel1.Controls.Add(this.gcList1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
+            this.splitContainer1.Size = new System.Drawing.Size(1062, 547);
+            this.splitContainer1.SplitterDistance = 241;
+            this.splitContainer1.TabIndex = 4;
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.DataMember = "ExportTable";
+            this.gridControl1.DataSource = this.dsMain2;
+            this.gridControl1.Location = new System.Drawing.Point(0, 148);
+            this.gridControl1.MainView = this.gridView2;
+            this.gridControl1.MenuManager = this.barManager;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1062, 93);
+            this.gridControl1.TabIndex = 4;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // dsMain2
+            // 
+            this.dsMain2.DataSetName = "NewDataSet";
+            this.dsMain2.Tables.AddRange(new System.Data.DataTable[] {
+            this.dataTable1});
+            // 
+            // dataTable1
+            // 
+            this.dataTable1.Columns.AddRange(new System.Data.DataColumn[] {
+            this.dataColumn10,
+            this.dataColumn11,
+            this.dataColumn12,
+            this.dataColumn13,
+            this.dataColumn14,
+            this.dataColumn15,
+            this.dataColumn16,
+            this.dataColumn17,
+            this.dataColumn18,
+            this.dataColumn19,
+            this.dataColumn20,
+            this.dataColumn21,
+            this.dataColumn22,
+            this.dataColumn23,
+            this.dataColumn24,
+            this.dataColumn25,
+            this.dataColumn26,
+            this.dataColumn27,
+            this.dataColumn28,
+            this.dataColumn29,
+            this.dataColumn30,
+            this.dataColumn31,
+            this.dataColumn32,
+            this.dataColumn33,
+            this.dataColumn34,
+            this.dataColumn35,
+            this.dataColumn36,
+            this.dataColumn37,
+            this.dataColumn38,
+            this.dataColumn39,
+            this.dataColumn40,
+            this.dataColumn41,
+            this.dataColumn42,
+            this.dataColumn43});
+            this.dataTable1.TableName = "ExportTable";
+            // 
+            // dataColumn10
+            // 
+            this.dataColumn10.ColumnName = "P_LOANS_SID";
+            this.dataColumn10.DataType = typeof(int);
+            // 
+            // dataColumn11
+            // 
+            this.dataColumn11.ColumnName = "LOAN_SID";
+            this.dataColumn11.DataType = typeof(int);
+            // 
+            // dataColumn12
+            // 
+            this.dataColumn12.ColumnName = "CUSTOMER_NO";
+            // 
+            // dataColumn13
+            // 
+            this.dataColumn13.ColumnName = "STATUS_CODE";
+            // 
+            // dataColumn14
+            // 
+            this.dataColumn14.ColumnName = "STATUS_NAME";
+            // 
+            // dataColumn15
+            // 
+            this.dataColumn15.ColumnName = "REF_NO";
+            // 
+            // dataColumn16
+            // 
+            this.dataColumn16.ColumnName = "CONTRACT_NO";
+            // 
+            // dataColumn17
+            // 
+            this.dataColumn17.ColumnName = "DRAWDOWN_DATE";
+            this.dataColumn17.DataType = typeof(System.DateTime);
+            // 
+            // dataColumn18
+            // 
+            this.dataColumn18.ColumnName = "MATURITY_DATE";
+            this.dataColumn18.DataType = typeof(System.DateTime);
+            // 
+            // dataColumn19
+            // 
+            this.dataColumn19.ColumnName = "YEAR_NO";
+            // 
+            // dataColumn20
+            // 
+            this.dataColumn20.ColumnName = "CURRENCY_CODE";
+            // 
+            // dataColumn21
+            // 
+            this.dataColumn21.ColumnName = "AMOUNT";
+            this.dataColumn21.DataType = typeof(decimal);
+            // 
+            // dataColumn22
+            // 
+            this.dataColumn22.ColumnName = "RATE_INTEREST";
+            this.dataColumn22.DataType = typeof(double);
+            // 
+            // dataColumn23
+            // 
+            this.dataColumn23.ColumnName = "CUSTOMER_NAME";
+            // 
+            // dataColumn24
+            // 
+            this.dataColumn24.ColumnName = "RMN";
+            this.dataColumn24.DataType = typeof(int);
+            // 
+            // dataColumn25
+            // 
+            this.dataColumn25.ColumnName = "REPORT_DATE";
+            this.dataColumn25.DataType = typeof(System.DateTime);
+            // 
+            // dataColumn26
+            // 
+            this.dataColumn26.ColumnName = "NOTE";
+            // 
+            // dataColumn27
+            // 
+            this.dataColumn27.ColumnName = "LEVEL_NO";
+            this.dataColumn27.DataType = typeof(int);
+            // 
+            // dataColumn28
+            // 
+            this.dataColumn28.ColumnName = "LOAN_CLASS_ABS_ID";
+            this.dataColumn28.DataType = typeof(int);
+            // 
+            // dataColumn29
+            // 
+            this.dataColumn29.ColumnName = "LOAN_CLASS_NAME";
+            // 
+            // dataColumn30
+            // 
+            this.dataColumn30.ColumnName = "LOAN_CLASS_CODE";
+            this.dataColumn30.DataType = typeof(int);
+            // 
+            // dataColumn31
+            // 
+            this.dataColumn31.ColumnName = "LOAN_PURPOSE_ABS_ID";
+            this.dataColumn31.DataType = typeof(int);
+            // 
+            // dataColumn32
+            // 
+            this.dataColumn32.ColumnName = "LOAN_PURPOSE_NAME";
+            // 
+            // dataColumn33
+            // 
+            this.dataColumn33.ColumnName = "LOAN_PURPOSE_CODE";
+            // 
+            // dataColumn34
+            // 
+            this.dataColumn34.ColumnName = "LOAN_OBJECT_ABS_ID";
+            this.dataColumn34.DataType = typeof(int);
+            // 
+            // dataColumn35
+            // 
+            this.dataColumn35.ColumnName = "LOAN_OBJECT_NAME";
+            // 
+            // dataColumn36
+            // 
+            this.dataColumn36.ColumnName = "LOAN_OBJECT_CODE";
+            // 
+            // dataColumn37
+            // 
+            this.dataColumn37.ColumnName = "LOAN_OBJECT_STAT_ABS_ID";
+            this.dataColumn37.DataType = typeof(int);
+            // 
+            // dataColumn38
+            // 
+            this.dataColumn38.ColumnName = "LOAN_OBJECT_STAT_NAME";
+            // 
+            // dataColumn39
+            // 
+            this.dataColumn39.ColumnName = "LOAN_OBJECT_STAT_CODE";
+            this.dataColumn39.DataType = typeof(int);
+            // 
+            // dataColumn40
+            // 
+            this.dataColumn40.ColumnName = "LOAN_TYPE_PLEDGE_STAT_ABS_ID";
+            this.dataColumn40.DataType = typeof(int);
+            // 
+            // dataColumn41
+            // 
+            this.dataColumn41.ColumnName = "LOAN_TYPE_PLEDGE_STAT_NAME";
+            // 
+            // dataColumn42
+            // 
+            this.dataColumn42.ColumnName = "LOAN_TYPE_PLEDGE_STAT_CODE";
+            this.dataColumn42.DataType = typeof(int);
+            // 
+            // dataColumn43
+            // 
+            this.dataColumn43.ColumnName = "REPORT_DATE_ID";
+            this.dataColumn43.DataType = typeof(int);
+            // 
+            // gridView2
+            // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colP_LOANS_SID,
+            this.colLOAN_SID1,
+            this.colCUSTOMER_NO,
+            this.colSTATUS_CODE,
+            this.colSTATUS_NAME,
+            this.colREF_NO,
+            this.colCONTRACT_NO,
+            this.colDRAWDOWN_DATE,
+            this.colMATURITY_DATE,
+            this.colYEAR_NO,
+            this.colCURRENCY_CODE,
+            this.colAMOUNT,
+            this.colRATE_INTEREST,
+            this.colCUSTOMER_NAME,
+            this.colRMN,
+            this.colREPORT_DATE1,
+            this.colNOTE,
+            this.colLEVEL_NO,
+            this.colLOAN_CLASS_ABS_ID,
+            this.colLOAN_CLASS_NAME,
+            this.colLOAN_CLASS_CODE,
+            this.colLOAN_PURPOSE_ABS_ID,
+            this.colLOAN_PURPOSE_NAME,
+            this.colLOAN_PURPOSE_CODE,
+            this.colLOAN_OBJECT_ABS_ID,
+            this.colLOAN_OBJECT_NAME,
+            this.colLOAN_OBJECT_CODE,
+            this.colLOAN_OBJECT_STAT_ABS_ID,
+            this.colLOAN_OBJECT_STAT_NAME,
+            this.colLOAN_OBJECT_STAT_CODE,
+            this.colLOAN_TYPE_PLEDGE_STAT_ABS_ID,
+            this.colLOAN_TYPE_PLEDGE_STAT_NAME,
+            this.colLOAN_TYPE_PLEDGE_STAT_CODE,
+            this.colREPORT_DATE_ID});
+            this.gridView2.GridControl = this.gridControl1;
+            this.gridView2.Name = "gridView2";
+            // 
+            // colP_LOANS_SID
+            // 
+            this.colP_LOANS_SID.FieldName = "P_LOANS_SID";
+            this.colP_LOANS_SID.MinWidth = 25;
+            this.colP_LOANS_SID.Name = "colP_LOANS_SID";
+            this.colP_LOANS_SID.Visible = true;
+            this.colP_LOANS_SID.VisibleIndex = 0;
+            this.colP_LOANS_SID.Width = 25;
+            // 
+            // colLOAN_SID1
+            // 
+            this.colLOAN_SID1.FieldName = "LOAN_SID";
+            this.colLOAN_SID1.MinWidth = 25;
+            this.colLOAN_SID1.Name = "colLOAN_SID1";
+            this.colLOAN_SID1.Visible = true;
+            this.colLOAN_SID1.VisibleIndex = 1;
+            this.colLOAN_SID1.Width = 25;
+            // 
+            // colCUSTOMER_NO
+            // 
+            this.colCUSTOMER_NO.FieldName = "CUSTOMER_NO";
+            this.colCUSTOMER_NO.MinWidth = 25;
+            this.colCUSTOMER_NO.Name = "colCUSTOMER_NO";
+            this.colCUSTOMER_NO.Visible = true;
+            this.colCUSTOMER_NO.VisibleIndex = 2;
+            this.colCUSTOMER_NO.Width = 25;
+            // 
+            // colSTATUS_CODE
+            // 
+            this.colSTATUS_CODE.FieldName = "STATUS_CODE";
+            this.colSTATUS_CODE.MinWidth = 25;
+            this.colSTATUS_CODE.Name = "colSTATUS_CODE";
+            this.colSTATUS_CODE.Visible = true;
+            this.colSTATUS_CODE.VisibleIndex = 3;
+            this.colSTATUS_CODE.Width = 25;
+            // 
+            // colSTATUS_NAME
+            // 
+            this.colSTATUS_NAME.FieldName = "STATUS_NAME";
+            this.colSTATUS_NAME.MinWidth = 25;
+            this.colSTATUS_NAME.Name = "colSTATUS_NAME";
+            this.colSTATUS_NAME.Visible = true;
+            this.colSTATUS_NAME.VisibleIndex = 4;
+            this.colSTATUS_NAME.Width = 25;
+            // 
+            // colREF_NO
+            // 
+            this.colREF_NO.FieldName = "REF_NO";
+            this.colREF_NO.MinWidth = 25;
+            this.colREF_NO.Name = "colREF_NO";
+            this.colREF_NO.Visible = true;
+            this.colREF_NO.VisibleIndex = 5;
+            this.colREF_NO.Width = 25;
+            // 
+            // colCONTRACT_NO
+            // 
+            this.colCONTRACT_NO.FieldName = "CONTRACT_NO";
+            this.colCONTRACT_NO.MinWidth = 25;
+            this.colCONTRACT_NO.Name = "colCONTRACT_NO";
+            this.colCONTRACT_NO.Visible = true;
+            this.colCONTRACT_NO.VisibleIndex = 6;
+            this.colCONTRACT_NO.Width = 25;
+            // 
+            // colDRAWDOWN_DATE
+            // 
+            this.colDRAWDOWN_DATE.FieldName = "DRAWDOWN_DATE";
+            this.colDRAWDOWN_DATE.MinWidth = 25;
+            this.colDRAWDOWN_DATE.Name = "colDRAWDOWN_DATE";
+            this.colDRAWDOWN_DATE.Visible = true;
+            this.colDRAWDOWN_DATE.VisibleIndex = 7;
+            this.colDRAWDOWN_DATE.Width = 25;
+            // 
+            // colMATURITY_DATE
+            // 
+            this.colMATURITY_DATE.FieldName = "MATURITY_DATE";
+            this.colMATURITY_DATE.MinWidth = 25;
+            this.colMATURITY_DATE.Name = "colMATURITY_DATE";
+            this.colMATURITY_DATE.Visible = true;
+            this.colMATURITY_DATE.VisibleIndex = 8;
+            this.colMATURITY_DATE.Width = 25;
+            // 
+            // colYEAR_NO
+            // 
+            this.colYEAR_NO.FieldName = "YEAR_NO";
+            this.colYEAR_NO.MinWidth = 25;
+            this.colYEAR_NO.Name = "colYEAR_NO";
+            this.colYEAR_NO.Visible = true;
+            this.colYEAR_NO.VisibleIndex = 9;
+            this.colYEAR_NO.Width = 25;
+            // 
+            // colCURRENCY_CODE
+            // 
+            this.colCURRENCY_CODE.FieldName = "CURRENCY_CODE";
+            this.colCURRENCY_CODE.MinWidth = 25;
+            this.colCURRENCY_CODE.Name = "colCURRENCY_CODE";
+            this.colCURRENCY_CODE.Visible = true;
+            this.colCURRENCY_CODE.VisibleIndex = 10;
+            this.colCURRENCY_CODE.Width = 25;
+            // 
+            // colAMOUNT
+            // 
+            this.colAMOUNT.FieldName = "AMOUNT";
+            this.colAMOUNT.MinWidth = 25;
+            this.colAMOUNT.Name = "colAMOUNT";
+            this.colAMOUNT.Visible = true;
+            this.colAMOUNT.VisibleIndex = 11;
+            this.colAMOUNT.Width = 25;
+            // 
+            // colRATE_INTEREST
+            // 
+            this.colRATE_INTEREST.FieldName = "RATE_INTEREST";
+            this.colRATE_INTEREST.MinWidth = 25;
+            this.colRATE_INTEREST.Name = "colRATE_INTEREST";
+            this.colRATE_INTEREST.Visible = true;
+            this.colRATE_INTEREST.VisibleIndex = 12;
+            this.colRATE_INTEREST.Width = 25;
+            // 
+            // colCUSTOMER_NAME
+            // 
+            this.colCUSTOMER_NAME.FieldName = "CUSTOMER_NAME";
+            this.colCUSTOMER_NAME.MinWidth = 25;
+            this.colCUSTOMER_NAME.Name = "colCUSTOMER_NAME";
+            this.colCUSTOMER_NAME.Visible = true;
+            this.colCUSTOMER_NAME.VisibleIndex = 13;
+            this.colCUSTOMER_NAME.Width = 25;
+            // 
+            // colRMN
+            // 
+            this.colRMN.FieldName = "RMN";
+            this.colRMN.MinWidth = 25;
+            this.colRMN.Name = "colRMN";
+            this.colRMN.Visible = true;
+            this.colRMN.VisibleIndex = 14;
+            this.colRMN.Width = 25;
+            // 
+            // colREPORT_DATE1
+            // 
+            this.colREPORT_DATE1.FieldName = "REPORT_DATE";
+            this.colREPORT_DATE1.MinWidth = 25;
+            this.colREPORT_DATE1.Name = "colREPORT_DATE1";
+            this.colREPORT_DATE1.Visible = true;
+            this.colREPORT_DATE1.VisibleIndex = 15;
+            this.colREPORT_DATE1.Width = 25;
+            // 
+            // colNOTE
+            // 
+            this.colNOTE.FieldName = "NOTE";
+            this.colNOTE.MinWidth = 25;
+            this.colNOTE.Name = "colNOTE";
+            this.colNOTE.Visible = true;
+            this.colNOTE.VisibleIndex = 16;
+            this.colNOTE.Width = 25;
+            // 
+            // colLEVEL_NO
+            // 
+            this.colLEVEL_NO.FieldName = "LEVEL_NO";
+            this.colLEVEL_NO.MinWidth = 25;
+            this.colLEVEL_NO.Name = "colLEVEL_NO";
+            this.colLEVEL_NO.Visible = true;
+            this.colLEVEL_NO.VisibleIndex = 17;
+            this.colLEVEL_NO.Width = 25;
+            // 
+            // colLOAN_CLASS_ABS_ID
+            // 
+            this.colLOAN_CLASS_ABS_ID.FieldName = "LOAN_CLASS_ABS_ID";
+            this.colLOAN_CLASS_ABS_ID.MinWidth = 25;
+            this.colLOAN_CLASS_ABS_ID.Name = "colLOAN_CLASS_ABS_ID";
+            this.colLOAN_CLASS_ABS_ID.Visible = true;
+            this.colLOAN_CLASS_ABS_ID.VisibleIndex = 18;
+            this.colLOAN_CLASS_ABS_ID.Width = 27;
+            // 
+            // colLOAN_CLASS_NAME
+            // 
+            this.colLOAN_CLASS_NAME.FieldName = "LOAN_CLASS_NAME";
+            this.colLOAN_CLASS_NAME.MinWidth = 25;
+            this.colLOAN_CLASS_NAME.Name = "colLOAN_CLASS_NAME";
+            this.colLOAN_CLASS_NAME.Visible = true;
+            this.colLOAN_CLASS_NAME.VisibleIndex = 19;
+            this.colLOAN_CLASS_NAME.Width = 29;
+            // 
+            // colLOAN_CLASS_CODE
+            // 
+            this.colLOAN_CLASS_CODE.FieldName = "LOAN_CLASS_CODE";
+            this.colLOAN_CLASS_CODE.MinWidth = 25;
+            this.colLOAN_CLASS_CODE.Name = "colLOAN_CLASS_CODE";
+            this.colLOAN_CLASS_CODE.Visible = true;
+            this.colLOAN_CLASS_CODE.VisibleIndex = 20;
+            this.colLOAN_CLASS_CODE.Width = 31;
+            // 
+            // colLOAN_PURPOSE_ABS_ID
+            // 
+            this.colLOAN_PURPOSE_ABS_ID.FieldName = "LOAN_PURPOSE_ABS_ID";
+            this.colLOAN_PURPOSE_ABS_ID.MinWidth = 25;
+            this.colLOAN_PURPOSE_ABS_ID.Name = "colLOAN_PURPOSE_ABS_ID";
+            this.colLOAN_PURPOSE_ABS_ID.Visible = true;
+            this.colLOAN_PURPOSE_ABS_ID.VisibleIndex = 21;
+            this.colLOAN_PURPOSE_ABS_ID.Width = 35;
+            // 
+            // colLOAN_PURPOSE_NAME
+            // 
+            this.colLOAN_PURPOSE_NAME.FieldName = "LOAN_PURPOSE_NAME";
+            this.colLOAN_PURPOSE_NAME.MinWidth = 25;
+            this.colLOAN_PURPOSE_NAME.Name = "colLOAN_PURPOSE_NAME";
+            this.colLOAN_PURPOSE_NAME.Visible = true;
+            this.colLOAN_PURPOSE_NAME.VisibleIndex = 22;
+            this.colLOAN_PURPOSE_NAME.Width = 38;
+            // 
+            // colLOAN_PURPOSE_CODE
+            // 
+            this.colLOAN_PURPOSE_CODE.FieldName = "LOAN_PURPOSE_CODE";
+            this.colLOAN_PURPOSE_CODE.MinWidth = 25;
+            this.colLOAN_PURPOSE_CODE.Name = "colLOAN_PURPOSE_CODE";
+            this.colLOAN_PURPOSE_CODE.Visible = true;
+            this.colLOAN_PURPOSE_CODE.VisibleIndex = 23;
+            this.colLOAN_PURPOSE_CODE.Width = 44;
+            // 
+            // colLOAN_OBJECT_ABS_ID
+            // 
+            this.colLOAN_OBJECT_ABS_ID.FieldName = "LOAN_OBJECT_ABS_ID";
+            this.colLOAN_OBJECT_ABS_ID.MinWidth = 25;
+            this.colLOAN_OBJECT_ABS_ID.Name = "colLOAN_OBJECT_ABS_ID";
+            this.colLOAN_OBJECT_ABS_ID.Visible = true;
+            this.colLOAN_OBJECT_ABS_ID.VisibleIndex = 24;
+            this.colLOAN_OBJECT_ABS_ID.Width = 47;
+            // 
+            // colLOAN_OBJECT_NAME
+            // 
+            this.colLOAN_OBJECT_NAME.FieldName = "LOAN_OBJECT_NAME";
+            this.colLOAN_OBJECT_NAME.MinWidth = 25;
+            this.colLOAN_OBJECT_NAME.Name = "colLOAN_OBJECT_NAME";
+            this.colLOAN_OBJECT_NAME.Visible = true;
+            this.colLOAN_OBJECT_NAME.VisibleIndex = 25;
+            this.colLOAN_OBJECT_NAME.Width = 51;
+            // 
+            // colLOAN_OBJECT_CODE
+            // 
+            this.colLOAN_OBJECT_CODE.FieldName = "LOAN_OBJECT_CODE";
+            this.colLOAN_OBJECT_CODE.MinWidth = 25;
+            this.colLOAN_OBJECT_CODE.Name = "colLOAN_OBJECT_CODE";
+            this.colLOAN_OBJECT_CODE.Visible = true;
+            this.colLOAN_OBJECT_CODE.VisibleIndex = 26;
+            this.colLOAN_OBJECT_CODE.Width = 57;
+            // 
+            // colLOAN_OBJECT_STAT_ABS_ID
+            // 
+            this.colLOAN_OBJECT_STAT_ABS_ID.FieldName = "LOAN_OBJECT_STAT_ABS_ID";
+            this.colLOAN_OBJECT_STAT_ABS_ID.MinWidth = 25;
+            this.colLOAN_OBJECT_STAT_ABS_ID.Name = "colLOAN_OBJECT_STAT_ABS_ID";
+            this.colLOAN_OBJECT_STAT_ABS_ID.Visible = true;
+            this.colLOAN_OBJECT_STAT_ABS_ID.VisibleIndex = 27;
+            this.colLOAN_OBJECT_STAT_ABS_ID.Width = 86;
+            // 
+            // colLOAN_OBJECT_STAT_NAME
+            // 
+            this.colLOAN_OBJECT_STAT_NAME.FieldName = "LOAN_OBJECT_STAT_NAME";
+            this.colLOAN_OBJECT_STAT_NAME.MinWidth = 25;
+            this.colLOAN_OBJECT_STAT_NAME.Name = "colLOAN_OBJECT_STAT_NAME";
+            this.colLOAN_OBJECT_STAT_NAME.Visible = true;
+            this.colLOAN_OBJECT_STAT_NAME.VisibleIndex = 28;
+            this.colLOAN_OBJECT_STAT_NAME.Width = 179;
+            // 
+            // colLOAN_OBJECT_STAT_CODE
+            // 
+            this.colLOAN_OBJECT_STAT_CODE.FieldName = "LOAN_OBJECT_STAT_CODE";
+            this.colLOAN_OBJECT_STAT_CODE.MinWidth = 25;
+            this.colLOAN_OBJECT_STAT_CODE.Name = "colLOAN_OBJECT_STAT_CODE";
+            this.colLOAN_OBJECT_STAT_CODE.Visible = true;
+            this.colLOAN_OBJECT_STAT_CODE.VisibleIndex = 29;
+            this.colLOAN_OBJECT_STAT_CODE.Width = 25;
+            // 
+            // colLOAN_TYPE_PLEDGE_STAT_ABS_ID
+            // 
+            this.colLOAN_TYPE_PLEDGE_STAT_ABS_ID.FieldName = "LOAN_TYPE_PLEDGE_STAT_ABS_ID";
+            this.colLOAN_TYPE_PLEDGE_STAT_ABS_ID.MinWidth = 25;
+            this.colLOAN_TYPE_PLEDGE_STAT_ABS_ID.Name = "colLOAN_TYPE_PLEDGE_STAT_ABS_ID";
+            this.colLOAN_TYPE_PLEDGE_STAT_ABS_ID.Visible = true;
+            this.colLOAN_TYPE_PLEDGE_STAT_ABS_ID.VisibleIndex = 30;
+            this.colLOAN_TYPE_PLEDGE_STAT_ABS_ID.Width = 25;
+            // 
+            // colLOAN_TYPE_PLEDGE_STAT_NAME
+            // 
+            this.colLOAN_TYPE_PLEDGE_STAT_NAME.FieldName = "LOAN_TYPE_PLEDGE_STAT_NAME";
+            this.colLOAN_TYPE_PLEDGE_STAT_NAME.MinWidth = 25;
+            this.colLOAN_TYPE_PLEDGE_STAT_NAME.Name = "colLOAN_TYPE_PLEDGE_STAT_NAME";
+            this.colLOAN_TYPE_PLEDGE_STAT_NAME.Visible = true;
+            this.colLOAN_TYPE_PLEDGE_STAT_NAME.VisibleIndex = 31;
+            this.colLOAN_TYPE_PLEDGE_STAT_NAME.Width = 25;
+            // 
+            // colLOAN_TYPE_PLEDGE_STAT_CODE
+            // 
+            this.colLOAN_TYPE_PLEDGE_STAT_CODE.FieldName = "LOAN_TYPE_PLEDGE_STAT_CODE";
+            this.colLOAN_TYPE_PLEDGE_STAT_CODE.MinWidth = 25;
+            this.colLOAN_TYPE_PLEDGE_STAT_CODE.Name = "colLOAN_TYPE_PLEDGE_STAT_CODE";
+            this.colLOAN_TYPE_PLEDGE_STAT_CODE.Visible = true;
+            this.colLOAN_TYPE_PLEDGE_STAT_CODE.VisibleIndex = 32;
+            this.colLOAN_TYPE_PLEDGE_STAT_CODE.Width = 25;
+            // 
+            // colREPORT_DATE_ID
+            // 
+            this.colREPORT_DATE_ID.FieldName = "REPORT_DATE_ID";
+            this.colREPORT_DATE_ID.MinWidth = 25;
+            this.colREPORT_DATE_ID.Name = "colREPORT_DATE_ID";
+            this.colREPORT_DATE_ID.Visible = true;
+            this.colREPORT_DATE_ID.VisibleIndex = 33;
+            this.colREPORT_DATE_ID.Width = 25;
+            // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -810,7 +1470,7 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.gcList3);
             this.splitContainer2.Panel2.Controls.Add(this.toolStrip2);
-            this.splitContainer2.Size = new System.Drawing.Size(1062, 304);
+            this.splitContainer2.Size = new System.Drawing.Size(1062, 302);
             this.splitContainer2.SplitterDistance = 531;
             this.splitContainer2.TabIndex = 1;
             // 
@@ -819,11 +1479,11 @@
             this.gcList2.DataMember = "tsExtraPokaz";
             this.gcList2.DataSource = this.dsMain;
             this.gcList2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcList2.Location = new System.Drawing.Point(0, 25);
+            this.gcList2.Location = new System.Drawing.Point(0, 27);
             this.gcList2.MainView = this.bgvExtraPokaz;
             this.gcList2.MenuManager = this.barManager;
             this.gcList2.Name = "gcList2";
-            this.gcList2.Size = new System.Drawing.Size(531, 279);
+            this.gcList2.Size = new System.Drawing.Size(531, 275);
             this.gcList2.TabIndex = 7;
             this.gcList2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bgvExtraPokaz,
@@ -951,6 +1611,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbExtraPokazRefresh,
             this.tsbExtraPokazView,
@@ -959,7 +1620,7 @@
             this.tsbExtraPokazDelete});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(531, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(531, 27);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -969,7 +1630,7 @@
             this.tsbExtraPokazRefresh.Image = global::ARM_User.Properties.Resources.refresh;
             this.tsbExtraPokazRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbExtraPokazRefresh.Name = "tsbExtraPokazRefresh";
-            this.tsbExtraPokazRefresh.Size = new System.Drawing.Size(23, 22);
+            this.tsbExtraPokazRefresh.Size = new System.Drawing.Size(24, 24);
             this.tsbExtraPokazRefresh.Text = "Обновить";
             // 
             // tsbExtraPokazView
@@ -978,7 +1639,7 @@
             this.tsbExtraPokazView.Image = global::ARM_User.Properties.Resources.view;
             this.tsbExtraPokazView.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbExtraPokazView.Name = "tsbExtraPokazView";
-            this.tsbExtraPokazView.Size = new System.Drawing.Size(23, 22);
+            this.tsbExtraPokazView.Size = new System.Drawing.Size(24, 24);
             this.tsbExtraPokazView.Text = "Просмотр";
             this.tsbExtraPokazView.Click += new System.EventHandler(this.tsbExtraPokazView_Click);
             // 
@@ -988,7 +1649,7 @@
             this.tsbExtraPokazAdd.Image = global::ARM_User.Properties.Resources.add2;
             this.tsbExtraPokazAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbExtraPokazAdd.Name = "tsbExtraPokazAdd";
-            this.tsbExtraPokazAdd.Size = new System.Drawing.Size(23, 22);
+            this.tsbExtraPokazAdd.Size = new System.Drawing.Size(24, 24);
             this.tsbExtraPokazAdd.Text = "Добавить";
             this.tsbExtraPokazAdd.Click += new System.EventHandler(this.tsbExtraPokazAdd_Click);
             // 
@@ -998,7 +1659,7 @@
             this.tsbExtraPokazEdit.Image = global::ARM_User.Properties.Resources.edit;
             this.tsbExtraPokazEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbExtraPokazEdit.Name = "tsbExtraPokazEdit";
-            this.tsbExtraPokazEdit.Size = new System.Drawing.Size(23, 22);
+            this.tsbExtraPokazEdit.Size = new System.Drawing.Size(24, 24);
             this.tsbExtraPokazEdit.Text = "Редактировать";
             this.tsbExtraPokazEdit.Click += new System.EventHandler(this.tsbExtraPokazEdit_Click);
             // 
@@ -1008,7 +1669,7 @@
             this.tsbExtraPokazDelete.Image = global::ARM_User.Properties.Resources.delete2;
             this.tsbExtraPokazDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbExtraPokazDelete.Name = "tsbExtraPokazDelete";
-            this.tsbExtraPokazDelete.Size = new System.Drawing.Size(23, 22);
+            this.tsbExtraPokazDelete.Size = new System.Drawing.Size(24, 24);
             this.tsbExtraPokazDelete.Text = "Удалить";
             this.tsbExtraPokazDelete.Click += new System.EventHandler(this.tsbExtraPokazDelete_Click);
             // 
@@ -1017,11 +1678,11 @@
             this.gcList3.DataMember = "tsPokaz";
             this.gcList3.DataSource = this.dsMain;
             this.gcList3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcList3.Location = new System.Drawing.Point(0, 25);
+            this.gcList3.Location = new System.Drawing.Point(0, 27);
             this.gcList3.MainView = this.bandedGridView2;
             this.gcList3.MenuManager = this.barManager;
             this.gcList3.Name = "gcList3";
-            this.gcList3.Size = new System.Drawing.Size(527, 279);
+            this.gcList3.Size = new System.Drawing.Size(527, 275);
             this.gcList3.TabIndex = 6;
             this.gcList3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bandedGridView2});
@@ -1118,6 +1779,7 @@
             // 
             // toolStrip2
             // 
+            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbPokazRefresh,
             this.tsbPokazView,
@@ -1126,7 +1788,7 @@
             this.tsbPokazDelete});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(527, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(527, 27);
             this.toolStrip2.TabIndex = 0;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -1136,7 +1798,7 @@
             this.tsbPokazRefresh.Image = global::ARM_User.Properties.Resources.refresh;
             this.tsbPokazRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbPokazRefresh.Name = "tsbPokazRefresh";
-            this.tsbPokazRefresh.Size = new System.Drawing.Size(23, 22);
+            this.tsbPokazRefresh.Size = new System.Drawing.Size(24, 24);
             this.tsbPokazRefresh.Text = "Обновить";
             this.tsbPokazRefresh.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
@@ -1146,7 +1808,7 @@
             this.tsbPokazView.Image = global::ARM_User.Properties.Resources.view;
             this.tsbPokazView.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbPokazView.Name = "tsbPokazView";
-            this.tsbPokazView.Size = new System.Drawing.Size(23, 22);
+            this.tsbPokazView.Size = new System.Drawing.Size(24, 24);
             this.tsbPokazView.Text = "Просмотр";
             this.tsbPokazView.Click += new System.EventHandler(this.tsbPokazView_Click);
             // 
@@ -1156,7 +1818,7 @@
             this.tsbPokazAdd.Image = global::ARM_User.Properties.Resources.add2;
             this.tsbPokazAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbPokazAdd.Name = "tsbPokazAdd";
-            this.tsbPokazAdd.Size = new System.Drawing.Size(23, 22);
+            this.tsbPokazAdd.Size = new System.Drawing.Size(24, 24);
             this.tsbPokazAdd.Text = "Добавить";
             this.tsbPokazAdd.Click += new System.EventHandler(this.tsbPokazAdd_Click);
             // 
@@ -1166,7 +1828,7 @@
             this.tsbPokazEdit.Image = global::ARM_User.Properties.Resources.edit;
             this.tsbPokazEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbPokazEdit.Name = "tsbPokazEdit";
-            this.tsbPokazEdit.Size = new System.Drawing.Size(23, 22);
+            this.tsbPokazEdit.Size = new System.Drawing.Size(24, 24);
             this.tsbPokazEdit.Text = "Редактировать";
             this.tsbPokazEdit.Click += new System.EventHandler(this.tsbPokazEdit_Click);
             // 
@@ -1176,7 +1838,7 @@
             this.tsbPokazDelete.Image = global::ARM_User.Properties.Resources.delete2;
             this.tsbPokazDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbPokazDelete.Name = "tsbPokazDelete";
-            this.tsbPokazDelete.Size = new System.Drawing.Size(23, 22);
+            this.tsbPokazDelete.Size = new System.Drawing.Size(24, 24);
             this.tsbPokazDelete.Text = "Удалить";
             this.tsbPokazDelete.Click += new System.EventHandler(this.tsbPokazDelete_Click);
             // 
@@ -1214,6 +1876,22 @@
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
+            // bbExport
+            // 
+            this.bbExport.Caption = "Мастер экспорта";
+            this.bbExport.Id = 7;
+            this.bbExport.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbExport.ImageOptions.Image")));
+            this.bbExport.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbExport.ImageOptions.LargeImage")));
+            this.bbExport.Name = "bbExport";
+            this.bbExport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbExport_ItemClick);
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.DefaultExt = "*.xls";
+            this.saveFileDialog1.FileName = "export.xls";
+            this.saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+            this.saveFileDialog1.Title = "Export to excel";
+            // 
             // LoansListForm
             // 
             this.ClientSize = new System.Drawing.Size(1062, 575);
@@ -1228,12 +1906,7 @@
             this.Controls.SetChildIndex(this.barDockControlLeft, 0);
             this.Controls.SetChildIndex(this.splitContainer1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcList1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtCredits)).EndInit();
@@ -1241,6 +1914,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtPokaz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bandedGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvList1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMain2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel1.PerformLayout();
             this.splitContainer2.Panel2.ResumeLayout(false);
@@ -1332,7 +2015,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView bandedGridView1;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gbGredits;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn3;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn5;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn6;
@@ -1374,5 +2056,81 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colt_note;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colt_sysdate;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gbExtraPokaz;
+        private DevExpress.XtraBars.BarButtonItem bbExport;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private System.Data.DataSet dsMain2;
+        private System.Data.DataTable dataTable1;
+        private System.Data.DataColumn dataColumn10;
+        private System.Data.DataColumn dataColumn11;
+        private System.Data.DataColumn dataColumn12;
+        private System.Data.DataColumn dataColumn13;
+        private System.Data.DataColumn dataColumn14;
+        private System.Data.DataColumn dataColumn15;
+        private System.Data.DataColumn dataColumn16;
+        private System.Data.DataColumn dataColumn17;
+        private System.Data.DataColumn dataColumn18;
+        private System.Data.DataColumn dataColumn19;
+        private System.Data.DataColumn dataColumn20;
+        private System.Data.DataColumn dataColumn21;
+        private System.Data.DataColumn dataColumn22;
+        private System.Data.DataColumn dataColumn23;
+        private System.Data.DataColumn dataColumn24;
+        private System.Data.DataColumn dataColumn25;
+        private System.Data.DataColumn dataColumn26;
+        private System.Data.DataColumn dataColumn27;
+        private System.Data.DataColumn dataColumn28;
+        private System.Data.DataColumn dataColumn29;
+        private System.Data.DataColumn dataColumn30;
+        private System.Data.DataColumn dataColumn31;
+        private System.Data.DataColumn dataColumn32;
+        private System.Data.DataColumn dataColumn33;
+        private System.Data.DataColumn dataColumn34;
+        private System.Data.DataColumn dataColumn35;
+        private System.Data.DataColumn dataColumn36;
+        private System.Data.DataColumn dataColumn37;
+        private System.Data.DataColumn dataColumn38;
+        private System.Data.DataColumn dataColumn39;
+        private System.Data.DataColumn dataColumn40;
+        private System.Data.DataColumn dataColumn41;
+        private System.Data.DataColumn dataColumn42;
+        private System.Data.DataColumn dataColumn43;
+        private DevExpress.XtraGrid.Columns.GridColumn colP_LOANS_SID;
+        private DevExpress.XtraGrid.Columns.GridColumn colLOAN_SID1;
+        private DevExpress.XtraGrid.Columns.GridColumn colCUSTOMER_NO;
+        private DevExpress.XtraGrid.Columns.GridColumn colSTATUS_CODE;
+        private DevExpress.XtraGrid.Columns.GridColumn colSTATUS_NAME;
+        private DevExpress.XtraGrid.Columns.GridColumn colREF_NO;
+        private DevExpress.XtraGrid.Columns.GridColumn colCONTRACT_NO;
+        private DevExpress.XtraGrid.Columns.GridColumn colDRAWDOWN_DATE;
+        private DevExpress.XtraGrid.Columns.GridColumn colMATURITY_DATE;
+        private DevExpress.XtraGrid.Columns.GridColumn colYEAR_NO;
+        private DevExpress.XtraGrid.Columns.GridColumn colCURRENCY_CODE;
+        private DevExpress.XtraGrid.Columns.GridColumn colAMOUNT;
+        private DevExpress.XtraGrid.Columns.GridColumn colRATE_INTEREST;
+        private DevExpress.XtraGrid.Columns.GridColumn colCUSTOMER_NAME;
+        private DevExpress.XtraGrid.Columns.GridColumn colRMN;
+        private DevExpress.XtraGrid.Columns.GridColumn colREPORT_DATE1;
+        private DevExpress.XtraGrid.Columns.GridColumn colNOTE;
+        private DevExpress.XtraGrid.Columns.GridColumn colLEVEL_NO;
+        private DevExpress.XtraGrid.Columns.GridColumn colLOAN_CLASS_ABS_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn colLOAN_CLASS_NAME;
+        private DevExpress.XtraGrid.Columns.GridColumn colLOAN_CLASS_CODE;
+        private DevExpress.XtraGrid.Columns.GridColumn colLOAN_PURPOSE_ABS_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn colLOAN_PURPOSE_NAME;
+        private DevExpress.XtraGrid.Columns.GridColumn colLOAN_PURPOSE_CODE;
+        private DevExpress.XtraGrid.Columns.GridColumn colLOAN_OBJECT_ABS_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn colLOAN_OBJECT_NAME;
+        private DevExpress.XtraGrid.Columns.GridColumn colLOAN_OBJECT_CODE;
+        private DevExpress.XtraGrid.Columns.GridColumn colLOAN_OBJECT_STAT_ABS_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn colLOAN_OBJECT_STAT_NAME;
+        private DevExpress.XtraGrid.Columns.GridColumn colLOAN_OBJECT_STAT_CODE;
+        private DevExpress.XtraGrid.Columns.GridColumn colLOAN_TYPE_PLEDGE_STAT_ABS_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn colLOAN_TYPE_PLEDGE_STAT_NAME;
+        private DevExpress.XtraGrid.Columns.GridColumn colLOAN_TYPE_PLEDGE_STAT_CODE;
+        private DevExpress.XtraGrid.Columns.GridColumn colREPORT_DATE_ID;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gbGredits;
     }
 }

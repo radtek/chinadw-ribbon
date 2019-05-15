@@ -7,7 +7,8 @@ using BSB.Common.DB;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
 using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
 using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration;
-using Oracle.DataAccess.Client;
+//using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 
 namespace ARM_User.ExceptionHandling
 {

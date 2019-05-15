@@ -164,8 +164,8 @@ namespace BSB.Common
         case GridStringId.GridOutlookIntervals:
           return
             LangTranslate.UiGetText(
-              "Старее;Прошлый месяц;Три недели назад;Две недели назад;Прошлая неделя;;;;;;;;Вчера;Сегодня;Завтра;" +
-              ";;;;;;;Next Week;Two Weeks Away;Three Weeks Away;Next Month;Beyond Next Month;");
+              "Старее;Прошлый месяц;Три недели назад;Две недели назад;Прошлая неделя;;;;Вчера;Сегодня;Завтра;" +
+              ";;;;Next Week;Two Weeks Away;Three Weeks Away;Next Month;Beyond Next Month;");
       }
       return base.GetLocalizedString(id);
     }
@@ -378,8 +378,8 @@ namespace BSB.Common
         case GridStringId.MenuColumnGroupBox:
           return "Панель группировки";
         case GridStringId.GridOutlookIntervals:
-          return "Старее;Прошлый месяц;Три недели назад;Две недели назад;Прошлая неделя;;;;;;;;Вчера;Сегодня;Завтра; " +
-                 ";;;;;;;Next Week;Two Weeks Away;Three Weeks Away;Next Month;Beyond Next Month;";
+          return "Старее;Прошлый месяц;Три недели назад;Две недели назад;Прошлая неделя;;;;Вчера;Сегодня;Завтра; " +
+                 ";;;;Next Week;Two Weeks Away;Three Weeks Away;Next Month;Beyond Next Month;";
       }
       return base.GetLocalizedString(id);
     }

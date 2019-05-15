@@ -50,6 +50,7 @@ namespace ARM_User.DisplayLayer.Base
             // 
             this.gridMain.DataSource = this.MainBS;
             resources.ApplyResources(this.gridMain, "gridMain");
+            this.gridMain.EmbeddedNavigator.Margin = ((System.Windows.Forms.Padding)(resources.GetObject("gridMain.EmbeddedNavigator.Margin")));
             this.gridMain.MainView = this.gridView1;
             this.gridMain.Name = "gridMain";
             this.gridMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -57,6 +58,7 @@ namespace ARM_User.DisplayLayer.Base
             // 
             // gridView1
             // 
+            this.gridView1.DetailHeight = 431;
             this.gridView1.GridControl = this.gridMain;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.AllowIncrementalSearch = true;
@@ -84,22 +86,22 @@ namespace ARM_User.DisplayLayer.Base
             // 
             resources.ApplyResources(this.btnOk, "btnOk");
             this.btnOk.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("btnOk.Appearance.Font")));
-            this.btnOk.Appearance.ForeColor = ((System.Drawing.Color)(resources.GetObject("btnOk.Appearance.ForeColor")));
+            this.btnOk.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btnOk.Appearance.Options.UseFont = true;
             this.btnOk.Appearance.Options.UseForeColor = true;
             this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOk.Image = global::ARM_User.Properties.Resources.check2;
+            this.btnOk.ImageOptions.Image = global::ARM_User.Properties.Resources.check2;
             this.btnOk.Name = "btnOk";
             // 
             // btnCancel
             // 
             resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("btnCancel.Appearance.Font")));
-            this.btnCancel.Appearance.ForeColor = ((System.Drawing.Color)(resources.GetObject("btnCancel.Appearance.ForeColor")));
+            this.btnCancel.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btnCancel.Appearance.Options.UseFont = true;
             this.btnCancel.Appearance.Options.UseForeColor = true;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Image = global::ARM_User.Properties.Resources.delete2;
+            this.btnCancel.ImageOptions.Image = global::ARM_User.Properties.Resources.delete2;
             this.btnCancel.Name = "btnCancel";
             // 
             // ChoiceBaseForm

@@ -139,10 +139,10 @@
     <Optimize>true</Optimize>
     <FileAlignment>4096</FileAlignment>
     <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -159,19 +159,11 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-  <PropertyGroup>
-    <ManifestCertificateThumbprint>C0D332FEF8C4C55BB0B4873E855A2A96B29546E7</ManifestCertificateThumbprint>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestKeyFile>ARM_User_TemporaryKey.pfx</ManifestKeyFile>
-  </PropertyGroup>
-  <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignManifests>true</SignManifests>
-  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="AutocompleteMenu, Version=1.3.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\AutocompleteMenu.1.3.5.0\lib\net40\AutocompleteMenu.dll</HintPath>
+    </Reference>
     <Reference Include="BSB.Localization">
       <HintPath>dll\BSB.Localization.dll</HintPath>
     </Reference>
@@ -184,11 +176,11 @@
     </Reference>
     <Reference Include="DevExpress.Dashboard.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Dashboard.v18.2.Win, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Data.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v18.2.UI, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DemoReports.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Diagram.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dialogs.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DXCore.Controls.Data.v6.3, Version=12.2.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d" />
     <Reference Include="DevExpress.DXCore.Controls.Printing.v6.3.Core, Version=12.2.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d" />
     <Reference Include="DevExpress.DXCore.Controls.Utils.v6.3, Version=12.2.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d" />
@@ -215,7 +207,6 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.RichEdit.v18.2.Export, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
@@ -233,7 +224,6 @@
     </Reference>
     <Reference Include="DevExpress.Spreadsheet.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.TreeMap.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v18.2.UI, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -253,7 +243,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.XtraDiagram.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraDialogs.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
@@ -304,7 +294,11 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ionic.Zip">
+    <Reference Include="gudusoft.gsqlparser">
+      <HintPath>dll\gudusoft.gsqlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>dll\Ionic.Zip.dll</HintPath>
     </Reference>
     <Reference Include="MagicLocalLibrary">
@@ -316,7 +310,8 @@
       <HintPath>dll\Microsoft.Office.Interop.Excel.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
@@ -335,11 +330,9 @@
     <Reference Include="MyActionList">
       <HintPath>dll\MyActionList.dll</HintPath>
     </Reference>
-    <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Oracle\product\product\11.2.0\client_1\odp.net\bin\2.x\Oracle.DataAccess.dll</HintPath>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>packages\Oracle.ManagedDataAccess.18.6.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
     </Reference>
-    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL" />
     <Reference Include="Oracle.ManagedDataAccessDTC, Version=4.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342" />
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
@@ -366,9 +359,8 @@
     <Reference Include="System.Data.Entity">
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Data.OracleClient">
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Deployment" />
     <Reference Include="System.Design">
       <Name>System.Design</Name>
       <Private>True</Private>
@@ -389,9 +381,11 @@
     <Reference Include="System.Runtime.Remoting">
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap">
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Security" />
     <Reference Include="System.Transactions">
       <Private>True</Private>
     </Reference>
@@ -488,7 +482,16 @@
     <Compile Include="BusinessLayer\Service\User.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Common\CustomFlyoutDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Common\SetCurrOfficialBlocked.cs" />
+    <Compile Include="Common\XtraLogonDlgForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\XtraLogonDlgForm.Designer.cs">
+      <DependentUpon>XtraLogonDlgForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataLayer\DataSet\CommonDataSet\LocalTextDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -648,35 +651,99 @@
     <Compile Include="DisplayLayer\Guides\Base\ChinaSimpleEditForm.Designer.cs">
       <DependentUpon>ChinaSimpleEditForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DisplayLayer\Guides\Base\ChinaThreePanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisplayLayer\Guides\Base\ChinaThreePanelForm.Designer.cs">
+      <DependentUpon>ChinaThreePanelForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DisplayLayer\Guides\Base\ChinaTwoPanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DisplayLayer\Guides\Base\ChinaTwoPanelForm.Designer.cs">
       <DependentUpon>ChinaTwoPanelForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="New\DB\DB_CalendarOperations.cs" />
+    <Compile Include="New\DB\DB_ExportRep.cs" />
     <Compile Include="New\DB\DB_ExtraPokazListForm.cs" />
     <Compile Include="New\DB\DB_LoansListForm.cs" />
+    <Compile Include="New\DB\DB_Pledges.cs" />
     <Compile Include="New\DB\DB_Reports.cs" />
     <Compile Include="New\DB\DB_RepSetupSQL.cs" />
     <Compile Include="New\DB\DIM_ExtraPokaz.cs" />
-    <Compile Include="New\Guide\Form2.cs">
+    <Compile Include="New\Guide\CalendarOperationEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="New\Guide\Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="New\Guide\CalendarOperationEditForm.Designer.cs">
+      <DependentUpon>CalendarOperationEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="New\Guide\LoansAddExtraPokazForm.cs">
+    <Compile Include="New\Guide\CalendarOperationsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="New\Guide\LoansAddExtraPokazForm.Designer.cs">
-      <DependentUpon>LoansAddExtraPokazForm.cs</DependentUpon>
+    <Compile Include="New\Guide\CalendarOperationsForm.Designer.cs">
+      <DependentUpon>CalendarOperationsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="New\Guide\LoansAddPopupForm.cs">
+    <Compile Include="New\Guide\ExportRepHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="New\Guide\LoansAddPopupForm.Designer.cs">
-      <DependentUpon>LoansAddPopupForm.cs</DependentUpon>
+    <Compile Include="New\Guide\ExportRepHistory.Designer.cs">
+      <DependentUpon>ExportRepHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="New\Guide\ExportRepListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\Guide\ExportRepListForm.Designer.cs">
+      <DependentUpon>ExportRepListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\Guide\ExportRepSentStat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\Guide\ExportRepSentStat.Designer.cs">
+      <DependentUpon>ExportRepSentStat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\Guide\CreditsLoansAddExtraPokazForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\Guide\CreditsLoansAddExtraPokazForm.Designer.cs">
+      <DependentUpon>CreditsLoansAddExtraPokazForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\Guide\CreditsLoansAddPopupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\Guide\CreditsLoansAddPopupForm.Designer.cs">
+      <DependentUpon>CreditsLoansAddPopupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\Guide\CreditsPledgesAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\Guide\CreditsPledgesAddForm.Designer.cs">
+      <DependentUpon>CreditsPledgesAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\Guide\CreditsPledgesCurencyPopupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\Guide\CreditsPledgesCurencyPopupForm.Designer.cs">
+      <DependentUpon>CreditsPledgesCurencyPopupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\Guide\CreditsListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\Guide\CreditsListForm.Designer.cs">
+      <DependentUpon>CreditsListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\Guide\CreditsPledgesTypePopupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\Guide\CreditsPledgesTypePopupForm.Designer.cs">
+      <DependentUpon>CreditsPledgesTypePopupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\Guide\MyRichTextBox.cs" />
     <Compile Include="New\Guide\ReportsCelleditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1132,17 +1199,17 @@
     <Compile Include="MapperLayer\Guides\RegOrganMUMapper.cs" />
     <Compile Include="MapperLayer\Guides\SharedMapper.cs" />
     <Compile Include="MapperLayer\Guides\SharerMapper.cs" />
-    <Compile Include="New\Guide\ExtraPokazPopupForm.cs">
+    <Compile Include="New\Guide\CreditsExtraPokazPopupForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="New\Guide\ExtraPokazPopupForm.Designer.cs">
-      <DependentUpon>ExtraPokazPopupForm.cs</DependentUpon>
+    <Compile Include="New\Guide\CreditsExtraPokazPopupForm.Designer.cs">
+      <DependentUpon>CreditsExtraPokazPopupForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="New\Guide\ExtraPokazADDForm.cs">
+    <Compile Include="New\Guide\CreditsExtraPokazADDForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="New\Guide\ExtraPokazADDForm.Designer.cs">
-      <DependentUpon>ExtraPokazADDForm.cs</DependentUpon>
+    <Compile Include="New\Guide\CreditsExtraPokazADDForm.Designer.cs">
+      <DependentUpon>CreditsExtraPokazADDForm.cs</DependentUpon>
     </Compile>
     <Compile Include="New\Guide\Form1.cs">
       <SubType>Form</SubType>
@@ -1156,17 +1223,35 @@
     <Compile Include="New\Guide\LoansAddExtraPokazForm2.Designer.cs">
       <DependentUpon>LoansAddExtraPokazForm2.cs</DependentUpon>
     </Compile>
-    <Compile Include="New\Guide\LoansAddPokazForm.cs">
+    <Compile Include="New\Guide\CreditsLoansAddPokazForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="New\Guide\LoansAddPokazForm.Designer.cs">
-      <DependentUpon>LoansAddPokazForm.cs</DependentUpon>
+    <Compile Include="New\Guide\CreditsLoansAddPokazForm.Designer.cs">
+      <DependentUpon>CreditsLoansAddPokazForm.cs</DependentUpon>
     </Compile>
     <Compile Include="New\Guide\LoansListForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="New\Guide\LoansListForm.Designer.cs">
       <DependentUpon>LoansListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\Guide\SplashScreen1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\Guide\SplashScreen1.Designer.cs">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\Guide\WaitForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\Guide\WaitForm1.Designer.cs">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\Guide\WaitForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\Guide\WaitForm2.Designer.cs">
+      <DependentUpon>WaitForm2.cs</DependentUpon>
     </Compile>
     <Compile Include="ServiceLayer\Reporting\Excel\Rep12InfFactsBond.cs" />
     <Compile Include="ServiceLayer\Reporting\Excel\Rep20FromXML.cs" />
@@ -1318,6 +1403,9 @@
     <Compile Include="ServiceLayer\Registers\Base\IReadOnly.cs" />
     <Compile Include="ServiceLayer\Reporting\Excel\Main\ReportToExcel.cs" />
     <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="Common\XtraLogonDlgForm.resx">
+      <DependentUpon>XtraLogonDlgForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DisplayLayer\Base\SimpleConfirmEditForm.resx">
       <DependentUpon>SimpleConfirmEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1344,9 +1432,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Common\BaseDialogForm.resx">
       <DependentUpon>BaseDialogForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Common\dmMain.resx">
       <DependentUpon>dmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Common\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
@@ -1357,27 +1447,35 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Common\ChangePasswordForm.resx">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Common\LogonDialogForm.resx">
       <DependentUpon>LogonDialogForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Common\MDIChildForm.resx">
       <DependentUpon>MDIChildForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Common\RegComputerForm.resx">
       <DependentUpon>RegComputerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Common\RegComputerInfoForm.resx">
       <DependentUpon>RegComputerInfoForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Common\UnlockApplicationForm.resx">
       <DependentUpon>UnlockApplicationForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="DisplayLayer\Base\Choice\ChoiceBaseForm.resx">
       <DependentUpon>ChoiceBaseForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="DisplayLayer\Base\Choice\ChoiceTreeBaseForm.resx">
       <DependentUpon>ChoiceTreeBaseForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="DisplayLayer\Base\DBListBaseForm.resx">
       <DependentUpon>DBListBaseForm.cs</DependentUpon>
@@ -1399,6 +1497,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DisplayLayer\Guides\Base\ChinaTwoPanelForm.resx">
       <DependentUpon>ChinaTwoPanelForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="DisplayLayer\Guides\Base\GuidesBaseTabForm.resx">
       <DependentUpon>GuidesBaseTabForm.cs</DependentUpon>
@@ -1417,6 +1516,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DisplayLayer\Base\DBEditBaseForm.resx">
       <DependentUpon>DBEditBaseForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="DisplayLayer\Base\DBListROBaseForm.resx">
       <DependentUpon>DBListROBaseForm.cs</DependentUpon>
@@ -1457,11 +1557,42 @@
     <EmbeddedResource Include="DisplayLayer\Base\MultiPageListROBaseForm.resx">
       <DependentUpon>MultiPageListROBaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="New\Guide\LoansAddExtraPokazForm.resx">
-      <DependentUpon>LoansAddExtraPokazForm.cs</DependentUpon>
+    <EmbeddedResource Include="New\Guide\CalendarOperationEditForm.resx">
+      <DependentUpon>CalendarOperationEditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="New\Guide\LoansAddPopupForm.resx">
-      <DependentUpon>LoansAddPopupForm.cs</DependentUpon>
+    <EmbeddedResource Include="New\Guide\CalendarOperationsForm.resx">
+      <DependentUpon>CalendarOperationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\Guide\ExportRepHistory.resx">
+      <DependentUpon>ExportRepHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\Guide\ExportRepListForm.resx">
+      <DependentUpon>ExportRepListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\Guide\ExportRepSentStat.resx">
+      <DependentUpon>ExportRepSentStat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\Guide\CreditsLoansAddExtraPokazForm.resx">
+      <DependentUpon>CreditsLoansAddExtraPokazForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\Guide\CreditsLoansAddPopupForm.resx">
+      <DependentUpon>CreditsLoansAddPopupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\Guide\CreditsPledgesAddForm.resx">
+      <DependentUpon>CreditsPledgesAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\Guide\CreditsPledgesCurencyPopupForm.resx">
+      <DependentUpon>CreditsPledgesCurencyPopupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\Guide\CreditsListForm.resx">
+      <DependentUpon>CreditsListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\Guide\CreditsPledgesTypePopupForm.resx">
+      <DependentUpon>CreditsPledgesTypePopupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="New\Guide\ReportsCelleditForm.resx">
       <DependentUpon>ReportsCelleditForm.cs</DependentUpon>
@@ -1576,16 +1707,17 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataLayer\DataSet\Reports\ExceptionHandling\AppErrorDialog.resx">
       <DependentUpon>AppErrorDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="New\Guide\ExtraPokazPopupForm.resx">
-      <DependentUpon>ExtraPokazPopupForm.cs</DependentUpon>
+    <EmbeddedResource Include="New\Guide\CreditsExtraPokazPopupForm.resx">
+      <DependentUpon>CreditsExtraPokazPopupForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="New\Guide\ExtraPokazADDForm.resx">
-      <DependentUpon>ExtraPokazADDForm.cs</DependentUpon>
+    <EmbeddedResource Include="New\Guide\CreditsExtraPokazADDForm.resx">
+      <DependentUpon>CreditsExtraPokazADDForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="New\Guide\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -1593,11 +1725,20 @@
     <EmbeddedResource Include="New\Guide\LoansAddExtraPokazForm2.resx">
       <DependentUpon>LoansAddExtraPokazForm2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="New\Guide\LoansAddPokazForm.resx">
-      <DependentUpon>LoansAddPokazForm.cs</DependentUpon>
+    <EmbeddedResource Include="New\Guide\CreditsLoansAddPokazForm.resx">
+      <DependentUpon>CreditsLoansAddPokazForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="New\Guide\LoansListForm.resx">
       <DependentUpon>LoansListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\Guide\SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\Guide\WaitForm1.resx">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\Guide\WaitForm2.resx">
+      <DependentUpon>WaitForm2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Translate\ChooseLangForm.resx">
@@ -1653,12 +1794,25 @@
     <None Include="Resources\Non-Printing Chars.bmp" />
     <None Include="Resources\attachmentverticalpaperclipinterfacesymbol_79872.ico" />
     <None Include="Resources\4TbpB7R4c.png" />
+    <None Include="Resources\addnewdatasource_16x16.png" />
+    <None Include="Resources\addnewdatasource_32x32.png" />
+    <None Include="Resources\bo_security_permission.svg" />
+    <None Include="Resources\cancel_16x16.png" />
+    <None Include="Resources\cancel_32x32.png" />
+    <None Include="Resources\bouser_16x16.png" />
+    <None Include="Resources\bouser_32x32.png" />
+    <None Include="Resources\bouser_16x161.png" />
     <Content Include="Resources\clip.ico" />
     <None Include="Resources\filter1.png" />
+    <None Include="Resources\deletedatasource_16x16.png" />
+    <None Include="Resources\deletedatasource_32x32.png" />
+    <None Include="Resources\locknavigation_16x16.png" />
+    <None Include="Resources\locknavigation_32x32.png" />
     <Content Include="Resources\otmena.PNG" />
     <None Include="Resources\question.png" />
     <Content Include="Resources\redo.gif" />
     <Content Include="Resources\save.PNG" />
+    <None Include="Resources\security_key.svg" />
     <Content Include="Resources\undo.gif" />
     <Content Include="Resources\word.png" />
     <None Include="Resources\searchsettingbutton.svg" />
@@ -1806,7 +1960,7 @@
     <None Include="Resources\note_delete.png" />
     <None Include="Resources\note_add2.png" />
     <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Resources\warning11.png" />

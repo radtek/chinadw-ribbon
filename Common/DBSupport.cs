@@ -6,9 +6,14 @@ using ARM_User.BusinessLayer.Common;
 using ARM_User.MapperLayer.Common;
 using BSB.Common.DB.Admin;
 using DevExpress.XtraEditors;
-using Oracle.DataAccess.Client;
-using Oracle.DataAccess.Types;
+using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 using ARM_User;
+using BSB.Common;
+using ARM_User.Common;
+using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
+/*using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;*/
 
 namespace BSB.Common.DB
 {
@@ -17,6 +22,7 @@ namespace BSB.Common.DB
   /// </summary>
   public class DBSupport
   {
+        static public MainForm main;
     /// <summary>
     ///   Показывает окно ввода имени/пароля и пытается подключиться к Oracle
     /// </summary>
@@ -32,118 +38,124 @@ namespace BSB.Common.DB
             int PassBlock = 0;
       var PasswTry = 0;
       bool UserCancel;
-
-      var LogonDlgForm = new TfrmLogonDialog();
-      try
-      {
-        do
-        {
-          // Спрашиваем у пользователя логин и пароль
-          UserCancel = LogonDlgForm.ShowDialog() == DialogResult.Cancel;
-
-          if (!UserCancel)
-          {
-            // Устанавливаем параметры подключения
-
-            oc.ConnectionString = String.Format(dmControler.frmMain.DBConnectString,
-              LogonDlgForm.LogonUsername,
-              LogonDlgForm.LogonPassword,
-              LogonDlgForm.LogonDatabase);
-            var oldCursor = Cursor.Current;
-            Cursor.Current = Cursors.WaitCursor;
-            try
+           
+            using (var LogonDlgForm = new XtraLogonDlgForm()) //new TfrmLogonDialog()
             {
-                PassBlock = 0;
-                oc.Open();
-
-              dmControler.frmMain.DBDatabase = LogonDlgForm.LogonDatabase;
-              dmControler.frmMain.DBLogin = LogonDlgForm.LogonUsername;
-              dmControler.frmMain.DBPassword = LogonDlgForm.LogonPassword;
-            }
-            catch (OracleException oe)
-            {
-              switch (oe.Number)
-              {
-                case 1004:
-                  XtraMessageBox.Show(
-                    LangTranslate.UiGetText("Не указано имя пользователя для подключения к базе данных"),
-                    LangTranslate.UiGetText("В доступе отказано"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                  break;
-                case 1005:
-                  XtraMessageBox.Show(LangTranslate.UiGetText("Не указан пароль для подключения к базе данных"),
-                    LangTranslate.UiGetText("В доступе отказано"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                  break;
-                case 1017:
-                  XtraMessageBox.Show(LangTranslate.UiGetText("Неверное имя пользователя или пароль"),
-                    LangTranslate.UiGetText("В доступе отказано"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                  PassBlock = 1;
-                  break;
-                case 12154:
-                  XtraMessageBox.Show(LangTranslate.UiGetText("Неверное имя сервера"),
-                    LangTranslate.UiGetText("В доступе отказано"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                  break;
-                case 12500:
-                  XtraMessageBox.Show(LangTranslate.UiGetText("Неверное имя сервера"),
-                    LangTranslate.UiGetText("В доступе отказано"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                  break;
-                case 12560:
-                  XtraMessageBox.Show(LangTranslate.UiGetText("Не задано (неверно задано) имя сервера"),
-                    LangTranslate.UiGetText("В доступе отказано"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                  break;
-                case 28000:
-                  XtraMessageBox.Show(LangTranslate.UiGetText("Пользователь ORACLE заблокирован"),
-                    LangTranslate.UiGetText("В доступе отказано"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                  break;
-                case 28001:
-                  XtraMessageBox.Show(LangTranslate.UiGetText("Пароль пользователя ORACLE заблокирован"),
-                    LangTranslate.UiGetText("В доступе отказано"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                  break;
-                default:
-                  XtraMessageBox.Show(LangTranslate.UiGetText("Ошибка № ") + oe.Number + ": " + oe.Message,
-                    LangTranslate.UiGetText("В доступе отказано"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                  break;
-              }
-            }
-            finally
-            {
-              Cursor.Current = oldCursor;
-            }
-
-            PasswTry++;
-          }
-        } while (!((oc.State == ConnectionState.Open) || (PasswTry >= PasswTryCount) || UserCancel));
-        if ((PasswTry == PasswTryCount)&&(PassBlock == 1))
-        {
-            XtraMessageBox.Show(
-            LangTranslate.UiGetText("Превышен лимит неверных попыток. Пользователь заблокирован.") + Environment.NewLine +
-            LangTranslate.UiGetText("Обратитесь к администратору "),
-            LangTranslate.UiGetText("Внимание"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            try
-            {
-                int ErrCode;
-                string ErrMsg;
-                var username = LogonDlgForm.LogonUsername;
-                new SetOfficialBlocked().SetCurrOfficialBlocked(5, username, out ErrCode, out ErrMsg);
-                if (ErrCode != 0)
+                try
                 {
-                    DBErrorHandler(ErrCode, ErrMsg);
+                    do
+                    {
+                        // Спрашиваем у пользователя логин и пароль
+                        // UserCancel = LogonDlgForm.ShowDialog() == DialogResult.Cancel;
+
+                         CustomFlyoutDialog.ShowForm(main, null, LogonDlgForm);
+                        UserCancel = !LogonDlgForm.isOK;
+                        if (!UserCancel)
+                        {
+                            // Устанавливаем параметры подключения
+
+                            /* oc.ConnectionString = String.Format(dmControler.frmMain.DBConnectString,
+                               LogonDlgForm.LogonUsername,
+                               LogonDlgForm.LogonPassword,
+                               LogonDlgForm.LogonDatabase);*/
+                            oc.ConnectionString = LogonDlgForm.connString;
+                            var oldCursor = Cursor.Current;
+                            Cursor.Current = Cursors.WaitCursor;
+                            try
+                            {
+                                PassBlock = 0;
+                                oc.Open();
+
+                                dmControler.frmMain.DBDatabase = LogonDlgForm.LogonDatabase;
+                                dmControler.frmMain.DBLogin = LogonDlgForm.LogonUsername;
+                                dmControler.frmMain.DBPassword = LogonDlgForm.LogonPassword;
+                            }
+                            catch (OracleException oe)
+                            {
+                                switch (oe.Number)
+                                {
+                                    case 1004:
+                                        XtraMessageBox.Show(
+                                          LangTranslate.UiGetText("Не указано имя пользователя для подключения к базе данных"),
+                                          LangTranslate.UiGetText("В доступе отказано"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        break;
+                                    case 1005:
+                                        XtraMessageBox.Show(LangTranslate.UiGetText("Не указан пароль для подключения к базе данных"),
+                                          LangTranslate.UiGetText("В доступе отказано"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        break;
+                                    case 1017:
+                                        XtraMessageBox.Show(LangTranslate.UiGetText("Неверное имя пользователя или пароль"),
+                                          LangTranslate.UiGetText("В доступе отказано"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        PassBlock = 1;
+                                        break;
+                                    case 12154:
+                                        XtraMessageBox.Show(LangTranslate.UiGetText("Неверное имя сервера"),
+                                          LangTranslate.UiGetText("В доступе отказано"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        break;
+                                    case 12500:
+                                        XtraMessageBox.Show(LangTranslate.UiGetText("Неверное имя сервера"),
+                                          LangTranslate.UiGetText("В доступе отказано"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        break;
+                                    case 12560:
+                                        XtraMessageBox.Show(LangTranslate.UiGetText("Не задано (неверно задано) имя сервера"),
+                                          LangTranslate.UiGetText("В доступе отказано"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        break;
+                                    case 28000:
+                                        XtraMessageBox.Show(LangTranslate.UiGetText("Пользователь ORACLE заблокирован"),
+                                          LangTranslate.UiGetText("В доступе отказано"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        break;
+                                    case 28001:
+                                        XtraMessageBox.Show(LangTranslate.UiGetText("Пароль пользователя ORACLE заблокирован"),
+                                          LangTranslate.UiGetText("В доступе отказано"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        break;
+                                    default:
+                                        XtraMessageBox.Show(LangTranslate.UiGetText("Ошибка № ") + oe.Number + ": " + oe.Message,
+                                          LangTranslate.UiGetText("В доступе отказано"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        break;
+                                }
+                            }
+                            finally
+                            {
+                                Cursor.Current = oldCursor;
+                            }
+
+                            PasswTry++;
+                        }
+                    } while (!((oc.State == ConnectionState.Open) || (PasswTry >= PasswTryCount) || UserCancel));
+                    if ((PasswTry == PasswTryCount) && (PassBlock == 1))
+                    {
+                        XtraMessageBox.Show(
+                        LangTranslate.UiGetText("Превышен лимит неверных попыток. Пользователь заблокирован.") + Environment.NewLine +
+                        LangTranslate.UiGetText("Обратитесь к администратору "),
+                        LangTranslate.UiGetText("Внимание"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        try
+                        {
+                            int ErrCode;
+                            string ErrMsg;
+                            var username = LogonDlgForm.LogonUsername;
+                            new SetOfficialBlocked().SetCurrOfficialBlocked(5, username, out ErrCode, out ErrMsg);
+                            if (ErrCode != 0)
+                            {
+                                DBErrorHandler(ErrCode, ErrMsg);
+                            }
+                        }
+                        catch (OracleException oe)
+                        {
+                            DBErrorHandler(oe.Number, oe.Message + Environment.NewLine + "(occured in DBSupport.SetCurrOfficialBlocked).");
+                        }
+                        catch (Exception oe)
+                        {
+                            XtraMessageBox.Show(oe.Message + Environment.NewLine + "(occured in DBSupport.SetCurrOfficialBlocked).",
+                              LangTranslate.UiGetText("Ошибка"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                finally
+                {
+                    LogonDlgForm.Dispose();
                 }
             }
-            catch (OracleException oe)
-            {
-                DBErrorHandler(oe.Number, oe.Message + Environment.NewLine + "(occured in DBSupport.SetCurrOfficialBlocked).");
-            }
-            catch (Exception oe)
-            {
-                XtraMessageBox.Show(oe.Message + Environment.NewLine + "(occured in DBSupport.SetCurrOfficialBlocked).",
-                  LangTranslate.UiGetText("Ошибка"), MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-      }
-      finally
-      {
-        LogonDlgForm.Dispose();
-      }
+                
 
       return (oc.State == ConnectionState.Open);
     }
@@ -258,7 +270,13 @@ namespace BSB.Common.DB
       }
       return false;
     }
-    public static void DBErrorHandler(int ErrCode, string ErrMsg)
+
+        internal static void ErrorHandler(OracleException oracleException)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void DBErrorHandler(int ErrCode, string ErrMsg)
     {
       // Выделяем из ErrMsg строку трассировки и сообщения на русском и английском языках
         int startIndex = 0;
@@ -330,7 +348,7 @@ namespace BSB.Common.DB
         }
     }
 
-    public static void ErrorHandler(OracleException OracleError)
+    public static void MyErrorHandler(OracleException OracleError)
     {
       var ErrDlg = new TfrmAppErrorDlg();
       try

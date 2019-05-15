@@ -1,6 +1,7 @@
 ﻿using BSB.Common;
 using BSB.Common.DB;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -96,13 +97,15 @@ namespace ARM_User.New.DB
                         }
                         catch (Exception oe)
                         {
-                            DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_Reports) " + "PREPARED.getReportsListF21");
+                            return;
+                            //DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_Reports) " + "PREPARED.getReportsListF21");
                         }
                     }
                 }
                 catch (Exception oe)
                 {
-                    DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_Reports) " + sql_arm_);
+                    //DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_Reports) " + sql_arm_);
+                    return;
                 }
             }
         }
@@ -194,10 +197,6 @@ namespace ARM_User.New.DB
                 }
             }
         }
-
-        public static implicit operator DB_Reports(DB_RepSetupSQL v)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

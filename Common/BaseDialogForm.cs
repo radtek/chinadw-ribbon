@@ -23,7 +23,7 @@ namespace BSB.Common
 
     private void BaseDialogForm_Load(object sender, EventArgs e)
     {
-        Icon = AppResource.MasterDetail;
+        //Icon = AppResource.MasterDetail;
         if (InitApplication.CurrentLangId == LanguageIds.Kazakh)
             new LangTranslate().UISetupTexts(this, unTrControls);
         GridUtilities.RestoreGridLayouts(this);

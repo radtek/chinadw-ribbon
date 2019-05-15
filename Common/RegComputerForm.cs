@@ -8,7 +8,7 @@ using BSB.Common.DB;
 using BSB.Common.DB.Admin;
 using BSB.Win32API;
 using DevExpress.XtraEditors;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 
 namespace BSB.Common
 {
@@ -67,97 +67,92 @@ namespace BSB.Common
     /// </summary>
     private void InitializeComponent()
     {
-      var resources = new System.ComponentModel.ComponentResourceManager(typeof (TfrmRegComputer));
-      this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
-      this.btnOk = new DevExpress.XtraEditors.SimpleButton();
-      this.groupBox1 = new System.Windows.Forms.GroupBox();
-      this.label1 = new System.Windows.Forms.Label();
-      this.teDescription = new DevExpress.XtraEditors.TextEdit();
-      this.ocRegComp = new Oracle.DataAccess.Client.OracleConnection();
-      this.groupBox1.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize) (this.teDescription.Properties)).BeginInit();
-      this.SuspendLayout();
-      // 
-      // btnCancel
-      // 
-      this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.btnCancel.Image = ((System.Drawing.Image) (resources.GetObject("btnCancel.Image")));
-      this.btnCancel.ImageIndex = 13;
-      this.btnCancel.Location = new System.Drawing.Point(407, 78);
-      this.btnCancel.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
-      this.btnCancel.Name = "btnCancel";
-      this.btnCancel.Size = new System.Drawing.Size(85, 24);
-      this.btnCancel.TabIndex = 8;
-      this.btnCancel.Text = "Отмена";
-      // 
-      // btnOk
-      // 
-      this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-      this.btnOk.Image = ((System.Drawing.Image) (resources.GetObject("btnOk.Image")));
-      this.btnOk.ImageIndex = 12;
-      this.btnOk.Location = new System.Drawing.Point(319, 78);
-      this.btnOk.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
-      this.btnOk.Name = "btnOk";
-      this.btnOk.Size = new System.Drawing.Size(85, 24);
-      this.btnOk.TabIndex = 7;
-      this.btnOk.Text = "Ок";
-      // 
-      // groupBox1
-      // 
-      this.groupBox1.Controls.Add(this.label1);
-      this.groupBox1.Controls.Add(this.teDescription);
-      this.groupBox1.Location = new System.Drawing.Point(7, 4);
-      this.groupBox1.Name = "groupBox1";
-      this.groupBox1.Size = new System.Drawing.Size(485, 66);
-      this.groupBox1.TabIndex = 9;
-      this.groupBox1.TabStop = false;
-      // 
-      // label1
-      // 
-      this.label1.AutoSize = true;
-      this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular,
-        System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-      this.label1.Location = new System.Drawing.Point(9, 28);
-      this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(140, 14);
-      this.label1.TabIndex = 11;
-      this.label1.Text = "Описание компьютера:";
-      // 
-      // teDescription
-      // 
-      this.teDescription.EditValue = "";
-      this.teDescription.Location = new System.Drawing.Point(152, 26);
-      this.teDescription.Name = "teDescription";
-      this.teDescription.Size = new System.Drawing.Size(324, 20);
-      this.teDescription.TabIndex = 0;
-      // 
-      // ocRegComp
-      // 
-      this.ocRegComp.StateChange += new System.Data.StateChangeEventHandler(this.ocRegComp_StateChange);
-      // 
-      // TfrmRegComputer
-      // 
-      this.AcceptButton = this.btnOk;
-      this.AutoScaleBaseSize = new System.Drawing.Size(5, 14);
-      this.CancelButton = this.btnCancel;
-      this.ClientSize = new System.Drawing.Size(498, 102);
-      this.Controls.Add(this.groupBox1);
-      this.Controls.Add(this.btnCancel);
-      this.Controls.Add(this.btnOk);
-      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-      this.MaximizeBox = false;
-      this.MinimizeBox = false;
-      this.Name = "TfrmRegComputer";
-      this.ShowInTaskbar = false;
-      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-      this.Text = "Регистрация компьютера";
-      this.Load += new System.EventHandler(this.TfrmRegComputer_Load);
-      this.Closed += new System.EventHandler(this.TfrmRegComputer_Closed);
-      this.Closing += new System.ComponentModel.CancelEventHandler(this.TfrmRegComputer_Closing);
-      this.groupBox1.ResumeLayout(false);
-      this.groupBox1.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize) (this.teDescription.Properties)).EndInit();
-      this.ResumeLayout(false);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TfrmRegComputer));
+            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.btnOk = new DevExpress.XtraEditors.SimpleButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.teDescription = new DevExpress.XtraEditors.TextEdit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.teDescription.Properties)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
+            this.btnCancel.ImageOptions.ImageIndex = 13;
+            this.btnCancel.Location = new System.Drawing.Point(488, 100);
+            this.btnCancel.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(102, 31);
+            this.btnCancel.TabIndex = 8;
+            this.btnCancel.Text = "Отмена";
+            // 
+            // btnOk
+            // 
+            this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnOk.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOk.ImageOptions.Image")));
+            this.btnOk.ImageOptions.ImageIndex = 12;
+            this.btnOk.Location = new System.Drawing.Point(383, 100);
+            this.btnOk.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(102, 31);
+            this.btnOk.TabIndex = 7;
+            this.btnOk.Text = "Ок";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.teDescription);
+            this.groupBox1.Location = new System.Drawing.Point(8, 5);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(582, 85);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(11, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(168, 18);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Описание компьютера:";
+            // 
+            // teDescription
+            // 
+            this.teDescription.EditValue = "";
+            this.teDescription.Location = new System.Drawing.Point(182, 33);
+            this.teDescription.Name = "teDescription";
+            this.teDescription.Size = new System.Drawing.Size(389, 24);
+            this.teDescription.TabIndex = 0;
+            // 
+            // TfrmRegComputer
+            // 
+            this.AcceptButton = this.btnOk;
+            this.AutoScaleBaseSize = new System.Drawing.Size(6, 18);
+            this.CancelButton = this.btnCancel;
+            this.ClientSize = new System.Drawing.Size(600, 149);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnOk);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "TfrmRegComputer";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Регистрация компьютера";
+            this.Closing += new System.ComponentModel.CancelEventHandler(this.TfrmRegComputer_Closing);
+            this.Closed += new System.EventHandler(this.TfrmRegComputer_Closed);
+            this.Load += new System.EventHandler(this.TfrmRegComputer_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.teDescription.Properties)).EndInit();
+            this.ResumeLayout(false);
+
     }
 
     #endregion

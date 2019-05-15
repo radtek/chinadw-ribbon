@@ -5,6 +5,7 @@ using DevExpress.XtraEditors;
 using System.IO;
 using System.Diagnostics;
 using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
+using DevExpress.LookAndFeel;
 
 namespace BSB.Common.DB
 {
@@ -86,12 +87,12 @@ namespace BSB.Common.DB
             // btnOk
             // 
             this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOk.Image = ((System.Drawing.Image)(resources.GetObject("btnOk.Image")));
-            this.btnOk.ImageIndex = 12;
-            this.btnOk.Location = new System.Drawing.Point(37, 169);
+            this.btnOk.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOk.ImageOptions.Image")));
+            this.btnOk.ImageOptions.ImageIndex = 12;
+            this.btnOk.Location = new System.Drawing.Point(49, 232);
             this.btnOk.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(85, 23);
+            this.btnOk.Size = new System.Drawing.Size(114, 32);
             this.btnOk.TabIndex = 1;
             this.btnOk.Text = "Ок";
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
@@ -99,12 +100,12 @@ namespace BSB.Common.DB
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
-            this.btnCancel.ImageIndex = 13;
-            this.btnCancel.Location = new System.Drawing.Point(129, 169);
+            this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
+            this.btnCancel.ImageOptions.ImageIndex = 13;
+            this.btnCancel.Location = new System.Drawing.Point(172, 232);
             this.btnCancel.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(85, 23);
+            this.btnCancel.Size = new System.Drawing.Size(113, 32);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Отмена";
             // 
@@ -116,88 +117,90 @@ namespace BSB.Common.DB
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.edbDatabase);
-            this.groupBox1.Location = new System.Drawing.Point(4, -4);
+            this.groupBox1.Location = new System.Drawing.Point(5, -6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(243, 165);
+            this.groupBox1.Size = new System.Drawing.Size(324, 227);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // edPassword
             // 
             this.edPassword.EditValue = "";
-            this.edPassword.Location = new System.Drawing.Point(11, 121);
+            this.edPassword.Location = new System.Drawing.Point(15, 166);
             this.edPassword.Name = "edPassword";
-            this.edPassword.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.edPassword.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.edPassword.Properties.Appearance.Options.UseFont = true;
             this.edPassword.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
             this.edPassword.Properties.PasswordChar = '*';
-            this.edPassword.Size = new System.Drawing.Size(220, 20);
+            this.edPassword.Size = new System.Drawing.Size(293, 26);
             this.edPassword.TabIndex = 2;
             // 
             // edLogin
             // 
             this.edLogin.EditValue = "";
-            this.edLogin.Location = new System.Drawing.Point(11, 76);
+            this.edLogin.Location = new System.Drawing.Point(15, 105);
             this.edLogin.Name = "edLogin";
-            this.edLogin.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.edLogin.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.edLogin.Properties.Appearance.Options.UseFont = true;
             this.edLogin.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.edLogin.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
-            this.edLogin.Size = new System.Drawing.Size(220, 20);
+            this.edLogin.Size = new System.Drawing.Size(293, 26);
             this.edLogin.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(11, 103);
+            this.label3.Location = new System.Drawing.Point(15, 142);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 16);
+            this.label3.Size = new System.Drawing.Size(81, 22);
             this.label3.TabIndex = 4;
             this.label3.Text = "Пароль:";
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(11, 57);
+            this.label2.Location = new System.Drawing.Point(15, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 18);
+            this.label2.Size = new System.Drawing.Size(170, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Имя пользователя:";
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(11, 13);
+            this.label1.Location = new System.Drawing.Point(15, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 16);
+            this.label1.Size = new System.Drawing.Size(117, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "База данных:";
             // 
             // edbDatabase
             // 
             this.edbDatabase.EditValue = "";
-            this.edbDatabase.Location = new System.Drawing.Point(11, 31);
+            this.edbDatabase.Location = new System.Drawing.Point(15, 43);
             this.edbDatabase.Name = "edbDatabase";
-            this.edbDatabase.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.edbDatabase.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.edbDatabase.Properties.Appearance.Options.UseFont = true;
             this.edbDatabase.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.edbDatabase.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.edbDatabase.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
-            this.edbDatabase.Size = new System.Drawing.Size(220, 20);
+            this.edbDatabase.Size = new System.Drawing.Size(293, 26);
             this.edbDatabase.TabIndex = 0;
             // 
             // TfrmLogonDialog
             // 
             this.AcceptButton = this.btnOk;
-            this.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleBaseSize = new System.Drawing.Size(6, 16);
+            this.AutoScaleBaseSize = new System.Drawing.Size(8, 22);
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(250, 199);
+            this.ClientSize = new System.Drawing.Size(329, 276);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
+            this.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.LookAndFeel.SkinName = "Seven Classic";
+            this.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TfrmLogonDialog";
@@ -207,6 +210,7 @@ namespace BSB.Common.DB
             this.Activated += new System.EventHandler(this.TfrmLogonDialog_Activated);
             this.Closing += new System.ComponentModel.CancelEventHandler(this.TfrmLogonDialog_Closing);
             this.Load += new System.EventHandler(this.frmLogonDialog_Load);
+            this.Shown += new System.EventHandler(this.TfrmLogonDialog_Shown);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.edPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edLogin.Properties)).EndInit();
@@ -218,11 +222,18 @@ namespace BSB.Common.DB
     #endregion
 
     private void frmLogonDialog_Load(object sender, EventArgs e)
-    {
-      IsFirstActivate = true;
+    {   
+        IsFirstActivate = true;
+            InitSkin();    
 
-      LoadTNSNames();
-      LoadLastValues();
+            LoadTNSNames();
+        LoadLastValues();
+    }
+
+    private void InitSkin()
+    {
+        DevExpress.Skins.SkinManager.EnableFormSkins();
+        DevExpress.LookAndFeel.LookAndFeelHelper.ForceDefaultLookAndFeelChanged(); 
     }
 
     private void LoadTNSNames()
@@ -339,5 +350,13 @@ namespace BSB.Common.DB
     private void btnOk_Click(object sender, EventArgs e)
     {
     }
-  }
+
+        private void TfrmLogonDialog_Shown(object sender, EventArgs e)
+        {
+            LookAndFeel.UseDefaultLookAndFeel = true;
+            LookAndFeel.SetSkinStyle( InitApplication.skinName );
+            LookAndFeel.Style = InitApplication.style;
+            
+        }
+    }
 }

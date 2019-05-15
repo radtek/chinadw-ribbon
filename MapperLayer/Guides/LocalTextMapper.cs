@@ -6,8 +6,8 @@ using ARM_User.BusinessLayer.Guides.Simple;
 using ARM_User.DataLayer.DataSet.CommonDataSet;
 using ARM_User.MapperLayer.Common;
 using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
-using Oracle.DataAccess.Client;
-using Oracle.DataAccess.Types;
+using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 using BSB.Common.DB;
 
 namespace ARM_User.MapperLayer.Guides.Simple

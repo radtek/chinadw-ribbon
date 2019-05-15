@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 
 namespace BSB.Common
 {
@@ -11,9 +11,21 @@ namespace BSB.Common
   public class _dmMain : Form
   {
     private IContainer components;
-    // Данные о соединении с БД
-    public string DBConnectString = "User Id={0};Password={1};Data Source={2};Pooling=false;";
-    public string DBDatabase;
+        // Данные о соединении с БД
+        static string host = "localhost";
+        static int port = 1521;
+        static String sid = "ORCLXE";
+        static String user = "Beles";
+        static String password = "China_1920";
+
+        string connString = "Data Source=(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = "
+                        + host + ")(PORT = " + port + "))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = "
+                        + sid + ")));Password=" + password + ";User ID=" + user;
+
+
+        public string DBConnectString = "User Id={0};Password={1};Data Source={2};Pooling=false;";
+        
+        public string DBDatabase;
     public string DBLogin;
     public string DBPassword;
     public ImageList imMain;
@@ -57,8 +69,17 @@ namespace BSB.Common
       this.components = new System.ComponentModel.Container();
       var resources = new System.ComponentModel.ComponentResourceManager(typeof (_dmMain));
       this.imMain = new System.Windows.Forms.ImageList(this.components);
-      
-        this.oracleConnection = new Oracle.DataAccess.Client.OracleConnection();
+      try
+            {
+                this.oracleConnection = new OracleConnection();
+                this.oracleConnection.ConnectionString = connString;
+
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        
       this.SuspendLayout();
       // 
       // imMain

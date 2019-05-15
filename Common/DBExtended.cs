@@ -4,7 +4,7 @@ using System.Data;
 using System.IO;
 using System.Text.RegularExpressions;
 using Microsoft.Win32;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 
 namespace BSB.Common.DB
 {

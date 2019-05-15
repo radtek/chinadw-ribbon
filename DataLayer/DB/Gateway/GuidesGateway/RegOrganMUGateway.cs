@@ -2,7 +2,7 @@
 using System.Data;
 using BSB.Common.DataGateway.Oracle;
 using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 using BSB.Common.DataGateway;
 using DevExpress.XtraReports.Design;
 using BSB.Common.DB;

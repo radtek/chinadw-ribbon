@@ -12,7 +12,7 @@ using System.Reflection;
 [assembly: AssemblyCompany("BSB NBRK")]
 [assembly: AssemblyProduct("юхо уд CHINA")]
 [assembly: AssemblyCopyright("2019")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("BSB")]
 [assembly: AssemblyCulture("")]
 
 //
@@ -42,7 +42,7 @@ using System.Reflection;
 
 
 
-[assembly: AssemblyVersion("2.0.10.1")]
+[assembly: AssemblyVersion("6.5.19.23")]
 
 //
 // In order to sign your assembly you must specify a key to use. Refer to the 
@@ -80,7 +80,7 @@ using System.Reflection;
 
 
 
-[assembly: AssemblyFileVersion("2.0.10.1")]
+[assembly: AssemblyFileVersion("6.5.19.23")]
 
 
 

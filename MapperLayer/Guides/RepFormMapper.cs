@@ -7,7 +7,7 @@ using ARM_User.DataLayer.DataSet.GuidesDataSet;
 using ARM_User.MapperLayer.Common;
 using BSB.Common;
 using BSB.Common.DB;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 using System.Collections;
 using ARM_User.DataLayer;
 

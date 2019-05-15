@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
+
 using ARM_User.BusinessLayer.Common;
 using BSB.Common.DataGateway.Oracle;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 
 namespace ARM_User.MapperLayer.Common
 {
-  public abstract class AbstractMapper : IComparable
+    public abstract class AbstractMapper : IComparable
   {
     protected OracleConnection Connection
     {

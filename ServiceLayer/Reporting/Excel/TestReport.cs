@@ -5,8 +5,8 @@ using ARM_User.BusinessLayer.Guides;
 using BSB.Common;
 using BSB.Common.DataGateway.Oracle;
 using Microsoft.Office.Interop.Excel;
-using Oracle.DataAccess.Client;
-using Oracle.DataAccess.Types;
+using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 
 namespace ARM_User.Reports
 {

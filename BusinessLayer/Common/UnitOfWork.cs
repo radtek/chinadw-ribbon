@@ -7,7 +7,7 @@ using ARM_User.MapperLayer.Common;
 using BSB.Common;
 using BSB.Common.DataGateway.Oracle;
 using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 
 namespace ARM_User.BusinessLayer.Common
 {

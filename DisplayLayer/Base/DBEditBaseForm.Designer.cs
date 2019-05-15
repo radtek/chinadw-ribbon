@@ -65,55 +65,63 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(452, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlTop.Size = new System.Drawing.Size(527, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 340);
-            this.barDockControlBottom.Size = new System.Drawing.Size(452, 0);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 418);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(527, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 340);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 418);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(452, 0);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 340);
+            this.barDockControlRight.Location = new System.Drawing.Point(527, 0);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 418);
             // 
             // barButtonItemBeginEdit
             // 
             this.barButtonItemBeginEdit.Caption = "Начать редактирование";
-            this.barButtonItemBeginEdit.Glyph = global::ARM_User.Properties.Resources.edit;
             this.barButtonItemBeginEdit.Id = 5;
+            this.barButtonItemBeginEdit.ImageOptions.Image = global::ARM_User.Properties.Resources.edit;
             this.barButtonItemBeginEdit.Name = "barButtonItemBeginEdit";
             // 
             // barButtonItemSave
             // 
             this.barButtonItemSave.Caption = "Сохранить";
-            this.barButtonItemSave.Glyph = global::ARM_User.Properties.Resources.disk_blue;
             this.barButtonItemSave.Id = 6;
+            this.barButtonItemSave.ImageOptions.Image = global::ARM_User.Properties.Resources.disk_blue;
             this.barButtonItemSave.Name = "barButtonItemSave";
             // 
             // barButtonItemCancelEdit
             // 
             this.barButtonItemCancelEdit.Caption = "Отменить изменения";
-            this.barButtonItemCancelEdit.Glyph = global::ARM_User.Properties.Resources.undo;
             this.barButtonItemCancelEdit.Id = 7;
+            this.barButtonItemCancelEdit.ImageOptions.Image = global::ARM_User.Properties.Resources.undo;
             this.barButtonItemCancelEdit.Name = "barButtonItemCancelEdit";
             // 
             // barButtonItemRefresh
             // 
             this.barButtonItemRefresh.Caption = "Обновить данные";
-            this.barButtonItemRefresh.Glyph = global::ARM_User.Properties.Resources.refresh;
             this.barButtonItemRefresh.Id = 8;
+            this.barButtonItemRefresh.ImageOptions.Image = global::ARM_User.Properties.Resources.refresh;
             this.barButtonItemRefresh.Name = "barButtonItemRefresh";
             // 
             // MainBS
@@ -126,26 +134,29 @@
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(452, 340);
+            this.panelControl1.Size = new System.Drawing.Size(527, 418);
             this.panelControl1.TabIndex = 4;
             // 
             // DBEditBaseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(452, 340);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.ClientSize = new System.Drawing.Size(527, 418);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "DBEditBaseForm";
             this.Text = "DBEditBaseForm";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainBS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
     }
 

@@ -19,6 +19,25 @@ namespace ARM_User.New.Guide
         public LoansListForm()
         {
             InitializeComponent();
+            db = new DB_LoansListForm(dmControler.frmMain.oracleConnection);
+            beData.EditValue = (DateTime)System.DateTime.Today;
+            splitContainer1.SplitterDistance = splitContainer1.Height - 150;
+            try
+            {
+                splashScreenManager.ShowWaitForm();
+                refreshListCredits();
+            }
+            finally
+            {
+                splashScreenManager.CloseWaitForm();
+            }
+
+            bgvExtraPokaz.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            bandedGridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            bandedGridView2.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            gridControl1.Visible = false;
+            
+
         }
 
         private void bbFilter_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -49,7 +68,8 @@ namespace ARM_User.New.Guide
         #region[REFRESH VIRTUAL]
         public virtual void refreshListCredits()
         {
-            Cursor = Cursors.WaitCursor;
+            //Cursor = Cursors.WaitCursor;
+            //splashScreenManager.ShowWaitForm();
             gcList1.BeginUpdate();
             String s = beData.EditValue.ToString();
             DateTime FilterDateTime = Convert.ToDateTime(s);
@@ -66,13 +86,16 @@ namespace ARM_User.New.Guide
                 splitContainer1.Panel2Collapsed = false;
                 splitContainer1.Panel2.Show();
             }
+            //Cursor = Cursors.Default;
+            //splashScreenManager.CloseWaitForm();
+
             refreshListExtraPokaz();
             gcList1.EndUpdate();
-            Cursor = Cursors.Default;
+            
         }
         public virtual void refreshListExtraPokaz()
         {
-            Cursor = Cursors.WaitCursor;
+            //splashScreenManager.ShowWaitForm();
             String s = beData.EditValue.ToString();
             DateTime FilterDateTime = Convert.ToDateTime(s);
             
@@ -82,6 +105,7 @@ namespace ARM_User.New.Guide
             {
                 db.getReadListExtraPokaz(ref dsMain, FilterDateTime.Date, loan_sid);
                 Int32 xCount = dsMain.Tables["tsExtraPokaz"].Rows.Count;
+                //MessageBox.Show(xCount.ToString());
                 Boolean xPermission = xCount == 0;                
                 tsbExtraPokazView.Enabled = !xPermission;                
                 tsbExtraPokazEdit.Enabled = !xPermission;
@@ -90,11 +114,11 @@ namespace ARM_User.New.Guide
             else
                 if (dsMain.Tables.Contains("tsExtraPokaz")) dsMain.Tables["tsExtraPokaz"].Clear();
 
-            Cursor = Cursors.Default;
+            //splashScreenManager.CloseWaitForm();
         }
         public virtual void refreshListPokaz()
         {
-            Cursor = Cursors.WaitCursor;
+            //splashScreenManager.ShowWaitForm();
             String s = beData.EditValue.ToString();
             DateTime FilterDateTime = Convert.ToDateTime(s);
 
@@ -112,7 +136,7 @@ namespace ARM_User.New.Guide
             else
                 if (dsMain.Tables.Contains("tsPokaz")) dsMain.Tables["tsPokaz"].Clear();
 
-            Cursor = Cursors.Default;
+            //splashScreenManager.CloseWaitForm();
         }
         #endregion
 
@@ -129,18 +153,14 @@ namespace ARM_User.New.Guide
         private void LoansListForm_Load(object sender, EventArgs e)
         {
 
-            splitContainer1.SplitterDistance = splitContainer1.Height-150;
-            db = new DB_LoansListForm(dmControler.frmMain.oracleConnection);
-            refreshListCredits();
-            bgvExtraPokaz.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
-            bandedGridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
-            bandedGridView2.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
-
+            
         }
         private void gvList1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
+            splashScreenManager.ShowWaitForm();
             refreshListExtraPokaz();
             refreshListPokaz();
+            splashScreenManager.CloseWaitForm();
         }
         #region [GET urrent Data]
         private Int32 getCurrentID(String sTable, String sField)
@@ -210,7 +230,7 @@ namespace ARM_User.New.Guide
 
         private void tsbExtraPokazAdd_Click(object sender, EventArgs e)
         {
-            var frm = new LoansAddExtraPokazForm();
+            var frm = new CreditsLoansAddExtraPokazForm();
             frm.Text = "Добавить дополнительный показатель";
             frm.State = ServiceLayer.Service.Editor.EditorState.Insert;
             // from credits
@@ -229,7 +249,7 @@ namespace ARM_User.New.Guide
         private void tsbExtraPokazEdit_Click(object sender, EventArgs e)
         {
             
-            var frm = new LoansAddExtraPokazForm();
+            var frm = new CreditsLoansAddExtraPokazForm();
             frm.Text = "Изменить дополнительный показатель";
             frm.State = ServiceLayer.Service.Editor.EditorState.Edit;
             // from credits
@@ -252,7 +272,7 @@ namespace ARM_User.New.Guide
 
         private void tsbExtraPokazView_Click(object sender, EventArgs e)
         {
-            var frm = new LoansAddExtraPokazForm();
+            var frm = new CreditsLoansAddExtraPokazForm();
             frm.Text = "Просмотр дополнительного показателя";
             frm.State = ServiceLayer.Service.Editor.EditorState.View;
             // from credits
@@ -282,24 +302,27 @@ namespace ARM_User.New.Guide
                 LangTranslate.UiGetText("Вы действительно хотите удалить запись?"),
                 LangTranslate.UiGetText("Внимание"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                Cursor = Cursors.WaitCursor;
+                
                 try
                 {
+                    splashScreenManager.ShowWaitForm();
                     db.pro_delete_loans_add_map(loan_sid_, report_date_, abs_constant_loans_map_id_);
+                    splashScreenManager.CloseWaitForm();
                 }
                 catch (Exception oe)
                 {
                     DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_LoansListForm.pro_delete_loans_add_map)");
-                }
+                    splashScreenManager.CloseWaitForm();
+                }                
 
                 refreshListExtraPokaz();
-                Cursor = Cursors.Default;
+                
             }
         }
 
         private void tsbPokazAdd_Click(object sender, EventArgs e)
         {
-            var frm = new LoansAddPokazForm();
+            var frm = new CreditsLoansAddPokazForm();
             frm.Text = "Добавить дополнительный показатель";
 
             String s = beData.EditValue.ToString();
@@ -317,7 +340,7 @@ namespace ARM_User.New.Guide
 
         private void tsbPokazView_Click(object sender, EventArgs e)
         {
-            var frm = new LoansAddPokazForm();
+            var frm = new CreditsLoansAddPokazForm();
             frm.Text = "Просмотр дополнительного показателя";
 
             frm.State = ServiceLayer.Service.Editor.EditorState.View;
@@ -342,7 +365,7 @@ namespace ARM_User.New.Guide
 
         private void tsbPokazEdit_Click(object sender, EventArgs e)
         {
-            var frm = new LoansAddPokazForm();
+            var frm = new CreditsLoansAddPokazForm();
             frm.Text = "Изменить дополнительный показатель";
 
             frm.State = ServiceLayer.Service.Editor.EditorState.Edit;
@@ -382,18 +405,21 @@ namespace ARM_User.New.Guide
                 LangTranslate.UiGetText("Вы действительно хотите удалить запись?"),
                 LangTranslate.UiGetText("Внимание"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                Cursor = Cursors.WaitCursor;
+                
                 try
                 {
+                    splashScreenManager.ShowWaitForm();
                     db.pro_delete_loans_map(loan_sid_, report_date_, abs_dimension_id, pokaz_id);
+                    splashScreenManager.CloseWaitForm();
                 }
                 catch (Exception oe)
                 {
                     DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_LoansListForm.pro_delete_loans_map)");
+                    splashScreenManager.CloseWaitForm();
                 }
-
+                
                 refreshListPokaz();
-                Cursor = Cursors.Default;
+                
             }
         }
 
@@ -401,6 +427,30 @@ namespace ARM_User.New.Guide
         {
             Boolean x = bandedGridView1.OptionsView.EnableAppearanceOddRow;            
             bandedGridView1.OptionsView.EnableAppearanceOddRow = !x;
+        }
+
+        private void bbExport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gcList1.Visible = false;
+            gridControl1.Visible = true;
+            gridControl1.Dock = DockStyle.Fill;
+            String s = beData.EditValue.ToString();
+            DateTime FilterDateTime = Convert.ToDateTime(s);
+            db.getLoansExportList(ref dsMain2, FilterDateTime.Date);
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                String sfile = saveFileDialog1.FileName;
+                try
+                {
+                    gridControl1.ExportToXls(sfile);
+                }
+                catch(Exception oe)
+                {
+                    MessageBox.Show("Ошибка при экспорте: "+oe.Message);
+                }
+            }
+            gcList1.Visible = true;
+            gridControl1.Visible = false;
         }
     }
 }

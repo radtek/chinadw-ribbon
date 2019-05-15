@@ -1,5 +1,7 @@
-﻿using BSB.Common.DB;
-using Oracle.DataAccess.Client;
+﻿using BSB.Common;
+using BSB.Common.DB;
+using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,6 +18,10 @@ namespace ARM_User.New.DB
         public DB_LoansListForm(OracleConnection conn)
         {
             pConncection = conn;
+        }
+        public DB_LoansListForm()
+        {
+            pConncection = dmControler.frmMain.oracleConnection;
         }
         // READ CREDITS
         public void getReadListCredits(ref DataSet ds, DateTime date_)
@@ -66,6 +72,7 @@ namespace ARM_User.New.DB
                 OracleDataAdapter oda = new OracleDataAdapter(cmd);
                 try
                 {
+                    
                     oda.Fill(ds.Tables["tsExtraPokaz"]);
                 }
                 catch (Exception oe)
@@ -237,6 +244,37 @@ namespace ARM_User.New.DB
             {
                 DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_LoansListForm.pro_delete_loans_map)");
             }
+        }
+        public void getLoansExportList(ref DataSet ds, DateTime date_)
+        {
+            if (ds.Tables.Contains("ExportTable")) ds.Tables["ExportTable"].Clear();
+
+            using (OracleCommand cmd = pConncection.CreateCommand())
+            {
+                cmd.BindByName = true;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "PREPARED.g_read_g_loans_map_export_excel";
+                cmd.Parameters.Add("cur", OracleDbType.RefCursor, ParameterDirection.Output);
+                cmd.Parameters.Add("date_", OracleDbType.Date, date_.Date, ParameterDirection.Input);
+                cmd.Parameters.Add("err_code", OracleDbType.Int16, ParameterDirection.Output);
+                cmd.Parameters.Add("err_msg", OracleDbType.Clob, ParameterDirection.Output);
+
+                OracleDataAdapter oda = new OracleDataAdapter(cmd);
+                try
+                {
+
+                    oda.Fill(ds.Tables["ExportTable"]);
+                }
+                catch (Exception oe)
+                {
+                    DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_LoansListForm.getLoansExportList)");
+                }
+                finally
+                {
+                    oda.Dispose();
+                }
+            }
+
         }
     }
     

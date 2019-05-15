@@ -28,8 +28,9 @@ namespace ARM_User.DisplayLayer.Base
     /// </summary>
     private void InitializeComponent()
     {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChoiceTreeBaseForm));
-            this.MainBS = new System.Windows.Forms.BindingSource();
+            this.MainBS = new System.Windows.Forms.BindingSource(this.components);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.treeMain = new DevExpress.XtraTreeList.TreeList();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -60,6 +61,7 @@ namespace ARM_User.DisplayLayer.Base
             // 
             resources.ApplyResources(this.treeMain, "treeMain");
             this.treeMain.KeyFieldName = "Id";
+            this.treeMain.MinWidth = 23;
             this.treeMain.Name = "treeMain";
             this.treeMain.OptionsBehavior.Editable = false;
             this.treeMain.OptionsFind.AlwaysVisible = true;
@@ -67,6 +69,7 @@ namespace ARM_User.DisplayLayer.Base
             this.treeMain.OptionsFind.FindMode = DevExpress.XtraTreeList.FindMode.Always;
             this.treeMain.OptionsFind.ShowFindButton = false;
             this.treeMain.ParentFieldName = "TreeParentId";
+            this.treeMain.TreeLevelWidth = 21;
             // 
             // panelControl2
             // 

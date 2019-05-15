@@ -5,8 +5,8 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using BSB.Common.DataGateway.Oracle;
 using System.Data;
-using Oracle.DataAccess.Client;
-using Oracle.DataAccess.Types;
+using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 using System;
 using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
 

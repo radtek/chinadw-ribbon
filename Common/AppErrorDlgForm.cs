@@ -1,17 +1,17 @@
 using System;
 using System.ComponentModel;
-using System.Linq;
 using System.Windows.Forms;
 using BSB.Common.DB;
 using DevExpress.XtraEditors;
-using Oracle.DataAccess.Client;
+using BSB.Common.DataGateway.Oracle;
+using Oracle.ManagedDataAccess.Client;
 
 namespace BSB.Common
 {
-  /// <summary>
-  ///   Summary description for frmAppErrorDlg.
-  /// </summary>
-  public class TfrmAppErrorDlg : XtraForm
+    /// <summary>
+    ///   Summary description for frmAppErrorDlg.
+    /// </summary>
+    public class TfrmAppErrorDlg : XtraForm
   {
     /// <summary>
     ///   Required designer variable.
@@ -53,145 +53,133 @@ namespace BSB.Common
     /// </summary>
     private void InitializeComponent()
     {
-      var resources = new System.Resources.ResourceManager(typeof (TfrmAppErrorDlg));
-      this.label1 = new System.Windows.Forms.Label();
-      this.lbErrCode = new System.Windows.Forms.Label();
-      this.mErrMsgRus = new DevExpress.XtraEditors.MemoEdit();
-      this.mErrTrace = new DevExpress.XtraEditors.MemoEdit();
-      this.btnOk = new DevExpress.XtraEditors.SimpleButton();
-      this.mErrMsgEng = new DevExpress.XtraEditors.MemoEdit();
-      ((System.ComponentModel.ISupportInitialize) (this.mErrMsgRus.Properties)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize) (this.mErrTrace.Properties)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize) (this.mErrMsgEng.Properties)).BeginInit();
-      this.SuspendLayout();
-      // 
-      // label1
-      // 
-      this.label1.AutoSize = true;
-      this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold,
-        System.Drawing.GraphicsUnit.Point, ((System.Byte) (204)));
-      this.label1.ForeColor = System.Drawing.Color.Red;
-      this.label1.Location = new System.Drawing.Point(8, 11);
-      this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(94, 19);
-      this.label1.TabIndex = 0;
-      this.label1.Text = "Код ошибки:";
-      // 
-      // lbErrCode
-      // 
-      this.lbErrCode.AutoSize = true;
-      this.lbErrCode.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold,
-        System.Drawing.GraphicsUnit.Point, ((System.Byte) (204)));
-      this.lbErrCode.ForeColor = System.Drawing.Color.Red;
-      this.lbErrCode.Location = new System.Drawing.Point(101, 11);
-      this.lbErrCode.Name = "lbErrCode";
-      this.lbErrCode.Size = new System.Drawing.Size(72, 19);
-      this.lbErrCode.TabIndex = 1;
-      this.lbErrCode.Text = "ErrorCode";
-      // 
-      // mErrMsgRus
-      // 
-      this.mErrMsgRus.EditValue = "Сообщение об ошибке на русском языке:";
-      this.mErrMsgRus.Location = new System.Drawing.Point(8, 39);
-      this.mErrMsgRus.Name = "mErrMsgRus";
-      // 
-      // mErrMsgRus.Properties
-      // 
-      this.mErrMsgRus.Properties.Appearance.BackColor = System.Drawing.SystemColors.Control;
-      this.mErrMsgRus.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F,
-        System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte) (204)));
-      this.mErrMsgRus.Properties.Appearance.Options.UseBackColor = true;
-      this.mErrMsgRus.Properties.Appearance.Options.UseFont = true;
-      this.mErrMsgRus.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
-      this.mErrMsgRus.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
-      this.mErrMsgRus.Properties.ReadOnly = true;
-      this.mErrMsgRus.Properties.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-      this.mErrMsgRus.Size = new System.Drawing.Size(347, 101);
-      this.mErrMsgRus.TabIndex = 2;
-      this.mErrMsgRus.TabStop = false;
-      this.mErrMsgRus.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TfrmAppErrorDlg_KeyUp);
-      // 
-      // mErrTrace
-      // 
-      this.mErrTrace.EditValue = "Строка трассировки:";
-      this.mErrTrace.Location = new System.Drawing.Point(8, 146);
-      this.mErrTrace.Name = "mErrTrace";
-      // 
-      // mErrTrace.Properties
-      // 
-      this.mErrTrace.Properties.Appearance.BackColor = System.Drawing.SystemColors.Control;
-      this.mErrTrace.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular,
-        System.Drawing.GraphicsUnit.Point, ((System.Byte) (204)));
-      this.mErrTrace.Properties.Appearance.Options.UseBackColor = true;
-      this.mErrTrace.Properties.Appearance.Options.UseFont = true;
-      this.mErrTrace.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
-      this.mErrTrace.Properties.ReadOnly = true;
-      this.mErrTrace.Size = new System.Drawing.Size(347, 110);
-      this.mErrTrace.TabIndex = 3;
-      this.mErrTrace.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TfrmAppErrorDlg_KeyUp);
-      // 
-      // btnOk
-      // 
-      this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-      this.btnOk.Image = ((System.Drawing.Image) (resources.GetObject("btnOk.Image")));
-      this.btnOk.ImageIndex = 12;
-      this.btnOk.Location = new System.Drawing.Point(139, 267);
-      this.btnOk.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
-      this.btnOk.Name = "btnOk";
-      this.btnOk.Size = new System.Drawing.Size(85, 25);
-      this.btnOk.TabIndex = 4;
-      this.btnOk.Text = "Ок";
-      this.btnOk.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TfrmAppErrorDlg_KeyUp);
-      // 
-      // mErrMsgEng
-      // 
-      this.mErrMsgEng.EditValue = "Сообщение об ошибке на английском языке:";
-      this.mErrMsgEng.Location = new System.Drawing.Point(8, 304);
-      this.mErrMsgEng.Name = "mErrMsgEng";
-      // 
-      // mErrMsgEng.Properties
-      // 
-      this.mErrMsgEng.Properties.Appearance.BackColor = System.Drawing.SystemColors.Control;
-      this.mErrMsgEng.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F,
-        System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte) (204)));
-      this.mErrMsgEng.Properties.Appearance.Options.UseBackColor = true;
-      this.mErrMsgEng.Properties.Appearance.Options.UseFont = true;
-      this.mErrMsgEng.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
-      this.mErrMsgEng.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
-      this.mErrMsgEng.Properties.ReadOnly = true;
-      this.mErrMsgEng.Properties.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-      this.mErrMsgEng.Properties.WordWrap = false;
-      this.mErrMsgEng.Size = new System.Drawing.Size(346, 123);
-      this.mErrMsgEng.TabIndex = 5;
-      this.mErrMsgEng.TabStop = false;
-      this.mErrMsgEng.Visible = false;
-      this.mErrMsgEng.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TfrmAppErrorDlg_KeyUp);
-      // 
-      // TfrmAppErrorDlg
-      // 
-      this.AcceptButton = this.btnOk;
-      this.AutoScaleBaseSize = new System.Drawing.Size(5, 14);
-      this.CancelButton = this.btnOk;
-      this.ClientSize = new System.Drawing.Size(362, 436);
-      this.Controls.Add(this.mErrMsgEng);
-      this.Controls.Add(this.btnOk);
-      this.Controls.Add(this.mErrTrace);
-      this.Controls.Add(this.mErrMsgRus);
-      this.Controls.Add(this.lbErrCode);
-      this.Controls.Add(this.label1);
-      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-      this.MaximizeBox = false;
-      this.MinimizeBox = false;
-      this.Name = "TfrmAppErrorDlg";
-      this.ShowInTaskbar = false;
-      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-      this.Text = "Ошибка";
-      this.Load += new System.EventHandler(this.TfrmAppErrorDlg_Load);
-      this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TfrmAppErrorDlg_KeyUp);
-      ((System.ComponentModel.ISupportInitialize) (this.mErrMsgRus.Properties)).EndInit();
-      ((System.ComponentModel.ISupportInitialize) (this.mErrTrace.Properties)).EndInit();
-      ((System.ComponentModel.ISupportInitialize) (this.mErrMsgEng.Properties)).EndInit();
-      this.ResumeLayout(false);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TfrmAppErrorDlg));
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbErrCode = new System.Windows.Forms.Label();
+            this.mErrMsgRus = new DevExpress.XtraEditors.MemoEdit();
+            this.mErrTrace = new DevExpress.XtraEditors.MemoEdit();
+            this.btnOk = new DevExpress.XtraEditors.SimpleButton();
+            this.mErrMsgEng = new DevExpress.XtraEditors.MemoEdit();
+            ((System.ComponentModel.ISupportInitialize)(this.mErrMsgRus.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mErrTrace.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mErrMsgEng.Properties)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(10, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 21);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Код ошибки:";
+            // 
+            // lbErrCode
+            // 
+            this.lbErrCode.AutoSize = true;
+            this.lbErrCode.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbErrCode.ForeColor = System.Drawing.Color.Red;
+            this.lbErrCode.Location = new System.Drawing.Point(122, 15);
+            this.lbErrCode.Name = "lbErrCode";
+            this.lbErrCode.Size = new System.Drawing.Size(95, 21);
+            this.lbErrCode.TabIndex = 1;
+            this.lbErrCode.Text = "ErrorCode";
+            // 
+            // mErrMsgRus
+            // 
+            this.mErrMsgRus.EditValue = "Сообщение об ошибке на русском языке:";
+            this.mErrMsgRus.Location = new System.Drawing.Point(10, 51);
+            this.mErrMsgRus.Name = "mErrMsgRus";
+            this.mErrMsgRus.Properties.Appearance.BackColor = System.Drawing.SystemColors.Control;
+            this.mErrMsgRus.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.mErrMsgRus.Properties.Appearance.Options.UseBackColor = true;
+            this.mErrMsgRus.Properties.Appearance.Options.UseFont = true;
+            this.mErrMsgRus.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.mErrMsgRus.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
+            this.mErrMsgRus.Properties.ReadOnly = true;
+            this.mErrMsgRus.Properties.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.mErrMsgRus.Size = new System.Drawing.Size(416, 129);
+            this.mErrMsgRus.TabIndex = 2;
+            this.mErrMsgRus.TabStop = false;
+            this.mErrMsgRus.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TfrmAppErrorDlg_KeyUp);
+            // 
+            // mErrTrace
+            // 
+            this.mErrTrace.EditValue = "Строка трассировки:";
+            this.mErrTrace.Location = new System.Drawing.Point(10, 188);
+            this.mErrTrace.Name = "mErrTrace";
+            this.mErrTrace.Properties.Appearance.BackColor = System.Drawing.SystemColors.Control;
+            this.mErrTrace.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.mErrTrace.Properties.Appearance.Options.UseBackColor = true;
+            this.mErrTrace.Properties.Appearance.Options.UseFont = true;
+            this.mErrTrace.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.mErrTrace.Properties.ReadOnly = true;
+            this.mErrTrace.Size = new System.Drawing.Size(416, 142);
+            this.mErrTrace.TabIndex = 3;
+            this.mErrTrace.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TfrmAppErrorDlg_KeyUp);
+            // 
+            // btnOk
+            // 
+            this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnOk.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOk.ImageOptions.Image")));
+            this.btnOk.ImageOptions.ImageIndex = 12;
+            this.btnOk.Location = new System.Drawing.Point(166, 343);
+            this.btnOk.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(102, 33);
+            this.btnOk.TabIndex = 4;
+            this.btnOk.Text = "Ок";
+            this.btnOk.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TfrmAppErrorDlg_KeyUp);
+            // 
+            // mErrMsgEng
+            // 
+            this.mErrMsgEng.EditValue = "Сообщение об ошибке на английском языке:";
+            this.mErrMsgEng.Location = new System.Drawing.Point(10, 390);
+            this.mErrMsgEng.Name = "mErrMsgEng";
+            this.mErrMsgEng.Properties.Appearance.BackColor = System.Drawing.SystemColors.Control;
+            this.mErrMsgEng.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.mErrMsgEng.Properties.Appearance.Options.UseBackColor = true;
+            this.mErrMsgEng.Properties.Appearance.Options.UseFont = true;
+            this.mErrMsgEng.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.mErrMsgEng.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
+            this.mErrMsgEng.Properties.ReadOnly = true;
+            this.mErrMsgEng.Properties.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.mErrMsgEng.Properties.WordWrap = false;
+            this.mErrMsgEng.Size = new System.Drawing.Size(414, 159);
+            this.mErrMsgEng.TabIndex = 5;
+            this.mErrMsgEng.TabStop = false;
+            this.mErrMsgEng.Visible = false;
+            this.mErrMsgEng.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TfrmAppErrorDlg_KeyUp);
+            // 
+            // TfrmAppErrorDlg
+            // 
+            this.AcceptButton = this.btnOk;
+            this.AutoScaleBaseSize = new System.Drawing.Size(6, 18);
+            this.CancelButton = this.btnOk;
+            this.ClientSize = new System.Drawing.Size(430, 556);
+            this.Controls.Add(this.mErrMsgEng);
+            this.Controls.Add(this.btnOk);
+            this.Controls.Add(this.mErrTrace);
+            this.Controls.Add(this.mErrMsgRus);
+            this.Controls.Add(this.lbErrCode);
+            this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "TfrmAppErrorDlg";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Ошибка";
+            this.Load += new System.EventHandler(this.TfrmAppErrorDlg_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TfrmAppErrorDlg_KeyUp);
+            ((System.ComponentModel.ISupportInitialize)(this.mErrMsgRus.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mErrTrace.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mErrMsgEng.Properties)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
     }
 
     #endregion

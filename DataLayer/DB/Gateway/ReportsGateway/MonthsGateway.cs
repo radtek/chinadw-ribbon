@@ -7,7 +7,7 @@ using ARM_User.BusinessLayer;
 using ARM_User.DataLayer.DataSet;
 using BSB.Common.DataGateway.Oracle;
 using System.Data;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
 using BSB.Common.DataGateway;
 

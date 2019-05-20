@@ -86,7 +86,9 @@ namespace ARM_User.DisplayLayer.Base
         DialogResult = DialogResult.OK;
         Close();
       }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
       catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
       {
         /*MainBS.CancelEdit();
         UnitOfWork.Instance.Rollback();
@@ -122,7 +124,9 @@ namespace ARM_User.DisplayLayer.Base
                     State = EditorState.View;
                 }
             }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
             {
                /* MainBS.CancelEdit();
                 UnitOfWork.Instance.Rollback();

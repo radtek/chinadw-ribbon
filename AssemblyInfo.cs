@@ -42,7 +42,7 @@ using System.Reflection;
 
 
 
-[assembly: AssemblyVersion("6.5.19.23")]
+[assembly: AssemblyVersion("6.5.19.25")]
 
 //
 // In order to sign your assembly you must specify a key to use. Refer to the 
@@ -80,7 +80,7 @@ using System.Reflection;
 
 
 
-[assembly: AssemblyFileVersion("6.5.19.23")]
+[assembly: AssemblyFileVersion("6.5.19.25")]
 
 
 

@@ -4,7 +4,6 @@ using DevExpress.XtraEditors;
 using gudusoft.gsqlparser;
 using Oracle.ManagedDataAccess.Client;
 using Oracle.ManagedDataAccess.Types;
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -106,7 +105,7 @@ namespace ARM_User.New.Guide
                     cmd.Parameters.Add("p_dat", OracleDbType.Date, p_date_, ParameterDirection.Input);
                     cmd.Parameters.Add("p_type", OracleDbType.Int32, p_type_, ParameterDirection.Input);
                     cmd.Parameters.Add("result", OracleDbType.Varchar2, ParameterDirection.ReturnValue);
-                    cmd.Parameters["result"].Size = 1024;
+                    cmd.Parameters["result"].Size = 4000;
                     cmd.ExecuteNonQuery();
                     String result = ((OracleString)cmd.Parameters["result"].Value).ToString();
                     
@@ -298,15 +297,22 @@ namespace ARM_User.New.Guide
         }
         private void SQLHightlight()
         {
-            HighlightText(rtbSQL, rtbSQL.Text, Color.Black);
+            /*HighlightText(rtbSQL, rtbSQL.Text, Color.Black);
 
             HighlightText(rtbSQL, "SELECT", Color.Blue);
             HighlightText(rtbSQL, "FROM", Color.Blue);
             HighlightText(rtbSQL, "WHERE", Color.Blue);
             HighlightText(rtbSQL, " AND ", Color.Purple);
-            HighlightText(rtbSQL, " OR ", Color.Purple);
+            HighlightText(rtbSQL, " OR ", Color.Purple);*/
 
-            
+            this.CheckKeyword("SELECT", Color.Blue, 0);
+            this.CheckKeyword("FROM", Color.Blue, 0);
+            this.CheckKeyword("WHERE", Color.Blue,0);
+            this.CheckKeyword("AND", Color.Purple, 0);
+            this.CheckKeyword("OR", Color.Purple, 0);
+            this.CheckKeyword("UNION ALL", Color.Purple,0 );
+
+
         }
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -412,8 +418,44 @@ namespace ARM_User.New.Guide
 
         private void rtbSQL_TextChanged(object sender, EventArgs e)
         {
-            SQLHightlight();
+            int pos = rtbSQL.SelectionStart;
+            if (bbKeyLight.Down)
+            {
+                string tokens = @"(select|\swhere|\sfrom|\sunion|\sall|\s if|\s or|\sand|\scase|\s while|\s join|\sleft join|\sright join|\s like)";
+
+                Regex rex = new Regex(tokens, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+                MatchCollection mc = rex.Matches(rtbSQL.Text);
+
+                int StartCursorPosition = rtbSQL.SelectionStart;
+                foreach (Match m in mc)
+                {
+                    int startIndex = m.Index;
+                    int StopIndex = m.Length;
+                    rtbSQL.Select(startIndex, StopIndex);
+                    rtbSQL.SelectionColor = Color.Blue;
+                    rtbSQL.SelectionStart = StartCursorPosition;
+                    rtbSQL.SelectionColor = Color.Black;
+                }
+                rtbSQL.Select(StartCursorPosition, 0);
+            }
             
+           
+            //SQLHightlight();
+        }
+        private void CheckKeyword(string word, Color color, int startIndex)
+        {
+            if (this.rtbSQL.Text.Contains(word))
+            {
+                var matchString = Regex.Match(rtbSQL.Text, @"\b" + word + @"\b", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+                foreach (Match match in Regex.Matches(rtbSQL.Text, matchString.ToString()))
+                {
+                    rtbSQL.Select(match.Index, word.Length);
+                    rtbSQL.SelectionColor = Color.Blue;
+                    rtbSQL.Select(rtbSQL.TextLength, 0);
+                    rtbSQL.SelectionColor = rtbSQL.ForeColor;
+                }
+            }
         }
         private void getAutoCompleteList(ref DataSet ds)
         {
@@ -477,51 +519,59 @@ namespace ARM_User.New.Guide
 
             if (ret == 0)
             {
-                WhereCondition wc = new WhereCondition(sqlparser.SqlStatements[0].WhereClause);
-                wc.AnalyzprintColumn();
-                bool correct = true;
-                foreach (WhereExpressionClass item in wc.whereConditionList)
-                {
-                    //MessageBox.Show(String.Format("{0}={1}",item.column, item.value));
-                    List<String> lstValue = ToListString(item.value);
-                    foreach (String xitem in lstValue)
-
+                for (int i = 0; i< sqlparser.SqlStatements.Count(); i++){                    
+                    String sdd = sqlparser.SqlStatements[i].WhereClauseText;
+                    //XtraMessageBox.Show(sdd);
+                    if (!string.IsNullOrEmpty(sdd))
                     {
-                        if (checkValueSQL(item.column, xitem, p_date) != 0)
+                        WhereCondition wc = new WhereCondition(sqlparser.SqlStatements[i].WhereClause);
+                        wc.AnalyzprintColumn();
+                        bool correct = true;
+                        foreach (WhereExpressionClass item in wc.whereConditionList)
                         {
-                            correct = false;
-                            String s = String.Format(" Не допустимое значение : {0}", xitem);
-                            //MessageBox.Show(s);
-                            rtbSQL.Focus();
-                            
-                            int xposColumn = rtbSQL.Text.IndexOf(item.column);                            
-                            int xpos = rtbSQL.Text.IndexOf(xitem, xposColumn);    
+                            //MessageBox.Show(String.Format("{0}={1}",item.column, item.value));
+                            List<String> lstValue = ToListString(item.value);
+                            foreach (String xitem in lstValue)
 
-                            if (xpos>0) rtbSQL.SelectionStart = xpos;
+                            {
+                                if (checkValueSQL(item.column, xitem, p_date) != 0)
+                                {
+                                    correct = false;
+                                    String s = String.Format(" Не допустимое значение : {0}", xitem);
+                                    //MessageBox.Show(s);
+                                    rtbSQL.Focus();
 
-                            Point x = rtbSQL.GetPositionFromCharIndex(xpos);
-                                toolTip1.ToolTipTitle = "Warning";
-                                toolTip1.ToolTipIcon = ToolTipIcon.Info;                                
-                                toolTip1.Show(s, rtbSQL, x.X,x.Y+10, 2200);
-                            break;
-                        }                       
+                                    int xposColumn = rtbSQL.Text.IndexOf(item.column);
+                                    int xpos = rtbSQL.Text.IndexOf(xitem, xposColumn);
+
+                                    if (xpos > 0) rtbSQL.SelectionStart = xpos;
+
+                                    Point x = rtbSQL.GetPositionFromCharIndex(xpos);
+                                    toolTip1.ToolTipTitle = "Warning";
+                                    toolTip1.ToolTipIcon = ToolTipIcon.Info;
+                                    toolTip1.Show(s, rtbSQL, x.X, x.Y + 10, 2200);
+                                    break;
+                                }
+                            }
+
+
+                        }
+                        if (correct)
+                        {
+                            toolTip1.ToolTipTitle = String.Empty;
+                            toolTip1.ToolTipIcon = ToolTipIcon.None;
+                            toolTip1.Show("Проверено.", rtbSQL, bar2.FloatLocation.X,
+                                                                (bar2.FloatLocation.Y + 10) * (i + 1), 2200);
+                        }
                     }
                     
-                    
-                }
-                if (correct)
-                {
-                    toolTip1.ToolTipTitle = String.Empty;
-                    toolTip1.ToolTipIcon = ToolTipIcon.None;
-                    toolTip1.Show("Проверено.", rtbSQL, bar2.FloatLocation.X,
-                                                        bar2.FloatLocation.Y + 10, 2200);
                 }
             } else
-            {
-                MessageBox.Show("SQL содержать синтаксическую ошибку.");
-                String s;                
+            {                
+                toolTip1.Show(sqlparser.ErrorMessages, rtbSQL, 2000);
+                //MessageBox.Show(String.Format("SQL содержать синтаксическую ошибку.\n {0}",sqlparser.ErrorMessages));                            
             }
-            
+
             //MessageBox.Show(getValueColumn("PL_ACC00$CODE_PA4", stringConditionList));
             //MessageBox.Show(getValueColumn("SUM_TYPE", stringConditionList));
         }
@@ -726,9 +776,19 @@ namespace ARM_User.New.Guide
         private void rtbSQL_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Clicks == 1 && e.Button == MouseButtons.Left) {
-                bstext.Caption = rtbSQL.GetCharIndexFromPosition(new Point(e.X, e.Y)).ToString().PadLeft(20);
-                bstText.Caption = WordUnderMouse(rtbSQL, e.X, e.Y); ;
+                string i = rtbSQL.GetCharIndexFromPosition(new Point(e.X, e.Y)).ToString().PadLeft(20);
+                bstext.Caption = i;
+                bstText.Caption = WordUnderMouse(rtbSQL, e.X, e.Y);
+
+                //Point line = rtbSQL.GetPositionFromCharIndex(Convert.ToInt32(i));
+                
+                //bsiPosition.Caption = String.Format("[{0}:{1}]", line.X.ToString(), line.Y.ToString());
             }
+        }
+
+        private void rtbSQL_CursorChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 

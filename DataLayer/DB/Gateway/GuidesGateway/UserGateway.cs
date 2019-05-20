@@ -53,7 +53,9 @@ namespace ARM_User.DataLayer.DB.Gateway
                         cmd.Parameters.Add("Err_Code", OracleDbType.Decimal, ParameterDirection.Output);
                         cmd.Parameters.Add("Err_Msg", OracleDbType.Varchar2, ParameterDirection.Output);
 
+#pragma warning disable CS0472 // The result of the expression is always 'false' since a value of type 'decimal' is never equal to 'null' of type 'decimal?'
                         cmd.Parameters["id_popup_"].Value = (id_popup == null) ? (decimal?)null : id_popup;
+#pragma warning restore CS0472 // The result of the expression is always 'false' since a value of type 'decimal' is never equal to 'null' of type 'decimal?'
                         cmd.Parameters["Err_Msg"].Size = 4000;
                         Adapter.SelectCommand = cmd;
                         Adapter.Fill(dataTable);

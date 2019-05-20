@@ -700,7 +700,9 @@
         private System.Data.DataColumn dataColumn13;
         private System.Data.DataColumn dataColumn14;
         private System.Data.DataColumn dataColumn15;
+#pragma warning disable CS0169 // The field 'ExportRepListForm.splashScreenManager1' is never used
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
+#pragma warning restore CS0169 // The field 'ExportRepListForm.splashScreenManager1' is never used
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager2;
         private DevExpress.XtraBars.BarEditItem beData;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;

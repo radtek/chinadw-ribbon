@@ -62,7 +62,9 @@ namespace ARM_User.ServiceLayer.Reporting
                     throw new OraCustomException(errCode, errMsg);
             }
              return ((OracleString)cmd.Parameters["fm_"].Value).Value;
+#pragma warning disable CS0162 // Unreachable code detected
              return ((OracleString)cmd.Parameters["nm_"].Value).Value;
+#pragma warning restore CS0162 // Unreachable code detected
        
         }  
     }

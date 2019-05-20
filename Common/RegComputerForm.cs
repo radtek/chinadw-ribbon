@@ -22,7 +22,7 @@ namespace BSB.Common
     private SimpleButton btnOk;
     private GroupBox groupBox1;
     private Label label1;
-    public OracleConnection ocRegComp;
+    public OracleConnection ocRegComp = new OracleConnection();
     public Int32 pComputerID;
     public string pComputerName = String.Empty;
     private TextEdit teDescription;
@@ -297,7 +297,7 @@ namespace BSB.Common
 
     private void InitRegComp()
     {
-      // Выполняем подключение к БД
+       // Выполняем подключение к БД            
       if (!DBSupport.ConnectToOracle(ocRegComp))
       {
         DialogResult = DialogResult.Cancel;

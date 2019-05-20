@@ -23,7 +23,11 @@ namespace ARM_User.ServiceLayer.Reporting
         #region Fields
         protected Microsoft.Office.Interop.Excel.Range range2;        
         protected Decimal languageId;
+#pragma warning disable CS0169 // The field 'RepWordCardNINGCB.wordparagraph' is never used
+#pragma warning disable CS0108 // 'RepWordCardNINGCB.wordparagraph' hides inherited member 'WordReport.wordparagraph'. Use the new keyword if hiding was intended.
         private Microsoft.Office.Interop.Word.Paragraph wordparagraph;
+#pragma warning restore CS0108 // 'RepWordCardNINGCB.wordparagraph' hides inherited member 'WordReport.wordparagraph'. Use the new keyword if hiding was intended.
+#pragma warning restore CS0169 // The field 'RepWordCardNINGCB.wordparagraph' is never used
         public Document wordDoc;
         #endregion
         protected string Num, Date_Proposal, Name_Jur_Person, Name_Knd_GCB, NIN, Date_NIN, Num_Serial, Name_Currency, Term_Circulation, Name_UD, Date_Placement, Comments, User_Name,

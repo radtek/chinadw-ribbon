@@ -63,6 +63,26 @@ namespace ARM_User.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap adateoccurring_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("adateoccurring_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap adateoccurring_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("adateoccurring_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add2 {
             get {
                 object obj = ResourceManager.GetObject("add2", resourceCulture);
@@ -86,6 +106,16 @@ namespace ARM_User.Properties {
         internal static System.Drawing.Bitmap addnewdatasource_32x32 {
             get {
                 object obj = ResourceManager.GetObject("addnewdatasource_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap alignhorizontalcenter2_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("alignhorizontalcenter2_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,6 +233,26 @@ namespace ARM_User.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap converttorange_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("converttorange_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap converttorange_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("converttorange_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap copy {
             get {
                 object obj = ResourceManager.GetObject("copy", resourceCulture);
@@ -266,6 +316,16 @@ namespace ARM_User.Properties {
         internal static System.Drawing.Bitmap document_gear {
             get {
                 object obj = ResourceManager.GetObject("document_gear", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap documentmap_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("documentmap_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -443,6 +503,16 @@ namespace ARM_User.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap open_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("open_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Print_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Print_16x16", resourceCulture);
@@ -486,6 +556,26 @@ namespace ARM_User.Properties {
         internal static System.Drawing.Bitmap refresh {
             get {
                 object obj = ResourceManager.GetObject("refresh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap reset2_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("reset2_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap savetheme_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("savetheme_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

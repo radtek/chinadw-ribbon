@@ -19,7 +19,9 @@ namespace ARM_User.New.Guide
         public Int32 err_code;
         public Int32 zo;
 
+#pragma warning disable CS0169 // The field 'ExportRepSentStat.db' is never used
         private DB_ExportRep db;
+#pragma warning restore CS0169 // The field 'ExportRepSentStat.db' is never used
 
         public ExportRepSentStat()
         {

@@ -39,26 +39,31 @@ namespace BSB.Common.DB
       var PasswTry = 0;
       bool UserCancel;
            
-            using (var LogonDlgForm = new XtraLogonDlgForm()) //new TfrmLogonDialog()
+            using (var LogonDlgForm = new XtraLogonDlgForm())
             {
                 try
                 {
                     do
                     {
                         // Спрашиваем у пользователя логин и пароль
-                        // UserCancel = LogonDlgForm.ShowDialog() == DialogResult.Cancel;
-
                          CustomFlyoutDialog.ShowForm(main, null, LogonDlgForm);
                         UserCancel = !LogonDlgForm.isOK;
                         if (!UserCancel)
                         {
                             // Устанавливаем параметры подключения
-
-                            /* oc.ConnectionString = String.Format(dmControler.frmMain.DBConnectString,
-                               LogonDlgForm.LogonUsername,
-                               LogonDlgForm.LogonPassword,
-                               LogonDlgForm.LogonDatabase);*/
-                            oc.ConnectionString = LogonDlgForm.connString;
+                            dmControler.frmMain.DBDatabase = LogonDlgForm.LogonDatabase;
+                            dmControler.frmMain.DBHost = LogonDlgForm.LogonHost;
+                            dmControler.frmMain.DBLogin = LogonDlgForm.LogonUsername;
+                            dmControler.frmMain.DBPassword = LogonDlgForm.LogonPassword;
+                            
+                           
+                            oc.ConnectionString = String.Format(dmControler.frmMain.DBConnectString,
+                                dmControler.frmMain.DBHost,
+                                dmControler.frmMain.DBPort,
+                                dmControler.frmMain.DBDatabase,
+                                dmControler.frmMain.DBLogin,
+                                dmControler.frmMain.DBPassword); ;                            
+                            
                             var oldCursor = Cursor.Current;
                             Cursor.Current = Cursors.WaitCursor;
                             try
@@ -66,9 +71,7 @@ namespace BSB.Common.DB
                                 PassBlock = 0;
                                 oc.Open();
 
-                                dmControler.frmMain.DBDatabase = LogonDlgForm.LogonDatabase;
-                                dmControler.frmMain.DBLogin = LogonDlgForm.LogonUsername;
-                                dmControler.frmMain.DBPassword = LogonDlgForm.LogonPassword;
+                                
                             }
                             catch (OracleException oe)
                             {

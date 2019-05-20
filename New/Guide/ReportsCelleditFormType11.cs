@@ -109,7 +109,9 @@ namespace ARM_User.New.Guide
                 row = (ManagerTable.Current as DataRowView).Row;
                 result = Convert.ToInt32(row[sField]);
             }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
             {
                 result = 0;
             }
@@ -128,7 +130,9 @@ namespace ARM_User.New.Guide
                 row = (ManagerTable.Current as DataRowView).Row;
                 result = row[sField].ToString();
             }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
             {
                 result = "";
             }

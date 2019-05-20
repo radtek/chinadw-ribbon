@@ -227,7 +227,9 @@ namespace ARM_User.New.Guide
                 row = (ManagerTable.Current as DataRowView).Row;
                 result = Convert.ToInt32(row[sField]);
             }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
             {
                 result = -1;
             }
@@ -246,7 +248,9 @@ namespace ARM_User.New.Guide
                 row = (ManagerTable.Current as DataRowView).Row;
                 result = Convert.ToString(row[sField]);
             }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
             {
                 result = "";
             }
@@ -265,7 +269,9 @@ namespace ARM_User.New.Guide
                 row = (ManagerTable.Current as DataRowView).Row;
                 result = Convert.ToDateTime(row[sField]).ToShortDateString();
             }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
             {
                 result = "";
             }
@@ -284,7 +290,9 @@ namespace ARM_User.New.Guide
                 row = (ManagerTable.Current as DataRowView).Row;
                 result = Convert.ToDateTime(row[sField]);
             }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
             {
                 //result = -1;
             }
@@ -735,7 +743,7 @@ namespace ARM_User.New.Guide
             //bCount.Caption = xCount.ToString();
             if (xCount > 0)
             {
-                using (SaveFileDialog saveFileDialog1 = new SaveFileDialog())
+                using (XtraSaveFileDialog saveFileDialog1 = new XtraSaveFileDialog())
                 {
 
                     saveFileDialog1.Filter = "XML FILE|*.xml";

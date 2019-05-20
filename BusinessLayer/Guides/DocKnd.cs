@@ -9,7 +9,11 @@ namespace ARM_User.BusinessLayer.Guides
     {
         #region Fileds
 
+#pragma warning disable CS0108 // 'DocKnd.nameRu' hides inherited member 'LocalizedSimpleDO.nameRu'. Use the new keyword if hiding was intended.
+#pragma warning disable CS0108 // 'DocKnd.nameKz' hides inherited member 'LocalizedSimpleDO.nameKz'. Use the new keyword if hiding was intended.
         private string nameRu, nameKz;
+#pragma warning restore CS0108 // 'DocKnd.nameKz' hides inherited member 'LocalizedSimpleDO.nameKz'. Use the new keyword if hiding was intended.
+#pragma warning restore CS0108 // 'DocKnd.nameRu' hides inherited member 'LocalizedSimpleDO.nameRu'. Use the new keyword if hiding was intended.
         private bool isDelete;
 
         #endregion Fileds
@@ -37,7 +41,9 @@ namespace ARM_User.BusinessLayer.Guides
 
         #region propertis
 
+#pragma warning disable CS0108 // 'DocKnd.NameRu' hides inherited member 'LocalizedSimpleDO.NameRu'. Use the new keyword if hiding was intended.
         public string NameRu
+#pragma warning restore CS0108 // 'DocKnd.NameRu' hides inherited member 'LocalizedSimpleDO.NameRu'. Use the new keyword if hiding was intended.
         {
             get { return nameRu; }
             set
@@ -48,7 +54,9 @@ namespace ARM_User.BusinessLayer.Guides
             }
         }
 
+#pragma warning disable CS0108 // 'DocKnd.NameKz' hides inherited member 'LocalizedSimpleDO.NameKz'. Use the new keyword if hiding was intended.
         public string NameKz
+#pragma warning restore CS0108 // 'DocKnd.NameKz' hides inherited member 'LocalizedSimpleDO.NameKz'. Use the new keyword if hiding was intended.
         {
             get { return nameKz; }
             set

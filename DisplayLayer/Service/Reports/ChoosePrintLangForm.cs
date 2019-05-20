@@ -60,7 +60,9 @@ namespace ARM_User
 
     private void BtnOK_Click(object sender, EventArgs e)
     {
+#pragma warning disable CS0219 // The variable 'ErrCode' is assigned but its value is never used
       var ErrCode = 0;
+#pragma warning restore CS0219 // The variable 'ErrCode' is assigned but its value is never used
       var ErrMsg = String.Empty;
 
     /*  try

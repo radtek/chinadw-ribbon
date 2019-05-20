@@ -55,7 +55,7 @@ namespace ARM_User.New.Guide
             saveCellIndex = bandedGridView1.FocusedColumn;
 
             Cursor = Cursors.WaitCursor;
-            splashScreenManager.ShowWaitForm();
+            
             String s = barEditItemDate.EditValue.ToString();
             DateTime FilterDateTime = Convert.ToDateTime(s);
             DateTime report_date_ = Convert.ToDateTime(FilterDateTime.Date);
@@ -64,13 +64,15 @@ namespace ARM_User.New.Guide
 
             try
             {
+                //splashScreenManager.ShowWaitForm();
+                //bandedGridView1.ShowLoadingPanel();
                 db.getReportsListF21(ref dsMain, sql_arm_, rep_custom_type_, report_date_);
                 bCount.Caption = dsMain.Tables["tbForm21"].Rows.Count.ToString();
-
+                //bandedGridView1.HideLoadingPanel();
             }
             catch (Exception oe)
             {
-                splashScreenManager.CloseWaitForm();
+                //bandedGridView1.HideLoadingPanel();
                 DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(Ошибка при чтений формы ) ");
                 
                 return;
@@ -169,14 +171,14 @@ namespace ARM_User.New.Guide
                 }
                 catch(Exception oe)
                 {
-                    splashScreenManager.CloseWaitForm();
+                    //splashScreenManager.CloseWaitForm();
                     DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(Ошибка при чтений формы ) refreshFormList ");                    
                     return;
                 }
                 
             }
             Cursor = Cursors.Default;
-            splashScreenManager.CloseWaitForm();
+            //splashScreenManager.CloseWaitForm();
             bandedGridView1.FocusedRowHandle = saveRowIndex;
             bandedGridView1.FocusedColumn = saveCellIndex;
             bandedGridView1.RefreshRowCell(saveRowIndex, saveCellIndex);
@@ -206,6 +208,7 @@ namespace ARM_User.New.Guide
 
 
             String s = xObject.ToString();
+            String g = s;
             if (s != String.Empty)
             {
 
@@ -224,7 +227,8 @@ namespace ARM_User.New.Guide
 
                             var frm = new ReportsCelleditFormType11();
                             //frm.Text = "Редактирование ячейки";
-                            frm.Text = s;
+                            
+                            frm.Text = g.Substring(0, g.Length < 255 ? s.Length : 255);
                             frm.p_str_id = str_id;
                             frm.p_col_id = col_id;
                             frm.p_date = rep_date;
@@ -238,22 +242,22 @@ namespace ARM_User.New.Guide
                     default:
                         {
                             var frm = new ReportsCelleditForm();
-                            frm.Text = s;
-                            frm.HTMLText = s;
-                            frm.p_str_id = str_id;
-                            frm.p_col_id = col_id;
-                            frm.p_date = rep_date;
-                            frm.p_cell_type = cell_type; 
-                            if (frm.ShowDialog() == DialogResult.OK) {                                
-                                bandedGridView1.SetRowCellValue(saveRowIndex, saveCellIndex, frm.StrResult);                               
-                            } else
-                            {
-                                //((Control)sender).Text = s;
-                                bandedGridView1.SetRowCellValue(saveRowIndex, saveCellIndex, s);
-                            }
-                            if (cell_type > 10) cell_type -= 10;
-                            
-                            break;                            
+                             frm.Text = g.Substring(0, g.Length< 255? g.Length : 255);
+                             frm.HTMLText = s;
+                             frm.p_str_id = str_id;
+                             frm.p_col_id = col_id;
+                             frm.p_date = rep_date;
+                             frm.p_cell_type = cell_type; 
+                             if (frm.ShowDialog() == DialogResult.OK) {                                
+                                 bandedGridView1.SetRowCellValue(saveRowIndex, saveCellIndex, frm.StrResult);                               
+                             } else
+                             {
+                                 //((Control)sender).Text = s;
+                                 bandedGridView1.SetRowCellValue(saveRowIndex, saveCellIndex, s);
+                             }
+                             if (cell_type > 10) cell_type -= 10;
+                           
+                            break;  
                         }
 
 
@@ -295,7 +299,9 @@ namespace ARM_User.New.Guide
                 row = (ManagerTable.Current as DataRowView).Row;
                 result = Convert.ToInt32(row[sField]);
             }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
             {
                 result = -1;
             }
@@ -314,7 +320,9 @@ namespace ARM_User.New.Guide
                 row = (ManagerTable.Current as DataRowView).Row;
                 result = Convert.ToString(row[sField]);
             }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
             {
                 result = "";
             }
@@ -333,7 +341,9 @@ namespace ARM_User.New.Guide
                 row = (ManagerTable.Current as DataRowView).Row;
                 result = Convert.ToDateTime(row[sField]);
             }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
             {
                 //result = -1;
             }

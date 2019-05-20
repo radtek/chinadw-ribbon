@@ -48,10 +48,10 @@ namespace ARM_User.Common
                 dbhosts = Read(file);
             else
             {
-                IDictionary<String, String> db = new Dictionary<String, String>();
-                db.Add(new KeyValuePair<String, String>("DWH", "21.233.128.158"));
-                db.Add(new KeyValuePair<String, String>("ORCLXE", "localhost"));
-                Write(db, file);
+                //IDictionary<String, String> db = new Dictionary<String, String>();
+                dbhosts.Add(new KeyValuePair<String, String>("DWH", "21.233.128.158"));
+                dbhosts.Add(new KeyValuePair<String, String>("ORCLXE", "localhost"));
+                Write(dbhosts, file);                
             }
             loadDBList();
             teSid.SelectedIndex = 0;
@@ -174,7 +174,8 @@ namespace ARM_User.Common
 
         private void teSid_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
         {
-            VisibilyButton(e.NewValue.ToString());
+            String s = teSid.SelectedText;
+            VisibilyButton(s);
         }
         private void VisibilyButton(String sdbkey)
         {

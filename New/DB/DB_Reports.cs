@@ -97,14 +97,16 @@ namespace ARM_User.New.DB
                         }
                         catch (Exception oe)
                         {
+
+                            DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_Reports) " + "PREPARED.getReportsListF21");
                             return;
-                            //DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_Reports) " + "PREPARED.getReportsListF21");
+
                         }
                     }
                 }
                 catch (Exception oe)
                 {
-                    //DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_Reports) " + sql_arm_);
+                    DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "(occured in DB_Reports) " + sql_arm_);                    
                     return;
                 }
             }

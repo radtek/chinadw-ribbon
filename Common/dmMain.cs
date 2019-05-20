@@ -12,26 +12,34 @@ namespace BSB.Common
   {
     private IContainer components;
         // Данные о соединении с БД
-        static string host = "localhost";
+        
+
+        //public string DBConnectString = "User Id={0};Password={1};Data Source={2};Pooling=false;";
+
+        public String DBConnectString = "Data Source=(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = {0} )(PORT = {1}))" +
+                    "(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = {2}))); User ID={3}; Password={4}; Pooling=false; ";
+
+        public string DBDatabase;
+        public string DBLogin;
+        public string DBPassword;
+        public string DBHost;
+        public int DBPort = 1521;
+        public string connString;
+        public ImageList imMain;
+        public OracleConnection oracleConnection;
+
+        /*static string host = "localhost";
         static int port = 1521;
-        static String sid = "ORCLXE";
-        static String user = "Beles";
+        //static String sid = DBDatabase;
+        static String user = DBLogin;
         static String password = "China_1920";
 
         string connString = "Data Source=(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = "
                         + host + ")(PORT = " + port + "))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = "
-                        + sid + ")));Password=" + password + ";User ID=" + user;
+                        + DBDatabase + ")));Password=" + password + ";User ID=" + user;*/
 
 
-        public string DBConnectString = "User Id={0};Password={1};Data Source={2};Pooling=false;";
-        
-        public string DBDatabase;
-    public string DBLogin;
-    public string DBPassword;
-    public ImageList imMain;
-    public OracleConnection oracleConnection;
-
-    public _dmMain()
+        public _dmMain()
     {
       //
       // Required for Windows Form Designer support
@@ -69,17 +77,7 @@ namespace BSB.Common
       this.components = new System.ComponentModel.Container();
       var resources = new System.ComponentModel.ComponentResourceManager(typeof (_dmMain));
       this.imMain = new System.Windows.Forms.ImageList(this.components);
-      try
-            {
-                this.oracleConnection = new OracleConnection();
-                this.oracleConnection.ConnectionString = connString;
-
-            }
-            catch(Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
-        
+      
       this.SuspendLayout();
       // 
       // imMain
@@ -139,7 +137,15 @@ namespace BSB.Common
       try
       {
         frmMain.Visible = false;
-        OwnerForm.AddOwnedForm(frmMain);
+        frmMain.oracleConnection = new OracleConnection();
+        frmMain.oracleConnection.ConnectionString = String.Format(
+            frmMain.DBConnectString,
+            frmMain.DBHost,
+            frmMain.DBPort,
+            frmMain.DBDatabase,
+            frmMain.DBLogin,
+            frmMain.DBPassword); 
+         OwnerForm.AddOwnedForm(frmMain);
       }
       catch (Exception e)
       {

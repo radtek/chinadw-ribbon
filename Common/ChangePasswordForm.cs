@@ -25,7 +25,7 @@ namespace BSB.Common.DB
     private Label label2;
     private Label label3;
     private Label label4;
-    private OracleConnection ocChangePassword;
+    private OracleConnection ocChangePassword = new OracleConnection(); 
     private OracleCommand ocmdChangePassword;
     private Panel panel1;
     private PictureBox pictureBox1;    
@@ -116,7 +116,7 @@ namespace BSB.Common.DB
             this.groupBox2.Location = new System.Drawing.Point(19, 89);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox2.Size = new System.Drawing.Size(358, 10);
+            this.groupBox2.Size = new System.Drawing.Size(358, 9);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             // 
@@ -125,11 +125,10 @@ namespace BSB.Common.DB
             this.edNewPassword2.EditValue = "";
             this.edNewPassword2.Location = new System.Drawing.Point(66, 199);
             this.edNewPassword2.Name = "edNewPassword2";
-            this.edNewPassword2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.edNewPassword2.Properties.Appearance.Options.UseFont = true;
             this.edNewPassword2.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
             this.edNewPassword2.Properties.PasswordChar = '*';
-            this.edNewPassword2.Size = new System.Drawing.Size(264, 26);
+            this.edNewPassword2.Size = new System.Drawing.Size(264, 24);
             this.edNewPassword2.TabIndex = 13;
             // 
             // label2
@@ -146,11 +145,10 @@ namespace BSB.Common.DB
             this.edNewPassword1.EditValue = "";
             this.edNewPassword1.Location = new System.Drawing.Point(66, 133);
             this.edNewPassword1.Name = "edNewPassword1";
-            this.edNewPassword1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.edNewPassword1.Properties.Appearance.Options.UseFont = true;
             this.edNewPassword1.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
             this.edNewPassword1.Properties.PasswordChar = '*';
-            this.edNewPassword1.Size = new System.Drawing.Size(264, 26);
+            this.edNewPassword1.Size = new System.Drawing.Size(264, 24);
             this.edNewPassword1.TabIndex = 11;
             // 
             // label1
@@ -158,7 +156,7 @@ namespace BSB.Common.DB
             this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(67, 108);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 21);
+            this.label1.Size = new System.Drawing.Size(127, 20);
             this.label1.TabIndex = 12;
             this.label1.Text = "Новый пароль:";
             // 
@@ -167,11 +165,10 @@ namespace BSB.Common.DB
             this.edOldPassword.EditValue = "";
             this.edOldPassword.Location = new System.Drawing.Point(66, 44);
             this.edOldPassword.Name = "edOldPassword";
-            this.edOldPassword.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.edOldPassword.Properties.Appearance.Options.UseFont = true;
             this.edOldPassword.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
             this.edOldPassword.Properties.PasswordChar = '*';
-            this.edOldPassword.Size = new System.Drawing.Size(264, 26);
+            this.edOldPassword.Size = new System.Drawing.Size(264, 24);
             this.edOldPassword.TabIndex = 9;
             // 
             // label3
@@ -216,7 +213,7 @@ namespace BSB.Common.DB
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(421, 114);
+            this.panel1.Size = new System.Drawing.Size(416, 114);
             this.panel1.TabIndex = 7;
             // 
             // label4
@@ -243,7 +240,7 @@ namespace BSB.Common.DB
             this.AcceptButton = this.btnOk;
             this.AutoScaleBaseSize = new System.Drawing.Size(6, 18);
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(421, 435);
+            this.ClientSize = new System.Drawing.Size(416, 434);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
@@ -315,11 +312,16 @@ namespace BSB.Common.DB
       }
 
 
-      // Выполняем подключение к БД со старым паролем			
-      ocChangePassword.ConnectionString = String.Format(dmControler.frmMain.DBConnectString,
-        dmControler.frmMain.DBLogin,
-        dmControler.frmMain.DBPassword,
-        dmControler.frmMain.DBDatabase);
+            // Выполняем подключение к БД со старым паролем	
+       ocChangePassword.ConnectionString = String.Format(
+            dmControler.frmMain.DBConnectString,
+            dmControler.frmMain.DBHost,
+            dmControler.frmMain.DBPort,
+            dmControler.frmMain.DBDatabase,
+            dmControler.frmMain.DBLogin,
+            dmControler.frmMain.DBPassword); ;
+            
+                
       try
       {
         ocChangePassword.Open();
@@ -371,6 +373,7 @@ namespace BSB.Common.DB
       {
         try
         {
+          ocmdChangePassword = ocChangePassword.CreateCommand();
           ocmdChangePassword.Parameters.Clear();
           ocmdChangePassword.Parameters.Add("DATABASE_NAME_", OracleDbType.Varchar2, dmControler.frmMain.DBDatabase,
             ParameterDirection.Input);
@@ -383,6 +386,8 @@ namespace BSB.Common.DB
           ocmdChangePassword.Parameters.Add("err_code", OracleDbType.Int32, ParameterDirection.Output);
           ocmdChangePassword.Parameters.Add("err_msg", OracleDbType.Varchar2, ParameterDirection.Output);
           ocmdChangePassword.Parameters["err_msg"].Size = 4000;
+          ocmdChangePassword.CommandText = "adm.official_pack.Change_Current_User_Password";
+          ocmdChangePassword.CommandType = CommandType.StoredProcedure;
           ocmdChangePassword.ExecuteNonQuery();
 
           var ErrCode = ((OracleDecimal) (ocmdChangePassword.Parameters["err_code"].Value)).ToInt32();

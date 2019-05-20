@@ -31,7 +31,9 @@ namespace ARM_User.New.Guide
         public String abs_code_ ;
         public String customer_name_;
         public String customer_no_;
+#pragma warning disable CS0169 // The field 'ExtraPokazADDForm2.isChanched' is never used
         private Boolean isChanched;
+#pragma warning restore CS0169 // The field 'ExtraPokazADDForm2.isChanched' is never used
 #endregion
         public ExtraPokazADDForm2()
         {

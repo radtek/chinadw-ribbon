@@ -58,18 +58,19 @@ namespace BSB.Common
     /// </summary>
     private void InitializeComponent()
     {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIChildForm));
-            this.toolTipController = new DevExpress.Utils.ToolTipController();
+            this.toolTipController = new DevExpress.Utils.ToolTipController(this.components);
             this.iEnableAutoSize = new DevExpress.XtraBars.BarButtonItem();
             this.barMenu = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barManager = new DevExpress.XtraBars.BarManager();
+            this.barManager = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ARM_User.New.Guide.WaitForm2), true, true, true);
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.styleController1 = new DevExpress.XtraEditors.StyleController();
+            this.styleController1 = new DevExpress.XtraEditors.StyleController(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.styleController1)).BeginInit();
             this.SuspendLayout();
@@ -103,7 +104,7 @@ namespace BSB.Common
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager;
-            this.barDockControlTop.Size = new System.Drawing.Size(505, 36);
+            this.barDockControlTop.Size = new System.Drawing.Size(505, 29);
             // 
             // barManager
             // 
@@ -136,17 +137,17 @@ namespace BSB.Common
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 36);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 29);
             this.barDockControlLeft.Manager = this.barManager;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 361);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 368);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(505, 36);
+            this.barDockControlRight.Location = new System.Drawing.Point(505, 29);
             this.barDockControlRight.Manager = this.barManager;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 361);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 368);
             // 
             // splashScreenManager
             // 
@@ -163,7 +164,7 @@ namespace BSB.Common
             // 
             // MDIChildForm
             // 
-            this.AutoScaleBaseSize = new System.Drawing.Size(6, 18);
+            this.AutoScaleBaseSize = new System.Drawing.Size(5, 15);
             this.ClientSize = new System.Drawing.Size(505, 397);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -232,7 +233,9 @@ namespace BSB.Common
             if (InitApplication.CurrentLangId == LanguageIds.Kazakh)
                 new LangTranslate().UISetupTexts(this, unTrControls);
         }
+#pragma warning disable CS0168 // The variable 'oe' is declared but never used
         catch (Exception oe)
+#pragma warning restore CS0168 // The variable 'oe' is declared but never used
         {
         }
            
@@ -353,7 +356,9 @@ namespace BSB.Common
                 LookAndFeel.SetSkinStyle(InitApplication.skinName);
                 LookAndFeel.Style = InitApplication.style;
             }
+#pragma warning disable CS0168 // The variable 'oe' is declared but never used
             catch(Exception oe)
+#pragma warning restore CS0168 // The variable 'oe' is declared but never used
             {
             }
             

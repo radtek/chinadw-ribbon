@@ -55,7 +55,9 @@ namespace ARM_User.DisplayLayer.Service
     public event StateChangeEventHandler StateChange;
 
     #endregion
+#pragma warning disable CS0108 // 'MultiPageListRoBaseForm.Validate()' hides inherited member 'ContainerControl.Validate()'. Use the new keyword if hiding was intended.
     protected virtual bool Validate() { return true; }
+#pragma warning restore CS0108 // 'MultiPageListRoBaseForm.Validate()' hides inherited member 'ContainerControl.Validate()'. Use the new keyword if hiding was intended.
 
     private void MultiPageListRoBaseForm_Load(object sender, EventArgs e)
     {

@@ -24,7 +24,11 @@ namespace ARM_User.ServiceLayer.Reporting
        // protected string NameFundKnd1, NameFund1;
         protected string NameFundKnd, NameFund, NameJurPerson, NameRegion, Address, OKPO, BIN, Managenum, NameSts, Datereg, Num, Period, Price, NIN, Condtion, Status;
         protected string NameCustadion,NumLicenseCustodian,CustDate,NameRegistrars,Licensenumber,LicenseDate,Shariatcom,DateClose,Comments,RegPai, NameManage;
+#pragma warning disable CS0108 // 'RepWordReestrPai.wordparagraph' hides inherited member 'WordReport.wordparagraph'. Use the new keyword if hiding was intended.
+#pragma warning disable CS0169 // The field 'RepWordReestrPai.wordparagraph' is never used
         private Microsoft.Office.Interop.Word.Paragraph wordparagraph;
+#pragma warning restore CS0169 // The field 'RepWordReestrPai.wordparagraph' is never used
+#pragma warning restore CS0108 // 'RepWordReestrPai.wordparagraph' hides inherited member 'WordReport.wordparagraph'. Use the new keyword if hiding was intended.
         public Document wordDoc;
         protected Decimal languageId;
         protected int coloumn;                

@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportsCelleditForm));
-            DevExpress.Utils.Animation.PushTransition pushTransition2 = new DevExpress.Utils.Animation.PushTransition();
+            DevExpress.Utils.Animation.PushTransition pushTransition1 = new DevExpress.Utils.Animation.PushTransition();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtabSQL = new DevExpress.XtraTab.XtraTabPage();
             this.rtbSQL = new System.Windows.Forms.RichTextBox();
@@ -43,11 +43,13 @@
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.bResult = new DevExpress.XtraBars.BarStaticItem();
             this.bstext = new DevExpress.XtraBars.BarStaticItem();
+            this.bsiPosition = new DevExpress.XtraBars.BarStaticItem();
             this.bstText = new DevExpress.XtraBars.BarStaticItem();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bbOK = new DevExpress.XtraBars.BarButtonItem();
             this.bExecute = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbKeyLight = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.repositoryItemFontEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemFontEdit();
             this.barEditItem2 = new DevExpress.XtraBars.BarEditItem();
@@ -73,7 +75,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSave.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.Appearance.Options.UseForeColor = true;
@@ -85,7 +87,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnCancel.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCancel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCancel.Appearance.Options.UseFont = true;
             this.btnCancel.Appearance.Options.UseForeColor = true;
@@ -99,9 +101,9 @@
             // 
             this.panel1.Controls.Add(this.cbCheck);
             this.panel1.Dock = System.Windows.Forms.DockStyle.None;
-            this.panel1.Location = new System.Drawing.Point(205, 169);
+            this.panel1.Location = new System.Drawing.Point(205, 180);
             this.panel1.Margin = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(345, 38);
+            this.panel1.Size = new System.Drawing.Size(345, 40);
             this.panel1.Visible = false;
             this.panel1.Controls.SetChildIndex(this.btnSave, 0);
             this.panel1.Controls.SetChildIndex(this.btnCancel, 0);
@@ -128,9 +130,9 @@
             this.panelControl1.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.Controls.Add(this.xtraTabControl1);
-            this.panelControl1.Location = new System.Drawing.Point(0, 37);
+            this.panelControl1.Location = new System.Drawing.Point(0, 36);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.panelControl1.Size = new System.Drawing.Size(856, 327);
+            this.panelControl1.Size = new System.Drawing.Size(856, 352);
             this.panelControl1.Controls.SetChildIndex(this.panel1, 0);
             this.panelControl1.Controls.SetChildIndex(this.xtraTabControl1, 0);
             // 
@@ -149,8 +151,10 @@
             this.barButtonItem3,
             this.bstext,
             this.bstText,
-            this.barWorkspaceMenuItem1});
-            this.barManager1.MaxItemId = 21;
+            this.barWorkspaceMenuItem1,
+            this.bsiPosition,
+            this.bbKeyLight});
+            this.barManager1.MaxItemId = 24;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemFontEdit1,
             this.repositoryItemFontStyle1});
@@ -163,7 +167,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(2, 2);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtabSQL;
-            this.xtraTabControl1.Size = new System.Drawing.Size(852, 323);
+            this.xtraTabControl1.Size = new System.Drawing.Size(852, 348);
             this.xtraTabControl1.TabIndex = 5;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtabText,
@@ -174,7 +178,7 @@
             this.xtabSQL.Controls.Add(this.rtbSQL);
             this.xtabSQL.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtabSQL.ImageOptions.Image")));
             this.xtabSQL.Name = "xtabSQL";
-            this.xtabSQL.Size = new System.Drawing.Size(845, 273);
+            this.xtabSQL.Size = new System.Drawing.Size(845, 298);
             this.xtabSQL.Text = "SQL";
             // 
             // rtbSQL
@@ -187,9 +191,10 @@
             this.rtbSQL.Location = new System.Drawing.Point(0, 0);
             this.rtbSQL.Name = "rtbSQL";
             this.rtbSQL.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.rtbSQL.Size = new System.Drawing.Size(845, 273);
+            this.rtbSQL.Size = new System.Drawing.Size(845, 298);
             this.rtbSQL.TabIndex = 2;
             this.rtbSQL.Text = "";
+//            this.rtbSQL.CursorChanged += new System.EventHandler(this.rtbSQL_CursorChanged);
             this.rtbSQL.TextChanged += new System.EventHandler(this.rtbSQL_TextChanged);
             this.rtbSQL.MouseDown += new System.Windows.Forms.MouseEventHandler(this.rtbSQL_MouseDown);
             // 
@@ -197,7 +202,7 @@
             // 
             this.xtabText.Controls.Add(this.rtbText);
             this.xtabText.Name = "xtabText";
-            this.xtabText.Size = new System.Drawing.Size(550, 461);
+            this.xtabText.Size = new System.Drawing.Size(550, 493);
             this.xtabText.Text = "Text";
             // 
             // rtbText
@@ -210,7 +215,7 @@
             this.rtbText.Location = new System.Drawing.Point(0, 0);
             this.rtbText.Name = "rtbText";
             this.rtbText.ReadOnly = true;
-            this.rtbText.Size = new System.Drawing.Size(550, 461);
+            this.rtbText.Size = new System.Drawing.Size(550, 493);
             this.rtbText.TabIndex = 1;
             this.rtbText.Text = "";
             this.rtbText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtbText_KeyPress);
@@ -228,9 +233,9 @@
             // cbCheck
             // 
             this.cbCheck.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cbCheck.ImageOptions.Image")));
-            this.cbCheck.Location = new System.Drawing.Point(241, 9);
+            this.cbCheck.Location = new System.Drawing.Point(241, 10);
             this.cbCheck.Name = "cbCheck";
-            this.cbCheck.Size = new System.Drawing.Size(96, 29);
+            this.cbCheck.Size = new System.Drawing.Size(96, 31);
             this.cbCheck.TabIndex = 4;
             this.cbCheck.Text = "Проверить";
             this.cbCheck.Click += new System.EventHandler(this.cbCheck_CheckedChanged);
@@ -245,7 +250,8 @@
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barStaticItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(this.bResult),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bstext, true)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.bstext, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bsiPosition)});
             this.bar1.OptionsBar.AllowQuickCustomization = false;
             this.bar1.OptionsBar.DrawDragBorder = false;
             this.bar1.OptionsBar.UseWholeRow = true;
@@ -269,6 +275,11 @@
             this.bstext.Id = 18;
             this.bstext.Name = "bstext";
             // 
+            // bsiPosition
+            // 
+            this.bsiPosition.Id = 21;
+            this.bsiPosition.Name = "bsiPosition";
+            // 
             // bstText
             // 
             this.bstText.Caption = "barStaticItem2";
@@ -284,7 +295,8 @@
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.bbOK, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.bExecute, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbKeyLight)});
             this.bar2.Text = "Custom 3";
             // 
             // bbOK
@@ -314,6 +326,14 @@
             this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // bbKeyLight
+            // 
+            this.bbKeyLight.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+            this.bbKeyLight.Caption = "Ключевые слова";
+            this.bbKeyLight.Down = true;
+            this.bbKeyLight.Id = 23;
+            this.bbKeyLight.Name = "bbKeyLight";
             // 
             // barButtonItem3
             // 
@@ -379,15 +399,15 @@
             // workspaceManager1
             // 
             this.workspaceManager1.TargetControl = this;
-            this.workspaceManager1.TransitionType = pushTransition2;
+            this.workspaceManager1.TransitionType = pushTransition1;
             // 
             // ReportsCelleditForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
-            this.ClientSize = new System.Drawing.Size(856, 399);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.ClientSize = new System.Drawing.Size(856, 424);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(7, 11, 7, 11);
+            this.Margin = new System.Windows.Forms.Padding(7, 12, 7, 12);
             this.Name = "ReportsCelleditForm";
             this.Text = "Редакирование ячейки";
             this.Load += new System.EventHandler(this.DialogHTMLCelleditForm_Load);
@@ -436,5 +456,7 @@
         private DevExpress.XtraBars.BarStaticItem bstText;
         private DevExpress.XtraBars.BarWorkspaceMenuItem barWorkspaceMenuItem1;
         private DevExpress.Utils.WorkspaceManager workspaceManager1;
+        private DevExpress.XtraBars.BarStaticItem bsiPosition;
+        private DevExpress.XtraBars.BarButtonItem bbKeyLight;
     }
 }

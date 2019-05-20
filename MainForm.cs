@@ -119,6 +119,8 @@ namespace ARM_User
         private RepositoryItemMarqueeProgressBar repositoryItemMarqueeProgressBar1;
         private BarButtonItem barButtonItem1;
         private BarButtonItem barButtonItem2;
+        private BarButtonItem barButtonItem7;
+        private RibbonPageGroup ribbonPageGroup7;
         public decimal iscancelpassword = 0;
 
         /// <summary>
@@ -227,6 +229,8 @@ namespace ARM_User
             this.navBarGroupControlContainer2 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
             this.tvMenu = new System.Windows.Forms.TreeView();
             this.styleController2 = new DevExpress.XtraEditors.StyleController(this.components);
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.MainDockManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewMessages)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox1)).BeginInit();
@@ -334,7 +338,6 @@ namespace ARM_User
             // 
             // colStatus
             // 
-            this.colStatus.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.colStatus.ColumnEdit = this.repositoryItemImageComboBox1;
             this.colStatus.FieldName = "col_STATUS";
             this.colStatus.ImageOptions.ImageIndex = 0;
@@ -446,9 +449,10 @@ namespace ARM_User
             this.barButtonItem8,
             this.barHeaderItem1,
             this.barButtonItem1,
-            this.barButtonItem2});
+            this.barButtonItem2,
+            this.barButtonItem7});
             this.rcMain.Location = new System.Drawing.Point(0, 0);
-            this.rcMain.MaxItemId = 18;
+            this.rcMain.MaxItemId = 19;
             this.rcMain.Name = "rcMain";
             this.rcMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpDataBase,
@@ -485,6 +489,7 @@ namespace ARM_User
             this.iConnect.Id = 227;
             this.iConnect.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("iConnect.ImageOptions.Image")));
             this.iConnect.ImageOptions.ImageIndex = 7;
+            this.iConnect.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("iConnect.ImageOptions.SvgImage")));
             this.iConnect.Name = "iConnect";
             this.iConnect.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText)));
             this.iConnect.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItemConnect_ItemClick);
@@ -504,6 +509,7 @@ namespace ARM_User
             this.iDisconnect.Hint = "Отключиться от базы данных";
             this.iDisconnect.Id = 229;
             this.iDisconnect.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("iDisconnect.ImageOptions.Image")));
+            this.iDisconnect.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("iDisconnect.ImageOptions.SvgImage")));
             this.iDisconnect.Name = "iDisconnect";
             this.iDisconnect.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText)));
             this.iDisconnect.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iDisconnect_ItemClick);
@@ -513,6 +519,7 @@ namespace ARM_User
             this.iRefresh.Caption = "Перечитать права пользователя";
             this.iRefresh.Id = 230;
             this.iRefresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("iRefresh.ImageOptions.Image")));
+            this.iRefresh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("iRefresh.ImageOptions.SvgImage")));
             this.iRefresh.Name = "iRefresh";
             this.iRefresh.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText)));
             this.iRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iRefresh_ItemClick);
@@ -521,6 +528,9 @@ namespace ARM_User
             // 
             this.iChangePassword.Caption = "Изменить пароль пользователя";
             this.iChangePassword.Id = 231;
+            this.iChangePassword.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("iChangePassword.ImageOptions.Image")));
+            this.iChangePassword.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("iChangePassword.ImageOptions.LargeImage")));
+            this.iChangePassword.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("iChangePassword.ImageOptions.SvgImage")));
             this.iChangePassword.Name = "iChangePassword";
             this.iChangePassword.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText)));
             this.iChangePassword.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iChangePassword_ItemClick);
@@ -771,7 +781,8 @@ namespace ARM_User
             // rpCustomize
             // 
             this.rpCustomize.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup5});
+            this.ribbonPageGroup5,
+            this.ribbonPageGroup7});
             this.rpCustomize.Name = "rpCustomize";
             this.rpCustomize.Text = "Настройка";
             // 
@@ -1062,7 +1073,7 @@ namespace ARM_User
             this.navBarGroup2.Caption = "Главное меню";
             this.navBarGroup2.ControlContainer = this.navBarGroupControlContainer2;
             this.navBarGroup2.Expanded = true;
-            this.navBarGroup2.GroupClientHeight = 451;
+            this.navBarGroup2.GroupClientHeight = 334;
             this.navBarGroup2.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
             this.navBarGroup2.Name = "navBarGroup2";
             // 
@@ -1087,6 +1098,19 @@ namespace ARM_User
             this.tvMenu.Size = new System.Drawing.Size(324, 334);
             this.tvMenu.TabIndex = 2;
             this.tvMenu.DoubleClick += new System.EventHandler(this.tvMenu_DoubleClick);
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem7);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            this.ribbonPageGroup7.Text = "ribbonPageGroup7";
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "Form1";
+            this.barButtonItem7.Id = 18;
+            this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
             // 
             // MainForm
             // 
@@ -1308,7 +1332,12 @@ namespace ARM_User
         private void aPledges_Execute(object sender, TActionEventArgs ae)
         {
             //MessageBox.Show("Pledges!");
-            var frm = new CreditsListForm();
+            /*var frm = new CreditsListForm();
+            frm.pAction = (MyAction)sender;
+            frm.MdiParent = this;
+            frm.Show();*/
+
+            var frm = new NewCreditsListForm();
             frm.pAction = (MyAction)sender;
             frm.MdiParent = this;
             frm.Show();
@@ -1382,25 +1411,11 @@ namespace ARM_User
             rcMain.Toolbar.ItemLinks.Add(skinPaletteRibbonGalleryBarItem1);//
 
             barHeaderItem1.Caption = string.Format(LangTranslate.UiGetText("Версия: {0}"), Application.ProductVersion);
-            /* ribbonStatusBar1.Tex
-       InitBars();
-       InitDockPanels();
-             //styleController1.BeginUpdate();*/
+            /* 
+            InitBars();
+            InitDockPanels();*/           
             // Устанавливаем стиль приложения
-            /*defaultLookAndFeel.LookAndFeel.SetStyle(InitApplication.style, InitApplication.useWindowsXPTheme,
-         InitApplication.useDefaultLookAndFeel, InitApplication.skinName);
             styleController1_PropertiesChanged(sender, e);
-
-            if (!SkinManager.AllowFormSkins)
-                SkinManager.DisableFormSkins();
-            else
-                SkinManager.EnableFormSkins();
-            LookAndFeelHelper.ForceDefaultLookAndFeelChanged();*/
-
-            DevExpress.Skins.SkinManager.EnableFormSkins();
-            DevExpress.LookAndFeel.UserLookAndFeel.Default.Style = InitApplication.style;
-            DevExpress.LookAndFeel.UserLookAndFeel.Default.SkinName = InitApplication.skinName;
-
             // Сообщение о начале работы приложения
             Win32.PostMessage(Handle, WM_AFTERSHOW, IntPtr.Zero, IntPtr.Zero);
             //hideContainerBottom.Visible = false;
@@ -1564,7 +1579,9 @@ namespace ARM_User
                 }
                 if (dmControler.frmMain.DBLogin != "SUPERUSER")
                 {
+#pragma warning disable CS0472 // The result of the expression is always 'true' since a value of type 'int' is never equal to 'null' of type 'int?'
                     if (((IdUsrPasswordChangeDate != null) || (IdUsrPasswordChangeDate != 0)) && (IdUsrPasswordChangeDate == 12))
+#pragma warning restore CS0472 // The result of the expression is always 'true' since a value of type 'int' is never equal to 'null' of type 'int?'
                     {
                         XtraMessageBox.Show(
                         LangTranslate.UiGetText("Ваш пароль успешно изменён администратором.") + Environment.NewLine +
@@ -1747,7 +1764,7 @@ namespace ARM_User
                         DBSupport.DBErrorHandler(ErrCode, ErrMsg);
                         return bResult;
                     }
-
+                    tvMenu.Nodes.Clear();
                     TreeNode NewNode, ParentNode = null;
                     foreach (DataRow row in dt.Rows)
                     {
@@ -2085,10 +2102,12 @@ namespace ARM_User
 
         #region [Панель дочерних окон]
 
+#pragma warning disable CS0414 // The field 'MainForm.UserSelTab' is assigned but its value is never used
         /// <summary>
         ///   Признак того, что выбор закладки сделал пользователь а не программа
         /// </summary>
         private bool UserSelTab = true;
+#pragma warning restore CS0414 // The field 'MainForm.UserSelTab' is assigned but its value is never used
 
         /// <summary>
         ///   Признак того, что выбор окна сделал пользователь а не программа
@@ -2570,6 +2589,12 @@ namespace ARM_User
                     break;
 
             }
+        }
+
+        private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var x = new XtraForm1();
+            x.Show();
         }
     }
 

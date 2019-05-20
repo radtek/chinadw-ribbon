@@ -79,7 +79,7 @@ namespace BSB.Common
         if (reg.GetValue("useDefaultLookAndFeel") == null)
           reg.SetValue("useDefaultLookAndFeel", true);
 
-        String s = reg.GetValue("skinName").ToString();
+       
                
         if (reg.GetValue("skinName") == null)
           reg.SetValue("skinName", "Office 2007 blue");

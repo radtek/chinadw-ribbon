@@ -12,7 +12,7 @@
 
   ;Name and file
   Name "APM «Пользователь»"
-  OutFile "Update\HDChina_upd.exe"
+  OutFile "Update\HDChina_upd_x86.exe"
 
   SetCompressor /SOLID lzma
   SilentInstall silent

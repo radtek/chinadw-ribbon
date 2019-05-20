@@ -14,7 +14,9 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+#pragma warning disable CS0105 // The using directive for 'Oracle.ManagedDataAccess.Types' appeared previously in this namespace
 using Oracle.ManagedDataAccess.Types;
+#pragma warning restore CS0105 // The using directive for 'Oracle.ManagedDataAccess.Types' appeared previously in this namespace
 
 namespace ARM_User.ServiceLayer.Reporting.Excel
 {

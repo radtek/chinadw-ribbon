@@ -12,7 +12,7 @@
 
   ;Name and file
   Name "HDChina"
-  OutFile "Output\Setup.exe"
+  OutFile "Output\Setup_x86.exe"
 
   SetCompressor /SOLID lzma
   

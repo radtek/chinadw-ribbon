@@ -11,7 +11,13 @@ namespace ARM_User.BusinessLayer.Reports
     {
         #region Fileds
 
+#pragma warning disable CS0108 // 'Months.nameRu' hides inherited member 'LocalizedSimpleDO.nameRu'. Use the new keyword if hiding was intended.
+#pragma warning disable CS0108 // 'Months.nameKz' hides inherited member 'LocalizedSimpleDO.nameKz'. Use the new keyword if hiding was intended.
+#pragma warning disable CS0169 // The field 'Months.nameKz' is never used
         private string nameRu, nameKz;
+#pragma warning restore CS0169 // The field 'Months.nameKz' is never used
+#pragma warning restore CS0108 // 'Months.nameKz' hides inherited member 'LocalizedSimpleDO.nameKz'. Use the new keyword if hiding was intended.
+#pragma warning restore CS0108 // 'Months.nameRu' hides inherited member 'LocalizedSimpleDO.nameRu'. Use the new keyword if hiding was intended.
         private DateTime? month, monthEnd;
 
 
@@ -41,7 +47,9 @@ namespace ARM_User.BusinessLayer.Reports
         }
         #region propertis
 
+#pragma warning disable CS0108 // 'Months.NameRu' hides inherited member 'LocalizedSimpleDO.NameRu'. Use the new keyword if hiding was intended.
         public string NameRu
+#pragma warning restore CS0108 // 'Months.NameRu' hides inherited member 'LocalizedSimpleDO.NameRu'. Use the new keyword if hiding was intended.
         {
             get { return nameRu; }
             set

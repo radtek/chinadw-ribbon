@@ -38,7 +38,9 @@ namespace ARM_User.DisplayLayer.Service
     {
         get { return edDateEnd.DateTime; }
     }
+#pragma warning disable CS0108 // 'ChooseRepRegionPeriodDenialForm.Region' hides inherited member 'Control.Region'. Use the new keyword if hiding was intended.
     public Decimal Region
+#pragma warning restore CS0108 // 'ChooseRepRegionPeriodDenialForm.Region' hides inherited member 'Control.Region'. Use the new keyword if hiding was intended.
     {
         get { return idRegion; }
     }

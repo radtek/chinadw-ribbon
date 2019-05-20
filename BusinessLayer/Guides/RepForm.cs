@@ -10,7 +10,13 @@ namespace ARM_User.BusinessLayer.Guides
     {
         #region Fileds
 
+#pragma warning disable CS0108 // 'RepForm.nameKz' hides inherited member 'LocalizedSimpleDO.nameKz'. Use the new keyword if hiding was intended.
+#pragma warning disable CS0108 // 'RepForm.nameRu' hides inherited member 'LocalizedSimpleDO.nameRu'. Use the new keyword if hiding was intended.
+#pragma warning disable CS0169 // The field 'RepForm.nameRu' is never used
         private string nameRu, nameKz,code;
+#pragma warning restore CS0169 // The field 'RepForm.nameRu' is never used
+#pragma warning restore CS0108 // 'RepForm.nameRu' hides inherited member 'LocalizedSimpleDO.nameRu'. Use the new keyword if hiding was intended.
+#pragma warning restore CS0108 // 'RepForm.nameKz' hides inherited member 'LocalizedSimpleDO.nameKz'. Use the new keyword if hiding was intended.
         private decimal typeId, repKnd;
         private byte[] templateRu, templateKz;
      

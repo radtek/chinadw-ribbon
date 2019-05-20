@@ -107,7 +107,9 @@ namespace ARM_User.DisplayLayer.Base
       }
     }
 
+#pragma warning disable CS0108 // 'SimpleModalEditForm.Validate()' hides inherited member 'ContainerControl.Validate()'. Use the new keyword if hiding was intended.
     protected virtual bool Validate() { return true; }
+#pragma warning restore CS0108 // 'SimpleModalEditForm.Validate()' hides inherited member 'ContainerControl.Validate()'. Use the new keyword if hiding was intended.
 
 
     protected virtual void btnCancel_Click(object sender, EventArgs e)

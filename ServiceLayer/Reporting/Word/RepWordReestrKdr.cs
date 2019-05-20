@@ -23,7 +23,11 @@ namespace ARM_User.ServiceLayer.Reporting
         #region Fields
         protected Microsoft.Office.Interop.Excel.Range range2;
         protected Decimal languageId;
+#pragma warning disable CS0108 // 'RepWordReestrKdr.wordparagraph' hides inherited member 'WordReport.wordparagraph'. Use the new keyword if hiding was intended.
+#pragma warning disable CS0169 // The field 'RepWordReestrKdr.wordparagraph' is never used
         private Microsoft.Office.Interop.Word.Paragraph wordparagraph;
+#pragma warning restore CS0169 // The field 'RepWordReestrKdr.wordparagraph' is never used
+#pragma warning restore CS0108 // 'RepWordReestrKdr.wordparagraph' hides inherited member 'WordReport.wordparagraph'. Use the new keyword if hiding was intended.
         public Document wordDoc;
         #endregion
         protected string firstName, lastName;

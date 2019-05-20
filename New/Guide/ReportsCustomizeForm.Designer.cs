@@ -43,6 +43,7 @@
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.bCount = new DevExpress.XtraBars.BarHeaderItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.styleController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
@@ -236,7 +237,7 @@
             // 
             // rbEdit
             // 
-            this.rbEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.rbEdit.Appearance.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.rbEdit.Appearance.Options.UseFont = true;
             this.rbEdit.AutoHeight = false;
             this.rbEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -263,6 +264,8 @@
             this.ClientSize = new System.Drawing.Size(965, 420);
             this.Controls.Add(this.gridControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.MaximizeBox = true;
             this.Name = "ReportsCustomizeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -275,6 +278,7 @@
             this.Controls.SetChildIndex(this.barDockControlLeft, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.styleController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();

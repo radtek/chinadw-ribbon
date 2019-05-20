@@ -238,6 +238,7 @@
             this.bbExportXMLAll = new DevExpress.XtraBars.BarButtonItem();
             this.bbExportXML = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.styleController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -1114,7 +1115,7 @@
             // 
             this.xPledges.Controls.Add(this.gridControl1);
             this.xPledges.Name = "xPledges";
-            this.xPledges.Size = new System.Drawing.Size(1125, 194);
+            this.xPledges.Size = new System.Drawing.Size(1128, 199);
             this.xPledges.Text = "Залоги";
             // 
             // gridControl1
@@ -1126,7 +1127,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1125, 194);
+            this.gridControl1.Size = new System.Drawing.Size(1128, 199);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -1503,7 +1504,7 @@
             // 
             this.xPokaz.Controls.Add(this.gcList3);
             this.xPokaz.Name = "xPokaz";
-            this.xPokaz.Size = new System.Drawing.Size(1115, 190);
+            this.xPokaz.Size = new System.Drawing.Size(1128, 199);
             this.xPokaz.Text = "Показатели";
             // 
             // gcList3
@@ -1515,7 +1516,7 @@
             this.gcList3.MainView = this.bandedGridView2;
             this.gcList3.MenuManager = this.barManager;
             this.gcList3.Name = "gcList3";
-            this.gcList3.Size = new System.Drawing.Size(1115, 190);
+            this.gcList3.Size = new System.Drawing.Size(1128, 199);
             this.gcList3.TabIndex = 7;
             this.gcList3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bandedGridView2});
@@ -1614,7 +1615,7 @@
             // 
             this.xExtraPokaz.Controls.Add(this.gcList2);
             this.xExtraPokaz.Name = "xExtraPokaz";
-            this.xExtraPokaz.Size = new System.Drawing.Size(1115, 190);
+            this.xExtraPokaz.Size = new System.Drawing.Size(1128, 199);
             this.xExtraPokaz.Text = "Дополнительные показатели";
             // 
             // gcList2
@@ -1626,7 +1627,7 @@
             this.gcList2.MainView = this.bgvExtraPokaz;
             this.gcList2.MenuManager = this.barManager;
             this.gcList2.Name = "gcList2";
-            this.gcList2.Size = new System.Drawing.Size(1115, 190);
+            this.gcList2.Size = new System.Drawing.Size(1128, 199);
             this.gcList2.TabIndex = 8;
             this.gcList2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bgvExtraPokaz,
@@ -1859,7 +1860,7 @@
             // 
             // hideContainerRight
             // 
-            this.hideContainerRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.hideContainerRight.BackColor = System.Drawing.SystemColors.Control;
             this.hideContainerRight.Controls.Add(this.dpPayment);
             this.hideContainerRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.hideContainerRight.Location = new System.Drawing.Point(1132, 74);
@@ -1876,14 +1877,14 @@
             this.dpPayment.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dpPayment.Hint = "График оплаты";
             this.dpPayment.ID = new System.Guid("e3241d68-9dcd-4657-b7aa-c36d5c004a76");
-            this.dpPayment.Location = new System.Drawing.Point(290, 74);
+            this.dpPayment.Location = new System.Drawing.Point(0, 0);
             this.dpPayment.Name = "dpPayment";
             this.dpPayment.Options.ShowCloseButton = false;
             this.dpPayment.OriginalSize = new System.Drawing.Size(836, 200);
             this.barManager.SetPopupContextMenu(this.dpPayment, this.popupMenu1);
             this.dpPayment.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dpPayment.SavedIndex = 0;
-            this.dpPayment.Size = new System.Drawing.Size(836, 496);
+            this.dpPayment.Size = new System.Drawing.Size(836, 503);
             this.dpPayment.TabsPosition = DevExpress.XtraBars.Docking.TabsPosition.Right;
             this.dpPayment.TabsScroll = true;
             this.dpPayment.TabText = "График оплаты";
@@ -1897,7 +1898,7 @@
             this.dockPanel1_Container.Controls.Add(this.gridControl2);
             this.dockPanel1_Container.Location = new System.Drawing.Point(7, 26);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(824, 465);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(824, 472);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // gridControl2
@@ -1909,7 +1910,7 @@
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.MenuManager = this.barManager;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(824, 465);
+            this.gridControl2.Size = new System.Drawing.Size(824, 472);
             this.gridControl2.TabIndex = 2;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -2172,6 +2173,8 @@
             this.ClientSize = new System.Drawing.Size(1156, 577);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.hideContainerRight);
+            this.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Name = "CreditsListForm";
             this.Text = "Кредиты";
             this.Load += new System.EventHandler(this.PledgesListForm_Load);
@@ -2182,6 +2185,7 @@
             this.Controls.SetChildIndex(this.hideContainerRight, 0);
             this.Controls.SetChildIndex(this.splitContainer1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.styleController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);

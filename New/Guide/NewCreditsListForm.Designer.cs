@@ -38,10 +38,26 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions5 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions6 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions7 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions8 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions9 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions10 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions11 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions12 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions13 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions1 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
-            this.gcList1 = new DevExpress.XtraGrid.GridControl();
+            this.gcCredits = new DevExpress.XtraGrid.GridControl();
             this.dsMain = new System.Data.DataSet();
             this.dtCredits = new System.Data.DataTable();
             this.P_LOANS_SID = new System.Data.DataColumn();
@@ -142,7 +158,7 @@
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.pBottomContainer = new DevExpress.XtraBars.Docking.DockPanel();
-            this.dockPanel4 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dpPledges = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel4_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.bandedGridView3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
@@ -229,10 +245,17 @@
             this.beData = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.bbFilter = new DevExpress.XtraBars.BarButtonItem();
+            this.bbSearch = new DevExpress.XtraBars.BarButtonItem();
+            this.bbExportXML = new DevExpress.XtraBars.BarButtonItem();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.bbRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.bbExpXMLMenu = new DevExpress.XtraBars.BarSubItem();
+            this.bbCredits = new DevExpress.XtraBars.BarButtonItem();
+            this.bbSheduler = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.styleController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcList1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcCredits)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtCredits)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tsPledges)).BeginInit();
@@ -245,7 +268,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.pBottomContainer.SuspendLayout();
-            this.dockPanel4.SuspendLayout();
+            this.dpPledges.SuspendLayout();
             this.dockPanel4_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bandedGridView3)).BeginInit();
@@ -267,22 +290,23 @@
             this.dockPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
             // 
             // barDockControlBottom
             // 
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 589);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 631);
             this.barDockControlBottom.Size = new System.Drawing.Size(1181, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 37);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 552);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 594);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.Location = new System.Drawing.Point(1181, 37);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 552);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 594);
             // 
             // barDockControlTop
             // 
@@ -293,8 +317,14 @@
             this.barManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.bCount,
             this.beData,
-            this.bbFilter});
-            this.barManager.MaxItemId = 4;
+            this.bbFilter,
+            this.bbSearch,
+            this.bbExportXML,
+            this.bbRefresh,
+            this.bbExpXMLMenu,
+            this.bbCredits,
+            this.bbSheduler});
+            this.barManager.MaxItemId = 13;
             this.barManager.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemDateEdit1});
             // 
@@ -302,34 +332,40 @@
             // 
             this.barMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bCount),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbRefresh),
             new DevExpress.XtraBars.LinkPersistInfo(((DevExpress.XtraBars.BarLinkUserDefines)((DevExpress.XtraBars.BarLinkUserDefines.PaintStyle | DevExpress.XtraBars.BarLinkUserDefines.Width))), this.beData, "", false, true, true, 142, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbFilter)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbFilter),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbSearch),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.bbExpXMLMenu, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             // 
             // iEnableAutoSize
             // 
             this.iEnableAutoSize.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("iEnableAutoSize.ImageOptions.Image")));
             this.iEnableAutoSize.ImageOptions.ImageIndex = 0;
+            this.iEnableAutoSize.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // documentManager1
             // 
-            this.documentManager1.ClientControl = this.gcList1;
+            this.documentManager1.ClientControl = this.gcCredits;
             this.documentManager1.MenuManager = this.barManager;
             this.documentManager1.View = this.noDocumentsView1;
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.noDocumentsView1,
             this.tabbedView1});
             // 
-            // gcList1
+            // gcCredits
             // 
-            this.gcList1.DataMember = "tsCredits";
-            this.gcList1.DataSource = this.dsMain;
-            this.gcList1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcList1.Location = new System.Drawing.Point(0, 37);
-            this.gcList1.MainView = this.bgvCredits;
-            this.gcList1.Name = "gcList1";
-            this.gcList1.Size = new System.Drawing.Size(731, 283);
-            this.gcList1.TabIndex = 5;
-            this.gcList1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcCredits.DataMember = "tsCredits";
+            this.gcCredits.DataSource = this.dsMain;
+            this.gcCredits.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcCredits.EmbeddedNavigator.Appearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+            this.gcCredits.EmbeddedNavigator.Appearance.Options.UseBorderColor = true;
+            this.gcCredits.Location = new System.Drawing.Point(0, 37);
+            this.gcCredits.MainView = this.bgvCredits;
+            this.gcCredits.Name = "gcCredits";
+            this.gcCredits.Size = new System.Drawing.Size(669, 325);
+            this.gcCredits.TabIndex = 5;
+            this.gcCredits.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bgvCredits});
             // 
             // dsMain
@@ -859,7 +895,7 @@
             this.colCUSTOMER_NAME,
             this.colAMOUNT,
             this.colRATE_INTEREST});
-            this.bgvCredits.GridControl = this.gcList1;
+            this.bgvCredits.GridControl = this.gcCredits;
             this.bgvCredits.Name = "bgvCredits";
             this.bgvCredits.OptionsView.ShowGroupPanel = false;
             this.bgvCredits.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.bgvList2_FocusedRowChanged);
@@ -1021,34 +1057,40 @@
             // 
             // pBottomContainer
             // 
-            this.pBottomContainer.ActiveChild = this.dockPanel4;
-            this.pBottomContainer.Controls.Add(this.dockPanel4);
+            this.pBottomContainer.ActiveChild = this.dpPledges;
+            this.pBottomContainer.Controls.Add(this.dpPledges);
             this.pBottomContainer.Controls.Add(this.dpPokaz);
             this.pBottomContainer.Controls.Add(this.dpExtraPokaz);
             this.pBottomContainer.Dock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
             this.pBottomContainer.ID = new System.Guid("e41b442c-3031-4682-82fb-60512cc9d7fd");
-            this.pBottomContainer.Location = new System.Drawing.Point(0, 320);
+            this.pBottomContainer.Location = new System.Drawing.Point(0, 362);
             this.pBottomContainer.Name = "pBottomContainer";
             this.pBottomContainer.OriginalSize = new System.Drawing.Size(200, 269);
             this.pBottomContainer.Size = new System.Drawing.Size(1181, 269);
             this.pBottomContainer.Tabbed = true;
             this.pBottomContainer.Text = "panelContainer1";
+            this.pBottomContainer.Click += new System.EventHandler(this.pBottomContainer_Click);
             // 
-            // dockPanel4
+            // dpPledges
             // 
-            this.dockPanel4.Controls.Add(this.dockPanel4_Container);
-            this.dockPanel4.CustomHeaderButtons.AddRange(new DevExpress.XtraBars.Docking2010.IButton[] {
-            new DevExpress.XtraBars.Docking.CustomHeaderButton("45654365", true, customHeaderButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject2, null, 1),
-            new DevExpress.XtraBars.Docking.CustomHeaderButton("Add", true, customHeaderButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject3, null, 2),
-            new DevExpress.XtraBars.Docking.CustomHeaderButton("edit", true, customHeaderButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject4, null, 2),
-            new DevExpress.XtraBars.Docking.CustomHeaderButton("delete", true, customHeaderButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject5, null, 2)});
-            this.dockPanel4.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
-            this.dockPanel4.ID = new System.Guid("32ad28d1-2482-434d-a0e5-07735d947c5b");
-            this.dockPanel4.Location = new System.Drawing.Point(5, 32);
-            this.dockPanel4.Name = "dockPanel4";
-            this.dockPanel4.OriginalSize = new System.Drawing.Size(1171, 204);
-            this.dockPanel4.Size = new System.Drawing.Size(1171, 200);
-            this.dockPanel4.Text = "Залоги";
+            this.dpPledges.Controls.Add(this.dockPanel4_Container);
+            customHeaderButtonImageOptions2.Image = global::ARM_User.Properties.Resources.cancel_16x16;
+            customHeaderButtonImageOptions3.Image = global::ARM_User.Properties.Resources.edit;
+            customHeaderButtonImageOptions4.Image = global::ARM_User.Properties.Resources.add2;
+            customHeaderButtonImageOptions5.Image = global::ARM_User.Properties.Resources.view;
+            this.dpPledges.CustomHeaderButtons.AddRange(new DevExpress.XtraBars.Docking2010.IButton[] {
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Удалить", true, customHeaderButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject2, null, 2),
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Редактировать", true, customHeaderButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject3, null, 2),
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Добавить", true, customHeaderButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject4, null, 2),
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Просмотр", true, customHeaderButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject5, null, 1)});
+            this.dpPledges.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
+            this.dpPledges.ID = new System.Guid("32ad28d1-2482-434d-a0e5-07735d947c5b");
+            this.dpPledges.Location = new System.Drawing.Point(5, 32);
+            this.dpPledges.Name = "dpPledges";
+            this.dpPledges.OriginalSize = new System.Drawing.Size(1171, 200);
+            this.dpPledges.Size = new System.Drawing.Size(1171, 200);
+            this.dpPledges.Text = "Залоги";
+            this.dpPledges.CustomButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.dpPledges_CustomButtonClick);
             // 
             // dockPanel4_Container
             // 
@@ -1116,6 +1158,7 @@
             this.bandedGridView3.OptionsDetail.EnableDetailToolTip = true;
             this.bandedGridView3.OptionsScrollAnnotations.ShowFocusedRow = DevExpress.Utils.DefaultBoolean.True;
             this.bandedGridView3.OptionsScrollAnnotations.ShowSelectedRows = DevExpress.Utils.DefaultBoolean.True;
+            this.bandedGridView3.OptionsView.ColumnAutoWidth = false;
             this.bandedGridView3.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.bandedGridView3.OptionsView.ShowGroupPanel = false;
             this.bandedGridView3.OptionsView.WaitAnimationOptions = DevExpress.XtraEditors.WaitAnimationOptions.Indicator;
@@ -1124,8 +1167,6 @@
             // 
             // gdbPledges
             // 
-            this.gdbPledges.AppearanceHeader.Options.UseTextOptions = true;
-            this.gdbPledges.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gdbPledges.Caption = "gridBand4";
             this.gdbPledges.Columns.Add(this.colh_loan_sid);
             this.gdbPledges.Columns.Add(this.colple_coefficient);
@@ -1161,57 +1202,61 @@
             this.gdbPledges.Columns.Add(this.colsrc_ddfrey);
             this.gdbPledges.Name = "gdbPledges";
             this.gdbPledges.VisibleIndex = 0;
-            this.gdbPledges.Width = 2539;
+            this.gdbPledges.Width = 3639;
             // 
             // colh_loan_sid
             // 
             this.colh_loan_sid.FieldName = "h_loan_sid";
-            this.colh_loan_sid.MinWidth = 25;
+            this.colh_loan_sid.MinWidth = 80;
             this.colh_loan_sid.Name = "colh_loan_sid";
             this.colh_loan_sid.OptionsColumn.AllowEdit = false;
             this.colh_loan_sid.OptionsColumn.AllowFocus = false;
             this.colh_loan_sid.Visible = true;
-            this.colh_loan_sid.Width = 62;
+            this.colh_loan_sid.Width = 100;
             // 
             // colple_coefficient
             // 
             this.colple_coefficient.FieldName = "ple_coefficient";
-            this.colple_coefficient.MinWidth = 25;
+            this.colple_coefficient.MinWidth = 80;
             this.colple_coefficient.Name = "colple_coefficient";
             this.colple_coefficient.OptionsColumn.AllowEdit = false;
             this.colple_coefficient.OptionsColumn.AllowFocus = false;
+            this.colple_coefficient.OptionsColumn.FixedWidth = true;
             this.colple_coefficient.Visible = true;
-            this.colple_coefficient.Width = 62;
+            this.colple_coefficient.Width = 100;
             // 
             // colple_contract_date
             // 
             this.colple_contract_date.FieldName = "ple_contract_date";
-            this.colple_contract_date.MinWidth = 25;
+            this.colple_contract_date.MinWidth = 80;
             this.colple_contract_date.Name = "colple_contract_date";
             this.colple_contract_date.OptionsColumn.AllowEdit = false;
             this.colple_contract_date.OptionsColumn.AllowFocus = false;
+            this.colple_contract_date.OptionsColumn.FixedWidth = true;
             this.colple_contract_date.Visible = true;
-            this.colple_contract_date.Width = 94;
+            this.colple_contract_date.Width = 100;
             // 
             // colple_contract_no
             // 
             this.colple_contract_no.FieldName = "ple_contract_no";
-            this.colple_contract_no.MinWidth = 25;
+            this.colple_contract_no.MinWidth = 80;
             this.colple_contract_no.Name = "colple_contract_no";
             this.colple_contract_no.OptionsColumn.AllowEdit = false;
             this.colple_contract_no.OptionsColumn.AllowFocus = false;
+            this.colple_contract_no.OptionsColumn.FixedWidth = true;
             this.colple_contract_no.Visible = true;
-            this.colple_contract_no.Width = 94;
+            this.colple_contract_no.Width = 100;
             // 
             // colple_contract_type
             // 
             this.colple_contract_type.FieldName = "ple_contract_type";
-            this.colple_contract_type.MinWidth = 25;
+            this.colple_contract_type.MinWidth = 150;
             this.colple_contract_type.Name = "colple_contract_type";
             this.colple_contract_type.OptionsColumn.AllowEdit = false;
             this.colple_contract_type.OptionsColumn.AllowFocus = false;
+            this.colple_contract_type.OptionsColumn.FixedWidth = true;
             this.colple_contract_type.Visible = true;
-            this.colple_contract_type.Width = 94;
+            this.colple_contract_type.Width = 200;
             // 
             // colple_country
             // 
@@ -1220,6 +1265,7 @@
             this.colple_country.Name = "colple_country";
             this.colple_country.OptionsColumn.AllowEdit = false;
             this.colple_country.OptionsColumn.AllowFocus = false;
+            this.colple_country.OptionsColumn.FixedWidth = true;
             this.colple_country.Visible = true;
             this.colple_country.Width = 62;
             // 
@@ -1248,12 +1294,12 @@
             this.colple_market_value.DisplayFormat.FormatString = "{0:###,##0.#\\}";
             this.colple_market_value.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colple_market_value.FieldName = "ple_market_value";
-            this.colple_market_value.MinWidth = 25;
+            this.colple_market_value.MinWidth = 180;
             this.colple_market_value.Name = "colple_market_value";
             this.colple_market_value.OptionsColumn.AllowEdit = false;
             this.colple_market_value.OptionsColumn.AllowFocus = false;
             this.colple_market_value.Visible = true;
-            this.colple_market_value.Width = 62;
+            this.colple_market_value.Width = 200;
             // 
             // colple_high_liquidity
             // 
@@ -1290,12 +1336,13 @@
             this.colple_returned_sum.DisplayFormat.FormatString = "{0:###,##0.#\\}";
             this.colple_returned_sum.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colple_returned_sum.FieldName = "ple_returned_sum";
-            this.colple_returned_sum.MinWidth = 25;
+            this.colple_returned_sum.MinWidth = 150;
             this.colple_returned_sum.Name = "colple_returned_sum";
             this.colple_returned_sum.OptionsColumn.AllowEdit = false;
             this.colple_returned_sum.OptionsColumn.AllowFocus = false;
+            this.colple_returned_sum.OptionsColumn.FixedWidth = true;
             this.colple_returned_sum.Visible = true;
-            this.colple_returned_sum.Width = 62;
+            this.colple_returned_sum.Width = 200;
             // 
             // colple_report_no
             // 
@@ -1310,74 +1357,74 @@
             // colple_region_kato
             // 
             this.colple_region_kato.FieldName = "ple_region_kato";
-            this.colple_region_kato.MinWidth = 25;
+            this.colple_region_kato.MinWidth = 150;
             this.colple_region_kato.Name = "colple_region_kato";
             this.colple_region_kato.OptionsColumn.AllowEdit = false;
             this.colple_region_kato.OptionsColumn.AllowFocus = false;
             this.colple_region_kato.Visible = true;
-            this.colple_region_kato.Width = 94;
+            this.colple_region_kato.Width = 200;
             // 
             // colple_region
             // 
             this.colple_region.FieldName = "ple_region";
-            this.colple_region.MinWidth = 25;
+            this.colple_region.MinWidth = 150;
             this.colple_region.Name = "colple_region";
             this.colple_region.OptionsColumn.AllowEdit = false;
             this.colple_region.OptionsColumn.AllowFocus = false;
             this.colple_region.Visible = true;
-            this.colple_region.Width = 62;
+            this.colple_region.Width = 200;
             // 
             // colple_redemption_date
             // 
             this.colple_redemption_date.FieldName = "ple_redemption_date";
-            this.colple_redemption_date.MinWidth = 25;
+            this.colple_redemption_date.MinWidth = 90;
             this.colple_redemption_date.Name = "colple_redemption_date";
             this.colple_redemption_date.OptionsColumn.AllowEdit = false;
             this.colple_redemption_date.OptionsColumn.AllowFocus = false;
             this.colple_redemption_date.Visible = true;
-            this.colple_redemption_date.Width = 94;
+            this.colple_redemption_date.Width = 100;
             // 
             // colple_revaluating_date
             // 
             this.colple_revaluating_date.FieldName = "ple_revaluating_date";
-            this.colple_revaluating_date.MinWidth = 25;
+            this.colple_revaluating_date.MinWidth = 90;
             this.colple_revaluating_date.Name = "colple_revaluating_date";
             this.colple_revaluating_date.OptionsColumn.AllowEdit = false;
             this.colple_revaluating_date.OptionsColumn.AllowFocus = false;
             this.colple_revaluating_date.Visible = true;
-            this.colple_revaluating_date.Width = 94;
+            this.colple_revaluating_date.Width = 100;
             // 
             // colple_square
             // 
             this.colple_square.FieldName = "ple_square";
-            this.colple_square.MinWidth = 25;
+            this.colple_square.MinWidth = 100;
             this.colple_square.Name = "colple_square";
             this.colple_square.OptionsColumn.AllowEdit = false;
             this.colple_square.OptionsColumn.AllowFocus = false;
             this.colple_square.Visible = true;
-            this.colple_square.Width = 94;
+            this.colple_square.Width = 130;
             // 
             // colple_placement
             // 
             this.colple_placement.FieldName = "ple_placement";
-            this.colple_placement.MinWidth = 25;
+            this.colple_placement.MinWidth = 180;
             this.colple_placement.Name = "colple_placement";
             this.colple_placement.OptionsColumn.AllowEdit = false;
             this.colple_placement.OptionsColumn.AllowFocus = false;
             this.colple_placement.Visible = true;
-            this.colple_placement.Width = 94;
+            this.colple_placement.Width = 200;
             // 
             // colple_value
             // 
             this.colple_value.DisplayFormat.FormatString = "{0:###,##0.#\\}";
             this.colple_value.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colple_value.FieldName = "ple_value";
-            this.colple_value.MinWidth = 25;
+            this.colple_value.MinWidth = 180;
             this.colple_value.Name = "colple_value";
             this.colple_value.OptionsColumn.AllowEdit = false;
             this.colple_value.OptionsColumn.AllowFocus = false;
             this.colple_value.Visible = true;
-            this.colple_value.Width = 94;
+            this.colple_value.Width = 200;
             // 
             // colple_type_old_crreg
             // 
@@ -1386,6 +1433,7 @@
             this.colple_type_old_crreg.Name = "colple_type_old_crreg";
             this.colple_type_old_crreg.OptionsColumn.AllowEdit = false;
             this.colple_type_old_crreg.OptionsColumn.AllowFocus = false;
+            this.colple_type_old_crreg.OptionsColumn.FixedWidth = true;
             this.colple_type_old_crreg.Visible = true;
             this.colple_type_old_crreg.Width = 62;
             // 
@@ -1414,12 +1462,13 @@
             this.colple_value_kzt.DisplayFormat.FormatString = "{0:###,##0.#\\}";
             this.colple_value_kzt.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colple_value_kzt.FieldName = "ple_value_kzt";
-            this.colple_value_kzt.MinWidth = 25;
+            this.colple_value_kzt.MinWidth = 180;
             this.colple_value_kzt.Name = "colple_value_kzt";
             this.colple_value_kzt.OptionsColumn.AllowEdit = false;
             this.colple_value_kzt.OptionsColumn.AllowFocus = false;
+            this.colple_value_kzt.OptionsColumn.FixedWidth = true;
             this.colple_value_kzt.Visible = true;
-            this.colple_value_kzt.Width = 74;
+            this.colple_value_kzt.Width = 200;
             // 
             // colple_square_zu
             // 
@@ -1494,13 +1543,23 @@
             // dpPokaz
             // 
             this.dpPokaz.Controls.Add(this.dockPanel1_Container);
+            customHeaderButtonImageOptions6.Image = global::ARM_User.Properties.Resources.cancel_16x16;
+            customHeaderButtonImageOptions7.Image = global::ARM_User.Properties.Resources.edit;
+            customHeaderButtonImageOptions8.Image = global::ARM_User.Properties.Resources.add2;
+            customHeaderButtonImageOptions9.Image = global::ARM_User.Properties.Resources.view;
+            this.dpPokaz.CustomHeaderButtons.AddRange(new DevExpress.XtraBars.Docking2010.IButton[] {
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Удалить", true, customHeaderButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject6, null, -1),
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Редактировать", true, customHeaderButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject7, null, -1),
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Добавить", true, customHeaderButtonImageOptions8, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject8, null, -1),
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Просмотр", true, customHeaderButtonImageOptions9, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject9, null, -1)});
             this.dpPokaz.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
             this.dpPokaz.ID = new System.Guid("ace175b5-1d23-4360-9841-e793ea6ff03d");
             this.dpPokaz.Location = new System.Drawing.Point(5, 32);
             this.dpPokaz.Name = "dpPokaz";
-            this.dpPokaz.OriginalSize = new System.Drawing.Size(1171, 204);
+            this.dpPokaz.OriginalSize = new System.Drawing.Size(1171, 200);
             this.dpPokaz.Size = new System.Drawing.Size(1171, 200);
             this.dpPokaz.Text = "Показатели";
+            this.dpPokaz.CustomButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.dpPokaz_CustomButtonClick);
             // 
             // dockPanel1_Container
             // 
@@ -1629,13 +1688,23 @@
             // dpExtraPokaz
             // 
             this.dpExtraPokaz.Controls.Add(this.dockPanel6_Container);
+            customHeaderButtonImageOptions10.Image = global::ARM_User.Properties.Resources.cancel_16x16;
+            customHeaderButtonImageOptions11.Image = global::ARM_User.Properties.Resources.edit;
+            customHeaderButtonImageOptions12.Image = global::ARM_User.Properties.Resources.add2;
+            customHeaderButtonImageOptions13.Image = global::ARM_User.Properties.Resources.view;
+            this.dpExtraPokaz.CustomHeaderButtons.AddRange(new DevExpress.XtraBars.Docking2010.IButton[] {
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Удалить", true, customHeaderButtonImageOptions10, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject10, null, -1),
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Редактировать", true, customHeaderButtonImageOptions11, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject11, null, -1),
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Добавить", true, customHeaderButtonImageOptions12, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject12, null, -1),
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Просмотр", true, customHeaderButtonImageOptions13, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject13, null, -1)});
             this.dpExtraPokaz.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
             this.dpExtraPokaz.ID = new System.Guid("ac8f4ec3-a0c5-4d95-b055-adbc05a3b74d");
             this.dpExtraPokaz.Location = new System.Drawing.Point(5, 32);
             this.dpExtraPokaz.Name = "dpExtraPokaz";
-            this.dpExtraPokaz.OriginalSize = new System.Drawing.Size(1171, 204);
+            this.dpExtraPokaz.OriginalSize = new System.Drawing.Size(1171, 200);
             this.dpExtraPokaz.Size = new System.Drawing.Size(1171, 200);
             this.dpExtraPokaz.Text = "Доп.показатели";
+            this.dpExtraPokaz.CustomButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.dpExtraPokaz_CustomButtonClick);
             // 
             // dockPanel6_Container
             // 
@@ -1807,32 +1876,34 @@
             this.pLeftContainer.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.pLeftContainer.Header = "Container";
             this.pLeftContainer.ID = new System.Guid("e110136f-cbde-44fa-b964-d2ce964a5cb0");
-            this.pLeftContainer.Location = new System.Drawing.Point(731, 37);
+            this.pLeftContainer.Location = new System.Drawing.Point(669, 37);
             this.pLeftContainer.Name = "pLeftContainer";
-            this.pLeftContainer.OriginalSize = new System.Drawing.Size(450, 200);
-            this.pLeftContainer.Size = new System.Drawing.Size(450, 283);
+            this.pLeftContainer.OriginalSize = new System.Drawing.Size(512, 200);
+            this.pLeftContainer.Size = new System.Drawing.Size(512, 325);
             this.pLeftContainer.Tabbed = true;
             this.pLeftContainer.Text = "panelContainer2";
             // 
             // dpSheduler
             // 
             this.dpSheduler.Controls.Add(this.dockPanel3_Container);
+            customHeaderButtonImageOptions1.Image = global::ARM_User.Properties.Resources.exporttoxml_16x16;
             this.dpSheduler.CustomHeaderButtons.AddRange(new DevExpress.XtraBars.Docking2010.IButton[] {
-            new DevExpress.XtraBars.Docking.CustomHeaderButton("Hello", true, customHeaderButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject1, null, -1)});
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("XML", true, customHeaderButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject1, null, -1)});
             this.dpSheduler.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
             this.dpSheduler.ID = new System.Guid("f909e303-d648-4f90-8860-de9956fece1c");
             this.dpSheduler.Location = new System.Drawing.Point(7, 30);
             this.dpSheduler.Name = "dpSheduler";
-            this.dpSheduler.OriginalSize = new System.Drawing.Size(438, 247);
-            this.dpSheduler.Size = new System.Drawing.Size(438, 216);
+            this.dpSheduler.OriginalSize = new System.Drawing.Size(500, 262);
+            this.dpSheduler.Size = new System.Drawing.Size(500, 258);
             this.dpSheduler.Text = "Погашение";
+            this.dpSheduler.CustomButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.dpSheduler_CustomButtonClick);
             // 
             // dockPanel3_Container
             // 
             this.dockPanel3_Container.Controls.Add(this.gridControl1);
             this.dockPanel3_Container.Location = new System.Drawing.Point(0, 0);
             this.dockPanel3_Container.Name = "dockPanel3_Container";
-            this.dockPanel3_Container.Size = new System.Drawing.Size(438, 216);
+            this.dockPanel3_Container.Size = new System.Drawing.Size(500, 258);
             this.dockPanel3_Container.TabIndex = 0;
             // 
             // gridControl1
@@ -1844,7 +1915,7 @@
             this.gridControl1.MainView = this.bgvSheduler;
             this.gridControl1.MenuManager = this.barManager;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(438, 216);
+            this.gridControl1.Size = new System.Drawing.Size(500, 258);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bgvSheduler});
@@ -1885,96 +1956,96 @@
             this.gridBand2.Columns.Add(this.colRP_DEBT_SUM_SALDO);
             this.gridBand2.Name = "gridBand2";
             this.gridBand2.VisibleIndex = 0;
-            this.gridBand2.Width = 846;
+            this.gridBand2.Width = 1360;
             // 
             // colRP_NO
             // 
             this.colRP_NO.FieldName = "RP_NO";
-            this.colRP_NO.MinWidth = 25;
+            this.colRP_NO.MinWidth = 60;
             this.colRP_NO.Name = "colRP_NO";
             this.colRP_NO.OptionsColumn.AllowFocus = false;
             this.colRP_NO.Visible = true;
-            this.colRP_NO.Width = 94;
+            this.colRP_NO.Width = 100;
             // 
             // colRP_BEGIN_DATE
             // 
             this.colRP_BEGIN_DATE.FieldName = "RP_BEGIN_DATE";
-            this.colRP_BEGIN_DATE.MinWidth = 25;
+            this.colRP_BEGIN_DATE.MinWidth = 80;
             this.colRP_BEGIN_DATE.Name = "colRP_BEGIN_DATE";
             this.colRP_BEGIN_DATE.OptionsColumn.AllowFocus = false;
             this.colRP_BEGIN_DATE.Visible = true;
-            this.colRP_BEGIN_DATE.Width = 94;
+            this.colRP_BEGIN_DATE.Width = 150;
             // 
             // colRP_END_DATE
             // 
             this.colRP_END_DATE.FieldName = "RP_END_DATE";
-            this.colRP_END_DATE.MinWidth = 25;
+            this.colRP_END_DATE.MinWidth = 80;
             this.colRP_END_DATE.Name = "colRP_END_DATE";
             this.colRP_END_DATE.OptionsColumn.AllowFocus = false;
             this.colRP_END_DATE.Visible = true;
-            this.colRP_END_DATE.Width = 94;
+            this.colRP_END_DATE.Width = 150;
             // 
             // colRP_DAYS
             // 
             this.colRP_DAYS.FieldName = "RP_DAYS";
-            this.colRP_DAYS.MinWidth = 25;
+            this.colRP_DAYS.MinWidth = 80;
             this.colRP_DAYS.Name = "colRP_DAYS";
             this.colRP_DAYS.OptionsColumn.AllowFocus = false;
             this.colRP_DAYS.Visible = true;
-            this.colRP_DAYS.Width = 94;
+            this.colRP_DAYS.Width = 80;
             // 
             // colRP_PERIOD
             // 
             this.colRP_PERIOD.FieldName = "RP_PERIOD";
-            this.colRP_PERIOD.MinWidth = 25;
+            this.colRP_PERIOD.MinWidth = 80;
             this.colRP_PERIOD.Name = "colRP_PERIOD";
             this.colRP_PERIOD.OptionsColumn.AllowFocus = false;
             this.colRP_PERIOD.Visible = true;
-            this.colRP_PERIOD.Width = 94;
+            this.colRP_PERIOD.Width = 80;
             // 
             // colRP_ALL_SUM_REPAYMENT
             // 
             this.colRP_ALL_SUM_REPAYMENT.DisplayFormat.FormatString = "{0:###,##0.#\\}";
             this.colRP_ALL_SUM_REPAYMENT.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colRP_ALL_SUM_REPAYMENT.FieldName = "RP_ALL_SUM_REPAYMENT";
-            this.colRP_ALL_SUM_REPAYMENT.MinWidth = 25;
+            this.colRP_ALL_SUM_REPAYMENT.MinWidth = 100;
             this.colRP_ALL_SUM_REPAYMENT.Name = "colRP_ALL_SUM_REPAYMENT";
             this.colRP_ALL_SUM_REPAYMENT.OptionsColumn.AllowFocus = false;
             this.colRP_ALL_SUM_REPAYMENT.Visible = true;
-            this.colRP_ALL_SUM_REPAYMENT.Width = 94;
+            this.colRP_ALL_SUM_REPAYMENT.Width = 200;
             // 
             // colRP_INTEREST_SUM_REPAYMENT
             // 
             this.colRP_INTEREST_SUM_REPAYMENT.DisplayFormat.FormatString = "{0:###,##0.#\\}";
             this.colRP_INTEREST_SUM_REPAYMENT.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colRP_INTEREST_SUM_REPAYMENT.FieldName = "RP_INTEREST_SUM_REPAYMENT";
-            this.colRP_INTEREST_SUM_REPAYMENT.MinWidth = 25;
+            this.colRP_INTEREST_SUM_REPAYMENT.MinWidth = 100;
             this.colRP_INTEREST_SUM_REPAYMENT.Name = "colRP_INTEREST_SUM_REPAYMENT";
             this.colRP_INTEREST_SUM_REPAYMENT.OptionsColumn.AllowFocus = false;
             this.colRP_INTEREST_SUM_REPAYMENT.Visible = true;
-            this.colRP_INTEREST_SUM_REPAYMENT.Width = 94;
+            this.colRP_INTEREST_SUM_REPAYMENT.Width = 200;
             // 
             // colRP_DEBT_SUM_REPAYMENT
             // 
             this.colRP_DEBT_SUM_REPAYMENT.DisplayFormat.FormatString = "{0:###,##0.#\\}";
             this.colRP_DEBT_SUM_REPAYMENT.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colRP_DEBT_SUM_REPAYMENT.FieldName = "RP_DEBT_SUM_REPAYMENT";
-            this.colRP_DEBT_SUM_REPAYMENT.MinWidth = 25;
+            this.colRP_DEBT_SUM_REPAYMENT.MinWidth = 100;
             this.colRP_DEBT_SUM_REPAYMENT.Name = "colRP_DEBT_SUM_REPAYMENT";
             this.colRP_DEBT_SUM_REPAYMENT.OptionsColumn.AllowFocus = false;
             this.colRP_DEBT_SUM_REPAYMENT.Visible = true;
-            this.colRP_DEBT_SUM_REPAYMENT.Width = 94;
+            this.colRP_DEBT_SUM_REPAYMENT.Width = 200;
             // 
             // colRP_DEBT_SUM_SALDO
             // 
             this.colRP_DEBT_SUM_SALDO.DisplayFormat.FormatString = "{0:###,##0.#\\}";
             this.colRP_DEBT_SUM_SALDO.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colRP_DEBT_SUM_SALDO.FieldName = "RP_DEBT_SUM_SALDO";
-            this.colRP_DEBT_SUM_SALDO.MinWidth = 25;
+            this.colRP_DEBT_SUM_SALDO.MinWidth = 100;
             this.colRP_DEBT_SUM_SALDO.Name = "colRP_DEBT_SUM_SALDO";
             this.colRP_DEBT_SUM_SALDO.OptionsColumn.AllowFocus = false;
             this.colRP_DEBT_SUM_SALDO.Visible = true;
-            this.colRP_DEBT_SUM_SALDO.Width = 94;
+            this.colRP_DEBT_SUM_SALDO.Width = 200;
             // 
             // dockPanel2
             // 
@@ -1983,15 +2054,15 @@
             this.dockPanel2.ID = new System.Guid("30a5bf06-e951-4d9a-a7d2-1b050a59aed9");
             this.dockPanel2.Location = new System.Drawing.Point(7, 30);
             this.dockPanel2.Name = "dockPanel2";
-            this.dockPanel2.OriginalSize = new System.Drawing.Size(438, 247);
-            this.dockPanel2.Size = new System.Drawing.Size(438, 216);
+            this.dockPanel2.OriginalSize = new System.Drawing.Size(500, 262);
+            this.dockPanel2.Size = new System.Drawing.Size(500, 258);
             this.dockPanel2.Text = "dockPanel2";
             // 
             // dockPanel2_Container
             // 
             this.dockPanel2_Container.Location = new System.Drawing.Point(0, 0);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(438, 216);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(500, 258);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // dockPanel5
@@ -2001,15 +2072,15 @@
             this.dockPanel5.ID = new System.Guid("a4c2f76d-755b-4dc2-b161-8753ff1074ff");
             this.dockPanel5.Location = new System.Drawing.Point(7, 30);
             this.dockPanel5.Name = "dockPanel5";
-            this.dockPanel5.OriginalSize = new System.Drawing.Size(438, 247);
-            this.dockPanel5.Size = new System.Drawing.Size(438, 216);
+            this.dockPanel5.OriginalSize = new System.Drawing.Size(500, 262);
+            this.dockPanel5.Size = new System.Drawing.Size(500, 258);
             this.dockPanel5.Text = "dockPanel5";
             // 
             // dockPanel5_Container
             // 
             this.dockPanel5_Container.Location = new System.Drawing.Point(0, 0);
             this.dockPanel5_Container.Name = "dockPanel5_Container";
-            this.dockPanel5_Container.Size = new System.Drawing.Size(438, 216);
+            this.dockPanel5_Container.Size = new System.Drawing.Size(500, 258);
             this.dockPanel5_Container.TabIndex = 0;
             // 
             // bCount
@@ -2020,10 +2091,13 @@
             // 
             // beData
             // 
-            this.beData.Caption = "Дата:";
+            this.beData.Caption = "Дата";
             this.beData.Edit = this.repositoryItemDateEdit1;
             this.beData.Id = 2;
+            this.beData.ImageOptions.Image = global::ARM_User.Properties.Resources.adateoccurring_16x161;
+            this.beData.ImageOptions.LargeImage = global::ARM_User.Properties.Resources.adateoccurring_32x321;
             this.beData.Name = "beData";
+            this.beData.EditValueChanged += new System.EventHandler(this.beData_EditValueChanged);
             // 
             // repositoryItemDateEdit1
             // 
@@ -2033,33 +2107,101 @@
             this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
+            this.repositoryItemDateEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             // 
             // bbFilter
             // 
-            this.bbFilter.Caption = "Фильтер";
+            this.bbFilter.Caption = "Фильтр";
             this.bbFilter.Id = 3;
+            this.bbFilter.ImageOptions.Image = global::ARM_User.Properties.Resources.filter;
             this.bbFilter.Name = "bbFilter";
+            this.bbFilter.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbFilter_ItemClick);
+            // 
+            // bbSearch
+            // 
+            this.bbSearch.Caption = "Поиск";
+            this.bbSearch.Id = 4;
+            this.bbSearch.ImageOptions.Image = global::ARM_User.Properties.Resources.view;
+            this.bbSearch.Name = "bbSearch";
+            this.bbSearch.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbSearch_ItemClick);
+            // 
+            // bbExportXML
+            // 
+            this.bbExportXML.ActAsDropDown = true;
+            this.bbExportXML.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.bbExportXML.Caption = "XML";
+            this.bbExportXML.DropDownControl = this.popupMenu1;
+            this.bbExportXML.Id = 5;
+            this.bbExportXML.ImageOptions.Image = global::ARM_User.Properties.Resources.exporttoxml_16x16;
+            this.bbExportXML.ImageOptions.LargeImage = global::ARM_User.Properties.Resources.exporttoxml_32x32;
+            this.bbExportXML.Name = "bbExportXML";
+            this.bbExportXML.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbExport_ItemClick);
+            // 
+            // popupMenu1
+            // 
+            this.popupMenu1.Manager = this.barManager;
+            this.popupMenu1.Name = "popupMenu1";
+            // 
+            // bbRefresh
+            // 
+            this.bbRefresh.Caption = "Обновить";
+            this.bbRefresh.Id = 6;
+            this.bbRefresh.ImageOptions.Image = global::ARM_User.Properties.Resources.refresh;
+            this.bbRefresh.Name = "bbRefresh";
+            this.bbRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbRefresh_ItemClick);
+            // 
+            // bbExpXMLMenu
+            // 
+            this.bbExpXMLMenu.Caption = "XML";
+            this.bbExpXMLMenu.Id = 7;
+            this.bbExpXMLMenu.ImageOptions.Image = global::ARM_User.Properties.Resources.exporttoxml_16x161;
+            this.bbExpXMLMenu.ImageOptions.LargeImage = global::ARM_User.Properties.Resources.exporttoxml_32x321;
+            this.bbExpXMLMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbCredits),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbSheduler)});
+            this.bbExpXMLMenu.Name = "bbExpXMLMenu";
+            this.bbExpXMLMenu.ShowMenuCaption = true;
+            this.bbExpXMLMenu.ShowNavigationHeader = DevExpress.Utils.DefaultBoolean.True;
+            // 
+            // bbCredits
+            // 
+            this.bbCredits.Caption = "Кредиты";
+            this.bbCredits.Id = 11;
+            this.bbCredits.ImageOptions.Image = global::ARM_User.Properties.Resources.financial_16x16;
+            this.bbCredits.ImageOptions.LargeImage = global::ARM_User.Properties.Resources.financial_32x32;
+            this.bbCredits.Name = "bbCredits";
+            this.bbCredits.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbCredits_ItemClick);
+            // 
+            // bbSheduler
+            // 
+            this.bbSheduler.Caption = "График погашения";
+            this.bbSheduler.Id = 12;
+            this.bbSheduler.ImageOptions.Image = global::ARM_User.Properties.Resources.showworktimeonly_16x16;
+            this.bbSheduler.ImageOptions.LargeImage = global::ARM_User.Properties.Resources.showworktimeonly_32x32;
+            this.bbSheduler.Name = "bbSheduler";
+            this.bbSheduler.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbSheduler_ItemClick);
             // 
             // NewCreditsListForm
             // 
-            this.ClientSize = new System.Drawing.Size(1181, 589);
-            this.Controls.Add(this.gcList1);
+            this.ClientSize = new System.Drawing.Size(1181, 631);
+            this.Controls.Add(this.gcCredits);
             this.Controls.Add(this.pLeftContainer);
             this.Controls.Add(this.pBottomContainer);
             this.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Name = "NewCreditsListForm";
+            this.Text = "Кредиты";
             this.Controls.SetChildIndex(this.barDockControlTop, 0);
             this.Controls.SetChildIndex(this.barDockControlBottom, 0);
             this.Controls.SetChildIndex(this.barDockControlRight, 0);
             this.Controls.SetChildIndex(this.barDockControlLeft, 0);
             this.Controls.SetChildIndex(this.pBottomContainer, 0);
             this.Controls.SetChildIndex(this.pLeftContainer, 0);
-            this.Controls.SetChildIndex(this.gcList1, 0);
+            this.Controls.SetChildIndex(this.gcCredits, 0);
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.styleController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcList1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcCredits)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtCredits)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tsPledges)).EndInit();
@@ -2072,7 +2214,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             this.pBottomContainer.ResumeLayout(false);
-            this.dockPanel4.ResumeLayout(false);
+            this.dpPledges.ResumeLayout(false);
             this.dockPanel4_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bandedGridView3)).EndInit();
@@ -2094,6 +2236,7 @@
             this.dockPanel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2102,7 +2245,7 @@
         #endregion
 
         private DevExpress.XtraBars.Docking2010.DocumentManager documentManager1;
-        private DevExpress.XtraGrid.GridControl gcList1;
+        private DevExpress.XtraGrid.GridControl gcCredits;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView bgvCredits;
         private DevExpress.XtraBars.Docking2010.Views.NoDocuments.NoDocumentsView noDocumentsView1;
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
@@ -2119,7 +2262,7 @@
         private DevExpress.XtraBars.Docking.DockPanel pBottomContainer;
         private DevExpress.XtraBars.Docking.DockPanel dpExtraPokaz;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel6_Container;
-        private DevExpress.XtraBars.Docking.DockPanel dockPanel4;
+        private DevExpress.XtraBars.Docking.DockPanel dpPledges;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel4_Container;
         private System.Data.DataSet dsMain;
         private System.Data.DataTable dtCredits;
@@ -2290,5 +2433,12 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colsrv_system_date;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colsrc_ddfrey;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gdbPledges;
+        private DevExpress.XtraBars.BarButtonItem bbSearch;
+        private DevExpress.XtraBars.BarButtonItem bbExportXML;
+        private DevExpress.XtraBars.BarButtonItem bbRefresh;
+        private DevExpress.XtraBars.PopupMenu popupMenu1;
+        private DevExpress.XtraBars.BarSubItem bbExpXMLMenu;
+        private DevExpress.XtraBars.BarButtonItem bbCredits;
+        private DevExpress.XtraBars.BarButtonItem bbSheduler;
     }
 }

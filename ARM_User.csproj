@@ -685,6 +685,9 @@
     <Compile Include="New\DB\DB_Reports.cs" />
     <Compile Include="New\DB\DB_RepSetupSQL.cs" />
     <Compile Include="New\DB\DIM_ExtraPokaz.cs" />
+    <Compile Include="New\DB\NewCreditImpExtraPokaz.cs" />
+    <Compile Include="New\DB\NewCreditImpPokaz.cs" />
+    <Compile Include="New\DB\PanelAction.cs" />
     <Compile Include="New\Guide\CalendarOperationEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1831,6 +1834,8 @@
     <None Include="Resources\alignhorizontalcenter2_16x16.png" />
     <None Include="Resources\adateoccurring_16x16.png" />
     <None Include="Resources\adateoccurring_32x32.png" />
+    <None Include="Resources\adateoccurring_16x161.png" />
+    <None Include="Resources\adateoccurring_32x321.png" />
     <Content Include="Resources\clip.ico" />
     <None Include="Resources\filter1.png" />
     <None Include="Resources\deletedatasource_16x16.png" />
@@ -1841,6 +1846,12 @@
     <None Include="Resources\open_16x16.png" />
     <None Include="Resources\converttorange_16x16.png" />
     <None Include="Resources\converttorange_32x32.png" />
+    <None Include="Resources\exporttoxml_16x16.png" />
+    <None Include="Resources\exporttoxml_32x32.png" />
+    <None Include="Resources\exporttoxml_16x161.png" />
+    <None Include="Resources\exporttoxml_32x321.png" />
+    <None Include="Resources\financial_16x16.png" />
+    <None Include="Resources\financial_32x32.png" />
     <Content Include="Resources\otmena.PNG" />
     <None Include="Resources\question.png" />
     <Content Include="Resources\redo.gif" />
@@ -1848,6 +1859,8 @@
     <Content Include="Resources\save.PNG" />
     <None Include="Resources\security_key.svg" />
     <None Include="Resources\savetheme_16x16.png" />
+    <None Include="Resources\showworktimeonly_16x16.png" />
+    <None Include="Resources\showworktimeonly_32x32.png" />
     <Content Include="Resources\undo.gif" />
     <Content Include="Resources\word.png" />
     <None Include="Resources\searchsettingbutton.svg" />

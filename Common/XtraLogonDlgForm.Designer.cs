@@ -42,6 +42,7 @@
             DevExpress.Utils.SimpleContextButton simpleContextButton1 = new DevExpress.Utils.SimpleContextButton();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XtraLogonDlgForm));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.lcText = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.sbCancel = new DevExpress.XtraEditors.SimpleButton();
             this.teSid = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -61,10 +62,9 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.lciCapsState = new DevExpress.XtraLayout.LayoutControlItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
-            this.lcText = new DevExpress.XtraEditors.LabelControl();
-            this.lciCapsState = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.teSid.Properties)).BeginInit();
@@ -82,8 +82,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciCapsState)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -106,6 +106,14 @@
             this.layoutControl1.Size = new System.Drawing.Size(376, 294);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // lcText
+            // 
+            this.lcText.Location = new System.Drawing.Point(12, 182);
+            this.lcText.Name = "lcText";
+            this.lcText.Size = new System.Drawing.Size(352, 17);
+            this.lcText.StyleController = this.layoutControl1;
+            this.lcText.TabIndex = 18;
             // 
             // labelControl1
             // 
@@ -338,18 +346,6 @@
             this.emptySpaceItem1.StartNewLine = true;
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // dxErrorProvider1
-            // 
-            this.dxErrorProvider1.ContainerControl = this;
-            // 
-            // lcText
-            // 
-            this.lcText.Location = new System.Drawing.Point(12, 182);
-            this.lcText.Name = "lcText";
-            this.lcText.Size = new System.Drawing.Size(352, 17);
-            this.lcText.StyleController = this.layoutControl1;
-            this.lcText.TabIndex = 18;
-            // 
             // lciCapsState
             // 
             this.lciCapsState.Control = this.lcText;
@@ -359,6 +355,10 @@
             this.lciCapsState.Size = new System.Drawing.Size(356, 21);
             this.lciCapsState.TextSize = new System.Drawing.Size(0, 0);
             this.lciCapsState.TextVisible = false;
+            // 
+            // dxErrorProvider1
+            // 
+            this.dxErrorProvider1.ContainerControl = this;
             // 
             // XtraLogonDlgForm
             // 
@@ -378,7 +378,6 @@
             this.Validated += new System.EventHandler(this.XtraLogonDlgForm_Validated);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            this.layoutControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.teSid.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teHost.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teUser.Properties)).EndInit();
@@ -394,8 +393,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciCapsState)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }

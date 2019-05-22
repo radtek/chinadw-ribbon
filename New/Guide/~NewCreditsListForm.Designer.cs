@@ -30,32 +30,30 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewCreditsListForm));
-            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions2 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions3 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions4 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions5 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions6 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions7 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions8 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions9 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions10 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions11 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions12 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions13 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions1 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions14 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions15 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions16 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions17 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions18 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions19 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions20 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions21 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions22 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions23 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions customHeaderButtonImageOptions24 = new DevExpress.XtraBars.Docking.CustomHeaderButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.gcCredits = new DevExpress.XtraGrid.GridControl();
             this.dsMain = new System.Data.DataSet();
@@ -222,25 +220,6 @@
             this.colt_note = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridView1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
             this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.pLeftContainer = new DevExpress.XtraBars.Docking.DockPanel();
-            this.dpSheduler = new DevExpress.XtraBars.Docking.DockPanel();
-            this.dockPanel3_Container = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.bgvSheduler = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
-            this.gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.colRP_NO = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colRP_BEGIN_DATE = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colRP_END_DATE = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colRP_DAYS = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colRP_PERIOD = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colRP_ALL_SUM_REPAYMENT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colRP_INTEREST_SUM_REPAYMENT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colRP_DEBT_SUM_REPAYMENT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colRP_DEBT_SUM_SALDO = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.dockPanel2 = new DevExpress.XtraBars.Docking.DockPanel();
-            this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.dockPanel5 = new DevExpress.XtraBars.Docking.DockPanel();
-            this.dockPanel5_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.bCount = new DevExpress.XtraBars.BarHeaderItem();
             this.beData = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
@@ -252,6 +231,26 @@
             this.bbExpXMLMenu = new DevExpress.XtraBars.BarSubItem();
             this.bbCredits = new DevExpress.XtraBars.BarButtonItem();
             this.bbSheduler = new DevExpress.XtraBars.BarButtonItem();
+            this.dockPanel5 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel5_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.dockPanel2 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.dpSheduler = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel3_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.bgvSheduler = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
+            this.colRP_NO = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colRP_BEGIN_DATE = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colRP_END_DATE = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colRP_DAYS = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colRP_PERIOD = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colRP_ALL_SUM_REPAYMENT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colRP_INTEREST_SUM_REPAYMENT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colRP_DEBT_SUM_REPAYMENT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colRP_DEBT_SUM_SALDO = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.pLeftContainer = new DevExpress.XtraBars.Docking.DockPanel();
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.styleController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
@@ -281,16 +280,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcList2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bgvExtraPokaz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bandedGridView1)).BeginInit();
-            this.pLeftContainer.SuspendLayout();
-            this.dpSheduler.SuspendLayout();
-            this.dockPanel3_Container.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bgvSheduler)).BeginInit();
-            this.dockPanel2.SuspendLayout();
-            this.dockPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
+            this.dockPanel5.SuspendLayout();
+            this.dockPanel2.SuspendLayout();
+            this.dpSheduler.SuspendLayout();
+            this.dockPanel3_Container.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bgvSheduler)).BeginInit();
+            this.pLeftContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // barDockControlBottom
@@ -363,7 +363,7 @@
             this.gcCredits.Location = new System.Drawing.Point(0, 37);
             this.gcCredits.MainView = this.bgvCredits;
             this.gcCredits.Name = "gcCredits";
-            this.gcCredits.Size = new System.Drawing.Size(669, 325);
+            this.gcCredits.Size = new System.Drawing.Size(1181, 325);
             this.gcCredits.TabIndex = 5;
             this.gcCredits.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bgvCredits});
@@ -1040,8 +1040,7 @@
             // 
             this.dockManager1.Form = this;
             this.dockManager1.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
-            this.pBottomContainer,
-            this.pLeftContainer});
+            this.pBottomContainer});
             this.dockManager1.TopZIndexControls.AddRange(new string[] {
             "DevExpress.XtraBars.BarDockControl",
             "DevExpress.XtraBars.StandaloneBarDockControl",
@@ -1074,20 +1073,20 @@
             // dpPledges
             // 
             this.dpPledges.Controls.Add(this.dockPanel4_Container);
-            customHeaderButtonImageOptions2.Image = global::ARM_User.Properties.Resources.cancel_16x16;
-            customHeaderButtonImageOptions3.Image = global::ARM_User.Properties.Resources.edit;
-            customHeaderButtonImageOptions4.Image = global::ARM_User.Properties.Resources.add2;
-            customHeaderButtonImageOptions5.Image = global::ARM_User.Properties.Resources.view;
+            customHeaderButtonImageOptions13.Image = global::ARM_User.Properties.Resources.cancel_16x16;
+            customHeaderButtonImageOptions14.Image = global::ARM_User.Properties.Resources.edit;
+            customHeaderButtonImageOptions15.Image = global::ARM_User.Properties.Resources.add2;
+            customHeaderButtonImageOptions16.Image = global::ARM_User.Properties.Resources.view;
             this.dpPledges.CustomHeaderButtons.AddRange(new DevExpress.XtraBars.Docking2010.IButton[] {
-            new DevExpress.XtraBars.Docking.CustomHeaderButton("Удалить", true, customHeaderButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject2, null, 2),
-            new DevExpress.XtraBars.Docking.CustomHeaderButton("Редактировать", true, customHeaderButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject3, null, 2),
-            new DevExpress.XtraBars.Docking.CustomHeaderButton("Добавить", true, customHeaderButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject4, null, 2),
-            new DevExpress.XtraBars.Docking.CustomHeaderButton("Просмотр", true, customHeaderButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject5, null, 1)});
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Удалить", true, customHeaderButtonImageOptions13, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject13, null, 2),
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Редактировать", true, customHeaderButtonImageOptions14, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject14, null, 2),
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Добавить", true, customHeaderButtonImageOptions15, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject15, null, 2),
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Просмотр", true, customHeaderButtonImageOptions16, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject16, null, 1)});
             this.dpPledges.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
-            this.dpPledges.FloatSize = new System.Drawing.Size(400, 200);
             this.dpPledges.ID = new System.Guid("32ad28d1-2482-434d-a0e5-07735d947c5b");
             this.dpPledges.Location = new System.Drawing.Point(5, 32);
             this.dpPledges.Name = "dpPledges";
+            this.dpPledges.Options.ShowCloseButton = false;
             this.dpPledges.OriginalSize = new System.Drawing.Size(1171, 200);
             this.dpPledges.Size = new System.Drawing.Size(1171, 200);
             this.dpPledges.Text = "Залоги";
@@ -1544,20 +1543,20 @@
             // dpPokaz
             // 
             this.dpPokaz.Controls.Add(this.dockPanel1_Container);
-            customHeaderButtonImageOptions6.Image = global::ARM_User.Properties.Resources.cancel_16x16;
-            customHeaderButtonImageOptions7.Image = global::ARM_User.Properties.Resources.edit;
-            customHeaderButtonImageOptions8.Image = global::ARM_User.Properties.Resources.add2;
-            customHeaderButtonImageOptions9.Image = global::ARM_User.Properties.Resources.view;
+            customHeaderButtonImageOptions17.Image = global::ARM_User.Properties.Resources.cancel_16x16;
+            customHeaderButtonImageOptions18.Image = global::ARM_User.Properties.Resources.edit;
+            customHeaderButtonImageOptions19.Image = global::ARM_User.Properties.Resources.add2;
+            customHeaderButtonImageOptions20.Image = global::ARM_User.Properties.Resources.view;
             this.dpPokaz.CustomHeaderButtons.AddRange(new DevExpress.XtraBars.Docking2010.IButton[] {
-            new DevExpress.XtraBars.Docking.CustomHeaderButton("Удалить", true, customHeaderButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject6, null, -1),
-            new DevExpress.XtraBars.Docking.CustomHeaderButton("Редактировать", true, customHeaderButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject7, null, -1),
-            new DevExpress.XtraBars.Docking.CustomHeaderButton("Добавить", true, customHeaderButtonImageOptions8, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject8, null, -1),
-            new DevExpress.XtraBars.Docking.CustomHeaderButton("Просмотр", true, customHeaderButtonImageOptions9, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject9, null, -1)});
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Удалить", true, customHeaderButtonImageOptions17, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject17, null, -1),
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Редактировать", true, customHeaderButtonImageOptions18, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject18, null, -1),
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Добавить", true, customHeaderButtonImageOptions19, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject19, null, -1),
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Просмотр", true, customHeaderButtonImageOptions20, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject20, null, -1)});
             this.dpPokaz.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
-            this.dpPokaz.FloatSize = new System.Drawing.Size(400, 200);
             this.dpPokaz.ID = new System.Guid("ace175b5-1d23-4360-9841-e793ea6ff03d");
             this.dpPokaz.Location = new System.Drawing.Point(5, 32);
             this.dpPokaz.Name = "dpPokaz";
+            this.dpPokaz.Options.ShowCloseButton = false;
             this.dpPokaz.OriginalSize = new System.Drawing.Size(1171, 200);
             this.dpPokaz.Size = new System.Drawing.Size(1171, 200);
             this.dpPokaz.Text = "Показатели";
@@ -1690,20 +1689,20 @@
             // dpExtraPokaz
             // 
             this.dpExtraPokaz.Controls.Add(this.dockPanel6_Container);
-            customHeaderButtonImageOptions10.Image = global::ARM_User.Properties.Resources.cancel_16x16;
-            customHeaderButtonImageOptions11.Image = global::ARM_User.Properties.Resources.edit;
-            customHeaderButtonImageOptions12.Image = global::ARM_User.Properties.Resources.add2;
-            customHeaderButtonImageOptions13.Image = global::ARM_User.Properties.Resources.view;
+            customHeaderButtonImageOptions21.Image = global::ARM_User.Properties.Resources.cancel_16x16;
+            customHeaderButtonImageOptions22.Image = global::ARM_User.Properties.Resources.edit;
+            customHeaderButtonImageOptions23.Image = global::ARM_User.Properties.Resources.add2;
+            customHeaderButtonImageOptions24.Image = global::ARM_User.Properties.Resources.view;
             this.dpExtraPokaz.CustomHeaderButtons.AddRange(new DevExpress.XtraBars.Docking2010.IButton[] {
-            new DevExpress.XtraBars.Docking.CustomHeaderButton("Удалить", true, customHeaderButtonImageOptions10, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject10, null, -1),
-            new DevExpress.XtraBars.Docking.CustomHeaderButton("Редактировать", true, customHeaderButtonImageOptions11, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject11, null, -1),
-            new DevExpress.XtraBars.Docking.CustomHeaderButton("Добавить", true, customHeaderButtonImageOptions12, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject12, null, -1),
-            new DevExpress.XtraBars.Docking.CustomHeaderButton("Просмотр", true, customHeaderButtonImageOptions13, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject13, null, -1)});
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Удалить", true, customHeaderButtonImageOptions21, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject21, null, -1),
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Редактировать", true, customHeaderButtonImageOptions22, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject22, null, -1),
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Добавить", true, customHeaderButtonImageOptions23, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject23, null, -1),
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Просмотр", true, customHeaderButtonImageOptions24, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject24, null, -1)});
             this.dpExtraPokaz.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
-            this.dpExtraPokaz.FloatSize = new System.Drawing.Size(400, 200);
             this.dpExtraPokaz.ID = new System.Guid("ac8f4ec3-a0c5-4d95-b055-adbc05a3b74d");
             this.dpExtraPokaz.Location = new System.Drawing.Point(5, 32);
             this.dpExtraPokaz.Name = "dpExtraPokaz";
+            this.dpExtraPokaz.Options.ShowCloseButton = false;
             this.dpExtraPokaz.OriginalSize = new System.Drawing.Size(1171, 200);
             this.dpExtraPokaz.Size = new System.Drawing.Size(1171, 200);
             this.dpExtraPokaz.Text = "Доп.показатели";
@@ -1870,223 +1869,6 @@
             this.gridBand3.Name = "gridBand3";
             this.gridBand3.VisibleIndex = 0;
             // 
-            // pLeftContainer
-            // 
-            this.pLeftContainer.ActiveChild = this.dpSheduler;
-            this.pLeftContainer.Controls.Add(this.dpSheduler);
-            this.pLeftContainer.Controls.Add(this.dockPanel2);
-            this.pLeftContainer.Controls.Add(this.dockPanel5);
-            this.pLeftContainer.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
-            this.pLeftContainer.Header = "Container";
-            this.pLeftContainer.ID = new System.Guid("e110136f-cbde-44fa-b964-d2ce964a5cb0");
-            this.pLeftContainer.Location = new System.Drawing.Point(669, 37);
-            this.pLeftContainer.Name = "pLeftContainer";
-            this.pLeftContainer.OriginalSize = new System.Drawing.Size(512, 200);
-            this.pLeftContainer.Size = new System.Drawing.Size(512, 325);
-            this.pLeftContainer.Tabbed = true;
-            this.pLeftContainer.Text = "panelContainer2";
-            // 
-            // dpSheduler
-            // 
-            this.dpSheduler.Controls.Add(this.dockPanel3_Container);
-            customHeaderButtonImageOptions1.Image = global::ARM_User.Properties.Resources.exporttoxml_16x16;
-            this.dpSheduler.CustomHeaderButtons.AddRange(new DevExpress.XtraBars.Docking2010.IButton[] {
-            new DevExpress.XtraBars.Docking.CustomHeaderButton("XML", true, customHeaderButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, serializableAppearanceObject1, null, -1)});
-            this.dpSheduler.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
-            this.dpSheduler.FloatSize = new System.Drawing.Size(400, 200);
-            this.dpSheduler.ID = new System.Guid("f909e303-d648-4f90-8860-de9956fece1c");
-            this.dpSheduler.Location = new System.Drawing.Point(7, 30);
-            this.dpSheduler.Name = "dpSheduler";
-            this.dpSheduler.OriginalSize = new System.Drawing.Size(500, 258);
-            this.dpSheduler.Size = new System.Drawing.Size(500, 258);
-            this.dpSheduler.Text = "Погашение";
-            this.dpSheduler.CustomButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.dpSheduler_CustomButtonClick);
-            // 
-            // dockPanel3_Container
-            // 
-            this.dockPanel3_Container.Controls.Add(this.gridControl1);
-            this.dockPanel3_Container.Location = new System.Drawing.Point(0, 0);
-            this.dockPanel3_Container.Name = "dockPanel3_Container";
-            this.dockPanel3_Container.Size = new System.Drawing.Size(500, 258);
-            this.dockPanel3_Container.TabIndex = 0;
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.DataMember = "tsPaymentPlan";
-            this.gridControl1.DataSource = this.dsMain;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.bgvSheduler;
-            this.gridControl1.MenuManager = this.barManager;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(500, 258);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.bgvSheduler});
-            // 
-            // bgvSheduler
-            // 
-            this.bgvSheduler.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
-            this.gridBand2});
-            this.bgvSheduler.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
-            this.colRP_NO,
-            this.colRP_BEGIN_DATE,
-            this.colRP_END_DATE,
-            this.colRP_DAYS,
-            this.colRP_PERIOD,
-            this.colRP_ALL_SUM_REPAYMENT,
-            this.colRP_INTEREST_SUM_REPAYMENT,
-            this.colRP_DEBT_SUM_REPAYMENT,
-            this.colRP_DEBT_SUM_SALDO});
-            this.bgvSheduler.GridControl = this.gridControl1;
-            this.bgvSheduler.Name = "bgvSheduler";
-            this.bgvSheduler.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
-            this.bgvSheduler.OptionsView.ShowGroupPanel = false;
-            this.bgvSheduler.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.bandedGridView1_FocusedRowChanged);
-            // 
-            // gridBand2
-            // 
-            this.gridBand2.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand2.Caption = "График погашения ";
-            this.gridBand2.Columns.Add(this.colRP_NO);
-            this.gridBand2.Columns.Add(this.colRP_BEGIN_DATE);
-            this.gridBand2.Columns.Add(this.colRP_END_DATE);
-            this.gridBand2.Columns.Add(this.colRP_DAYS);
-            this.gridBand2.Columns.Add(this.colRP_PERIOD);
-            this.gridBand2.Columns.Add(this.colRP_ALL_SUM_REPAYMENT);
-            this.gridBand2.Columns.Add(this.colRP_INTEREST_SUM_REPAYMENT);
-            this.gridBand2.Columns.Add(this.colRP_DEBT_SUM_REPAYMENT);
-            this.gridBand2.Columns.Add(this.colRP_DEBT_SUM_SALDO);
-            this.gridBand2.Name = "gridBand2";
-            this.gridBand2.VisibleIndex = 0;
-            this.gridBand2.Width = 1360;
-            // 
-            // colRP_NO
-            // 
-            this.colRP_NO.FieldName = "RP_NO";
-            this.colRP_NO.MinWidth = 60;
-            this.colRP_NO.Name = "colRP_NO";
-            this.colRP_NO.OptionsColumn.AllowFocus = false;
-            this.colRP_NO.Visible = true;
-            this.colRP_NO.Width = 100;
-            // 
-            // colRP_BEGIN_DATE
-            // 
-            this.colRP_BEGIN_DATE.FieldName = "RP_BEGIN_DATE";
-            this.colRP_BEGIN_DATE.MinWidth = 80;
-            this.colRP_BEGIN_DATE.Name = "colRP_BEGIN_DATE";
-            this.colRP_BEGIN_DATE.OptionsColumn.AllowFocus = false;
-            this.colRP_BEGIN_DATE.Visible = true;
-            this.colRP_BEGIN_DATE.Width = 150;
-            // 
-            // colRP_END_DATE
-            // 
-            this.colRP_END_DATE.FieldName = "RP_END_DATE";
-            this.colRP_END_DATE.MinWidth = 80;
-            this.colRP_END_DATE.Name = "colRP_END_DATE";
-            this.colRP_END_DATE.OptionsColumn.AllowFocus = false;
-            this.colRP_END_DATE.Visible = true;
-            this.colRP_END_DATE.Width = 150;
-            // 
-            // colRP_DAYS
-            // 
-            this.colRP_DAYS.FieldName = "RP_DAYS";
-            this.colRP_DAYS.MinWidth = 80;
-            this.colRP_DAYS.Name = "colRP_DAYS";
-            this.colRP_DAYS.OptionsColumn.AllowFocus = false;
-            this.colRP_DAYS.Visible = true;
-            this.colRP_DAYS.Width = 80;
-            // 
-            // colRP_PERIOD
-            // 
-            this.colRP_PERIOD.FieldName = "RP_PERIOD";
-            this.colRP_PERIOD.MinWidth = 80;
-            this.colRP_PERIOD.Name = "colRP_PERIOD";
-            this.colRP_PERIOD.OptionsColumn.AllowFocus = false;
-            this.colRP_PERIOD.Visible = true;
-            this.colRP_PERIOD.Width = 80;
-            // 
-            // colRP_ALL_SUM_REPAYMENT
-            // 
-            this.colRP_ALL_SUM_REPAYMENT.DisplayFormat.FormatString = "{0:###,##0.#\\}";
-            this.colRP_ALL_SUM_REPAYMENT.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colRP_ALL_SUM_REPAYMENT.FieldName = "RP_ALL_SUM_REPAYMENT";
-            this.colRP_ALL_SUM_REPAYMENT.MinWidth = 100;
-            this.colRP_ALL_SUM_REPAYMENT.Name = "colRP_ALL_SUM_REPAYMENT";
-            this.colRP_ALL_SUM_REPAYMENT.OptionsColumn.AllowFocus = false;
-            this.colRP_ALL_SUM_REPAYMENT.Visible = true;
-            this.colRP_ALL_SUM_REPAYMENT.Width = 200;
-            // 
-            // colRP_INTEREST_SUM_REPAYMENT
-            // 
-            this.colRP_INTEREST_SUM_REPAYMENT.DisplayFormat.FormatString = "{0:###,##0.#\\}";
-            this.colRP_INTEREST_SUM_REPAYMENT.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colRP_INTEREST_SUM_REPAYMENT.FieldName = "RP_INTEREST_SUM_REPAYMENT";
-            this.colRP_INTEREST_SUM_REPAYMENT.MinWidth = 100;
-            this.colRP_INTEREST_SUM_REPAYMENT.Name = "colRP_INTEREST_SUM_REPAYMENT";
-            this.colRP_INTEREST_SUM_REPAYMENT.OptionsColumn.AllowFocus = false;
-            this.colRP_INTEREST_SUM_REPAYMENT.Visible = true;
-            this.colRP_INTEREST_SUM_REPAYMENT.Width = 200;
-            // 
-            // colRP_DEBT_SUM_REPAYMENT
-            // 
-            this.colRP_DEBT_SUM_REPAYMENT.DisplayFormat.FormatString = "{0:###,##0.#\\}";
-            this.colRP_DEBT_SUM_REPAYMENT.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colRP_DEBT_SUM_REPAYMENT.FieldName = "RP_DEBT_SUM_REPAYMENT";
-            this.colRP_DEBT_SUM_REPAYMENT.MinWidth = 100;
-            this.colRP_DEBT_SUM_REPAYMENT.Name = "colRP_DEBT_SUM_REPAYMENT";
-            this.colRP_DEBT_SUM_REPAYMENT.OptionsColumn.AllowFocus = false;
-            this.colRP_DEBT_SUM_REPAYMENT.Visible = true;
-            this.colRP_DEBT_SUM_REPAYMENT.Width = 200;
-            // 
-            // colRP_DEBT_SUM_SALDO
-            // 
-            this.colRP_DEBT_SUM_SALDO.DisplayFormat.FormatString = "{0:###,##0.#\\}";
-            this.colRP_DEBT_SUM_SALDO.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colRP_DEBT_SUM_SALDO.FieldName = "RP_DEBT_SUM_SALDO";
-            this.colRP_DEBT_SUM_SALDO.MinWidth = 100;
-            this.colRP_DEBT_SUM_SALDO.Name = "colRP_DEBT_SUM_SALDO";
-            this.colRP_DEBT_SUM_SALDO.OptionsColumn.AllowFocus = false;
-            this.colRP_DEBT_SUM_SALDO.Visible = true;
-            this.colRP_DEBT_SUM_SALDO.Width = 200;
-            // 
-            // dockPanel2
-            // 
-            this.dockPanel2.Controls.Add(this.dockPanel2_Container);
-            this.dockPanel2.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
-            this.dockPanel2.ID = new System.Guid("30a5bf06-e951-4d9a-a7d2-1b050a59aed9");
-            this.dockPanel2.Location = new System.Drawing.Point(7, 30);
-            this.dockPanel2.Name = "dockPanel2";
-            this.dockPanel2.OriginalSize = new System.Drawing.Size(500, 258);
-            this.dockPanel2.Size = new System.Drawing.Size(500, 258);
-            this.dockPanel2.Text = "dockPanel2";
-            // 
-            // dockPanel2_Container
-            // 
-            this.dockPanel2_Container.Location = new System.Drawing.Point(0, 0);
-            this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(500, 258);
-            this.dockPanel2_Container.TabIndex = 0;
-            // 
-            // dockPanel5
-            // 
-            this.dockPanel5.Controls.Add(this.dockPanel5_Container);
-            this.dockPanel5.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
-            this.dockPanel5.ID = new System.Guid("a4c2f76d-755b-4dc2-b161-8753ff1074ff");
-            this.dockPanel5.Location = new System.Drawing.Point(7, 30);
-            this.dockPanel5.Name = "dockPanel5";
-            this.dockPanel5.OriginalSize = new System.Drawing.Size(500, 258);
-            this.dockPanel5.Size = new System.Drawing.Size(500, 258);
-            this.dockPanel5.Text = "dockPanel5";
-            // 
-            // dockPanel5_Container
-            // 
-            this.dockPanel5_Container.Location = new System.Drawing.Point(0, 0);
-            this.dockPanel5_Container.Name = "dockPanel5_Container";
-            this.dockPanel5_Container.Size = new System.Drawing.Size(500, 258);
-            this.dockPanel5_Container.TabIndex = 0;
-            // 
             // bCount
             // 
             this.bCount.Caption = "0";
@@ -2185,6 +1967,227 @@
             this.bbSheduler.Name = "bbSheduler";
             this.bbSheduler.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbSheduler_ItemClick);
             // 
+            // dockPanel5
+            // 
+            this.dockPanel5.Controls.Add(this.dockPanel5_Container);
+            this.dockPanel5.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
+            this.dockPanel5.ID = new System.Guid("a4c2f76d-755b-4dc2-b161-8753ff1074ff");
+            this.dockPanel5.Location = new System.Drawing.Point(7, 26);
+            this.dockPanel5.Name = "dockPanel5";
+            this.dockPanel5.OriginalSize = new System.Drawing.Size(500, 258);
+            this.dockPanel5.Size = new System.Drawing.Size(500, 262);
+            this.dockPanel5.Text = "dockPanel5";
+            // 
+            // dockPanel5_Container
+            // 
+            this.dockPanel5_Container.Location = new System.Drawing.Point(0, 0);
+            this.dockPanel5_Container.Name = "dockPanel5_Container";
+            this.dockPanel5_Container.Size = new System.Drawing.Size(500, 262);
+            this.dockPanel5_Container.TabIndex = 0;
+            // 
+            // dockPanel2
+            // 
+            this.dockPanel2.Controls.Add(this.dockPanel2_Container);
+            this.dockPanel2.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
+            this.dockPanel2.ID = new System.Guid("30a5bf06-e951-4d9a-a7d2-1b050a59aed9");
+            this.dockPanel2.Location = new System.Drawing.Point(7, 26);
+            this.dockPanel2.Name = "dockPanel2";
+            this.dockPanel2.Options.ShowCloseButton = false;
+            this.dockPanel2.OriginalSize = new System.Drawing.Size(500, 258);
+            this.dockPanel2.Size = new System.Drawing.Size(500, 262);
+            this.dockPanel2.TabText = "Доступные залоги";
+            this.dockPanel2.Text = "dockPanel2";
+            // 
+            // dockPanel2_Container
+            // 
+            this.dockPanel2_Container.Location = new System.Drawing.Point(0, 0);
+            this.dockPanel2_Container.Name = "dockPanel2_Container";
+            this.dockPanel2_Container.Size = new System.Drawing.Size(500, 262);
+            this.dockPanel2_Container.TabIndex = 0;
+            // 
+            // dpSheduler
+            // 
+            this.dpSheduler.Controls.Add(this.dockPanel3_Container);
+            this.dpSheduler.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
+            this.dpSheduler.ID = new System.Guid("f909e303-d648-4f90-8860-de9956fece1c");
+            this.dpSheduler.Location = new System.Drawing.Point(7, 26);
+            this.dpSheduler.Name = "dpSheduler";
+            this.dpSheduler.Options.ShowCloseButton = false;
+            this.dpSheduler.OriginalSize = new System.Drawing.Size(500, 258);
+            this.dpSheduler.Size = new System.Drawing.Size(500, 262);
+            this.dpSheduler.Text = "Погашение";
+            this.dpSheduler.CustomButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.dpSheduler_CustomButtonClick);
+            // 
+            // dockPanel3_Container
+            // 
+            this.dockPanel3_Container.Controls.Add(this.gridControl1);
+            this.dockPanel3_Container.Location = new System.Drawing.Point(0, 0);
+            this.dockPanel3_Container.Name = "dockPanel3_Container";
+            this.dockPanel3_Container.Size = new System.Drawing.Size(500, 262);
+            this.dockPanel3_Container.TabIndex = 0;
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.DataMember = "tsPaymentPlan";
+            this.gridControl1.DataSource = this.dsMain;
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.MainView = this.bgvSheduler;
+            this.gridControl1.MenuManager = this.barManager;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(500, 262);
+            this.gridControl1.TabIndex = 0;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.bgvSheduler});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            // 
+            // bgvSheduler
+            // 
+            this.bgvSheduler.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
+            this.gridBand2});
+            this.bgvSheduler.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
+            this.colRP_NO,
+            this.colRP_BEGIN_DATE,
+            this.colRP_END_DATE,
+            this.colRP_DAYS,
+            this.colRP_PERIOD,
+            this.colRP_ALL_SUM_REPAYMENT,
+            this.colRP_INTEREST_SUM_REPAYMENT,
+            this.colRP_DEBT_SUM_REPAYMENT,
+            this.colRP_DEBT_SUM_SALDO});
+            this.bgvSheduler.GridControl = this.gridControl1;
+            this.bgvSheduler.Name = "bgvSheduler";
+            this.bgvSheduler.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.bgvSheduler.OptionsView.ShowGroupPanel = false;
+            this.bgvSheduler.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.bandedGridView1_FocusedRowChanged);
+            // 
+            // colRP_NO
+            // 
+            this.colRP_NO.FieldName = "RP_NO";
+            this.colRP_NO.MinWidth = 60;
+            this.colRP_NO.Name = "colRP_NO";
+            this.colRP_NO.OptionsColumn.AllowFocus = false;
+            this.colRP_NO.Visible = true;
+            this.colRP_NO.Width = 100;
+            // 
+            // colRP_BEGIN_DATE
+            // 
+            this.colRP_BEGIN_DATE.FieldName = "RP_BEGIN_DATE";
+            this.colRP_BEGIN_DATE.MinWidth = 80;
+            this.colRP_BEGIN_DATE.Name = "colRP_BEGIN_DATE";
+            this.colRP_BEGIN_DATE.OptionsColumn.AllowFocus = false;
+            this.colRP_BEGIN_DATE.Visible = true;
+            this.colRP_BEGIN_DATE.Width = 150;
+            // 
+            // colRP_END_DATE
+            // 
+            this.colRP_END_DATE.FieldName = "RP_END_DATE";
+            this.colRP_END_DATE.MinWidth = 80;
+            this.colRP_END_DATE.Name = "colRP_END_DATE";
+            this.colRP_END_DATE.OptionsColumn.AllowFocus = false;
+            this.colRP_END_DATE.Visible = true;
+            this.colRP_END_DATE.Width = 150;
+            // 
+            // colRP_DAYS
+            // 
+            this.colRP_DAYS.FieldName = "RP_DAYS";
+            this.colRP_DAYS.MinWidth = 80;
+            this.colRP_DAYS.Name = "colRP_DAYS";
+            this.colRP_DAYS.OptionsColumn.AllowFocus = false;
+            this.colRP_DAYS.Visible = true;
+            this.colRP_DAYS.Width = 80;
+            // 
+            // colRP_PERIOD
+            // 
+            this.colRP_PERIOD.FieldName = "RP_PERIOD";
+            this.colRP_PERIOD.MinWidth = 80;
+            this.colRP_PERIOD.Name = "colRP_PERIOD";
+            this.colRP_PERIOD.OptionsColumn.AllowFocus = false;
+            this.colRP_PERIOD.Visible = true;
+            this.colRP_PERIOD.Width = 80;
+            // 
+            // colRP_ALL_SUM_REPAYMENT
+            // 
+            this.colRP_ALL_SUM_REPAYMENT.DisplayFormat.FormatString = "{0:###,##0.#\\}";
+            this.colRP_ALL_SUM_REPAYMENT.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colRP_ALL_SUM_REPAYMENT.FieldName = "RP_ALL_SUM_REPAYMENT";
+            this.colRP_ALL_SUM_REPAYMENT.MinWidth = 100;
+            this.colRP_ALL_SUM_REPAYMENT.Name = "colRP_ALL_SUM_REPAYMENT";
+            this.colRP_ALL_SUM_REPAYMENT.OptionsColumn.AllowFocus = false;
+            this.colRP_ALL_SUM_REPAYMENT.Visible = true;
+            this.colRP_ALL_SUM_REPAYMENT.Width = 200;
+            // 
+            // colRP_INTEREST_SUM_REPAYMENT
+            // 
+            this.colRP_INTEREST_SUM_REPAYMENT.DisplayFormat.FormatString = "{0:###,##0.#\\}";
+            this.colRP_INTEREST_SUM_REPAYMENT.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colRP_INTEREST_SUM_REPAYMENT.FieldName = "RP_INTEREST_SUM_REPAYMENT";
+            this.colRP_INTEREST_SUM_REPAYMENT.MinWidth = 100;
+            this.colRP_INTEREST_SUM_REPAYMENT.Name = "colRP_INTEREST_SUM_REPAYMENT";
+            this.colRP_INTEREST_SUM_REPAYMENT.OptionsColumn.AllowFocus = false;
+            this.colRP_INTEREST_SUM_REPAYMENT.Visible = true;
+            this.colRP_INTEREST_SUM_REPAYMENT.Width = 200;
+            // 
+            // colRP_DEBT_SUM_REPAYMENT
+            // 
+            this.colRP_DEBT_SUM_REPAYMENT.DisplayFormat.FormatString = "{0:###,##0.#\\}";
+            this.colRP_DEBT_SUM_REPAYMENT.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colRP_DEBT_SUM_REPAYMENT.FieldName = "RP_DEBT_SUM_REPAYMENT";
+            this.colRP_DEBT_SUM_REPAYMENT.MinWidth = 100;
+            this.colRP_DEBT_SUM_REPAYMENT.Name = "colRP_DEBT_SUM_REPAYMENT";
+            this.colRP_DEBT_SUM_REPAYMENT.OptionsColumn.AllowFocus = false;
+            this.colRP_DEBT_SUM_REPAYMENT.Visible = true;
+            this.colRP_DEBT_SUM_REPAYMENT.Width = 200;
+            // 
+            // colRP_DEBT_SUM_SALDO
+            // 
+            this.colRP_DEBT_SUM_SALDO.DisplayFormat.FormatString = "{0:###,##0.#\\}";
+            this.colRP_DEBT_SUM_SALDO.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colRP_DEBT_SUM_SALDO.FieldName = "RP_DEBT_SUM_SALDO";
+            this.colRP_DEBT_SUM_SALDO.MinWidth = 100;
+            this.colRP_DEBT_SUM_SALDO.Name = "colRP_DEBT_SUM_SALDO";
+            this.colRP_DEBT_SUM_SALDO.OptionsColumn.AllowFocus = false;
+            this.colRP_DEBT_SUM_SALDO.Visible = true;
+            this.colRP_DEBT_SUM_SALDO.Width = 200;
+            // 
+            // gridBand2
+            // 
+            this.gridBand2.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand2.Caption = "График погашения ";
+            this.gridBand2.Columns.Add(this.colRP_NO);
+            this.gridBand2.Columns.Add(this.colRP_BEGIN_DATE);
+            this.gridBand2.Columns.Add(this.colRP_END_DATE);
+            this.gridBand2.Columns.Add(this.colRP_DAYS);
+            this.gridBand2.Columns.Add(this.colRP_PERIOD);
+            this.gridBand2.Columns.Add(this.colRP_ALL_SUM_REPAYMENT);
+            this.gridBand2.Columns.Add(this.colRP_INTEREST_SUM_REPAYMENT);
+            this.gridBand2.Columns.Add(this.colRP_DEBT_SUM_REPAYMENT);
+            this.gridBand2.Columns.Add(this.colRP_DEBT_SUM_SALDO);
+            this.gridBand2.Name = "gridBand2";
+            this.gridBand2.VisibleIndex = 0;
+            this.gridBand2.Width = 1360;
+            // 
+            // pLeftContainer
+            // 
+            this.pLeftContainer.ActiveChild = this.dockPanel5;
+            this.pLeftContainer.Controls.Add(this.dpSheduler);
+            this.pLeftContainer.Controls.Add(this.dockPanel2);
+            this.pLeftContainer.Controls.Add(this.dockPanel5);
+            this.pLeftContainer.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
+            this.pLeftContainer.Header = "Container";
+            this.pLeftContainer.ID = new System.Guid("e110136f-cbde-44fa-b964-d2ce964a5cb0");
+            this.pLeftContainer.Location = new System.Drawing.Point(669, 37);
+            this.pLeftContainer.Name = "pLeftContainer";
+            this.pLeftContainer.OriginalSize = new System.Drawing.Size(512, 200);
+            this.pLeftContainer.Size = new System.Drawing.Size(512, 325);
+            this.pLeftContainer.Tabbed = true;
+            this.pLeftContainer.Text = "panelContainer2";
+            // 
             // NewCreditsListForm
             // 
             this.ClientSize = new System.Drawing.Size(1181, 631);
@@ -2231,16 +2234,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcList2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bgvExtraPokaz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bandedGridView1)).EndInit();
-            this.pLeftContainer.ResumeLayout(false);
-            this.dpSheduler.ResumeLayout(false);
-            this.dockPanel3_Container.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bgvSheduler)).EndInit();
-            this.dockPanel2.ResumeLayout(false);
-            this.dockPanel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
+            this.dockPanel5.ResumeLayout(false);
+            this.dockPanel2.ResumeLayout(false);
+            this.dpSheduler.ResumeLayout(false);
+            this.dockPanel3_Container.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bgvSheduler)).EndInit();
+            this.pLeftContainer.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2254,15 +2258,8 @@
         private DevExpress.XtraBars.Docking2010.Views.NoDocuments.NoDocumentsView noDocumentsView1;
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
         private DevExpress.XtraBars.Docking.DockManager dockManager1;
-        private DevExpress.XtraBars.Docking.DockPanel dockPanel2;
-        private DevExpress.XtraBars.Docking.ControlContainer dockPanel2_Container;
         private DevExpress.XtraBars.Docking.DockPanel dpPokaz;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
-        private DevExpress.XtraBars.Docking.DockPanel pLeftContainer;
-        private DevExpress.XtraBars.Docking.DockPanel dockPanel5;
-        private DevExpress.XtraBars.Docking.ControlContainer dockPanel5_Container;
-        private DevExpress.XtraBars.Docking.DockPanel dpSheduler;
-        private DevExpress.XtraBars.Docking.ControlContainer dockPanel3_Container;
         private DevExpress.XtraBars.Docking.DockPanel pBottomContainer;
         private DevExpress.XtraBars.Docking.DockPanel dpExtraPokaz;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel6_Container;
@@ -2367,18 +2364,6 @@
         private DevExpress.XtraBars.BarEditItem beData;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
         private DevExpress.XtraBars.BarButtonItem bbFilter;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView bgvSheduler;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand2;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colRP_NO;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colRP_BEGIN_DATE;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colRP_END_DATE;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colRP_DAYS;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colRP_PERIOD;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colRP_ALL_SUM_REPAYMENT;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colRP_INTEREST_SUM_REPAYMENT;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colRP_DEBT_SUM_REPAYMENT;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colRP_DEBT_SUM_SALDO;
         private DevExpress.XtraGrid.GridControl gridControl2;
         private DevExpress.XtraGrid.GridControl gcList3;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView bandedGridView2;
@@ -2444,5 +2429,25 @@
         private DevExpress.XtraBars.BarSubItem bbExpXMLMenu;
         private DevExpress.XtraBars.BarButtonItem bbCredits;
         private DevExpress.XtraBars.BarButtonItem bbSheduler;
+        private DevExpress.XtraBars.Docking.DockPanel pLeftContainer;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel5;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel5_Container;
+        private DevExpress.XtraBars.Docking.DockPanel dpSheduler;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel3_Container;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView bgvSheduler;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand2;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colRP_NO;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colRP_BEGIN_DATE;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colRP_END_DATE;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colRP_DAYS;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colRP_PERIOD;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colRP_ALL_SUM_REPAYMENT;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colRP_INTEREST_SUM_REPAYMENT;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colRP_DEBT_SUM_REPAYMENT;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colRP_DEBT_SUM_SALDO;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel2;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel2_Container;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

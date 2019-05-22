@@ -30,7 +30,7 @@ namespace ARM_User.New.Guide
             db = new DB_Pledges();
 
             beData.EditValue = (DateTime)System.DateTime.Today;
-
+            
             try
             {
                 splashScreenManager.ShowWaitForm();
@@ -41,23 +41,20 @@ namespace ARM_User.New.Guide
                 splashScreenManager.CloseWaitForm();
             }
 
-
+            
             bgvCredits.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             bgvSheduler.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
-
+            
             bgvCredits.OptionsView.ShowGroupPanel = false;
             bgvSheduler.OptionsView.ShowGroupPanel = false;
 
+            
 
-
-            DisableCloseablePanel(dpPokaz);
-            DisableCloseablePanel(dpExtraPokaz);
-            DisableCloseablePanel(dpPledges);
-            DisableCloseablePanel(dpSheduler);
+            //colh_loan_sid.Fixed = FixedStyle.Left;
         }
         private void bgvList2_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            splashScreenManager.ShowWaitForm();
+            splashScreenManager.ShowWaitForm();            
             refreshListPaymentPlan();
             refreshListPledges();
             refreshListPokaz();
@@ -67,14 +64,14 @@ namespace ARM_User.New.Guide
         public void refreshListPaymentPlan()
         {
             gridBand2.Caption = String.Format("График оплаты - {0}", getCurrentName("tsCredits", "CUSTOMER_NAME"));
-
+            
             db.getReadPaymentPlan(ref dsMain, (DateTime)beData.EditValue, getCurrentID("tsCredits", "LOAN_SID"));
         }
         public virtual void refreshListCredits()
         {
-
+            
             bgvCredits.BeginUpdate();
-
+            
             db.getReadListCredits(ref dsMain, Convert.ToDateTime(beData.EditValue.ToString()).Date);
             Int32 xCount = dsMain.Tables["tsCredits"].Rows.Count;
             bCount.Caption = xCount.ToString();
@@ -88,14 +85,14 @@ namespace ARM_User.New.Guide
                 pBottomContainer.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Visible;
                 pLeftContainer.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Visible;
             }
-
+           
 
             bgvCredits.EndUpdate();
 
         }
         public virtual void refreshListPledges()
         {
-
+           
             String s = beData.EditValue.ToString();
             DateTime FilterDateTime = Convert.ToDateTime(s);
 
@@ -112,11 +109,11 @@ namespace ARM_User.New.Guide
                 for (int i = 0; i < dpPledges.CustomHeaderButtons.Count; i++)
                     if (i != (int)PanelButton.btInsert)
                         dpPledges.CustomHeaderButtons[i].Properties.Enabled = !xPermission;
-
+               
             }
             else
                 if (dsMain.Tables.Contains("tsPledges")) dsMain.Tables["tsPledges"].Clear();
-
+           
         }
         public virtual void refreshListPokaz()
         {
@@ -130,15 +127,15 @@ namespace ARM_User.New.Guide
             {
                 db.getReadListPokaz(ref dsMain, FilterDateTime.Date, loan_sid);
                 Int32 xCount = dsMain.Tables["tsPokaz"].Rows.Count;
-                dpPokaz.TabText = String.Format("({0}) Показатели", xCount);
+                dpPokaz.TabText = String.Format("({0}) Показатели",xCount);
                 gbPokaz.Caption = String.Format("Показатели - {0}", getCurrentName("tsCredits", "CUSTOMER_NAME"));
 
                 Boolean xPermission = xCount == 0;
-                for (int i = 0; i < dpPokaz.CustomHeaderButtons.Count; i++)
+                for (int i=0; i<dpPokaz.CustomHeaderButtons.Count; i++)                
                     if (i != (int)PanelButton.btInsert)
                         dpPokaz.CustomHeaderButtons[i].Properties.Enabled = !xPermission;
-
-
+                
+               
             }
             else
                 if (dsMain.Tables.Contains("tsPokaz")) dsMain.Tables["tsPokaz"].Clear();
@@ -163,7 +160,7 @@ namespace ARM_User.New.Guide
                 Boolean xPermission = xCount == 0;
                 for (int i = 0; i < dpExtraPokaz.CustomHeaderButtons.Count; i++)
                     if (i != (int)PanelButton.btInsert)
-                        dpExtraPokaz.CustomHeaderButtons[i].Properties.Enabled = !xPermission;
+                        dpExtraPokaz.CustomHeaderButtons[i].Properties.Enabled = !xPermission;               
             }
             else
                 if (dsMain.Tables.Contains("tsExtraPokaz")) dsMain.Tables["tsExtraPokaz"].Clear();
@@ -275,10 +272,10 @@ namespace ARM_User.New.Guide
             btInsert = 2,
             btView = 3
         }
-
+       
         private void dpPokaz_CustomButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
-
+            
             NewCreditImpPokaz nciPokaz = new NewCreditImpPokaz(
                 Convert.ToDateTime(Convert.ToDateTime(beData.EditValue.ToString()).Date),
                 getCurrentName("tsCredits", "ref_no"),
@@ -288,28 +285,28 @@ namespace ARM_User.New.Guide
                 getCurrentID("tsPokaz", "pokaz_id"),
                 getCurrentName("tsPokaz", "dim_name"),
                 getCurrentName("tsPokaz", "dim_part"),
-                getCurrentID("tsPokaz", "abs_dimension_id"),
+                getCurrentID("tsPokaz", "abs_dimension_id"),            
                 getCurrentName("tsPokaz", "code_pokaz"),
                 getCurrentName("tsPokaz", "name_pokaz")
                 );
-            /*int choice(DevExpress.XtraBars.Docking2010.ButtonEventArgs ee)
-            {
-                int i = -1;
-                for (i = 0; i < dpPokaz.CustomHeaderButtons.Count; i++)
-                    if (ee.Button == dpPokaz.CustomHeaderButtons[i])
-                        break;
+                /*int choice(DevExpress.XtraBars.Docking2010.ButtonEventArgs ee)
+                {
+                    int i = -1;
+                    for (i = 0; i < dpPokaz.CustomHeaderButtons.Count; i++)
+                        if (ee.Button == dpPokaz.CustomHeaderButtons[i])
+                            break;
 
-                //MessageBox.Show(i.ToString());
-                return i;
-            }*/
+                    //MessageBox.Show(i.ToString());
+                    return i;
+                }*/
             switch (choice(dpPokaz, e))
             {
                 case (int)PanelButton.btDelete:
                     {
-                        if (
-                           XtraMessageBox.Show(
-                             LangTranslate.UiGetText("Вы действительно хотите удалить запись?"),
-                             LangTranslate.UiGetText("Удаление показателя"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                       if (
+                          XtraMessageBox.Show(
+                            LangTranslate.UiGetText("Вы действительно хотите удалить запись?"),
+                            LangTranslate.UiGetText("Удаление показателя"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                         {
                             nciPokaz.Delete();
                         };
@@ -320,7 +317,7 @@ namespace ARM_User.New.Guide
                         nciPokaz.State = ServiceLayer.Service.Editor.EditorState.Edit;
                         nciPokaz.Text = "Изменить показатель";
                         nciPokaz.Update();
-
+                        
                         break;
                     }
                 case (int)PanelButton.btInsert:
@@ -476,7 +473,7 @@ namespace ARM_User.New.Guide
         }
         void ExportXML(int type)
         {
-            String getXML(DateTime p_date_)
+            String getXML( DateTime p_date_)
             {
                 String result;
                 using (OracleCommand cmd = dmControler.frmMain.oracleConnection.CreateCommand())
@@ -498,7 +495,7 @@ namespace ARM_User.New.Guide
                         return result;
                     }
                     catch (Exception oe)
-                    {
+                    {                       
                         //MessageBox.Show(oe.Message);
                         DBSupport.DBErrorHandler(942, oe.Message + Environment.NewLine + "prepared.pkg_xml_generation.p_01_test_generate_xml\n " + p_date_.ToString());
                         return "error get XML";
@@ -524,7 +521,7 @@ namespace ARM_User.New.Guide
                 MemoryStream localMemoryStream = new MemoryStream();
 
                 using (XmlWriter writer = XmlWriter.Create(mfile, writerSettings))
-                {
+                {                    
                     writer.WriteStartElement("manifest");
                     writer.WriteElementString("product", "CREDIT");
                     writer.WriteElementString("report_date", Convert.ToDateTime(beData.EditValue.ToString()).ToString("dd.MM.yyyy"));
@@ -537,8 +534,8 @@ namespace ARM_User.New.Guide
             void AddZip(String sfileName, String mFileName)
             {
                 FileInfo fi1 = new FileInfo(sfileName);
-                FileInfo fi2 = new FileInfo(mFileName);
-
+                FileInfo fi2 = new FileInfo(mFileName);               
+               
                 String stype = String.Empty;
                 switch (type)
                 {
@@ -585,7 +582,7 @@ namespace ARM_User.New.Guide
 
             String s = beData.EditValue.ToString();
             DateTime FilterDateTime = Convert.ToDateTime(s);
-
+           
             using (XtraSaveFileDialog saveFileDialog1 = new XtraSaveFileDialog())
             {
                 saveFileDialog1.Filter = "XML FILE|*.xml";
@@ -614,7 +611,7 @@ namespace ARM_User.New.Guide
                     }
                 }
             }
-
+            
         }
 
         private void bbRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -654,10 +651,6 @@ namespace ARM_User.New.Guide
         {
             bbExpXMLMenu.Caption = "График XML";
             ExportXML(2);
-        }
-        private void DisableCloseablePanel(DevExpress.XtraBars.Docking.DockPanel dp)
-        {
-            dp.Options.ShowCloseButton = false;
         }
     }
 }

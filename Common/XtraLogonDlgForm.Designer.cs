@@ -63,6 +63,8 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
+            this.lcText = new DevExpress.XtraEditors.LabelControl();
+            this.lciCapsState = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.teSid.Properties)).BeginInit();
@@ -81,11 +83,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciCapsState)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
             this.layoutControl1.AutoScroll = false;
+            this.layoutControl1.Controls.Add(this.lcText);
             this.layoutControl1.Controls.Add(this.labelControl1);
             this.layoutControl1.Controls.Add(this.sbCancel);
             this.layoutControl1.Controls.Add(this.teSid);
@@ -99,7 +103,7 @@
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(798, 209, 812, 500);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(376, 271);
+            this.layoutControl1.Size = new System.Drawing.Size(376, 294);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -119,7 +123,7 @@
             // sbCancel
             // 
             this.sbCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.sbCancel.Location = new System.Drawing.Point(190, 232);
+            this.sbCancel.Location = new System.Drawing.Point(190, 255);
             this.sbCancel.Name = "sbCancel";
             this.sbCancel.Size = new System.Drawing.Size(174, 27);
             this.sbCancel.StyleController = this.layoutControl1;
@@ -141,6 +145,8 @@
             simpleContextButton1.AlignmentOptions.Position = DevExpress.Utils.ContextItemPosition.Far;
             simpleContextButton1.AppearanceNormal.Options.UseImage = true;
             simpleContextButton1.Id = new System.Guid("5b6763f2-c591-4e2c-b5fb-abeb0cd59193");
+            simpleContextButton1.ImageOptionsCollection.ItemHovered.Image = global::ARM_User.Properties.Resources.cancel_16x16;
+            simpleContextButton1.ImageOptionsCollection.ItemNormal.Image = global::ARM_User.Properties.Resources.cancel_16x16;
             simpleContextButton1.Name = "scbRemove";
             this.teSid.Properties.ContextButtons.Add(simpleContextButton1);
             this.teSid.Properties.ContextImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("teSid.Properties.ContextImageOptions.Image")));
@@ -205,7 +211,7 @@
             // 
             // isSaveToRegistry
             // 
-            this.isSaveToRegistry.Location = new System.Drawing.Point(12, 207);
+            this.isSaveToRegistry.Location = new System.Drawing.Point(12, 230);
             this.isSaveToRegistry.Name = "isSaveToRegistry";
             this.isSaveToRegistry.Properties.Caption = "Keep me signed in";
             this.isSaveToRegistry.Size = new System.Drawing.Size(352, 21);
@@ -215,7 +221,7 @@
             // sbSignIn
             // 
             this.sbSignIn.CausesValidation = false;
-            this.sbSignIn.Location = new System.Drawing.Point(12, 232);
+            this.sbSignIn.Location = new System.Drawing.Point(12, 255);
             this.sbSignIn.Name = "sbSignIn";
             this.sbSignIn.Size = new System.Drawing.Size(174, 27);
             this.sbSignIn.StyleController = this.layoutControl1;
@@ -238,16 +244,17 @@
             this.lchost,
             this.layoutControlItem1,
             this.layoutControlItem2,
-            this.emptySpaceItem1});
+            this.emptySpaceItem1,
+            this.lciCapsState});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(376, 271);
+            this.Root.Size = new System.Drawing.Size(376, 294);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.isSaveToRegistry;
             this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 195);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 218);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(356, 25);
             this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Left;
@@ -258,7 +265,7 @@
             // 
             this.layoutControlItem4.Control = this.sbSignIn;
             this.layoutControlItem4.CustomizationFormText = "layoutControlItem4";
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 220);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 243);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(178, 31);
             this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Left;
@@ -304,7 +311,7 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.sbCancel;
-            this.layoutControlItem1.Location = new System.Drawing.Point(178, 220);
+            this.layoutControlItem1.Location = new System.Drawing.Point(178, 243);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(178, 31);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
@@ -325,15 +332,33 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 170);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 191);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(356, 25);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(356, 27);
             this.emptySpaceItem1.StartNewLine = true;
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // dxErrorProvider1
             // 
             this.dxErrorProvider1.ContainerControl = this;
+            // 
+            // lcText
+            // 
+            this.lcText.Location = new System.Drawing.Point(12, 182);
+            this.lcText.Name = "lcText";
+            this.lcText.Size = new System.Drawing.Size(352, 17);
+            this.lcText.StyleController = this.layoutControl1;
+            this.lcText.TabIndex = 18;
+            // 
+            // lciCapsState
+            // 
+            this.lciCapsState.Control = this.lcText;
+            this.lciCapsState.ControlAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lciCapsState.Location = new System.Drawing.Point(0, 170);
+            this.lciCapsState.Name = "lciCapsState";
+            this.lciCapsState.Size = new System.Drawing.Size(356, 21);
+            this.lciCapsState.TextSize = new System.Drawing.Size(0, 0);
+            this.lciCapsState.TextVisible = false;
             // 
             // XtraLogonDlgForm
             // 
@@ -344,7 +369,7 @@
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "XtraLogonDlgForm";
-            this.Size = new System.Drawing.Size(376, 271);
+            this.Size = new System.Drawing.Size(376, 294);
             this.toolTipController1.SetTitle(this, "fdgzf");
             this.toolTipController1.SetToolTip(this, "dfgfdg");
             this.Load += new System.EventHandler(this.UserControl1_Load);
@@ -353,6 +378,7 @@
             this.Validated += new System.EventHandler(this.XtraLogonDlgForm_Validated);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            this.layoutControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.teSid.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teHost.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teUser.Properties)).EndInit();
@@ -369,6 +395,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciCapsState)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -397,5 +424,7 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider dxErrorProvider1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraEditors.LabelControl lcText;
+        private DevExpress.XtraLayout.LayoutControlItem lciCapsState;
     }
 }

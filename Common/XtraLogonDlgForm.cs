@@ -214,6 +214,7 @@ namespace ARM_User.Common
 
         private void sbSignIn_Click(object sender, EventArgs e)
         {
+            
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
                 LogonDatabase = teSid.Text.Trim();
@@ -386,6 +387,9 @@ namespace ARM_User.Common
 
         private void tePassword_KeyDown(object sender, KeyEventArgs e)
         {
+            if (Console.CapsLock)
+                lcText.Text = "Caps Look is on.";            
+            else lcText.Text = String.Empty;
             if (e.KeyCode == Keys.Enter)
             {
                 sbSignIn_Click(sender, e);

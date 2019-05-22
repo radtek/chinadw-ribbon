@@ -2510,7 +2510,7 @@ namespace ARM_User
                         // Сохраняем установочные файлы во временный каталог
                         foreach (var setup in list)
                         {
-                            var setupFileName = tempPath + @"\" + "monitor_reports_update_" + setup.Version + ".exe";
+                            var setupFileName = tempPath + @"\" + "hdchina_update_" + setup.Version + ".exe";
                             using (var fs = File.Create(setupFileName))
                             {
                                 fs.Write(setup.FileBody, 0, setup.FileBody.Length);
